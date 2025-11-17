@@ -15,11 +15,7 @@ Al finalizar este capítulo, deberías ser capaz de:
 
 La investigación social cuantitativa enfrenta invariablemente la **incertidumbre**. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.
 
-La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.
-
-::: {.objetivos}
-**Concepto clave**: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.
-:::
+La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.^[CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.]
 
 ## Conceptos básicos de probabilidad
 
@@ -31,15 +27,7 @@ Una **probabilidad** es un número entre 0 y 1 que cuantifica qué tan probable 
 - $P(A) = 1$ significa que el evento $A$ es seguro
 - $P(A) = 0.5$ significa que $A$ tiene la misma probabilidad de ocurrir que de no ocurrir
 
-::: {.ejemplo}
-**Ejemplo: Elecciones legislativas en Chile**
-
-Si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio, podemos estimar:
-
-$$P(\text{Voto FA}) = \frac{360}{1200} = 0.30$$
-
-Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).
-:::
+Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: $P(\text{Voto FA}) = \frac{360}{1200} = 0.30$. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).
 
 ### Interpretaciones de probabilidad
 
@@ -91,44 +79,27 @@ ggplot(lanzamientos, aes(x = n, y = prop_acumulada)) +
 Si $A$ y $B$ no pueden ocurrir simultáneamente:
 $$P(A \text{ o } B) = P(A) + P(B)$$
 
-::: {.ejemplo}
-En las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato:
-$$P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})$$
-:::
+Por ejemplo, en las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato: $P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})$.
 
 **Regla del complemento**
 
 $$P(\text{no } A) = 1 - P(A)$$
 
-::: {.ejemplo}
-Si $P(\text{Voto})=0.52$ en elecciones legislativas chilenas:
-$$P(\text{Abstención}) = 1 - 0.52 = 0.48$$
-:::
+Por ejemplo, si $P(\text{Voto})=0.52$ en elecciones legislativas chilenas: $P(\text{Abstención}) = 1 - 0.52 = 0.48$.
 
 **Regla del producto** (eventos independientes)
 
 Si $A$ y $B$ son independientes (la ocurrencia de uno no afecta la probabilidad del otro):
 $$P(A \text{ y } B) = P(A) \times P(B)$$
 
-::: {.ejemplo}
-Si encuestamos a dos votantes al azar y queremos saber la probabilidad de que ambos voten por la izquierda, asumiendo independencia y $P(\text{Izquierda})=0.30$:
-$$P(\text{ambos izquierda}) = 0.30 \times 0.30 = 0.09$$
-:::
+Por ejemplo, si encuestamos a dos votantes al azar y queremos saber la probabilidad de que ambos voten por la izquierda, asumiendo independencia y $P(\text{Izquierda})=0.30$: $P(\text{ambos izquierda}) = 0.30 \times 0.30 = 0.09$.
 
 **Probabilidad condicional**
 
 La probabilidad de $A$ dado que ya sabemos que $B$ ocurrió:
 $$P(A|B) = \frac{P(A \text{ y } B)}{P(B)}$$
 
-::: {.ejemplo}
-**Caso chileno: Voto por género**
-
-Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo.
-
-$$P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33$$
-
-Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).
-:::
+Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces $P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33$. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).
 
 ## Variables aleatorias
 
@@ -136,16 +107,7 @@ Una **variable aleatoria** es una función que asigna un valor numérico a cada 
 
 ### Variables aleatorias discretas
 
-Toman valores específicos y contables (generalmente enteros).
-
-::: {.ejemplo}
-**Ejemplos en ciencias sociales:**
-
-- Número de partidos en el Congreso: 1, 2, 3, ...
-- Número de protestas en un mes: 0, 1, 2, 3, ...
-- Respuesta en escala Likert: 1, 2, 3, 4, 5
-- Número de votantes en una mesa: 0, 1, 2, ..., 300
-:::
+Toman valores específicos y contables (generalmente enteros).^[EJEMPLOS EN CIENCIAS SOCIALES: Número de partidos en el Congreso (1, 2, 3, ...), número de protestas en un mes (0, 1, 2, 3, ...), respuesta en escala Likert (1, 2, 3, 4, 5), número de votantes en una mesa (0, 1, 2, ..., 300).]
 
 **Función de masa de probabilidad (PMF)**
 
@@ -179,16 +141,7 @@ data.frame(protestas = protestas) %>%
 
 ### Variables aleatorias continuas
 
-Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).
-
-::: {.ejemplo}
-**Ejemplos en ciencias sociales:**
-
-- Porcentaje de votos obtenido: 0% a 100% (cualquier valor decimal)
-- Ingreso mensual: cualquier valor positivo
-- Índice de democracia: escala continua de 0 a 10
-- Tiempo hasta próxima protesta: cualquier valor positivo
-:::
+Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).^[EJEMPLOS EN CIENCIAS SOCIALES: Porcentaje de votos obtenido (0% a 100%, cualquier valor decimal), ingreso mensual (cualquier valor positivo), índice de democracia (escala continua de 0 a 10), tiempo hasta próxima protesta (cualquier valor positivo).]
 
 **Función de densidad de probabilidad (PDF)**
 
@@ -233,9 +186,7 @@ data.frame(votos = votos) %>%
 
 **Desviación estándar**: $\sigma = \sqrt{\text{Var}(X)}$
 
-::: {.importante}
-**Distinción crucial**: Estos son parámetros **poblacionales** (generalmente desconocidos). Los estimamos a partir de muestras usando $\bar{x}$ y $s^2$.
-:::
+Es importante distinguir que estos son parámetros **poblacionales** (generalmente desconocidos). Los estimamos a partir de muestras usando $\bar{x}$ y $s^2$.
 
 ## Distribuciones de probabilidad comunes
 
@@ -283,10 +234,7 @@ ggplot(df, aes(x = x, y = y)) +
   theme(plot.title = element_text(face = "bold", size = 14))
 ```
 
-::: {.ejemplo}
-**Caso: Distribución de alturas**
-
-Las alturas de hombres adultos chilenos se distribuyen aproximadamente $N(170, 7^2)$ cm.
+Las alturas de hombres adultos chilenos se distribuyen aproximadamente $N(170, 7^2)$ cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?
 
 ```{r ejemplo-normal, echo=TRUE}
 # ¿Qué proporción de hombres mide más de 180 cm?
@@ -295,7 +243,6 @@ Las alturas de hombres adultos chilenos se distribuyen aproximadamente $N(170, 7
 # ¿Qué proporción mide entre 165 y 175 cm?
 pnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)
 ```
-:::
 
 ### Distribución Binomial
 
@@ -306,12 +253,7 @@ $$X \sim \text{Binomial}(n, p)$$
 - $E(X) = np$
 - $\text{Var}(X) = np(1-p)$
 
-::: {.ejemplo}
-**Elecciones y encuestas**
-
-Si encuestamos $n=1000$ votantes y la verdadera proporción que apoya un candidato es $p=0.40$, el número de encuestados que declaran apoyo sigue:
-
-$$X \sim \text{Binomial}(1000, 0.40)$$
+Por ejemplo, si encuestamos $n=1000$ votantes y la verdadera proporción que apoya un candidato es $p=0.40$, el número de encuestados que declaran apoyo sigue $X \sim \text{Binomial}(1000, 0.40)$:
 
 ```{r binomial-ejemplo, echo=TRUE}
 # Probabilidad de observar exactamente 400 apoyos
@@ -324,7 +266,6 @@ sum(dbinom(380:420, size = 1000, prob = 0.40))
 n <- 1000; p <- 0.40
 c(media = n*p, sd = sqrt(n*p*(1-p)))
 ```
-:::
 
 ```{r binomial-plot, echo=FALSE, fig.cap="Distribución Binomial: Número de votantes que apoyan candidato (n=1000, p=0.40)"}
 x <- 350:450
@@ -354,10 +295,7 @@ $$X \sim \text{Poisson}(\lambda)$$
 - $E(X) = \lambda$
 - $\text{Var}(X) = \lambda$
 
-::: {.ejemplo}
-**Conflictos sociales**
-
-Si históricamente ocurren en promedio $\lambda = 3.2$ protestas por mes en una ciudad:
+Por ejemplo, si históricamente ocurren en promedio $\lambda = 3.2$ protestas por mes en una ciudad, podemos calcular probabilidades sobre el número de protestas en el próximo mes:
 
 ```{r poisson-ejemplo, echo=TRUE}
 # Probabilidad de exactamente 5 protestas este mes
@@ -369,21 +307,10 @@ dpois(0, lambda = 3.2)
 # Probabilidad de más de 6 protestas
 1 - ppois(6, lambda = 3.2)
 ```
-:::
 
 ## Teorema del Límite Central
 
-El **Teorema del Límite Central (TLC)** es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras.
-
-::: {.importante}
-**Teorema del Límite Central:**
-
-Si tomamos muestras aleatorias de tamaño $n$ de **cualquier** población con media $\mu$ y varianza finita $\sigma^2$, entonces conforme $n$ aumenta, la distribución de la media muestral $\bar{X}$ se aproxima a una distribución Normal:
-
-$$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$$
-
-Esto ocurre **independientemente de la forma de la distribución original**, siempre que $n$ sea suficientemente grande (típicamente $n \geq 30$).
-:::
+El **Teorema del Límite Central (TLC)** es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras. El teorema establece que si tomamos muestras aleatorias de tamaño $n$ de **cualquier** población con media $\mu$ y varianza finita $\sigma^2$, entonces conforme $n$ aumenta, la distribución de la media muestral $\bar{X}$ se aproxima a una distribución Normal: $\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$. Esto ocurre **independientemente de la forma de la distribución original**, siempre que $n$ sea suficientemente grande (típicamente $n \geq 30$).
 
 ### Implicaciones para ciencias sociales
 
@@ -468,9 +395,7 @@ ggplot(df_medias, aes(x = media)) +
   )
 ```
 
-::: {.nivel}
-**Observación clave**: Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales **se distribuyen cada vez más normalmente** conforme aumenta $n$. Con $n=100$, la distribución de $\bar{X}$ es prácticamente Normal.
-:::
+Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales **se distribuyen cada vez más normalmente** conforme aumenta $n$. Con $n=100$, la distribución de $\bar{X}$ es prácticamente Normal.
 
 ## Resumen del capítulo
 

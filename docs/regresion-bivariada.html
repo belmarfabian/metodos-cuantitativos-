@@ -620,15 +620,14 @@ div.csl-indent {
 <li><span class="math inline">\(r = 0\)</span>: Sin correlación lineal</li>
 <li><span class="math inline">\(r = -1\)</span>: Correlación negativa perfecta</li>
 </ul>
-<div class="ejemplo">
-<p><strong>Caso: Desarrollo económico y democracia</strong></p>
+<p>Para ilustrar el uso de la correlación, consideremos la relación entre desarrollo económico y democracia, un tema clásico en ciencia política. Analizamos datos de PIB per cápita y nivel de democracia en una muestra de países:</p>
 <div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="regresion-bivariada.html#cb294-1" tabindex="-1"></a><span class="co"># Datos simulados: PIB per cápita y nivel de democracia</span></span>
 <span id="cb294-2"><a href="regresion-bivariada.html#cb294-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
 <span id="cb294-3"><a href="regresion-bivariada.html#cb294-3" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
 <span id="cb294-4"><a href="regresion-bivariada.html#cb294-4" tabindex="-1"></a>pib <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">15000</span>, <span class="at">sd =</span> <span class="dv">8000</span>)</span>
 <span id="cb294-5"><a href="regresion-bivariada.html#cb294-5" tabindex="-1"></a>democracia <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.0003</span> <span class="sc">*</span> pib <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
 <span id="cb294-6"><a href="regresion-bivariada.html#cb294-6" tabindex="-1"></a></span>
-<span id="cb294-7"><a href="regresion-bivariada.html#cb294-7" tabindex="-1"></a><span class="co"># Correlación</span></span>
+<span id="cb294-7"><a href="regresion-bivariada.html#cb294-7" tabindex="-1"></a><span class="co"># Correlación de Pearson</span></span>
 <span id="cb294-8"><a href="regresion-bivariada.html#cb294-8" tabindex="-1"></a>cor_pearson <span class="ot">&lt;-</span> <span class="fu">cor</span>(pib, democracia)</span>
 <span id="cb294-9"><a href="regresion-bivariada.html#cb294-9" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Correlación de Pearson:&quot;</span>, <span class="fu">round</span>(cor_pearson, <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Correlación de Pearson: 0.865</code></pre>
@@ -645,14 +644,7 @@ div.csl-indent {
 ## sample estimates:
 ##       cor 
 ## 0.8647649</code></pre>
-</div>
-<div class="importante">
-<p><strong>Correlación ≠ Causalidad</strong></p>
-<p>Una correlación fuerte NO implica que una variable cause la otra. Pueden existir:
-- Variables confusoras
-- Causalidad inversa
-- Relaciones espurias</p>
-</div>
+<p>Es fundamental recordar que una correlación fuerte <strong>NO implica que una variable cause la otra</strong>. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
 </div>
 <div id="el-modelo-de-regresión-lineal-simple" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> El modelo de regresión lineal simple<a href="regresion-bivariada.html#el-modelo-de-regresión-lineal-simple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -670,14 +662,13 @@ div.csl-indent {
 <p><strong>Fórmulas OLS:</strong></p>
 <p><span class="math display">\[\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}\]</span></p>
 <p><span class="math display">\[\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}\]</span></p>
-<div class="ejemplo">
-<p><strong>Caso: Gasto público y crecimiento económico</strong></p>
-<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="regresion-bivariada.html#cb298-1" tabindex="-1"></a><span class="co"># Datos simulados</span></span>
+<p>Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.</p>
+<div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="regresion-bivariada.html#cb298-1" tabindex="-1"></a><span class="co"># Datos simulados: Gasto público y crecimiento económico</span></span>
 <span id="cb298-2"><a href="regresion-bivariada.html#cb298-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
 <span id="cb298-3"><a href="regresion-bivariada.html#cb298-3" tabindex="-1"></a>gasto_publico <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">40</span>)  <span class="co"># % del PIB</span></span>
 <span id="cb298-4"><a href="regresion-bivariada.html#cb298-4" tabindex="-1"></a>crecimiento <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">-</span> <span class="fl">0.15</span> <span class="sc">*</span> gasto_publico <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.2</span>)</span>
 <span id="cb298-5"><a href="regresion-bivariada.html#cb298-5" tabindex="-1"></a></span>
-<span id="cb298-6"><a href="regresion-bivariada.html#cb298-6" tabindex="-1"></a><span class="co"># Modelo de regresión</span></span>
+<span id="cb298-6"><a href="regresion-bivariada.html#cb298-6" tabindex="-1"></a><span class="co"># Modelo de regresión lineal simple</span></span>
 <span id="cb298-7"><a href="regresion-bivariada.html#cb298-7" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(crecimiento <span class="sc">~</span> gasto_publico)</span>
 <span id="cb298-8"><a href="regresion-bivariada.html#cb298-8" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code></pre></div>
 <pre><code>## 
@@ -705,15 +696,11 @@ Figura 11.1: Regresión lineal: Gasto público y crecimiento
 </p>
 </div>
 </div>
-</div>
 <div id="interpretación-de-coeficientes" class="section level2 hasAnchor" number="11.5">
 <h2><span class="header-section-number">11.5</span> Interpretación de coeficientes<a href="regresion-bivariada.html#interpretación-de-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>Intercepto (<span class="math inline">\(\hat{\beta}_0\)</span>)</strong>: Valor predicho de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span></p>
 <p><strong>Pendiente (<span class="math inline">\(\hat{\beta}_1\)</span>)</strong>: Cambio promedio en <span class="math inline">\(Y\)</span> asociado con un incremento de una unidad en <span class="math inline">\(X\)</span></p>
-<div class="ejemplo">
-<p>Si <span class="math inline">\(\hat{\beta}_1 = -0.15\)</span> en el modelo anterior:</p>
-<p>“Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.”</p>
-</div>
+<p>En el modelo anterior, si obtuviéramos <span class="math inline">\(\hat{\beta}_1 = -0.15\)</span>, interpretaríamos: “Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.”<a href="#fn15" class="footnote-ref" id="fnref15"><sup>15</sup></a></p>
 </div>
 <div id="bondad-de-ajuste" class="section level2 hasAnchor" number="11.6">
 <h2><span class="header-section-number">11.6</span> Bondad de ajuste<a href="regresion-bivariada.html#bondad-de-ajuste" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -726,17 +713,8 @@ Figura 11.1: Regresión lineal: Gasto público y crecimiento
 <li><span class="math inline">\(R^2 = 0\)</span>: El modelo no explica nada</li>
 <li><span class="math inline">\(R^2 = 1\)</span>: El modelo explica perfectamente</li>
 </ul>
-<div class="ejemplo">
-<p>Si <span class="math inline">\(R^2 = 0.42\)</span>:</p>
-<p>“El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores.”</p>
-</div>
-<div class="importante">
-<p><strong><span class="math inline">\(R^2\)</span> elevado ≠ Causalidad</strong></p>
-<p>Un <span class="math inline">\(R^2\)</span> alto NO implica relación causal. Puede haber:
-- Variables omitidas importantes
-- Relación espuria
-- Causalidad inversa</p>
-</div>
+<p>Por ejemplo, si <span class="math inline">\(R^2 = 0.42\)</span>, interpretamos: “El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores.”</p>
+<p>Es crucial entender que un <span class="math inline">\(R^2\)</span> alto <strong>NO implica relación causal</strong>. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.<a href="#fn16" class="footnote-ref" id="fnref16"><sup>16</sup></a></p>
 </div>
 </div>
 <div id="resumen-del-capítulo-10" class="section level2 hasAnchor" number="11.7">
@@ -778,6 +756,14 @@ Figura 11.1: Regresión lineal: Gasto público y crecimiento
 
 
 
+</div>
+<div class="footnotes">
+<hr />
+<ol start="14">
+<li id="fn14"><p>ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.<a href="regresion-bivariada.html#fnref14" class="footnote-back">↩︎</a></p></li>
+<li id="fn15"><p>INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica <em>asociación</em>, no necesariamente <em>causalidad</em>. Además, la unidad de medida importa: si <span class="math inline">\(X\)</span> está en miles y <span class="math inline">\(Y\)</span> en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.<a href="regresion-bivariada.html#fnref15" class="footnote-back">↩︎</a></p></li>
+<li id="fn16"><p>ADVERTENCIA SOBRE <span class="math inline">\(R^2\)</span>: Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el <span class="math inline">\(R^2\)</span> puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no necesariamente indican un modelo “malo” - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.<a href="regresion-bivariada.html#fnref16" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 

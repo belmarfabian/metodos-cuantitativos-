@@ -19,11 +19,7 @@ En ciencias sociales raramente tenemos acceso a poblaciones completas. Queremos 
 - ¿Cuál es el ingreso promedio de hogares en América Latina?
 - ¿Qué proporción de electores cambia su voto entre elecciones?
 
-Pero solo podemos encuestar una **muestra** de cientos o miles de personas, no los millones que componen la población.
-
-::: {.objetivos}
-**Inferencia estadística**: El proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.
-:::
+Pero solo podemos encuestar una **muestra** de cientos o miles de personas, no los millones que componen la población. La **inferencia estadística** es el proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.
 
 ### Ejemplo motivador: Encuestas electorales en Chile
 
@@ -85,26 +81,9 @@ La inferencia estadística nos da herramientas para responder estas preguntas.
 - Proporción muestral: $\hat{p}$
 - Varianza muestral: $s^2$
 
-::: {.importante}
-**Distinción crítica**:
+Es fundamental distinguir que los **parámetros** $(\mu, p, \sigma^2)$ son valores fijos (pero desconocidos) de la población, mientras que los **estadísticos** $(\bar{x}, \hat{p}, s^2)$ son calculados a partir de la muestra y **varían** entre muestras. Usamos estadísticos para **estimar** parámetros.
 
-Los **parámetros** $(\mu, p, \sigma^2)$ son valores fijos (pero desconocidos) de la población.
-
-Los **estadísticos** $(\bar{x}, \hat{p}, s^2)$ son calculados a partir de la muestra y **varían** entre muestras.
-
-Usamos estadísticos para **estimar** parámetros.
-:::
-
-::: {.ejemplo}
-**Caso: Apoyo a reforma tributaria**
-
-- **Población**: 15 millones de votantes chilenos
-- **Parámetro de interés**: $p$ = proporción que apoya la reforma (desconocida)
-- **Muestra**: 1,200 votantes encuestados
-- **Estadístico observado**: $\hat{p} = 0.42$ (42% de la muestra apoya)
-
-**Pregunta inferencial**: ¿Qué podemos decir sobre $p$ (desconocido) a partir de $\hat{p} = 0.42$ (conocido)?
-:::
+Por ejemplo, consideremos el apoyo a una reforma tributaria. La **población** son 15 millones de votantes chilenos, y el **parámetro de interés** es $p$ = proporción que apoya la reforma (desconocida). Si tomamos una **muestra** de 1,200 votantes encuestados y observamos el **estadístico** $\hat{p} = 0.42$ (42% de la muestra apoya), la **pregunta inferencial** es: ¿Qué podemos decir sobre $p$ (desconocido) a partir de $\hat{p} = 0.42$ (conocido)?
 
 ### Muestreo aleatorio simple
 
@@ -213,9 +192,7 @@ p2 <- ggplot(data.frame(media = medias_muestrales), aes(x = media)) +
 grid.arrange(p1, p2, ncol = 1)
 ```
 
-::: {.nivel}
-**Observación clave**: Aunque la población de ingresos es altamente asimétrica, la distribución de $\bar{X}$ es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.
-:::
+Aunque la población de ingresos es altamente asimétrica, la distribución de $\bar{X}$ es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.
 
 ### Distribución muestral de la proporción
 
@@ -225,10 +202,7 @@ $$\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)$$
 
 (Aproximación válida cuando $np \geq 10$ y $n(1-p) \geq 10$)
 
-::: {.ejemplo}
-**Encuesta electoral: Distribución de $\hat{p}$**
-
-Si el verdadero apoyo es $p = 0.45$ y encuestamos $n = 1000$:
+Por ejemplo, si en una encuesta electoral el verdadero apoyo es $p = 0.45$ y encuestamos $n = 1000$ personas:
 
 ```{r dist-proporcion, echo=TRUE}
 p <- 0.45
@@ -246,7 +220,6 @@ cat("SD (error estándar) =", round(sd_p_hat, 4), "\n\n")
 prob_error_grande <- pnorm(0.42, mean = p, sd = sd_p_hat)
 cat("P(p̂ < 0.42) =", round(prob_error_grande, 3))
 ```
-:::
 
 ## Error estándar
 
@@ -260,16 +233,9 @@ Pero $\sigma$ (SD poblacional) es generalmente desconocido. Lo estimamos con $s$
 
 $$\widehat{\text{SE}}(\bar{x}) = \frac{s}{\sqrt{n}}$$
 
-::: {.importante}
-**Error estándar vs desviación estándar**^[CONFUSIÓN COMÚN: El error estándar ($\text{SE}$) mide qué tan precisa es nuestra estimación de la media. La desviación estándar ($s$) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: $\text{SE} = s/\sqrt{n}$ siempre es menor que $s$ (excepto cuando $n=1$).]
+Es importante distinguir entre **error estándar** y **desviación estándar**. La desviación estándar ($s$) mide variabilidad en los **datos**, mientras que el error estándar ($\text{SE}$) mide variabilidad del **estadístico** (precisión de la estimación). El $\text{SE}$ disminuye con $n$; $s$ NO (permanece constante en promedio).^[CONFUSIÓN COMÚN: El error estándar ($\text{SE}$) mide qué tan precisa es nuestra estimación de la media. La desviación estándar ($s$) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: $\text{SE} = s/\sqrt{n}$ siempre es menor que $s$ (excepto cuando $n=1$).]
 
-- **Desviación estándar ($s$)**: Mide variabilidad en los **datos**
-- **Error estándar ($\text{SE}$)**: Mide variabilidad del **estadístico** (precisión de la estimación)
-- $\text{SE}$ disminuye con $n$; $s$ NO (permanece constante en promedio)
-:::
-
-::: {.ejemplo}
-**Caso: Ingreso familiar en encuesta CASEN**
+Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:
 
 ```{r ejemplo-se, echo=TRUE}
 # Datos simulados de ingresos (en miles de $)
@@ -292,7 +258,6 @@ cat("- Los ingresos individuales varían típicamente ±$", round(s, 0),
 cat("- Nuestra estimación de la media tiene error típico de ±$", round(se, 0),
     " mil\n", sep = "")
 ```
-:::
 
 ### Error estándar de la proporción
 
@@ -356,18 +321,9 @@ donde $t_{n-1, 0.975}$ es el valor crítico de la distribución $t$ con $n-1$ gr
 
 $$\text{IC}_{95\%} \approx \bar{x} \pm 1.96 \cdot \text{SE}(\bar{x})$$
 
-::: {.importante}
-**Interpretación correcta de IC 95%:**
+La interpretación correcta de un IC 95% es: "Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de $\mu$." NO significa "Hay 95% de probabilidad de que $\mu$ esté en este intervalo específico." (La diferencia es sutil pero importante: $\mu$ es fijo; el intervalo es lo que varía entre muestras.)
 
-"Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de $\mu$."
-
-**NO significa:** "Hay 95% de probabilidad de que $\mu$ esté en este intervalo específico."
-
-(La diferencia es sutil pero importante: $\mu$ es fijo; el intervalo es lo que varía entre muestras.)
-:::
-
-::: {.ejemplo}
-**Intervalo de confianza para ingreso promedio**
+Por ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:
 
 ```{r ic-media, echo=TRUE}
 # Datos de ingresos (retomando ejemplo anterior)
@@ -395,7 +351,6 @@ cat("Interpretación: Estamos 95% confiados de que el ingreso promedio\n")
 cat("poblacional está entre $", round(ic_inferior, 0), " y $",
     round(ic_superior, 0), " mil.\n", sep = "")
 ```
-:::
 
 ### Intervalo de confianza para la proporción
 
@@ -403,8 +358,7 @@ $$\text{IC}_{95\%} = \hat{p} \pm 1.96 \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$
 
 (Válido cuando $n\hat{p} \geq 10$ y $n(1-\hat{p}) \geq 10$)
 
-::: {.ejemplo}
-**Encuesta de intención de voto**
+Por ejemplo, para una encuesta de intención de voto:
 
 ```{r ic-proporcion, echo=TRUE}
 # Encuesta: ¿Votará en próximas elecciones?
@@ -426,7 +380,6 @@ cat("Interpretación: El verdadero porcentaje de personas que votarán\n")
 cat("está probablemente entre", round(ic_inf * 100, 1), "% y",
     round(ic_sup * 100, 1), "%.\n")
 ```
-:::
 
 ### Niveles de confianza alternativos
 
@@ -496,8 +449,7 @@ Queremos que el IC tenga ancho máximo $2E$ (es decir, margen de error $E$):
 
 $$n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2$$
 
-::: {.ejemplo}
-**Estimar ingreso promedio con precisión de ±$20 mil**
+Por ejemplo, si queremos estimar el ingreso promedio con precisión de ±$20 mil:
 
 ```{r tam-muestra-media, echo=TRUE}
 # Deseamos IC 95% con margen de error E = 20 mil

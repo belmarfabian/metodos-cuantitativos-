@@ -612,10 +612,7 @@ div.csl-indent {
 <div id="por-qué-probabilidad-en-ciencias-sociales" class="section level2 hasAnchor" number="7.2">
 <h2><span class="header-section-number">7.2</span> ¿Por qué probabilidad en ciencias sociales?<a href="probabilidad.html#por-qué-probabilidad-en-ciencias-sociales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>La investigación social cuantitativa enfrenta invariablemente la <strong>incertidumbre</strong>. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.</p>
-<p>La <strong>teoría de probabilidad</strong> nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.</p>
-<div class="objetivos">
-<p><strong>Concepto clave</strong>: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.</p>
-</div>
+<p>La <strong>teoría de probabilidad</strong> nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
 </div>
 <div id="conceptos-básicos-de-probabilidad" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Conceptos básicos de probabilidad<a href="probabilidad.html#conceptos-básicos-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -627,17 +624,12 @@ div.csl-indent {
 <li><span class="math inline">\(P(A) = 1\)</span> significa que el evento <span class="math inline">\(A\)</span> es seguro</li>
 <li><span class="math inline">\(P(A) = 0.5\)</span> significa que <span class="math inline">\(A\)</span> tiene la misma probabilidad de ocurrir que de no ocurrir</li>
 </ul>
-<div class="ejemplo">
-<p><strong>Ejemplo: Elecciones legislativas en Chile</strong></p>
-<p>Si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio, podemos estimar:</p>
-<p><span class="math display">\[P(\text{Voto FA}) = \frac{360}{1200} = 0.30\]</span></p>
-<p>Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).</p>
-</div>
+<p>Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: <span class="math inline">\(P(\text{Voto FA}) = \frac{360}{1200} = 0.30\)</span>. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).</p>
 </div>
 <div id="interpretaciones-de-probabilidad" class="section level3 hasAnchor" number="7.3.2">
 <h3><span class="header-section-number">7.3.2</span> Interpretaciones de probabilidad<a href="probabilidad.html#interpretaciones-de-probabilidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Existen dos interpretaciones fundamentales de qué significa “probabilidad”:</p>
-<p><strong>1. Interpretación frecuentista</strong><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a></p>
+<p><strong>1. Interpretación frecuentista</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
 <p>La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.</p>
 <p><strong>2. Interpretación bayesiana</strong></p>
 <p>La probabilidad cuantifica <strong>grado de creencia</strong> o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como “¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?”).</p>
@@ -653,32 +645,18 @@ Figura 7.1: Comparación de interpretaciones de probabilidad
 <p><strong>Regla de la suma</strong> (eventos mutuamente excluyentes)</p>
 <p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no pueden ocurrir simultáneamente:
 <span class="math display">\[P(A \text{ o } B) = P(A) + P(B)\]</span></p>
-<div class="ejemplo">
-<p>En las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato:
-<span class="math display">\[P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})\]</span></p>
-</div>
+<p>Por ejemplo, en las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato: <span class="math inline">\(P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})\)</span>.</p>
 <p><strong>Regla del complemento</strong></p>
 <p><span class="math display">\[P(\text{no } A) = 1 - P(A)\]</span></p>
-<div class="ejemplo">
-<p>Si <span class="math inline">\(P(\text{Voto})=0.52\)</span> en elecciones legislativas chilenas:
-<span class="math display">\[P(\text{Abstención}) = 1 - 0.52 = 0.48\]</span></p>
-</div>
+<p>Por ejemplo, si <span class="math inline">\(P(\text{Voto})=0.52\)</span> en elecciones legislativas chilenas: <span class="math inline">\(P(\text{Abstención}) = 1 - 0.52 = 0.48\)</span>.</p>
 <p><strong>Regla del producto</strong> (eventos independientes)</p>
 <p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> son independientes (la ocurrencia de uno no afecta la probabilidad del otro):
 <span class="math display">\[P(A \text{ y } B) = P(A) \times P(B)\]</span></p>
-<div class="ejemplo">
-<p>Si encuestamos a dos votantes al azar y queremos saber la probabilidad de que ambos voten por la izquierda, asumiendo independencia y <span class="math inline">\(P(\text{Izquierda})=0.30\)</span>:
-<span class="math display">\[P(\text{ambos izquierda}) = 0.30 \times 0.30 = 0.09\]</span></p>
-</div>
+<p>Por ejemplo, si encuestamos a dos votantes al azar y queremos saber la probabilidad de que ambos voten por la izquierda, asumiendo independencia y <span class="math inline">\(P(\text{Izquierda})=0.30\)</span>: <span class="math inline">\(P(\text{ambos izquierda}) = 0.30 \times 0.30 = 0.09\)</span>.</p>
 <p><strong>Probabilidad condicional</strong></p>
 <p>La probabilidad de <span class="math inline">\(A\)</span> dado que ya sabemos que <span class="math inline">\(B\)</span> ocurrió:
 <span class="math display">\[P(A|B) = \frac{P(A \text{ y } B)}{P(B)}\]</span></p>
-<div class="ejemplo">
-<p><strong>Caso chileno: Voto por género</strong></p>
-<p>Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo.</p>
-<p><span class="math display">\[P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33\]</span></p>
-<p>Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).</p>
-</div>
+<p>Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces <span class="math inline">\(P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33\)</span>. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).</p>
 </div>
 </div>
 <div id="variables-aleatorias" class="section level2 hasAnchor" number="7.4">
@@ -686,16 +664,7 @@ Figura 7.1: Comparación de interpretaciones de probabilidad
 <p>Una <strong>variable aleatoria</strong> es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.</p>
 <div id="variables-aleatorias-discretas" class="section level3 hasAnchor" number="7.4.1">
 <h3><span class="header-section-number">7.4.1</span> Variables aleatorias discretas<a href="probabilidad.html#variables-aleatorias-discretas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Toman valores específicos y contables (generalmente enteros).</p>
-<div class="ejemplo">
-<p><strong>Ejemplos en ciencias sociales:</strong></p>
-<ul>
-<li>Número de partidos en el Congreso: 1, 2, 3, …</li>
-<li>Número de protestas en un mes: 0, 1, 2, 3, …</li>
-<li>Respuesta en escala Likert: 1, 2, 3, 4, 5</li>
-<li>Número de votantes en una mesa: 0, 1, 2, …, 300</li>
-</ul>
-</div>
+<p>Toman valores específicos y contables (generalmente enteros).<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
 <p><strong>Función de masa de probabilidad (PMF)</strong></p>
 <p>Para una variable aleatoria discreta <span class="math inline">\(X\)</span>, la PMF especifica la probabilidad de cada valor:
 <span class="math display">\[P(X = x)\]</span></p>
@@ -718,16 +687,7 @@ Figura 7.2: Distribución de variable aleatoria discreta: Número de protestas
 </div>
 <div id="variables-aleatorias-continuas" class="section level3 hasAnchor" number="7.4.2">
 <h3><span class="header-section-number">7.4.2</span> Variables aleatorias continuas<a href="probabilidad.html#variables-aleatorias-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).</p>
-<div class="ejemplo">
-<p><strong>Ejemplos en ciencias sociales:</strong></p>
-<ul>
-<li>Porcentaje de votos obtenido: 0% a 100% (cualquier valor decimal)</li>
-<li>Ingreso mensual: cualquier valor positivo</li>
-<li>Índice de democracia: escala continua de 0 a 10</li>
-<li>Tiempo hasta próxima protesta: cualquier valor positivo</li>
-</ul>
-</div>
+<p>Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a></p>
 <p><strong>Función de densidad de probabilidad (PDF)</strong></p>
 <p>Para variables continuas, <span class="math inline">\(P(X = x) = 0\)</span> (la probabilidad de un valor exacto es cero). En su lugar, trabajamos con <strong>intervalos</strong>:</p>
 <p><span class="math display">\[P(a &lt; X &lt; b) = \int_a^b f(x)dx\]</span></p>
@@ -756,9 +716,7 @@ Figura 7.3: Distribución de variable aleatoria continua: Porcentaje de votos
 </ul>
 <p><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]\)</span></p>
 <p><strong>Desviación estándar</strong>: <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p>
-<div class="importante">
-<p><strong>Distinción crucial</strong>: Estos son parámetros <strong>poblacionales</strong> (generalmente desconocidos). Los estimamos a partir de muestras usando <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s^2\)</span>.</p>
-</div>
+<p>Es importante distinguir que estos son parámetros <strong>poblacionales</strong> (generalmente desconocidos). Los estimamos a partir de muestras usando <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s^2\)</span>.</p>
 </div>
 </div>
 <div id="distribuciones-de-probabilidad-comunes" class="section level2 hasAnchor" number="7.5">
@@ -781,16 +739,13 @@ Figura 7.3: Distribución de variable aleatoria continua: Porcentaje de votos
 Figura 7.4: Distribución Normal estándar con regla 68-95-99.7
 </p>
 </div>
-<div class="ejemplo">
-<p><strong>Caso: Distribución de alturas</strong></p>
-<p>Las alturas de hombres adultos chilenos se distribuyen aproximadamente <span class="math inline">\(N(170, 7^2)\)</span> cm.</p>
+<p>Las alturas de hombres adultos chilenos se distribuyen aproximadamente <span class="math inline">\(N(170, 7^2)\)</span> cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?</p>
 <div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="probabilidad.html#cb166-1" tabindex="-1"></a><span class="co"># ¿Qué proporción de hombres mide más de 180 cm?</span></span>
 <span id="cb166-2"><a href="probabilidad.html#cb166-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">180</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.07656373</code></pre>
 <div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="probabilidad.html#cb168-1" tabindex="-1"></a><span class="co"># ¿Qué proporción mide entre 165 y 175 cm?</span></span>
 <span id="cb168-2"><a href="probabilidad.html#cb168-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">175</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">165</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5249495</code></pre>
-</div>
 </div>
 <div id="distribución-binomial" class="section level3 hasAnchor" number="7.5.2">
 <h3><span class="header-section-number">7.5.2</span> Distribución Binomial<a href="probabilidad.html#distribución-binomial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -800,10 +755,7 @@ Figura 7.4: Distribución Normal estándar con regla 68-95-99.7
 <li><span class="math inline">\(E(X) = np\)</span></li>
 <li><span class="math inline">\(\text{Var}(X) = np(1-p)\)</span></li>
 </ul>
-<div class="ejemplo">
-<p><strong>Elecciones y encuestas</strong></p>
-<p>Si encuestamos <span class="math inline">\(n=1000\)</span> votantes y la verdadera proporción que apoya un candidato es <span class="math inline">\(p=0.40\)</span>, el número de encuestados que declaran apoyo sigue:</p>
-<p><span class="math display">\[X \sim \text{Binomial}(1000, 0.40)\]</span></p>
+<p>Por ejemplo, si encuestamos <span class="math inline">\(n=1000\)</span> votantes y la verdadera proporción que apoya un candidato es <span class="math inline">\(p=0.40\)</span>, el número de encuestados que declaran apoyo sigue <span class="math inline">\(X \sim \text{Binomial}(1000, 0.40)\)</span>:</p>
 <div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="probabilidad.html#cb170-1" tabindex="-1"></a><span class="co"># Probabilidad de observar exactamente 400 apoyos</span></span>
 <span id="cb170-2"><a href="probabilidad.html#cb170-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">400</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.40</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02574482</code></pre>
@@ -815,7 +767,6 @@ Figura 7.4: Distribución Normal estándar con regla 68-95-99.7
 <span id="cb174-3"><a href="probabilidad.html#cb174-3" tabindex="-1"></a><span class="fu">c</span>(<span class="at">media =</span> n<span class="sc">*</span>p, <span class="at">sd =</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)))</span></code></pre></div>
 <pre><code>##     media        sd 
 ## 400.00000  15.49193</code></pre>
-</div>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:binomial-plot"></span>
 <img src="metodos_cuantitativos_files/figure-html/binomial-plot-1.png" alt="Distribución Binomial: Número de votantes que apoyan candidato (n=1000, p=0.40)" width="80%" />
 <p class="caption">
@@ -831,9 +782,7 @@ Figura 7.5: Distribución Binomial: Número de votantes que apoyan candidato (n=
 <li><span class="math inline">\(E(X) = \lambda\)</span></li>
 <li><span class="math inline">\(\text{Var}(X) = \lambda\)</span></li>
 </ul>
-<div class="ejemplo">
-<p><strong>Conflictos sociales</strong></p>
-<p>Si históricamente ocurren en promedio <span class="math inline">\(\lambda = 3.2\)</span> protestas por mes en una ciudad:</p>
+<p>Por ejemplo, si históricamente ocurren en promedio <span class="math inline">\(\lambda = 3.2\)</span> protestas por mes en una ciudad, podemos calcular probabilidades sobre el número de protestas en el próximo mes:</p>
 <div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="probabilidad.html#cb176-1" tabindex="-1"></a><span class="co"># Probabilidad de exactamente 5 protestas este mes</span></span>
 <span id="cb176-2"><a href="probabilidad.html#cb176-2" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">5</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1139794</code></pre>
@@ -845,16 +794,9 @@ Figura 7.5: Distribución Binomial: Número de votantes que apoyan candidato (n=
 <pre><code>## [1] 0.0446191</code></pre>
 </div>
 </div>
-</div>
 <div id="teorema-del-límite-central" class="section level2 hasAnchor" number="7.6">
 <h2><span class="header-section-number">7.6</span> Teorema del Límite Central<a href="probabilidad.html#teorema-del-límite-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>El <strong>Teorema del Límite Central (TLC)</strong> es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras.</p>
-<div class="importante">
-<p><strong>Teorema del Límite Central:</strong></p>
-<p>Si tomamos muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de <strong>cualquier</strong> población con media <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>, entonces conforme <span class="math inline">\(n\)</span> aumenta, la distribución de la media muestral <span class="math inline">\(\bar{X}\)</span> se aproxima a una distribución Normal:</p>
-<p><span class="math display">\[\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)\]</span></p>
-<p>Esto ocurre <strong>independientemente de la forma de la distribución original</strong>, siempre que <span class="math inline">\(n\)</span> sea suficientemente grande (típicamente <span class="math inline">\(n \geq 30\)</span>).</p>
-</div>
+<p>El <strong>Teorema del Límite Central (TLC)</strong> es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras. El teorema establece que si tomamos muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de <strong>cualquier</strong> población con media <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>, entonces conforme <span class="math inline">\(n\)</span> aumenta, la distribución de la media muestral <span class="math inline">\(\bar{X}\)</span> se aproxima a una distribución Normal: <span class="math inline">\(\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>. Esto ocurre <strong>independientemente de la forma de la distribución original</strong>, siempre que <span class="math inline">\(n\)</span> sea suficientemente grande (típicamente <span class="math inline">\(n \geq 30\)</span>).</p>
 <div id="implicaciones-para-ciencias-sociales" class="section level3 hasAnchor" number="7.6.1">
 <h3><span class="header-section-number">7.6.1</span> Implicaciones para ciencias sociales<a href="probabilidad.html#implicaciones-para-ciencias-sociales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
@@ -910,9 +852,7 @@ Figura 7.5: Distribución Binomial: Número de votantes que apoyan candidato (n=
 Figura 7.6: Convergencia a la Normal según el Teorema del Límite Central
 </p>
 </div>
-<div class="nivel">
-<p><strong>Observación clave</strong>: Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales <strong>se distribuyen cada vez más normalmente</strong> conforme aumenta <span class="math inline">\(n\)</span>. Con <span class="math inline">\(n=100\)</span>, la distribución de <span class="math inline">\(\bar{X}\)</span> es prácticamente Normal.</p>
-</div>
+<p>Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales <strong>se distribuyen cada vez más normalmente</strong> conforme aumenta <span class="math inline">\(n\)</span>. Con <span class="math inline">\(n=100\)</span>, la distribución de <span class="math inline">\(\bar{X}\)</span> es prácticamente Normal.</p>
 </div>
 </div>
 <div id="resumen-del-capítulo-6" class="section level2 hasAnchor" number="7.7">
@@ -977,7 +917,10 @@ Figura 7.6: Convergencia a la Normal según el Teorema del Límite Central
 <div class="footnotes">
 <hr />
 <ol start="7">
-<li id="fn7"><p>PERSPECTIVA DOMINANTE: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.<a href="probabilidad.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.<a href="probabilidad.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>PERSPECTIVA DOMINANTE: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.<a href="probabilidad.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>EJEMPLOS EN CIENCIAS SOCIALES: Número de partidos en el Congreso (1, 2, 3, …), número de protestas en un mes (0, 1, 2, 3, …), respuesta en escala Likert (1, 2, 3, 4, 5), número de votantes en una mesa (0, 1, 2, …, 300).<a href="probabilidad.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn10"><p>EJEMPLOS EN CIENCIAS SOCIALES: Porcentaje de votos obtenido (0% a 100%, cualquier valor decimal), ingreso mensual (cualquier valor positivo), índice de democracia (escala continua de 0 a 10), tiempo hasta próxima protesta (cualquier valor positivo).<a href="probabilidad.html#fnref10" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

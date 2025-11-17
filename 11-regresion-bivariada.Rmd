@@ -23,8 +23,7 @@ $$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \
 - $r = 0$: Sin correlación lineal
 - $r = -1$: Correlación negativa perfecta
 
-::: {.ejemplo}
-**Caso: Desarrollo económico y democracia**
+Para ilustrar el uso de la correlación, consideremos la relación entre desarrollo económico y democracia, un tema clásico en ciencia política. Analizamos datos de PIB per cápita y nivel de democracia en una muestra de países:
 
 ```{r correlacion-ejemplo, echo=TRUE}
 # Datos simulados: PIB per cápita y nivel de democracia
@@ -33,23 +32,15 @@ n <- 50
 pib <- rnorm(n, mean = 15000, sd = 8000)
 democracia <- 3 + 0.0003 * pib + rnorm(n, mean = 0, sd = 1.5)
 
-# Correlación
+# Correlación de Pearson
 cor_pearson <- cor(pib, democracia)
 cat("Correlación de Pearson:", round(cor_pearson, 3), "\n")
 
 # Test de significancia
 cor.test(pib, democracia)
 ```
-:::
 
-::: {.importante}
-**Correlación ≠ Causalidad**
-
-Una correlación fuerte NO implica que una variable cause la otra. Pueden existir:
-- Variables confusoras
-- Causalidad inversa
-- Relaciones espurias
-:::
+Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.^[ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.]
 
 ## El modelo de regresión lineal simple
 
@@ -74,16 +65,15 @@ $$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X}
 
 $$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
 
-::: {.ejemplo}
-**Caso: Gasto público y crecimiento económico**
+Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.
 
 ```{r regresion-ejemplo, echo=TRUE}
-# Datos simulados
+# Datos simulados: Gasto público y crecimiento económico
 set.seed(456)
 gasto_publico <- runif(40, min = 15, max = 40)  # % del PIB
 crecimiento <- 5 - 0.15 * gasto_publico + rnorm(40, mean = 0, sd = 1.2)
 
-# Modelo de regresión
+# Modelo de regresión lineal simple
 modelo <- lm(crecimiento ~ gasto_publico)
 summary(modelo)
 ```
@@ -103,7 +93,6 @@ ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
   ) +
   theme_minimal()
 ```
-:::
 
 ## Interpretación de coeficientes
 
@@ -111,11 +100,7 @@ ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
 
 **Pendiente ($\hat{\beta}_1$)**: Cambio promedio en $Y$ asociado con un incremento de una unidad en $X$
 
-::: {.ejemplo}
-Si $\hat{\beta}_1 = -0.15$ en el modelo anterior:
-
-"Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."
-:::
+En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."^[INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica *asociación*, no necesariamente *causalidad*. Además, la unidad de medida importa: si $X$ está en miles y $Y$ en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.]
 
 ## Bondad de ajuste
 
@@ -129,20 +114,9 @@ $$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$
 - $R^2 = 0$: El modelo no explica nada
 - $R^2 = 1$: El modelo explica perfectamente
 
-::: {.ejemplo}
-Si $R^2 = 0.42$:
+Por ejemplo, si $R^2 = 0.42$, interpretamos: "El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores."
 
-"El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores."
-:::
-
-::: {.importante}
-**$R^2$ elevado ≠ Causalidad**
-
-Un $R^2$ alto NO implica relación causal. Puede haber:
-- Variables omitidas importantes
-- Relación espuria
-- Causalidad inversa
-:::
+Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.^[ADVERTENCIA SOBRE $R^2$: Un modelo puede tener $R^2$ alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el $R^2$ puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no necesariamente indican un modelo "malo" - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.]
 
 ## Resumen del capítulo
 

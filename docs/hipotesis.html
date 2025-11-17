@@ -612,12 +612,7 @@ div.csl-indent {
 </div>
 <div id="lógica-de-las-pruebas-de-hipótesis" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis<a href="hipotesis.html#lógica-de-las-pruebas-de-hipótesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: <strong>¿Este patrón que observo en mis datos es real, o podría ser producto del azar?</strong></p>
-<div class="ejemplo">
-<p><strong>Caso motivador: Efecto de campaña electoral</strong></p>
-<p>En una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya.</p>
-<p><strong>Pregunta</strong>: ¿La campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</p>
-</div>
+<p>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: <strong>¿Este patrón que observo en mis datos es real, o podría ser producto del azar?</strong> Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</p>
 <div id="la-lógica-de-prueba-por-contradicción" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> La lógica de prueba por contradicción<a href="hipotesis.html#la-lógica-de-prueba-por-contradicción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Las pruebas de hipótesis usan un argumento de <strong>reducción al absurdo</strong>:</p>
@@ -627,12 +622,7 @@ div.csl-indent {
 <li>Si esa probabilidad es muy baja, <strong>rechazamos</strong> <span class="math inline">\(H_0\)</span> como implausible</li>
 <li>Si la probabilidad no es tan baja, <strong>no rechazamos</strong> <span class="math inline">\(H_0\)</span> (no tenemos evidencia suficiente contra ella)</li>
 </ol>
-<div class="importante">
-<p><strong>Asimetría fundamental</strong>: Nunca “aceptamos” o “probamos” <span class="math inline">\(H_0\)</span>. Solo podemos:
-- <strong>Rechazar</strong> <span class="math inline">\(H_0\)</span> (evidencia contra ella)
-- <strong>No rechazar</strong> <span class="math inline">\(H_0\)</span> (ausencia de evidencia suficiente contra ella)</p>
-<p>Esto es como un juicio judicial: no “probamos inocencia”, solo “no hay evidencia suficiente de culpabilidad”.</p>
-</div>
+<p>Es crucial entender la asimetría fundamental de este razonamiento: nunca “aceptamos” o “probamos” <span class="math inline">\(H_0\)</span>. Solo podemos <strong>rechazar</strong> <span class="math inline">\(H_0\)</span> (cuando hay evidencia contra ella) o <strong>no rechazar</strong> <span class="math inline">\(H_0\)</span> (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no “probamos inocencia”, solo establecemos que “no hay evidencia suficiente de culpabilidad”.</p>
 </div>
 </div>
 <div id="hipótesis-nula-y-alternativa" class="section level2 hasAnchor" number="9.3">
@@ -643,18 +633,7 @@ div.csl-indent {
 <p><strong>Hipótesis alternativa (<span class="math inline">\(H_1\)</span>)</strong>: Lo que esperamos encontrar si rechazamos <span class="math inline">\(H_0\)</span>. Puede ser:
 - <strong>Bilateral</strong> (dos colas): <span class="math inline">\(H_1: \mu \neq \mu_0\)</span> (hay diferencia, en cualquier dirección)
 - <strong>Unilateral</strong> (una cola): <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span> o <span class="math inline">\(H_1: \mu &lt; \mu_0\)</span> (dirección específica)</p>
-<div class="ejemplo">
-<p><strong>Ejemplos de hipótesis en ciencias sociales</strong></p>
-<p><strong>1. Efecto de política pública sobre desempleo:</strong>
-- <span class="math inline">\(H_0: \mu = 8\%\)</span> (el desempleo se mantiene en 8%)
-- <span class="math inline">\(H_1: \mu &lt; 8\%\)</span> (la política redujo el desempleo) [Unilateral]</p>
-<p><strong>2. Diferencia en participación electoral entre géneros:</strong>
-- <span class="math inline">\(H_0: p_{\text{hombres}} = p_{\text{mujeres}}\)</span> (no hay diferencia)
-- <span class="math inline">\(H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}\)</span> (hay diferencia) [Bilateral]</p>
-<p><strong>3. Ingreso promedio en región vs nacional:</strong>
-- <span class="math inline">\(H_0: \mu_{\text{región}} = 550\)</span> mil pesos (igual al promedio nacional)
-- <span class="math inline">\(H_1: \mu_{\text{región}} \neq 550\)</span> mil (diferente al nacional) [Bilateral]</p>
-</div>
+<p>Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear <span class="math inline">\(H_0: \mu = 8\%\)</span> (el desempleo se mantiene en 8%) versus <span class="math inline">\(H_1: \mu &lt; 8\%\)</span> (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos <span class="math inline">\(H_0: p_{\text{hombres}} = p_{\text{mujeres}}\)</span> (no hay diferencia) contra <span class="math inline">\(H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}\)</span> (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos <span class="math inline">\(H_0: \mu_{\text{región}} = 550\)</span> mil pesos (igual al promedio nacional) versus <span class="math inline">\(H_1: \mu_{\text{región}} \neq 550\)</span> mil (diferente al nacional).<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a></p>
 </div>
 </div>
 <div id="valores-p-y-significancia-estadística" class="section level2 hasAnchor" number="9.4">
@@ -663,15 +642,7 @@ div.csl-indent {
 <h3><span class="header-section-number">9.4.1</span> ¿Qué es un valor p?<a href="hipotesis.html#qué-es-un-valor-p" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El <strong>valor p</strong> (<em>p-value</em>) es la probabilidad de observar datos tan extremos como los nuestros (o más), <strong>asumiendo que <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 <p><span class="math display">\[\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})\]</span></p>
-<div class="importante">
-<p><strong>Interpretación CORRECTA del valor p:</strong><a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
-<ul>
-<li><span class="math inline">\(p = 0.03\)</span>: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.”</li>
-<li><span class="math inline">\(p = 0.001\)</span>: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).”</li>
-<li><span class="math inline">\(p = 0.45\)</span>: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.”</li>
-</ul>
-<p><strong>NO significa</strong>: “La probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta es…”</p>
-</div>
+<p>La interpretación correcta del valor p es fundamental para evitar errores comunes.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Cuando observamos <span class="math inline">\(p = 0.03\)</span>, debemos interpretar: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.” Un valor <span class="math inline">\(p = 0.001\)</span> indica: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).” Por el contrario, <span class="math inline">\(p = 0.45\)</span> significa: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.” El valor p <strong>NO</strong> representa la probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta.</p>
 </div>
 </div>
 <div id="errores-tipo-i-y-tipo-ii" class="section level2 hasAnchor" number="9.5">
@@ -717,8 +688,9 @@ div.csl-indent {
 </div>
 <div class="footnotes">
 <hr />
-<ol start="9">
-<li id="fn9"><p>INTERPRETACIÓN ERRÓNEA #1: “p = 0.03 significa que hay 3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”. FALSO. El valor p NO es <span class="math inline">\(P(H_0 | \text{datos})\)</span>. Es <span class="math inline">\(P(\text{datos} | H_0)\)</span>. <span class="math inline">\(H_0\)</span> es una hipótesis fija, no una variable aleatoria con probabilidad.<a href="hipotesis.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<ol start="12">
+<li id="fn12"><p>EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación (<span class="math inline">\(H_0: p_{\text{antes}} = p_{\text{después}}\)</span> vs <span class="math inline">\(H_1: p_{\text{después}} &gt; p_{\text{antes}}\)</span>); comparar aprobación presidencial entre regiones urbanas y rurales (<span class="math inline">\(H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}\)</span> vs <span class="math inline">\(H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}\)</span>).<a href="hipotesis.html#fnref12" class="footnote-back">↩︎</a></p></li>
+<li id="fn13"><p>INTERPRETACIÓN ERRÓNEA COMÚN: “p = 0.03 significa que hay 3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”. FALSO. El valor p NO es <span class="math inline">\(P(H_0 | \text{datos})\)</span>. Es <span class="math inline">\(P(\text{datos} | H_0)\)</span>. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.<a href="hipotesis.html#fnref13" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

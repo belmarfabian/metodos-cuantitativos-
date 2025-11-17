@@ -627,15 +627,13 @@ div.csl-indent {
 - <span class="math inline">\(H_1: \mu_1 \neq \mu_2\)</span></p>
 <p><strong>Estadístico t:</strong>
 <span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
-<div class="ejemplo">
-<p><strong>Caso: Diferencia salarial por género</strong></p>
-<p>Comparamos ingresos promedio entre hombres y mujeres en Chile.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="comparacion.html#cb286-1" tabindex="-1"></a><span class="co"># Datos simulados</span></span>
+<p>Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.</p>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="comparacion.html#cb286-1" tabindex="-1"></a><span class="co"># Datos simulados: Diferencia salarial por género</span></span>
 <span id="cb286-2"><a href="comparacion.html#cb286-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
 <span id="cb286-3"><a href="comparacion.html#cb286-3" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
 <span id="cb286-4"><a href="comparacion.html#cb286-4" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
 <span id="cb286-5"><a href="comparacion.html#cb286-5" tabindex="-1"></a></span>
-<span id="cb286-6"><a href="comparacion.html#cb286-6" tabindex="-1"></a><span class="co"># Prueba t</span></span>
+<span id="cb286-6"><a href="comparacion.html#cb286-6" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
 <span id="cb286-7"><a href="comparacion.html#cb286-7" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
 <span id="cb286-8"><a href="comparacion.html#cb286-8" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div>
 <pre><code>## 
@@ -650,12 +648,9 @@ div.csl-indent {
 ## mean of x mean of y 
 ##  865.2076  822.9434</code></pre>
 </div>
-</div>
 <div id="muestras-pareadas" class="section level3 hasAnchor" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Muestras pareadas<a href="comparacion.html#muestras-pareadas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados).</p>
-<div class="ejemplo">
-<p><strong>Caso: Antes y después de intervención</strong></p>
+<p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</p>
 <div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="comparacion.html#cb288-1" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
 <span id="cb288-2"><a href="comparacion.html#cb288-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
 <span id="cb288-3"><a href="comparacion.html#cb288-3" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
@@ -677,15 +672,13 @@ div.csl-indent {
 ##       0.9464083</code></pre>
 </div>
 </div>
-</div>
 <div id="anova" class="section level2 hasAnchor" number="10.4">
 <h2><span class="header-section-number">10.4</span> ANOVA<a href="comparacion.html#anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Análisis de Varianza (ANOVA) compara medias de <strong>más de dos grupos</strong>.</p>
 <p><strong>Hipótesis:</strong>
 - <span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3 = \ldots = \mu_k\)</span>
 - <span class="math inline">\(H_1\)</span>: Al menos una media es diferente</p>
-<div class="ejemplo">
-<p><strong>Caso: Ingresos por nivel educacional</strong></p>
+<p>Ilustremos el uso de ANOVA con un caso frecuente en ciencias sociales: la comparación de ingresos según nivel educacional. Queremos determinar si existen diferencias significativas entre los ingresos promedio de personas con educación básica, media y superior.</p>
 <div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="comparacion.html#cb290-1" tabindex="-1"></a><span class="co"># Datos simulados: Ingresos por nivel educacional</span></span>
 <span id="cb290-2"><a href="comparacion.html#cb290-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
 <span id="cb290-3"><a href="comparacion.html#cb290-3" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -705,7 +698,7 @@ div.csl-indent {
 ## Residuals   297 7151203   24078                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="comparacion.html#cb292-1" tabindex="-1"></a><span class="co"># Comparaciones post-hoc</span></span>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="comparacion.html#cb292-1" tabindex="-1"></a><span class="co"># Comparaciones post-hoc (para identificar qué grupos difieren)</span></span>
 <span id="cb292-2"><a href="comparacion.html#cb292-2" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
@@ -717,7 +710,6 @@ div.csl-indent {
 ## Media-Básica    118.0247  66.33382 169.7156 5e-07
 ## Superior-Básica 405.2554 353.56452 456.9463 0e+00
 ## Superior-Media  287.2307 235.53980 338.9216 0e+00</code></pre>
-</div>
 </div>
 <div id="supuestos-y-alternativas-no-paramétricas" class="section level2 hasAnchor" number="10.5">
 <h2><span class="header-section-number">10.5</span> Supuestos y alternativas no paramétricas<a href="comparacion.html#supuestos-y-alternativas-no-paramétricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>

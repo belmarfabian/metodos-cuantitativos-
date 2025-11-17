@@ -617,10 +617,7 @@ div.csl-indent {
 <li>¿Cuál es el ingreso promedio de hogares en América Latina?</li>
 <li>¿Qué proporción de electores cambia su voto entre elecciones?</li>
 </ul>
-<p>Pero solo podemos encuestar una <strong>muestra</strong> de cientos o miles de personas, no los millones que componen la población.</p>
-<div class="objetivos">
-<p><strong>Inferencia estadística</strong>: El proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.</p>
-</div>
+<p>Pero solo podemos encuestar una <strong>muestra</strong> de cientos o miles de personas, no los millones que componen la población. La <strong>inferencia estadística</strong> es el proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.</p>
 <div id="ejemplo-motivador-encuestas-electorales-en-chile" class="section level3 hasAnchor" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Ejemplo motivador: Encuestas electorales en Chile<a href="inferencia.html#ejemplo-motivador-encuestas-electorales-en-chile" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Antes de las elecciones presidenciales 2021 (segunda vuelta), múltiples encuestadoras reportaron:</p>
@@ -646,22 +643,8 @@ div.csl-indent {
 - Media muestral: <span class="math inline">\(\bar{x}\)</span>
 - Proporción muestral: <span class="math inline">\(\hat{p}\)</span>
 - Varianza muestral: <span class="math inline">\(s^2\)</span></p>
-<div class="importante">
-<p><strong>Distinción crítica</strong>:</p>
-<p>Los <strong>parámetros</strong> <span class="math inline">\((\mu, p, \sigma^2)\)</span> son valores fijos (pero desconocidos) de la población.</p>
-<p>Los <strong>estadísticos</strong> <span class="math inline">\((\bar{x}, \hat{p}, s^2)\)</span> son calculados a partir de la muestra y <strong>varían</strong> entre muestras.</p>
-<p>Usamos estadísticos para <strong>estimar</strong> parámetros.</p>
-</div>
-<div class="ejemplo">
-<p><strong>Caso: Apoyo a reforma tributaria</strong></p>
-<ul>
-<li><strong>Población</strong>: 15 millones de votantes chilenos</li>
-<li><strong>Parámetro de interés</strong>: <span class="math inline">\(p\)</span> = proporción que apoya la reforma (desconocida)</li>
-<li><strong>Muestra</strong>: 1,200 votantes encuestados</li>
-<li><strong>Estadístico observado</strong>: <span class="math inline">\(\hat{p} = 0.42\)</span> (42% de la muestra apoya)</li>
-</ul>
-<p><strong>Pregunta inferencial</strong>: ¿Qué podemos decir sobre <span class="math inline">\(p\)</span> (desconocido) a partir de <span class="math inline">\(\hat{p} = 0.42\)</span> (conocido)?</p>
-</div>
+<p>Es fundamental distinguir que los <strong>parámetros</strong> <span class="math inline">\((\mu, p, \sigma^2)\)</span> son valores fijos (pero desconocidos) de la población, mientras que los <strong>estadísticos</strong> <span class="math inline">\((\bar{x}, \hat{p}, s^2)\)</span> son calculados a partir de la muestra y <strong>varían</strong> entre muestras. Usamos estadísticos para <strong>estimar</strong> parámetros.</p>
+<p>Por ejemplo, consideremos el apoyo a una reforma tributaria. La <strong>población</strong> son 15 millones de votantes chilenos, y el <strong>parámetro de interés</strong> es <span class="math inline">\(p\)</span> = proporción que apoya la reforma (desconocida). Si tomamos una <strong>muestra</strong> de 1,200 votantes encuestados y observamos el <strong>estadístico</strong> <span class="math inline">\(\hat{p} = 0.42\)</span> (42% de la muestra apoya), la <strong>pregunta inferencial</strong> es: ¿Qué podemos decir sobre <span class="math inline">\(p\)</span> (desconocido) a partir de <span class="math inline">\(\hat{p} = 0.42\)</span> (conocido)?</p>
 </div>
 <div id="muestreo-aleatorio-simple" class="section level3 hasAnchor" number="8.3.2">
 <h3><span class="header-section-number">8.3.2</span> Muestreo aleatorio simple<a href="inferencia.html#muestreo-aleatorio-simple" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -737,18 +720,14 @@ div.csl-indent {
 Figura 8.1: Distribución poblacional vs distribución muestral
 </p>
 </div>
-<div class="nivel">
-<p><strong>Observación clave</strong>: Aunque la población de ingresos es altamente asimétrica, la distribución de <span class="math inline">\(\bar{X}\)</span> es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.</p>
-</div>
+<p>Aunque la población de ingresos es altamente asimétrica, la distribución de <span class="math inline">\(\bar{X}\)</span> es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.</p>
 </div>
 <div id="distribución-muestral-de-la-proporción" class="section level3 hasAnchor" number="8.4.2">
 <h3><span class="header-section-number">8.4.2</span> Distribución muestral de la proporción<a href="inferencia.html#distribución-muestral-de-la-proporción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para proporciones, una lógica similar aplica. Si <span class="math inline">\(\hat{p}\)</span> es la proporción muestral:</p>
 <p><span class="math display">\[\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)\]</span></p>
 <p>(Aproximación válida cuando <span class="math inline">\(np \geq 10\)</span> y <span class="math inline">\(n(1-p) \geq 10\)</span>)</p>
-<div class="ejemplo">
-<p><strong>Encuesta electoral: Distribución de <span class="math inline">\(\hat{p}\)</span></strong></p>
-<p>Si el verdadero apoyo es <span class="math inline">\(p = 0.45\)</span> y encuestamos <span class="math inline">\(n = 1000\)</span>:</p>
+<p>Por ejemplo, si en una encuesta electoral el verdadero apoyo es <span class="math inline">\(p = 0.45\)</span> y encuestamos <span class="math inline">\(n = 1000\)</span> personas:</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="inferencia.html#cb210-1" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fl">0.45</span></span>
 <span id="cb210-2"><a href="inferencia.html#cb210-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
 <span id="cb210-3"><a href="inferencia.html#cb210-3" tabindex="-1"></a></span>
@@ -768,7 +747,6 @@ Figura 8.1: Distribución poblacional vs distribución muestral
 <pre><code>## P(p̂ &lt; 0.42) = 0.028</code></pre>
 </div>
 </div>
-</div>
 <div id="error-estándar" class="section level2 hasAnchor" number="8.5">
 <h2><span class="header-section-number">8.5</span> Error estándar<a href="inferencia.html#error-estándar" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>El <strong>error estándar</strong> (SE, <em>standard error</em>) es la desviación estándar de la distribución muestral de un estadístico.</p>
@@ -777,16 +755,8 @@ Figura 8.1: Distribución poblacional vs distribución muestral
 <p><span class="math display">\[\text{SE}(\bar{x}) = \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>Pero <span class="math inline">\(\sigma\)</span> (SD poblacional) es generalmente desconocido. Lo estimamos con <span class="math inline">\(s\)</span> (SD muestral):</p>
 <p><span class="math display">\[\widehat{\text{SE}}(\bar{x}) = \frac{s}{\sqrt{n}}\]</span></p>
-<div class="importante">
-<p><strong>Error estándar vs desviación estándar</strong><a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
-<ul>
-<li><strong>Desviación estándar (<span class="math inline">\(s\)</span>)</strong>: Mide variabilidad en los <strong>datos</strong></li>
-<li><strong>Error estándar (<span class="math inline">\(\text{SE}\)</span>)</strong>: Mide variabilidad del <strong>estadístico</strong> (precisión de la estimación)</li>
-<li><span class="math inline">\(\text{SE}\)</span> disminuye con <span class="math inline">\(n\)</span>; <span class="math inline">\(s\)</span> NO (permanece constante en promedio)</li>
-</ul>
-</div>
-<div class="ejemplo">
-<p><strong>Caso: Ingreso familiar en encuesta CASEN</strong></p>
+<p>Es importante distinguir entre <strong>error estándar</strong> y <strong>desviación estándar</strong>. La desviación estándar (<span class="math inline">\(s\)</span>) mide variabilidad en los <strong>datos</strong>, mientras que el error estándar (<span class="math inline">\(\text{SE}\)</span>) mide variabilidad del <strong>estadístico</strong> (precisión de la estimación). El <span class="math inline">\(\text{SE}\)</span> disminuye con <span class="math inline">\(n\)</span>; <span class="math inline">\(s\)</span> NO (permanece constante en promedio).<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a></p>
+<p>Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:</p>
 <div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="inferencia.html#cb218-1" tabindex="-1"></a><span class="co"># Datos simulados de ingresos (en miles de $)</span></span>
 <span id="cb218-2"><a href="inferencia.html#cb218-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
 <span id="cb218-3"><a href="inferencia.html#cb218-3" tabindex="-1"></a>ingresos <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">500</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">600</span>), <span class="at">sdlog =</span> <span class="fl">0.7</span>)</span>
@@ -812,7 +782,6 @@ Figura 8.1: Distribución poblacional vs distribución muestral
 <div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="inferencia.html#cb230-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;- Nuestra estimación de la media tiene error típico de ±$&quot;</span>, <span class="fu">round</span>(se, <span class="dv">0</span>),</span>
 <span id="cb230-2"><a href="inferencia.html#cb230-2" tabindex="-1"></a>    <span class="st">&quot; mil</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## - Nuestra estimación de la media tiene error típico de ±$27 mil</code></pre>
-</div>
 </div>
 <div id="error-estándar-de-la-proporción" class="section level3 hasAnchor" number="8.5.2">
 <h3><span class="header-section-number">8.5.2</span> Error estándar de la proporción<a href="inferencia.html#error-estándar-de-la-proporción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -853,14 +822,8 @@ Figura 8.2: Relación entre tamaño muestral y error estándar
 <p>donde <span class="math inline">\(t_{n-1, 0.975}\)</span> es el valor crítico de la distribución <span class="math inline">\(t\)</span> con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
 <p><strong>Cuando <span class="math inline">\(n\)</span> es grande (<span class="math inline">\(n \geq 30\)</span>)</strong>, <span class="math inline">\(t \approx 1.96\)</span>, así que:</p>
 <p><span class="math display">\[\text{IC}_{95\%} \approx \bar{x} \pm 1.96 \cdot \text{SE}(\bar{x})\]</span></p>
-<div class="importante">
-<p><strong>Interpretación correcta de IC 95%:</strong></p>
-<p>“Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de <span class="math inline">\(\mu\)</span>.”</p>
-<p><strong>NO significa:</strong> “Hay 95% de probabilidad de que <span class="math inline">\(\mu\)</span> esté en este intervalo específico.”</p>
-<p>(La diferencia es sutil pero importante: <span class="math inline">\(\mu\)</span> es fijo; el intervalo es lo que varía entre muestras.)</p>
-</div>
-<div class="ejemplo">
-<p><strong>Intervalo de confianza para ingreso promedio</strong></p>
+<p>La interpretación correcta de un IC 95% es: “Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de <span class="math inline">\(\mu\)</span>.” NO significa “Hay 95% de probabilidad de que <span class="math inline">\(\mu\)</span> esté en este intervalo específico.” (La diferencia es sutil pero importante: <span class="math inline">\(\mu\)</span> es fijo; el intervalo es lo que varía entre muestras.)</p>
+<p>Por ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:</p>
 <div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="inferencia.html#cb238-1" tabindex="-1"></a><span class="co"># Datos de ingresos (retomando ejemplo anterior)</span></span>
 <span id="cb238-2"><a href="inferencia.html#cb238-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
 <span id="cb238-3"><a href="inferencia.html#cb238-3" tabindex="-1"></a>ingresos <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">200</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">550</span>), <span class="at">sdlog =</span> <span class="fl">0.65</span>)</span>
@@ -890,13 +853,11 @@ Figura 8.2: Relación entre tamaño muestral y error estándar
 <span id="cb246-2"><a href="inferencia.html#cb246-2" tabindex="-1"></a>    <span class="fu">round</span>(ic_superior, <span class="dv">0</span>), <span class="st">&quot; mil.</span><span class="sc">\n</span><span class="st">&quot;</span>, <span class="at">sep =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>## poblacional está entre $588 y $719 mil.</code></pre>
 </div>
-</div>
 <div id="intervalo-de-confianza-para-la-proporción" class="section level3 hasAnchor" number="8.6.2">
 <h3><span class="header-section-number">8.6.2</span> Intervalo de confianza para la proporción<a href="inferencia.html#intervalo-de-confianza-para-la-proporción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><span class="math display">\[\text{IC}_{95\%} = \hat{p} \pm 1.96 \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
 <p>(Válido cuando <span class="math inline">\(n\hat{p} \geq 10\)</span> y <span class="math inline">\(n(1-\hat{p}) \geq 10\)</span>)</p>
-<div class="ejemplo">
-<p><strong>Encuesta de intención de voto</strong></p>
+<p>Por ejemplo, para una encuesta de intención de voto:</p>
 <div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="inferencia.html#cb248-1" tabindex="-1"></a><span class="co"># Encuesta: ¿Votará en próximas elecciones?</span></span>
 <span id="cb248-2"><a href="inferencia.html#cb248-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1500</span></span>
 <span id="cb248-3"><a href="inferencia.html#cb248-3" tabindex="-1"></a>votaran <span class="ot">&lt;-</span> <span class="dv">780</span></span>
@@ -919,7 +880,6 @@ Figura 8.2: Relación entre tamaño muestral y error estándar
 <div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="inferencia.html#cb256-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;está probablemente entre&quot;</span>, <span class="fu">round</span>(ic_inf <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;% y&quot;</span>,</span>
 <span id="cb256-2"><a href="inferencia.html#cb256-2" tabindex="-1"></a>    <span class="fu">round</span>(ic_sup <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%.</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## está probablemente entre 49.5 % y 54.5 %.</code></pre>
-</div>
 </div>
 <div id="niveles-de-confianza-alternativos" class="section level3 hasAnchor" number="8.6.3">
 <h3><span class="header-section-number">8.6.3</span> Niveles de confianza alternativos<a href="inferencia.html#niveles-de-confianza-alternativos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -987,8 +947,7 @@ Figura 8.3: Visualización de ICs con diferentes niveles de confianza
 <h3><span class="header-section-number">8.7.1</span> Para estimar una media<a href="inferencia.html#para-estimar-una-media" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Queremos que el IC tenga ancho máximo <span class="math inline">\(2E\)</span> (es decir, margen de error <span class="math inline">\(E\)</span>):</p>
 <p><span class="math display">\[n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2\]</span></p>
-<div class="ejemplo">
-<p><strong>Estimar ingreso promedio con precisión de ±$20 mil</strong></p>
+<p>Por ejemplo, si queremos estimar el ingreso promedio con precisión de ±$20 mil:</p>
 <div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="inferencia.html#cb260-1" tabindex="-1"></a><span class="co"># Deseamos IC 95% con margen de error E = 20 mil</span></span>
 <span id="cb260-2"><a href="inferencia.html#cb260-2" tabindex="-1"></a><span class="co"># Estimamos σ ≈ 300 mil (de estudios previos)</span></span>
 <span id="cb260-3"><a href="inferencia.html#cb260-3" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="dv">20</span></span>
@@ -1008,7 +967,7 @@ Figura 8.3: Visualización de ICs con diferentes niveles de confianza
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="inferencia.html#cb268-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Tamaño muestral necesario: n =&quot;</span>, n_necesario, <span class="st">&quot;hogares</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Tamaño muestral necesario: n = 865 hogares</code></pre>
-</div>
+<p>:::</p>
 </div>
 <div id="para-estimar-una-proporción" class="section level3 hasAnchor" number="8.7.2">
 <h3><span class="header-section-number">8.7.2</span> Para estimar una proporción<a href="inferencia.html#para-estimar-una-proporción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1237,8 +1196,8 @@ Figura 8.4: 100 intervalos de confianza: los verdes contienen μ, los rojos no
 </div>
 <div class="footnotes">
 <hr />
-<ol start="8">
-<li id="fn8"><p>CONFUSIÓN COMÚN: El error estándar (<span class="math inline">\(\text{SE}\)</span>) mide qué tan precisa es nuestra estimación de la media. La desviación estándar (<span class="math inline">\(s\)</span>) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: <span class="math inline">\(\text{SE} = s/\sqrt{n}\)</span> siempre es menor que <span class="math inline">\(s\)</span> (excepto cuando <span class="math inline">\(n=1\)</span>).<a href="inferencia.html#fnref8" class="footnote-back">↩︎</a></p></li>
+<ol start="11">
+<li id="fn11"><p>CONFUSIÓN COMÚN: El error estándar (<span class="math inline">\(\text{SE}\)</span>) mide qué tan precisa es nuestra estimación de la media. La desviación estándar (<span class="math inline">\(s\)</span>) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: <span class="math inline">\(\text{SE} = s/\sqrt{n}\)</span> siempre es menor que <span class="math inline">\(s\)</span> (excepto cuando <span class="math inline">\(n=1\)</span>).<a href="inferencia.html#fnref11" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

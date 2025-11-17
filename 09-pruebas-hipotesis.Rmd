@@ -14,15 +14,7 @@ Al finalizar este capítulo, deberías ser capaz de:
 
 ## Lógica de las pruebas de hipótesis
 
-Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?**
-
-::: {.ejemplo}
-**Caso motivador: Efecto de campaña electoral**
-
-En una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya.
-
-**Pregunta**: ¿La campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?
-:::
+Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?
 
 ### La lógica de prueba por contradicción
 
@@ -33,13 +25,7 @@ Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:
 3. Si esa probabilidad es muy baja, **rechazamos** $H_0$ como implausible
 4. Si la probabilidad no es tan baja, **no rechazamos** $H_0$ (no tenemos evidencia suficiente contra ella)
 
-::: {.importante}
-**Asimetría fundamental**: Nunca "aceptamos" o "probamos" $H_0$. Solo podemos:
-- **Rechazar** $H_0$ (evidencia contra ella)
-- **No rechazar** $H_0$ (ausencia de evidencia suficiente contra ella)
-
-Esto es como un juicio judicial: no "probamos inocencia", solo "no hay evidencia suficiente de culpabilidad".
-:::
+Es crucial entender la asimetría fundamental de este razonamiento: nunca "aceptamos" o "probamos" $H_0$. Solo podemos **rechazar** $H_0$ (cuando hay evidencia contra ella) o **no rechazar** $H_0$ (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no "probamos inocencia", solo establecemos que "no hay evidencia suficiente de culpabilidad".
 
 ## Hipótesis nula y alternativa
 
@@ -51,21 +37,7 @@ Esto es como un juicio judicial: no "probamos inocencia", solo "no hay evidencia
 - **Bilateral** (dos colas): $H_1: \mu \neq \mu_0$ (hay diferencia, en cualquier dirección)
 - **Unilateral** (una cola): $H_1: \mu > \mu_0$ o $H_1: \mu < \mu_0$ (dirección específica)
 
-::: {.ejemplo}
-**Ejemplos de hipótesis en ciencias sociales**
-
-**1. Efecto de política pública sobre desempleo:**
-- $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%)
-- $H_1: \mu < 8\%$ (la política redujo el desempleo) [Unilateral]
-
-**2. Diferencia en participación electoral entre géneros:**
-- $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia)
-- $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia) [Bilateral]
-
-**3. Ingreso promedio en región vs nacional:**
-- $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional)
-- $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional) [Bilateral]
-:::
+Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu < 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).^[EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación ($H_0: p_{\text{antes}} = p_{\text{después}}$ vs $H_1: p_{\text{después}} > p_{\text{antes}}$); comparar aprobación presidencial entre regiones urbanas y rurales ($H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}$ vs $H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}$).]
 
 ## Valores p y significancia estadística
 
@@ -75,15 +47,7 @@ El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos com
 
 $$\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})$$
 
-::: {.importante}
-**Interpretación CORRECTA del valor p:**^[INTERPRETACIÓN ERRÓNEA #1: "p = 0.03 significa que hay 3% de probabilidad de que $H_0$ sea cierta". FALSO. El valor p NO es $P(H_0 | \text{datos})$. Es $P(\text{datos} | H_0)$. $H_0$ es una hipótesis fija, no una variable aleatoria con probabilidad.]
-
-- $p = 0.03$: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces."
-- $p = 0.001$: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)."
-- $p = 0.45$: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella."
-
-**NO significa**: "La probabilidad de que $H_0$ sea cierta es..."
-:::
+La interpretación correcta del valor p es fundamental para evitar errores comunes.^[INTERPRETACIÓN ERRÓNEA COMÚN: "p = 0.03 significa que hay 3% de probabilidad de que $H_0$ sea cierta". FALSO. El valor p NO es $P(H_0 | \text{datos})$. Es $P(\text{datos} | H_0)$. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.] Cuando observamos $p = 0.03$, debemos interpretar: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces." Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
 
 ## Errores tipo I y tipo II
 
