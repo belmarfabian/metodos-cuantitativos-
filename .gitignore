@@ -13,6 +13,8 @@ _book/
 # R cache
 *_cache/
 *_files/
+# Pero NO ignorar las imágenes generadas en docs/ para GitHub Pages
+!docs/*_files/
 
 # LaTeX files (for PDF output)
 *.aux
