@@ -12,6 +12,8 @@ description: "Manual del curso Métodos Cuantitativos Introductorios, Universida
 
 # Prefacio {-}
 
+> **VERSIÓN BETA**: Este manual se encuentra en desarrollo activo. Algunos capítulos están pendientes de completar y el contenido puede modificarse durante el semestre 2025. Agradecemos reportar errores o sugerencias.
+
 Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. También puede servir como referencia para cursos más avanzados.
 
 ## ¿Por qué este libro? {-}
