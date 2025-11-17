@@ -1,0 +1,757 @@
+# Estadística descriptiva {#descriptiva}
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, serás capaz de:
+
+- Calcular e interpretar medidas de tendencia central
+- Calcular e interpretar medidas de dispersión
+- Describir la forma de distribuciones
+- Identificar cuándo usar cada medida descriptiva
+- Generar gráficos exploratorios en R
+- Detectar valores atípicos mediante métodos gráficos y numéricos
+
+```{r setup-05, include=FALSE}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+
+# Configuración de gráficos
+theme_set(theme_minimal(base_size = 11))
+
+# Datos de ejemplo: simulamos resultados electorales en comunas chilenas
+set.seed(42)
+comunas <- data.frame(
+  comuna = paste("Comuna", 1:346),
+  participacion = rnorm(346, mean = 47, sd = 8),
+  pobreza = rbeta(346, 2, 5) * 40,
+  educ_superior = rnorm(346, mean = 25, sd = 10)
+)
+
+# Limpiar valores negativos por simulación
+comunas$participacion[comunas$participacion < 0] <- abs(comunas$participacion[comunas$participacion < 0])
+comunas$educ_superior[comunas$educ_superior < 0] <- abs(comunas$educ_superior[comunas$educ_superior < 0])
+```
+
+## Distribuciones de frecuencia
+
+Antes de calcular estadísticos, conviene visualizar cómo se distribuyen los datos. Una **distribución de frecuencia** muestra cuántas observaciones caen en cada valor o rango.
+
+### Tablas de frecuencia
+
+Para variables categóricas, contamos casos en cada categoría:
+
+```{r}
+# Simulamos orientación política en encuesta
+set.seed(123)
+encuesta <- data.frame(
+  orientacion = sample(c("Izquierda", "Centro", "Derecha", "Ninguna"), 
+                       800, replace = TRUE, 
+                       prob = c(0.30, 0.25, 0.28, 0.17))
+)
+
+# Frecuencias absolutas
+table(encuesta$orientacion)
+
+# Frecuencias relativas (proporciones)
+prop.table(table(encuesta$orientacion))
+
+# Porcentajes
+prop.table(table(encuesta$orientacion)) * 100
+```
+
+Con tidyverse:
+
+```{r}
+encuesta %>%
+  count(orientacion) %>%
+  mutate(porcentaje = n / sum(n) * 100)
+```
+
+### Histogramas
+
+Para variables continuas, agrupamos en intervalos (bins):
+
+```{r fig.cap="Distribución de participación electoral en comunas"}
+ggplot(comunas, aes(x = participacion)) +
+  geom_histogram(bins = 30, fill = "steelblue", color = "white") +
+  labs(x = "Participación electoral (%)", 
+       y = "Número de comunas",
+       title = "Distribución de participación electoral") +
+  theme_minimal()
+```
+
+El número de bins afecta la visualización:
+
+```{r fig.cap="Histogramas con diferentes números de bins", fig.height=3}
+p1 <- ggplot(comunas, aes(x = participacion)) +
+  geom_histogram(bins = 10, fill = "steelblue", alpha = 0.7) +
+  labs(title = "10 bins") + theme_minimal()
+
+p2 <- ggplot(comunas, aes(x = participacion)) +
+  geom_histogram(bins = 50, fill = "steelblue", alpha = 0.7) +
+  labs(title = "50 bins") + theme_minimal()
+
+library(patchwork)
+p1 | p2
+```
+
+Muy pocos bins ocultan detalles; demasiados bins generan ruido. La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins.
+
+## Medidas de tendencia central
+
+Las medidas de tendencia central resumen la ubicación "típica" de los datos. La **media** ($\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$) es el promedio que usa toda la información pero es sensible a valores extremos (outliers)<span class="sidenote">EJEMPLO DE DESIGUALDAD: En 2022, el ingreso PROMEDIO en Chile era ~$650,000, pero la MEDIANA era ~$420,000. ¿Por qué la diferencia? Porque la distribución de ingresos es asimétrica: pocos súper-ricos jalan la media hacia arriba, pero la mediana (ingreso de la persona en el medio de la distribución ordenada) es más representativa de la "persona típica". Por eso reportes de desigualdad SIEMPRE usan mediana, no media. La media puede ser engañosa cuando hay outliers o asimetría.</span> y apropiada para distribuciones simétricas. La **mediana** es el valor que divide la distribución en dos mitades iguales (50% por debajo, 50% por encima), es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La **moda** es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.
+
+```{r}
+mean(comunas$participacion)
+median(comunas$participacion)
+
+# Ejemplo de sensibilidad a outliers
+ingresos <- c(500, 550, 600, 650, 700, 750, 800, 5000)
+mean(ingresos)  # La media se dispara por el valor extremo
+```
+
+```{r}
+# Moda en variable categórica
+tabla <- table(encuesta$orientacion)
+names(tabla)[which.max(tabla)]
+```
+
+```{r fig.cap="Distribución bimodal", fig.height=3}
+# Simulamos distribución bimodal (dos grupos distintos)
+set.seed(456)
+bimodal <- c(rnorm(200, mean = 30, sd = 5),
+             rnorm(200, mean = 55, sd = 5))
+
+ggplot(data.frame(x = bimodal), aes(x = x)) +
+  geom_histogram(bins = 40, fill = "coral", alpha = 0.7) +
+  labs(title = "Distribución bimodal") +
+  theme_minimal()
+```
+
+**Regla general** para elegir: **distribuciones simétricas** (media, usa toda la información), **distribuciones asimétricas**<span class="sidenote">¿CÓMO SABER SI TU DISTRIBUCIÓN ES ASIMÉTRICA? (1) Haz un histograma: si tiene "cola" larga a un lado, es asimétrica. (2) Compara media y mediana: si media >> mediana, asimetría a la derecha (ej: ingresos); si media << mediana, asimetría a la izquierda (raro en ciencias sociales). (3) Variables que NO pueden ser negativas (ingresos, edad, votos) frecuentemente son asimétricas a la derecha. DEFAULT SEGURO: reporta AMBAS (media Y mediana) siempre.</span> (mediana, robusta a extremos), **variables ordinales** (mediana, la media no tiene sentido para categorías ordenadas), **variables nominales** (moda, única medida con sentido)
+
+```{r fig.cap="Media vs. mediana en distribución asimétrica", fig.height=3}
+# Distribución asimétrica a la derecha
+set.seed(789)
+asimetrica <- rgamma(1000, shape = 2, rate = 0.5)
+
+media <- mean(asimetrica)
+mediana <- median(asimetrica)
+
+ggplot(data.frame(x = asimetrica), aes(x = x)) +
+  geom_histogram(bins = 40, fill = "lightblue", alpha = 0.7) +
+  geom_vline(aes(xintercept = media, color = "Media"), 
+             linewidth = 1, linetype = "dashed") +
+  geom_vline(aes(xintercept = mediana, color = "Mediana"), 
+             linewidth = 1, linetype = "dashed") +
+  scale_color_manual(values = c("Media" = "red", "Mediana" = "blue")) +
+  labs(title = "Distribución asimétrica: media > mediana",
+       color = "") +
+  theme_minimal()
+```
+
+En distribuciones asimétricas a la derecha, la media excede la mediana (arrastrada por valores altos). En asimétricas a la izquierda, la media es menor que la mediana.
+
+## Medidas de dispersión
+
+Las medidas de tendencia central resumen "dónde" están los datos. Las medidas de dispersión resumen cuánto varían.
+
+### Rango
+
+El **rango** es la diferencia entre el máximo y el mínimo:
+
+```{r}
+range(comunas$participacion)
+diff(range(comunas$participacion))
+```
+
+Simple pero sensible a outliers. Un solo valor extremo determina el rango.
+
+### Rango intercuartílico (IQR)
+
+El **IQR** es la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1). Captura el 50% central de los datos.
+
+```{r}
+quantile(comunas$participacion, probs = c(0.25, 0.75))
+IQR(comunas$participacion)
+```
+
+**Interpretación:** El 50% central de comunas tiene participación entre `r round(quantile(comunas$participacion, 0.25), 1)`% y `r round(quantile(comunas$participacion, 0.75), 1)`%.
+
+IQR es robusto a outliers—solo usa el 50% central.
+
+### Varianza
+
+La **varianza** ($s^2$) mide la dispersión promedio al cuadrado respecto a la media:
+
+$$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2$$
+
+```{r}
+var(comunas$participacion)
+```
+
+**¿Por qué $n-1$ y no $n$?** La corrección de Bessel ajusta por usar la media muestral en lugar de la media poblacional. Esto hace que la varianza muestral sea un estimador insesgado de la varianza poblacional.
+
+**Problema:** La varianza está en unidades al cuadrado (% al cuadrado), difícil de interpretar.
+
+### Desviación estándar
+
+La **desviación estándar** ($s$) es la raíz cuadrada de la varianza:
+
+$$s = \sqrt{s^2}$$
+
+```{r}
+sd(comunas$participacion)
+```
+
+**Interpretación:** En promedio, las comunas se desvían `r round(sd(comunas$participacion), 1)` puntos porcentuales de la participación media.
+
+La desviación estándar está en las mismas unidades que los datos originales, facilitando interpretación.
+
+### Coeficiente de variación
+
+El **coeficiente de variación** (CV) es la desviación estándar relativa a la media:
+
+$$CV = \frac{s}{\bar{x}} \times 100\%$$
+
+```{r}
+cv <- (sd(comunas$participacion) / mean(comunas$participacion)) * 100
+cv
+```
+
+CV permite comparar variabilidad entre variables con diferentes escalas. Participación electoral (%) y años de educación tienen unidades incomparables, pero sus CVs son comparables.
+
+```{r}
+# Comparar variabilidad de dos variables
+cv_participacion <- sd(comunas$participacion) / mean(comunas$participacion)
+cv_educacion <- sd(comunas$educ_superior) / mean(comunas$educ_superior)
+
+data.frame(
+  Variable = c("Participación", "Educación superior"),
+  CV = c(cv_participacion, cv_educacion)
+) %>% kable(digits = 3)
+```
+
+### Comparación de medidas de dispersión
+
+```{r}
+# Resumen de dispersión
+data.frame(
+  Medida = c("Rango", "IQR", "Varianza", "Desv. Estándar", "CV (%)"),
+  Valor = c(
+    diff(range(comunas$participacion)),
+    IQR(comunas$participacion),
+    var(comunas$participacion),
+    sd(comunas$participacion),
+    cv
+  )
+) %>% kable(digits = 2)
+```
+
+## Percentiles y cuartiles
+
+Los **percentiles** dividen la distribución en 100 partes iguales. El percentil $p$ es el valor por debajo del cual cae el $p$% de observaciones.
+
+```{r}
+# Percentiles importantes
+quantile(comunas$participacion, probs = c(0.05, 0.25, 0.50, 0.75, 0.95))
+```
+
+**Cuartiles** son percentiles específicos:
+
+- Q1 (primer cuartil): Percentil 25
+- Q2 (segundo cuartil): Mediana (percentil 50)
+- Q3 (tercer cuartil): Percentil 75
+
+**Interpretación:** El 25% de comunas tiene participación ≤ `r round(quantile(comunas$participacion, 0.25), 1)`%. El 75% tiene participación ≤ `r round(quantile(comunas$participacion, 0.75), 1)`%.
+
+### Resumen de cinco números
+
+El **resumen de cinco números** (five-number summary) incluye:
+
+- Mínimo
+- Q1
+- Mediana
+- Q3
+- Máximo
+
+```{r}
+summary(comunas$participacion)
+```
+
+Este resumen captura ubicación, dispersión y extremos. Es la base del boxplot.
+
+## Forma de la distribución
+
+### Asimetría (skewness)
+
+La **asimetría** mide si la distribución se inclina hacia un lado:
+
+- **Asimetría positiva (derecha)**: Cola larga hacia la derecha. Media > Mediana.
+- **Asimetría negativa (izquierda)**: Cola larga hacia la izquierda. Media < Mediana.
+- **Simétrica**: Colas balanceadas. Media ≈ Mediana.
+
+::: {.nivel data-nivel="avanzado"}
+
+**Coeficiente de asimetría:**
+
+```{r}
+# Coeficiente de asimetría (requiere paquete moments o e1071)
+library(e1071)
+skewness(comunas$participacion)
+```
+
+- $\text{Skewness} \approx 0$: Simétrica
+- $\text{Skewness} > 0$: Asimétrica a la derecha
+- $\text{Skewness} < 0$: Asimétrica a la izquierda
+
+```{r fig.cap="Distribuciones con diferente asimetría", fig.height=4}
+set.seed(111)
+# Asimétrica derecha
+der <- rgamma(1000, shape = 2, rate = 1)
+# Simétrica
+sim <- rnorm(1000, mean = 5, sd = 2)
+# Asimétrica izquierda
+izq <- 10 - rgamma(1000, shape = 2, rate = 1)
+
+datos_asimetria <- data.frame(
+  valor = c(der, sim, izq),
+  tipo = rep(c("Asimétrica derecha", "Simétrica", "Asimétrica izquierda"),
+             each = 1000)
+)
+
+ggplot(datos_asimetria, aes(x = valor, fill = tipo)) +
+  geom_density(alpha = 0.6) +
+  facet_wrap(~tipo, scales = "free") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+### Curtosis (kurtosis)
+
+La **curtosis** mide si la distribución tiene colas pesadas o ligeras respecto a la normal:
+
+```{r}
+kurtosis(comunas$participacion)
+```
+
+- **Leptocúrtica** (curtosis > 3): Colas pesadas, más outliers
+- **Mesocúrtica** (curtosis ≈ 3): Similar a distribución normal
+- **Platicúrtica** (curtosis < 3): Colas ligeras, pocos outliers
+
+En práctica, la asimetría importa más que la curtosis para análisis aplicado.
+
+:::
+
+## Gráficos exploratorios
+
+### Boxplot (diagrama de caja)
+
+El **boxplot** visualiza el resumen de cinco números:
+
+```{r fig.cap="Boxplot de participación electoral"}
+ggplot(comunas, aes(y = participacion)) +
+  geom_boxplot(fill = "lightblue", width = 0.5) +
+  labs(y = "Participación electoral (%)",
+       title = "Distribución de participación electoral") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank())
+```
+
+**Componentes:**
+
+- Caja: IQR (Q1 a Q3)
+- Línea dentro de caja: Mediana
+- Bigotes (whiskers): Extienden hasta 1.5×IQR desde Q1/Q3
+- Puntos: Outliers (valores más allá de bigotes)
+
+Comparar distribuciones entre grupos:
+
+```{r fig.cap="Participación electoral por nivel de pobreza (terciles)"}
+# Crear categorías de pobreza
+comunas <- comunas %>%
+  mutate(pobreza_cat = cut(pobreza, 
+                            breaks = quantile(pobreza, probs = c(0, 1/3, 2/3, 1)),
+                            labels = c("Baja", "Media", "Alta"),
+                            include.lowest = TRUE))
+
+ggplot(comunas, aes(x = pobreza_cat, y = participacion, fill = pobreza_cat)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(x = "Nivel de pobreza", 
+       y = "Participación electoral (%)",
+       title = "Participación electoral según nivel de pobreza") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+### Violin plot
+
+Combina boxplot con densidad:
+
+```{r fig.cap="Violin plot de participación por pobreza"}
+ggplot(comunas, aes(x = pobreza_cat, y = participacion, fill = pobreza_cat)) +
+  geom_violin(alpha = 0.7) +
+  geom_boxplot(width = 0.2, fill = "white", alpha = 0.8) +
+  labs(x = "Nivel de pobreza", 
+       y = "Participación electoral (%)") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+### Gráfico de densidad
+
+Alternativa suave al histograma:
+
+```{r fig.cap="Densidad de participación electoral"}
+ggplot(comunas, aes(x = participacion)) +
+  geom_density(fill = "steelblue", alpha = 0.5) +
+  geom_vline(aes(xintercept = mean(participacion)), 
+             color = "red", linetype = "dashed", linewidth = 1) +
+  geom_vline(aes(xintercept = median(participacion)), 
+             color = "blue", linetype = "dashed", linewidth = 1) +
+  annotate("text", x = mean(comunas$participacion) + 2, 
+           y = 0.045, label = "Media", color = "red") +
+  annotate("text", x = median(comunas$participacion) - 2, 
+           y = 0.045, label = "Mediana", color = "blue") +
+  labs(x = "Participación electoral (%)", 
+       y = "Densidad") +
+  theme_minimal()
+```
+
+## Detección de valores atípicos
+
+Los **outliers** son observaciones inusualmente extremas. Pueden ser errores de medición o casos genuinamente inusuales.
+
+### Método IQR
+
+Criterio estándar: outliers están más allá de $Q1 - 1.5 \times IQR$ o $Q3 + 1.5 \times IQR$:
+
+```{r}
+Q1 <- quantile(comunas$participacion, 0.25)
+Q3 <- quantile(comunas$participacion, 0.75)
+IQR_val <- IQR(comunas$participacion)
+
+limite_inferior <- Q1 - 1.5 * IQR_val
+limite_superior <- Q3 + 1.5 * IQR_val
+
+# Identificar outliers
+outliers <- comunas %>%
+  filter(participacion < limite_inferior | participacion > limite_superior)
+
+nrow(outliers)
+```
+
+Hay `r nrow(outliers)` comunas con participación atípica.
+
+```{r}
+# Ver outliers
+outliers %>%
+  select(comuna, participacion) %>%
+  arrange(participacion) %>%
+  head(10) %>%
+  kable(digits = 1)
+```
+
+::: {.nivel data-nivel="avanzado"}
+
+### Método de puntuaciones z
+
+Un **z-score** mide cuántas desviaciones estándar se aleja una observación de la media:
+
+$$z_i = \frac{x_i - \bar{x}}{s}$$
+
+```{r}
+comunas <- comunas %>%
+  mutate(z_participacion = (participacion - mean(participacion)) / sd(participacion))
+
+# Outliers: |z| > 3 (criterio común)
+outliers_z <- comunas %>%
+  filter(abs(z_participacion) > 3)
+
+nrow(outliers_z)
+```
+
+Con criterio $|z| > 3$, identificamos `r nrow(outliers_z)` outliers.
+
+### Visualización de outliers
+
+```{r fig.cap="Identificación visual de outliers"}
+ggplot(comunas, aes(x = "", y = participacion)) +
+  geom_boxplot(outlier.color = "red", outlier.size = 3) +
+  geom_hline(yintercept = c(limite_inferior, limite_superior),
+             linetype = "dashed", color = "red", alpha = 0.5) +
+  labs(y = "Participación electoral (%)",
+       title = "Outliers en participación electoral") +
+  theme_minimal() +
+  theme(axis.text.x = element_blank(),
+        axis.title.x = element_blank())
+```
+
+**¿Qué hacer con outliers?**
+
+1. **Investigar**: ¿Es error de datos o caso real extremo?
+2. **Nunca eliminar automáticamente**: Outliers pueden ser teóricamente importantes
+3. **Análisis de sensibilidad**: Repetir análisis con y sin outliers
+4. **Transformaciones**: Log, raíz cuadrada pueden reducir influencia de extremos
+5. **Métodos robustos**: Usar mediana en lugar de media, regresión robusta
+
+:::
+
+## Estadística descriptiva multivariada
+
+Frecuentemente queremos describir relaciones entre variables.
+
+### Tablas de contingencia
+
+Para dos variables categóricas:
+
+```{r}
+# Simulamos datos
+set.seed(222)
+encuesta <- encuesta %>%
+  mutate(voto = sample(c("Apruebo", "Rechazo"), 
+                       nrow(encuesta), replace = TRUE,
+                       prob = c(0.52, 0.48)))
+
+# Tabla de contingencia
+tabla <- table(encuesta$orientacion, encuesta$voto)
+tabla
+```
+
+Con proporciones:
+
+```{r}
+# Proporciones por fila
+prop.table(tabla, margin = 1)
+
+# Proporciones por columna
+prop.table(tabla, margin = 2)
+```
+
+### Covarianza
+
+La **covarianza** mide cómo dos variables varían conjuntamente:
+
+$$\text{Cov}(X, Y) = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})$$
+
+```{r}
+cov(comunas$participacion, comunas$educ_superior)
+```
+
+- Covarianza positiva: Variables tienden a moverse juntas
+- Covarianza negativa: Variables tienden a moverse en direcciones opuestas
+- Covarianza ≈ 0: No hay relación lineal
+
+**Problema:** La magnitud depende de las escalas. Difícil interpretar.
+
+### Correlación
+
+La **correlación de Pearson** ($r$) es la covarianza estandarizada:
+
+$$r = \frac{\text{Cov}(X, Y)}{s_X s_Y}$$
+
+```{r}
+cor(comunas$participacion, comunas$educ_superior)
+```
+
+**Propiedades:**
+
+- Rango: $-1 \leq r \leq 1$
+- $r = 1$: Correlación positiva perfecta
+- $r = -1$: Correlación negativa perfecta
+- $r = 0$: No hay correlación lineal
+- No depende de escalas
+
+```{r fig.cap="Correlación entre participación y educación superior"}
+ggplot(comunas, aes(x = educ_superior, y = participacion)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(x = "Población con educación superior (%)",
+       y = "Participación electoral (%)",
+       title = paste0("Correlación: r = ", 
+                     round(cor(comunas$educ_superior, comunas$participacion), 2))) +
+  theme_minimal()
+```
+
+**Importante:** Correlación mide **asociación lineal**, no causalidad. Alta correlación no implica que X causa Y.
+
+### Matriz de correlaciones
+
+Para múltiples variables:
+
+```{r}
+# Seleccionar variables numéricas
+vars_numericas <- comunas %>%
+  select(participacion, pobreza, educ_superior)
+
+# Matriz de correlación
+cor_matrix <- cor(vars_numericas)
+cor_matrix %>% 
+  kable(digits = 2)
+```
+
+Visualización:
+
+```{r fig.cap="Matriz de correlaciones"}
+library(corrplot)
+corrplot(cor_matrix, method = "color", type = "upper", 
+         addCoef.col = "black", number.cex = 0.8,
+         tl.col = "black", tl.srt = 45)
+```
+
+## Estadística descriptiva por grupos
+
+Comparar estadísticos entre grupos:
+
+```{r}
+comunas %>%
+  group_by(pobreza_cat) %>%
+  summarise(
+    n = n(),
+    participacion_media = mean(participacion),
+    participacion_mediana = median(participacion),
+    participacion_sd = sd(participacion),
+    educ_media = mean(educ_superior)
+  ) %>%
+  kable(digits = 1)
+```
+
+Visualización de múltiples estadísticos:
+
+```{r fig.cap="Comparación de grupos", fig.height=4}
+resumen <- comunas %>%
+  group_by(pobreza_cat) %>%
+  summarise(
+    Media = mean(participacion),
+    Mediana = median(participacion)
+  ) %>%
+  pivot_longer(cols = c(Media, Mediana), 
+               names_to = "Estadistico", 
+               values_to = "Valor")
+
+ggplot(resumen, aes(x = pobreza_cat, y = Valor, fill = Estadistico)) +
+  geom_col(position = "dodge") +
+  labs(x = "Nivel de pobreza",
+       y = "Participación electoral (%)",
+       fill = "Estadístico") +
+  theme_minimal()
+```
+
+## Resumen del capítulo
+
+La estadística descriptiva resume datos mediante medidas numéricas y gráficos. Las medidas de tendencia central (media, mediana, moda) capturan la ubicación típica. Para distribuciones simétricas, usar la media; para asimétricas, la mediana es más robusta.
+
+Las medidas de dispersión (rango, IQR, varianza, desviación estándar) cuantifican variabilidad. La desviación estándar es la más usada por estar en unidades originales. El coeficiente de variación permite comparar dispersión entre variables con diferentes escalas.
+
+Los percentiles y cuartiles dividen la distribución en partes iguales. El resumen de cinco números (mínimo, Q1, mediana, Q3, máximo) captura ubicación y dispersión, visualizado en boxplots.
+
+La forma de la distribución se caracteriza por asimetría (skewness) y curtosis. Distribuciones asimétricas tienen colas desbalanceadas; la curtosis mide peso de las colas.
+
+Los gráficos exploratorios (histogramas, boxplots, densidades, violin plots) revelan patrones que los estadísticos numéricos pueden ocultar. Los outliers requieren investigación—nunca eliminarlos automáticamente.
+
+Para relaciones bivariadas, la covarianza mide asociación conjunta pero depende de escalas. La correlación de Pearson estandariza la covarianza y varía entre -1 y 1, midiendo asociación lineal.
+
+La estadística descriptiva es exploratoria. Revela patrones, sugiere hipótesis, detecta problemas de datos. Pero no prueba nada—eso requiere inferencia estadística (Capítulos siguientes).
+
+## Lecturas recomendadas
+
+**Fundamentos de estadística descriptiva:**
+
+Agresti, A., & Finlay, B. (2018). *Statistical Methods for the Social Sciences* (5th ed.). Pearson.  
+→ Capítulos 2-4 cubren estadística descriptiva con ejemplos de ciencias sociales.
+
+**Visualización de datos:**
+
+Healy, K. (2018). *Data Visualization: A Practical Introduction*. Princeton University Press.  
+→ Principios de visualización efectiva con énfasis en ggplot2.
+
+**Estadística exploratoria:**
+
+Tukey, J. W. (1977). *Exploratory Data Analysis*. Addison-Wesley.  
+→ Clásico sobre análisis exploratorio y visualización.
+
+**Para profundizar en R:**
+
+Wickham, H., & Grolemund, G. (2017). *R for Data Science*. O'Reilly. [https://r4ds.had.co.nz/]  
+→ Capítulos 5 y 7 sobre transformación y análisis exploratorio.
+
+## Ejercicios
+
+**1. Cálculo manual**
+
+Con estos datos de participación electoral en 10 comunas: 45, 52, 48, 51, 39, 55, 47, 50, 44, 49
+
+a) Calcula media, mediana y moda manualmente  
+b) Calcula rango, varianza y desviación estándar manualmente  
+c) ¿La distribución es simétrica o asimétrica? ¿Cómo lo sabes?  
+d) Verifica tus cálculos en R  
+
+**2. Análisis exploratorio con datos reales**
+
+Descarga datos de CEP o CASEN. Selecciona una variable continua de interés:
+
+```{r eval=FALSE}
+# Tu código aquí
+```
+
+a) Calcula media, mediana, desviación estándar e IQR  
+b) Crea un histograma y un boxplot  
+c) Identifica outliers (si los hay) usando el método IQR  
+d) ¿La distribución es simétrica o asimétrica? Calcula el coeficiente de asimetría  
+e) Escribe un párrafo interpretando los resultados  
+
+**3. Comparación de grupos**
+
+Con el dataset `comunas` del capítulo:
+
+```{r eval=FALSE}
+# Datos disponibles
+comunas
+```
+
+a) Compara participación electoral entre comunas con alta vs. baja educación superior (define umbral apropiado)  
+b) Calcula media, mediana y desviación estándar para cada grupo  
+c) Crea boxplots comparando ambos grupos  
+d) ¿Qué grupo tiene mayor variabilidad? ¿Por qué?  
+
+**4. Relaciones bivariadas**
+
+```{r eval=FALSE}
+# Usa datos de comunas
+```
+
+a) Calcula la correlación entre participación y pobreza  
+b) Calcula la correlación entre participación y educación superior  
+c) Crea scatterplots para ambas relaciones  
+d) Interpreta: ¿Las correlaciones son consistentes con tus expectativas teóricas? ¿Por qué?  
+
+**5. Detectar problemas de datos**
+
+```{r eval=FALSE}
+# Dataset con problemas
+set.seed(999)
+problemas <- data.frame(
+  id = 1:100,
+  edad = c(sample(18:80, 95, replace = TRUE), 150, 12, -5, 200, NA),
+  ingreso = c(rnorm(95, 500000, 150000), 50000000, NA, NA, -100000, 0)
+)
+```
+
+a) Identifica valores imposibles o improbables en cada variable  
+b) Identifica valores faltantes  
+c) Calcula media y mediana de `ingreso` con y sin outliers. ¿Cómo afecta la media?  
+d) Propón una estrategia para limpiar estos datos justificando cada decisión  
+
+**6. Estadística descriptiva comprehensiva**
+
+Elige un dataset de tu proyecto de tesis o interés:
+
+a) Identifica 3-5 variables clave  
+b) Para cada variable, genera:
+   - Tabla de estadísticos descriptivos
+   - Gráfico apropiado (histograma, boxplot, o barras según tipo)
+   - Interpretación de 2-3 oraciones
+c) Calcula correlaciones entre variables numéricas  
+d) Escribe un reporte de una página resumiendo patrones principales en tus datos  
+e) Identifica al menos un hallazgo inesperado que requiera investigación adicional

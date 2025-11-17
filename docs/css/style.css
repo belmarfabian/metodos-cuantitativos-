@@ -1,0 +1,70 @@
+/* Estilo minimalista - Solo bloques de contenido personalizados */
+
+/* BLOQUES PERSONALIZADOS para el contenido del libro */
+
+.objetivos {
+  background-color: #e8f4f8;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.ejemplo {
+  background-color: #f0f7ee;
+  border-left: 4px solid #27ae60;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.importante {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+/* NIVELES DE CONTENIDO */
+
+.nivel {
+  padding: 15px 20px;
+  margin: 25px 0;
+  border-radius: 5px;
+}
+
+.nivel::before {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.85em;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.nivel[data-nivel="introductorio"]::before {
+  content: "📘 Métodos Cuantitativos Introductorios";
+  color: #2563eb;
+}
+
+.nivel[data-nivel="introductorio"] {
+  background-color: #eff6ff;
+  border-left: 5px solid #2563eb;
+}
+
+.nivel[data-nivel="avanzado"]::before {
+  content: "🎓 Métodos Cuantitativos Avanzados";
+  color: #7c3aed;
+}
+
+.nivel[data-nivel="avanzado"] {
+  background-color: #f5f3ff;
+  border-left: 5px solid #7c3aed;
+}
+
+.nivel[data-nivel="prerequisito"]::before {
+  content: "📋 Prerequisito (Repaso)";
+  color: #059669;
+}
+
+.nivel[data-nivel="prerequisito"] {
+  background-color: #ecfdf5;
+  border-left: 5px solid #059669;
+}

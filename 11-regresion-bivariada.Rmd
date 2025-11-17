@@ -1,0 +1,19 @@
+# Regresión bivariada {#regresion-bivariada}
+
+## Objetivos del capítulo
+
+## Correlación
+
+## El modelo de regresión lineal simple
+
+## Mínimos cuadrados ordinarios
+
+## Interpretación de coeficientes
+
+## Bondad de ajuste
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

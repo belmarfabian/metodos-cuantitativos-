@@ -1,0 +1,17 @@
+# Inferencia estadística {#inferencia}
+
+## Objetivos del capítulo
+
+## Muestras y poblaciones
+
+## Distribuciones muestrales
+
+## Intervalos de confianza
+
+## Error estándar
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

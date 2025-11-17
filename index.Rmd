@@ -1,0 +1,61 @@
+---
+title: "Métodos Cuantitativos para Ciencias Políticas y Sociales"
+author: "Fabián Belmar"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Manual del curso Métodos Cuantitativos Introductorios, Universidad Diego Portales, 2025."
+---
+
+# Prefacio {-}
+
+Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. También puede servir como referencia para cursos más avanzados.
+
+## ¿Por qué este libro? {-}
+
+La mayoría de manuales de métodos cuantitativos están escritos pensando en contextos anglosajones. Este libro integra ejemplos de la realidad política y social latinoamericana, utilizando datos de Chile y la región.
+
+A diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Las técnicas estadísticas son herramientas al servicio de responder preguntas sustantivas sobre el mundo social.
+
+## Organización del libro {-}
+
+El libro tiene tres niveles:
+
+1. **Prerequisitos** (Caps 1-2): Repaso del curso "Introducción a Métodos" que cubre método científico y diseño de investigación.
+
+2. **Contenido MCI** (Caps 3-11): Sigue el programa oficial del curso con cinco unidades: Generalidades (medición y datos), Fundamentos Descriptivos (clasificación de datos, tablas y gráficos), Estadística Descriptiva (medidas de tendencia central y dispersión), Inferencia Estadística (probabilidad, muestreo, pruebas de hipótesis), y Análisis Bivariado (comparación de medias, correlación, regresión simple).
+
+3. **Contenido Avanzado** (Caps 12-14): Regresión múltiple, diagnóstico OLS y modelos lineales generalizados para cursos posteriores.
+
+## Software y convenciones {-}
+
+Todo el análisis se realiza con **R**, lenguaje de código abierto estándar en ciencias sociales cuantitativas. Los códigos aparecen en `fuente monoespaciada` con su output, los conceptos clave en **negritas**, y las referencias en formato APA.
+
+## Agradecimientos {-}
+
+Este proyecto es resultado de años de docencia en metodología cuantitativa. Agradezco a estudiantes que con sus preguntas obligaron a clarificar argumentos, y a colegas cuyas conversaciones enriquecieron este material.
+
+```{r include=FALSE}
+# Generar bibliografía automática de paquetes R
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown', 'tidyverse',
+  'ggplot2', 'dplyr', 'haven', 'readr', 'broom'
+), 'packages.bib')
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.align = 'center',
+  out.width = '80%'
+)
+
+# Cargar paquetes principales
+library(tidyverse)
+library(knitr)
+```

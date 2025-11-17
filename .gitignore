@@ -1,0 +1,37 @@
+# R files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+
+# bookdown temporary files
+_bookdown_files/
+_book/
+*.log
+*.rds
+
+# R cache
+*_cache/
+*_files/
+
+# LaTeX files (for PDF output)
+*.aux
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.swp
+*.swo
+
+# Auto-generated bibliography
+packages.bib

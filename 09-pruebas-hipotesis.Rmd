@@ -1,0 +1,17 @@
+# Pruebas de hipótesis {#hipotesis}
+
+## Objetivos del capítulo
+
+## Lógica de las pruebas de hipótesis
+
+## Hipótesis nula y alternativa
+
+## Valores p y significancia estadística
+
+## Errores tipo I y tipo II
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

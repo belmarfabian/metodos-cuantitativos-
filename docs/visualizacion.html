@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 6 Visualización de datos | Métodos Cuantitativos para Ciencias Políticas y Sociales</title>
+  <meta name="description" content="Manual del curso Métodos Cuantitativos Introductorios, Universidad Diego Portales, 2025." />
+  <meta name="generator" content="bookdown 0.45 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 6 Visualización de datos | Métodos Cuantitativos para Ciencias Políticas y Sociales" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Manual del curso Métodos Cuantitativos Introductorios, Universidad Diego Portales, 2025." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 6 Visualización de datos | Métodos Cuantitativos para Ciencias Políticas y Sociales" />
+  
+  <meta name="twitter:description" content="Manual del curso Métodos Cuantitativos Introductorios, Universidad Diego Portales, 2025." />
+  
+
+<meta name="author" content="Fabián Belmar" />
+
+
+<meta name="date" content="2025-11-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="descriptiva.html"/>
+<link rel="next" href="probabilidad.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Métodos Cuantitativos</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#por-qué-este-libro"><i class="fa fa-check"></i>¿Por qué este libro?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-del-libro"><i class="fa fa-check"></i>Organización del libro</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#software-y-convenciones"><i class="fa fa-check"></i>Software y convenciones</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#agradecimientos"><i class="fa fa-check"></i>Agradecimientos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduccion.html"><a href="introduccion.html"><i class="fa fa-check"></i><b>1</b> Introducción: El método científico en ciencias sociales</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduccion.html"><a href="introduccion.html#objetivos-del-capítulo"><i class="fa fa-check"></i><b>1.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="1.2" data-path="introduccion.html"><a href="introduccion.html#qué-es-el-método-científico"><i class="fa fa-check"></i><b>1.2</b> ¿Qué es el método científico?</a></li>
+<li class="chapter" data-level="1.3" data-path="introduccion.html"><a href="introduccion.html#ciencia-social-y-cuantificación"><i class="fa fa-check"></i><b>1.3</b> Ciencia social y cuantificación</a></li>
+<li class="chapter" data-level="1.4" data-path="introduccion.html"><a href="introduccion.html#el-papel-de-la-teoría"><i class="fa fa-check"></i><b>1.4</b> El papel de la teoría</a></li>
+<li class="chapter" data-level="1.5" data-path="introduccion.html"><a href="introduccion.html#lógica-de-la-investigación-cuantitativa"><i class="fa fa-check"></i><b>1.5</b> Lógica de la investigación cuantitativa</a></li>
+<li class="chapter" data-level="1.6" data-path="introduccion.html"><a href="introduccion.html#fortalezas-y-limitaciones-del-enfoque-cuantitativo"><i class="fa fa-check"></i><b>1.6</b> Fortalezas y limitaciones del enfoque cuantitativo</a></li>
+<li class="chapter" data-level="1.7" data-path="introduccion.html"><a href="introduccion.html#resumen-del-capítulo"><i class="fa fa-check"></i><b>1.7</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="1.8" data-path="introduccion.html"><a href="introduccion.html#lecturas-recomendadas"><i class="fa fa-check"></i><b>1.8</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="1.9" data-path="introduccion.html"><a href="introduccion.html#ejercicios"><i class="fa fa-check"></i><b>1.9</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="diseno.html"><a href="diseno.html"><i class="fa fa-check"></i><b>2</b> Diseño de investigación</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="diseno.html"><a href="diseno.html#objetivos-del-capítulo-1"><i class="fa fa-check"></i><b>2.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="2.2" data-path="diseno.html"><a href="diseno.html#preguntas-de-investigación"><i class="fa fa-check"></i><b>2.2</b> Preguntas de investigación</a></li>
+<li class="chapter" data-level="2.3" data-path="diseno.html"><a href="diseno.html#hipótesis-y-teoría"><i class="fa fa-check"></i><b>2.3</b> Hipótesis y teoría</a></li>
+<li class="chapter" data-level="2.4" data-path="diseno.html"><a href="diseno.html#causalidad"><i class="fa fa-check"></i><b>2.4</b> Causalidad</a></li>
+<li class="chapter" data-level="2.5" data-path="diseno.html"><a href="diseno.html#tipos-de-diseños"><i class="fa fa-check"></i><b>2.5</b> Tipos de diseños</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="diseno.html"><a href="diseno.html#diseños-experimentales"><i class="fa fa-check"></i><b>2.5.1</b> Diseños experimentales</a></li>
+<li class="chapter" data-level="2.5.2" data-path="diseno.html"><a href="diseno.html#diseños-cuasi-experimentales"><i class="fa fa-check"></i><b>2.5.2</b> Diseños cuasi-experimentales</a></li>
+<li class="chapter" data-level="2.5.3" data-path="diseno.html"><a href="diseno.html#diseños-observacionales"><i class="fa fa-check"></i><b>2.5.3</b> Diseños observacionales</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="diseno.html"><a href="diseno.html#validez-interna-y-externa"><i class="fa fa-check"></i><b>2.6</b> Validez interna y externa</a></li>
+<li class="chapter" data-level="2.7" data-path="diseno.html"><a href="diseno.html#casos-unidades-y-niveles-de-análisis"><i class="fa fa-check"></i><b>2.7</b> Casos, unidades y niveles de análisis</a></li>
+<li class="chapter" data-level="2.8" data-path="diseno.html"><a href="diseno.html#resumen-del-capítulo-1"><i class="fa fa-check"></i><b>2.8</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="2.9" data-path="diseno.html"><a href="diseno.html#lecturas-recomendadas-1"><i class="fa fa-check"></i><b>2.9</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="2.10" data-path="diseno.html"><a href="diseno.html#ejercicios-1"><i class="fa fa-check"></i><b>2.10</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="medicion.html"><a href="medicion.html"><i class="fa fa-check"></i><b>3</b> Medición: de conceptos a variables</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="medicion.html"><a href="medicion.html#objetivos-del-capítulo-2"><i class="fa fa-check"></i><b>3.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="3.2" data-path="medicion.html"><a href="medicion.html#el-problema-de-la-medición"><i class="fa fa-check"></i><b>3.2</b> El problema de la medición</a></li>
+<li class="chapter" data-level="3.3" data-path="medicion.html"><a href="medicion.html#conceptos-y-definiciones-operacionales"><i class="fa fa-check"></i><b>3.3</b> Conceptos y definiciones operacionales</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="medicion.html"><a href="medicion.html#el-dilema-minimalista-maximalista"><i class="fa fa-check"></i><b>3.3.1</b> El dilema minimalista-maximalista</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="medicion.html"><a href="medicion.html#niveles-de-medición"><i class="fa fa-check"></i><b>3.4</b> Niveles de medición</a></li>
+<li class="chapter" data-level="3.5" data-path="medicion.html"><a href="medicion.html#validez-y-confiabilidad"><i class="fa fa-check"></i><b>3.5</b> Validez y confiabilidad</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="medicion.html"><a href="medicion.html#confiabilidad"><i class="fa fa-check"></i><b>3.5.1</b> Confiabilidad</a></li>
+<li class="chapter" data-level="3.5.2" data-path="medicion.html"><a href="medicion.html#relación-entre-validez-y-confiabilidad"><i class="fa fa-check"></i><b>3.5.2</b> Relación entre validez y confiabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="medicion.html"><a href="medicion.html#índices-y-escalas"><i class="fa fa-check"></i><b>3.6</b> Índices y escalas</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="medicion.html"><a href="medicion.html#índices-aditivos-simples"><i class="fa fa-check"></i><b>3.6.1</b> Índices aditivos simples</a></li>
+<li class="chapter" data-level="3.6.2" data-path="medicion.html"><a href="medicion.html#escalas-ponderadas"><i class="fa fa-check"></i><b>3.6.2</b> Escalas ponderadas</a></li>
+<li class="chapter" data-level="3.6.3" data-path="medicion.html"><a href="medicion.html#análisis-factorial"><i class="fa fa-check"></i><b>3.6.3</b> Análisis factorial</a></li>
+<li class="chapter" data-level="3.6.4" data-path="medicion.html"><a href="medicion.html#escalas-likert"><i class="fa fa-check"></i><b>3.6.4</b> Escalas Likert</a></li>
+<li class="chapter" data-level="3.6.5" data-path="medicion.html"><a href="medicion.html#índices-disponibles-en-ciencias-políticas"><i class="fa fa-check"></i><b>3.6.5</b> Índices disponibles en ciencias políticas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="medicion.html"><a href="medicion.html#problemas-comunes-de-medición"><i class="fa fa-check"></i><b>3.7</b> Problemas comunes de medición</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="medicion.html"><a href="medicion.html#sesgo-de-deseabilidad-social"><i class="fa fa-check"></i><b>3.7.1</b> Sesgo de deseabilidad social</a></li>
+<li class="chapter" data-level="3.7.2" data-path="medicion.html"><a href="medicion.html#sesgo-de-aquiescencia"><i class="fa fa-check"></i><b>3.7.2</b> Sesgo de aquiescencia</a></li>
+<li class="chapter" data-level="3.7.3" data-path="medicion.html"><a href="medicion.html#no-respuesta-diferencial"><i class="fa fa-check"></i><b>3.7.3</b> No-respuesta diferencial</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="medicion.html"><a href="medicion.html#medición-de-conceptos-específicos-en-ciencias-políticas"><i class="fa fa-check"></i><b>3.8</b> Medición de conceptos específicos en ciencias políticas</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="medicion.html"><a href="medicion.html#medir-ideología"><i class="fa fa-check"></i><b>3.8.1</b> Medir ideología</a></li>
+<li class="chapter" data-level="3.8.2" data-path="medicion.html"><a href="medicion.html#medir-polarización"><i class="fa fa-check"></i><b>3.8.2</b> Medir polarización</a></li>
+<li class="chapter" data-level="3.8.3" data-path="medicion.html"><a href="medicion.html#medir-participación-política"><i class="fa fa-check"></i><b>3.8.3</b> Medir participación política</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="medicion.html"><a href="medicion.html#resumen-del-capítulo-2"><i class="fa fa-check"></i><b>3.9</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="3.10" data-path="medicion.html"><a href="medicion.html#lecturas-recomendadas-2"><i class="fa fa-check"></i><b>3.10</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="3.11" data-path="medicion.html"><a href="medicion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.11</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>4</b> Trabajando con datos</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="datos.html"><a href="datos.html#objetivos-del-capítulo-3"><i class="fa fa-check"></i><b>4.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="4.2" data-path="datos.html"><a href="datos.html#tipos-de-datos"><i class="fa fa-check"></i><b>4.2</b> Tipos de datos</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="datos.html"><a href="datos.html#según-estructura"><i class="fa fa-check"></i><b>4.2.1</b> Según estructura</a></li>
+<li class="chapter" data-level="4.2.2" data-path="datos.html"><a href="datos.html#según-granularidad"><i class="fa fa-check"></i><b>4.2.2</b> Según granularidad</a></li>
+<li class="chapter" data-level="4.2.3" data-path="datos.html"><a href="datos.html#según-fuente"><i class="fa fa-check"></i><b>4.2.3</b> Según fuente</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="datos.html"><a href="datos.html#fuentes-de-datos-para-ciencias-políticas"><i class="fa fa-check"></i><b>4.3</b> Fuentes de datos para ciencias políticas</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="datos.html"><a href="datos.html#encuestas-de-opinión-pública"><i class="fa fa-check"></i><b>4.3.1</b> Encuestas de opinión pública</a></li>
+<li class="chapter" data-level="4.3.2" data-path="datos.html"><a href="datos.html#datos-electorales"><i class="fa fa-check"></i><b>4.3.2</b> Datos electorales</a></li>
+<li class="chapter" data-level="4.3.3" data-path="datos.html"><a href="datos.html#datos-económicos-y-sociales"><i class="fa fa-check"></i><b>4.3.3</b> Datos económicos y sociales</a></li>
+<li class="chapter" data-level="4.3.4" data-path="datos.html"><a href="datos.html#datos-sobre-instituciones-políticas"><i class="fa fa-check"></i><b>4.3.4</b> Datos sobre instituciones políticas</a></li>
+<li class="chapter" data-level="4.3.5" data-path="datos.html"><a href="datos.html#datos-legislativos"><i class="fa fa-check"></i><b>4.3.5</b> Datos legislativos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="datos.html"><a href="datos.html#calidad-de-datos"><i class="fa fa-check"></i><b>4.4</b> Calidad de datos</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="datos.html"><a href="datos.html#dimensiones-de-calidad"><i class="fa fa-check"></i><b>4.4.1</b> Dimensiones de calidad</a></li>
+<li class="chapter" data-level="4.4.2" data-path="datos.html"><a href="datos.html#problemas-comunes"><i class="fa fa-check"></i><b>4.4.2</b> Problemas comunes</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="datos.html"><a href="datos.html#introducción-a-r-y-rstudio"><i class="fa fa-check"></i><b>4.5</b> Introducción a R y RStudio</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="datos.html"><a href="datos.html#por-qué-r"><i class="fa fa-check"></i><b>4.5.1</b> ¿Por qué R?</a></li>
+<li class="chapter" data-level="4.5.2" data-path="datos.html"><a href="datos.html#instalación"><i class="fa fa-check"></i><b>4.5.2</b> Instalación</a></li>
+<li class="chapter" data-level="4.5.3" data-path="datos.html"><a href="datos.html#anatomía-de-rstudio"><i class="fa fa-check"></i><b>4.5.3</b> Anatomía de RStudio</a></li>
+<li class="chapter" data-level="4.5.4" data-path="datos.html"><a href="datos.html#paquetes"><i class="fa fa-check"></i><b>4.5.4</b> Paquetes</a></li>
+<li class="chapter" data-level="4.5.5" data-path="datos.html"><a href="datos.html#objetos-básicos-en-r"><i class="fa fa-check"></i><b>4.5.5</b> Objetos básicos en R</a></li>
+<li class="chapter" data-level="4.5.6" data-path="datos.html"><a href="datos.html#directorios-de-trabajo"><i class="fa fa-check"></i><b>4.5.6</b> Directorios de trabajo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="datos.html"><a href="datos.html#importar-datos"><i class="fa fa-check"></i><b>4.6</b> Importar datos</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="datos.html"><a href="datos.html#archivos-de-texto-csv"><i class="fa fa-check"></i><b>4.6.1</b> Archivos de texto: CSV</a></li>
+<li class="chapter" data-level="4.6.2" data-path="datos.html"><a href="datos.html#archivos-de-excel"><i class="fa fa-check"></i><b>4.6.2</b> Archivos de Excel</a></li>
+<li class="chapter" data-level="4.6.3" data-path="datos.html"><a href="datos.html#archivos-de-software-estadístico"><i class="fa fa-check"></i><b>4.6.3</b> Archivos de software estadístico</a></li>
+<li class="chapter" data-level="4.6.4" data-path="datos.html"><a href="datos.html#datos-en-línea"><i class="fa fa-check"></i><b>4.6.4</b> Datos en línea</a></li>
+<li class="chapter" data-level="4.6.5" data-path="datos.html"><a href="datos.html#datos-desde-bases-de-datos"><i class="fa fa-check"></i><b>4.6.5</b> Datos desde bases de datos</a></li>
+</ul></li>
+<li class="chapter" data-level="4.7" data-path="datos.html"><a href="datos.html#manipulación-básica-de-datos"><i class="fa fa-check"></i><b>4.7</b> Manipulación básica de datos</a>
+<ul>
+<li class="chapter" data-level="4.7.1" data-path="datos.html"><a href="datos.html#inspeccionar-datos"><i class="fa fa-check"></i><b>4.7.1</b> Inspeccionar datos</a></li>
+<li class="chapter" data-level="4.7.2" data-path="datos.html"><a href="datos.html#seleccionar-variables"><i class="fa fa-check"></i><b>4.7.2</b> Seleccionar variables</a></li>
+<li class="chapter" data-level="4.7.3" data-path="datos.html"><a href="datos.html#filtrar-casos"><i class="fa fa-check"></i><b>4.7.3</b> Filtrar casos</a></li>
+<li class="chapter" data-level="4.7.4" data-path="datos.html"><a href="datos.html#crear-y-transformar-variables"><i class="fa fa-check"></i><b>4.7.4</b> Crear y transformar variables</a></li>
+<li class="chapter" data-level="4.7.5" data-path="datos.html"><a href="datos.html#recodificar-variables"><i class="fa fa-check"></i><b>4.7.5</b> Recodificar variables</a></li>
+<li class="chapter" data-level="4.7.6" data-path="datos.html"><a href="datos.html#renombrar-variables"><i class="fa fa-check"></i><b>4.7.6</b> Renombrar variables</a></li>
+<li class="chapter" data-level="4.7.7" data-path="datos.html"><a href="datos.html#ordenar-datos"><i class="fa fa-check"></i><b>4.7.7</b> Ordenar datos</a></li>
+<li class="chapter" data-level="4.7.8" data-path="datos.html"><a href="datos.html#agregar-datos"><i class="fa fa-check"></i><b>4.7.8</b> Agregar datos</a></li>
+<li class="chapter" data-level="4.7.9" data-path="datos.html"><a href="datos.html#unir-datasets"><i class="fa fa-check"></i><b>4.7.9</b> Unir datasets</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="datos.html"><a href="datos.html#exportar-datos"><i class="fa fa-check"></i><b>4.8</b> Exportar datos</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="datos.html"><a href="datos.html#csv"><i class="fa fa-check"></i><b>4.8.1</b> CSV</a></li>
+<li class="chapter" data-level="4.8.2" data-path="datos.html"><a href="datos.html#formato-de-r"><i class="fa fa-check"></i><b>4.8.2</b> Formato de R</a></li>
+<li class="chapter" data-level="4.8.3" data-path="datos.html"><a href="datos.html#stata"><i class="fa fa-check"></i><b>4.8.3</b> Stata</a></li>
+<li class="chapter" data-level="4.8.4" data-path="datos.html"><a href="datos.html#excel"><i class="fa fa-check"></i><b>4.8.4</b> Excel</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="datos.html"><a href="datos.html#flujo-de-trabajo-reproducible"><i class="fa fa-check"></i><b>4.9</b> Flujo de trabajo reproducible</a>
+<ul>
+<li class="chapter" data-level="4.9.1" data-path="datos.html"><a href="datos.html#principios"><i class="fa fa-check"></i><b>4.9.1</b> Principios</a></li>
+<li class="chapter" data-level="4.9.2" data-path="datos.html"><a href="datos.html#r-markdown"><i class="fa fa-check"></i><b>4.9.2</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="datos.html"><a href="datos.html#resumen-del-capítulo-3"><i class="fa fa-check"></i><b>4.10</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="4.11" data-path="datos.html"><a href="datos.html#lecturas-recomendadas-3"><i class="fa fa-check"></i><b>4.11</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="4.12" data-path="datos.html"><a href="datos.html#ejercicios-3"><i class="fa fa-check"></i><b>4.12</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="descriptiva.html"><a href="descriptiva.html"><i class="fa fa-check"></i><b>5</b> Estadística descriptiva</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="descriptiva.html"><a href="descriptiva.html#objetivos-del-capítulo-4"><i class="fa fa-check"></i><b>5.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="5.2" data-path="descriptiva.html"><a href="descriptiva.html#distribuciones-de-frecuencia"><i class="fa fa-check"></i><b>5.2</b> Distribuciones de frecuencia</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="descriptiva.html"><a href="descriptiva.html#tablas-de-frecuencia"><i class="fa fa-check"></i><b>5.2.1</b> Tablas de frecuencia</a></li>
+<li class="chapter" data-level="5.2.2" data-path="descriptiva.html"><a href="descriptiva.html#histogramas"><i class="fa fa-check"></i><b>5.2.2</b> Histogramas</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="descriptiva.html"><a href="descriptiva.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>5.3</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="5.4" data-path="descriptiva.html"><a href="descriptiva.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>5.4</b> Medidas de dispersión</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="descriptiva.html"><a href="descriptiva.html#rango"><i class="fa fa-check"></i><b>5.4.1</b> Rango</a></li>
+<li class="chapter" data-level="5.4.2" data-path="descriptiva.html"><a href="descriptiva.html#rango-intercuartílico-iqr"><i class="fa fa-check"></i><b>5.4.2</b> Rango intercuartílico (IQR)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="descriptiva.html"><a href="descriptiva.html#varianza"><i class="fa fa-check"></i><b>5.4.3</b> Varianza</a></li>
+<li class="chapter" data-level="5.4.4" data-path="descriptiva.html"><a href="descriptiva.html#desviación-estándar"><i class="fa fa-check"></i><b>5.4.4</b> Desviación estándar</a></li>
+<li class="chapter" data-level="5.4.5" data-path="descriptiva.html"><a href="descriptiva.html#coeficiente-de-variación"><i class="fa fa-check"></i><b>5.4.5</b> Coeficiente de variación</a></li>
+<li class="chapter" data-level="5.4.6" data-path="descriptiva.html"><a href="descriptiva.html#comparación-de-medidas-de-dispersión"><i class="fa fa-check"></i><b>5.4.6</b> Comparación de medidas de dispersión</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="descriptiva.html"><a href="descriptiva.html#percentiles-y-cuartiles"><i class="fa fa-check"></i><b>5.5</b> Percentiles y cuartiles</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="descriptiva.html"><a href="descriptiva.html#resumen-de-cinco-números"><i class="fa fa-check"></i><b>5.5.1</b> Resumen de cinco números</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="descriptiva.html"><a href="descriptiva.html#forma-de-la-distribución"><i class="fa fa-check"></i><b>5.6</b> Forma de la distribución</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="descriptiva.html"><a href="descriptiva.html#asimetría-skewness"><i class="fa fa-check"></i><b>5.6.1</b> Asimetría (skewness)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="descriptiva.html"><a href="descriptiva.html#gráficos-exploratorios"><i class="fa fa-check"></i><b>5.7</b> Gráficos exploratorios</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="descriptiva.html"><a href="descriptiva.html#boxplot-diagrama-de-caja"><i class="fa fa-check"></i><b>5.7.1</b> Boxplot (diagrama de caja)</a></li>
+<li class="chapter" data-level="5.7.2" data-path="descriptiva.html"><a href="descriptiva.html#violin-plot"><i class="fa fa-check"></i><b>5.7.2</b> Violin plot</a></li>
+<li class="chapter" data-level="5.7.3" data-path="descriptiva.html"><a href="descriptiva.html#gráfico-de-densidad"><i class="fa fa-check"></i><b>5.7.3</b> Gráfico de densidad</a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="descriptiva.html"><a href="descriptiva.html#detección-de-valores-atípicos"><i class="fa fa-check"></i><b>5.8</b> Detección de valores atípicos</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="descriptiva.html"><a href="descriptiva.html#método-iqr"><i class="fa fa-check"></i><b>5.8.1</b> Método IQR</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="descriptiva.html"><a href="descriptiva.html#estadística-descriptiva-multivariada"><i class="fa fa-check"></i><b>5.9</b> Estadística descriptiva multivariada</a>
+<ul>
+<li class="chapter" data-level="5.9.1" data-path="descriptiva.html"><a href="descriptiva.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>5.9.1</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="5.9.2" data-path="descriptiva.html"><a href="descriptiva.html#covarianza"><i class="fa fa-check"></i><b>5.9.2</b> Covarianza</a></li>
+<li class="chapter" data-level="5.9.3" data-path="descriptiva.html"><a href="descriptiva.html#correlación"><i class="fa fa-check"></i><b>5.9.3</b> Correlación</a></li>
+<li class="chapter" data-level="5.9.4" data-path="descriptiva.html"><a href="descriptiva.html#matriz-de-correlaciones"><i class="fa fa-check"></i><b>5.9.4</b> Matriz de correlaciones</a></li>
+</ul></li>
+<li class="chapter" data-level="5.10" data-path="descriptiva.html"><a href="descriptiva.html#estadística-descriptiva-por-grupos"><i class="fa fa-check"></i><b>5.10</b> Estadística descriptiva por grupos</a></li>
+<li class="chapter" data-level="5.11" data-path="descriptiva.html"><a href="descriptiva.html#resumen-del-capítulo-4"><i class="fa fa-check"></i><b>5.11</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="5.12" data-path="descriptiva.html"><a href="descriptiva.html#lecturas-recomendadas-4"><i class="fa fa-check"></i><b>5.12</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="5.13" data-path="descriptiva.html"><a href="descriptiva.html#ejercicios-4"><i class="fa fa-check"></i><b>5.13</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualizacion.html"><a href="visualizacion.html"><i class="fa fa-check"></i><b>6</b> Visualización de datos</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="visualizacion.html"><a href="visualizacion.html#objetivos-del-capítulo-5"><i class="fa fa-check"></i><b>6.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="6.2" data-path="visualizacion.html"><a href="visualizacion.html#principios-de-visualización-efectiva"><i class="fa fa-check"></i><b>6.2</b> Principios de visualización efectiva</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="visualizacion.html"><a href="visualizacion.html#maximizar-el-ratio-datos-tinta"><i class="fa fa-check"></i><b>6.2.1</b> 1. Maximizar el ratio datos-tinta</a></li>
+<li class="chapter" data-level="6.2.2" data-path="visualizacion.html"><a href="visualizacion.html#usar-el-canal-visual-apropiado"><i class="fa fa-check"></i><b>6.2.2</b> 2. Usar el canal visual apropiado</a></li>
+<li class="chapter" data-level="6.2.3" data-path="visualizacion.html"><a href="visualizacion.html#mostrar-comparaciones"><i class="fa fa-check"></i><b>6.2.3</b> 3. Mostrar comparaciones</a></li>
+<li class="chapter" data-level="6.2.4" data-path="visualizacion.html"><a href="visualizacion.html#mostrar-causalidad-y-explicación"><i class="fa fa-check"></i><b>6.2.4</b> 4. Mostrar causalidad y explicación</a></li>
+<li class="chapter" data-level="6.2.5" data-path="visualizacion.html"><a href="visualizacion.html#integrar-evidencia"><i class="fa fa-check"></i><b>6.2.5</b> 5. Integrar evidencia</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="visualizacion.html"><a href="visualizacion.html#grammar-of-graphics-y-ggplot2"><i class="fa fa-check"></i><b>6.3</b> Grammar of Graphics y ggplot2</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="visualizacion.html"><a href="visualizacion.html#componentes-de-ggplot2"><i class="fa fa-check"></i><b>6.3.1</b> Componentes de ggplot2</a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualizacion.html"><a href="visualizacion.html#estructura-básica"><i class="fa fa-check"></i><b>6.3.2</b> Estructura básica</a></li>
+<li class="chapter" data-level="6.3.3" data-path="visualizacion.html"><a href="visualizacion.html#ejemplo-paso-a-paso"><i class="fa fa-check"></i><b>6.3.3</b> Ejemplo paso a paso</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="visualizacion.html"><a href="visualizacion.html#gráficos-univariados"><i class="fa fa-check"></i><b>6.4</b> Gráficos univariados</a>
+<ul>
+<li class="chapter" data-level="6.4.1" data-path="visualizacion.html"><a href="visualizacion.html#variables-continuas"><i class="fa fa-check"></i><b>6.4.1</b> Variables continuas</a></li>
+<li class="chapter" data-level="6.4.2" data-path="visualizacion.html"><a href="visualizacion.html#variables-categóricas"><i class="fa fa-check"></i><b>6.4.2</b> Variables categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.5" data-path="visualizacion.html"><a href="visualizacion.html#gráficos-bivariados"><i class="fa fa-check"></i><b>6.5</b> Gráficos bivariados</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="visualizacion.html"><a href="visualizacion.html#dos-variables-continuas-scatter-plots"><i class="fa fa-check"></i><b>6.5.1</b> Dos variables continuas: scatter plots</a></li>
+<li class="chapter" data-level="6.5.2" data-path="visualizacion.html"><a href="visualizacion.html#variable-continua-vs.-categórica"><i class="fa fa-check"></i><b>6.5.2</b> Variable continua vs. categórica</a></li>
+<li class="chapter" data-level="6.5.3" data-path="visualizacion.html"><a href="visualizacion.html#dos-variables-categóricas"><i class="fa fa-check"></i><b>6.5.3</b> Dos variables categóricas</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="visualizacion.html"><a href="visualizacion.html#series-temporales"><i class="fa fa-check"></i><b>6.6</b> Series temporales</a></li>
+<li class="chapter" data-level="6.7" data-path="visualizacion.html"><a href="visualizacion.html#facetas-paneles-múltiples"><i class="fa fa-check"></i><b>6.7</b> Facetas (paneles múltiples)</a>
+<ul>
+<li class="chapter" data-level="6.7.1" data-path="visualizacion.html"><a href="visualizacion.html#facet_wrap"><i class="fa fa-check"></i><b>6.7.1</b> facet_wrap</a></li>
+<li class="chapter" data-level="6.7.2" data-path="visualizacion.html"><a href="visualizacion.html#facet_grid"><i class="fa fa-check"></i><b>6.7.2</b> facet_grid</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="visualizacion.html"><a href="visualizacion.html#personalización-avanzada"><i class="fa fa-check"></i><b>6.8</b> Personalización avanzada</a>
+<ul>
+<li class="chapter" data-level="6.8.1" data-path="visualizacion.html"><a href="visualizacion.html#temas-predefinidos"><i class="fa fa-check"></i><b>6.8.1</b> Temas predefinidos</a></li>
+<li class="chapter" data-level="6.8.2" data-path="visualizacion.html"><a href="visualizacion.html#personalización-de-elementos"><i class="fa fa-check"></i><b>6.8.2</b> Personalización de elementos</a></li>
+<li class="chapter" data-level="6.8.3" data-path="visualizacion.html"><a href="visualizacion.html#paletas-de-colores"><i class="fa fa-check"></i><b>6.8.3</b> Paletas de colores</a></li>
+</ul></li>
+<li class="chapter" data-level="6.9" data-path="visualizacion.html"><a href="visualizacion.html#combinando-gráficos"><i class="fa fa-check"></i><b>6.9</b> Combinando gráficos</a></li>
+<li class="chapter" data-level="6.10" data-path="visualizacion.html"><a href="visualizacion.html#anotaciones"><i class="fa fa-check"></i><b>6.10</b> Anotaciones</a></li>
+<li class="chapter" data-level="6.11" data-path="visualizacion.html"><a href="visualizacion.html#exportar-gráficos"><i class="fa fa-check"></i><b>6.11</b> Exportar gráficos</a></li>
+<li class="chapter" data-level="6.12" data-path="visualizacion.html"><a href="visualizacion.html#visualizaciones-problemáticas-y-cómo-mejorarlas"><i class="fa fa-check"></i><b>6.12</b> Visualizaciones problemáticas y cómo mejorarlas</a>
+<ul>
+<li class="chapter" data-level="6.12.1" data-path="visualizacion.html"><a href="visualizacion.html#problema-1-eje-y-truncado"><i class="fa fa-check"></i><b>6.12.1</b> Problema 1: Eje Y truncado</a></li>
+<li class="chapter" data-level="6.12.2" data-path="visualizacion.html"><a href="visualizacion.html#problema-2-demasiadas-categorías"><i class="fa fa-check"></i><b>6.12.2</b> Problema 2: Demasiadas categorías</a></li>
+<li class="chapter" data-level="6.12.3" data-path="visualizacion.html"><a href="visualizacion.html#problema-3-dobles-ejes-y"><i class="fa fa-check"></i><b>6.12.3</b> Problema 3: Dobles ejes Y</a></li>
+</ul></li>
+<li class="chapter" data-level="6.13" data-path="visualizacion.html"><a href="visualizacion.html#resumen-del-capítulo-5"><i class="fa fa-check"></i><b>6.13</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="6.14" data-path="visualizacion.html"><a href="visualizacion.html#lecturas-recomendadas-5"><i class="fa fa-check"></i><b>6.14</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="6.15" data-path="visualizacion.html"><a href="visualizacion.html#ejercicios-5"><i class="fa fa-check"></i><b>6.15</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="probabilidad.html"><a href="probabilidad.html"><i class="fa fa-check"></i><b>7</b> Introducción a probabilidad</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="probabilidad.html"><a href="probabilidad.html#objetivos-del-capítulo-6"><i class="fa fa-check"></i><b>7.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="7.2" data-path="probabilidad.html"><a href="probabilidad.html#conceptos-básicos-de-probabilidad"><i class="fa fa-check"></i><b>7.2</b> Conceptos básicos de probabilidad</a></li>
+<li class="chapter" data-level="7.3" data-path="probabilidad.html"><a href="probabilidad.html#variables-aleatorias"><i class="fa fa-check"></i><b>7.3</b> Variables aleatorias</a></li>
+<li class="chapter" data-level="7.4" data-path="probabilidad.html"><a href="probabilidad.html#distribuciones-de-probabilidad"><i class="fa fa-check"></i><b>7.4</b> Distribuciones de probabilidad</a></li>
+<li class="chapter" data-level="7.5" data-path="probabilidad.html"><a href="probabilidad.html#teorema-del-límite-central"><i class="fa fa-check"></i><b>7.5</b> Teorema del límite central</a></li>
+<li class="chapter" data-level="7.6" data-path="probabilidad.html"><a href="probabilidad.html#resumen-del-capítulo-6"><i class="fa fa-check"></i><b>7.6</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="7.7" data-path="probabilidad.html"><a href="probabilidad.html#lecturas-recomendadas-6"><i class="fa fa-check"></i><b>7.7</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="7.8" data-path="probabilidad.html"><a href="probabilidad.html#ejercicios-6"><i class="fa fa-check"></i><b>7.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="inferencia.html"><a href="inferencia.html"><i class="fa fa-check"></i><b>8</b> Inferencia estadística</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="inferencia.html"><a href="inferencia.html#objetivos-del-capítulo-7"><i class="fa fa-check"></i><b>8.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="8.2" data-path="inferencia.html"><a href="inferencia.html#muestras-y-poblaciones"><i class="fa fa-check"></i><b>8.2</b> Muestras y poblaciones</a></li>
+<li class="chapter" data-level="8.3" data-path="inferencia.html"><a href="inferencia.html#distribuciones-muestrales"><i class="fa fa-check"></i><b>8.3</b> Distribuciones muestrales</a></li>
+<li class="chapter" data-level="8.4" data-path="inferencia.html"><a href="inferencia.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>8.4</b> Intervalos de confianza</a></li>
+<li class="chapter" data-level="8.5" data-path="inferencia.html"><a href="inferencia.html#error-estándar"><i class="fa fa-check"></i><b>8.5</b> Error estándar</a></li>
+<li class="chapter" data-level="8.6" data-path="inferencia.html"><a href="inferencia.html#resumen-del-capítulo-7"><i class="fa fa-check"></i><b>8.6</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="8.7" data-path="inferencia.html"><a href="inferencia.html#lecturas-recomendadas-7"><i class="fa fa-check"></i><b>8.7</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="8.8" data-path="inferencia.html"><a href="inferencia.html#ejercicios-7"><i class="fa fa-check"></i><b>8.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="hipotesis.html"><a href="hipotesis.html"><i class="fa fa-check"></i><b>9</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="hipotesis.html"><a href="hipotesis.html#objetivos-del-capítulo-8"><i class="fa fa-check"></i><b>9.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="9.2" data-path="hipotesis.html"><a href="hipotesis.html#lógica-de-las-pruebas-de-hipótesis"><i class="fa fa-check"></i><b>9.2</b> Lógica de las pruebas de hipótesis</a></li>
+<li class="chapter" data-level="9.3" data-path="hipotesis.html"><a href="hipotesis.html#hipótesis-nula-y-alternativa"><i class="fa fa-check"></i><b>9.3</b> Hipótesis nula y alternativa</a></li>
+<li class="chapter" data-level="9.4" data-path="hipotesis.html"><a href="hipotesis.html#valores-p-y-significancia-estadística"><i class="fa fa-check"></i><b>9.4</b> Valores p y significancia estadística</a></li>
+<li class="chapter" data-level="9.5" data-path="hipotesis.html"><a href="hipotesis.html#errores-tipo-i-y-tipo-ii"><i class="fa fa-check"></i><b>9.5</b> Errores tipo I y tipo II</a></li>
+<li class="chapter" data-level="9.6" data-path="hipotesis.html"><a href="hipotesis.html#resumen-del-capítulo-8"><i class="fa fa-check"></i><b>9.6</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="9.7" data-path="hipotesis.html"><a href="hipotesis.html#lecturas-recomendadas-8"><i class="fa fa-check"></i><b>9.7</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="9.8" data-path="hipotesis.html"><a href="hipotesis.html#ejercicios-8"><i class="fa fa-check"></i><b>9.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="comparacion.html"><a href="comparacion.html"><i class="fa fa-check"></i><b>10</b> Comparación de medias</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="comparacion.html"><a href="comparacion.html#objetivos-del-capítulo-9"><i class="fa fa-check"></i><b>10.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="10.2" data-path="comparacion.html"><a href="comparacion.html#prueba-t-para-una-muestra"><i class="fa fa-check"></i><b>10.2</b> Prueba t para una muestra</a></li>
+<li class="chapter" data-level="10.3" data-path="comparacion.html"><a href="comparacion.html#prueba-t-para-dos-muestras"><i class="fa fa-check"></i><b>10.3</b> Prueba t para dos muestras</a></li>
+<li class="chapter" data-level="10.4" data-path="comparacion.html"><a href="comparacion.html#anova"><i class="fa fa-check"></i><b>10.4</b> ANOVA</a></li>
+<li class="chapter" data-level="10.5" data-path="comparacion.html"><a href="comparacion.html#supuestos-y-alternativas-no-paramétricas"><i class="fa fa-check"></i><b>10.5</b> Supuestos y alternativas no paramétricas</a></li>
+<li class="chapter" data-level="10.6" data-path="comparacion.html"><a href="comparacion.html#resumen-del-capítulo-9"><i class="fa fa-check"></i><b>10.6</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="10.7" data-path="comparacion.html"><a href="comparacion.html#lecturas-recomendadas-9"><i class="fa fa-check"></i><b>10.7</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="10.8" data-path="comparacion.html"><a href="comparacion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html"><i class="fa fa-check"></i><b>11</b> Regresión bivariada</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#objetivos-del-capítulo-10"><i class="fa fa-check"></i><b>11.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="11.2" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#correlación-1"><i class="fa fa-check"></i><b>11.2</b> Correlación</a></li>
+<li class="chapter" data-level="11.3" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#el-modelo-de-regresión-lineal-simple"><i class="fa fa-check"></i><b>11.3</b> El modelo de regresión lineal simple</a></li>
+<li class="chapter" data-level="11.4" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#mínimos-cuadrados-ordinarios"><i class="fa fa-check"></i><b>11.4</b> Mínimos cuadrados ordinarios</a></li>
+<li class="chapter" data-level="11.5" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#interpretación-de-coeficientes"><i class="fa fa-check"></i><b>11.5</b> Interpretación de coeficientes</a></li>
+<li class="chapter" data-level="11.6" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#bondad-de-ajuste"><i class="fa fa-check"></i><b>11.6</b> Bondad de ajuste</a></li>
+<li class="chapter" data-level="11.7" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#resumen-del-capítulo-10"><i class="fa fa-check"></i><b>11.7</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="11.8" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#lecturas-recomendadas-10"><i class="fa fa-check"></i><b>11.8</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="11.9" data-path="regresion-bivariada.html"><a href="regresion-bivariada.html#ejercicios-10"><i class="fa fa-check"></i><b>11.9</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="regresion-multiple.html"><a href="regresion-multiple.html"><i class="fa fa-check"></i><b>12</b> Regresión múltiple</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="regresion-multiple.html"><a href="regresion-multiple.html#objetivos-del-capítulo-11"><i class="fa fa-check"></i><b>12.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="12.2" data-path="regresion-multiple.html"><a href="regresion-multiple.html#el-modelo-de-regresión-múltiple"><i class="fa fa-check"></i><b>12.2</b> El modelo de regresión múltiple</a></li>
+<li class="chapter" data-level="12.3" data-path="regresion-multiple.html"><a href="regresion-multiple.html#interpretación-de-coeficientes-1"><i class="fa fa-check"></i><b>12.3</b> Interpretación de coeficientes</a></li>
+<li class="chapter" data-level="12.4" data-path="regresion-multiple.html"><a href="regresion-multiple.html#variables-de-control"><i class="fa fa-check"></i><b>12.4</b> Variables de control</a></li>
+<li class="chapter" data-level="12.5" data-path="regresion-multiple.html"><a href="regresion-multiple.html#multicolinealidad"><i class="fa fa-check"></i><b>12.5</b> Multicolinealidad</a></li>
+<li class="chapter" data-level="12.6" data-path="regresion-multiple.html"><a href="regresion-multiple.html#variables-categóricas-1"><i class="fa fa-check"></i><b>12.6</b> Variables categóricas</a></li>
+<li class="chapter" data-level="12.7" data-path="regresion-multiple.html"><a href="regresion-multiple.html#interacciones"><i class="fa fa-check"></i><b>12.7</b> Interacciones</a></li>
+<li class="chapter" data-level="12.8" data-path="regresion-multiple.html"><a href="regresion-multiple.html#resumen-del-capítulo-11"><i class="fa fa-check"></i><b>12.8</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="12.9" data-path="regresion-multiple.html"><a href="regresion-multiple.html#lecturas-recomendadas-11"><i class="fa fa-check"></i><b>12.9</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="12.10" data-path="regresion-multiple.html"><a href="regresion-multiple.html#ejercicios-11"><i class="fa fa-check"></i><b>12.10</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="supuestos.html"><a href="supuestos.html"><i class="fa fa-check"></i><b>13</b> Supuestos de OLS y diagnósticos</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="supuestos.html"><a href="supuestos.html#objetivos-del-capítulo-12"><i class="fa fa-check"></i><b>13.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="13.2" data-path="supuestos.html"><a href="supuestos.html#los-supuestos-de-gauss-markov"><i class="fa fa-check"></i><b>13.2</b> Los supuestos de Gauss-Markov</a></li>
+<li class="chapter" data-level="13.3" data-path="supuestos.html"><a href="supuestos.html#diagnóstico-de-regresión"><i class="fa fa-check"></i><b>13.3</b> Diagnóstico de regresión</a></li>
+<li class="chapter" data-level="13.4" data-path="supuestos.html"><a href="supuestos.html#heterocedasticidad"><i class="fa fa-check"></i><b>13.4</b> Heterocedasticidad</a></li>
+<li class="chapter" data-level="13.5" data-path="supuestos.html"><a href="supuestos.html#autocorrelación"><i class="fa fa-check"></i><b>13.5</b> Autocorrelación</a></li>
+<li class="chapter" data-level="13.6" data-path="supuestos.html"><a href="supuestos.html#valores-atípicos-e-influyentes"><i class="fa fa-check"></i><b>13.6</b> Valores atípicos e influyentes</a></li>
+<li class="chapter" data-level="13.7" data-path="supuestos.html"><a href="supuestos.html#resumen-del-capítulo-12"><i class="fa fa-check"></i><b>13.7</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="13.8" data-path="supuestos.html"><a href="supuestos.html#lecturas-recomendadas-12"><i class="fa fa-check"></i><b>13.8</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="13.9" data-path="supuestos.html"><a href="supuestos.html#ejercicios-12"><i class="fa fa-check"></i><b>13.9</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="glm.html"><a href="glm.html"><i class="fa fa-check"></i><b>14</b> Introducción a modelos lineales generalizados</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="glm.html"><a href="glm.html#objetivos-del-capítulo-13"><i class="fa fa-check"></i><b>14.1</b> Objetivos del capítulo</a></li>
+<li class="chapter" data-level="14.2" data-path="glm.html"><a href="glm.html#limitaciones-de-ols"><i class="fa fa-check"></i><b>14.2</b> Limitaciones de OLS</a></li>
+<li class="chapter" data-level="14.3" data-path="glm.html"><a href="glm.html#la-familia-de-glm"><i class="fa fa-check"></i><b>14.3</b> La familia de GLM</a></li>
+<li class="chapter" data-level="14.4" data-path="glm.html"><a href="glm.html#regresión-logística"><i class="fa fa-check"></i><b>14.4</b> Regresión logística</a></li>
+<li class="chapter" data-level="14.5" data-path="glm.html"><a href="glm.html#regresión-de-poisson"><i class="fa fa-check"></i><b>14.5</b> Regresión de Poisson</a></li>
+<li class="chapter" data-level="14.6" data-path="glm.html"><a href="glm.html#resumen-del-capítulo-13"><i class="fa fa-check"></i><b>14.6</b> Resumen del capítulo</a></li>
+<li class="chapter" data-level="14.7" data-path="glm.html"><a href="glm.html#lecturas-recomendadas-13"><i class="fa fa-check"></i><b>14.7</b> Lecturas recomendadas</a></li>
+<li class="chapter" data-level="14.8" data-path="glm.html"><a href="glm.html#ejercicios-13"><i class="fa fa-check"></i><b>14.8</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Métodos Cuantitativos para Ciencias Políticas y Sociales</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="visualizacion" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Visualización de datos<a href="visualizacion.html#visualizacion" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="objetivos-del-capítulo-5" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Objetivos del capítulo<a href="visualizacion.html#objetivos-del-capítulo-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Al finalizar este capítulo, serás capaz de:</p>
+<ul>
+<li>Aplicar principios de diseño gráfico efectivo</li>
+<li>Usar la gramática de gráficos (grammar of graphics) con ggplot2</li>
+<li>Crear y personalizar múltiples tipos de gráficos</li>
+<li>Identificar visualizaciones problemáticas y mejorarlas</li>
+<li>Combinar múltiples gráficos en una figura</li>
+<li>Exportar gráficos para publicación</li>
+</ul>
+</div>
+<div id="principios-de-visualización-efectiva" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Principios de visualización efectiva<a href="visualizacion.html#principios-de-visualización-efectiva" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="citation">Tufte (<a href="#ref-tufte1983">1983</a>)</span> estableció principios fundamentales de diseño gráfico que permanecen vigentes:</p>
+<div id="maximizar-el-ratio-datos-tinta" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> 1. Maximizar el ratio datos-tinta<a href="visualizacion.html#maximizar-el-ratio-datos-tinta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Eliminar elementos innecesarios. Cada elemento gráfico debe comunicar información.</p>
+<p><strong>Mal ejemplo</strong> (chartjunk):</p>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="visualizacion.html#cb130-1" tabindex="-1"></a><span class="co"># Gráfico sobrecargado</span></span>
+<span id="cb130-2"><a href="visualizacion.html#cb130-2" tabindex="-1"></a><span class="fu">ggplot</span>(comunas <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>), <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, <span class="sc">-</span>izquierda_2021), <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb130-3"><a href="visualizacion.html#cb130-3" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>, <span class="at">color =</span> <span class="st">&quot;gold&quot;</span>, <span class="at">linewidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb130-4"><a href="visualizacion.html#cb130-4" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(izquierda_2021, <span class="dv">0</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">6</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-5"><a href="visualizacion.html#cb130-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;!!!VOTO DE IZQUIERDA POR REGIÓN!!!&quot;</span>, </span>
+<span id="cb130-6"><a href="visualizacion.html#cb130-6" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;REGIÓN&quot;</span>, <span class="at">y =</span> <span class="st">&quot;PORCENTAJE (%)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb130-7"><a href="visualizacion.html#cb130-7" tabindex="-1"></a>  <span class="fu">theme_dark</span>() <span class="sc">+</span></span>
+<span id="cb130-8"><a href="visualizacion.html#cb130-8" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb130-9"><a href="visualizacion.html#cb130-9" tabindex="-1"></a>    <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">&quot;yellow&quot;</span>),</span>
+<span id="cb130-10"><a href="visualizacion.html#cb130-10" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;purple&quot;</span>, <span class="at">linewidth =</span> <span class="dv">2</span>),</span>
+<span id="cb130-11"><a href="visualizacion.html#cb130-11" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb130-12"><a href="visualizacion.html#cb130-12" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-90"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-90-1.png" alt="Gráfico con elementos innecesarios" width="80%" />
+<p class="caption">
+Figura 6.1: Gráfico con elementos innecesarios
+</p>
+</div>
+<p><strong>Buen ejemplo</strong> (limpio):</p>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="visualizacion.html#cb131-1" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
+<span id="cb131-2"><a href="visualizacion.html#cb131-2" tabindex="-1"></a>  <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span></span>
+<span id="cb131-3"><a href="visualizacion.html#cb131-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">izquierda_media =</span> <span class="fu">mean</span>(izquierda_2021)) <span class="sc">%&gt;%</span></span>
+<span id="cb131-4"><a href="visualizacion.html#cb131-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, izquierda_media), <span class="at">y =</span> izquierda_media)) <span class="sc">+</span></span>
+<span id="cb131-5"><a href="visualizacion.html#cb131-5" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb131-6"><a href="visualizacion.html#cb131-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb131-7"><a href="visualizacion.html#cb131-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Voto izquierda (%)&quot;</span>, </span>
+<span id="cb131-8"><a href="visualizacion.html#cb131-8" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Promedio de voto izquierda por región, 2021&quot;</span>) <span class="sc">+</span></span>
+<span id="cb131-9"><a href="visualizacion.html#cb131-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-91"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-91-1.png" alt="Gráfico limpio y efectivo" width="80%" />
+<p class="caption">
+Figura 6.2: Gráfico limpio y efectivo
+</p>
+</div>
+</div>
+<div id="usar-el-canal-visual-apropiado" class="section level3 hasAnchor" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> 2. Usar el canal visual apropiado<a href="visualizacion.html#usar-el-canal-visual-apropiado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La percepción humana procesa algunos atributos visuales mejor que otros:</p>
+<p><strong>Jerarquía de canales visuales</strong> (de más a menos preciso):
+1. Posición en eje común
+2. Longitud
+3. Ángulo/pendiente
+4. Área
+5. Volumen
+6. Color (saturación)
+7. Color (tono)</p>
+<p>Esto explica por qué gráficos de barras son más precisos que gráficos de torta.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="visualizacion.html#cb132-1" tabindex="-1"></a>datos_partidos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb132-2"><a href="visualizacion.html#cb132-2" tabindex="-1"></a>  <span class="at">partido =</span> <span class="fu">c</span>(<span class="st">&quot;PS&quot;</span>, <span class="st">&quot;DC&quot;</span>, <span class="st">&quot;RN&quot;</span>, <span class="st">&quot;UDI&quot;</span>, <span class="st">&quot;Otros&quot;</span>),</span>
+<span id="cb132-3"><a href="visualizacion.html#cb132-3" tabindex="-1"></a>  <span class="at">votos =</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">18</span>, <span class="dv">22</span>, <span class="dv">19</span>, <span class="dv">18</span>)</span>
+<span id="cb132-4"><a href="visualizacion.html#cb132-4" tabindex="-1"></a>)</span>
+<span id="cb132-5"><a href="visualizacion.html#cb132-5" tabindex="-1"></a></span>
+<span id="cb132-6"><a href="visualizacion.html#cb132-6" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_partidos, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(partido, votos), <span class="at">y =</span> votos)) <span class="sc">+</span></span>
+<span id="cb132-7"><a href="visualizacion.html#cb132-7" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-8"><a href="visualizacion.html#cb132-8" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb132-9"><a href="visualizacion.html#cb132-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Votos (%)&quot;</span>, <span class="at">title =</span> <span class="st">&quot;Gráfico de barras&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-10"><a href="visualizacion.html#cb132-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb132-11"><a href="visualizacion.html#cb132-11" tabindex="-1"></a></span>
+<span id="cb132-12"><a href="visualizacion.html#cb132-12" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_partidos, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> votos, <span class="at">fill =</span> partido)) <span class="sc">+</span></span>
+<span id="cb132-13"><a href="visualizacion.html#cb132-13" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">width =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb132-14"><a href="visualizacion.html#cb132-14" tabindex="-1"></a>  <span class="fu">coord_polar</span>(<span class="st">&quot;y&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-15"><a href="visualizacion.html#cb132-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Gráfico de torta&quot;</span>) <span class="sc">+</span></span>
+<span id="cb132-16"><a href="visualizacion.html#cb132-16" tabindex="-1"></a>  <span class="fu">theme_void</span>() <span class="sc">+</span></span>
+<span id="cb132-17"><a href="visualizacion.html#cb132-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;right&quot;</span>)</span>
+<span id="cb132-18"><a href="visualizacion.html#cb132-18" tabindex="-1"></a></span>
+<span id="cb132-19"><a href="visualizacion.html#cb132-19" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-92"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-92-1.png" alt="Comparación: barras vs. torta" width="80%" />
+<p class="caption">
+Figura 6.3: Comparación: barras vs. torta
+</p>
+</div>
+<p>El gráfico de barras permite comparaciones precisas. El gráfico de torta dificulta distinguir diferencias pequeñas.</p>
+</div>
+<div id="mostrar-comparaciones" class="section level3 hasAnchor" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> 3. Mostrar comparaciones<a href="visualizacion.html#mostrar-comparaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los datos adquieren significado mediante comparación. Comparar contra:
+- Otros grupos
+- Otros momentos
+- Un estándar o objetivo</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="visualizacion.html#cb133-1" tabindex="-1"></a>comunas_muestra <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb133-2"><a href="visualizacion.html#cb133-2" tabindex="-1"></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">20</span>)</span>
+<span id="cb133-3"><a href="visualizacion.html#cb133-3" tabindex="-1"></a></span>
+<span id="cb133-4"><a href="visualizacion.html#cb133-4" tabindex="-1"></a><span class="fu">ggplot</span>(comunas_muestra, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">xend =</span> izquierda_2021, </span>
+<span id="cb133-5"><a href="visualizacion.html#cb133-5" tabindex="-1"></a>                             <span class="at">y =</span> <span class="fu">reorder</span>(comuna_id, izquierda_2021))) <span class="sc">+</span></span>
+<span id="cb133-6"><a href="visualizacion.html#cb133-6" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">yend =</span> comuna_id), <span class="at">color =</span> <span class="st">&quot;gray70&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb133-7"><a href="visualizacion.html#cb133-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">color =</span> <span class="st">&quot;2017&quot;</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb133-8"><a href="visualizacion.html#cb133-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> izquierda_2021, <span class="at">color =</span> <span class="st">&quot;2021&quot;</span>), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb133-9"><a href="visualizacion.html#cb133-9" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;2017&quot;</span> <span class="ot">=</span> <span class="st">&quot;coral&quot;</span>, <span class="st">&quot;2021&quot;</span> <span class="ot">=</span> <span class="st">&quot;steelblue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb133-10"><a href="visualizacion.html#cb133-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda (%)&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Comuna (ID)&quot;</span>,</span>
+<span id="cb133-11"><a href="visualizacion.html#cb133-11" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio en voto de izquierda entre elecciones&quot;</span>,</span>
+<span id="cb133-12"><a href="visualizacion.html#cb133-12" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Año&quot;</span>) <span class="sc">+</span></span>
+<span id="cb133-13"><a href="visualizacion.html#cb133-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-93"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-93-1.png" alt="Comparación de cambio electoral 2017-2021" width="80%" />
+<p class="caption">
+Figura 6.4: Comparación de cambio electoral 2017-2021
+</p>
+</div>
+</div>
+<div id="mostrar-causalidad-y-explicación" class="section level3 hasAnchor" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> 4. Mostrar causalidad y explicación<a href="visualizacion.html#mostrar-causalidad-y-explicación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los gráficos deben sugerir explicaciones, no solo describir.</p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="visualizacion.html#cb134-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> urbano, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> urbano)) <span class="sc">+</span></span>
+<span id="cb134-2"><a href="visualizacion.html#cb134-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb134-3"><a href="visualizacion.html#cb134-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb134-4"><a href="visualizacion.html#cb134-4" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;FALSE&quot;</span> <span class="ot">=</span> <span class="st">&quot;Rural&quot;</span>, <span class="st">&quot;TRUE&quot;</span> <span class="ot">=</span> <span class="st">&quot;Urbana&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb134-5"><a href="visualizacion.html#cb134-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Tipo de comuna&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Cambio en voto izquierda (puntos porcentuales)&quot;</span>,</span>
+<span id="cb134-6"><a href="visualizacion.html#cb134-6" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral según urbanización&quot;</span>,</span>
+<span id="cb134-7"><a href="visualizacion.html#cb134-7" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Las comunas urbanas experimentaron mayor crecimiento del voto de izquierda&quot;</span>) <span class="sc">+</span></span>
+<span id="cb134-8"><a href="visualizacion.html#cb134-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-94"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-94-1.png" alt="Relación entre urbanización y cambio electoral" width="80%" />
+<p class="caption">
+Figura 6.5: Relación entre urbanización y cambio electoral
+</p>
+</div>
+</div>
+<div id="integrar-evidencia" class="section level3 hasAnchor" number="6.2.5">
+<h3><span class="header-section-number">6.2.5</span> 5. Integrar evidencia<a href="visualizacion.html#integrar-evidencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Combinar palabras, números y gráficos para una narrativa coherente.</p>
+</div>
+</div>
+<div id="grammar-of-graphics-y-ggplot2" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Grammar of Graphics y ggplot2<a href="visualizacion.html#grammar-of-graphics-y-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="citation">Wilkinson (<a href="#ref-wilkinson2005">2005</a>)</span> propuso que los gráficos estadísticos tienen una gramática—componentes sistemáticos que se combinan para producir visualizaciones.</p>
+<div id="componentes-de-ggplot2" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Componentes de ggplot2<a href="visualizacion.html#componentes-de-ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Datos</strong>: El dataset</li>
+<li><strong>Aesthetics (aes)</strong>: Mapeo de variables a propiedades visuales (x, y, color, tamaño)</li>
+<li><strong>Geometrías (geom)</strong>: Representación visual (puntos, líneas, barras)</li>
+<li><strong>Escalas (scales)</strong>: Cómo se traducen valores de datos a valores visuales</li>
+<li><strong>Facetas (facets)</strong>: Paneles múltiples</li>
+<li><strong>Temas (themes)</strong>: Elementos no relacionados con datos (títulos, fondos)</li>
+</ol>
+</div>
+<div id="estructura-básica" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Estructura básica<a href="visualizacion.html#estructura-básica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="visualizacion.html#cb135-1" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATOS<span class="sc">&gt;</span>, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">&lt;</span>VAR_X<span class="sc">&gt;</span>, <span class="at">y =</span> <span class="sc">&lt;</span>VAR_Y<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
+<span id="cb135-2"><a href="visualizacion.html#cb135-2" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>TIPO<span class="sc">&gt;</span>() <span class="sc">+</span></span>
+<span id="cb135-3"><a href="visualizacion.html#cb135-3" tabindex="-1"></a>  scale_<span class="sc">&lt;</span>...<span class="sc">&gt;</span>() <span class="sc">+</span></span>
+<span id="cb135-4"><a href="visualizacion.html#cb135-4" tabindex="-1"></a>  facet_<span class="sc">&lt;</span>...<span class="sc">&gt;</span>() <span class="sc">+</span></span>
+<span id="cb135-5"><a href="visualizacion.html#cb135-5" tabindex="-1"></a>  <span class="fu">labs</span>(...) <span class="sc">+</span></span>
+<span id="cb135-6"><a href="visualizacion.html#cb135-6" tabindex="-1"></a>  theme_<span class="sc">&lt;</span>...<span class="sc">&gt;</span>()</span></code></pre></div>
+</div>
+<div id="ejemplo-paso-a-paso" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Ejemplo paso a paso<a href="visualizacion.html#ejemplo-paso-a-paso" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="visualizacion.html#cb136-1" tabindex="-1"></a><span class="co"># Paso 1: Solo datos y aesthetics (nada se dibuja)</span></span>
+<span id="cb136-2"><a href="visualizacion.html#cb136-2" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021))</span>
+<span id="cb136-3"><a href="visualizacion.html#cb136-3" tabindex="-1"></a></span>
+<span id="cb136-4"><a href="visualizacion.html#cb136-4" tabindex="-1"></a><span class="co"># Paso 2: Agregar geometría</span></span>
+<span id="cb136-5"><a href="visualizacion.html#cb136-5" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> p1 <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span>
+<span id="cb136-6"><a href="visualizacion.html#cb136-6" tabindex="-1"></a></span>
+<span id="cb136-7"><a href="visualizacion.html#cb136-7" tabindex="-1"></a><span class="co"># Paso 3: Agregar línea de referencia</span></span>
+<span id="cb136-8"><a href="visualizacion.html#cb136-8" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> p2 <span class="sc">+</span> <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb136-9"><a href="visualizacion.html#cb136-9" tabindex="-1"></a></span>
+<span id="cb136-10"><a href="visualizacion.html#cb136-10" tabindex="-1"></a><span class="co"># Paso 4: Mejorar etiquetas</span></span>
+<span id="cb136-11"><a href="visualizacion.html#cb136-11" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> p3 <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>, </span>
+<span id="cb136-12"><a href="visualizacion.html#cb136-12" tabindex="-1"></a>                <span class="at">y =</span> <span class="st">&quot;Voto izquierda 2021 (%)&quot;</span>,</span>
+<span id="cb136-13"><a href="visualizacion.html#cb136-13" tabindex="-1"></a>                <span class="at">title =</span> <span class="st">&quot;Cambio electoral entre elecciones&quot;</span>)</span>
+<span id="cb136-14"><a href="visualizacion.html#cb136-14" tabindex="-1"></a></span>
+<span id="cb136-15"><a href="visualizacion.html#cb136-15" tabindex="-1"></a><span class="co"># Combinar para mostrar progresión</span></span>
+<span id="cb136-16"><a href="visualizacion.html#cb136-16" tabindex="-1"></a>(p1 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Paso 1: Solo aesthetics&quot;</span>)) <span class="sc">/</span> </span>
+<span id="cb136-17"><a href="visualizacion.html#cb136-17" tabindex="-1"></a>  (p2 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Paso 2: + geometría&quot;</span>)) <span class="sc">/</span></span>
+<span id="cb136-18"><a href="visualizacion.html#cb136-18" tabindex="-1"></a>  (p3 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Paso 3: + línea de referencia&quot;</span>)) <span class="sc">/</span></span>
+<span id="cb136-19"><a href="visualizacion.html#cb136-19" tabindex="-1"></a>  (p4 <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;Paso 4: + etiquetas&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-96"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-96-1.png" alt="Construcción progresiva de un gráfico" width="80%" />
+<p class="caption">
+Figura 6.6: Construcción progresiva de un gráfico
+</p>
+</div>
+</div>
+</div>
+<div id="gráficos-univariados" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Gráficos univariados<a href="visualizacion.html#gráficos-univariados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="variables-continuas" class="section level3 hasAnchor" number="6.4.1">
+<h3><span class="header-section-number">6.4.1</span> Variables continuas<a href="visualizacion.html#variables-continuas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Histograma con densidad superpuesta:</strong></p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="visualizacion.html#cb137-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> cambio_izquierda)) <span class="sc">+</span></span>
+<span id="cb137-2"><a href="visualizacion.html#cb137-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), <span class="at">bins =</span> <span class="dv">30</span>, </span>
+<span id="cb137-3"><a href="visualizacion.html#cb137-3" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb137-4"><a href="visualizacion.html#cb137-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb137-5"><a href="visualizacion.html#cb137-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb137-6"><a href="visualizacion.html#cb137-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cambio en voto izquierda (puntos porcentuales)&quot;</span>,</span>
+<span id="cb137-7"><a href="visualizacion.html#cb137-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>,</span>
+<span id="cb137-8"><a href="visualizacion.html#cb137-8" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución del cambio electoral 2017-2021&quot;</span>,</span>
+<span id="cb137-9"><a href="visualizacion.html#cb137-9" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;La mayoría de comunas experimentó crecimiento del voto de izquierda&quot;</span>) <span class="sc">+</span></span>
+<span id="cb137-10"><a href="visualizacion.html#cb137-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-97"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-97-1.png" alt="Distribución del cambio electoral" width="80%" />
+<p class="caption">
+Figura 6.7: Distribución del cambio electoral
+</p>
+</div>
+<p><strong>Ridgeline plot (montañas):</strong></p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="visualizacion.html#cb138-1" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span>
+<span id="cb138-2"><a href="visualizacion.html#cb138-2" tabindex="-1"></a></span>
+<span id="cb138-3"><a href="visualizacion.html#cb138-3" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> cambio_izquierda, <span class="at">y =</span> region, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb138-4"><a href="visualizacion.html#cb138-4" tabindex="-1"></a>  <span class="fu">geom_density_ridges</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb138-5"><a href="visualizacion.html#cb138-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cambio en voto izquierda (puntos porcentuales)&quot;</span>,</span>
+<span id="cb138-6"><a href="visualizacion.html#cb138-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb138-7"><a href="visualizacion.html#cb138-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral por región&quot;</span>) <span class="sc">+</span></span>
+<span id="cb138-8"><a href="visualizacion.html#cb138-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-98"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-98-1.png" alt="Distribuciones por región" width="80%" />
+<p class="caption">
+Figura 6.8: Distribuciones por región
+</p>
+</div>
+</div>
+<div id="variables-categóricas" class="section level3 hasAnchor" number="6.4.2">
+<h3><span class="header-section-number">6.4.2</span> Variables categóricas<a href="visualizacion.html#variables-categóricas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Gráfico de barras ordenado:</strong></p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="visualizacion.html#cb139-1" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
+<span id="cb139-2"><a href="visualizacion.html#cb139-2" tabindex="-1"></a>  <span class="fu">count</span>(region) <span class="sc">%&gt;%</span></span>
+<span id="cb139-3"><a href="visualizacion.html#cb139-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, n), <span class="at">y =</span> n)) <span class="sc">+</span></span>
+<span id="cb139-4"><a href="visualizacion.html#cb139-4" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb139-5"><a href="visualizacion.html#cb139-5" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> n), <span class="at">hjust =</span> <span class="sc">-</span><span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">3.5</span>) <span class="sc">+</span></span>
+<span id="cb139-6"><a href="visualizacion.html#cb139-6" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb139-7"><a href="visualizacion.html#cb139-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Número de comunas&quot;</span>,</span>
+<span id="cb139-8"><a href="visualizacion.html#cb139-8" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Comunas por región en la muestra&quot;</span>) <span class="sc">+</span></span>
+<span id="cb139-9"><a href="visualizacion.html#cb139-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-99"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-99-1.png" alt="Frecuencias ordenadas" width="80%" />
+<p class="caption">
+Figura 6.9: Frecuencias ordenadas
+</p>
+</div>
+<p><strong>Dot plot (preferible cuando muchas categorías):</strong></p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="visualizacion.html#cb140-1" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
+<span id="cb140-2"><a href="visualizacion.html#cb140-2" tabindex="-1"></a>  <span class="fu">count</span>(region) <span class="sc">%&gt;%</span></span>
+<span id="cb140-3"><a href="visualizacion.html#cb140-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> n, <span class="at">y =</span> <span class="fu">reorder</span>(region, n))) <span class="sc">+</span></span>
+<span id="cb140-4"><a href="visualizacion.html#cb140-4" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb140-5"><a href="visualizacion.html#cb140-5" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="dv">0</span>, <span class="at">xend =</span> n, <span class="at">yend =</span> region), <span class="at">color =</span> <span class="st">&quot;gray70&quot;</span>) <span class="sc">+</span></span>
+<span id="cb140-6"><a href="visualizacion.html#cb140-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Número de comunas&quot;</span>, <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb140-7"><a href="visualizacion.html#cb140-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Comunas por región&quot;</span>) <span class="sc">+</span></span>
+<span id="cb140-8"><a href="visualizacion.html#cb140-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-100"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-100-1.png" alt="Dot plot como alternativa" width="80%" />
+<p class="caption">
+Figura 6.10: Dot plot como alternativa
+</p>
+</div>
+</div>
+</div>
+<div id="gráficos-bivariados" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Gráficos bivariados<a href="visualizacion.html#gráficos-bivariados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="dos-variables-continuas-scatter-plots" class="section level3 hasAnchor" number="6.5.1">
+<h3><span class="header-section-number">6.5.1</span> Dos variables continuas: scatter plots<a href="visualizacion.html#dos-variables-continuas-scatter-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Básico con línea de tendencia:</strong></p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="visualizacion.html#cb141-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb141-2"><a href="visualizacion.html#cb141-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb141-3"><a href="visualizacion.html#cb141-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb141-4"><a href="visualizacion.html#cb141-4" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb141-5"><a href="visualizacion.html#cb141-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>, </span>
+<span id="cb141-6"><a href="visualizacion.html#cb141-6" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Voto izquierda 2021 (%)&quot;</span>,</span>
+<span id="cb141-7"><a href="visualizacion.html#cb141-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Relación entre apoyo de izquierda en dos elecciones&quot;</span>,</span>
+<span id="cb141-8"><a href="visualizacion.html#cb141-8" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Línea roja: regresión | Línea azul: sin cambio&quot;</span>) <span class="sc">+</span></span>
+<span id="cb141-9"><a href="visualizacion.html#cb141-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-101"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-101-1.png" alt="Relación entre voto 2017 y 2021" width="80%" />
+<p class="caption">
+Figura 6.11: Relación entre voto 2017 y 2021
+</p>
+</div>
+<p><strong>Con tercera variable (color/tamaño):</strong></p>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="visualizacion.html#cb142-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb142-2"><a href="visualizacion.html#cb142-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> region, <span class="at">size =</span> poblacion), <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb142-3"><a href="visualizacion.html#cb142-3" tabindex="-1"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">labels =</span> comma, <span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb142-4"><a href="visualizacion.html#cb142-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>, </span>
+<span id="cb142-5"><a href="visualizacion.html#cb142-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Voto izquierda 2021 (%)&quot;</span>,</span>
+<span id="cb142-6"><a href="visualizacion.html#cb142-6" tabindex="-1"></a>       <span class="at">size =</span> <span class="st">&quot;Población&quot;</span>, <span class="at">color =</span> <span class="st">&quot;Región&quot;</span>,</span>
+<span id="cb142-7"><a href="visualizacion.html#cb142-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral según región y tamaño&quot;</span>) <span class="sc">+</span></span>
+<span id="cb142-8"><a href="visualizacion.html#cb142-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-102"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-102-1.png" alt="Scatter plot con tercera variable" width="80%" />
+<p class="caption">
+Figura 6.12: Scatter plot con tercera variable
+</p>
+</div>
+<p><strong>Etiquetado selectivo con ggrepel:</strong></p>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="visualizacion.html#cb143-1" tabindex="-1"></a><span class="co"># Identificar casos extremos para etiquetar</span></span>
+<span id="cb143-2"><a href="visualizacion.html#cb143-2" tabindex="-1"></a>extremos <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb143-3"><a href="visualizacion.html#cb143-3" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(cambio_izquierda) <span class="sc">&gt;</span> <span class="dv">15</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb143-4"><a href="visualizacion.html#cb143-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">label =</span> <span class="fu">paste0</span>(<span class="st">&quot;Comuna &quot;</span>, comuna_id))</span>
+<span id="cb143-5"><a href="visualizacion.html#cb143-5" tabindex="-1"></a></span>
+<span id="cb143-6"><a href="visualizacion.html#cb143-6" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> cambio_izquierda)) <span class="sc">+</span></span>
+<span id="cb143-7"><a href="visualizacion.html#cb143-7" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.3</span>) <span class="sc">+</span></span>
+<span id="cb143-8"><a href="visualizacion.html#cb143-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">data =</span> extremos, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb143-9"><a href="visualizacion.html#cb143-9" tabindex="-1"></a>  <span class="fu">geom_text_repel</span>(<span class="at">data =</span> extremos, <span class="fu">aes</span>(<span class="at">label =</span> label), </span>
+<span id="cb143-10"><a href="visualizacion.html#cb143-10" tabindex="-1"></a>                  <span class="at">size =</span> <span class="dv">3</span>, <span class="at">max.overlaps =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb143-11"><a href="visualizacion.html#cb143-11" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb143-12"><a href="visualizacion.html#cb143-12" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>,</span>
+<span id="cb143-13"><a href="visualizacion.html#cb143-13" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Cambio 2017-2021 (puntos porcentuales)&quot;</span>,</span>
+<span id="cb143-14"><a href="visualizacion.html#cb143-14" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral desde baseline 2017&quot;</span>,</span>
+<span id="cb143-15"><a href="visualizacion.html#cb143-15" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Comunas con cambios extremos etiquetadas en rojo&quot;</span>) <span class="sc">+</span></span>
+<span id="cb143-16"><a href="visualizacion.html#cb143-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-103-1.png" alt="Scatter plot con etiquetas" width="80%" />
+<p class="caption">
+Figura 6.13: Scatter plot con etiquetas
+</p>
+</div>
+</div>
+<div id="variable-continua-vs.-categórica" class="section level3 hasAnchor" number="6.5.2">
+<h3><span class="header-section-number">6.5.2</span> Variable continua vs. categórica<a href="visualizacion.html#variable-continua-vs.-categórica" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Boxplots comparativos:</strong></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="visualizacion.html#cb144-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb144-2"><a href="visualizacion.html#cb144-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb144-3"><a href="visualizacion.html#cb144-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb144-4"><a href="visualizacion.html#cb144-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Cambio en voto izquierda (puntos porcentuales)&quot;</span>,</span>
+<span id="cb144-5"><a href="visualizacion.html#cb144-5" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral por región&quot;</span>) <span class="sc">+</span></span>
+<span id="cb144-6"><a href="visualizacion.html#cb144-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb144-7"><a href="visualizacion.html#cb144-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-104"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-104-1.png" alt="Distribuciones por grupo" width="80%" />
+<p class="caption">
+Figura 6.14: Distribuciones por grupo
+</p>
+</div>
+<p><strong>Violin plots con puntos:</strong></p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="visualizacion.html#cb145-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb145-2"><a href="visualizacion.html#cb145-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb145-3"><a href="visualizacion.html#cb145-3" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">size =</span> <span class="fl">0.8</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb145-4"><a href="visualizacion.html#cb145-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> median, <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>, <span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb145-5"><a href="visualizacion.html#cb145-5" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb145-6"><a href="visualizacion.html#cb145-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Cambio en voto izquierda (p.p.)&quot;</span>,</span>
+<span id="cb145-7"><a href="visualizacion.html#cb145-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución del cambio electoral por región&quot;</span>,</span>
+<span id="cb145-8"><a href="visualizacion.html#cb145-8" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Punto rojo: mediana&quot;</span>) <span class="sc">+</span></span>
+<span id="cb145-9"><a href="visualizacion.html#cb145-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb145-10"><a href="visualizacion.html#cb145-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-105"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-105-1.png" alt="Violin plot con datos individuales" width="80%" />
+<p class="caption">
+Figura 6.15: Violin plot con datos individuales
+</p>
+</div>
+</div>
+<div id="dos-variables-categóricas" class="section level3 hasAnchor" number="6.5.3">
+<h3><span class="header-section-number">6.5.3</span> Dos variables categóricas<a href="visualizacion.html#dos-variables-categóricas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Heatmap de tabla de contingencia:</strong></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="visualizacion.html#cb146-1" tabindex="-1"></a><span class="co"># Crear categorías</span></span>
+<span id="cb146-2"><a href="visualizacion.html#cb146-2" tabindex="-1"></a>comunas_cat <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb146-3"><a href="visualizacion.html#cb146-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb146-4"><a href="visualizacion.html#cb146-4" tabindex="-1"></a>    <span class="at">cambio_cat =</span> <span class="fu">cut</span>(cambio_izquierda, </span>
+<span id="cb146-5"><a href="visualizacion.html#cb146-5" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>, <span class="cn">Inf</span>),</span>
+<span id="cb146-6"><a href="visualizacion.html#cb146-6" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bajó&quot;</span>, <span class="st">&quot;Estable&quot;</span>, <span class="st">&quot;Subió&quot;</span>)),</span>
+<span id="cb146-7"><a href="visualizacion.html#cb146-7" tabindex="-1"></a>    <span class="at">urbano_lab =</span> <span class="fu">ifelse</span>(urbano, <span class="st">&quot;Urbana&quot;</span>, <span class="st">&quot;Rural&quot;</span>)</span>
+<span id="cb146-8"><a href="visualizacion.html#cb146-8" tabindex="-1"></a>  )</span>
+<span id="cb146-9"><a href="visualizacion.html#cb146-9" tabindex="-1"></a></span>
+<span id="cb146-10"><a href="visualizacion.html#cb146-10" tabindex="-1"></a>tabla_cont <span class="ot">&lt;-</span> <span class="fu">table</span>(comunas_cat<span class="sc">$</span>urbano_lab, comunas_cat<span class="sc">$</span>cambio_cat)</span>
+<span id="cb146-11"><a href="visualizacion.html#cb146-11" tabindex="-1"></a></span>
+<span id="cb146-12"><a href="visualizacion.html#cb146-12" tabindex="-1"></a><span class="co"># Convertir a data frame para ggplot</span></span>
+<span id="cb146-13"><a href="visualizacion.html#cb146-13" tabindex="-1"></a>tabla_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tabla_cont)</span>
+<span id="cb146-14"><a href="visualizacion.html#cb146-14" tabindex="-1"></a><span class="fu">names</span>(tabla_df) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Urbano&quot;</span>, <span class="st">&quot;Cambio&quot;</span>, <span class="st">&quot;Freq&quot;</span>)</span>
+<span id="cb146-15"><a href="visualizacion.html#cb146-15" tabindex="-1"></a></span>
+<span id="cb146-16"><a href="visualizacion.html#cb146-16" tabindex="-1"></a><span class="fu">ggplot</span>(tabla_df, <span class="fu">aes</span>(<span class="at">x =</span> Cambio, <span class="at">y =</span> Urbano, <span class="at">fill =</span> Freq)) <span class="sc">+</span></span>
+<span id="cb146-17"><a href="visualizacion.html#cb146-17" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb146-18"><a href="visualizacion.html#cb146-18" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Freq), <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">size =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb146-19"><a href="visualizacion.html#cb146-19" tabindex="-1"></a>  <span class="fu">scale_fill_gradient</span>(<span class="at">low =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">high =</span> <span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb146-20"><a href="visualizacion.html#cb146-20" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cambio electoral&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Tipo de comuna&quot;</span>,</span>
+<span id="cb146-21"><a href="visualizacion.html#cb146-21" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Frecuencia&quot;</span>,</span>
+<span id="cb146-22"><a href="visualizacion.html#cb146-22" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral según urbanización&quot;</span>) <span class="sc">+</span></span>
+<span id="cb146-23"><a href="visualizacion.html#cb146-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-106-1.png" alt="Heatmap de frecuencias" width="80%" />
+<p class="caption">
+Figura 6.16: Heatmap de frecuencias
+</p>
+</div>
+</div>
+</div>
+<div id="series-temporales" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Series temporales<a href="visualizacion.html#series-temporales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Gráfico de líneas simple:</strong></p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="visualizacion.html#cb147-1" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> aprobacion)) <span class="sc">+</span></span>
+<span id="cb147-2"><a href="visualizacion.html#cb147-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb147-3"><a href="visualizacion.html#cb147-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb147-4"><a href="visualizacion.html#cb147-4" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;3 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb147-5"><a href="visualizacion.html#cb147-5" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">100</span>, <span class="dv">20</span>)) <span class="sc">+</span></span>
+<span id="cb147-6"><a href="visualizacion.html#cb147-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Aprobación (%)&quot;</span>,</span>
+<span id="cb147-7"><a href="visualizacion.html#cb147-7" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Evolución de aprobación presidencial&quot;</span>,</span>
+<span id="cb147-8"><a href="visualizacion.html#cb147-8" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Marzo 2022 - Febrero 2024&quot;</span>) <span class="sc">+</span></span>
+<span id="cb147-9"><a href="visualizacion.html#cb147-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb147-10"><a href="visualizacion.html#cb147-10" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-107"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-107-1.png" alt="Serie temporal de aprobación presidencial" width="80%" />
+<p class="caption">
+Figura 6.17: Serie temporal de aprobación presidencial
+</p>
+</div>
+<p><strong>Múltiples series:</strong></p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="visualizacion.html#cb148-1" tabindex="-1"></a><span class="co"># Convertir a formato largo</span></span>
+<span id="cb148-2"><a href="visualizacion.html#cb148-2" tabindex="-1"></a>aprobacion_long <span class="ot">&lt;-</span> aprobacion <span class="sc">%&gt;%</span></span>
+<span id="cb148-3"><a href="visualizacion.html#cb148-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(aprobacion, desaprobacion, indeciso),</span>
+<span id="cb148-4"><a href="visualizacion.html#cb148-4" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;categoria&quot;</span>, <span class="at">values_to =</span> <span class="st">&quot;porcentaje&quot;</span>)</span>
+<span id="cb148-5"><a href="visualizacion.html#cb148-5" tabindex="-1"></a></span>
+<span id="cb148-6"><a href="visualizacion.html#cb148-6" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion_long, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> porcentaje, <span class="at">color =</span> categoria)) <span class="sc">+</span></span>
+<span id="cb148-7"><a href="visualizacion.html#cb148-7" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb148-8"><a href="visualizacion.html#cb148-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb148-9"><a href="visualizacion.html#cb148-9" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;aprobacion&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkgreen&quot;</span>, </span>
+<span id="cb148-10"><a href="visualizacion.html#cb148-10" tabindex="-1"></a>                                 <span class="st">&quot;desaprobacion&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkred&quot;</span>,</span>
+<span id="cb148-11"><a href="visualizacion.html#cb148-11" tabindex="-1"></a>                                 <span class="st">&quot;indeciso&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray60&quot;</span>),</span>
+<span id="cb148-12"><a href="visualizacion.html#cb148-12" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Aprueba&quot;</span>, <span class="st">&quot;Desaprueba&quot;</span>, <span class="st">&quot;Indeciso&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb148-13"><a href="visualizacion.html#cb148-13" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;3 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb148-14"><a href="visualizacion.html#cb148-14" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb148-15"><a href="visualizacion.html#cb148-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Porcentaje (%)&quot;</span>, <span class="at">color =</span> <span class="cn">NULL</span>,</span>
+<span id="cb148-16"><a href="visualizacion.html#cb148-16" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Evaluación presidencial a lo largo del tiempo&quot;</span>) <span class="sc">+</span></span>
+<span id="cb148-17"><a href="visualizacion.html#cb148-17" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb148-18"><a href="visualizacion.html#cb148-18" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb148-19"><a href="visualizacion.html#cb148-19" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-108"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-108-1.png" alt="Múltiples series temporales" width="80%" />
+<p class="caption">
+Figura 6.18: Múltiples series temporales
+</p>
+</div>
+<p><strong>Área apilada:</strong></p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="visualizacion.html#cb149-1" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion_long, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> porcentaje, <span class="at">fill =</span> categoria)) <span class="sc">+</span></span>
+<span id="cb149-2"><a href="visualizacion.html#cb149-2" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb149-3"><a href="visualizacion.html#cb149-3" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;aprobacion&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkgreen&quot;</span>, </span>
+<span id="cb149-4"><a href="visualizacion.html#cb149-4" tabindex="-1"></a>                                <span class="st">&quot;desaprobacion&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkred&quot;</span>,</span>
+<span id="cb149-5"><a href="visualizacion.html#cb149-5" tabindex="-1"></a>                                <span class="st">&quot;indeciso&quot;</span> <span class="ot">=</span> <span class="st">&quot;gray60&quot;</span>),</span>
+<span id="cb149-6"><a href="visualizacion.html#cb149-6" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Aprueba&quot;</span>, <span class="st">&quot;Desaprueba&quot;</span>, <span class="st">&quot;Indeciso&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb149-7"><a href="visualizacion.html#cb149-7" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;3 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb149-8"><a href="visualizacion.html#cb149-8" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>), <span class="at">expand =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>)) <span class="sc">+</span></span>
+<span id="cb149-9"><a href="visualizacion.html#cb149-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Porcentaje (%)&quot;</span>, <span class="at">fill =</span> <span class="cn">NULL</span>,</span>
+<span id="cb149-10"><a href="visualizacion.html#cb149-10" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Composición de evaluación presidencial&quot;</span>) <span class="sc">+</span></span>
+<span id="cb149-11"><a href="visualizacion.html#cb149-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb149-12"><a href="visualizacion.html#cb149-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;bottom&quot;</span>,</span>
+<span id="cb149-13"><a href="visualizacion.html#cb149-13" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-109"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-109-1.png" alt="Gráfico de área apilada" width="80%" />
+<p class="caption">
+Figura 6.19: Gráfico de área apilada
+</p>
+</div>
+</div>
+<div id="facetas-paneles-múltiples" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Facetas (paneles múltiples)<a href="visualizacion.html#facetas-paneles-múltiples" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dividir gráficos en paneles según una variable categórica.</p>
+<div id="facet_wrap" class="section level3 hasAnchor" number="6.7.1">
+<h3><span class="header-section-number">6.7.1</span> facet_wrap<a href="visualizacion.html#facet_wrap" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="visualizacion.html#cb150-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb150-2"><a href="visualizacion.html#cb150-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb150-3"><a href="visualizacion.html#cb150-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb150-4"><a href="visualizacion.html#cb150-4" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">slope =</span> <span class="dv">1</span>, <span class="at">intercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb150-5"><a href="visualizacion.html#cb150-5" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>region, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb150-6"><a href="visualizacion.html#cb150-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>, </span>
+<span id="cb150-7"><a href="visualizacion.html#cb150-7" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Voto izquierda 2021 (%)&quot;</span>,</span>
+<span id="cb150-8"><a href="visualizacion.html#cb150-8" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Cambio electoral por región&quot;</span>) <span class="sc">+</span></span>
+<span id="cb150-9"><a href="visualizacion.html#cb150-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-110"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-110-1.png" alt="Facet wrap por región" width="80%" />
+<p class="caption">
+Figura 6.20: Facet wrap por región
+</p>
+</div>
+</div>
+<div id="facet_grid" class="section level3 hasAnchor" number="6.7.2">
+<h3><span class="header-section-number">6.7.2</span> facet_grid<a href="visualizacion.html#facet_grid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="visualizacion.html#cb151-1" tabindex="-1"></a>comunas_cat <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a href="visualizacion.html#cb151-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb151-3"><a href="visualizacion.html#cb151-3" tabindex="-1"></a>    <span class="at">urbano_lab =</span> <span class="fu">ifelse</span>(urbano, <span class="st">&quot;Urbana&quot;</span>, <span class="st">&quot;Rural&quot;</span>),</span>
+<span id="cb151-4"><a href="visualizacion.html#cb151-4" tabindex="-1"></a>    <span class="at">cambio_cat =</span> <span class="fu">cut</span>(cambio_izquierda, </span>
+<span id="cb151-5"><a href="visualizacion.html#cb151-5" tabindex="-1"></a>                     <span class="at">breaks =</span> <span class="fu">quantile</span>(cambio_izquierda, <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.5</span>, <span class="dv">1</span>)),</span>
+<span id="cb151-6"><a href="visualizacion.html#cb151-6" tabindex="-1"></a>                     <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Bajo crecimiento&quot;</span>, <span class="st">&quot;Alto crecimiento&quot;</span>),</span>
+<span id="cb151-7"><a href="visualizacion.html#cb151-7" tabindex="-1"></a>                     <span class="at">include.lowest =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb151-8"><a href="visualizacion.html#cb151-8" tabindex="-1"></a>  )</span>
+<span id="cb151-9"><a href="visualizacion.html#cb151-9" tabindex="-1"></a></span>
+<span id="cb151-10"><a href="visualizacion.html#cb151-10" tabindex="-1"></a><span class="fu">ggplot</span>(comunas_cat, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb151-11"><a href="visualizacion.html#cb151-11" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb151-12"><a href="visualizacion.html#cb151-12" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb151-13"><a href="visualizacion.html#cb151-13" tabindex="-1"></a>  <span class="fu">facet_grid</span>(urbano_lab <span class="sc">~</span> cambio_cat) <span class="sc">+</span></span>
+<span id="cb151-14"><a href="visualizacion.html#cb151-14" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Voto izquierda 2017 (%)&quot;</span>, </span>
+<span id="cb151-15"><a href="visualizacion.html#cb151-15" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Voto izquierda 2021 (%)&quot;</span>,</span>
+<span id="cb151-16"><a href="visualizacion.html#cb151-16" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Patrones electorales según urbanización y magnitud de cambio&quot;</span>) <span class="sc">+</span></span>
+<span id="cb151-17"><a href="visualizacion.html#cb151-17" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-111"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-111-1.png" alt="Facet grid con dos variables" width="80%" />
+<p class="caption">
+Figura 6.21: Facet grid con dos variables
+</p>
+</div>
+</div>
+</div>
+<div id="personalización-avanzada" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Personalización avanzada<a href="visualizacion.html#personalización-avanzada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="temas-predefinidos" class="section level3 hasAnchor" number="6.8.1">
+<h3><span class="header-section-number">6.8.1</span> Temas predefinidos<a href="visualizacion.html#temas-predefinidos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="visualizacion.html#cb152-1" tabindex="-1"></a>p_base <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">100</span>), </span>
+<span id="cb152-2"><a href="visualizacion.html#cb152-2" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb152-3"><a href="visualizacion.html#cb152-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb152-4"><a href="visualizacion.html#cb152-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Tema: &quot;</span>)</span>
+<span id="cb152-5"><a href="visualizacion.html#cb152-5" tabindex="-1"></a></span>
+<span id="cb152-6"><a href="visualizacion.html#cb152-6" tabindex="-1"></a>(p_base <span class="sc">+</span> <span class="fu">theme_minimal</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;theme_minimal&quot;</span>)) <span class="sc">|</span></span>
+<span id="cb152-7"><a href="visualizacion.html#cb152-7" tabindex="-1"></a>(p_base <span class="sc">+</span> <span class="fu">theme_bw</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;theme_bw&quot;</span>)) <span class="sc">/</span></span>
+<span id="cb152-8"><a href="visualizacion.html#cb152-8" tabindex="-1"></a>(p_base <span class="sc">+</span> <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;theme_classic&quot;</span>)) <span class="sc">|</span></span>
+<span id="cb152-9"><a href="visualizacion.html#cb152-9" tabindex="-1"></a>(p_base <span class="sc">+</span> <span class="fu">theme_light</span>() <span class="sc">+</span> <span class="fu">ggtitle</span>(<span class="st">&quot;theme_light&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-112"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-112-1.png" alt="Comparación de temas" width="80%" />
+<p class="caption">
+Figura 6.22: Comparación de temas
+</p>
+</div>
+</div>
+<div id="personalización-de-elementos" class="section level3 hasAnchor" number="6.8.2">
+<h3><span class="header-section-number">6.8.2</span> Personalización de elementos<a href="visualizacion.html#personalización-de-elementos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="visualizacion.html#cb153-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span> </span>
+<span id="cb153-2"><a href="visualizacion.html#cb153-2" tabindex="-1"></a>         <span class="fu">summarise</span>(<span class="at">cambio_promedio =</span> <span class="fu">mean</span>(cambio_izquierda)),</span>
+<span id="cb153-3"><a href="visualizacion.html#cb153-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, cambio_promedio), <span class="at">y =</span> cambio_promedio)) <span class="sc">+</span></span>
+<span id="cb153-4"><a href="visualizacion.html#cb153-4" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">fill =</span> cambio_promedio <span class="sc">&gt;</span> <span class="dv">0</span>), <span class="at">width =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb153-5"><a href="visualizacion.html#cb153-5" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;TRUE&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkgreen&quot;</span>, <span class="st">&quot;FALSE&quot;</span> <span class="ot">=</span> <span class="st">&quot;darkred&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb153-6"><a href="visualizacion.html#cb153-6" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linewidth =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb153-7"><a href="visualizacion.html#cb153-7" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb153-8"><a href="visualizacion.html#cb153-8" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb153-9"><a href="visualizacion.html#cb153-9" tabindex="-1"></a>    <span class="at">x =</span> <span class="cn">NULL</span>, </span>
+<span id="cb153-10"><a href="visualizacion.html#cb153-10" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Cambio promedio en voto izquierda (puntos porcentuales)&quot;</span>,</span>
+<span id="cb153-11"><a href="visualizacion.html#cb153-11" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Cambio electoral promedio por región&quot;</span>,</span>
+<span id="cb153-12"><a href="visualizacion.html#cb153-12" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">&quot;Comparación 2021 vs. 2017&quot;</span>,</span>
+<span id="cb153-13"><a href="visualizacion.html#cb153-13" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">&quot;Fuente: Datos simulados para fines pedagógicos&quot;</span></span>
+<span id="cb153-14"><a href="visualizacion.html#cb153-14" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb153-15"><a href="visualizacion.html#cb153-15" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb153-16"><a href="visualizacion.html#cb153-16" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb153-17"><a href="visualizacion.html#cb153-17" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>, <span class="at">face =</span> <span class="st">&quot;bold&quot;</span>),</span>
+<span id="cb153-18"><a href="visualizacion.html#cb153-18" tabindex="-1"></a>    <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>, <span class="at">color =</span> <span class="st">&quot;gray30&quot;</span>),</span>
+<span id="cb153-19"><a href="visualizacion.html#cb153-19" tabindex="-1"></a>    <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>, <span class="at">color =</span> <span class="st">&quot;gray50&quot;</span>, <span class="at">hjust =</span> <span class="dv">0</span>),</span>
+<span id="cb153-20"><a href="visualizacion.html#cb153-20" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb153-21"><a href="visualizacion.html#cb153-21" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb153-22"><a href="visualizacion.html#cb153-22" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb153-23"><a href="visualizacion.html#cb153-23" tabindex="-1"></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb153-24"><a href="visualizacion.html#cb153-24" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-113"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-113-1.png" alt="Gráfico altamente personalizado" width="80%" />
+<p class="caption">
+Figura 6.23: Gráfico altamente personalizado
+</p>
+</div>
+</div>
+<div id="paletas-de-colores" class="section level3 hasAnchor" number="6.8.3">
+<h3><span class="header-section-number">6.8.3</span> Paletas de colores<a href="visualizacion.html#paletas-de-colores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="visualizacion.html#cb154-1" tabindex="-1"></a>p_color <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb154-2"><a href="visualizacion.html#cb154-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb154-3"><a href="visualizacion.html#cb154-3" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb154-4"><a href="visualizacion.html#cb154-4" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb154-5"><a href="visualizacion.html#cb154-5" tabindex="-1"></a>        <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb154-6"><a href="visualizacion.html#cb154-6" tabindex="-1"></a></span>
+<span id="cb154-7"><a href="visualizacion.html#cb154-7" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> p_color <span class="sc">+</span> <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">&quot;Set2&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb154-8"><a href="visualizacion.html#cb154-8" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Brewer: Set2&quot;</span>)</span>
+<span id="cb154-9"><a href="visualizacion.html#cb154-9" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> p_color <span class="sc">+</span> <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span> </span>
+<span id="cb154-10"><a href="visualizacion.html#cb154-10" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Viridis (accesible)&quot;</span>)</span>
+<span id="cb154-11"><a href="visualizacion.html#cb154-11" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> p_color <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;#E41A1C&quot;</span>, <span class="st">&quot;#377EB8&quot;</span>, <span class="st">&quot;#4DAF4A&quot;</span>, <span class="st">&quot;#984EA3&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb154-12"><a href="visualizacion.html#cb154-12" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Manual&quot;</span>)</span>
+<span id="cb154-13"><a href="visualizacion.html#cb154-13" tabindex="-1"></a></span>
+<span id="cb154-14"><a href="visualizacion.html#cb154-14" tabindex="-1"></a>p1 <span class="sc">/</span> p2 <span class="sc">/</span> p3</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-114"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-114-1.png" alt="Diferentes paletas de colores" width="80%" />
+<p class="caption">
+Figura 6.24: Diferentes paletas de colores
+</p>
+</div>
+</div>
+</div>
+<div id="combinando-gráficos" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Combinando gráficos<a href="visualizacion.html#combinando-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El paquete <code>patchwork</code> permite combinar gráficos fácilmente.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="visualizacion.html#cb155-1" tabindex="-1"></a><span class="co"># Crear gráficos individuales</span></span>
+<span id="cb155-2"><a href="visualizacion.html#cb155-2" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> cambio_izquierda)) <span class="sc">+</span></span>
+<span id="cb155-3"><a href="visualizacion.html#cb155-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-4"><a href="visualizacion.html#cb155-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Cambio electoral&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia&quot;</span>, <span class="at">title =</span> <span class="st">&quot;A) Distribución&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-5"><a href="visualizacion.html#cb155-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb155-6"><a href="visualizacion.html#cb155-6" tabindex="-1"></a></span>
+<span id="cb155-7"><a href="visualizacion.html#cb155-7" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb155-8"><a href="visualizacion.html#cb155-8" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb155-9"><a href="visualizacion.html#cb155-9" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-10"><a href="visualizacion.html#cb155-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;2017&quot;</span>, <span class="at">y =</span> <span class="st">&quot;2021&quot;</span>, <span class="at">title =</span> <span class="st">&quot;B) Relación temporal&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-11"><a href="visualizacion.html#cb155-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb155-12"><a href="visualizacion.html#cb155-12" tabindex="-1"></a></span>
+<span id="cb155-13"><a href="visualizacion.html#cb155-13" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
+<span id="cb155-14"><a href="visualizacion.html#cb155-14" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb155-15"><a href="visualizacion.html#cb155-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Cambio electoral&quot;</span>, <span class="at">title =</span> <span class="st">&quot;C) Por región&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-16"><a href="visualizacion.html#cb155-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb155-17"><a href="visualizacion.html#cb155-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb155-18"><a href="visualizacion.html#cb155-18" tabindex="-1"></a></span>
+<span id="cb155-19"><a href="visualizacion.html#cb155-19" tabindex="-1"></a>p4 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> urbano, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> urbano)) <span class="sc">+</span></span>
+<span id="cb155-20"><a href="visualizacion.html#cb155-20" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb155-21"><a href="visualizacion.html#cb155-21" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;FALSE&quot;</span> <span class="ot">=</span> <span class="st">&quot;Rural&quot;</span>, <span class="st">&quot;TRUE&quot;</span> <span class="ot">=</span> <span class="st">&quot;Urbano&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb155-22"><a href="visualizacion.html#cb155-22" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Cambio electoral&quot;</span>, <span class="at">title =</span> <span class="st">&quot;D) Por tipo&quot;</span>) <span class="sc">+</span></span>
+<span id="cb155-23"><a href="visualizacion.html#cb155-23" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb155-24"><a href="visualizacion.html#cb155-24" tabindex="-1"></a></span>
+<span id="cb155-25"><a href="visualizacion.html#cb155-25" tabindex="-1"></a><span class="co"># Combinar con layout específico</span></span>
+<span id="cb155-26"><a href="visualizacion.html#cb155-26" tabindex="-1"></a>(p1 <span class="sc">|</span> p2) <span class="sc">/</span> (p3 <span class="sc">|</span> p4)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-115"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-115-1.png" alt="Combinación compleja de gráficos" width="80%" />
+<p class="caption">
+Figura 6.25: Combinación compleja de gráficos
+</p>
+</div>
+</div>
+<div id="anotaciones" class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Anotaciones<a href="visualizacion.html#anotaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Agregar texto, flechas y formas para destacar patrones.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="visualizacion.html#cb156-1" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> aprobacion)) <span class="sc">+</span></span>
+<span id="cb156-2"><a href="visualizacion.html#cb156-2" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb156-3"><a href="visualizacion.html#cb156-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb156-4"><a href="visualizacion.html#cb156-4" tabindex="-1"></a>  <span class="co"># Anotar punto específico</span></span>
+<span id="cb156-5"><a href="visualizacion.html#cb156-5" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;point&quot;</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-01&quot;</span>), <span class="at">y =</span> <span class="dv">65</span>, </span>
+<span id="cb156-6"><a href="visualizacion.html#cb156-6" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb156-7"><a href="visualizacion.html#cb156-7" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-01&quot;</span>), <span class="at">y =</span> <span class="dv">68</span>, </span>
+<span id="cb156-8"><a href="visualizacion.html#cb156-8" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">&quot;Pico máximo</span><span class="sc">\n</span><span class="st">(Junio 2023)&quot;</span>, <span class="at">size =</span> <span class="fl">3.5</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb156-9"><a href="visualizacion.html#cb156-9" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;segment&quot;</span>, <span class="at">x =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-01&quot;</span>), <span class="at">xend =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-06-01&quot;</span>),</span>
+<span id="cb156-10"><a href="visualizacion.html#cb156-10" tabindex="-1"></a>           <span class="at">y =</span> <span class="fl">66.5</span>, <span class="at">yend =</span> <span class="fl">65.5</span>, <span class="at">arrow =</span> <span class="fu">arrow</span>(<span class="at">length =</span> <span class="fu">unit</span>(<span class="fl">0.2</span>, <span class="st">&quot;cm&quot;</span>)),</span>
+<span id="cb156-11"><a href="visualizacion.html#cb156-11" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb156-12"><a href="visualizacion.html#cb156-12" tabindex="-1"></a>  <span class="co"># Área de interés</span></span>
+<span id="cb156-13"><a href="visualizacion.html#cb156-13" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;rect&quot;</span>, <span class="at">xmin =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-03-01&quot;</span>), <span class="at">xmax =</span> <span class="fu">as.Date</span>(<span class="st">&quot;2023-09-01&quot;</span>),</span>
+<span id="cb156-14"><a href="visualizacion.html#cb156-14" tabindex="-1"></a>           <span class="at">ymin =</span> <span class="sc">-</span><span class="cn">Inf</span>, <span class="at">ymax =</span> <span class="cn">Inf</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>, <span class="at">fill =</span> <span class="st">&quot;yellow&quot;</span>) <span class="sc">+</span></span>
+<span id="cb156-15"><a href="visualizacion.html#cb156-15" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_labels =</span> <span class="st">&quot;%b %Y&quot;</span>, <span class="at">date_breaks =</span> <span class="st">&quot;3 months&quot;</span>) <span class="sc">+</span></span>
+<span id="cb156-16"><a href="visualizacion.html#cb156-16" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">&quot;Aprobación (%)&quot;</span>,</span>
+<span id="cb156-17"><a href="visualizacion.html#cb156-17" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Aprobación presidencial con anotaciones&quot;</span>,</span>
+<span id="cb156-18"><a href="visualizacion.html#cb156-18" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">&quot;Período destacado: marzo-septiembre 2023&quot;</span>) <span class="sc">+</span></span>
+<span id="cb156-19"><a href="visualizacion.html#cb156-19" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb156-20"><a href="visualizacion.html#cb156-20" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-116"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-116-1.png" alt="Gráfico con anotaciones" width="80%" />
+<p class="caption">
+Figura 6.26: Gráfico con anotaciones
+</p>
+</div>
+</div>
+<div id="exportar-gráficos" class="section level2 hasAnchor" number="6.11">
+<h2><span class="header-section-number">6.11</span> Exportar gráficos<a href="visualizacion.html#exportar-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Guardar gráficos para publicación.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="visualizacion.html#cb157-1" tabindex="-1"></a><span class="co"># Crear gráfico</span></span>
+<span id="cb157-2"><a href="visualizacion.html#cb157-2" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
+<span id="cb157-3"><a href="visualizacion.html#cb157-3" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb157-4"><a href="visualizacion.html#cb157-4" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb157-5"><a href="visualizacion.html#cb157-5" tabindex="-1"></a></span>
+<span id="cb157-6"><a href="visualizacion.html#cb157-6" tabindex="-1"></a><span class="co"># Guardar en diferentes formatos</span></span>
+<span id="cb157-7"><a href="visualizacion.html#cb157-7" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;grafico.png&quot;</span>, p, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb157-8"><a href="visualizacion.html#cb157-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;grafico.pdf&quot;</span>, p, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb157-9"><a href="visualizacion.html#cb157-9" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;grafico.svg&quot;</span>, p, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb157-10"><a href="visualizacion.html#cb157-10" tabindex="-1"></a></span>
+<span id="cb157-11"><a href="visualizacion.html#cb157-11" tabindex="-1"></a><span class="co"># Especificar unidades</span></span>
+<span id="cb157-12"><a href="visualizacion.html#cb157-12" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;grafico_cm.png&quot;</span>, p, <span class="at">width =</span> <span class="dv">20</span>, <span class="at">height =</span> <span class="dv">15</span>, <span class="at">units =</span> <span class="st">&quot;cm&quot;</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div>
+<p><strong>Recomendaciones:</strong></p>
+<ul>
+<li><strong>PNG</strong>: Para web y presentaciones (300 dpi para calidad)</li>
+<li><strong>PDF</strong>: Para publicaciones académicas (vectorial, escalable)</li>
+<li><strong>SVG</strong>: Para edición posterior en Illustrator/Inkscape</li>
+<li><strong>Dimensiones</strong>: Verificar requisitos de revista (ej: ancho máximo 180mm)</li>
+</ul>
+</div>
+<div id="visualizaciones-problemáticas-y-cómo-mejorarlas" class="section level2 hasAnchor" number="6.12">
+<h2><span class="header-section-number">6.12</span> Visualizaciones problemáticas y cómo mejorarlas<a href="visualizacion.html#visualizaciones-problemáticas-y-cómo-mejorarlas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="problema-1-eje-y-truncado" class="section level3 hasAnchor" number="6.12.1">
+<h3><span class="header-section-number">6.12.1</span> Problema 1: Eje Y truncado<a href="visualizacion.html#problema-1-eje-y-truncado" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="visualizacion.html#cb158-1" tabindex="-1"></a>datos_ejemplo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb158-2"><a href="visualizacion.html#cb158-2" tabindex="-1"></a>  año <span class="ot">=</span> <span class="dv">2019</span><span class="sc">:</span><span class="dv">2023</span>,</span>
+<span id="cb158-3"><a href="visualizacion.html#cb158-3" tabindex="-1"></a>  <span class="at">valor =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">52</span>, <span class="dv">51</span>, <span class="dv">53</span>, <span class="dv">54</span>)</span>
+<span id="cb158-4"><a href="visualizacion.html#cb158-4" tabindex="-1"></a>)</span>
+<span id="cb158-5"><a href="visualizacion.html#cb158-5" tabindex="-1"></a></span>
+<span id="cb158-6"><a href="visualizacion.html#cb158-6" tabindex="-1"></a>p_malo <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_ejemplo, <span class="fu">aes</span>(<span class="at">x =</span> año, <span class="at">y =</span> valor)) <span class="sc">+</span></span>
+<span id="cb158-7"><a href="visualizacion.html#cb158-7" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb158-8"><a href="visualizacion.html#cb158-8" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">48</span>, <span class="dv">55</span>)) <span class="sc">+</span></span>
+<span id="cb158-9"><a href="visualizacion.html#cb158-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Problemático: Eje truncado exagera diferencias&quot;</span>) <span class="sc">+</span></span>
+<span id="cb158-10"><a href="visualizacion.html#cb158-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb158-11"><a href="visualizacion.html#cb158-11" tabindex="-1"></a></span>
+<span id="cb158-12"><a href="visualizacion.html#cb158-12" tabindex="-1"></a>p_bueno <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(datos_ejemplo, <span class="fu">aes</span>(<span class="at">x =</span> año, <span class="at">y =</span> valor)) <span class="sc">+</span></span>
+<span id="cb158-13"><a href="visualizacion.html#cb158-13" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb158-14"><a href="visualizacion.html#cb158-14" tabindex="-1"></a>  <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">60</span>)) <span class="sc">+</span></span>
+<span id="cb158-15"><a href="visualizacion.html#cb158-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mejor: Eje desde cero muestra escala real&quot;</span>) <span class="sc">+</span></span>
+<span id="cb158-16"><a href="visualizacion.html#cb158-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb158-17"><a href="visualizacion.html#cb158-17" tabindex="-1"></a></span>
+<span id="cb158-18"><a href="visualizacion.html#cb158-18" tabindex="-1"></a>p_malo <span class="sc">|</span> p_bueno</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-118"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-118-1.png" alt="Eje truncado vs. completo" width="80%" />
+<p class="caption">
+Figura 6.27: Eje truncado vs. completo
+</p>
+</div>
+</div>
+<div id="problema-2-demasiadas-categorías" class="section level3 hasAnchor" number="6.12.2">
+<h3><span class="header-section-number">6.12.2</span> Problema 2: Demasiadas categorías<a href="visualizacion.html#problema-2-demasiadas-categorías" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="visualizacion.html#cb159-1" tabindex="-1"></a><span class="co"># Simular datos con muchas categorías</span></span>
+<span id="cb159-2"><a href="visualizacion.html#cb159-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb159-3"><a href="visualizacion.html#cb159-3" tabindex="-1"></a>muchas_cat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb159-4"><a href="visualizacion.html#cb159-4" tabindex="-1"></a>  <span class="at">partido =</span> <span class="fu">paste</span>(<span class="st">&quot;Partido&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">15</span>),</span>
+<span id="cb159-5"><a href="visualizacion.html#cb159-5" tabindex="-1"></a>  <span class="at">votos =</span> <span class="fu">runif</span>(<span class="dv">15</span>, <span class="dv">2</span>, <span class="dv">12</span>)</span>
+<span id="cb159-6"><a href="visualizacion.html#cb159-6" tabindex="-1"></a>)</span>
+<span id="cb159-7"><a href="visualizacion.html#cb159-7" tabindex="-1"></a></span>
+<span id="cb159-8"><a href="visualizacion.html#cb159-8" tabindex="-1"></a>p_malo <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(muchas_cat, <span class="fu">aes</span>(<span class="at">x =</span> partido, <span class="at">y =</span> votos)) <span class="sc">+</span></span>
+<span id="cb159-9"><a href="visualizacion.html#cb159-9" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb159-10"><a href="visualizacion.html#cb159-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Problemático: Demasiadas categorías&quot;</span>) <span class="sc">+</span></span>
+<span id="cb159-11"><a href="visualizacion.html#cb159-11" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb159-12"><a href="visualizacion.html#cb159-12" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">size =</span> <span class="dv">6</span>))</span>
+<span id="cb159-13"><a href="visualizacion.html#cb159-13" tabindex="-1"></a></span>
+<span id="cb159-14"><a href="visualizacion.html#cb159-14" tabindex="-1"></a><span class="co"># Agrupar categorías menores</span></span>
+<span id="cb159-15"><a href="visualizacion.html#cb159-15" tabindex="-1"></a>muchas_cat_agrup <span class="ot">&lt;-</span> muchas_cat <span class="sc">%&gt;%</span></span>
+<span id="cb159-16"><a href="visualizacion.html#cb159-16" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb159-17"><a href="visualizacion.html#cb159-17" tabindex="-1"></a>    <span class="at">partido_agrup =</span> <span class="fu">ifelse</span>(votos <span class="sc">&lt;</span> <span class="dv">5</span>, <span class="st">&quot;Otros (menor 5%)&quot;</span>, partido)</span>
+<span id="cb159-18"><a href="visualizacion.html#cb159-18" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb159-19"><a href="visualizacion.html#cb159-19" tabindex="-1"></a>  <span class="fu">group_by</span>(partido_agrup) <span class="sc">%&gt;%</span></span>
+<span id="cb159-20"><a href="visualizacion.html#cb159-20" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">votos =</span> <span class="fu">sum</span>(votos)) <span class="sc">%&gt;%</span></span>
+<span id="cb159-21"><a href="visualizacion.html#cb159-21" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(votos))</span>
+<span id="cb159-22"><a href="visualizacion.html#cb159-22" tabindex="-1"></a></span>
+<span id="cb159-23"><a href="visualizacion.html#cb159-23" tabindex="-1"></a>p_bueno <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(muchas_cat_agrup, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(partido_agrup, votos), <span class="at">y =</span> votos)) <span class="sc">+</span></span>
+<span id="cb159-24"><a href="visualizacion.html#cb159-24" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb159-25"><a href="visualizacion.html#cb159-25" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb159-26"><a href="visualizacion.html#cb159-26" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Mejor: Categorías agrupadas&quot;</span>, <span class="at">x =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb159-27"><a href="visualizacion.html#cb159-27" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb159-28"><a href="visualizacion.html#cb159-28" tabindex="-1"></a></span>
+<span id="cb159-29"><a href="visualizacion.html#cb159-29" tabindex="-1"></a>p_malo <span class="sc">|</span> p_bueno</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-119"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-119-1.png" alt="Reducción de categorías" width="80%" />
+<p class="caption">
+Figura 6.28: Reducción de categorías
+</p>
+</div>
+</div>
+<div id="problema-3-dobles-ejes-y" class="section level3 hasAnchor" number="6.12.3">
+<h3><span class="header-section-number">6.12.3</span> Problema 3: Dobles ejes Y<a href="visualizacion.html#problema-3-dobles-ejes-y" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Los dobles ejes Y pueden ser engañosos—la escala de cada eje puede manipularse para sugerir relaciones inexistentes.</p>
+<p><strong>Mejor práctica:</strong> Usar facetas o gráficos separados.</p>
+</div>
+</div>
+<div id="resumen-del-capítulo-5" class="section level2 hasAnchor" number="6.13">
+<h2><span class="header-section-number">6.13</span> Resumen del capítulo<a href="visualizacion.html#resumen-del-capítulo-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La visualización efectiva comunica patrones de datos clara y honestamente. Los principios de Tufte—maximizar ratio datos-tinta, usar canales visuales apropiados, mostrar comparaciones, sugerir causalidad—guían el diseño.</p>
+<p>La gramática de gráficos (implementada en ggplot2) descompone visualizaciones en componentes sistemáticos: datos, aesthetics, geometrías, escalas, facetas, temas. Esta estructura permite crear gráficos complejos mediante combinación de capas.</p>
+<p>Para variables continuas, histogramas y densidades muestran distribución; boxplots comparan grupos. Scatter plots revelan relaciones bivariadas. Series temporales usan gráficos de línea; múltiples series requieren codificación cuidadosa mediante color.</p>
+<p>Facetas (facet_wrap, facet_grid) dividen datos en paneles, facilitando comparaciones entre grupos. Temas y personalización permiten adaptar estética a contextos (publicación, presentación, web).</p>
+<p>Combinar gráficos (patchwork) y agregar anotaciones (annotate) crean narrativas visuales comprehensivas. Exportar en formatos apropiados (PNG para web, PDF para publicación) asegura calidad.</p>
+<p>Evitar visualizaciones problemáticas—ejes truncados, demasiadas categorías, dobles ejes Y engañosos—es responsabilidad del investigador. La visualización no solo describe datos; argumenta e informa decisiones.</p>
+</div>
+<div id="lecturas-recomendadas-5" class="section level2 hasAnchor" number="6.14">
+<h2><span class="header-section-number">6.14</span> Lecturas recomendadas<a href="visualizacion.html#lecturas-recomendadas-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Fundamentos de visualización:</strong></p>
+<p>Tufte, E. R. (1983). <em>The Visual Display of Quantitative Information</em>. Graphics Press.<br />
+→ Clásico sobre principios de diseño gráfico efectivo.</p>
+<p><strong>Aplicación práctica con ggplot2:</strong></p>
+<p>Healy, K. (2018). <em>Data Visualization: A Practical Introduction</em>. Princeton University Press.<br />
+→ Guía accesible con énfasis en ciencias sociales.</p>
+<p><strong>Referencia técnica de ggplot2:</strong></p>
+<p>Wickham, H. (2016). <em>ggplot2: Elegant Graphics for Data Analysis</em> (2nd ed.). Springer.<br />
+→ Documentación comprehensiva del creador de ggplot2.</p>
+<p><strong>Visualización crítica:</strong></p>
+<p>Cairo, A. (2016). <em>The Truthful Art: Data, Charts, and Maps for Communication</em>. New Riders.<br />
+→ Énfasis en honestidad y ética en visualización.</p>
+<p><strong>Recursos en línea:</strong></p>
+<ul>
+<li>R Graph Gallery: <a href="https://www.r-graph-gallery.com/" class="uri">https://www.r-graph-gallery.com/</a></li>
+<li>ggplot2 documentation: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></li>
+<li>ColorBrewer (paletas): <a href="https://colorbrewer2.org/" class="uri">https://colorbrewer2.org/</a></li>
+</ul>
+</div>
+<div id="ejercicios-5" class="section level2 hasAnchor" number="6.15">
+<h2><span class="header-section-number">6.15</span> Ejercicios<a href="visualizacion.html#ejercicios-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>1. Replicar y mejorar</strong></p>
+<p>Este gráfico problemático:</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="visualizacion.html#cb160-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> cambio_izquierda)) <span class="sc">+</span></span>
+<span id="cb160-2"><a href="visualizacion.html#cb160-2" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">&quot;identity&quot;</span>, <span class="at">fill =</span> <span class="fu">rainbow</span>(<span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb160-3"><a href="visualizacion.html#cb160-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;CAMBIO!!!&quot;</span>)</span></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Identifica al menos 4 problemas<br />
+</li>
+<li>Crea una versión mejorada aplicando principios del capítulo<br />
+</li>
+<li>Justifica cada decisión de diseño</li>
+</ol>
+<p><strong>2. Exploración visual de datos propios</strong></p>
+<p>Con un dataset de tu proyecto:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Crea histograma/densidad de variable continua clave<br />
+</li>
+<li>Crea boxplot comparando grupos relevantes<br />
+</li>
+<li>Crea scatter plot de dos variables con línea de tendencia<br />
+</li>
+<li>Combina los tres gráficos en una figura con patchwork<br />
+</li>
+<li>Exporta en formato apropiado (300 dpi PNG)</li>
+</ol>
+<p><strong>3. Series temporales</strong></p>
+<p>Descarga datos de aprobación presidencial real (ej: CEP, Cadem).</p>
+<ol style="list-style-type: lower-alpha">
+<li>Crea gráfico de línea con aprobación y desaprobación<br />
+</li>
+<li>Agrega anotaciones para eventos importantes (ej: estallido social, pandemia)<br />
+</li>
+<li>Usa facetas para comparar períodos presidenciales</li>
+</ol>
+<p><strong>4. Visualización multivariada</strong></p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="visualizacion.html#cb161-1" tabindex="-1"></a><span class="co"># Usa datos de comunas</span></span></code></pre></div>
+<ol style="list-style-type: lower-alpha">
+<li>Crea scatter plot con tres variables (x, y, color o tamaño)<br />
+</li>
+<li>Agrega facetas por una cuarta variable categórica<br />
+</li>
+<li>Personaliza completamente (tema, colores, etiquetas)<br />
+</li>
+<li>Escribe interpretación de 100 palabras de patrones observados</li>
+</ol>
+<p><strong>5. Del mal al buen gráfico</strong></p>
+<p>Busca un gráfico problemático en medios (Twitter, periódicos, reportes).</p>
+<ol style="list-style-type: lower-alpha">
+<li>Captura/descarga el gráfico original<br />
+</li>
+<li>Lista todos los problemas que identificas<br />
+</li>
+<li>Si tienes acceso a los datos, recréalo correctamente en ggplot2<br />
+</li>
+<li>Si no, crea un gráfico similar con datos simulados que demuestre la mejora<br />
+</li>
+<li>Escribe explicación de 150 palabras sobre qué cambió y por qué</li>
+</ol>
+<p><strong>6. Proyecto de visualización completo</strong></p>
+<p>Crea un “dashboard” de una página con 4-6 gráficos que cuenten una historia sobre tu tema de tesis:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Diseña layout con patchwork<br />
+</li>
+<li>Incluye diferentes tipos de gráficos (univariados, bivariados, temporal si aplica)<br />
+</li>
+<li>Usa un tema coherente en todos los gráficos<br />
+</li>
+<li>Agrega título general y caption con fuente<br />
+</li>
+<li>Exporta en alta resolución<br />
+</li>
+<li>Presenta a colegas y solicita feedback sobre claridad</li>
+</ol>
+
+</div>
+</div>
+<h3>Referencias<a href="referencias.html#referencias" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-tufte1983" class="csl-entry">
+Tufte, Edward R. 1983. <em>The Visual Display of Quantitative Information</em>. Cheshire, Connecticut: Graphics Press.
+</div>
+<div id="ref-wilkinson2005" class="csl-entry">
+Wilkinson, Leland. 2005. <em>The Grammar of Graphics</em>. 2nd ed. New York: Springer-Verlag.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="descriptiva.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="probabilidad.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": false,
+    "twitter": false,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": false
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": null,
+    "text": null
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "section"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

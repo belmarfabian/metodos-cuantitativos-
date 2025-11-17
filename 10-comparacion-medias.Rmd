@@ -1,0 +1,17 @@
+# Comparación de medias {#comparacion}
+
+## Objetivos del capítulo
+
+## Prueba t para una muestra
+
+## Prueba t para dos muestras
+
+## ANOVA
+
+## Supuestos y alternativas no paramétricas
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

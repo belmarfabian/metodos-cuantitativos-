@@ -1,0 +1,17 @@
+# Introducción a probabilidad {#probabilidad}
+
+## Objetivos del capítulo
+
+## Conceptos básicos de probabilidad
+
+## Variables aleatorias
+
+## Distribuciones de probabilidad
+
+## Teorema del límite central
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

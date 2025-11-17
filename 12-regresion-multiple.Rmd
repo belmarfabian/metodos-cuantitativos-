@@ -1,0 +1,21 @@
+# Regresión múltiple {#regresion-multiple}
+
+## Objetivos del capítulo
+
+## El modelo de regresión múltiple
+
+## Interpretación de coeficientes
+
+## Variables de control
+
+## Multicolinealidad
+
+## Variables categóricas
+
+## Interacciones
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

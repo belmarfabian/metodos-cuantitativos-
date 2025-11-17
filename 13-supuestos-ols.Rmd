@@ -1,0 +1,19 @@
+# Supuestos de OLS y diagnósticos {#supuestos}
+
+## Objetivos del capítulo
+
+## Los supuestos de Gauss-Markov
+
+## Diagnóstico de regresión
+
+## Heterocedasticidad
+
+## Autocorrelación
+
+## Valores atípicos e influyentes
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios

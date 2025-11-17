@@ -1,0 +1,17 @@
+# Introducción a modelos lineales generalizados {#glm}
+
+## Objetivos del capítulo
+
+## Limitaciones de OLS
+
+## La familia de GLM
+
+## Regresión logística
+
+## Regresión de Poisson
+
+## Resumen del capítulo
+
+## Lecturas recomendadas
+
+## Ejercicios
