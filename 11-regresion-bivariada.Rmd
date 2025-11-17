@@ -2,7 +2,7 @@
 
 ## Objetivos del capítulo
 
-Al finalizar este capítulo, deberías ser capaz de:
+Al finalizar este capítulo, serás capaz de:
 
 - Calcular e interpretar coeficientes de correlación
 - Comprender la diferencia entre correlación y causalidad

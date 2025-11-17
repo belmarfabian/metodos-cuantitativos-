@@ -2,7 +2,7 @@
 
 ## Objetivos del capítulo
 
-Al finalizar este capítulo, deberías ser capaz de:
+Al finalizar este capítulo, serás capaz de:
 
 - Realizar pruebas t para comparar medias entre dos grupos
 - Distinguir entre pruebas t para muestras independientes y pareadas

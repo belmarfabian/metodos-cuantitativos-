@@ -2,7 +2,7 @@
 
 ## Objetivos del capítulo
 
-Al finalizar este capítulo, deberías ser capaz de:
+Al finalizar este capítulo, serás capaz de:
 
 - Comprender la lógica de las pruebas de hipótesis estadísticas
 - Formular correctamente hipótesis nula ($H_0$) y alternativa ($H_1$)
