@@ -633,9 +633,20 @@ ggplot(resultados_plot, aes(y = muestra)) +
 
 ## Lecturas recomendadas
 
-- Agresti, A. & Finlay, B. (2009). *Statistical Methods for the Social Sciences*. Capítulo 5: Statistical Inference: Estimation.
-- Llaudet, E. & Imai, K. (2022). *Data Analysis for Social Science*. Capítulo 7: Uncertainty.
-- Diez, D. et al. (2019). *OpenIntro Statistics*. Capítulo 4: Foundations for inference. [Acceso libre](https://www.openintro.org/book/os/)
+**Fundamentos de inferencia estadística:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+→ Capítulo 5 cubre estimación estadística, intervalos de confianza y error estándar con claridad ejemplar.
+
+**Aplicaciones en análisis de datos sociales:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+→ Capítulo 7 sobre incertidumbre conecta teoría con aplicaciones prácticas en investigación cuantitativa.
+
+**Recurso complementario de acceso libre:**
+
+Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]
+→ Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.
 
 ## Ejercicios
 

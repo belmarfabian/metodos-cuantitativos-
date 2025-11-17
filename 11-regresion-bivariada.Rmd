@@ -137,8 +137,20 @@ Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede hab
 
 ## Lecturas recomendadas
 
-- Agresti, A. & Finlay, B. (2009). *Statistical Methods for the Social Sciences*. Capítulo 9: Linear Regression and Correlation.
-- Llaudet, E. & Imai, K. (2022). *Data Analysis for Social Science*. Capítulo 4: Prediction.
+**Fundamentos de regresión lineal:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+→ Capítulo 9 ofrece introducción clara y accesible a regresión lineal y correlación con ejemplos de ciencias sociales.
+
+**Predicción y modelos lineales:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+→ Capítulo 4 sobre predicción conecta regresión con aplicaciones prácticas en análisis de datos sociales.
+
+**Tratamiento más técnico:**
+
+Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.
+→ Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.
 
 ## Ejercicios
 
