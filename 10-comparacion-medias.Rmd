@@ -122,17 +122,17 @@ Cuando los supuestos no se cumplen:
 
 **Fundamentos de comparación de grupos:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
 → Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.
 
 **Inferencia causal mediante comparación de grupos:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
 → Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.
 
 **ANOVA y diseños más complejos:**
 
-Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.
+Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.  
 → Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
 
 ## Ejercicios

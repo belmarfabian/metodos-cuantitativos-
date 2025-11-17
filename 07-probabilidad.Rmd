@@ -417,17 +417,17 @@ Aunque la población original es extremadamente asimétrica (la mayoría tiene v
 
 **Fundamentos de teoría de probabilidad:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
 → Capítulo 4 ofrece una introducción accesible a distribuciones de probabilidad con ejemplos de ciencias sociales.
 
 **Aplicaciones en ciencias sociales:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
 → Capítulo 6 conecta teoría de probabilidad con aplicaciones en investigación social y política.
 
 **Recurso complementario de acceso libre:**
 
-Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]
+Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]  
 → Capítulo 3 sobre distribuciones de variables aleatorias, con ejercicios interactivos.
 
 ## Ejercicios

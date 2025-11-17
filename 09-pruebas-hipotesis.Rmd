@@ -75,17 +75,17 @@ En pruebas de hipótesis, existen dos tipos de error posibles:
 
 **Fundamentos de pruebas de hipótesis:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
 → Capítulo 6 ofrece explicación rigurosa pero accesible de la lógica de pruebas de significancia estadística.
 
 **Aplicaciones en ciencias sociales:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
 → Sección 7.5 conecta pruebas de hipótesis con aplicaciones prácticas en investigación social y política.
 
 **Sobre problemas y mal uso de valores p:**
 
-Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values: Context, process, and purpose. *The American Statistician*, 70(2), 129-133.
+Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values: Context, process, and purpose. *The American Statistician*, 70(2), 129-133.  
 → Declaración oficial de la Asociación Americana de Estadística sobre interpretación correcta de valores p y errores comunes.
 
 ## Ejercicios
