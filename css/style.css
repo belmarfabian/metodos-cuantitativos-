@@ -83,9 +83,27 @@
   margin-right: auto;
 }
 
+/* Bibliografía final generada por Pandoc/CSL */
+#refs {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.csl-bib-body {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Estilo para las entradas bibliográficas */
 .references p {
   text-align: left;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.csl-entry {
   margin-bottom: 1em;
   line-height: 1.6;
 }
