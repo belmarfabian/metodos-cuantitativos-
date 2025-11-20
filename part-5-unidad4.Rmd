@@ -1,1 +1,1 @@
-# (PART) V. Unidad 4: Principios de Inferencia Estadística {-}
+# (PART) V. Unidad 4: Análisis Bivariado {-}
