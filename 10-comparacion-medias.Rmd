@@ -62,6 +62,8 @@ resultado <- t.test(despues, antes, paired = TRUE)
 print(resultado)
 ```
 
+::: {.nivel data-nivel="avanzado"}
+
 ## ANOVA
 
 Análisis de Varianza (ANOVA) compara medias de **más de dos grupos**.
@@ -107,6 +109,8 @@ Cuando los supuestos no se cumplen:
 - **Mann-Whitney U** (en lugar de t para dos muestras independientes)
 - **Wilcoxon signed-rank** (en lugar de t pareada)
 - **Kruskal-Wallis** (en lugar de ANOVA)
+
+:::
 
 ## Resumen del capítulo
 

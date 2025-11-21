@@ -286,6 +286,8 @@ data.frame(x = x, probabilidad = probs) %>%
   theme_minimal()
 ```
 
+::: {.nivel data-nivel="avanzado"}
+
 ### Distribución de Poisson
 
 Modela el número de eventos en un intervalo fijo de tiempo o espacio, cuando estos eventos ocurren a una tasa promedio constante $\lambda$:
@@ -307,6 +309,8 @@ dpois(0, lambda = 3.2)
 # Probabilidad de más de 6 protestas
 1 - ppois(6, lambda = 3.2)
 ```
+
+:::
 
 ## Teorema del Límite Central
 

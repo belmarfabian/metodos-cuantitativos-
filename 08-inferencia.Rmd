@@ -439,6 +439,8 @@ ggplot(df_ic, aes(y = nivel)) +
   theme(axis.text.y = element_text(size = 12, face = "bold"))
 ```
 
+::: {.nivel data-nivel="avanzado"}
+
 ## Determinación del tamaño muestral
 
 Una pregunta práctica crucial: **¿Qué tan grande debe ser mi muestra?**
@@ -466,7 +468,6 @@ cat("- Margen de error: ±$", E, " mil\n", sep = "")
 cat("- σ estimado: $", sigma, " mil\n", sep = "")
 cat("\nTamaño muestral necesario: n =", n_necesario, "hogares\n")
 ```
-:::
 
 ### Para estimar una proporción
 
@@ -529,6 +530,8 @@ kable(tabla_ancha,
       caption = "Tamaño muestral necesario para estimar proporción (p=0.5)",
       align = c("l", "r", "r", "r"))
 ```
+
+:::
 
 ## Simulación: Interpretación de ICs
 
@@ -603,7 +606,7 @@ ggplot(resultados_plot, aes(y = muestra)) +
   )
 ```
 
-::: {.nivel}
+::: {.importante}
 **Mensaje clave**: El "95%" NO se refiere a una muestra individual, sino al **procedimiento**. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían $\mu$. Para cualquier muestra específica, o contiene $\mu$ o no (pero no sabemos cuál).
 :::
 

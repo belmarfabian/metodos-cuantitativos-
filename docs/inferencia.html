@@ -511,12 +511,6 @@ div.csl-indent {
 <li class="chapter" data-level="10.3.1" data-path="comparacion.html"><a href="comparacion.html#muestras-independientes"><i class="fa fa-check"></i><b>10.3.1</b> Muestras independientes</a></li>
 <li class="chapter" data-level="10.3.2" data-path="comparacion.html"><a href="comparacion.html#muestras-pareadas"><i class="fa fa-check"></i><b>10.3.2</b> Muestras pareadas</a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="comparacion.html"><a href="comparacion.html#anova"><i class="fa fa-check"></i><b>10.4</b> ANOVA</a></li>
-<li class="chapter" data-level="10.5" data-path="comparacion.html"><a href="comparacion.html#supuestos-y-alternativas-no-paramétricas"><i class="fa fa-check"></i><b>10.5</b> Supuestos y alternativas no paramétricas</a>
-<ul>
-<li class="chapter" data-level="10.5.1" data-path="comparacion.html"><a href="comparacion.html#supuestos-de-pruebas-t-y-anova"><i class="fa fa-check"></i><b>10.5.1</b> Supuestos de pruebas t y ANOVA</a></li>
-<li class="chapter" data-level="10.5.2" data-path="comparacion.html"><a href="comparacion.html#alternativas-no-paramétricas"><i class="fa fa-check"></i><b>10.5.2</b> Alternativas no paramétricas</a></li>
-</ul></li>
 <li class="chapter" data-level="10.6" data-path="comparacion.html"><a href="comparacion.html#resumen-del-capítulo-9"><i class="fa fa-check"></i><b>10.6</b> Resumen del capítulo</a></li>
 <li class="chapter" data-level="10.7" data-path="comparacion.html"><a href="comparacion.html#lecturas-recomendadas-9"><i class="fa fa-check"></i><b>10.7</b> Lecturas recomendadas</a></li>
 <li class="chapter" data-level="10.8" data-path="comparacion.html"><a href="comparacion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.8</b> Ejercicios</a></li>
@@ -939,7 +933,7 @@ Figura 8.3: Visualización de ICs con diferentes niveles de confianza
 </div>
 </div>
 </div>
-<div id="determinación-del-tamaño-muestral" class="section level2 hasAnchor" number="8.7">
+<div id="determinación-del-tamaño-muestral" class="section level2 hasAnchor nivel" data-nivel="avanzado" number="8.7">
 <h2><span class="header-section-number">8.7</span> Determinación del tamaño muestral<a href="inferencia.html#determinación-del-tamaño-muestral" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Una pregunta práctica crucial: <strong>¿Qué tan grande debe ser mi muestra?</strong></p>
 <div id="para-estimar-una-media" class="section level3 hasAnchor" number="8.7.1">
@@ -966,7 +960,6 @@ Figura 8.3: Visualización de ICs con diferentes niveles de confianza
 <div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="inferencia.html#cb268-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n</span><span class="st">Tamaño muestral necesario: n =&quot;</span>, n_necesario, <span class="st">&quot;hogares</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## Tamaño muestral necesario: n = 865 hogares</code></pre>
-<p>:::</p>
 </div>
 <div id="para-estimar-una-proporción" class="section level3 hasAnchor" number="8.7.2">
 <h3><span class="header-section-number">8.7.2</span> Para estimar una proporción<a href="inferencia.html#para-estimar-una-proporción" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -1097,7 +1090,7 @@ Figura 8.3: Visualización de ICs con diferentes niveles de confianza
 Figura 8.4: 100 intervalos de confianza: los verdes contienen μ, los rojos no
 </p>
 </div>
-<div class="nivel">
+<div class="importante">
 <p><strong>Mensaje clave</strong>: El “95%” NO se refiere a una muestra individual, sino al <strong>procedimiento</strong>. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían <span class="math inline">\(\mu\)</span>. Para cualquier muestra específica, o contiene <span class="math inline">\(\mu\)</span> o no (pero no sabemos cuál).</p>
 </div>
 </div>
