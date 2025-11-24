@@ -139,10 +139,7 @@ Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly an
 Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.  
 → Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
 
+
 ## Ejercicios
 
-1. Compara los ingresos promedio entre dos regiones de Chile usando una prueba t.
-
-2. Realiza un ANOVA para comparar niveles de participación electoral entre 4 países latinoamericanos.
-
-3. Verifica los supuestos de normalidad y homogeneidad de varianzas para tus datos.
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap10).

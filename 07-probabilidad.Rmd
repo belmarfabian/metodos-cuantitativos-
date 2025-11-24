@@ -434,33 +434,7 @@ Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly an
 Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]  
 → Capítulo 3 sobre distribuciones de variables aleatorias, con ejercicios interactivos.
 
+
 ## Ejercicios
 
-**Conceptuales:**
-
-1. Explica con tus propias palabras por qué es imposible que la probabilidad de un evento sea negativa o mayor que 1.
-
-2. ¿Cuál es la diferencia entre $P(A|B)$ y $P(B|A)$? Proporciona un ejemplo de ciencias políticas donde estas dos probabilidades sean distintas.
-
-3. Un investigador afirma: "La probabilidad de que Chile tenga una nueva Constitución en 2026 es 0.40". ¿Qué interpretación de probabilidad está usando: frecuentista o bayesiana? Justifica.
-
-4. Explica por qué la distribución Normal es tan importante en estadística, incluso cuando muchas variables en ciencias sociales no son normales.
-
-**Aplicados:**
-
-5. En una encuesta, 45% declara intención de votar. Si encuestamos 800 personas:
-   a. ¿Cuál es la probabilidad de que exactamente 360 declaren intención de votar?
-   b. ¿Cuál es la probabilidad de que entre 340 y 380 lo hagan?
-   c. ¿Cuál sería el número esperado y la desviación estándar?
-
-6. Históricamente, ocurren en promedio 2.8 huelgas por mes en un sector industrial. Asumiendo distribución Poisson:
-   a. ¿Probabilidad de 0 huelgas este mes?
-   b. ¿Probabilidad de más de 4 huelgas?
-   c. ¿Cuál es la varianza del número de huelgas?
-
-7. **Simulación del TLC**: Replica la simulación del Teorema del Límite Central usando una distribución poblacional diferente (por ejemplo, uniforme o exponencial). Compara la convergencia a la Normal para $n = 5, 30, 100$.
-
-8. El índice de democracia V-Dem para países latinoamericanos tiene media 0.52 y SD 0.18. Si tomamos muestras aleatorias de 40 países con reemplazo:
-   a. ¿Cuál es la distribución esperada de $\bar{X}$?
-   b. ¿Probabilidad de que $\bar{X} > 0.55$?
-   c. ¿Probabilidad de que $\bar{X}$ esté entre 0.50 y 0.54?
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap7).

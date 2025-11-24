@@ -23,7 +23,7 @@
 <meta name="author" content="Fabián Belmar" />
 
 
-<meta name="date" content="2025-11-20" />
+<meta name="date" content="2025-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -567,6 +567,24 @@ div.csl-indent {
 <li class="chapter" data-level="14.7" data-path="glm.html"><a href="glm.html#lecturas-recomendadas-13"><i class="fa fa-check"></i><b>14.7</b> Lecturas recomendadas</a></li>
 <li class="chapter" data-level="14.8" data-path="glm.html"><a href="glm.html#ejercicios-13"><i class="fa fa-check"></i><b>14.8</b> Ejercicios</a></li>
 </ul></li>
+<li class="appendix"><span><b>Anexos</b></span></li>
+<li class="chapter" data-level="A" data-path="introduccion.html"><a href="introduccion.html#ejercicios"><i class="fa fa-check"></i><b>A</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>A.1</b> Capítulo 1: Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap2"><i class="fa fa-check"></i><b>A.2</b> Capítulo 2: Diseño de investigación</a></li>
+<li class="chapter" data-level="A.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap3"><i class="fa fa-check"></i><b>A.3</b> Capítulo 3: Medición</a></li>
+<li class="chapter" data-level="A.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap4"><i class="fa fa-check"></i><b>A.4</b> Capítulo 4: Trabajando con datos</a></li>
+<li class="chapter" data-level="A.5" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap5"><i class="fa fa-check"></i><b>A.5</b> Capítulo 5: Estadística descriptiva</a></li>
+<li class="chapter" data-level="A.6" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap6"><i class="fa fa-check"></i><b>A.6</b> Capítulo 6: Visualización de datos</a></li>
+<li class="chapter" data-level="A.7" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap7"><i class="fa fa-check"></i><b>A.7</b> Capítulo 7: Introducción a probabilidad</a></li>
+<li class="chapter" data-level="A.8" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap8"><i class="fa fa-check"></i><b>A.8</b> Capítulo 8: Inferencia estadística</a></li>
+<li class="chapter" data-level="A.9" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap9"><i class="fa fa-check"></i><b>A.9</b> Capítulo 9: Pruebas de hipótesis</a></li>
+<li class="chapter" data-level="A.10" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap10"><i class="fa fa-check"></i><b>A.10</b> Capítulo 10: Comparación de medias</a></li>
+<li class="chapter" data-level="A.11" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap11"><i class="fa fa-check"></i><b>A.11</b> Capítulo 11: Regresión bivariada</a></li>
+<li class="chapter" data-level="A.12" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap12"><i class="fa fa-check"></i><b>A.12</b> Capítulo 12: Regresión múltiple</a></li>
+<li class="chapter" data-level="A.13" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap13"><i class="fa fa-check"></i><b>A.13</b> Capítulo 13: Supuestos OLS</a></li>
+<li class="chapter" data-level="A.14" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap14"><i class="fa fa-check"></i><b>A.14</b> Capítulo 14: GLM</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -661,13 +679,13 @@ Figura 7.1: Comparación de interpretaciones de probabilidad
 <p><strong>Función de masa de probabilidad (PMF)</strong></p>
 <p>Para una variable aleatoria discreta <span class="math inline">\(X\)</span>, la PMF especifica la probabilidad de cada valor:
 <span class="math display">\[P(X = x)\]</span></p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="probabilidad.html#cb162-1" tabindex="-1"></a><span class="co"># Simulación: Número de protestas por mes en una ciudad</span></span>
-<span id="cb162-2"><a href="probabilidad.html#cb162-2" tabindex="-1"></a><span class="co"># (Distribución Poisson con promedio = 2.5)</span></span>
-<span id="cb162-3"><a href="probabilidad.html#cb162-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb162-4"><a href="probabilidad.html#cb162-4" tabindex="-1"></a>protestas <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1000</span>, <span class="at">lambda =</span> <span class="fl">2.5</span>)</span>
-<span id="cb162-5"><a href="probabilidad.html#cb162-5" tabindex="-1"></a></span>
-<span id="cb162-6"><a href="probabilidad.html#cb162-6" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
-<span id="cb162-7"><a href="probabilidad.html#cb162-7" tabindex="-1"></a><span class="fu">table</span>(protestas) <span class="sc">/</span> <span class="dv">1000</span></span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="probabilidad.html#cb153-1" tabindex="-1"></a><span class="co"># Simulación: Número de protestas por mes en una ciudad</span></span>
+<span id="cb153-2"><a href="probabilidad.html#cb153-2" tabindex="-1"></a><span class="co"># (Distribución Poisson con promedio = 2.5)</span></span>
+<span id="cb153-3"><a href="probabilidad.html#cb153-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb153-4"><a href="probabilidad.html#cb153-4" tabindex="-1"></a>protestas <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1000</span>, <span class="at">lambda =</span> <span class="fl">2.5</span>)</span>
+<span id="cb153-5"><a href="probabilidad.html#cb153-5" tabindex="-1"></a></span>
+<span id="cb153-6"><a href="probabilidad.html#cb153-6" tabindex="-1"></a><span class="co"># Tabla de frecuencias</span></span>
+<span id="cb153-7"><a href="probabilidad.html#cb153-7" tabindex="-1"></a><span class="fu">table</span>(protestas) <span class="sc">/</span> <span class="dv">1000</span></span></code></pre></div>
 <pre><code>## protestas
 ##     0     1     2     3     4     5     6     7     8 
 ## 0.074 0.194 0.242 0.217 0.154 0.074 0.030 0.013 0.002</code></pre>
@@ -685,13 +703,13 @@ Figura 7.2: Distribución de variable aleatoria discreta: Número de protestas
 <p>Para variables continuas, <span class="math inline">\(P(X = x) = 0\)</span> (la probabilidad de un valor exacto es cero). En su lugar, trabajamos con <strong>intervalos</strong>:</p>
 <p><span class="math display">\[P(a &lt; X &lt; b) = \int_a^b f(x)dx\]</span></p>
 <p>donde <span class="math inline">\(f(x)\)</span> es la función de densidad.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="probabilidad.html#cb164-1" tabindex="-1"></a><span class="co"># Simulación: Porcentaje de votos para alcalde</span></span>
-<span id="cb164-2"><a href="probabilidad.html#cb164-2" tabindex="-1"></a><span class="co"># (Distribución aproximadamente Normal)</span></span>
-<span id="cb164-3"><a href="probabilidad.html#cb164-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
-<span id="cb164-4"><a href="probabilidad.html#cb164-4" tabindex="-1"></a>votos <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">35</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
-<span id="cb164-5"><a href="probabilidad.html#cb164-5" tabindex="-1"></a></span>
-<span id="cb164-6"><a href="probabilidad.html#cb164-6" tabindex="-1"></a><span class="co"># Probabilidad de obtener entre 30% y 40%</span></span>
-<span id="cb164-7"><a href="probabilidad.html#cb164-7" tabindex="-1"></a><span class="fu">mean</span>(votos <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">&amp;</span> votos <span class="sc">&lt;=</span> <span class="dv">40</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="probabilidad.html#cb155-1" tabindex="-1"></a><span class="co"># Simulación: Porcentaje de votos para alcalde</span></span>
+<span id="cb155-2"><a href="probabilidad.html#cb155-2" tabindex="-1"></a><span class="co"># (Distribución aproximadamente Normal)</span></span>
+<span id="cb155-3"><a href="probabilidad.html#cb155-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb155-4"><a href="probabilidad.html#cb155-4" tabindex="-1"></a>votos <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">35</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb155-5"><a href="probabilidad.html#cb155-5" tabindex="-1"></a></span>
+<span id="cb155-6"><a href="probabilidad.html#cb155-6" tabindex="-1"></a><span class="co"># Probabilidad de obtener entre 30% y 40%</span></span>
+<span id="cb155-7"><a href="probabilidad.html#cb155-7" tabindex="-1"></a><span class="fu">mean</span>(votos <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">&amp;</span> votos <span class="sc">&lt;=</span> <span class="dv">40</span>)</span></code></pre></div>
 <pre><code>## [1] 0.686</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:plot-continua"></span>
 <img src="metodos_cuantitativos_files/figure-html/plot-continua-1.png" alt="Distribución de variable aleatoria continua: Porcentaje de votos" width="80%" />
@@ -733,11 +751,11 @@ Figura 7.4: Distribución Normal estándar con regla 68-95-99.7
 </p>
 </div>
 <p>Las alturas de hombres adultos chilenos se distribuyen aproximadamente <span class="math inline">\(N(170, 7^2)\)</span> cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="probabilidad.html#cb166-1" tabindex="-1"></a><span class="co"># ¿Qué proporción de hombres mide más de 180 cm?</span></span>
-<span id="cb166-2"><a href="probabilidad.html#cb166-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">180</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="probabilidad.html#cb157-1" tabindex="-1"></a><span class="co"># ¿Qué proporción de hombres mide más de 180 cm?</span></span>
+<span id="cb157-2"><a href="probabilidad.html#cb157-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">180</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.07656373</code></pre>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="probabilidad.html#cb168-1" tabindex="-1"></a><span class="co"># ¿Qué proporción mide entre 165 y 175 cm?</span></span>
-<span id="cb168-2"><a href="probabilidad.html#cb168-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">175</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">165</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="probabilidad.html#cb159-1" tabindex="-1"></a><span class="co"># ¿Qué proporción mide entre 165 y 175 cm?</span></span>
+<span id="cb159-2"><a href="probabilidad.html#cb159-2" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">175</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">165</span>, <span class="at">mean =</span> <span class="dv">170</span>, <span class="at">sd =</span> <span class="dv">7</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5249495</code></pre>
 </div>
 <div id="distribución-binomial" class="section level3 hasAnchor" number="7.5.2">
@@ -749,15 +767,15 @@ Figura 7.4: Distribución Normal estándar con regla 68-95-99.7
 <li><span class="math inline">\(\text{Var}(X) = np(1-p)\)</span></li>
 </ul>
 <p>Por ejemplo, si encuestamos <span class="math inline">\(n=1000\)</span> votantes y la verdadera proporción que apoya un candidato es <span class="math inline">\(p=0.40\)</span>, el número de encuestados que declaran apoyo sigue <span class="math inline">\(X \sim \text{Binomial}(1000, 0.40)\)</span>:</p>
-<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="probabilidad.html#cb170-1" tabindex="-1"></a><span class="co"># Probabilidad de observar exactamente 400 apoyos</span></span>
-<span id="cb170-2"><a href="probabilidad.html#cb170-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">400</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.40</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="probabilidad.html#cb161-1" tabindex="-1"></a><span class="co"># Probabilidad de observar exactamente 400 apoyos</span></span>
+<span id="cb161-2"><a href="probabilidad.html#cb161-2" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">400</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.40</span>)</span></code></pre></div>
 <pre><code>## [1] 0.02574482</code></pre>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="probabilidad.html#cb172-1" tabindex="-1"></a><span class="co"># Probabilidad de observar entre 380 y 420 apoyos</span></span>
-<span id="cb172-2"><a href="probabilidad.html#cb172-2" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">380</span><span class="sc">:</span><span class="dv">420</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.40</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="probabilidad.html#cb163-1" tabindex="-1"></a><span class="co"># Probabilidad de observar entre 380 y 420 apoyos</span></span>
+<span id="cb163-2"><a href="probabilidad.html#cb163-2" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">380</span><span class="sc">:</span><span class="dv">420</span>, <span class="at">size =</span> <span class="dv">1000</span>, <span class="at">prob =</span> <span class="fl">0.40</span>))</span></code></pre></div>
 <pre><code>## [1] 0.814288</code></pre>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="probabilidad.html#cb174-1" tabindex="-1"></a><span class="co"># Valor esperado y desviación estándar</span></span>
-<span id="cb174-2"><a href="probabilidad.html#cb174-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span>; p <span class="ot">&lt;-</span> <span class="fl">0.40</span></span>
-<span id="cb174-3"><a href="probabilidad.html#cb174-3" tabindex="-1"></a><span class="fu">c</span>(<span class="at">media =</span> n<span class="sc">*</span>p, <span class="at">sd =</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)))</span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="probabilidad.html#cb165-1" tabindex="-1"></a><span class="co"># Valor esperado y desviación estándar</span></span>
+<span id="cb165-2"><a href="probabilidad.html#cb165-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span>; p <span class="ot">&lt;-</span> <span class="fl">0.40</span></span>
+<span id="cb165-3"><a href="probabilidad.html#cb165-3" tabindex="-1"></a><span class="fu">c</span>(<span class="at">media =</span> n<span class="sc">*</span>p, <span class="at">sd =</span> <span class="fu">sqrt</span>(n<span class="sc">*</span>p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>p)))</span></code></pre></div>
 <pre><code>##     media        sd 
 ## 400.00000  15.49193</code></pre>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:binomial-plot"></span>
@@ -776,14 +794,14 @@ Figura 7.5: Distribución Binomial: Número de votantes que apoyan candidato (n=
 <li><span class="math inline">\(\text{Var}(X) = \lambda\)</span></li>
 </ul>
 <p>Por ejemplo, si históricamente ocurren en promedio <span class="math inline">\(\lambda = 3.2\)</span> protestas por mes en una ciudad, podemos calcular probabilidades sobre el número de protestas en el próximo mes:</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="probabilidad.html#cb176-1" tabindex="-1"></a><span class="co"># Probabilidad de exactamente 5 protestas este mes</span></span>
-<span id="cb176-2"><a href="probabilidad.html#cb176-2" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">5</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="probabilidad.html#cb167-1" tabindex="-1"></a><span class="co"># Probabilidad de exactamente 5 protestas este mes</span></span>
+<span id="cb167-2"><a href="probabilidad.html#cb167-2" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">5</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1139794</code></pre>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="probabilidad.html#cb178-1" tabindex="-1"></a><span class="co"># Probabilidad de 0 protestas</span></span>
-<span id="cb178-2"><a href="probabilidad.html#cb178-2" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="probabilidad.html#cb169-1" tabindex="-1"></a><span class="co"># Probabilidad de 0 protestas</span></span>
+<span id="cb169-2"><a href="probabilidad.html#cb169-2" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">0</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0407622</code></pre>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="probabilidad.html#cb180-1" tabindex="-1"></a><span class="co"># Probabilidad de más de 6 protestas</span></span>
-<span id="cb180-2"><a href="probabilidad.html#cb180-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">6</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="probabilidad.html#cb171-1" tabindex="-1"></a><span class="co"># Probabilidad de más de 6 protestas</span></span>
+<span id="cb171-2"><a href="probabilidad.html#cb171-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">ppois</span>(<span class="dv">6</span>, <span class="at">lambda =</span> <span class="fl">3.2</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0446191</code></pre>
 </div>
 </div>
@@ -801,40 +819,40 @@ Figura 7.5: Distribución Binomial: Número de votantes que apoyan candidato (n=
 <div id="simulación-del-tlc" class="section level3 hasAnchor" number="7.6.2">
 <h3><span class="header-section-number">7.6.2</span> Simulación del TLC<a href="probabilidad.html#simulación-del-tlc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Demostremos el TLC con un ejemplo de ciencias políticas:</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="probabilidad.html#cb182-1" tabindex="-1"></a><span class="co"># Población NO normal: Participación en protestas (variable muy asimétrica)</span></span>
-<span id="cb182-2"><a href="probabilidad.html#cb182-2" tabindex="-1"></a><span class="co"># Mayoría no participa (0), algunos participan ocasionalmente</span></span>
-<span id="cb182-3"><a href="probabilidad.html#cb182-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb182-4"><a href="probabilidad.html#cb182-4" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">7000</span>), <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">2000</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">700</span>),</span>
-<span id="cb182-5"><a href="probabilidad.html#cb182-5" tabindex="-1"></a>               <span class="fu">rep</span>(<span class="dv">3</span>, <span class="dv">200</span>), <span class="fu">rep</span>(<span class="dv">4</span>, <span class="dv">80</span>), <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">20</span>))</span>
-<span id="cb182-6"><a href="probabilidad.html#cb182-6" tabindex="-1"></a></span>
-<span id="cb182-7"><a href="probabilidad.html#cb182-7" tabindex="-1"></a><span class="co"># Media y SD poblacionales</span></span>
-<span id="cb182-8"><a href="probabilidad.html#cb182-8" tabindex="-1"></a>mu_poblacion <span class="ot">&lt;-</span> <span class="fu">mean</span>(poblacion)</span>
-<span id="cb182-9"><a href="probabilidad.html#cb182-9" tabindex="-1"></a>sigma_poblacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(poblacion)</span>
-<span id="cb182-10"><a href="probabilidad.html#cb182-10" tabindex="-1"></a></span>
-<span id="cb182-11"><a href="probabilidad.html#cb182-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Distribución poblacional:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="probabilidad.html#cb173-1" tabindex="-1"></a><span class="co"># Población NO normal: Participación en protestas (variable muy asimétrica)</span></span>
+<span id="cb173-2"><a href="probabilidad.html#cb173-2" tabindex="-1"></a><span class="co"># Mayoría no participa (0), algunos participan ocasionalmente</span></span>
+<span id="cb173-3"><a href="probabilidad.html#cb173-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb173-4"><a href="probabilidad.html#cb173-4" tabindex="-1"></a>poblacion <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, <span class="dv">7000</span>), <span class="fu">rep</span>(<span class="dv">1</span>, <span class="dv">2000</span>), <span class="fu">rep</span>(<span class="dv">2</span>, <span class="dv">700</span>),</span>
+<span id="cb173-5"><a href="probabilidad.html#cb173-5" tabindex="-1"></a>               <span class="fu">rep</span>(<span class="dv">3</span>, <span class="dv">200</span>), <span class="fu">rep</span>(<span class="dv">4</span>, <span class="dv">80</span>), <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">20</span>))</span>
+<span id="cb173-6"><a href="probabilidad.html#cb173-6" tabindex="-1"></a></span>
+<span id="cb173-7"><a href="probabilidad.html#cb173-7" tabindex="-1"></a><span class="co"># Media y SD poblacionales</span></span>
+<span id="cb173-8"><a href="probabilidad.html#cb173-8" tabindex="-1"></a>mu_poblacion <span class="ot">&lt;-</span> <span class="fu">mean</span>(poblacion)</span>
+<span id="cb173-9"><a href="probabilidad.html#cb173-9" tabindex="-1"></a>sigma_poblacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(poblacion)</span>
+<span id="cb173-10"><a href="probabilidad.html#cb173-10" tabindex="-1"></a></span>
+<span id="cb173-11"><a href="probabilidad.html#cb173-11" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Distribución poblacional:</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Distribución poblacional:</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="probabilidad.html#cb184-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media:&quot;</span>, mu_poblacion, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="probabilidad.html#cb175-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Media:&quot;</span>, mu_poblacion, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## Media: 0.442</code></pre>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="probabilidad.html#cb186-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;SD:&quot;</span>, sigma_poblacion, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="probabilidad.html#cb177-1" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;SD:&quot;</span>, sigma_poblacion, <span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span></code></pre></div>
 <pre><code>## SD: 0.8016859</code></pre>
-<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="probabilidad.html#cb188-1" tabindex="-1"></a><span class="co"># Tomamos 5000 muestras de diferentes tamaños y calculamos sus medias</span></span>
-<span id="cb188-2"><a href="probabilidad.html#cb188-2" tabindex="-1"></a>simular_medias <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">n_muestras =</span> <span class="dv">5000</span>) {</span>
-<span id="cb188-3"><a href="probabilidad.html#cb188-3" tabindex="-1"></a>  <span class="fu">replicate</span>(n_muestras, <span class="fu">mean</span>(<span class="fu">sample</span>(poblacion, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span>
-<span id="cb188-4"><a href="probabilidad.html#cb188-4" tabindex="-1"></a>}</span>
-<span id="cb188-5"><a href="probabilidad.html#cb188-5" tabindex="-1"></a></span>
-<span id="cb188-6"><a href="probabilidad.html#cb188-6" tabindex="-1"></a>medias_n10 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">10</span>)</span>
-<span id="cb188-7"><a href="probabilidad.html#cb188-7" tabindex="-1"></a>medias_n30 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">30</span>)</span>
-<span id="cb188-8"><a href="probabilidad.html#cb188-8" tabindex="-1"></a>medias_n100 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">100</span>)</span>
-<span id="cb188-9"><a href="probabilidad.html#cb188-9" tabindex="-1"></a></span>
-<span id="cb188-10"><a href="probabilidad.html#cb188-10" tabindex="-1"></a><span class="co"># Comparación</span></span>
-<span id="cb188-11"><a href="probabilidad.html#cb188-11" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb188-12"><a href="probabilidad.html#cb188-12" tabindex="-1"></a>  tamaño <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;n=10&quot;</span>, <span class="st">&quot;n=30&quot;</span>, <span class="st">&quot;n=100&quot;</span>),</span>
-<span id="cb188-13"><a href="probabilidad.html#cb188-13" tabindex="-1"></a>  <span class="at">media =</span> <span class="fu">c</span>(<span class="fu">mean</span>(medias_n10), <span class="fu">mean</span>(medias_n30), <span class="fu">mean</span>(medias_n100)),</span>
-<span id="cb188-14"><a href="probabilidad.html#cb188-14" tabindex="-1"></a>  <span class="at">sd_observada =</span> <span class="fu">c</span>(<span class="fu">sd</span>(medias_n10), <span class="fu">sd</span>(medias_n30), <span class="fu">sd</span>(medias_n100)),</span>
-<span id="cb188-15"><a href="probabilidad.html#cb188-15" tabindex="-1"></a>  <span class="at">sd_teorica =</span> sigma_poblacion <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">100</span>))</span>
-<span id="cb188-16"><a href="probabilidad.html#cb188-16" tabindex="-1"></a>)</span>
-<span id="cb188-17"><a href="probabilidad.html#cb188-17" tabindex="-1"></a></span>
-<span id="cb188-18"><a href="probabilidad.html#cb188-18" tabindex="-1"></a><span class="fu">print</span>(resultados)</span></code></pre></div>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="probabilidad.html#cb179-1" tabindex="-1"></a><span class="co"># Tomamos 5000 muestras de diferentes tamaños y calculamos sus medias</span></span>
+<span id="cb179-2"><a href="probabilidad.html#cb179-2" tabindex="-1"></a>simular_medias <span class="ot">&lt;-</span> <span class="cf">function</span>(n, <span class="at">n_muestras =</span> <span class="dv">5000</span>) {</span>
+<span id="cb179-3"><a href="probabilidad.html#cb179-3" tabindex="-1"></a>  <span class="fu">replicate</span>(n_muestras, <span class="fu">mean</span>(<span class="fu">sample</span>(poblacion, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)))</span>
+<span id="cb179-4"><a href="probabilidad.html#cb179-4" tabindex="-1"></a>}</span>
+<span id="cb179-5"><a href="probabilidad.html#cb179-5" tabindex="-1"></a></span>
+<span id="cb179-6"><a href="probabilidad.html#cb179-6" tabindex="-1"></a>medias_n10 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">10</span>)</span>
+<span id="cb179-7"><a href="probabilidad.html#cb179-7" tabindex="-1"></a>medias_n30 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">30</span>)</span>
+<span id="cb179-8"><a href="probabilidad.html#cb179-8" tabindex="-1"></a>medias_n100 <span class="ot">&lt;-</span> <span class="fu">simular_medias</span>(<span class="dv">100</span>)</span>
+<span id="cb179-9"><a href="probabilidad.html#cb179-9" tabindex="-1"></a></span>
+<span id="cb179-10"><a href="probabilidad.html#cb179-10" tabindex="-1"></a><span class="co"># Comparación</span></span>
+<span id="cb179-11"><a href="probabilidad.html#cb179-11" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb179-12"><a href="probabilidad.html#cb179-12" tabindex="-1"></a>  tamaño <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;n=10&quot;</span>, <span class="st">&quot;n=30&quot;</span>, <span class="st">&quot;n=100&quot;</span>),</span>
+<span id="cb179-13"><a href="probabilidad.html#cb179-13" tabindex="-1"></a>  <span class="at">media =</span> <span class="fu">c</span>(<span class="fu">mean</span>(medias_n10), <span class="fu">mean</span>(medias_n30), <span class="fu">mean</span>(medias_n100)),</span>
+<span id="cb179-14"><a href="probabilidad.html#cb179-14" tabindex="-1"></a>  <span class="at">sd_observada =</span> <span class="fu">c</span>(<span class="fu">sd</span>(medias_n10), <span class="fu">sd</span>(medias_n30), <span class="fu">sd</span>(medias_n100)),</span>
+<span id="cb179-15"><a href="probabilidad.html#cb179-15" tabindex="-1"></a>  <span class="at">sd_teorica =</span> sigma_poblacion <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">30</span>, <span class="dv">100</span>))</span>
+<span id="cb179-16"><a href="probabilidad.html#cb179-16" tabindex="-1"></a>)</span>
+<span id="cb179-17"><a href="probabilidad.html#cb179-17" tabindex="-1"></a></span>
+<span id="cb179-18"><a href="probabilidad.html#cb179-18" tabindex="-1"></a><span class="fu">print</span>(resultados)</span></code></pre></div>
 <pre><code>##   tamaño     media sd_observada sd_teorica
 ## 1   n=10 0.4436600   0.25167533 0.25351534
 ## 2   n=30 0.4415867   0.14769120 0.14636715
@@ -879,35 +897,7 @@ Figura 7.6: Convergencia a la Normal según el Teorema del Límite Central
 </div>
 <div id="ejercicios-6" class="section level2 hasAnchor" number="7.9">
 <h2><span class="header-section-number">7.9</span> Ejercicios<a href="probabilidad.html#ejercicios-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Conceptuales:</strong></p>
-<ol style="list-style-type: decimal">
-<li><p>Explica con tus propias palabras por qué es imposible que la probabilidad de un evento sea negativa o mayor que 1.</p></li>
-<li><p>¿Cuál es la diferencia entre <span class="math inline">\(P(A|B)\)</span> y <span class="math inline">\(P(B|A)\)</span>? Proporciona un ejemplo de ciencias políticas donde estas dos probabilidades sean distintas.</p></li>
-<li><p>Un investigador afirma: “La probabilidad de que Chile tenga una nueva Constitución en 2026 es 0.40”. ¿Qué interpretación de probabilidad está usando: frecuentista o bayesiana? Justifica.</p></li>
-<li><p>Explica por qué la distribución Normal es tan importante en estadística, incluso cuando muchas variables en ciencias sociales no son normales.</p></li>
-</ol>
-<p><strong>Aplicados:</strong></p>
-<ol start="5" style="list-style-type: decimal">
-<li><p>En una encuesta, 45% declara intención de votar. Si encuestamos 800 personas:</p>
-<ol style="list-style-type: lower-alpha">
-<li>¿Cuál es la probabilidad de que exactamente 360 declaren intención de votar?</li>
-<li>¿Cuál es la probabilidad de que entre 340 y 380 lo hagan?</li>
-<li>¿Cuál sería el número esperado y la desviación estándar?</li>
-</ol></li>
-<li><p>Históricamente, ocurren en promedio 2.8 huelgas por mes en un sector industrial. Asumiendo distribución Poisson:</p>
-<ol style="list-style-type: lower-alpha">
-<li>¿Probabilidad de 0 huelgas este mes?</li>
-<li>¿Probabilidad de más de 4 huelgas?</li>
-<li>¿Cuál es la varianza del número de huelgas?</li>
-</ol></li>
-<li><p><strong>Simulación del TLC</strong>: Replica la simulación del Teorema del Límite Central usando una distribución poblacional diferente (por ejemplo, uniforme o exponencial). Compara la convergencia a la Normal para <span class="math inline">\(n = 5, 30, 100\)</span>.</p></li>
-<li><p>El índice de democracia V-Dem para países latinoamericanos tiene media 0.52 y SD 0.18. Si tomamos muestras aleatorias de 40 países con reemplazo:</p>
-<ol style="list-style-type: lower-alpha">
-<li>¿Cuál es la distribución esperada de <span class="math inline">\(\bar{X}\)</span>?</li>
-<li>¿Probabilidad de que <span class="math inline">\(\bar{X} &gt; 0.55\)</span>?</li>
-<li>¿Probabilidad de que <span class="math inline">\(\bar{X}\)</span> esté entre 0.50 y 0.54?</li>
-</ol></li>
-</ol>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="ejercicios.html#ejercicios-cap7">Anexo de Ejercicios</a>.</p>
 
 </div>
 </div>

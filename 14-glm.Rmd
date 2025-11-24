@@ -14,4 +14,7 @@
 
 ## Lecturas recomendadas
 
+
 ## Ejercicios
+
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap14).

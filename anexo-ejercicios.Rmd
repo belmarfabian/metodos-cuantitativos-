@@ -1,0 +1,551 @@
+# (APPENDIX) Anexos {-}
+
+# Ejercicios {#ejercicios}
+
+Este anexo reúne todos los ejercicios del libro, organizados por capítulo. Cada sección corresponde a un capítulo y puede consultarse de forma independiente.
+
+---
+
+## Capítulo 1: Introducción {#ejercicios-cap1}
+
+
+**1. Identificar elementos del método científico**
+
+Lee el resumen (*abstract*) de un artículo cuantitativo reciente en *Latin American Politics and Society* o *Revista de Ciencia Política*. Identifica:
+
+a) La pregunta de investigación  
+b) La teoría o argumento central  
+c) Las hipótesis principales  
+d) El tipo de datos usados  
+e) La técnica de análisis  
+
+**2. Evaluar mensurabilidad**
+
+Para cada uno de los siguientes conceptos, discute: (a) ¿Es posible cuantificarlo? (b) ¿Qué se ganaría y qué se perdería al cuantificarlo?
+
+- Calidad de la democracia
+- Polarización afectiva
+- Identidad nacional
+- Legitimidad institucional
+- Clientelismo político
+
+**3. Teoría e hipótesis**
+
+Selecciona un fenómeno político reciente en tu país (ej: baja en confianza institucional, cambio en participación electoral, polarización). 
+
+a) Formula una pregunta de investigación específica sobre ese fenómeno  
+b) Propón una teoría de rango medio que lo explique  
+c) Deriva al menos dos hipótesis testeables de esa teoría  
+d) Especifica cómo medirías las variables de tus hipótesis  
+
+**4. Análisis crítico**
+
+Un titular de prensa afirma: "Estudio demuestra que uso de redes sociales causa polarización política". 
+
+a) ¿Qué tipo de evidencia se necesitaría para sostener causalmente esa afirmación?  
+b) ¿Qué explicaciones alternativas podrían dar cuenta de una correlación entre uso de redes y polarización?  
+c) ¿Qué diseño de investigación permitiría distinguir entre estas explicaciones?
+
+**5. Reflexión metodológica**
+
+Piensa en tu propio proyecto de tesis o tema de interés. 
+
+a) ¿Tu pregunta de investigación es más adecuada para métodos cuantitativos, cualitativos, o mixtos? ¿Por qué?  
+b) ¿Qué tipo de datos necesitarías?  
+c) ¿Qué limitaciones enfrentarías al cuantificar los conceptos centrales de tu investigación?
+
+---
+
+## Capítulo 2: Diseño de investigación {#ejercicios-cap2}
+
+
+**1. Evaluar preguntas de investigación**
+
+Para cada pregunta, identifica: (a) ¿Es específica? (b) ¿Es empíricamente respondible? (c) ¿Es descriptiva, relacional o causal? (d) ¿Cómo la mejorarías?
+
+- "¿Por qué hay desigualdad?"
+- "¿Los jóvenes participan menos en política?"
+- "¿Debería Chile tener voto obligatorio?"
+- "¿El voto obligatorio aumenta la participación electoral?"
+
+**2. De teoría a hipótesis**
+
+Teoría: Los sistemas presidenciales son más propensos a crisis democráticas que los parlamentarios porque generan competencia de suma cero entre ejecutivo y legislativo [@linz1990].
+
+a) Identifica el mecanismo causal propuesto  
+b) Deriva dos hipótesis testeables  
+c) ¿Qué evidencia falsificaría cada hipótesis?  
+
+**3. Identificar amenazas a validez interna**
+
+Un estudio encuentra que municipios que implementaron presupuesto participativo tienen menor corrupción. El estudio compara municipios con presupuesto participativo vs. sin él, controlando por población, PIB per cápita y nivel educativo.
+
+a) ¿Qué confusores no observados podrían explicar la asociación?  
+b) ¿Podría haber causalidad inversa? ¿Cómo?  
+c) Propón un diseño alternativo con mejor validez interna  
+
+**4. Evaluar validez externa**
+
+Un experimento en Suecia muestra que recibir información sobre uso de impuestos aumenta disposición a pagar impuestos. Los investigadores quieren saber si el resultado aplica a América Latina.
+
+a) ¿Qué diferencias contextuales podrían hacer que el efecto varíe?  
+b) ¿Cómo evaluarías si el resultado generaliza?  
+c) ¿Qué diseño permitiría estudiar variación contextual del efecto?  
+
+**5. Problema de investigación propio**
+
+Selecciona un fenómeno político que te interese:
+
+a) Formula una pregunta causal específica  
+b) Propón una teoría que la responda y deriva hipótesis  
+c) Describe un diseño observacional para testearla  
+d) Identifica las principales amenazas a validez interna  
+e) ¿Qué diseño cuasi-experimental podría mejorar la identificación causal?
+
+**6. Análisis de artículo**
+
+Lee un artículo cuantitativo de una revista de ciencia política. Identifica:
+
+a) La pregunta de investigación y su tipo  
+b) El diseño de investigación usado  
+c) La unidad de análisis  
+d) Dos fortalezas del diseño para validez interna  
+e) Dos limitaciones para validez externa  
+f) Una estrategia alternativa que los autores podrían haber usado
+
+---
+
+## Capítulo 3: Medición {#ejercicios-cap3}
+
+
+**1. Conceptualización y operacionalización**
+
+Selecciona un concepto abstracto (ej: "legitimidad política", "clientelismo", "movilización social"):
+
+a) Propón una definición conceptual clara  
+b) Identifica al menos tres indicadores empíricos  
+c) Para cada indicador, especifica el procedimiento de medición  
+d) Evalúa la validez de contenido de tu operacionalización  
+
+**2. Niveles de medición**
+
+Clasifica las siguientes variables según nivel de medición y justifica:
+
+- Región de residencia (Norte/Centro/Sur)
+- Satisfacción con la democracia (escala 1-10)
+- Ingreso mensual en pesos
+- Religión (Católica/Protestante/Sin religión/Otra)
+- Nivel educativo (Primaria/Secundaria/Universitaria)
+- Temperatura de termómetro de sentimiento hacia partidos políticos (0-100)
+
+**3. Evaluar validez**
+
+Un investigador mide "capital social" preguntando: "¿Cuántas organizaciones sociales existen en su comuna?"
+
+a) ¿Qué dimensión de capital social captura esta medida?  
+b) ¿Qué dimensiones omite?  
+c) Propón indicadores adicionales para mejorar validez de contenido  
+d) ¿Cómo evaluarías la validez convergente de estas medidas?  
+
+**4. Construir un índice**
+
+Tienes datos de encuesta con estas preguntas sobre confianza institucional (escala 1-5):
+
+- ¿Cuánto confía en el Congreso?
+- ¿Cuánto confía en el Presidente?
+- ¿Cuánto confía en la Corte Suprema?
+- ¿Cuánto confía en la policía?
+
+a) Construye un índice aditivo simple de "confianza institucional"  
+b) ¿Tiene sentido incluir los cuatro ítems en un solo índice? ¿Por qué?  
+c) ¿Cómo evaluarías la consistencia interna del índice?  
+d) ¿Qué ponderación alternativa podrías justificar teóricamente?  
+
+**5. Problemas de medición**
+
+Imagina que encuestas sobre actitudes hacia la inmigración en Santiago, Chile:
+
+a) ¿Qué sesgo de deseabilidad social podrías esperar? ¿En qué dirección?  
+b) Propón una estrategia para mitigar ese sesgo  
+c) Si administras la encuesta por teléfono, ¿qué diferencias esperarías vs. encuesta autoaplicada por internet?  
+d) ¿Qué grupos podrían tener tasas más altas de no-respuesta? ¿Cómo afectaría tus estimaciones?  
+
+**6. Análisis crítico de índice existente**
+
+Revisa la metodología de uno de estos índices (disponibles en línea):
+
+- Polity IV (democracia)
+- Transparency International CPI (corrupción percibida)
+- V-Dem (variedades de democracia)
+
+a) ¿Cómo conceptualiza el fenómeno?  
+b) ¿Qué indicadores usa?  
+c) ¿Cómo agrega los indicadores?  
+d) Identifica una fortaleza y una debilidad de la medición  
+e) ¿Para qué preguntas de investigación sería apropiado usar este índice? ¿Para cuáles no?
+
+---
+
+## Capítulo 4: Trabajando con datos {#ejercicios-cap4}
+
+
+**1. Evaluación de calidad**
+
+Descarga datos del CEP (https://www.cepchile.cl/opinion-publica/encuesta-cep/) o Latinobarómetro (https://www.latinobarometro.org/). 
+
+a) ¿Qué población representa la muestra?  
+b) ¿Cuál es el tamaño muestral y margen de error?  
+c) Identifica tres variables. Para cada una, evalúa: ¿Es válida para medir el concepto que pretende? ¿Qué problemas de medición podrían existir?  
+d) ¿Qué información sobre calidad de datos provee la documentación?  
+
+**2. Importar y explorar**
+
+Importa un dataset de tu elección en R:
+
+```{r eval=FALSE}
+# Tu código aquí
+```
+
+a) ¿Cuántos casos y variables tiene?  
+b) ¿Qué tipos de variables contiene (numéricas, categóricas)?  
+c) ¿Cuántos valores faltantes hay en cada variable?  
+d) Identifica y describe un valor atípico  
+
+**3. Limpieza de datos**
+
+Con el dataset del ejercicio 2:
+
+a) Selecciona 5-10 variables relevantes para una pregunta de investigación que formules  
+b) Filtra casos para incluir solo observaciones completas (sin valores faltantes en variables clave)  
+c) Crea al menos dos variables nuevas mediante transformación o recodificación  
+d) Genera un resumen estadístico de tus variables  
+
+**4. Datos faltantes**
+
+```{r eval=FALSE}
+# Crea un dataset con valores faltantes
+set.seed(123)
+datos <- data.frame(
+  id = 1:100,
+  edad = sample(18:80, 100, replace = TRUE),
+  ingreso = rnorm(100, 500000, 150000)
+)
+# Introduce valores faltantes no aleatorios:
+# Personas mayores de 60 tienen 50% probabilidad de no reportar ingreso
+datos$ingreso[datos$edad > 60 & runif(100) < 0.5] <- NA
+```
+
+a) ¿Cuántos valores faltantes hay en `ingreso`?  
+b) Calcula ingreso promedio: (1) eliminando casos con valores faltantes, (2) solo entre quienes reportaron. ¿Difieren las estimaciones? ¿Por qué?  
+c) ¿Qué tipo de datos faltantes son estos (MCAR, MAR, MNAR)?  
+d) ¿Cómo afecta esto las inferencias sobre ingreso promedio en la población?  
+
+**5. Combinar datasets**
+
+Tienes dos datasets:
+
+```{r eval=FALSE}
+# Resultados electorales por comuna
+resultados <- data.frame(
+  comuna_id = 1:5,
+  comuna = c("Santiago", "Valparaíso", "Concepción", "La Serena", "Temuco"),
+  votos_derecha = c(45, 38, 42, 50, 35),
+  votos_izquierda = c(40, 48, 43, 35, 50)
+)
+
+# Características socioeconómicas
+socioeconomico <- data.frame(
+  comuna_id = c(1, 2, 3, 6),
+  ingreso_promedio = c(800000, 650000, 700000, 600000),
+  desigualdad_gini = c(0.48, 0.45, 0.47, 0.50)
+)
+```
+
+a) Combina los datasets manteniendo todas las comunas de `resultados`  
+b) ¿Qué problema de datos observas después de combinar?  
+c) ¿Cómo manejarías ese problema para análisis posterior?  
+
+**6. Proyecto propio**
+
+Identifica un dataset relevante para tu tesis o interés de investigación:
+
+a) Descríbelo: fuente, estructura (corte transversal/panel/etc), unidad de análisis, N  
+b) Importa a R y documenta el proceso  
+c) Realiza una limpieza básica: seleccionar variables relevantes, verificar valores faltantes y outliers, crear variables derivadas si es necesario  
+d) Genera un reporte en R Markdown que documente: tu pregunta de investigación, descripción de los datos, proceso de limpieza, y estadísticas descriptivas básicas  
+e) Exporta la versión limpia de los datos
+
+---
+
+## Capítulo 5: Estadística descriptiva {#ejercicios-cap5}
+
+
+**1. Cálculo manual**
+
+Con estos datos de participación electoral en 10 comunas: 45, 52, 48, 51, 39, 55, 47, 50, 44, 49
+
+a) Calcula media, mediana y moda manualmente  
+b) Calcula rango, varianza y desviación estándar manualmente  
+c) ¿La distribución es simétrica o asimétrica? ¿Cómo lo sabes?  
+d) Verifica tus cálculos en R  
+
+**2. Análisis exploratorio con datos reales**
+
+Descarga datos de CEP o CASEN. Selecciona una variable continua de interés:
+
+```{r eval=FALSE}
+# Tu código aquí
+```
+
+a) Calcula media, mediana, desviación estándar e IQR  
+b) Crea un histograma y un boxplot  
+c) Identifica outliers (si los hay) usando el método IQR  
+d) ¿La distribución es simétrica o asimétrica? Calcula el coeficiente de asimetría  
+e) Escribe un párrafo interpretando los resultados  
+
+**3. Comparación de grupos**
+
+Con el dataset `comunas` del capítulo:
+
+```{r eval=FALSE}
+# Datos disponibles
+comunas
+```
+
+a) Compara participación electoral entre comunas con alta vs. baja educación superior (define umbral apropiado)  
+b) Calcula media, mediana y desviación estándar para cada grupo  
+c) Crea boxplots comparando ambos grupos  
+d) ¿Qué grupo tiene mayor variabilidad? ¿Por qué?  
+
+**4. Relaciones bivariadas**
+
+```{r eval=FALSE}
+# Usa datos de comunas
+```
+
+a) Calcula la correlación entre participación y pobreza  
+b) Calcula la correlación entre participación y educación superior  
+c) Crea scatterplots para ambas relaciones  
+d) Interpreta: ¿Las correlaciones son consistentes con tus expectativas teóricas? ¿Por qué?  
+
+**5. Detectar problemas de datos**
+
+```{r eval=FALSE}
+# Dataset con problemas
+set.seed(999)
+problemas <- data.frame(
+  id = 1:100,
+  edad = c(sample(18:80, 95, replace = TRUE), 150, 12, -5, 200, NA),
+  ingreso = c(rnorm(95, 500000, 150000), 50000000, NA, NA, -100000, 0)
+)
+```
+
+a) Identifica valores imposibles o improbables en cada variable  
+b) Identifica valores faltantes  
+c) Calcula media y mediana de `ingreso` con y sin outliers. ¿Cómo afecta la media?  
+d) Propón una estrategia para limpiar estos datos justificando cada decisión  
+
+**6. Estadística descriptiva comprehensiva**
+
+Elige un dataset de tu proyecto de tesis o interés:
+
+a) Identifica 3-5 variables clave  
+b) Para cada variable, genera:
+   - Tabla de estadísticos descriptivos
+   - Gráfico apropiado (histograma, boxplot, o barras según tipo)
+   - Interpretación de 2-3 oraciones
+c) Calcula correlaciones entre variables numéricas  
+d) Escribe un reporte de una página resumiendo patrones principales en tus datos  
+e) Identifica al menos un hallazgo inesperado que requiera investigación adicional
+
+---
+
+## Capítulo 6: Visualización de datos {#ejercicios-cap6}
+
+
+**1. Replicar y mejorar**
+
+Este gráfico problemático:
+
+```{r eval=FALSE}
+ggplot(comunas, aes(x = region, y = cambio_izquierda)) +
+  geom_bar(stat = "identity", fill = rainbow(4)) +
+  labs(title = "CAMBIO!!!")
+```
+
+a) Identifica al menos 4 problemas  
+b) Crea una versión mejorada aplicando principios del capítulo  
+c) Justifica cada decisión de diseño  
+
+**2. Exploración visual de datos propios**
+
+Con un dataset de tu proyecto:
+
+a) Crea histograma/densidad de variable continua clave  
+b) Crea boxplot comparando grupos relevantes  
+c) Crea scatter plot de dos variables con línea de tendencia  
+d) Combina los tres gráficos en una figura con patchwork  
+e) Exporta en formato apropiado (300 dpi PNG)  
+
+**3. Series temporales**
+
+Descarga datos de aprobación presidencial real (ej: CEP, Cadem). 
+
+a) Crea gráfico de línea con aprobación y desaprobación  
+b) Agrega anotaciones para eventos importantes (ej: estallido social, pandemia)  
+c) Usa facetas para comparar períodos presidenciales  
+
+**4. Visualización multivariada**
+
+```{r eval=FALSE}
+# Usa datos de comunas
+```
+
+a) Crea scatter plot con tres variables (x, y, color o tamaño)  
+b) Agrega facetas por una cuarta variable categórica  
+c) Personaliza completamente (tema, colores, etiquetas)  
+d) Escribe interpretación de 100 palabras de patrones observados  
+
+**5. Del mal al buen gráfico**
+
+Busca un gráfico problemático en medios (Twitter, periódicos, reportes). 
+
+a) Captura/descarga el gráfico original  
+b) Lista todos los problemas que identificas  
+c) Si tienes acceso a los datos, recréalo correctamente en ggplot2  
+d) Si no, crea un gráfico similar con datos simulados que demuestre la mejora  
+e) Escribe explicación de 150 palabras sobre qué cambió y por qué  
+
+**6. Proyecto de visualización completo**
+
+Crea un "dashboard" de una página con 4-6 gráficos que cuenten una historia sobre tu tema de tesis:
+
+a) Diseña layout con patchwork  
+b) Incluye diferentes tipos de gráficos (univariados, bivariados, temporal si aplica)  
+c) Usa un tema coherente en todos los gráficos  
+d) Agrega título general y caption con fuente  
+e) Exporta en alta resolución  
+f) Presenta a colegas y solicita feedback sobre claridad
+
+---
+
+## Capítulo 7: Introducción a probabilidad {#ejercicios-cap7}
+
+
+**Conceptuales:**
+
+1. Explica con tus propias palabras por qué es imposible que la probabilidad de un evento sea negativa o mayor que 1.
+
+2. ¿Cuál es la diferencia entre $P(A|B)$ y $P(B|A)$? Proporciona un ejemplo de ciencias políticas donde estas dos probabilidades sean distintas.
+
+3. Un investigador afirma: "La probabilidad de que Chile tenga una nueva Constitución en 2026 es 0.40". ¿Qué interpretación de probabilidad está usando: frecuentista o bayesiana? Justifica.
+
+4. Explica por qué la distribución Normal es tan importante en estadística, incluso cuando muchas variables en ciencias sociales no son normales.
+
+**Aplicados:**
+
+5. En una encuesta, 45% declara intención de votar. Si encuestamos 800 personas:
+   a. ¿Cuál es la probabilidad de que exactamente 360 declaren intención de votar?
+   b. ¿Cuál es la probabilidad de que entre 340 y 380 lo hagan?
+   c. ¿Cuál sería el número esperado y la desviación estándar?
+
+6. Históricamente, ocurren en promedio 2.8 huelgas por mes en un sector industrial. Asumiendo distribución Poisson:
+   a. ¿Probabilidad de 0 huelgas este mes?
+   b. ¿Probabilidad de más de 4 huelgas?
+   c. ¿Cuál es la varianza del número de huelgas?
+
+7. **Simulación del TLC**: Replica la simulación del Teorema del Límite Central usando una distribución poblacional diferente (por ejemplo, uniforme o exponencial). Compara la convergencia a la Normal para $n = 5, 30, 100$.
+
+8. El índice de democracia V-Dem para países latinoamericanos tiene media 0.52 y SD 0.18. Si tomamos muestras aleatorias de 40 países con reemplazo:
+   a. ¿Cuál es la distribución esperada de $\bar{X}$?
+   b. ¿Probabilidad de que $\bar{X} > 0.55$?
+   c. ¿Probabilidad de que $\bar{X}$ esté entre 0.50 y 0.54?
+
+---
+
+## Capítulo 8: Inferencia estadística {#ejercicios-cap8}
+
+
+**Conceptuales:**
+
+1. Explica la diferencia entre error estándar y desviación estándar. ¿Por qué el error estándar disminuye con $n$ pero la desviación estándar no?
+
+2. Un estudiante afirma: "Calculé un IC 95% de [45%, 51%] para la intención de voto. Esto significa que hay 95% de probabilidad de que el verdadero porcentaje esté en ese rango." ¿Es correcta esta interpretación? Corrige si es necesario.
+
+3. ¿Por qué un IC 99% es más ancho que un IC 95% para los mismos datos? ¿Cuál es el trade-off?
+
+4. Si duplicas el tamaño de tu muestra, ¿en cuánto se reduce el error estándar?
+
+**Aplicados:**
+
+5. Una encuesta con $n=800$ encuentra que 55% apoya una reforma constitucional.
+   a. Calcula el error estándar de $\hat{p}$
+   b. Construye un IC 95% para la proporción poblacional
+   c. ¿Es razonable concluir que la mayoría de la población apoya la reforma?
+
+6. El ingreso promedio en una muestra de $n=150$ hogares es $\bar{x} = 680$ mil pesos, con $s = 210$ mil.
+   a. Calcula el error estándar de $\bar{x}$
+   b. Construye un IC 95% para el ingreso promedio poblacional
+   c. Construye un IC 99% y compara el ancho
+
+7. **Planificación de encuesta**: Quieres estimar el porcentaje de estudiantes que aprueban un curso con margen de error de ±5% (IC 95%). ¿Cuántos estudiantes debes encuestar?
+
+8. **Simulación**: Replica la simulación de 100 ICs del capítulo, pero usando un IC 90% en lugar de 95%. ¿Aproximadamente cuántos intervalos esperarías que NO contengan $\mu$? Verifica con código.
+
+9. Una encuestadora reporta: "Candidato A: 48% ± 3%".
+   a. Interpreta este resultado en términos de IC
+   b. ¿Aproximadamente cuál fue el tamaño muestral?
+   c. ¿Podemos concluir que el candidato perdería (< 50%)?
+
+---
+
+## Capítulo 9: Pruebas de hipótesis {#ejercicios-cap9}
+
+
+1. Explica la diferencia entre "no rechazar $H_0$" y "aceptar $H_0$".
+
+2. Un investigador reporta: "El valor p fue 0.08, por lo tanto no hay efecto." ¿Qué está mal?
+
+3. ¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según el contexto.
+
+---
+
+## Capítulo 10: Comparación de medias {#ejercicios-cap10}
+
+
+1. Compara los ingresos promedio entre dos regiones de Chile usando una prueba t.
+
+2. Realiza un ANOVA para comparar niveles de participación electoral entre 4 países latinoamericanos.
+
+3. Verifica los supuestos de normalidad y homogeneidad de varianzas para tus datos.
+
+---
+
+## Capítulo 11: Regresión bivariada {#ejercicios-cap11}
+
+
+1. Calcula la correlación entre años de educación e ingreso. Interpreta el resultado.
+
+2. Estima un modelo de regresión para predecir participación electoral a partir de nivel educacional promedio por comuna.
+
+3. Interpreta los coeficientes y el $R^2$ del modelo estimado en el ejercicio 2.
+
+4. Discute por qué una correlación alta entre helado y ahogamientos NO implica causalidad.
+
+---
+
+## Capítulo 12: Regresión múltiple {#ejercicios-cap12}
+
+
+---
+
+## Capítulo 13: Supuestos OLS {#ejercicios-cap13}
+
+
+---
+
+## Capítulo 14: GLM {#ejercicios-cap14}
+
+
+---
+

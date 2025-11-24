@@ -88,10 +88,7 @@ Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly an
 Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values: Context, process, and purpose. *The American Statistician*, 70(2), 129-133.  
 → Declaración oficial de la Asociación Americana de Estadística sobre interpretación correcta de valores p y errores comunes.
 
+
 ## Ejercicios
 
-1. Explica la diferencia entre "no rechazar $H_0$" y "aceptar $H_0$".
-
-2. Un investigador reporta: "El valor p fue 0.08, por lo tanto no hay efecto." ¿Qué está mal?
-
-3. ¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según el contexto.
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap9).

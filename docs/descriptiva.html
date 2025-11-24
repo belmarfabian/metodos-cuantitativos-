@@ -23,7 +23,7 @@
 <meta name="author" content="Fabián Belmar" />
 
 
-<meta name="date" content="2025-11-20" />
+<meta name="date" content="2025-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -567,6 +567,24 @@ div.csl-indent {
 <li class="chapter" data-level="14.7" data-path="glm.html"><a href="glm.html#lecturas-recomendadas-13"><i class="fa fa-check"></i><b>14.7</b> Lecturas recomendadas</a></li>
 <li class="chapter" data-level="14.8" data-path="glm.html"><a href="glm.html#ejercicios-13"><i class="fa fa-check"></i><b>14.8</b> Ejercicios</a></li>
 </ul></li>
+<li class="appendix"><span><b>Anexos</b></span></li>
+<li class="chapter" data-level="A" data-path="introduccion.html"><a href="introduccion.html#ejercicios"><i class="fa fa-check"></i><b>A</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>A.1</b> Capítulo 1: Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap2"><i class="fa fa-check"></i><b>A.2</b> Capítulo 2: Diseño de investigación</a></li>
+<li class="chapter" data-level="A.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap3"><i class="fa fa-check"></i><b>A.3</b> Capítulo 3: Medición</a></li>
+<li class="chapter" data-level="A.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap4"><i class="fa fa-check"></i><b>A.4</b> Capítulo 4: Trabajando con datos</a></li>
+<li class="chapter" data-level="A.5" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap5"><i class="fa fa-check"></i><b>A.5</b> Capítulo 5: Estadística descriptiva</a></li>
+<li class="chapter" data-level="A.6" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap6"><i class="fa fa-check"></i><b>A.6</b> Capítulo 6: Visualización de datos</a></li>
+<li class="chapter" data-level="A.7" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap7"><i class="fa fa-check"></i><b>A.7</b> Capítulo 7: Introducción a probabilidad</a></li>
+<li class="chapter" data-level="A.8" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap8"><i class="fa fa-check"></i><b>A.8</b> Capítulo 8: Inferencia estadística</a></li>
+<li class="chapter" data-level="A.9" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap9"><i class="fa fa-check"></i><b>A.9</b> Capítulo 9: Pruebas de hipótesis</a></li>
+<li class="chapter" data-level="A.10" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap10"><i class="fa fa-check"></i><b>A.10</b> Capítulo 10: Comparación de medias</a></li>
+<li class="chapter" data-level="A.11" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap11"><i class="fa fa-check"></i><b>A.11</b> Capítulo 11: Regresión bivariada</a></li>
+<li class="chapter" data-level="A.12" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap12"><i class="fa fa-check"></i><b>A.12</b> Capítulo 12: Regresión múltiple</a></li>
+<li class="chapter" data-level="A.13" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap13"><i class="fa fa-check"></i><b>A.13</b> Capítulo 13: Supuestos OLS</a></li>
+<li class="chapter" data-level="A.14" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap14"><i class="fa fa-check"></i><b>A.14</b> Capítulo 14: GLM</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -608,33 +626,33 @@ div.csl-indent {
 <div id="tablas-de-frecuencia" class="section level3 hasAnchor" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Tablas de frecuencia<a href="descriptiva.html#tablas-de-frecuencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para variables categóricas, contamos casos en cada categoría:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="descriptiva.html#cb56-1" tabindex="-1"></a><span class="co"># Simulamos orientación política en encuesta</span></span>
-<span id="cb56-2"><a href="descriptiva.html#cb56-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb56-3"><a href="descriptiva.html#cb56-3" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb56-4"><a href="descriptiva.html#cb56-4" tabindex="-1"></a>  <span class="at">orientacion =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Izquierda&quot;</span>, <span class="st">&quot;Centro&quot;</span>, <span class="st">&quot;Derecha&quot;</span>, <span class="st">&quot;Ninguna&quot;</span>), </span>
-<span id="cb56-5"><a href="descriptiva.html#cb56-5" tabindex="-1"></a>                       <span class="dv">800</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb56-6"><a href="descriptiva.html#cb56-6" tabindex="-1"></a>                       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.25</span>, <span class="fl">0.28</span>, <span class="fl">0.17</span>))</span>
-<span id="cb56-7"><a href="descriptiva.html#cb56-7" tabindex="-1"></a>)</span>
-<span id="cb56-8"><a href="descriptiva.html#cb56-8" tabindex="-1"></a></span>
-<span id="cb56-9"><a href="descriptiva.html#cb56-9" tabindex="-1"></a><span class="co"># Frecuencias absolutas</span></span>
-<span id="cb56-10"><a href="descriptiva.html#cb56-10" tabindex="-1"></a><span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="descriptiva.html#cb53-1" tabindex="-1"></a><span class="co"># Simulamos orientación política en encuesta</span></span>
+<span id="cb53-2"><a href="descriptiva.html#cb53-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb53-3"><a href="descriptiva.html#cb53-3" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb53-4"><a href="descriptiva.html#cb53-4" tabindex="-1"></a>  <span class="at">orientacion =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Izquierda&quot;</span>, <span class="st">&quot;Centro&quot;</span>, <span class="st">&quot;Derecha&quot;</span>, <span class="st">&quot;Ninguna&quot;</span>), </span>
+<span id="cb53-5"><a href="descriptiva.html#cb53-5" tabindex="-1"></a>                       <span class="dv">800</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb53-6"><a href="descriptiva.html#cb53-6" tabindex="-1"></a>                       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.25</span>, <span class="fl">0.28</span>, <span class="fl">0.17</span>))</span>
+<span id="cb53-7"><a href="descriptiva.html#cb53-7" tabindex="-1"></a>)</span>
+<span id="cb53-8"><a href="descriptiva.html#cb53-8" tabindex="-1"></a></span>
+<span id="cb53-9"><a href="descriptiva.html#cb53-9" tabindex="-1"></a><span class="co"># Frecuencias absolutas</span></span>
+<span id="cb53-10"><a href="descriptiva.html#cb53-10" tabindex="-1"></a><span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)</span></code></pre></div>
 <pre><code>## 
 ##    Centro   Derecha Izquierda   Ninguna 
 ##       199       230       238       133</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="descriptiva.html#cb58-1" tabindex="-1"></a><span class="co"># Frecuencias relativas (proporciones)</span></span>
-<span id="cb58-2"><a href="descriptiva.html#cb58-2" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion))</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="descriptiva.html#cb55-1" tabindex="-1"></a><span class="co"># Frecuencias relativas (proporciones)</span></span>
+<span id="cb55-2"><a href="descriptiva.html#cb55-2" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion))</span></code></pre></div>
 <pre><code>## 
 ##    Centro   Derecha Izquierda   Ninguna 
 ##   0.24875   0.28750   0.29750   0.16625</code></pre>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="descriptiva.html#cb60-1" tabindex="-1"></a><span class="co"># Porcentajes</span></span>
-<span id="cb60-2"><a href="descriptiva.html#cb60-2" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)) <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="descriptiva.html#cb57-1" tabindex="-1"></a><span class="co"># Porcentajes</span></span>
+<span id="cb57-2"><a href="descriptiva.html#cb57-2" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)) <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div>
 <pre><code>## 
 ##    Centro   Derecha Izquierda   Ninguna 
 ##    24.875    28.750    29.750    16.625</code></pre>
 <p>Con tidyverse:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="descriptiva.html#cb62-1" tabindex="-1"></a>encuesta <span class="sc">%&gt;%</span></span>
-<span id="cb62-2"><a href="descriptiva.html#cb62-2" tabindex="-1"></a>  <span class="fu">count</span>(orientacion) <span class="sc">%&gt;%</span></span>
-<span id="cb62-3"><a href="descriptiva.html#cb62-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="descriptiva.html#cb59-1" tabindex="-1"></a>encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb59-2"><a href="descriptiva.html#cb59-2" tabindex="-1"></a>  <span class="fu">count</span>(orientacion) <span class="sc">%&gt;%</span></span>
+<span id="cb59-3"><a href="descriptiva.html#cb59-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">porcentaje =</span> n <span class="sc">/</span> <span class="fu">sum</span>(n) <span class="sc">*</span> <span class="dv">100</span>)</span></code></pre></div>
 <pre><code>##   orientacion   n porcentaje
 ## 1      Centro 199     24.875
 ## 2     Derecha 230     28.750
@@ -644,31 +662,31 @@ div.csl-indent {
 <div id="histogramas" class="section level3 hasAnchor" number="5.2.2">
 <h3><span class="header-section-number">5.2.2</span> Histogramas<a href="descriptiva.html#histogramas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para variables continuas, agrupamos en intervalos (bins):</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="descriptiva.html#cb64-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb64-2"><a href="descriptiva.html#cb64-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
-<span id="cb64-3"><a href="descriptiva.html#cb64-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>, </span>
-<span id="cb64-4"><a href="descriptiva.html#cb64-4" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Número de comunas&quot;</span>,</span>
-<span id="cb64-5"><a href="descriptiva.html#cb64-5" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución de participación electoral&quot;</span>) <span class="sc">+</span></span>
-<span id="cb64-6"><a href="descriptiva.html#cb64-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-51"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-51-1.png" alt="Distribución de participación electoral en comunas" width="80%" />
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="descriptiva.html#cb61-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb61-2"><a href="descriptiva.html#cb61-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">30</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>) <span class="sc">+</span></span>
+<span id="cb61-3"><a href="descriptiva.html#cb61-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>, </span>
+<span id="cb61-4"><a href="descriptiva.html#cb61-4" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Número de comunas&quot;</span>,</span>
+<span id="cb61-5"><a href="descriptiva.html#cb61-5" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución de participación electoral&quot;</span>) <span class="sc">+</span></span>
+<span id="cb61-6"><a href="descriptiva.html#cb61-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-48"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-48-1.png" alt="Distribución de participación electoral en comunas" width="80%" />
 <p class="caption">
 Figura 5.1: Distribución de participación electoral en comunas
 </p>
 </div>
 <p>El número de bins afecta la visualización:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="descriptiva.html#cb65-1" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb65-2"><a href="descriptiva.html#cb65-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb65-3"><a href="descriptiva.html#cb65-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;10 bins&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb65-4"><a href="descriptiva.html#cb65-4" tabindex="-1"></a></span>
-<span id="cb65-5"><a href="descriptiva.html#cb65-5" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb65-6"><a href="descriptiva.html#cb65-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb65-7"><a href="descriptiva.html#cb65-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;50 bins&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
-<span id="cb65-8"><a href="descriptiva.html#cb65-8" tabindex="-1"></a></span>
-<span id="cb65-9"><a href="descriptiva.html#cb65-9" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb65-10"><a href="descriptiva.html#cb65-10" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-52-1.png" alt="Histogramas con diferentes números de bins" width="80%" />
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="descriptiva.html#cb62-1" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb62-2"><a href="descriptiva.html#cb62-2" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">10</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb62-3"><a href="descriptiva.html#cb62-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;10 bins&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb62-4"><a href="descriptiva.html#cb62-4" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="descriptiva.html#cb62-5" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb62-6"><a href="descriptiva.html#cb62-6" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb62-7"><a href="descriptiva.html#cb62-7" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;50 bins&quot;</span>) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span>
+<span id="cb62-8"><a href="descriptiva.html#cb62-8" tabindex="-1"></a></span>
+<span id="cb62-9"><a href="descriptiva.html#cb62-9" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb62-10"><a href="descriptiva.html#cb62-10" tabindex="-1"></a>p1 <span class="sc">|</span> p2</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-49"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-49-1.png" alt="Histogramas con diferentes números de bins" width="80%" />
 <p class="caption">
 Figura 5.2: Histogramas con diferentes números de bins
 </p>
@@ -679,53 +697,53 @@ Figura 5.2: Histogramas con diferentes números de bins
 <div id="medidas-de-tendencia-central" class="section level2 hasAnchor" number="5.3">
 <h2><span class="header-section-number">5.3</span> Medidas de tendencia central<a href="descriptiva.html#medidas-de-tendencia-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Las medidas de tendencia central resumen la ubicación “típica” de los datos. La <strong>media</strong> (<span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\)</span>) es el promedio que usa toda la información pero es sensible a valores extremos (outliers)^[EJEMPLO DE DESIGUALDAD: En 2022, el ingreso PROMEDIO en Chile era ~$650,000, pero la MEDIANA era ~$420,000. ¿Por qué la diferencia? Porque la distribución de ingresos es asimétrica: pocos súper-ricos jalan la media hacia arriba, pero la mediana (ingreso de la persona en el medio de la distribución ordenada) es más representativa de la “persona típica”. Por eso reportes de desigualdad SIEMPRE usan mediana, no media. La media puede ser engañosa cuando hay outliers o asimetría. y apropiada para distribuciones simétricas. La <strong>mediana</strong> es el valor que divide la distribución en dos mitades iguales (50% por debajo, 50% por encima), es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La <strong>moda</strong> es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="descriptiva.html#cb66-1" tabindex="-1"></a><span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="descriptiva.html#cb63-1" tabindex="-1"></a><span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 46.75662</code></pre>
-<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="descriptiva.html#cb68-1" tabindex="-1"></a><span class="fu">median</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="descriptiva.html#cb65-1" tabindex="-1"></a><span class="fu">median</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 46.79276</code></pre>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="descriptiva.html#cb70-1" tabindex="-1"></a><span class="co"># Ejemplo de sensibilidad a outliers</span></span>
-<span id="cb70-2"><a href="descriptiva.html#cb70-2" tabindex="-1"></a>ingresos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">600</span>, <span class="dv">650</span>, <span class="dv">700</span>, <span class="dv">750</span>, <span class="dv">800</span>, <span class="dv">5000</span>)</span>
-<span id="cb70-3"><a href="descriptiva.html#cb70-3" tabindex="-1"></a><span class="fu">mean</span>(ingresos)  <span class="co"># La media se dispara por el valor extremo</span></span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="descriptiva.html#cb67-1" tabindex="-1"></a><span class="co"># Ejemplo de sensibilidad a outliers</span></span>
+<span id="cb67-2"><a href="descriptiva.html#cb67-2" tabindex="-1"></a>ingresos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">550</span>, <span class="dv">600</span>, <span class="dv">650</span>, <span class="dv">700</span>, <span class="dv">750</span>, <span class="dv">800</span>, <span class="dv">5000</span>)</span>
+<span id="cb67-3"><a href="descriptiva.html#cb67-3" tabindex="-1"></a><span class="fu">mean</span>(ingresos)  <span class="co"># La media se dispara por el valor extremo</span></span></code></pre></div>
 <pre><code>## [1] 1193.75</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="descriptiva.html#cb72-1" tabindex="-1"></a><span class="co"># Moda en variable categórica</span></span>
-<span id="cb72-2"><a href="descriptiva.html#cb72-2" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)</span>
-<span id="cb72-3"><a href="descriptiva.html#cb72-3" tabindex="-1"></a><span class="fu">names</span>(tabla)[<span class="fu">which.max</span>(tabla)]</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="descriptiva.html#cb69-1" tabindex="-1"></a><span class="co"># Moda en variable categórica</span></span>
+<span id="cb69-2"><a href="descriptiva.html#cb69-2" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion)</span>
+<span id="cb69-3"><a href="descriptiva.html#cb69-3" tabindex="-1"></a><span class="fu">names</span>(tabla)[<span class="fu">which.max</span>(tabla)]</span></code></pre></div>
 <pre><code>## [1] &quot;Izquierda&quot;</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="descriptiva.html#cb74-1" tabindex="-1"></a><span class="co"># Simulamos distribución bimodal (dos grupos distintos)</span></span>
-<span id="cb74-2"><a href="descriptiva.html#cb74-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb74-3"><a href="descriptiva.html#cb74-3" tabindex="-1"></a>bimodal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
-<span id="cb74-4"><a href="descriptiva.html#cb74-4" tabindex="-1"></a>             <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">55</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
-<span id="cb74-5"><a href="descriptiva.html#cb74-5" tabindex="-1"></a></span>
-<span id="cb74-6"><a href="descriptiva.html#cb74-6" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> bimodal), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb74-7"><a href="descriptiva.html#cb74-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;coral&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb74-8"><a href="descriptiva.html#cb74-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución bimodal&quot;</span>) <span class="sc">+</span></span>
-<span id="cb74-9"><a href="descriptiva.html#cb74-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-55"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-55-1.png" alt="Distribución bimodal" width="80%" />
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="descriptiva.html#cb71-1" tabindex="-1"></a><span class="co"># Simulamos distribución bimodal (dos grupos distintos)</span></span>
+<span id="cb71-2"><a href="descriptiva.html#cb71-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb71-3"><a href="descriptiva.html#cb71-3" tabindex="-1"></a>bimodal <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">30</span>, <span class="at">sd =</span> <span class="dv">5</span>),</span>
+<span id="cb71-4"><a href="descriptiva.html#cb71-4" tabindex="-1"></a>             <span class="fu">rnorm</span>(<span class="dv">200</span>, <span class="at">mean =</span> <span class="dv">55</span>, <span class="at">sd =</span> <span class="dv">5</span>))</span>
+<span id="cb71-5"><a href="descriptiva.html#cb71-5" tabindex="-1"></a></span>
+<span id="cb71-6"><a href="descriptiva.html#cb71-6" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> bimodal), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb71-7"><a href="descriptiva.html#cb71-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;coral&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb71-8"><a href="descriptiva.html#cb71-8" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución bimodal&quot;</span>) <span class="sc">+</span></span>
+<span id="cb71-9"><a href="descriptiva.html#cb71-9" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-52"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-52-1.png" alt="Distribución bimodal" width="80%" />
 <p class="caption">
 Figura 5.3: Distribución bimodal
 </p>
 </div>
 <p><strong>Regla general</strong> para elegir: <strong>distribuciones simétricas</strong> (media, usa toda la información), <strong>distribuciones asimétricas</strong>^[¿CÓMO SABER SI TU DISTRIBUCIÓN ES ASIMÉTRICA? (1) Haz un histograma: si tiene “cola” larga a un lado, es asimétrica. (2) Compara media y mediana: si media &gt;&gt; mediana, asimetría a la derecha (ej: ingresos); si media &lt;&lt; mediana, asimetría a la izquierda (raro en ciencias sociales). (3) Variables que NO pueden ser negativas (ingresos, edad, votos) frecuentemente son asimétricas a la derecha. DEFAULT SEGURO: reporta AMBAS (media Y mediana) siempre. (mediana, robusta a extremos), <strong>variables ordinales</strong> (mediana, la media no tiene sentido para categorías ordenadas), <strong>variables nominales</strong> (moda, única medida con sentido)</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="descriptiva.html#cb75-1" tabindex="-1"></a><span class="co"># Distribución asimétrica a la derecha</span></span>
-<span id="cb75-2"><a href="descriptiva.html#cb75-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
-<span id="cb75-3"><a href="descriptiva.html#cb75-3" tabindex="-1"></a>asimetrica <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
-<span id="cb75-4"><a href="descriptiva.html#cb75-4" tabindex="-1"></a></span>
-<span id="cb75-5"><a href="descriptiva.html#cb75-5" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(asimetrica)</span>
-<span id="cb75-6"><a href="descriptiva.html#cb75-6" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(asimetrica)</span>
-<span id="cb75-7"><a href="descriptiva.html#cb75-7" tabindex="-1"></a></span>
-<span id="cb75-8"><a href="descriptiva.html#cb75-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> asimetrica), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
-<span id="cb75-9"><a href="descriptiva.html#cb75-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb75-10"><a href="descriptiva.html#cb75-10" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> media, <span class="at">color =</span> <span class="st">&quot;Media&quot;</span>), </span>
-<span id="cb75-11"><a href="descriptiva.html#cb75-11" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-12"><a href="descriptiva.html#cb75-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mediana, <span class="at">color =</span> <span class="st">&quot;Mediana&quot;</span>), </span>
-<span id="cb75-13"><a href="descriptiva.html#cb75-13" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-14"><a href="descriptiva.html#cb75-14" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Media&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Mediana&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
-<span id="cb75-15"><a href="descriptiva.html#cb75-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución asimétrica: media &gt; mediana&quot;</span>,</span>
-<span id="cb75-16"><a href="descriptiva.html#cb75-16" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
-<span id="cb75-17"><a href="descriptiva.html#cb75-17" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-56"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-56-1.png" alt="Media vs. mediana en distribución asimétrica" width="80%" />
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="descriptiva.html#cb72-1" tabindex="-1"></a><span class="co"># Distribución asimétrica a la derecha</span></span>
+<span id="cb72-2"><a href="descriptiva.html#cb72-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb72-3"><a href="descriptiva.html#cb72-3" tabindex="-1"></a>asimetrica <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
+<span id="cb72-4"><a href="descriptiva.html#cb72-4" tabindex="-1"></a></span>
+<span id="cb72-5"><a href="descriptiva.html#cb72-5" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(asimetrica)</span>
+<span id="cb72-6"><a href="descriptiva.html#cb72-6" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(asimetrica)</span>
+<span id="cb72-7"><a href="descriptiva.html#cb72-7" tabindex="-1"></a></span>
+<span id="cb72-8"><a href="descriptiva.html#cb72-8" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(<span class="at">x =</span> asimetrica), <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb72-9"><a href="descriptiva.html#cb72-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">40</span>, <span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb72-10"><a href="descriptiva.html#cb72-10" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> media, <span class="at">color =</span> <span class="st">&quot;Media&quot;</span>), </span>
+<span id="cb72-11"><a href="descriptiva.html#cb72-11" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb72-12"><a href="descriptiva.html#cb72-12" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> mediana, <span class="at">color =</span> <span class="st">&quot;Mediana&quot;</span>), </span>
+<span id="cb72-13"><a href="descriptiva.html#cb72-13" tabindex="-1"></a>             <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb72-14"><a href="descriptiva.html#cb72-14" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;Media&quot;</span> <span class="ot">=</span> <span class="st">&quot;red&quot;</span>, <span class="st">&quot;Mediana&quot;</span> <span class="ot">=</span> <span class="st">&quot;blue&quot;</span>)) <span class="sc">+</span></span>
+<span id="cb72-15"><a href="descriptiva.html#cb72-15" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Distribución asimétrica: media &gt; mediana&quot;</span>,</span>
+<span id="cb72-16"><a href="descriptiva.html#cb72-16" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb72-17"><a href="descriptiva.html#cb72-17" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-53"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-53-1.png" alt="Media vs. mediana en distribución asimétrica" width="80%" />
 <p class="caption">
 Figura 5.4: Media vs. mediana en distribución asimétrica
 </p>
@@ -738,19 +756,19 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <div id="rango" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Rango<a href="descriptiva.html#rango" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El <strong>rango</strong> es la diferencia entre el máximo y el mínimo:</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="descriptiva.html#cb76-1" tabindex="-1"></a><span class="fu">range</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="descriptiva.html#cb73-1" tabindex="-1"></a><span class="fu">range</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 23.05528 68.61513</code></pre>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="descriptiva.html#cb78-1" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(comunas<span class="sc">$</span>participacion))</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="descriptiva.html#cb75-1" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(comunas<span class="sc">$</span>participacion))</span></code></pre></div>
 <pre><code>## [1] 45.55985</code></pre>
 <p>Simple pero sensible a outliers. Un solo valor extremo determina el rango.</p>
 </div>
 <div id="rango-intercuartílico-iqr" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Rango intercuartílico (IQR)<a href="descriptiva.html#rango-intercuartílico-iqr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El <strong>IQR</strong> es la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1). Captura el 50% central de los datos.</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="descriptiva.html#cb80-1" tabindex="-1"></a><span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="descriptiva.html#cb77-1" tabindex="-1"></a><span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.25</span>, <span class="fl">0.75</span>))</span></code></pre></div>
 <pre><code>##      25%      75% 
 ## 41.68235 51.96510</code></pre>
-<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="descriptiva.html#cb82-1" tabindex="-1"></a><span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="descriptiva.html#cb79-1" tabindex="-1"></a><span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 10.28275</code></pre>
 <p><strong>Interpretación:</strong> El 50% central de comunas tiene participación entre 41.7% y 52%.</p>
 <p>IQR es robusto a outliers—solo usa el 50% central.</p>
@@ -759,7 +777,7 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <h3><span class="header-section-number">5.4.3</span> Varianza<a href="descriptiva.html#varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La <strong>varianza</strong> (<span class="math inline">\(s^2\)</span>) mide la dispersión promedio al cuadrado respecto a la media:</p>
 <p><span class="math display">\[s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2\]</span></p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="descriptiva.html#cb84-1" tabindex="-1"></a><span class="fu">var</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="descriptiva.html#cb81-1" tabindex="-1"></a><span class="fu">var</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 58.69646</code></pre>
 <p><strong>¿Por qué <span class="math inline">\(n-1\)</span> y no <span class="math inline">\(n\)</span>?</strong> La corrección de Bessel ajusta por usar la media muestral en lugar de la media poblacional. Esto hace que la varianza muestral sea un estimador insesgado de la varianza poblacional.</p>
 <p><strong>Problema:</strong> La varianza está en unidades al cuadrado (% al cuadrado), difícil de interpretar.</p>
@@ -768,7 +786,7 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <h3><span class="header-section-number">5.4.4</span> Desviación estándar<a href="descriptiva.html#desviación-estándar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La <strong>desviación estándar</strong> (<span class="math inline">\(s\)</span>) es la raíz cuadrada de la varianza:</p>
 <p><span class="math display">\[s = \sqrt{s^2}\]</span></p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="descriptiva.html#cb86-1" tabindex="-1"></a><span class="fu">sd</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="descriptiva.html#cb83-1" tabindex="-1"></a><span class="fu">sd</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 7.661361</code></pre>
 <p><strong>Interpretación:</strong> En promedio, las comunas se desvían 7.7 puntos porcentuales de la participación media.</p>
 <p>La desviación estándar está en las mismas unidades que los datos originales, facilitando interpretación.</p>
@@ -777,18 +795,18 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <h3><span class="header-section-number">5.4.5</span> Coeficiente de variación<a href="descriptiva.html#coeficiente-de-variación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El <strong>coeficiente de variación</strong> (CV) es la desviación estándar relativa a la media:</p>
 <p><span class="math display">\[CV = \frac{s}{\bar{x}} \times 100\%\]</span></p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="descriptiva.html#cb88-1" tabindex="-1"></a>cv <span class="ot">&lt;-</span> (<span class="fu">sd</span>(comunas<span class="sc">$</span>participacion) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)) <span class="sc">*</span> <span class="dv">100</span></span>
-<span id="cb88-2"><a href="descriptiva.html#cb88-2" tabindex="-1"></a>cv</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="descriptiva.html#cb85-1" tabindex="-1"></a>cv <span class="ot">&lt;-</span> (<span class="fu">sd</span>(comunas<span class="sc">$</span>participacion) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)) <span class="sc">*</span> <span class="dv">100</span></span>
+<span id="cb85-2"><a href="descriptiva.html#cb85-2" tabindex="-1"></a>cv</span></code></pre></div>
 <pre><code>## [1] 16.38562</code></pre>
 <p>CV permite comparar variabilidad entre variables con diferentes escalas. Participación electoral (%) y años de educación tienen unidades incomparables, pero sus CVs son comparables.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="descriptiva.html#cb90-1" tabindex="-1"></a><span class="co"># Comparar variabilidad de dos variables</span></span>
-<span id="cb90-2"><a href="descriptiva.html#cb90-2" tabindex="-1"></a>cv_participacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(comunas<span class="sc">$</span>participacion) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span>
-<span id="cb90-3"><a href="descriptiva.html#cb90-3" tabindex="-1"></a>cv_educacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(comunas<span class="sc">$</span>educ_superior) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>educ_superior)</span>
-<span id="cb90-4"><a href="descriptiva.html#cb90-4" tabindex="-1"></a></span>
-<span id="cb90-5"><a href="descriptiva.html#cb90-5" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
-<span id="cb90-6"><a href="descriptiva.html#cb90-6" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">&quot;Participación&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>),</span>
-<span id="cb90-7"><a href="descriptiva.html#cb90-7" tabindex="-1"></a>  <span class="at">CV =</span> <span class="fu">c</span>(cv_participacion, cv_educacion)</span>
-<span id="cb90-8"><a href="descriptiva.html#cb90-8" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="descriptiva.html#cb87-1" tabindex="-1"></a><span class="co"># Comparar variabilidad de dos variables</span></span>
+<span id="cb87-2"><a href="descriptiva.html#cb87-2" tabindex="-1"></a>cv_participacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(comunas<span class="sc">$</span>participacion) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span>
+<span id="cb87-3"><a href="descriptiva.html#cb87-3" tabindex="-1"></a>cv_educacion <span class="ot">&lt;-</span> <span class="fu">sd</span>(comunas<span class="sc">$</span>educ_superior) <span class="sc">/</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>educ_superior)</span>
+<span id="cb87-4"><a href="descriptiva.html#cb87-4" tabindex="-1"></a></span>
+<span id="cb87-5"><a href="descriptiva.html#cb87-5" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb87-6"><a href="descriptiva.html#cb87-6" tabindex="-1"></a>  <span class="at">Variable =</span> <span class="fu">c</span>(<span class="st">&quot;Participación&quot;</span>, <span class="st">&quot;Educación superior&quot;</span>),</span>
+<span id="cb87-7"><a href="descriptiva.html#cb87-7" tabindex="-1"></a>  <span class="at">CV =</span> <span class="fu">c</span>(cv_participacion, cv_educacion)</span>
+<span id="cb87-8"><a href="descriptiva.html#cb87-8" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -810,17 +828,17 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 </div>
 <div id="comparación-de-medidas-de-dispersión" class="section level3 hasAnchor" number="5.4.6">
 <h3><span class="header-section-number">5.4.6</span> Comparación de medidas de dispersión<a href="descriptiva.html#comparación-de-medidas-de-dispersión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="descriptiva.html#cb91-1" tabindex="-1"></a><span class="co"># Resumen de dispersión</span></span>
-<span id="cb91-2"><a href="descriptiva.html#cb91-2" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
-<span id="cb91-3"><a href="descriptiva.html#cb91-3" tabindex="-1"></a>  <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;Rango&quot;</span>, <span class="st">&quot;IQR&quot;</span>, <span class="st">&quot;Varianza&quot;</span>, <span class="st">&quot;Desv. Estándar&quot;</span>, <span class="st">&quot;CV (%)&quot;</span>),</span>
-<span id="cb91-4"><a href="descriptiva.html#cb91-4" tabindex="-1"></a>  <span class="at">Valor =</span> <span class="fu">c</span>(</span>
-<span id="cb91-5"><a href="descriptiva.html#cb91-5" tabindex="-1"></a>    <span class="fu">diff</span>(<span class="fu">range</span>(comunas<span class="sc">$</span>participacion)),</span>
-<span id="cb91-6"><a href="descriptiva.html#cb91-6" tabindex="-1"></a>    <span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion),</span>
-<span id="cb91-7"><a href="descriptiva.html#cb91-7" tabindex="-1"></a>    <span class="fu">var</span>(comunas<span class="sc">$</span>participacion),</span>
-<span id="cb91-8"><a href="descriptiva.html#cb91-8" tabindex="-1"></a>    <span class="fu">sd</span>(comunas<span class="sc">$</span>participacion),</span>
-<span id="cb91-9"><a href="descriptiva.html#cb91-9" tabindex="-1"></a>    cv</span>
-<span id="cb91-10"><a href="descriptiva.html#cb91-10" tabindex="-1"></a>  )</span>
-<span id="cb91-11"><a href="descriptiva.html#cb91-11" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="descriptiva.html#cb88-1" tabindex="-1"></a><span class="co"># Resumen de dispersión</span></span>
+<span id="cb88-2"><a href="descriptiva.html#cb88-2" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb88-3"><a href="descriptiva.html#cb88-3" tabindex="-1"></a>  <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;Rango&quot;</span>, <span class="st">&quot;IQR&quot;</span>, <span class="st">&quot;Varianza&quot;</span>, <span class="st">&quot;Desv. Estándar&quot;</span>, <span class="st">&quot;CV (%)&quot;</span>),</span>
+<span id="cb88-4"><a href="descriptiva.html#cb88-4" tabindex="-1"></a>  <span class="at">Valor =</span> <span class="fu">c</span>(</span>
+<span id="cb88-5"><a href="descriptiva.html#cb88-5" tabindex="-1"></a>    <span class="fu">diff</span>(<span class="fu">range</span>(comunas<span class="sc">$</span>participacion)),</span>
+<span id="cb88-6"><a href="descriptiva.html#cb88-6" tabindex="-1"></a>    <span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion),</span>
+<span id="cb88-7"><a href="descriptiva.html#cb88-7" tabindex="-1"></a>    <span class="fu">var</span>(comunas<span class="sc">$</span>participacion),</span>
+<span id="cb88-8"><a href="descriptiva.html#cb88-8" tabindex="-1"></a>    <span class="fu">sd</span>(comunas<span class="sc">$</span>participacion),</span>
+<span id="cb88-9"><a href="descriptiva.html#cb88-9" tabindex="-1"></a>    cv</span>
+<span id="cb88-10"><a href="descriptiva.html#cb88-10" tabindex="-1"></a>  )</span>
+<span id="cb88-11"><a href="descriptiva.html#cb88-11" tabindex="-1"></a>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -856,8 +874,8 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <div id="percentiles-y-cuartiles" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Percentiles y cuartiles<a href="descriptiva.html#percentiles-y-cuartiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Los <strong>percentiles</strong> dividen la distribución en 100 partes iguales. El percentil <span class="math inline">\(p\)</span> es el valor por debajo del cual cae el <span class="math inline">\(p\)</span>% de observaciones.</p>
-<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="descriptiva.html#cb92-1" tabindex="-1"></a><span class="co"># Percentiles importantes</span></span>
-<span id="cb92-2"><a href="descriptiva.html#cb92-2" tabindex="-1"></a><span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="descriptiva.html#cb89-1" tabindex="-1"></a><span class="co"># Percentiles importantes</span></span>
+<span id="cb89-2"><a href="descriptiva.html#cb89-2" tabindex="-1"></a><span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="at">probs =</span> <span class="fu">c</span>(<span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.50</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>))</span></code></pre></div>
 <pre><code>##       5%      25%      50%      75%      95% 
 ## 34.70348 41.68235 46.79276 51.96510 58.54432</code></pre>
 <p><strong>Cuartiles</strong> son percentiles específicos:</p>
@@ -877,7 +895,7 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 <li>Q3</li>
 <li>Máximo</li>
 </ul>
-<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="descriptiva.html#cb94-1" tabindex="-1"></a><span class="fu">summary</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="descriptiva.html#cb91-1" tabindex="-1"></a><span class="fu">summary</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ##   23.06   41.68   46.79   46.76   51.97   68.62</code></pre>
 <p>Este resumen captura ubicación, dispersión y extremos. Es la base del boxplot.</p>
@@ -895,36 +913,36 @@ Figura 5.4: Media vs. mediana en distribución asimétrica
 </ul>
 <div class="nivel" data-nivel="avanzado">
 <p><strong>Coeficiente de asimetría:</strong></p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="descriptiva.html#cb96-1" tabindex="-1"></a><span class="co"># Coeficiente de asimetría (requiere paquete moments o e1071)</span></span>
-<span id="cb96-2"><a href="descriptiva.html#cb96-2" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
-<span id="cb96-3"><a href="descriptiva.html#cb96-3" tabindex="-1"></a><span class="fu">skewness</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="descriptiva.html#cb93-1" tabindex="-1"></a><span class="co"># Coeficiente de asimetría (requiere paquete moments o e1071)</span></span>
+<span id="cb93-2"><a href="descriptiva.html#cb93-2" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb93-3"><a href="descriptiva.html#cb93-3" tabindex="-1"></a><span class="fu">skewness</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] -0.03970368</code></pre>
 <ul>
 <li><span class="math inline">\(\text{Skewness} \approx 0\)</span>: Simétrica</li>
 <li><span class="math inline">\(\text{Skewness} &gt; 0\)</span>: Asimétrica a la derecha</li>
 <li><span class="math inline">\(\text{Skewness} &lt; 0\)</span>: Asimétrica a la izquierda</li>
 </ul>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="descriptiva.html#cb98-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
-<span id="cb98-2"><a href="descriptiva.html#cb98-2" tabindex="-1"></a><span class="co"># Asimétrica derecha</span></span>
-<span id="cb98-3"><a href="descriptiva.html#cb98-3" tabindex="-1"></a>der <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="dv">1</span>)</span>
-<span id="cb98-4"><a href="descriptiva.html#cb98-4" tabindex="-1"></a><span class="co"># Simétrica</span></span>
-<span id="cb98-5"><a href="descriptiva.html#cb98-5" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
-<span id="cb98-6"><a href="descriptiva.html#cb98-6" tabindex="-1"></a><span class="co"># Asimétrica izquierda</span></span>
-<span id="cb98-7"><a href="descriptiva.html#cb98-7" tabindex="-1"></a>izq <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="dv">1</span>)</span>
-<span id="cb98-8"><a href="descriptiva.html#cb98-8" tabindex="-1"></a></span>
-<span id="cb98-9"><a href="descriptiva.html#cb98-9" tabindex="-1"></a>datos_asimetria <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb98-10"><a href="descriptiva.html#cb98-10" tabindex="-1"></a>  <span class="at">valor =</span> <span class="fu">c</span>(der, sim, izq),</span>
-<span id="cb98-11"><a href="descriptiva.html#cb98-11" tabindex="-1"></a>  <span class="at">tipo =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Asimétrica derecha&quot;</span>, <span class="st">&quot;Simétrica&quot;</span>, <span class="st">&quot;Asimétrica izquierda&quot;</span>),</span>
-<span id="cb98-12"><a href="descriptiva.html#cb98-12" tabindex="-1"></a>             <span class="at">each =</span> <span class="dv">1000</span>)</span>
-<span id="cb98-13"><a href="descriptiva.html#cb98-13" tabindex="-1"></a>)</span>
-<span id="cb98-14"><a href="descriptiva.html#cb98-14" tabindex="-1"></a></span>
-<span id="cb98-15"><a href="descriptiva.html#cb98-15" tabindex="-1"></a><span class="fu">ggplot</span>(datos_asimetria, <span class="fu">aes</span>(<span class="at">x =</span> valor, <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
-<span id="cb98-16"><a href="descriptiva.html#cb98-16" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
-<span id="cb98-17"><a href="descriptiva.html#cb98-17" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tipo, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
-<span id="cb98-18"><a href="descriptiva.html#cb98-18" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb98-19"><a href="descriptiva.html#cb98-19" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-67"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-67-1.png" alt="Distribuciones con diferente asimetría" width="80%" />
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="descriptiva.html#cb95-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
+<span id="cb95-2"><a href="descriptiva.html#cb95-2" tabindex="-1"></a><span class="co"># Asimétrica derecha</span></span>
+<span id="cb95-3"><a href="descriptiva.html#cb95-3" tabindex="-1"></a>der <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="dv">1</span>)</span>
+<span id="cb95-4"><a href="descriptiva.html#cb95-4" tabindex="-1"></a><span class="co"># Simétrica</span></span>
+<span id="cb95-5"><a href="descriptiva.html#cb95-5" tabindex="-1"></a>sim <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb95-6"><a href="descriptiva.html#cb95-6" tabindex="-1"></a><span class="co"># Asimétrica izquierda</span></span>
+<span id="cb95-7"><a href="descriptiva.html#cb95-7" tabindex="-1"></a>izq <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="dv">1</span>)</span>
+<span id="cb95-8"><a href="descriptiva.html#cb95-8" tabindex="-1"></a></span>
+<span id="cb95-9"><a href="descriptiva.html#cb95-9" tabindex="-1"></a>datos_asimetria <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb95-10"><a href="descriptiva.html#cb95-10" tabindex="-1"></a>  <span class="at">valor =</span> <span class="fu">c</span>(der, sim, izq),</span>
+<span id="cb95-11"><a href="descriptiva.html#cb95-11" tabindex="-1"></a>  <span class="at">tipo =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Asimétrica derecha&quot;</span>, <span class="st">&quot;Simétrica&quot;</span>, <span class="st">&quot;Asimétrica izquierda&quot;</span>),</span>
+<span id="cb95-12"><a href="descriptiva.html#cb95-12" tabindex="-1"></a>             <span class="at">each =</span> <span class="dv">1000</span>)</span>
+<span id="cb95-13"><a href="descriptiva.html#cb95-13" tabindex="-1"></a>)</span>
+<span id="cb95-14"><a href="descriptiva.html#cb95-14" tabindex="-1"></a></span>
+<span id="cb95-15"><a href="descriptiva.html#cb95-15" tabindex="-1"></a><span class="fu">ggplot</span>(datos_asimetria, <span class="fu">aes</span>(<span class="at">x =</span> valor, <span class="at">fill =</span> tipo)) <span class="sc">+</span></span>
+<span id="cb95-16"><a href="descriptiva.html#cb95-16" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb95-17"><a href="descriptiva.html#cb95-17" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>tipo, <span class="at">scales =</span> <span class="st">&quot;free&quot;</span>) <span class="sc">+</span></span>
+<span id="cb95-18"><a href="descriptiva.html#cb95-18" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb95-19"><a href="descriptiva.html#cb95-19" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-64"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-64-1.png" alt="Distribuciones con diferente asimetría" width="80%" />
 <p class="caption">
 Figura 5.5: Distribuciones con diferente asimetría
 </p>
@@ -932,7 +950,7 @@ Figura 5.5: Distribuciones con diferente asimetría
 <div id="curtosis-kurtosis" class="section level3 hasAnchor" number="5.6.2">
 <h3><span class="header-section-number">5.6.2</span> Curtosis (kurtosis)<a href="descriptiva.html#curtosis-kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La <strong>curtosis</strong> mide si la distribución tiene colas pesadas o ligeras respecto a la normal:</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="descriptiva.html#cb99-1" tabindex="-1"></a><span class="fu">kurtosis</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="descriptiva.html#cb96-1" tabindex="-1"></a><span class="fu">kurtosis</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div>
 <pre><code>## [1] 0.04203359</code></pre>
 <ul>
 <li><strong>Leptocúrtica</strong> (curtosis &gt; 3): Colas pesadas, más outliers</li>
@@ -949,14 +967,14 @@ Figura 5.5: Distribuciones con diferente asimetría
 <div id="boxplot-diagrama-de-caja" class="section level3 hasAnchor" number="5.7.1">
 <h3><span class="header-section-number">5.7.1</span> Boxplot (diagrama de caja)<a href="descriptiva.html#boxplot-diagrama-de-caja" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El <strong>boxplot</strong> visualiza el resumen de cinco números:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="descriptiva.html#cb101-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">y =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb101-2"><a href="descriptiva.html#cb101-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb101-3"><a href="descriptiva.html#cb101-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
-<span id="cb101-4"><a href="descriptiva.html#cb101-4" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución de participación electoral&quot;</span>) <span class="sc">+</span></span>
-<span id="cb101-5"><a href="descriptiva.html#cb101-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb101-6"><a href="descriptiva.html#cb101-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-69"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-69-1.png" alt="Boxplot de participación electoral" width="80%" />
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="descriptiva.html#cb98-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">y =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb98-2"><a href="descriptiva.html#cb98-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb98-3"><a href="descriptiva.html#cb98-3" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
+<span id="cb98-4"><a href="descriptiva.html#cb98-4" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Distribución de participación electoral&quot;</span>) <span class="sc">+</span></span>
+<span id="cb98-5"><a href="descriptiva.html#cb98-5" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb98-6"><a href="descriptiva.html#cb98-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-66"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-66-1.png" alt="Boxplot de participación electoral" width="80%" />
 <p class="caption">
 Figura 5.6: Boxplot de participación electoral
 </p>
@@ -969,22 +987,22 @@ Figura 5.6: Boxplot de participación electoral
 <li>Puntos: Outliers (valores más allá de bigotes)</li>
 </ul>
 <p>Comparar distribuciones entre grupos:</p>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="descriptiva.html#cb102-1" tabindex="-1"></a><span class="co"># Crear categorías de pobreza</span></span>
-<span id="cb102-2"><a href="descriptiva.html#cb102-2" tabindex="-1"></a>comunas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb102-3"><a href="descriptiva.html#cb102-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pobreza_cat =</span> <span class="fu">cut</span>(pobreza, </span>
-<span id="cb102-4"><a href="descriptiva.html#cb102-4" tabindex="-1"></a>                            <span class="at">breaks =</span> <span class="fu">quantile</span>(pobreza, <span class="at">probs =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span>)),</span>
-<span id="cb102-5"><a href="descriptiva.html#cb102-5" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Baja&quot;</span>, <span class="st">&quot;Media&quot;</span>, <span class="st">&quot;Alta&quot;</span>),</span>
-<span id="cb102-6"><a href="descriptiva.html#cb102-6" tabindex="-1"></a>                            <span class="at">include.lowest =</span> <span class="cn">TRUE</span>))</span>
-<span id="cb102-7"><a href="descriptiva.html#cb102-7" tabindex="-1"></a></span>
-<span id="cb102-8"><a href="descriptiva.html#cb102-8" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> participacion, <span class="at">fill =</span> pobreza_cat)) <span class="sc">+</span></span>
-<span id="cb102-9"><a href="descriptiva.html#cb102-9" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb102-10"><a href="descriptiva.html#cb102-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>, </span>
-<span id="cb102-11"><a href="descriptiva.html#cb102-11" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
-<span id="cb102-12"><a href="descriptiva.html#cb102-12" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Participación electoral según nivel de pobreza&quot;</span>) <span class="sc">+</span></span>
-<span id="cb102-13"><a href="descriptiva.html#cb102-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb102-14"><a href="descriptiva.html#cb102-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-70"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-70-1.png" alt="Participación electoral por nivel de pobreza (terciles)" width="80%" />
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="descriptiva.html#cb99-1" tabindex="-1"></a><span class="co"># Crear categorías de pobreza</span></span>
+<span id="cb99-2"><a href="descriptiva.html#cb99-2" tabindex="-1"></a>comunas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb99-3"><a href="descriptiva.html#cb99-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">pobreza_cat =</span> <span class="fu">cut</span>(pobreza, </span>
+<span id="cb99-4"><a href="descriptiva.html#cb99-4" tabindex="-1"></a>                            <span class="at">breaks =</span> <span class="fu">quantile</span>(pobreza, <span class="at">probs =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>, <span class="dv">1</span>)),</span>
+<span id="cb99-5"><a href="descriptiva.html#cb99-5" tabindex="-1"></a>                            <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Baja&quot;</span>, <span class="st">&quot;Media&quot;</span>, <span class="st">&quot;Alta&quot;</span>),</span>
+<span id="cb99-6"><a href="descriptiva.html#cb99-6" tabindex="-1"></a>                            <span class="at">include.lowest =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb99-7"><a href="descriptiva.html#cb99-7" tabindex="-1"></a></span>
+<span id="cb99-8"><a href="descriptiva.html#cb99-8" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> participacion, <span class="at">fill =</span> pobreza_cat)) <span class="sc">+</span></span>
+<span id="cb99-9"><a href="descriptiva.html#cb99-9" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb99-10"><a href="descriptiva.html#cb99-10" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>, </span>
+<span id="cb99-11"><a href="descriptiva.html#cb99-11" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
+<span id="cb99-12"><a href="descriptiva.html#cb99-12" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Participación electoral según nivel de pobreza&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-13"><a href="descriptiva.html#cb99-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb99-14"><a href="descriptiva.html#cb99-14" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-67"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-67-1.png" alt="Participación electoral por nivel de pobreza (terciles)" width="80%" />
 <p class="caption">
 Figura 5.7: Participación electoral por nivel de pobreza (terciles)
 </p>
@@ -993,15 +1011,15 @@ Figura 5.7: Participación electoral por nivel de pobreza (terciles)
 <div id="violin-plot" class="section level3 hasAnchor" number="5.7.2">
 <h3><span class="header-section-number">5.7.2</span> Violin plot<a href="descriptiva.html#violin-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Combina boxplot con densidad:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="descriptiva.html#cb103-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> participacion, <span class="at">fill =</span> pobreza_cat)) <span class="sc">+</span></span>
-<span id="cb103-2"><a href="descriptiva.html#cb103-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb103-3"><a href="descriptiva.html#cb103-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
-<span id="cb103-4"><a href="descriptiva.html#cb103-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>, </span>
-<span id="cb103-5"><a href="descriptiva.html#cb103-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>) <span class="sc">+</span></span>
-<span id="cb103-6"><a href="descriptiva.html#cb103-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb103-7"><a href="descriptiva.html#cb103-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-71"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-71-1.png" alt="Violin plot de participación por pobreza" width="80%" />
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="descriptiva.html#cb100-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> participacion, <span class="at">fill =</span> pobreza_cat)) <span class="sc">+</span></span>
+<span id="cb100-2"><a href="descriptiva.html#cb100-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb100-3"><a href="descriptiva.html#cb100-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="fl">0.2</span>, <span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb100-4"><a href="descriptiva.html#cb100-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>, </span>
+<span id="cb100-5"><a href="descriptiva.html#cb100-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb100-6"><a href="descriptiva.html#cb100-6" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb100-7"><a href="descriptiva.html#cb100-7" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-68"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-68-1.png" alt="Violin plot de participación por pobreza" width="80%" />
 <p class="caption">
 Figura 5.8: Violin plot de participación por pobreza
 </p>
@@ -1010,21 +1028,21 @@ Figura 5.8: Violin plot de participación por pobreza
 <div id="gráfico-de-densidad" class="section level3 hasAnchor" number="5.7.3">
 <h3><span class="header-section-number">5.7.3</span> Gráfico de densidad<a href="descriptiva.html#gráfico-de-densidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Alternativa suave al histograma:</p>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="descriptiva.html#cb104-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb104-2"><a href="descriptiva.html#cb104-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb104-3"><a href="descriptiva.html#cb104-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(participacion)), </span>
-<span id="cb104-4"><a href="descriptiva.html#cb104-4" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb104-5"><a href="descriptiva.html#cb104-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(participacion)), </span>
-<span id="cb104-6"><a href="descriptiva.html#cb104-6" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb104-7"><a href="descriptiva.html#cb104-7" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion) <span class="sc">+</span> <span class="dv">2</span>, </span>
-<span id="cb104-8"><a href="descriptiva.html#cb104-8" tabindex="-1"></a>           <span class="at">y =</span> <span class="fl">0.045</span>, <span class="at">label =</span> <span class="st">&quot;Media&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb104-9"><a href="descriptiva.html#cb104-9" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">median</span>(comunas<span class="sc">$</span>participacion) <span class="sc">-</span> <span class="dv">2</span>, </span>
-<span id="cb104-10"><a href="descriptiva.html#cb104-10" tabindex="-1"></a>           <span class="at">y =</span> <span class="fl">0.045</span>, <span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
-<span id="cb104-11"><a href="descriptiva.html#cb104-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>, </span>
-<span id="cb104-12"><a href="descriptiva.html#cb104-12" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>) <span class="sc">+</span></span>
-<span id="cb104-13"><a href="descriptiva.html#cb104-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-72"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-72-1.png" alt="Densidad de participación electoral" width="80%" />
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="descriptiva.html#cb101-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb101-2"><a href="descriptiva.html#cb101-2" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">fill =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb101-3"><a href="descriptiva.html#cb101-3" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(participacion)), </span>
+<span id="cb101-4"><a href="descriptiva.html#cb101-4" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb101-5"><a href="descriptiva.html#cb101-5" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">median</span>(participacion)), </span>
+<span id="cb101-6"><a href="descriptiva.html#cb101-6" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb101-7"><a href="descriptiva.html#cb101-7" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">mean</span>(comunas<span class="sc">$</span>participacion) <span class="sc">+</span> <span class="dv">2</span>, </span>
+<span id="cb101-8"><a href="descriptiva.html#cb101-8" tabindex="-1"></a>           <span class="at">y =</span> <span class="fl">0.045</span>, <span class="at">label =</span> <span class="st">&quot;Media&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb101-9"><a href="descriptiva.html#cb101-9" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">&quot;text&quot;</span>, <span class="at">x =</span> <span class="fu">median</span>(comunas<span class="sc">$</span>participacion) <span class="sc">-</span> <span class="dv">2</span>, </span>
+<span id="cb101-10"><a href="descriptiva.html#cb101-10" tabindex="-1"></a>           <span class="at">y =</span> <span class="fl">0.045</span>, <span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>, <span class="at">color =</span> <span class="st">&quot;blue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb101-11"><a href="descriptiva.html#cb101-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>, </span>
+<span id="cb101-12"><a href="descriptiva.html#cb101-12" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span>) <span class="sc">+</span></span>
+<span id="cb101-13"><a href="descriptiva.html#cb101-13" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-69"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-69-1.png" alt="Densidad de participación electoral" width="80%" />
 <p class="caption">
 Figura 5.9: Densidad de participación electoral
 </p>
@@ -1037,26 +1055,26 @@ Figura 5.9: Densidad de participación electoral
 <div id="método-iqr" class="section level3 hasAnchor" number="5.8.1">
 <h3><span class="header-section-number">5.8.1</span> Método IQR<a href="descriptiva.html#método-iqr" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Criterio estándar: outliers están más allá de <span class="math inline">\(Q1 - 1.5 \times IQR\)</span> o <span class="math inline">\(Q3 + 1.5 \times IQR\)</span>:</p>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="descriptiva.html#cb105-1" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="fl">0.25</span>)</span>
-<span id="cb105-2"><a href="descriptiva.html#cb105-2" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="fl">0.75</span>)</span>
-<span id="cb105-3"><a href="descriptiva.html#cb105-3" tabindex="-1"></a>IQR_val <span class="ot">&lt;-</span> <span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion)</span>
-<span id="cb105-4"><a href="descriptiva.html#cb105-4" tabindex="-1"></a></span>
-<span id="cb105-5"><a href="descriptiva.html#cb105-5" tabindex="-1"></a>limite_inferior <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
-<span id="cb105-6"><a href="descriptiva.html#cb105-6" tabindex="-1"></a>limite_superior <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
-<span id="cb105-7"><a href="descriptiva.html#cb105-7" tabindex="-1"></a></span>
-<span id="cb105-8"><a href="descriptiva.html#cb105-8" tabindex="-1"></a><span class="co"># Identificar outliers</span></span>
-<span id="cb105-9"><a href="descriptiva.html#cb105-9" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb105-10"><a href="descriptiva.html#cb105-10" tabindex="-1"></a>  <span class="fu">filter</span>(participacion <span class="sc">&lt;</span> limite_inferior <span class="sc">|</span> participacion <span class="sc">&gt;</span> limite_superior)</span>
-<span id="cb105-11"><a href="descriptiva.html#cb105-11" tabindex="-1"></a></span>
-<span id="cb105-12"><a href="descriptiva.html#cb105-12" tabindex="-1"></a><span class="fu">nrow</span>(outliers)</span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="descriptiva.html#cb102-1" tabindex="-1"></a>Q1 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="fl">0.25</span>)</span>
+<span id="cb102-2"><a href="descriptiva.html#cb102-2" tabindex="-1"></a>Q3 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(comunas<span class="sc">$</span>participacion, <span class="fl">0.75</span>)</span>
+<span id="cb102-3"><a href="descriptiva.html#cb102-3" tabindex="-1"></a>IQR_val <span class="ot">&lt;-</span> <span class="fu">IQR</span>(comunas<span class="sc">$</span>participacion)</span>
+<span id="cb102-4"><a href="descriptiva.html#cb102-4" tabindex="-1"></a></span>
+<span id="cb102-5"><a href="descriptiva.html#cb102-5" tabindex="-1"></a>limite_inferior <span class="ot">&lt;-</span> Q1 <span class="sc">-</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
+<span id="cb102-6"><a href="descriptiva.html#cb102-6" tabindex="-1"></a>limite_superior <span class="ot">&lt;-</span> Q3 <span class="sc">+</span> <span class="fl">1.5</span> <span class="sc">*</span> IQR_val</span>
+<span id="cb102-7"><a href="descriptiva.html#cb102-7" tabindex="-1"></a></span>
+<span id="cb102-8"><a href="descriptiva.html#cb102-8" tabindex="-1"></a><span class="co"># Identificar outliers</span></span>
+<span id="cb102-9"><a href="descriptiva.html#cb102-9" tabindex="-1"></a>outliers <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb102-10"><a href="descriptiva.html#cb102-10" tabindex="-1"></a>  <span class="fu">filter</span>(participacion <span class="sc">&lt;</span> limite_inferior <span class="sc">|</span> participacion <span class="sc">&gt;</span> limite_superior)</span>
+<span id="cb102-11"><a href="descriptiva.html#cb102-11" tabindex="-1"></a></span>
+<span id="cb102-12"><a href="descriptiva.html#cb102-12" tabindex="-1"></a><span class="fu">nrow</span>(outliers)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
 <p>Hay 4 comunas con participación atípica.</p>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="descriptiva.html#cb107-1" tabindex="-1"></a><span class="co"># Ver outliers</span></span>
-<span id="cb107-2"><a href="descriptiva.html#cb107-2" tabindex="-1"></a>outliers <span class="sc">%&gt;%</span></span>
-<span id="cb107-3"><a href="descriptiva.html#cb107-3" tabindex="-1"></a>  <span class="fu">select</span>(comuna, participacion) <span class="sc">%&gt;%</span></span>
-<span id="cb107-4"><a href="descriptiva.html#cb107-4" tabindex="-1"></a>  <span class="fu">arrange</span>(participacion) <span class="sc">%&gt;%</span></span>
-<span id="cb107-5"><a href="descriptiva.html#cb107-5" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb107-6"><a href="descriptiva.html#cb107-6" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="descriptiva.html#cb104-1" tabindex="-1"></a><span class="co"># Ver outliers</span></span>
+<span id="cb104-2"><a href="descriptiva.html#cb104-2" tabindex="-1"></a>outliers <span class="sc">%&gt;%</span></span>
+<span id="cb104-3"><a href="descriptiva.html#cb104-3" tabindex="-1"></a>  <span class="fu">select</span>(comuna, participacion) <span class="sc">%&gt;%</span></span>
+<span id="cb104-4"><a href="descriptiva.html#cb104-4" tabindex="-1"></a>  <span class="fu">arrange</span>(participacion) <span class="sc">%&gt;%</span></span>
+<span id="cb104-5"><a href="descriptiva.html#cb104-5" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb104-6"><a href="descriptiva.html#cb104-6" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1089,30 +1107,30 @@ Figura 5.9: Densidad de participación electoral
 <h3><span class="header-section-number">5.8.2</span> Método de puntuaciones z<a href="descriptiva.html#método-de-puntuaciones-z" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Un <strong>z-score</strong> mide cuántas desviaciones estándar se aleja una observación de la media:</p>
 <p><span class="math display">\[z_i = \frac{x_i - \bar{x}}{s}\]</span></p>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="descriptiva.html#cb108-1" tabindex="-1"></a>comunas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb108-2"><a href="descriptiva.html#cb108-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_participacion =</span> (participacion <span class="sc">-</span> <span class="fu">mean</span>(participacion)) <span class="sc">/</span> <span class="fu">sd</span>(participacion))</span>
-<span id="cb108-3"><a href="descriptiva.html#cb108-3" tabindex="-1"></a></span>
-<span id="cb108-4"><a href="descriptiva.html#cb108-4" tabindex="-1"></a><span class="co"># Outliers: |z| &gt; 3 (criterio común)</span></span>
-<span id="cb108-5"><a href="descriptiva.html#cb108-5" tabindex="-1"></a>outliers_z <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb108-6"><a href="descriptiva.html#cb108-6" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(z_participacion) <span class="sc">&gt;</span> <span class="dv">3</span>)</span>
-<span id="cb108-7"><a href="descriptiva.html#cb108-7" tabindex="-1"></a></span>
-<span id="cb108-8"><a href="descriptiva.html#cb108-8" tabindex="-1"></a><span class="fu">nrow</span>(outliers_z)</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="descriptiva.html#cb105-1" tabindex="-1"></a>comunas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb105-2"><a href="descriptiva.html#cb105-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">z_participacion =</span> (participacion <span class="sc">-</span> <span class="fu">mean</span>(participacion)) <span class="sc">/</span> <span class="fu">sd</span>(participacion))</span>
+<span id="cb105-3"><a href="descriptiva.html#cb105-3" tabindex="-1"></a></span>
+<span id="cb105-4"><a href="descriptiva.html#cb105-4" tabindex="-1"></a><span class="co"># Outliers: |z| &gt; 3 (criterio común)</span></span>
+<span id="cb105-5"><a href="descriptiva.html#cb105-5" tabindex="-1"></a>outliers_z <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb105-6"><a href="descriptiva.html#cb105-6" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">abs</span>(z_participacion) <span class="sc">&gt;</span> <span class="dv">3</span>)</span>
+<span id="cb105-7"><a href="descriptiva.html#cb105-7" tabindex="-1"></a></span>
+<span id="cb105-8"><a href="descriptiva.html#cb105-8" tabindex="-1"></a><span class="fu">nrow</span>(outliers_z)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Con criterio <span class="math inline">\(|z| &gt; 3\)</span>, identificamos 1 outliers.</p>
 </div>
 <div id="visualización-de-outliers" class="section level3 hasAnchor" number="5.8.3">
 <h3><span class="header-section-number">5.8.3</span> Visualización de outliers<a href="descriptiva.html#visualización-de-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="descriptiva.html#cb110-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb110-2"><a href="descriptiva.html#cb110-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">outlier.size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
-<span id="cb110-3"><a href="descriptiva.html#cb110-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(limite_inferior, limite_superior),</span>
-<span id="cb110-4"><a href="descriptiva.html#cb110-4" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb110-5"><a href="descriptiva.html#cb110-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
-<span id="cb110-6"><a href="descriptiva.html#cb110-6" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Outliers en participación electoral&quot;</span>) <span class="sc">+</span></span>
-<span id="cb110-7"><a href="descriptiva.html#cb110-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb110-8"><a href="descriptiva.html#cb110-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb110-9"><a href="descriptiva.html#cb110-9" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-76"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-76-1.png" alt="Identificación visual de outliers" width="80%" />
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="descriptiva.html#cb107-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb107-2"><a href="descriptiva.html#cb107-2" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">outlier.size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb107-3"><a href="descriptiva.html#cb107-3" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="fu">c</span>(limite_inferior, limite_superior),</span>
+<span id="cb107-4"><a href="descriptiva.html#cb107-4" tabindex="-1"></a>             <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb107-5"><a href="descriptiva.html#cb107-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
+<span id="cb107-6"><a href="descriptiva.html#cb107-6" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">&quot;Outliers en participación electoral&quot;</span>) <span class="sc">+</span></span>
+<span id="cb107-7"><a href="descriptiva.html#cb107-7" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb107-8"><a href="descriptiva.html#cb107-8" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb107-9"><a href="descriptiva.html#cb107-9" tabindex="-1"></a>        <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-73"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-73-1.png" alt="Identificación visual de outliers" width="80%" />
 <p class="caption">
 Figura 5.10: Identificación visual de outliers
 </p>
@@ -1134,16 +1152,16 @@ Figura 5.10: Identificación visual de outliers
 <div id="tablas-de-contingencia" class="section level3 hasAnchor" number="5.9.1">
 <h3><span class="header-section-number">5.9.1</span> Tablas de contingencia<a href="descriptiva.html#tablas-de-contingencia" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para dos variables categóricas:</p>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="descriptiva.html#cb111-1" tabindex="-1"></a><span class="co"># Simulamos datos</span></span>
-<span id="cb111-2"><a href="descriptiva.html#cb111-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb111-3"><a href="descriptiva.html#cb111-3" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> encuesta <span class="sc">%&gt;%</span></span>
-<span id="cb111-4"><a href="descriptiva.html#cb111-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">voto =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Apruebo&quot;</span>, <span class="st">&quot;Rechazo&quot;</span>), </span>
-<span id="cb111-5"><a href="descriptiva.html#cb111-5" tabindex="-1"></a>                       <span class="fu">nrow</span>(encuesta), <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb111-6"><a href="descriptiva.html#cb111-6" tabindex="-1"></a>                       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.52</span>, <span class="fl">0.48</span>)))</span>
-<span id="cb111-7"><a href="descriptiva.html#cb111-7" tabindex="-1"></a></span>
-<span id="cb111-8"><a href="descriptiva.html#cb111-8" tabindex="-1"></a><span class="co"># Tabla de contingencia</span></span>
-<span id="cb111-9"><a href="descriptiva.html#cb111-9" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion, encuesta<span class="sc">$</span>voto)</span>
-<span id="cb111-10"><a href="descriptiva.html#cb111-10" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="descriptiva.html#cb108-1" tabindex="-1"></a><span class="co"># Simulamos datos</span></span>
+<span id="cb108-2"><a href="descriptiva.html#cb108-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
+<span id="cb108-3"><a href="descriptiva.html#cb108-3" tabindex="-1"></a>encuesta <span class="ot">&lt;-</span> encuesta <span class="sc">%&gt;%</span></span>
+<span id="cb108-4"><a href="descriptiva.html#cb108-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">voto =</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="st">&quot;Apruebo&quot;</span>, <span class="st">&quot;Rechazo&quot;</span>), </span>
+<span id="cb108-5"><a href="descriptiva.html#cb108-5" tabindex="-1"></a>                       <span class="fu">nrow</span>(encuesta), <span class="at">replace =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb108-6"><a href="descriptiva.html#cb108-6" tabindex="-1"></a>                       <span class="at">prob =</span> <span class="fu">c</span>(<span class="fl">0.52</span>, <span class="fl">0.48</span>)))</span>
+<span id="cb108-7"><a href="descriptiva.html#cb108-7" tabindex="-1"></a></span>
+<span id="cb108-8"><a href="descriptiva.html#cb108-8" tabindex="-1"></a><span class="co"># Tabla de contingencia</span></span>
+<span id="cb108-9"><a href="descriptiva.html#cb108-9" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(encuesta<span class="sc">$</span>orientacion, encuesta<span class="sc">$</span>voto)</span>
+<span id="cb108-10"><a href="descriptiva.html#cb108-10" tabindex="-1"></a>tabla</span></code></pre></div>
 <pre><code>##            
 ##             Apruebo Rechazo
 ##   Centro        108      91
@@ -1151,16 +1169,16 @@ Figura 5.10: Identificación visual de outliers
 ##   Izquierda     112     126
 ##   Ninguna        74      59</code></pre>
 <p>Con proporciones:</p>
-<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="descriptiva.html#cb113-1" tabindex="-1"></a><span class="co"># Proporciones por fila</span></span>
-<span id="cb113-2"><a href="descriptiva.html#cb113-2" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="at">margin =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="descriptiva.html#cb110-1" tabindex="-1"></a><span class="co"># Proporciones por fila</span></span>
+<span id="cb110-2"><a href="descriptiva.html#cb110-2" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="at">margin =</span> <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##            
 ##               Apruebo   Rechazo
 ##   Centro    0.5427136 0.4572864
 ##   Derecha   0.4956522 0.5043478
 ##   Izquierda 0.4705882 0.5294118
 ##   Ninguna   0.5563910 0.4436090</code></pre>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="descriptiva.html#cb115-1" tabindex="-1"></a><span class="co"># Proporciones por columna</span></span>
-<span id="cb115-2"><a href="descriptiva.html#cb115-2" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="at">margin =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="descriptiva.html#cb112-1" tabindex="-1"></a><span class="co"># Proporciones por columna</span></span>
+<span id="cb112-2"><a href="descriptiva.html#cb112-2" tabindex="-1"></a><span class="fu">prop.table</span>(tabla, <span class="at">margin =</span> <span class="dv">2</span>)</span></code></pre></div>
 <pre><code>##            
 ##               Apruebo   Rechazo
 ##   Centro    0.2647059 0.2321429
@@ -1172,7 +1190,7 @@ Figura 5.10: Identificación visual de outliers
 <h3><span class="header-section-number">5.9.2</span> Covarianza<a href="descriptiva.html#covarianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La <strong>covarianza</strong> mide cómo dos variables varían conjuntamente:</p>
 <p><span class="math display">\[\text{Cov}(X, Y) = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})(y_i - \bar{y})\]</span></p>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="descriptiva.html#cb117-1" tabindex="-1"></a><span class="fu">cov</span>(comunas<span class="sc">$</span>participacion, comunas<span class="sc">$</span>educ_superior)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="descriptiva.html#cb114-1" tabindex="-1"></a><span class="fu">cov</span>(comunas<span class="sc">$</span>participacion, comunas<span class="sc">$</span>educ_superior)</span></code></pre></div>
 <pre><code>## [1] -4.409441</code></pre>
 <ul>
 <li>Covarianza positiva: Variables tienden a moverse juntas</li>
@@ -1185,7 +1203,7 @@ Figura 5.10: Identificación visual de outliers
 <h3><span class="header-section-number">5.9.3</span> Correlación<a href="descriptiva.html#correlación" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La <strong>correlación de Pearson</strong> (<span class="math inline">\(r\)</span>) es la covarianza estandarizada:</p>
 <p><span class="math display">\[r = \frac{\text{Cov}(X, Y)}{s_X s_Y}\]</span></p>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="descriptiva.html#cb119-1" tabindex="-1"></a><span class="fu">cor</span>(comunas<span class="sc">$</span>participacion, comunas<span class="sc">$</span>educ_superior)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="descriptiva.html#cb116-1" tabindex="-1"></a><span class="fu">cor</span>(comunas<span class="sc">$</span>participacion, comunas<span class="sc">$</span>educ_superior)</span></code></pre></div>
 <pre><code>## [1] -0.05572996</code></pre>
 <p><strong>Propiedades:</strong></p>
 <ul>
@@ -1195,16 +1213,16 @@ Figura 5.10: Identificación visual de outliers
 <li><span class="math inline">\(r = 0\)</span>: No hay correlación lineal</li>
 <li>No depende de escalas</li>
 </ul>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="descriptiva.html#cb121-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> educ_superior, <span class="at">y =</span> participacion)) <span class="sc">+</span></span>
-<span id="cb121-2"><a href="descriptiva.html#cb121-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb121-3"><a href="descriptiva.html#cb121-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
-<span id="cb121-4"><a href="descriptiva.html#cb121-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Población con educación superior (%)&quot;</span>,</span>
-<span id="cb121-5"><a href="descriptiva.html#cb121-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
-<span id="cb121-6"><a href="descriptiva.html#cb121-6" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">&quot;Correlación: r = &quot;</span>, </span>
-<span id="cb121-7"><a href="descriptiva.html#cb121-7" tabindex="-1"></a>                     <span class="fu">round</span>(<span class="fu">cor</span>(comunas<span class="sc">$</span>educ_superior, comunas<span class="sc">$</span>participacion), <span class="dv">2</span>))) <span class="sc">+</span></span>
-<span id="cb121-8"><a href="descriptiva.html#cb121-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-81"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-81-1.png" alt="Correlación entre participación y educación superior" width="80%" />
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="descriptiva.html#cb118-1" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> educ_superior, <span class="at">y =</span> participacion)) <span class="sc">+</span></span>
+<span id="cb118-2"><a href="descriptiva.html#cb118-2" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb118-3"><a href="descriptiva.html#cb118-3" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;red&quot;</span>) <span class="sc">+</span></span>
+<span id="cb118-4"><a href="descriptiva.html#cb118-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Población con educación superior (%)&quot;</span>,</span>
+<span id="cb118-5"><a href="descriptiva.html#cb118-5" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
+<span id="cb118-6"><a href="descriptiva.html#cb118-6" tabindex="-1"></a>       <span class="at">title =</span> <span class="fu">paste0</span>(<span class="st">&quot;Correlación: r = &quot;</span>, </span>
+<span id="cb118-7"><a href="descriptiva.html#cb118-7" tabindex="-1"></a>                     <span class="fu">round</span>(<span class="fu">cor</span>(comunas<span class="sc">$</span>educ_superior, comunas<span class="sc">$</span>participacion), <span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb118-8"><a href="descriptiva.html#cb118-8" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-78"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-78-1.png" alt="Correlación entre participación y educación superior" width="80%" />
 <p class="caption">
 Figura 5.11: Correlación entre participación y educación superior
 </p>
@@ -1214,14 +1232,14 @@ Figura 5.11: Correlación entre participación y educación superior
 <div id="matriz-de-correlaciones" class="section level3 hasAnchor" number="5.9.4">
 <h3><span class="header-section-number">5.9.4</span> Matriz de correlaciones<a href="descriptiva.html#matriz-de-correlaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para múltiples variables:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="descriptiva.html#cb122-1" tabindex="-1"></a><span class="co"># Seleccionar variables numéricas</span></span>
-<span id="cb122-2"><a href="descriptiva.html#cb122-2" tabindex="-1"></a>vars_numericas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb122-3"><a href="descriptiva.html#cb122-3" tabindex="-1"></a>  <span class="fu">select</span>(participacion, pobreza, educ_superior)</span>
-<span id="cb122-4"><a href="descriptiva.html#cb122-4" tabindex="-1"></a></span>
-<span id="cb122-5"><a href="descriptiva.html#cb122-5" tabindex="-1"></a><span class="co"># Matriz de correlación</span></span>
-<span id="cb122-6"><a href="descriptiva.html#cb122-6" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(vars_numericas)</span>
-<span id="cb122-7"><a href="descriptiva.html#cb122-7" tabindex="-1"></a>cor_matrix <span class="sc">%&gt;%</span> </span>
-<span id="cb122-8"><a href="descriptiva.html#cb122-8" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="descriptiva.html#cb119-1" tabindex="-1"></a><span class="co"># Seleccionar variables numéricas</span></span>
+<span id="cb119-2"><a href="descriptiva.html#cb119-2" tabindex="-1"></a>vars_numericas <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb119-3"><a href="descriptiva.html#cb119-3" tabindex="-1"></a>  <span class="fu">select</span>(participacion, pobreza, educ_superior)</span>
+<span id="cb119-4"><a href="descriptiva.html#cb119-4" tabindex="-1"></a></span>
+<span id="cb119-5"><a href="descriptiva.html#cb119-5" tabindex="-1"></a><span class="co"># Matriz de correlación</span></span>
+<span id="cb119-6"><a href="descriptiva.html#cb119-6" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(vars_numericas)</span>
+<span id="cb119-7"><a href="descriptiva.html#cb119-7" tabindex="-1"></a>cor_matrix <span class="sc">%&gt;%</span> </span>
+<span id="cb119-8"><a href="descriptiva.html#cb119-8" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -1253,12 +1271,12 @@ Figura 5.11: Correlación entre participación y educación superior
 </tbody>
 </table>
 <p>Visualización:</p>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="descriptiva.html#cb123-1" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
-<span id="cb123-2"><a href="descriptiva.html#cb123-2" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&quot;color&quot;</span>, <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, </span>
-<span id="cb123-3"><a href="descriptiva.html#cb123-3" tabindex="-1"></a>         <span class="at">addCoef.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">number.cex =</span> <span class="fl">0.8</span>,</span>
-<span id="cb123-4"><a href="descriptiva.html#cb123-4" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-83"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-83-1.png" alt="Matriz de correlaciones" width="80%" />
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="descriptiva.html#cb120-1" tabindex="-1"></a><span class="fu">library</span>(corrplot)</span>
+<span id="cb120-2"><a href="descriptiva.html#cb120-2" tabindex="-1"></a><span class="fu">corrplot</span>(cor_matrix, <span class="at">method =</span> <span class="st">&quot;color&quot;</span>, <span class="at">type =</span> <span class="st">&quot;upper&quot;</span>, </span>
+<span id="cb120-3"><a href="descriptiva.html#cb120-3" tabindex="-1"></a>         <span class="at">addCoef.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">number.cex =</span> <span class="fl">0.8</span>,</span>
+<span id="cb120-4"><a href="descriptiva.html#cb120-4" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">&quot;black&quot;</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-80"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-80-1.png" alt="Matriz de correlaciones" width="80%" />
 <p class="caption">
 Figura 5.12: Matriz de correlaciones
 </p>
@@ -1268,16 +1286,16 @@ Figura 5.12: Matriz de correlaciones
 <div id="estadística-descriptiva-por-grupos" class="section level2 hasAnchor" number="5.10">
 <h2><span class="header-section-number">5.10</span> Estadística descriptiva por grupos<a href="descriptiva.html#estadística-descriptiva-por-grupos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Comparar estadísticos entre grupos:</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="descriptiva.html#cb124-1" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
-<span id="cb124-2"><a href="descriptiva.html#cb124-2" tabindex="-1"></a>  <span class="fu">group_by</span>(pobreza_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb124-3"><a href="descriptiva.html#cb124-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb124-4"><a href="descriptiva.html#cb124-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb124-5"><a href="descriptiva.html#cb124-5" tabindex="-1"></a>    <span class="at">participacion_media =</span> <span class="fu">mean</span>(participacion),</span>
-<span id="cb124-6"><a href="descriptiva.html#cb124-6" tabindex="-1"></a>    <span class="at">participacion_mediana =</span> <span class="fu">median</span>(participacion),</span>
-<span id="cb124-7"><a href="descriptiva.html#cb124-7" tabindex="-1"></a>    <span class="at">participacion_sd =</span> <span class="fu">sd</span>(participacion),</span>
-<span id="cb124-8"><a href="descriptiva.html#cb124-8" tabindex="-1"></a>    <span class="at">educ_media =</span> <span class="fu">mean</span>(educ_superior)</span>
-<span id="cb124-9"><a href="descriptiva.html#cb124-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb124-10"><a href="descriptiva.html#cb124-10" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="descriptiva.html#cb121-1" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
+<span id="cb121-2"><a href="descriptiva.html#cb121-2" tabindex="-1"></a>  <span class="fu">group_by</span>(pobreza_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb121-3"><a href="descriptiva.html#cb121-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb121-4"><a href="descriptiva.html#cb121-4" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb121-5"><a href="descriptiva.html#cb121-5" tabindex="-1"></a>    <span class="at">participacion_media =</span> <span class="fu">mean</span>(participacion),</span>
+<span id="cb121-6"><a href="descriptiva.html#cb121-6" tabindex="-1"></a>    <span class="at">participacion_mediana =</span> <span class="fu">median</span>(participacion),</span>
+<span id="cb121-7"><a href="descriptiva.html#cb121-7" tabindex="-1"></a>    <span class="at">participacion_sd =</span> <span class="fu">sd</span>(participacion),</span>
+<span id="cb121-8"><a href="descriptiva.html#cb121-8" tabindex="-1"></a>    <span class="at">educ_media =</span> <span class="fu">mean</span>(educ_superior)</span>
+<span id="cb121-9"><a href="descriptiva.html#cb121-9" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb121-10"><a href="descriptiva.html#cb121-10" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">1</span>)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="13%" />
@@ -1325,24 +1343,24 @@ Figura 5.12: Matriz de correlaciones
 </tbody>
 </table>
 <p>Visualización de múltiples estadísticos:</p>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="descriptiva.html#cb125-1" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
-<span id="cb125-2"><a href="descriptiva.html#cb125-2" tabindex="-1"></a>  <span class="fu">group_by</span>(pobreza_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb125-3"><a href="descriptiva.html#cb125-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb125-4"><a href="descriptiva.html#cb125-4" tabindex="-1"></a>    <span class="at">Media =</span> <span class="fu">mean</span>(participacion),</span>
-<span id="cb125-5"><a href="descriptiva.html#cb125-5" tabindex="-1"></a>    <span class="at">Mediana =</span> <span class="fu">median</span>(participacion)</span>
-<span id="cb125-6"><a href="descriptiva.html#cb125-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb125-7"><a href="descriptiva.html#cb125-7" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Media, Mediana), </span>
-<span id="cb125-8"><a href="descriptiva.html#cb125-8" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Estadistico&quot;</span>, </span>
-<span id="cb125-9"><a href="descriptiva.html#cb125-9" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Valor&quot;</span>)</span>
-<span id="cb125-10"><a href="descriptiva.html#cb125-10" tabindex="-1"></a></span>
-<span id="cb125-11"><a href="descriptiva.html#cb125-11" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> Valor, <span class="at">fill =</span> Estadistico)) <span class="sc">+</span></span>
-<span id="cb125-12"><a href="descriptiva.html#cb125-12" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
-<span id="cb125-13"><a href="descriptiva.html#cb125-13" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>,</span>
-<span id="cb125-14"><a href="descriptiva.html#cb125-14" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
-<span id="cb125-15"><a href="descriptiva.html#cb125-15" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Estadístico&quot;</span>) <span class="sc">+</span></span>
-<span id="cb125-16"><a href="descriptiva.html#cb125-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-85"></span>
-<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-85-1.png" alt="Comparación de grupos" width="80%" />
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="descriptiva.html#cb122-1" tabindex="-1"></a>resumen <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
+<span id="cb122-2"><a href="descriptiva.html#cb122-2" tabindex="-1"></a>  <span class="fu">group_by</span>(pobreza_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb122-3"><a href="descriptiva.html#cb122-3" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb122-4"><a href="descriptiva.html#cb122-4" tabindex="-1"></a>    <span class="at">Media =</span> <span class="fu">mean</span>(participacion),</span>
+<span id="cb122-5"><a href="descriptiva.html#cb122-5" tabindex="-1"></a>    <span class="at">Mediana =</span> <span class="fu">median</span>(participacion)</span>
+<span id="cb122-6"><a href="descriptiva.html#cb122-6" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb122-7"><a href="descriptiva.html#cb122-7" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(Media, Mediana), </span>
+<span id="cb122-8"><a href="descriptiva.html#cb122-8" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">&quot;Estadistico&quot;</span>, </span>
+<span id="cb122-9"><a href="descriptiva.html#cb122-9" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">&quot;Valor&quot;</span>)</span>
+<span id="cb122-10"><a href="descriptiva.html#cb122-10" tabindex="-1"></a></span>
+<span id="cb122-11"><a href="descriptiva.html#cb122-11" tabindex="-1"></a><span class="fu">ggplot</span>(resumen, <span class="fu">aes</span>(<span class="at">x =</span> pobreza_cat, <span class="at">y =</span> Valor, <span class="at">fill =</span> Estadistico)) <span class="sc">+</span></span>
+<span id="cb122-12"><a href="descriptiva.html#cb122-12" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="sc">+</span></span>
+<span id="cb122-13"><a href="descriptiva.html#cb122-13" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Nivel de pobreza&quot;</span>,</span>
+<span id="cb122-14"><a href="descriptiva.html#cb122-14" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Participación electoral (%)&quot;</span>,</span>
+<span id="cb122-15"><a href="descriptiva.html#cb122-15" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">&quot;Estadístico&quot;</span>) <span class="sc">+</span></span>
+<span id="cb122-16"><a href="descriptiva.html#cb122-16" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-82"></span>
+<img src="metodos_cuantitativos_files/figure-html/unnamed-chunk-82-1.png" alt="Comparación de grupos" width="80%" />
 <p class="caption">
 Figura 5.13: Comparación de grupos
 </p>
@@ -1375,89 +1393,7 @@ Figura 5.13: Comparación de grupos
 </div>
 <div id="ejercicios-4" class="section level2 hasAnchor" number="5.13">
 <h2><span class="header-section-number">5.13</span> Ejercicios<a href="descriptiva.html#ejercicios-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>1. Cálculo manual</strong></p>
-<p>Con estos datos de participación electoral en 10 comunas: 45, 52, 48, 51, 39, 55, 47, 50, 44, 49</p>
-<ol style="list-style-type: lower-alpha">
-<li>Calcula media, mediana y moda manualmente<br />
-</li>
-<li>Calcula rango, varianza y desviación estándar manualmente<br />
-</li>
-<li>¿La distribución es simétrica o asimétrica? ¿Cómo lo sabes?<br />
-</li>
-<li>Verifica tus cálculos en R</li>
-</ol>
-<p><strong>2. Análisis exploratorio con datos reales</strong></p>
-<p>Descarga datos de CEP o CASEN. Selecciona una variable continua de interés:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="descriptiva.html#cb126-1" tabindex="-1"></a><span class="co"># Tu código aquí</span></span></code></pre></div>
-<ol style="list-style-type: lower-alpha">
-<li>Calcula media, mediana, desviación estándar e IQR<br />
-</li>
-<li>Crea un histograma y un boxplot<br />
-</li>
-<li>Identifica outliers (si los hay) usando el método IQR<br />
-</li>
-<li>¿La distribución es simétrica o asimétrica? Calcula el coeficiente de asimetría<br />
-</li>
-<li>Escribe un párrafo interpretando los resultados</li>
-</ol>
-<p><strong>3. Comparación de grupos</strong></p>
-<p>Con el dataset <code>comunas</code> del capítulo:</p>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="descriptiva.html#cb127-1" tabindex="-1"></a><span class="co"># Datos disponibles</span></span>
-<span id="cb127-2"><a href="descriptiva.html#cb127-2" tabindex="-1"></a>comunas</span></code></pre></div>
-<ol style="list-style-type: lower-alpha">
-<li>Compara participación electoral entre comunas con alta vs. baja educación superior (define umbral apropiado)<br />
-</li>
-<li>Calcula media, mediana y desviación estándar para cada grupo<br />
-</li>
-<li>Crea boxplots comparando ambos grupos<br />
-</li>
-<li>¿Qué grupo tiene mayor variabilidad? ¿Por qué?</li>
-</ol>
-<p><strong>4. Relaciones bivariadas</strong></p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="descriptiva.html#cb128-1" tabindex="-1"></a><span class="co"># Usa datos de comunas</span></span></code></pre></div>
-<ol style="list-style-type: lower-alpha">
-<li>Calcula la correlación entre participación y pobreza<br />
-</li>
-<li>Calcula la correlación entre participación y educación superior<br />
-</li>
-<li>Crea scatterplots para ambas relaciones<br />
-</li>
-<li>Interpreta: ¿Las correlaciones son consistentes con tus expectativas teóricas? ¿Por qué?</li>
-</ol>
-<p><strong>5. Detectar problemas de datos</strong></p>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="descriptiva.html#cb129-1" tabindex="-1"></a><span class="co"># Dataset con problemas</span></span>
-<span id="cb129-2"><a href="descriptiva.html#cb129-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
-<span id="cb129-3"><a href="descriptiva.html#cb129-3" tabindex="-1"></a>problemas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb129-4"><a href="descriptiva.html#cb129-4" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
-<span id="cb129-5"><a href="descriptiva.html#cb129-5" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">80</span>, <span class="dv">95</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="dv">150</span>, <span class="dv">12</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">200</span>, <span class="cn">NA</span>),</span>
-<span id="cb129-6"><a href="descriptiva.html#cb129-6" tabindex="-1"></a>  <span class="at">ingreso =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">95</span>, <span class="dv">500000</span>, <span class="dv">150000</span>), <span class="dv">50000000</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="dv">100000</span>, <span class="dv">0</span>)</span>
-<span id="cb129-7"><a href="descriptiva.html#cb129-7" tabindex="-1"></a>)</span></code></pre></div>
-<ol style="list-style-type: lower-alpha">
-<li>Identifica valores imposibles o improbables en cada variable<br />
-</li>
-<li>Identifica valores faltantes<br />
-</li>
-<li>Calcula media y mediana de <code>ingreso</code> con y sin outliers. ¿Cómo afecta la media?<br />
-</li>
-<li>Propón una estrategia para limpiar estos datos justificando cada decisión</li>
-</ol>
-<p><strong>6. Estadística descriptiva comprehensiva</strong></p>
-<p>Elige un dataset de tu proyecto de tesis o interés:</p>
-<ol style="list-style-type: lower-alpha">
-<li>Identifica 3-5 variables clave<br />
-</li>
-<li>Para cada variable, genera:
-<ul>
-<li>Tabla de estadísticos descriptivos</li>
-<li>Gráfico apropiado (histograma, boxplot, o barras según tipo)</li>
-<li>Interpretación de 2-3 oraciones</li>
-</ul></li>
-<li>Calcula correlaciones entre variables numéricas<br />
-</li>
-<li>Escribe un reporte de una página resumiendo patrones principales en tus datos<br />
-</li>
-<li>Identifica al menos un hallazgo inesperado que requiera investigación adicional</li>
-</ol>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="ejercicios.html#ejercicios-cap5">Anexo de Ejercicios</a>.</p>
 
 </div>
 </div>

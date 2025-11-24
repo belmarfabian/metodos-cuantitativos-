@@ -108,49 +108,7 @@ Brady, H. E., & Collier, D. (Eds.). (2010). *Rethinking Social Inquiry: Diverse 
 Adcock, R., & Collier, D. (2001). Measurement Validity: A Shared Standard for Qualitative and Quantitative Research. *American Political Science Review*, 95(3), 529-546.  
 → Artículo seminal sobre conceptualización y operacionalización.
 
+
 ## Ejercicios
 
-**1. Identificar elementos del método científico**
-
-Lee el resumen (*abstract*) de un artículo cuantitativo reciente en *Latin American Politics and Society* o *Revista de Ciencia Política*. Identifica:
-
-a) La pregunta de investigación  
-b) La teoría o argumento central  
-c) Las hipótesis principales  
-d) El tipo de datos usados  
-e) La técnica de análisis  
-
-**2. Evaluar mensurabilidad**
-
-Para cada uno de los siguientes conceptos, discute: (a) ¿Es posible cuantificarlo? (b) ¿Qué se ganaría y qué se perdería al cuantificarlo?
-
-- Calidad de la democracia
-- Polarización afectiva
-- Identidad nacional
-- Legitimidad institucional
-- Clientelismo político
-
-**3. Teoría e hipótesis**
-
-Selecciona un fenómeno político reciente en tu país (ej: baja en confianza institucional, cambio en participación electoral, polarización). 
-
-a) Formula una pregunta de investigación específica sobre ese fenómeno  
-b) Propón una teoría de rango medio que lo explique  
-c) Deriva al menos dos hipótesis testeables de esa teoría  
-d) Especifica cómo medirías las variables de tus hipótesis  
-
-**4. Análisis crítico**
-
-Un titular de prensa afirma: "Estudio demuestra que uso de redes sociales causa polarización política". 
-
-a) ¿Qué tipo de evidencia se necesitaría para sostener causalmente esa afirmación?  
-b) ¿Qué explicaciones alternativas podrían dar cuenta de una correlación entre uso de redes y polarización?  
-c) ¿Qué diseño de investigación permitiría distinguir entre estas explicaciones?
-
-**5. Reflexión metodológica**
-
-Piensa en tu propio proyecto de tesis o tema de interés. 
-
-a) ¿Tu pregunta de investigación es más adecuada para métodos cuantitativos, cualitativos, o mixtos? ¿Por qué?  
-b) ¿Qué tipo de datos necesitarías?  
-c) ¿Qué limitaciones enfrentarías al cuantificar los conceptos centrales de tu investigación?
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap1).

@@ -23,7 +23,7 @@
 <meta name="author" content="Fabián Belmar" />
 
 
-<meta name="date" content="2025-11-20" />
+<meta name="date" content="2025-11-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -567,6 +567,24 @@ div.csl-indent {
 <li class="chapter" data-level="14.7" data-path="glm.html"><a href="glm.html#lecturas-recomendadas-13"><i class="fa fa-check"></i><b>14.7</b> Lecturas recomendadas</a></li>
 <li class="chapter" data-level="14.8" data-path="glm.html"><a href="glm.html#ejercicios-13"><i class="fa fa-check"></i><b>14.8</b> Ejercicios</a></li>
 </ul></li>
+<li class="appendix"><span><b>Anexos</b></span></li>
+<li class="chapter" data-level="A" data-path="introduccion.html"><a href="introduccion.html#ejercicios"><i class="fa fa-check"></i><b>A</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="A.1" data-path="ejercicios.html"><a href="ejercicios.html"><i class="fa fa-check"></i><b>A.1</b> Capítulo 1: Introducción</a></li>
+<li class="chapter" data-level="A.2" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap2"><i class="fa fa-check"></i><b>A.2</b> Capítulo 2: Diseño de investigación</a></li>
+<li class="chapter" data-level="A.3" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap3"><i class="fa fa-check"></i><b>A.3</b> Capítulo 3: Medición</a></li>
+<li class="chapter" data-level="A.4" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap4"><i class="fa fa-check"></i><b>A.4</b> Capítulo 4: Trabajando con datos</a></li>
+<li class="chapter" data-level="A.5" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap5"><i class="fa fa-check"></i><b>A.5</b> Capítulo 5: Estadística descriptiva</a></li>
+<li class="chapter" data-level="A.6" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap6"><i class="fa fa-check"></i><b>A.6</b> Capítulo 6: Visualización de datos</a></li>
+<li class="chapter" data-level="A.7" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap7"><i class="fa fa-check"></i><b>A.7</b> Capítulo 7: Introducción a probabilidad</a></li>
+<li class="chapter" data-level="A.8" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap8"><i class="fa fa-check"></i><b>A.8</b> Capítulo 8: Inferencia estadística</a></li>
+<li class="chapter" data-level="A.9" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap9"><i class="fa fa-check"></i><b>A.9</b> Capítulo 9: Pruebas de hipótesis</a></li>
+<li class="chapter" data-level="A.10" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap10"><i class="fa fa-check"></i><b>A.10</b> Capítulo 10: Comparación de medias</a></li>
+<li class="chapter" data-level="A.11" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap11"><i class="fa fa-check"></i><b>A.11</b> Capítulo 11: Regresión bivariada</a></li>
+<li class="chapter" data-level="A.12" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap12"><i class="fa fa-check"></i><b>A.12</b> Capítulo 12: Regresión múltiple</a></li>
+<li class="chapter" data-level="A.13" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap13"><i class="fa fa-check"></i><b>A.13</b> Capítulo 13: Supuestos OLS</a></li>
+<li class="chapter" data-level="A.14" data-path="ejercicios.html"><a href="ejercicios.html#ejercicios-cap14"><i class="fa fa-check"></i><b>A.14</b> Capítulo 14: GLM</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Publicado con bookdown</a></li>
@@ -621,14 +639,14 @@ div.csl-indent {
 <p><strong>Estadístico t:</strong>
 <span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
 <p>Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.</p>
-<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="comparacion.html#cb286-1" tabindex="-1"></a><span class="co"># Datos simulados: Diferencia salarial por género</span></span>
-<span id="cb286-2"><a href="comparacion.html#cb286-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb286-3"><a href="comparacion.html#cb286-3" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
-<span id="cb286-4"><a href="comparacion.html#cb286-4" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
-<span id="cb286-5"><a href="comparacion.html#cb286-5" tabindex="-1"></a></span>
-<span id="cb286-6"><a href="comparacion.html#cb286-6" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
-<span id="cb286-7"><a href="comparacion.html#cb286-7" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
-<span id="cb286-8"><a href="comparacion.html#cb286-8" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="comparacion.html#cb277-1" tabindex="-1"></a><span class="co"># Datos simulados: Diferencia salarial por género</span></span>
+<span id="cb277-2"><a href="comparacion.html#cb277-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb277-3"><a href="comparacion.html#cb277-3" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb277-4"><a href="comparacion.html#cb277-4" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb277-5"><a href="comparacion.html#cb277-5" tabindex="-1"></a></span>
+<span id="cb277-6"><a href="comparacion.html#cb277-6" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
+<span id="cb277-7"><a href="comparacion.html#cb277-7" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
+<span id="cb277-8"><a href="comparacion.html#cb277-8" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -644,14 +662,14 @@ div.csl-indent {
 <div id="muestras-pareadas" class="section level3 hasAnchor" number="10.3.2">
 <h3><span class="header-section-number">10.3.2</span> Muestras pareadas<a href="comparacion.html#muestras-pareadas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="comparacion.html#cb288-1" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
-<span id="cb288-2"><a href="comparacion.html#cb288-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb288-3"><a href="comparacion.html#cb288-3" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb288-4"><a href="comparacion.html#cb288-4" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)  <span class="co"># Mejora promedio</span></span>
-<span id="cb288-5"><a href="comparacion.html#cb288-5" tabindex="-1"></a></span>
-<span id="cb288-6"><a href="comparacion.html#cb288-6" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
-<span id="cb288-7"><a href="comparacion.html#cb288-7" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb288-8"><a href="comparacion.html#cb288-8" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div>
+<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="comparacion.html#cb279-1" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
+<span id="cb279-2"><a href="comparacion.html#cb279-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb279-3"><a href="comparacion.html#cb279-3" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb279-4"><a href="comparacion.html#cb279-4" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)  <span class="co"># Mejora promedio</span></span>
+<span id="cb279-5"><a href="comparacion.html#cb279-5" tabindex="-1"></a></span>
+<span id="cb279-6"><a href="comparacion.html#cb279-6" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
+<span id="cb279-7"><a href="comparacion.html#cb279-7" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb279-8"><a href="comparacion.html#cb279-8" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -673,27 +691,27 @@ div.csl-indent {
 - <span class="math inline">\(H_0: \mu_1 = \mu_2 = \mu_3 = \ldots = \mu_k\)</span>
 - <span class="math inline">\(H_1\)</span>: Al menos una media es diferente</p>
 <p>Ilustremos el uso de ANOVA con un caso frecuente en ciencias sociales: la comparación de ingresos según nivel educacional. Queremos determinar si existen diferencias significativas entre los ingresos promedio de personas con educación básica, media y superior.</p>
-<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="comparacion.html#cb290-1" tabindex="-1"></a><span class="co"># Datos simulados: Ingresos por nivel educacional</span></span>
-<span id="cb290-2"><a href="comparacion.html#cb290-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb290-3"><a href="comparacion.html#cb290-3" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb290-4"><a href="comparacion.html#cb290-4" tabindex="-1"></a>  <span class="at">ingreso =</span> <span class="fu">c</span>(</span>
-<span id="cb290-5"><a href="comparacion.html#cb290-5" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">500</span>, <span class="at">sd =</span> <span class="dv">120</span>),  <span class="co"># Básica</span></span>
-<span id="cb290-6"><a href="comparacion.html#cb290-6" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">650</span>, <span class="at">sd =</span> <span class="dv">150</span>),  <span class="co"># Media</span></span>
-<span id="cb290-7"><a href="comparacion.html#cb290-7" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">900</span>, <span class="at">sd =</span> <span class="dv">200</span>)   <span class="co"># Superior</span></span>
-<span id="cb290-8"><a href="comparacion.html#cb290-8" tabindex="-1"></a>  ),</span>
-<span id="cb290-9"><a href="comparacion.html#cb290-9" tabindex="-1"></a>  <span class="at">educacion =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Básica&quot;</span>, <span class="st">&quot;Media&quot;</span>, <span class="st">&quot;Superior&quot;</span>), <span class="at">each =</span> <span class="dv">100</span>))</span>
-<span id="cb290-10"><a href="comparacion.html#cb290-10" tabindex="-1"></a>)</span>
-<span id="cb290-11"><a href="comparacion.html#cb290-11" tabindex="-1"></a></span>
-<span id="cb290-12"><a href="comparacion.html#cb290-12" tabindex="-1"></a><span class="co"># ANOVA</span></span>
-<span id="cb290-13"><a href="comparacion.html#cb290-13" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">aov</span>(ingreso <span class="sc">~</span> educacion, <span class="at">data =</span> datos)</span>
-<span id="cb290-14"><a href="comparacion.html#cb290-14" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code></pre></div>
+<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="comparacion.html#cb281-1" tabindex="-1"></a><span class="co"># Datos simulados: Ingresos por nivel educacional</span></span>
+<span id="cb281-2"><a href="comparacion.html#cb281-2" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb281-3"><a href="comparacion.html#cb281-3" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb281-4"><a href="comparacion.html#cb281-4" tabindex="-1"></a>  <span class="at">ingreso =</span> <span class="fu">c</span>(</span>
+<span id="cb281-5"><a href="comparacion.html#cb281-5" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">500</span>, <span class="at">sd =</span> <span class="dv">120</span>),  <span class="co"># Básica</span></span>
+<span id="cb281-6"><a href="comparacion.html#cb281-6" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">650</span>, <span class="at">sd =</span> <span class="dv">150</span>),  <span class="co"># Media</span></span>
+<span id="cb281-7"><a href="comparacion.html#cb281-7" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">900</span>, <span class="at">sd =</span> <span class="dv">200</span>)   <span class="co"># Superior</span></span>
+<span id="cb281-8"><a href="comparacion.html#cb281-8" tabindex="-1"></a>  ),</span>
+<span id="cb281-9"><a href="comparacion.html#cb281-9" tabindex="-1"></a>  <span class="at">educacion =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Básica&quot;</span>, <span class="st">&quot;Media&quot;</span>, <span class="st">&quot;Superior&quot;</span>), <span class="at">each =</span> <span class="dv">100</span>))</span>
+<span id="cb281-10"><a href="comparacion.html#cb281-10" tabindex="-1"></a>)</span>
+<span id="cb281-11"><a href="comparacion.html#cb281-11" tabindex="-1"></a></span>
+<span id="cb281-12"><a href="comparacion.html#cb281-12" tabindex="-1"></a><span class="co"># ANOVA</span></span>
+<span id="cb281-13"><a href="comparacion.html#cb281-13" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">aov</span>(ingreso <span class="sc">~</span> educacion, <span class="at">data =</span> datos)</span>
+<span id="cb281-14"><a href="comparacion.html#cb281-14" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code></pre></div>
 <pre><code>##              Df  Sum Sq Mean Sq F value Pr(&gt;F)    
 ## educacion     2 8688775 4344388   180.4 &lt;2e-16 ***
 ## Residuals   297 7151203   24078                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="comparacion.html#cb292-1" tabindex="-1"></a><span class="co"># Comparaciones post-hoc (para identificar qué grupos difieren)</span></span>
-<span id="cb292-2"><a href="comparacion.html#cb292-2" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo)</span></code></pre></div>
+<div class="sourceCode" id="cb283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb283-1"><a href="comparacion.html#cb283-1" tabindex="-1"></a><span class="co"># Comparaciones post-hoc (para identificar qué grupos difieren)</span></span>
+<span id="cb283-2"><a href="comparacion.html#cb283-2" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
@@ -751,11 +769,7 @@ div.csl-indent {
 </div>
 <div id="ejercicios-9" class="section level2 hasAnchor" number="10.8">
 <h2><span class="header-section-number">10.8</span> Ejercicios<a href="comparacion.html#ejercicios-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ol style="list-style-type: decimal">
-<li><p>Compara los ingresos promedio entre dos regiones de Chile usando una prueba t.</p></li>
-<li><p>Realiza un ANOVA para comparar niveles de participación electoral entre 4 países latinoamericanos.</p></li>
-<li><p>Verifica los supuestos de normalidad y homogeneidad de varianzas para tus datos.</p></li>
-</ol>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="ejercicios.html#ejercicios-cap10">Anexo de Ejercicios</a>.</p>
 
 </div>
 </div>

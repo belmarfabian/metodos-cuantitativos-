@@ -152,12 +152,7 @@ Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly an
 Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.  
 → Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.
 
+
 ## Ejercicios
 
-1. Calcula la correlación entre años de educación e ingreso. Interpreta el resultado.
-
-2. Estima un modelo de regresión para predecir participación electoral a partir de nivel educacional promedio por comuna.
-
-3. Interpreta los coeficientes y el $R^2$ del modelo estimado en el ejercicio 2.
-
-4. Discute por qué una correlación alta entre helado y ahogamientos NO implica causalidad.
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap11).

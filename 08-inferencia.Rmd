@@ -651,35 +651,7 @@ Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly an
 Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]  
 → Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.
 
+
 ## Ejercicios
 
-**Conceptuales:**
-
-1. Explica la diferencia entre error estándar y desviación estándar. ¿Por qué el error estándar disminuye con $n$ pero la desviación estándar no?
-
-2. Un estudiante afirma: "Calculé un IC 95% de [45%, 51%] para la intención de voto. Esto significa que hay 95% de probabilidad de que el verdadero porcentaje esté en ese rango." ¿Es correcta esta interpretación? Corrige si es necesario.
-
-3. ¿Por qué un IC 99% es más ancho que un IC 95% para los mismos datos? ¿Cuál es el trade-off?
-
-4. Si duplicas el tamaño de tu muestra, ¿en cuánto se reduce el error estándar?
-
-**Aplicados:**
-
-5. Una encuesta con $n=800$ encuentra que 55% apoya una reforma constitucional.
-   a. Calcula el error estándar de $\hat{p}$
-   b. Construye un IC 95% para la proporción poblacional
-   c. ¿Es razonable concluir que la mayoría de la población apoya la reforma?
-
-6. El ingreso promedio en una muestra de $n=150$ hogares es $\bar{x} = 680$ mil pesos, con $s = 210$ mil.
-   a. Calcula el error estándar de $\bar{x}$
-   b. Construye un IC 95% para el ingreso promedio poblacional
-   c. Construye un IC 99% y compara el ancho
-
-7. **Planificación de encuesta**: Quieres estimar el porcentaje de estudiantes que aprueban un curso con margen de error de ±5% (IC 95%). ¿Cuántos estudiantes debes encuestar?
-
-8. **Simulación**: Replica la simulación de 100 ICs del capítulo, pero usando un IC 90% en lugar de 95%. ¿Aproximadamente cuántos intervalos esperarías que NO contengan $\mu$? Verifica con código.
-
-9. Una encuestadora reporta: "Candidato A: 48% ± 3%".
-   a. Interpreta este resultado en términos de IC
-   b. ¿Aproximadamente cuál fue el tamaño muestral?
-   c. ¿Podemos concluir que el candidato perdería (< 50%)?
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap8).
