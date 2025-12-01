@@ -534,18 +534,3 @@ f) Presenta a colegas y solicita feedback sobre claridad
 
 ---
 
-## Capítulo 12: Regresión múltiple {#ejercicios-cap12}
-
-
----
-
-## Capítulo 13: Supuestos OLS {#ejercicios-cap13}
-
-
----
-
-## Capítulo 14: GLM {#ejercicios-cap14}
-
-
----
-

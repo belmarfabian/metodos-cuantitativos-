@@ -126,35 +126,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -323,41 +294,12 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
- <span class="menu-text">VI. Contenido Avanzado</span></a>
+ <span class="menu-text">Anexos</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./12-regresion-multiple.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Regresión múltiple</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./13-supuestos-ols.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Supuestos de OLS y diagnósticos</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./14-glm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introducción a modelos lineales generalizados</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
- <span class="menu-text">Anexos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Alternar sección">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./anexo-ejercicios.html" class="sidebar-item-text sidebar-link">
@@ -383,8 +325,7 @@ window.Quarto = {
   <li><a href="#tipos-de-diseños" id="toc-tipos-de-diseños" class="nav-link" data-scroll-target="#tipos-de-diseños"><span class="header-section-number">2.5</span> Tipos de diseños</a>
   <ul class="collapse">
   <li><a href="#diseños-experimentales" id="toc-diseños-experimentales" class="nav-link" data-scroll-target="#diseños-experimentales"><span class="header-section-number">2.5.1</span> Diseños experimentales</a></li>
-  <li><a href="#diseños-cuasi-experimentales" id="toc-diseños-cuasi-experimentales" class="nav-link" data-scroll-target="#diseños-cuasi-experimentales"><span class="header-section-number">2.5.2</span> Diseños cuasi-experimentales</a></li>
-  <li><a href="#diseños-observacionales" id="toc-diseños-observacionales" class="nav-link" data-scroll-target="#diseños-observacionales"><span class="header-section-number">2.5.3</span> Diseños observacionales</a></li>
+  <li><a href="#diseños-observacionales" id="toc-diseños-observacionales" class="nav-link" data-scroll-target="#diseños-observacionales"><span class="header-section-number">2.5.2</span> Diseños observacionales</a></li>
   </ul></li>
   <li><a href="#validez-interna-y-externa" id="toc-validez-interna-y-externa" class="nav-link" data-scroll-target="#validez-interna-y-externa"><span class="header-section-number">2.6</span> Validez interna y externa</a></li>
   <li><a href="#casos-unidades-y-niveles-de-análisis" id="toc-casos-unidades-y-niveles-de-análisis" class="nav-link" data-scroll-target="#casos-unidades-y-niveles-de-análisis"><span class="header-section-number">2.7</span> Casos, unidades y niveles de análisis</a></li>
@@ -441,36 +382,6 @@ window.Quarto = {
 <section id="causalidad" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="causalidad"><span class="header-section-number">2.4</span> Causalidad</h2>
 <p>El objetivo de mucha investigación cuantitativa es establecer <strong>relaciones causales</strong>. Queremos saber no solo si X e Y covarían, sino si cambios en X <em>producen</em> cambios en Y.</p>
-<div class="nivel" data-nivel="avanzado">
-<section id="el-problema-fundamental-de-inferencia-causal" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="el-problema-fundamental-de-inferencia-causal"><span class="header-section-number">2.4.1</span> El problema fundamental de inferencia causal</h3>
-<p><span class="citation" data-cites="holland1986">Holland (<a href="01-introduccion.html#ref-holland1986" role="doc-biblioref">1986</a>)</span> formuló el <strong>problema fundamental de inferencia causal</strong>: nunca observamos el mismo caso bajo tratamiento y control simultáneamente. Si una persona votó en una elección con inscripción automática, nunca sabremos si habría votado sin inscripción automática. Ese <strong>resultado contrafactual</strong> es fundamentalmente inobservable.^[EJEMPLO POLÍTICO CHILENO: En octubre 2019, el presidente Piñera declaró estado de emergencia. ¿Redujo o aumentó las protestas? Para saberlo causalmente, necesitaríamos observar QUÉ HABRÍA PASADO en el Chile de octubre 2019 SIN estado de emergencia. Pero ese Chile no existe—es contrafactual. Solo observamos lo que pasó CON estado de emergencia. Toda inferencia causal enfrenta este problema fundamental. Los métodos cuantitativos intentan aproximar el contrafactual mediante comparaciones (grupos control, diferencias-en-diferencias, etc.).</p>
-<p>Formalizando: Para el caso <span class="math inline">\(i\)</span>, definimos:</p>
-<ul>
-<li><span class="math inline">\(Y_i(1)\)</span>: resultado si recibe tratamiento</li>
-<li><span class="math inline">\(Y_i(0)\)</span>: resultado si no recibe tratamiento</li>
-<li><strong>Efecto causal individual</strong>: <span class="math inline">\(\tau_i = Y_i(1) - Y_i(0)\)</span></li>
-</ul>
-<p>El problema: observamos <span class="math inline">\(Y_i(1)\)</span> <em>o</em> <span class="math inline">\(Y_i(0)\)</span>, nunca ambos. Uno siempre es contrafactual.</p>
-</section>
-<section id="marco-de-resultados-potenciales" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="marco-de-resultados-potenciales"><span class="header-section-number">2.4.2</span> Marco de resultados potenciales</h3>
-<p><span class="citation" data-cites="rubin1974">Rubin (<a href="01-introduccion.html#ref-rubin1974" role="doc-biblioref">1974</a>)</span> propuso que, aunque no podemos estimar efectos individuales, podemos estimar <strong>efectos causales promedio</strong> bajo ciertas condiciones. El <strong>efecto causal promedio del tratamiento</strong> (ATE) es:</p>
-<p><span class="math display">\[ATE = E[Y_i(1) - Y_i(0)] = E[Y_i(1)] - E[Y_i(0)]\]</span></p>
-<p>Pero seguimos sin observar ambos resultados potenciales para cada caso. La solución: usar <em>grupos</em>. Comparamos unidades tratadas con unidades no tratadas. La inferencia causal depende de que estos grupos sean <strong>comparables</strong> en expectativa.</p>
-</section>
-<section id="condiciones-para-inferencia-causal" class="level3" data-number="2.4.3">
-<h3 data-number="2.4.3" class="anchored" data-anchor-id="condiciones-para-inferencia-causal"><span class="header-section-number">2.4.3</span> Condiciones para inferencia causal</h3>
-<p>Para que la comparación entre tratados y no tratados nos informe sobre el efecto causal, necesitamos:</p>
-<p><strong>1. Independencia condicional</strong></p>
-<p>El tratamiento debe asignarse independientemente de los resultados potenciales (condicional en covariables observadas). En experimentos aleatorios, esto se cumple por construcción. En estudios observacionales, debemos argumentarlo o modelarlo.</p>
-<p><strong>2. Exclusión</strong></p>
-<p>El tratamiento debe afectar el resultado solo a través del mecanismo teórico propuesto, no por otras vías.</p>
-<p><strong>3. SUTVA</strong> (Stable Unit Treatment Value Assumption)^[VIOLACIÓN DE SUTVA EN CONTEXTO REAL: Imagina un experimento donde asignamos aleatoriamente a algunas personas recibir mensajes pro-vacunación COVID. Si los tratados convencen a sus familiares (no tratados) de vacunarse, el resultado de los no-tratados DEPENDE del tratamiento de otros. SUTVA se viola. Esto es común en intervenciones sociales con efectos de contagio, difusión o spillover. Violar SUTVA sesga estimaciones de efectos causales, generalmente subestimándolos.</p>
-<p>El resultado de cada unidad no debe depender del tratamiento de otras unidades. Si mi vecino vota (tratamiento), mi propia probabilidad de votar (resultado) no debería cambiar. Esta suposición se viola frecuentemente —un problema serio en ciencias sociales.</p>
-<p>Estas condiciones raramente se cumplen perfectamente en datos observacionales. Gran parte de la metodología cuantitativa consiste en estrategias para aproximarse a inferencia causal válida cuando las condiciones ideales no se cumplen.</p>
-</section>
-</div>
 </section>
 <section id="tipos-de-diseños" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="tipos-de-diseños"><span class="header-section-number">2.5</span> Tipos de diseños</h2>
@@ -482,21 +393,8 @@ window.Quarto = {
 <p><strong>Ventajas</strong>: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna</p>
 <p><strong>Limitaciones</strong>: - Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países “democracia” vs “dictadura” para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente “corrupción gubernamental” para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.). - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables</p>
 </section>
-<section id="diseños-cuasi-experimentales" class="level3 nivel" data-nivel="avanzado" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="diseños-cuasi-experimentales"><span class="header-section-number">2.5.2</span> Diseños cuasi-experimentales</h3>
-<p>Los diseños cuasi-experimentales explotan variación <em>como si</em> fuera aleatoria, aunque no provenga de asignación experimental.</p>
-<p><strong>Regresión discontinua (RD)</strong></p>
-<p>Cuando el tratamiento se asigna según un umbral en una variable continua, podemos comparar casos justo arriba y debajo del umbral —que son casi idénticos excepto en recepción del tratamiento.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="eggers2015">Eggers et&nbsp;al. (<a href="01-introduccion.html#ref-eggers2015" role="doc-biblioref">2015</a>)</span> estudian efectos de ganar una elección sobre riqueza personal de candidatos en UK. Comparan candidatos que ganaron por margen muy estrecho con quienes perdieron por margen muy estrecho. El supuesto: ganar vs.&nbsp;perder por 0.1% de votos es prácticamente aleatorio.</p>
-<p><strong>Diferencias-en-diferencias (DiD)</strong></p>
-<p>Compara cambios antes/después de un tratamiento entre grupo tratado y grupo control. Requiere supuesto de <strong>tendencias paralelas</strong>: sin tratamiento, ambos grupos habrían evolucionado de forma similar.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="melendez2021">Meléndez &amp; Rovira Kaltwasser (<a href="01-introduccion.html#ref-melendez2021" role="doc-biblioref">2019</a>)</span> estudian efecto de una reforma tributaria en Colombia comparando municipios afectados vs.&nbsp;no afectados, antes y después de la reforma.</p>
-<p><strong>Variables instrumentales (IV)</strong></p>
-<p>Usa una variable (instrumento) que afecta el tratamiento pero no el resultado directamente. Permite estimar efecto causal incluso cuando tratamiento está confundido.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="acemoglu2001">Acemoglu et&nbsp;al. (<a href="01-introduccion.html#ref-acemoglu2001" role="doc-biblioref">2001</a>)</span> usan mortalidad de colonos europeos en colonias históricas como instrumento para instituciones actuales, argumentando que afecta instituciones pero no desarrollo económico contemporáneo directamente.</p>
-</section>
-<section id="diseños-observacionales" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.5.3</span> Diseños observacionales</h3>
+<section id="diseños-observacionales" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.5.2</span> Diseños observacionales</h3>
 <p>La mayoría de investigación en ciencias políticas usa <strong>datos observacionales</strong> —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</p>
 <p><strong>Estudios de corte transversal</strong></p>
 <p>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</p>
@@ -559,14 +457,8 @@ window.Quarto = {
 <h2 data-number="2.10" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">2.10</span> Ejercicios</h2>
 <p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap2">Anexo de Ejercicios</a>.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-acemoglu2001" class="csl-entry" role="listitem">
-Acemoglu, D., Johnson, S., &amp; Robinson, J. A. (2001). The Colonial Origins of Comparative Development: An Empirical Investigation. <em>American Economic Review</em>, <em>91</em>(5), 1369-1401. <a href="https://doi.org/10.1257/aer.91.5.1369">https://doi.org/10.1257/aer.91.5.1369</a>
-</div>
 <div id="ref-campbell1957" class="csl-entry" role="listitem">
 Campbell, D. T., &amp; Stanley, J. C. (1963). <em>Experimental and Quasi-Experimental Designs for Research</em>. Rand McNally &amp; Company.
-</div>
-<div id="ref-eggers2015" class="csl-entry" role="listitem">
-Eggers, A. C., Fowler, A., Hainmueller, J., Hall, A. B., &amp; Snyder, J. M. (2015). On the Validity of the Regression Discontinuity Design for Estimating Electoral Effects: New Evidence from Over 40,000 Close Races. <em>American Journal of Political Science</em>, <em>59</em>(1), 259-274.
 </div>
 <div id="ref-flores2019" class="csl-entry" role="listitem">
 Flores, T. E., &amp; Nooruddin, I. (2016). <em>Experimentation in the Social Sciences</em>. Cambridge University Press.
@@ -574,17 +466,11 @@ Flores, T. E., &amp; Nooruddin, I. (2016). <em>Experimentation in the Social Sci
 <div id="ref-gerber2008" class="csl-entry" role="listitem">
 Gerber, A. S., &amp; Green, D. P. (2008). <em>Get Out the Vote: How to Increase Voter Turnout</em> (2nd ed.). Brookings Institution Press.
 </div>
-<div id="ref-holland1986" class="csl-entry" role="listitem">
-Holland, P. W. (1986). Statistics and Causal Inference. <em>Journal of the American Statistical Association</em>, <em>81</em>(396), 945-960.
-</div>
 <div id="ref-king1994" class="csl-entry" role="listitem">
 King, G., Keohane, R. O., &amp; Verba, S. (1994). <em>Designing Social Inquiry: Scientific Inference in Qualitative Research</em>. Princeton University Press.
 </div>
 <div id="ref-lijphart1994" class="csl-entry" role="listitem">
 Lijphart, A. (1994). <em>Electoral Systems and Party Systems: A Study of Twenty-Seven Democracies, 1945-1990</em>. Oxford University Press.
-</div>
-<div id="ref-melendez2021" class="csl-entry" role="listitem">
-Meléndez, C., &amp; Rovira Kaltwasser, C. (2019). <em>The Collapse of the Venezuelan Party System: Institutionalization, Economic Crisis, and Mass Behavior</em>. Cambridge University Press.
 </div>
 <div id="ref-popper1959" class="csl-entry" role="listitem">
 Popper, K. R. (1959). <em>The Logic of Scientific Discovery</em>. Routledge.
@@ -594,9 +480,6 @@ Przeworski, A., Alvarez, M. E., Cheibub, J. A., &amp; Limongi, F. (2000). <em>De
 </div>
 <div id="ref-robinson1950" class="csl-entry" role="listitem">
 Robinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. <em>American Sociological Review</em>, <em>15</em>(3), 351-357.
-</div>
-<div id="ref-rubin1974" class="csl-entry" role="listitem">
-Rubin, D. B. (1974). Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies. <em>Journal of Educational Psychology</em>, <em>66</em>(5), 688-701.
 </div>
 <div id="ref-shadish2002" class="csl-entry" role="listitem">
 Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Houghton Mifflin.
@@ -1102,191 +985,125 @@ Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and 
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>El objetivo de mucha investigación cuantitativa es establecer **relaciones causales**. Queremos saber no solo si X e Y covarían, sino si cambios en X *producen* cambios en Y.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>::: {.nivel data-nivel="avanzado"}</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### El problema fundamental de inferencia causal</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>@holland1986 formuló el **problema fundamental de inferencia causal**: nunca observamos el mismo caso bajo tratamiento y control simultáneamente. Si una persona votó en una elección con inscripción automática, nunca sabremos si habría votado sin inscripción automática. Ese **resultado contrafactual** es fundamentalmente inobservable.^[EJEMPLO POLÍTICO CHILENO: En octubre 2019, el presidente Piñera declaró estado de emergencia. ¿Redujo o aumentó las protestas? Para saberlo causalmente, necesitaríamos observar QUÉ HABRÍA PASADO en el Chile de octubre 2019 SIN estado de emergencia. Pero ese Chile no existe—es contrafactual. Solo observamos lo que pasó CON estado de emergencia. Toda inferencia causal enfrenta este problema fundamental. Los métodos cuantitativos intentan aproximar el contrafactual mediante comparaciones (grupos control, diferencias-en-diferencias, etc.).</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Formalizando: Para el caso $i$, definimos:</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$Y_i(1)$: resultado si recibe tratamiento</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$Y_i(0)$: resultado si no recibe tratamiento</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Efecto causal individual**: $\tau_i = Y_i(1) - Y_i(0)$</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>El problema: observamos $Y_i(1)$ *o* $Y_i(0)$, nunca ambos. Uno siempre es contrafactual.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### Marco de resultados potenciales</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos de diseños</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños experimentales</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @gerber2008 realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>**Ventajas**:</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identificación causal clara</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No requiere supuestos sobre confusores</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alta validez interna</span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>@rubin1974 propuso que, aunque no podemos estimar efectos individuales, podemos estimar **efectos causales promedio** bajo ciertas condiciones. El **efecto causal promedio del tratamiento** (ATE) es:</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>$$ATE = E<span class="co">[</span><span class="ot">Y_i(1) - Y_i(0)</span><span class="co">]</span> = E<span class="co">[</span><span class="ot">Y_i(1)</span><span class="co">]</span> - E<span class="co">[</span><span class="ot">Y_i(0)</span><span class="co">]</span>$$</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>Pero seguimos sin observar ambos resultados potenciales para cada caso. La solución: usar *grupos*. Comparamos unidades tratadas con unidades no tratadas. La inferencia causal depende de que estos grupos sean **comparables** en expectativa.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>**Limitaciones**:</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países "democracia" vs "dictadura" para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente "corrupción gubernamental" para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.).</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Posibles problemas éticos</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Efectos pueden ser específicos al contexto experimental (baja validez externa)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En ciencia política, solo ciertas preguntas son experimentables</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="fu">### Condiciones para inferencia causal</span></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>Para que la comparación entre tratados y no tratados nos informe sobre el efecto causal, necesitamos:</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>**1. Independencia condicional**</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>El tratamiento debe asignarse independientemente de los resultados potenciales (condicional en covariables observadas). En experimentos aleatorios, esto se cumple por construcción. En estudios observacionales, debemos argumentarlo o modelarlo.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>**2. Exclusión**</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>El tratamiento debe afectar el resultado solo a través del mecanismo teórico propuesto, no por otras vías.</span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>**3. SUTVA** (Stable Unit Treatment Value Assumption)^[VIOLACIÓN DE SUTVA EN CONTEXTO REAL: Imagina un experimento donde asignamos aleatoriamente a algunas personas recibir mensajes pro-vacunación COVID. Si los tratados convencen a sus familiares (no tratados) de vacunarse, el resultado de los no-tratados DEPENDE del tratamiento de otros. SUTVA se viola. Esto es común en intervenciones sociales con efectos de contagio, difusión o spillover. Violar SUTVA sesga estimaciones de efectos causales, generalmente subestimándolos.</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>El resultado de cada unidad no debe depender del tratamiento de otras unidades. Si mi vecino vota (tratamiento), mi propia probabilidad de votar (resultado) no debería cambiar. Esta suposición se viola frecuentemente —un problema serio en ciencias sociales.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>Estas condiciones raramente se cumplen perfectamente en datos observacionales. Gran parte de la metodología cuantitativa consiste en estrategias para aproximarse a inferencia causal válida cuando las condiciones ideales no se cumplen.</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos de diseños</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños experimentales</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @gerber2008 realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>**Ventajas**:</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identificación causal clara</span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No requiere supuestos sobre confusores</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alta validez interna</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños observacionales</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>**Estudios de corte transversal**</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>**Series de tiempo**</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>**Panel (longitudinal)**</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando **efectos fijos**.</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>**Estrategias para fortalecer inferencia causal en diseños observacionales**:</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Controles estadísticos**: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores *observados*.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Matching**: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Diseño de investigación robusto**: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validez interna y externa</span></span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>**Limitaciones**:</span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países "democracia" vs "dictadura" para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente "corrupción gubernamental" para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.).</span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Posibles problemas éticos</span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Efectos pueden ser específicos al contexto experimental (baja validez externa)</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En ciencia política, solo ciertas preguntas son experimentables</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="co">[</span><span class="ot">@campbell1957</span><span class="co">]</span>. **Validez interna** es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen **variables confusoras** (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), **causalidad inversa** (Y puede causar X en vez de X causar Y; ej: @przeworski2000 argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y **sesgo de selección** (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs. quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>**Validez externa** es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen **muestras no representativas** (estudiar estudiantes universitarios no permite generalizar a la población general), **especificidad contextual** (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), **efectos de Hawthorne** (sujetos modifican comportamiento porque saben que están siendo estudiados), y **dependencia temporal** (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. @shadish2002 argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.</span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>::: {.nivel data-nivel="avanzado"}</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casos, unidades y niveles de análisis</span></span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños cuasi-experimentales</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>Una decisión crucial en diseño de investigación es qué constituye un "caso" —la **unidad de análisis**: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</span>
 <span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Los diseños cuasi-experimentales explotan variación *como si* fuera aleatoria, aunque no provenga de asignación experimental.</span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Debemos evitar dos falacias. **Falacia ecológica** [@robinson1950]: inferir relaciones a nivel individual desde asociaciones a nivel agregado (si comunas con más inmigrantes votan más por la derecha, ¿significa que inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente, mientras inmigrantes votan izquierda). **Falacia atómica** (o "individualista"): inferir relaciones a nivel agregado desde patrones individuales (si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente; puede haber efectos contextuales que cambian relaciones).</span>
 <span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>**Regresión discontinua (RD)**</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>La inferencia estadística requiere suficientes observaciones relativas al número de parámetros estimados. @king1994 enfatizan el problema de "muchas variables, pocas observaciones" (MVPO): si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes **grados de libertad** para distinguir patrones genuinos de ruido. Soluciones: aumentar observaciones (datos de panel con múltiples países × múltiples años), reducir parámetros (selección teórica de variables, análisis factorial), o combinar enfoques (análisis cuantitativo de patrones generales + estudios de caso que elucidan mecanismos).</span>
 <span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>Cuando el tratamiento se asigna según un umbral en una variable continua, podemos comparar casos justo arriba y debajo del umbral —que son casi idénticos excepto en recepción del tratamiento.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen del capítulo</span></span>
 <span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @eggers2015 estudian efectos de ganar una elección sobre riqueza personal de candidatos en UK. Comparan candidatos que ganaron por margen muy estrecho con quienes perdieron por margen muy estrecho. El supuesto: ganar vs. perder por 0.1% de votos es prácticamente aleatorio.</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>El diseño de investigación es el plan para responder preguntas de investigación. Buenas preguntas son específicas, empíricamente respondibles, y relevantes teórica o prácticamente. Pueden ser descriptivas, relacionales o causales.</span>
 <span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>**Diferencias-en-diferencias (DiD)**</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>Las hipótesis son afirmaciones falsables derivadas de teoría sobre relaciones esperadas entre variables. Conectan teoría abstracta con implicaciones observables.</span>
 <span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>Compara cambios antes/después de un tratamiento entre grupo tratado y grupo control. Requiere supuesto de **tendencias paralelas**: sin tratamiento, ambos grupos habrían evolucionado de forma similar.</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>La inferencia causal enfrenta el problema fundamental: nunca observamos resultados contrafactuales. El marco de resultados potenciales formaliza este problema. Para inferir causalidad, necesitamos que grupos tratados y control sean comparables.</span>
 <span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @melendez2021 estudian efecto de una reforma tributaria en Colombia comparando municipios afectados vs. no afectados, antes y después de la reforma.</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>Los diseños experimentales garantizan comparabilidad mediante aleatorización, logrando alta validez interna. Los diseños cuasi-experimentales explotan situaciones "naturalmente" aleatorias. Los diseños observacionales dependen de supuestos más fuertes y técnicas estadísticas para aproximar inferencia causal.</span>
 <span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>**Variables instrumentales (IV)**</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>Toda investigación enfrenta tensión entre validez interna (¿el efecto es causal?) y validez externa (¿generaliza?). No hay diseño perfecto; cada diseño implica compromisos.</span>
 <span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>Usa una variable (instrumento) que afecta el tratamiento pero no el resultado directamente. Permite estimar efecto causal incluso cuando tratamiento está confundido.</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>La unidad de análisis determina qué variación explotamos y qué afirmaciones justificamos. Inferir relaciones en un nivel desde datos de otro nivel (falacias ecológicas/atómicas) es problemático.</span>
 <span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @acemoglu2001 usan mortalidad de colonos europeos en colonias históricas como instrumento para instituciones actuales, argumentando que afecta instituciones pero no desarrollo económico contemporáneo directamente.</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas</span></span>
 <span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>**Fundamentos de diseño de investigación:**</span>
 <span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños observacionales</span></span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>**Estudios de corte transversal**</span>
-<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). *Experimental and Quasi-Experimental Designs for Generalized Causal Inference*. Houghton Mifflin.  </span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>→ Tratamiento comprehensivo de validez y diseños experimentales/cuasi-experimentales.</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>**Marco contrafactual de causalidad:**</span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a>Morgan, S. L., &amp; Winship, C. (2015). *Counterfactuals and Causal Inference: Methods and Principles for Social Research* (2nd ed.). Cambridge University Press.  </span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a>→ Introducción accesible al marco de resultados potenciales y métodos de inferencia causal.</span>
 <span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.</span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a>**Diseños observacionales en ciencia política:**</span>
 <span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>**Series de tiempo**</span>
-<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a>Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.</span>
-<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.</span>
-<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>**Panel (longitudinal)**</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a>Angrist, J. D., &amp; Pischke, J.-S. (2009). *Mostly Harmless Econometrics: An Empiricist's Companion*. Princeton University Press.  </span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>→ Enfoque práctico sobre identificación causal en datos observacionales.</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a>**Sobre validez de medición:**</span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a>Adcock, R., &amp; Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. *American Political Science Review*, 95(3), 529-546.  </span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a>→ Discusión conceptual sobre operacionalización y validez.</span>
 <span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando **efectos fijos**.</span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>**Experimentos de campo en ciencia política:**</span>
 <span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>**Ejemplo**: @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.</span>
-<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>**Estrategias para fortalecer inferencia causal en diseños observacionales**:</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>Gerber, A. S., &amp; Green, D. P. (2012). *Field Experiments: Design, Analysis, and Interpretation*. W.W. Norton.  </span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>→ Guía práctica para diseñar y analizar experimentos de campo.</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Controles estadísticos**: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores *observados*.</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
 <span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Matching**: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.</span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap2)</span>.</span>
 <span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Diseño de investigación robusto**: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.</span>
-<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).</span>
-<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Validez interna y externa</span></span>
-<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="co">[</span><span class="ot">@campbell1957</span><span class="co">]</span>. **Validez interna** es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen **variables confusoras** (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), **causalidad inversa** (Y puede causar X en vez de X causar Y; ej: @przeworski2000 argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y **sesgo de selección** (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs. quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.</span>
-<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>**Validez externa** es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen **muestras no representativas** (estudiar estudiantes universitarios no permite generalizar a la población general), **especificidad contextual** (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), **efectos de Hawthorne** (sujetos modifican comportamiento porque saben que están siendo estudiados), y **dependencia temporal** (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).</span>
-<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. @shadish2002 argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.</span>
-<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a><span class="fu">## Casos, unidades y niveles de análisis</span></span>
-<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>Una decisión crucial en diseño de investigación es qué constituye un "caso" —la **unidad de análisis**: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</span>
-<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>Debemos evitar dos falacias. **Falacia ecológica** [@robinson1950]: inferir relaciones a nivel individual desde asociaciones a nivel agregado (si comunas con más inmigrantes votan más por la derecha, ¿significa que inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente, mientras inmigrantes votan izquierda). **Falacia atómica** (o "individualista"): inferir relaciones a nivel agregado desde patrones individuales (si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente; puede haber efectos contextuales que cambian relaciones).</span>
-<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>La inferencia estadística requiere suficientes observaciones relativas al número de parámetros estimados. @king1994 enfatizan el problema de "muchas variables, pocas observaciones" (MVPO): si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes **grados de libertad** para distinguir patrones genuinos de ruido. Soluciones: aumentar observaciones (datos de panel con múltiples países × múltiples años), reducir parámetros (selección teórica de variables, análisis factorial), o combinar enfoques (análisis cuantitativo de patrones generales + estudios de caso que elucidan mecanismos).</span>
-<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen del capítulo</span></span>
-<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>El diseño de investigación es el plan para responder preguntas de investigación. Buenas preguntas son específicas, empíricamente respondibles, y relevantes teórica o prácticamente. Pueden ser descriptivas, relacionales o causales.</span>
-<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>Las hipótesis son afirmaciones falsables derivadas de teoría sobre relaciones esperadas entre variables. Conectan teoría abstracta con implicaciones observables.</span>
-<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>La inferencia causal enfrenta el problema fundamental: nunca observamos resultados contrafactuales. El marco de resultados potenciales formaliza este problema. Para inferir causalidad, necesitamos que grupos tratados y control sean comparables.</span>
-<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a>Los diseños experimentales garantizan comparabilidad mediante aleatorización, logrando alta validez interna. Los diseños cuasi-experimentales explotan situaciones "naturalmente" aleatorias. Los diseños observacionales dependen de supuestos más fuertes y técnicas estadísticas para aproximar inferencia causal.</span>
-<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a>Toda investigación enfrenta tensión entre validez interna (¿el efecto es causal?) y validez externa (¿generaliza?). No hay diseño perfecto; cada diseño implica compromisos.</span>
-<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>La unidad de análisis determina qué variación explotamos y qué afirmaciones justificamos. Inferir relaciones en un nivel desde datos de otro nivel (falacias ecológicas/atómicas) es problemático.</span>
-<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas</span></span>
-<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>**Fundamentos de diseño de investigación:**</span>
-<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). *Experimental and Quasi-Experimental Designs for Generalized Causal Inference*. Houghton Mifflin.  </span>
-<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>→ Tratamiento comprehensivo de validez y diseños experimentales/cuasi-experimentales.</span>
-<span id="cb1-188"><a href="#cb1-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-189"><a href="#cb1-189" aria-hidden="true" tabindex="-1"></a>**Marco contrafactual de causalidad:**</span>
-<span id="cb1-190"><a href="#cb1-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-191"><a href="#cb1-191" aria-hidden="true" tabindex="-1"></a>Morgan, S. L., &amp; Winship, C. (2015). *Counterfactuals and Causal Inference: Methods and Principles for Social Research* (2nd ed.). Cambridge University Press.  </span>
-<span id="cb1-192"><a href="#cb1-192" aria-hidden="true" tabindex="-1"></a>→ Introducción accesible al marco de resultados potenciales y métodos de inferencia causal.</span>
-<span id="cb1-193"><a href="#cb1-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-194"><a href="#cb1-194" aria-hidden="true" tabindex="-1"></a>**Diseños observacionales en ciencia política:**</span>
-<span id="cb1-195"><a href="#cb1-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-196"><a href="#cb1-196" aria-hidden="true" tabindex="-1"></a>Angrist, J. D., &amp; Pischke, J.-S. (2009). *Mostly Harmless Econometrics: An Empiricist's Companion*. Princeton University Press.  </span>
-<span id="cb1-197"><a href="#cb1-197" aria-hidden="true" tabindex="-1"></a>→ Enfoque práctico sobre identificación causal en datos observacionales.</span>
-<span id="cb1-198"><a href="#cb1-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-199"><a href="#cb1-199" aria-hidden="true" tabindex="-1"></a>**Sobre validez de medición:**</span>
-<span id="cb1-200"><a href="#cb1-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-201"><a href="#cb1-201" aria-hidden="true" tabindex="-1"></a>Adcock, R., &amp; Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. *American Political Science Review*, 95(3), 529-546.  </span>
-<span id="cb1-202"><a href="#cb1-202" aria-hidden="true" tabindex="-1"></a>→ Discusión conceptual sobre operacionalización y validez.</span>
-<span id="cb1-203"><a href="#cb1-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-204"><a href="#cb1-204" aria-hidden="true" tabindex="-1"></a>**Experimentos de campo en ciencia política:**</span>
-<span id="cb1-205"><a href="#cb1-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-206"><a href="#cb1-206" aria-hidden="true" tabindex="-1"></a>Gerber, A. S., &amp; Green, D. P. (2012). *Field Experiments: Design, Analysis, and Interpretation*. W.W. Norton.  </span>
-<span id="cb1-207"><a href="#cb1-207" aria-hidden="true" tabindex="-1"></a>→ Guía práctica para diseñar y analizar experimentos de campo.</span>
-<span id="cb1-208"><a href="#cb1-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-209"><a href="#cb1-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-210"><a href="#cb1-210" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
-<span id="cb1-211"><a href="#cb1-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-212"><a href="#cb1-212" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap2)</span>.</span>
-<span id="cb1-213"><a href="#cb1-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-214"><a href="#cb1-214" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-215"><a href="#cb1-215" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

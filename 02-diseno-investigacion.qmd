@@ -28,47 +28,6 @@ En estadística inferencial (Capítulo \@ref(hipotesis)), formalizamos dos tipos
 
 El objetivo de mucha investigación cuantitativa es establecer **relaciones causales**. Queremos saber no solo si X e Y covarían, sino si cambios en X *producen* cambios en Y.
 
-::: {.nivel data-nivel="avanzado"}
-
-### El problema fundamental de inferencia causal
-
-@holland1986 formuló el **problema fundamental de inferencia causal**: nunca observamos el mismo caso bajo tratamiento y control simultáneamente. Si una persona votó en una elección con inscripción automática, nunca sabremos si habría votado sin inscripción automática. Ese **resultado contrafactual** es fundamentalmente inobservable.^[EJEMPLO POLÍTICO CHILENO: En octubre 2019, el presidente Piñera declaró estado de emergencia. ¿Redujo o aumentó las protestas? Para saberlo causalmente, necesitaríamos observar QUÉ HABRÍA PASADO en el Chile de octubre 2019 SIN estado de emergencia. Pero ese Chile no existe—es contrafactual. Solo observamos lo que pasó CON estado de emergencia. Toda inferencia causal enfrenta este problema fundamental. Los métodos cuantitativos intentan aproximar el contrafactual mediante comparaciones (grupos control, diferencias-en-diferencias, etc.).
-
-Formalizando: Para el caso $i$, definimos:
-
-- $Y_i(1)$: resultado si recibe tratamiento
-- $Y_i(0)$: resultado si no recibe tratamiento
-- **Efecto causal individual**: $\tau_i = Y_i(1) - Y_i(0)$
-
-El problema: observamos $Y_i(1)$ *o* $Y_i(0)$, nunca ambos. Uno siempre es contrafactual.
-
-### Marco de resultados potenciales
-
-@rubin1974 propuso que, aunque no podemos estimar efectos individuales, podemos estimar **efectos causales promedio** bajo ciertas condiciones. El **efecto causal promedio del tratamiento** (ATE) es:
-
-$$ATE = E[Y_i(1) - Y_i(0)] = E[Y_i(1)] - E[Y_i(0)]$$
-
-Pero seguimos sin observar ambos resultados potenciales para cada caso. La solución: usar *grupos*. Comparamos unidades tratadas con unidades no tratadas. La inferencia causal depende de que estos grupos sean **comparables** en expectativa.
-
-### Condiciones para inferencia causal
-
-Para que la comparación entre tratados y no tratados nos informe sobre el efecto causal, necesitamos:
-
-**1. Independencia condicional**
-
-El tratamiento debe asignarse independientemente de los resultados potenciales (condicional en covariables observadas). En experimentos aleatorios, esto se cumple por construcción. En estudios observacionales, debemos argumentarlo o modelarlo.
-
-**2. Exclusión**
-
-El tratamiento debe afectar el resultado solo a través del mecanismo teórico propuesto, no por otras vías.
-
-**3. SUTVA** (Stable Unit Treatment Value Assumption)^[VIOLACIÓN DE SUTVA EN CONTEXTO REAL: Imagina un experimento donde asignamos aleatoriamente a algunas personas recibir mensajes pro-vacunación COVID. Si los tratados convencen a sus familiares (no tratados) de vacunarse, el resultado de los no-tratados DEPENDE del tratamiento de otros. SUTVA se viola. Esto es común en intervenciones sociales con efectos de contagio, difusión o spillover. Violar SUTVA sesga estimaciones de efectos causales, generalmente subestimándolos.
-
-El resultado de cada unidad no debe depender del tratamiento de otras unidades. Si mi vecino vota (tratamiento), mi propia probabilidad de votar (resultado) no debería cambiar. Esta suposición se viola frecuentemente —un problema serio en ciencias sociales.
-
-Estas condiciones raramente se cumplen perfectamente en datos observacionales. Gran parte de la metodología cuantitativa consiste en estrategias para aproximarse a inferencia causal válida cuando las condiciones ideales no se cumplen.
-
-:::
 
 ## Tipos de diseños
 
@@ -91,31 +50,6 @@ En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Est
 - Efectos pueden ser específicos al contexto experimental (baja validez externa)
 - En ciencia política, solo ciertas preguntas son experimentables
 
-::: {.nivel data-nivel="avanzado"}
-
-### Diseños cuasi-experimentales
-
-Los diseños cuasi-experimentales explotan variación *como si* fuera aleatoria, aunque no provenga de asignación experimental.
-
-**Regresión discontinua (RD)**
-
-Cuando el tratamiento se asigna según un umbral en una variable continua, podemos comparar casos justo arriba y debajo del umbral —que son casi idénticos excepto en recepción del tratamiento.
-
-**Ejemplo**: @eggers2015 estudian efectos de ganar una elección sobre riqueza personal de candidatos en UK. Comparan candidatos que ganaron por margen muy estrecho con quienes perdieron por margen muy estrecho. El supuesto: ganar vs. perder por 0.1% de votos es prácticamente aleatorio.
-
-**Diferencias-en-diferencias (DiD)**
-
-Compara cambios antes/después de un tratamiento entre grupo tratado y grupo control. Requiere supuesto de **tendencias paralelas**: sin tratamiento, ambos grupos habrían evolucionado de forma similar.
-
-**Ejemplo**: @melendez2021 estudian efecto de una reforma tributaria en Colombia comparando municipios afectados vs. no afectados, antes y después de la reforma.
-
-**Variables instrumentales (IV)**
-
-Usa una variable (instrumento) que afecta el tratamiento pero no el resultado directamente. Permite estimar efecto causal incluso cuando tratamiento está confundido.
-
-**Ejemplo**: @acemoglu2001 usan mortalidad de colonos europeos en colonias históricas como instrumento para instituciones actuales, argumentando que afecta instituciones pero no desarrollo económico contemporáneo directamente.
-
-:::
 
 ### Diseños observacionales
 

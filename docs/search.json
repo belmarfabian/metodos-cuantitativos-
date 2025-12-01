@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "",
-    "text": "Prefacio\nEste libro fue desarrollado como material del curso Métodos Cuantitativos Introductorios para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. También puede servir como referencia para cursos más avanzados.",
+    "text": "Prefacio\nEste libro fue desarrollado como material del curso Métodos Cuantitativos Introductorios para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.",
     "crumbs": [
       "Prefacio"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#organización-del-libro",
     "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "Organización del libro",
-    "text": "Organización del libro\nEl libro tiene tres niveles:\n\nPrerequisitos (Caps 1-2): Repaso del curso “Introducción a Métodos” que cubre método científico y diseño de investigación.\nContenido MCI (Caps 3-11): Sigue el programa oficial del curso con cinco unidades: Generalidades (medición y datos), Fundamentos Descriptivos (clasificación de datos, tablas y gráficos), Estadística Descriptiva (medidas de tendencia central y dispersión), Inferencia Estadística (probabilidad, muestreo, pruebas de hipótesis), y Análisis Bivariado (comparación de medias, correlación, regresión simple).\nContenido Avanzado (Caps 12-14): Regresión múltiple, diagnóstico OLS y modelos lineales generalizados para cursos posteriores.",
+    "text": "Organización del libro\nEl libro está organizado en cinco unidades:\n\nPrerequisitos (Caps 1-2): Repaso del método científico y diseño de investigación.\nUnidad 1 - Generalidades (Caps 3-4): Medición y trabajo con datos.\nUnidad 2 - Estadística Descriptiva (Caps 5-6): Medidas de resumen y visualización de datos.\nUnidad 3 - Inferencia Estadística (Caps 7-9): Probabilidad, muestreo y pruebas de hipótesis.\nUnidad 4 - Análisis Bivariado (Caps 10-11): Comparación de medias y regresión simple.",
     "crumbs": [
       "Prefacio"
     ]
@@ -153,7 +153,7 @@
     "href": "01-introduccion.html#ejercicios",
     "title": "1  Introducción: El método científico en ciencias sociales",
     "section": "1.9 Ejercicios",
-    "text": "1.9 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nAbbott, A. (1988). Transcending general linear reality. Sociological\nTheory, 6(2), 169–186.\n\n\nAbbott, A. (2001). What do cases do? In Time matters: On theory and\nmethod. University of Chicago Press.\n\n\nAcemoglu, D., Johnson, S., & Robinson, J. A. (2001). The colonial\norigins of comparative development: An empirical investigation.\nAmerican Economic Review, 91(5), 1369–1401. https://doi.org/10.1257/aer.91.5.1369\n\n\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared\nstandard for qualitative and quantitative research. American\nPolitical Science Review, 95(3), 529–546.\n\n\nCampbell, D. T., & Stanley, J. C. (1963). Experimental and\nquasi-experimental designs for research. Rand McNally &\nCompany.\n\n\nCollier, D., & Levitsky, S. (2006). Democracy with adjectives:\nConceptual innovation in comparative research. In G. L. Munck (Ed.),\nRegimes and democracy in latin america: Theories and methods.\nOxford University Press.\n\n\nEggers, A. C., Fowler, A., Hainmueller, J., Hall, A. B., & Snyder,\nJ. M. (2015). On the validity of the regression discontinuity design for\nestimating electoral effects: New evidence from over 40,000 close races.\nAmerican Journal of Political Science, 59(1), 259–274.\n\n\nFlores, T. E., & Nooruddin, I. (2016). Experimentation in the\nsocial sciences. Cambridge University Press.\n\n\nGerber, A. S., & Green, D. P. (2008). Get out the vote: How to\nincrease voter turnout (2nd ed.). Brookings Institution Press.\n\n\nGiddens, A. (1984). The constitution of society: Outline of the\ntheory of structuration. Polity Press.\n\n\nGoertz, G., & Mahoney, J. (2012). A tale of two cultures:\nQualitative and quantitative research in the social sciences.\nPrinceton University Press.\n\n\nGurr, T. R. (1970). Why men rebel. Princeton University Press.\n\n\nHolbrook, A. L., Green, M. C., & Krosnick, J. A. (2003). Telephone\nversus face-to-face interviewing of national probability samples with\nlong questionnaires: Comparisons of respondent satisficing and social\ndesirability response bias. Public Opinion Quarterly,\n67(1), 79–125.\n\n\nHolland, P. W. (1986). Statistics and causal inference. Journal of\nthe American Statistical Association, 81(396), 945–960.\n\n\nIyengar, S., Sood, G., & Lelkes, Y. (2012). Affect, not ideology: A\nsocial identity perspective on polarization. Public Opinion\nQuarterly, 76(3), 405–431.\n\n\nKing, G. (1997). A solution to the ecological inference problem:\nReconstructing individual behavior from aggregate data. American\nJournal of Political Science, 41(4), 1027–1053.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing social\ninquiry: Scientific inference in qualitative research. Princeton\nUniversity Press.\n\n\nKuhn, T. S. (1962). The structure of scientific revolutions.\nUniversity of Chicago Press.\n\n\nLazarsfeld, P. F., & Rosenberg, M. (Eds.). (1955). The language\nof social research: A reader in the methodology of social research.\nFree Press.\n\n\nLijphart, A. (1994). Electoral systems and party systems: A study of\ntwenty-seven democracies, 1945-1990. Oxford University Press.\n\n\nLinz, J. J., & Stepan, A. (1996). Problems of democratic\ntransition and consolidation: Southern europe, south america, and\npost-communist europe. Johns Hopkins University Press.\n\n\nMahoney, J., & Goertz, G. (2006). A tale of two cultures:\nContrasting quantitative and qualitative research. Political\nAnalysis, 14(3), 227–249. https://doi.org/10.1093/pan/mpj017\n\n\nMeléndez, C., & Rovira Kaltwasser, C. (2019). The collapse of\nthe venezuelan party system: Institutionalization, economic crisis, and\nmass behavior. Cambridge University Press.\n\n\nMerton, R. K. (1949). Social theory and social structure. The\nFree Press.\n\n\nMunck, G. L. (2009). Measuring democracy: A bridge between\nscholarship and politics. Johns Hopkins University Press.\n\n\nPopper, K. R. (1959). The logic of scientific discovery.\nRoutledge.\n\n\nPrzeworski, A., Alvarez, M. E., Cheibub, J. A., & Limongi, F.\n(2000). Democracy and development: Political institutions and\nwell-being in the world, 1950-1990. Cambridge University Press.\n\n\nRagin, C. C. (1987). The comparative method: Moving beyond\nqualitative and quantitative strategies. University of California\nPress.\n\n\nRobinson, W. S. (1950). Ecological correlations and the behavior of\nindividuals. American Sociological Review, 15(3),\n351–357.\n\n\nRubin, D. B. (1974). Estimating causal effects of treatments in\nrandomized and nonrandomized studies. Journal of Educational\nPsychology, 66(5), 688–701.\n\n\nSartori, G. (1970). Concept misformation in comparative politics.\nAmerican Political Science Review, 64(4), 1033–1053.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002).\nExperimental and quasi-experimental designs for generalized causal\ninference. Houghton Mifflin.\n\n\nTreier, S., & Jackman, S. (2008). Democracy as a latent variable.\nAmerican Journal of Political Science, 52(1), 201–217.\n\n\nTufte, E. R. (1983). The visual display of quantitative\ninformation. Graphics Press.\n\n\nVerba, S., Schlozman, K. L., & Brady, H. E. (1995). Voice and\nequality: Civic voluntarism in american politics. Harvard\nUniversity Press.\n\n\nWilkinson, L. (2005). The grammar of graphics (2nd ed.).\nSpringer-Verlag.",
+    "text": "1.9 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nAbbott, A. (1988). Transcending general linear reality. Sociological\nTheory, 6(2), 169–186.\n\n\nAbbott, A. (2001). What do cases do? In Time matters: On theory and\nmethod. University of Chicago Press.\n\n\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared\nstandard for qualitative and quantitative research. American\nPolitical Science Review, 95(3), 529–546.\n\n\nCampbell, D. T., & Stanley, J. C. (1963). Experimental and\nquasi-experimental designs for research. Rand McNally &\nCompany.\n\n\nFlores, T. E., & Nooruddin, I. (2016). Experimentation in the\nsocial sciences. Cambridge University Press.\n\n\nGerber, A. S., & Green, D. P. (2008). Get out the vote: How to\nincrease voter turnout (2nd ed.). Brookings Institution Press.\n\n\nGiddens, A. (1984). The constitution of society: Outline of the\ntheory of structuration. Polity Press.\n\n\nGoertz, G., & Mahoney, J. (2012). A tale of two cultures:\nQualitative and quantitative research in the social sciences.\nPrinceton University Press.\n\n\nGurr, T. R. (1970). Why men rebel. Princeton University Press.\n\n\nKing, G. (1997). A solution to the ecological inference problem:\nReconstructing individual behavior from aggregate data. American\nJournal of Political Science, 41(4), 1027–1053.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing social\ninquiry: Scientific inference in qualitative research. Princeton\nUniversity Press.\n\n\nKuhn, T. S. (1962). The structure of scientific revolutions.\nUniversity of Chicago Press.\n\n\nLazarsfeld, P. F., & Rosenberg, M. (Eds.). (1955). The language\nof social research: A reader in the methodology of social research.\nFree Press.\n\n\nLijphart, A. (1994). Electoral systems and party systems: A study of\ntwenty-seven democracies, 1945-1990. Oxford University Press.\n\n\nLinz, J. J., & Stepan, A. (1996). Problems of democratic\ntransition and consolidation: Southern europe, south america, and\npost-communist europe. Johns Hopkins University Press.\n\n\nMahoney, J., & Goertz, G. (2006). A tale of two cultures:\nContrasting quantitative and qualitative research. Political\nAnalysis, 14(3), 227–249. https://doi.org/10.1093/pan/mpj017\n\n\nMerton, R. K. (1949). Social theory and social structure. The\nFree Press.\n\n\nMunck, G. L. (2009). Measuring democracy: A bridge between\nscholarship and politics. Johns Hopkins University Press.\n\n\nPopper, K. R. (1959). The logic of scientific discovery.\nRoutledge.\n\n\nPrzeworski, A., Alvarez, M. E., Cheibub, J. A., & Limongi, F.\n(2000). Democracy and development: Political institutions and\nwell-being in the world, 1950-1990. Cambridge University Press.\n\n\nRagin, C. C. (1987). The comparative method: Moving beyond\nqualitative and quantitative strategies. University of California\nPress.\n\n\nRobinson, W. S. (1950). Ecological correlations and the behavior of\nindividuals. American Sociological Review, 15(3),\n351–357.\n\n\nSartori, G. (1970). Concept misformation in comparative politics.\nAmerican Political Science Review, 64(4), 1033–1053.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002).\nExperimental and quasi-experimental designs for generalized causal\ninference. Houghton Mifflin.\n\n\nTufte, E. R. (1983). The visual display of quantitative\ninformation. Graphics Press.\n\n\nWilkinson, L. (2005). The grammar of graphics (2nd ed.).\nSpringer-Verlag.",
     "crumbs": [
       "I. Prerequisitos",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introducción: El método científico en ciencias sociales</span>"
@@ -219,7 +219,7 @@
     "href": "02-diseno-investigacion.html#causalidad",
     "title": "2  Diseño de investigación",
     "section": "2.4 Causalidad",
-    "text": "2.4 Causalidad\nEl objetivo de mucha investigación cuantitativa es establecer relaciones causales. Queremos saber no solo si X e Y covarían, sino si cambios en X producen cambios en Y.\n\n\n2.4.1 El problema fundamental de inferencia causal\nHolland (1986) formuló el problema fundamental de inferencia causal: nunca observamos el mismo caso bajo tratamiento y control simultáneamente. Si una persona votó en una elección con inscripción automática, nunca sabremos si habría votado sin inscripción automática. Ese resultado contrafactual es fundamentalmente inobservable.^[EJEMPLO POLÍTICO CHILENO: En octubre 2019, el presidente Piñera declaró estado de emergencia. ¿Redujo o aumentó las protestas? Para saberlo causalmente, necesitaríamos observar QUÉ HABRÍA PASADO en el Chile de octubre 2019 SIN estado de emergencia. Pero ese Chile no existe—es contrafactual. Solo observamos lo que pasó CON estado de emergencia. Toda inferencia causal enfrenta este problema fundamental. Los métodos cuantitativos intentan aproximar el contrafactual mediante comparaciones (grupos control, diferencias-en-diferencias, etc.).\nFormalizando: Para el caso \\(i\\), definimos:\n\n\\(Y_i(1)\\): resultado si recibe tratamiento\n\\(Y_i(0)\\): resultado si no recibe tratamiento\nEfecto causal individual: \\(\\tau_i = Y_i(1) - Y_i(0)\\)\n\nEl problema: observamos \\(Y_i(1)\\) o \\(Y_i(0)\\), nunca ambos. Uno siempre es contrafactual.\n\n\n2.4.2 Marco de resultados potenciales\nRubin (1974) propuso que, aunque no podemos estimar efectos individuales, podemos estimar efectos causales promedio bajo ciertas condiciones. El efecto causal promedio del tratamiento (ATE) es:\n\\[ATE = E[Y_i(1) - Y_i(0)] = E[Y_i(1)] - E[Y_i(0)]\\]\nPero seguimos sin observar ambos resultados potenciales para cada caso. La solución: usar grupos. Comparamos unidades tratadas con unidades no tratadas. La inferencia causal depende de que estos grupos sean comparables en expectativa.\n\n\n2.4.3 Condiciones para inferencia causal\nPara que la comparación entre tratados y no tratados nos informe sobre el efecto causal, necesitamos:\n1. Independencia condicional\nEl tratamiento debe asignarse independientemente de los resultados potenciales (condicional en covariables observadas). En experimentos aleatorios, esto se cumple por construcción. En estudios observacionales, debemos argumentarlo o modelarlo.\n2. Exclusión\nEl tratamiento debe afectar el resultado solo a través del mecanismo teórico propuesto, no por otras vías.\n3. SUTVA (Stable Unit Treatment Value Assumption)^[VIOLACIÓN DE SUTVA EN CONTEXTO REAL: Imagina un experimento donde asignamos aleatoriamente a algunas personas recibir mensajes pro-vacunación COVID. Si los tratados convencen a sus familiares (no tratados) de vacunarse, el resultado de los no-tratados DEPENDE del tratamiento de otros. SUTVA se viola. Esto es común en intervenciones sociales con efectos de contagio, difusión o spillover. Violar SUTVA sesga estimaciones de efectos causales, generalmente subestimándolos.\nEl resultado de cada unidad no debe depender del tratamiento de otras unidades. Si mi vecino vota (tratamiento), mi propia probabilidad de votar (resultado) no debería cambiar. Esta suposición se viola frecuentemente —un problema serio en ciencias sociales.\nEstas condiciones raramente se cumplen perfectamente en datos observacionales. Gran parte de la metodología cuantitativa consiste en estrategias para aproximarse a inferencia causal válida cuando las condiciones ideales no se cumplen.",
+    "text": "2.4 Causalidad\nEl objetivo de mucha investigación cuantitativa es establecer relaciones causales. Queremos saber no solo si X e Y covarían, sino si cambios en X producen cambios en Y.",
     "crumbs": [
       "I. Prerequisitos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diseño de investigación</span>"
@@ -230,7 +230,7 @@
     "href": "02-diseno-investigacion.html#tipos-de-diseños",
     "title": "2  Diseño de investigación",
     "section": "2.5 Tipos de diseños",
-    "text": "2.5 Tipos de diseños\nLos diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.\n\n2.5.1 Diseños experimentales\nEn un experimento, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.\nEjemplo: Gerber & Green (2008) realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.\nVentajas: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna\nLimitaciones: - Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países “democracia” vs “dictadura” para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente “corrupción gubernamental” para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.). - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables\n\n\n2.5.2 Diseños cuasi-experimentales\nLos diseños cuasi-experimentales explotan variación como si fuera aleatoria, aunque no provenga de asignación experimental.\nRegresión discontinua (RD)\nCuando el tratamiento se asigna según un umbral en una variable continua, podemos comparar casos justo arriba y debajo del umbral —que son casi idénticos excepto en recepción del tratamiento.\nEjemplo: Eggers et al. (2015) estudian efectos de ganar una elección sobre riqueza personal de candidatos en UK. Comparan candidatos que ganaron por margen muy estrecho con quienes perdieron por margen muy estrecho. El supuesto: ganar vs. perder por 0.1% de votos es prácticamente aleatorio.\nDiferencias-en-diferencias (DiD)\nCompara cambios antes/después de un tratamiento entre grupo tratado y grupo control. Requiere supuesto de tendencias paralelas: sin tratamiento, ambos grupos habrían evolucionado de forma similar.\nEjemplo: Meléndez & Rovira Kaltwasser (2019) estudian efecto de una reforma tributaria en Colombia comparando municipios afectados vs. no afectados, antes y después de la reforma.\nVariables instrumentales (IV)\nUsa una variable (instrumento) que afecta el tratamiento pero no el resultado directamente. Permite estimar efecto causal incluso cuando tratamiento está confundido.\nEjemplo: Acemoglu et al. (2001) usan mortalidad de colonos europeos en colonias históricas como instrumento para instituciones actuales, argumentando que afecta instituciones pero no desarrollo económico contemporáneo directamente.\n\n\n2.5.3 Diseños observacionales\nLa mayoría de investigación en ciencias políticas usa datos observacionales —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.\nEstudios de corte transversal\nObservan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.\nEjemplo: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.\nSeries de tiempo\nObservan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.\nEjemplo: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.\nPanel (longitudinal)\nCombinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando efectos fijos.\nEjemplo: Flores & Nooruddin (2016) usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.\nEstrategias para fortalecer inferencia causal en diseños observacionales:\n\nControles estadísticos: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores observados.\nMatching: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.\nDiseño de investigación robusto: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.\nTriangulación: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).",
+    "text": "2.5 Tipos de diseños\nLos diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.\n\n2.5.1 Diseños experimentales\nEn un experimento, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.\nEjemplo: Gerber & Green (2008) realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.\nVentajas: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna\nLimitaciones: - Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países “democracia” vs “dictadura” para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente “corrupción gubernamental” para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.). - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables\n\n\n2.5.2 Diseños observacionales\nLa mayoría de investigación en ciencias políticas usa datos observacionales —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.\nEstudios de corte transversal\nObservan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.\nEjemplo: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.\nSeries de tiempo\nObservan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.\nEjemplo: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.\nPanel (longitudinal)\nCombinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando efectos fijos.\nEjemplo: Flores & Nooruddin (2016) usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.\nEstrategias para fortalecer inferencia causal en diseños observacionales:\n\nControles estadísticos: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores observados.\nMatching: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.\nDiseño de investigación robusto: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.\nTriangulación: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).",
     "crumbs": [
       "I. Prerequisitos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diseño de investigación</span>"
@@ -285,7 +285,7 @@
     "href": "02-diseno-investigacion.html#ejercicios",
     "title": "2  Diseño de investigación",
     "section": "2.10 Ejercicios",
-    "text": "2.10 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nAcemoglu, D., Johnson, S., & Robinson, J. A. (2001). The Colonial Origins of Comparative Development: An Empirical Investigation. American Economic Review, 91(5), 1369-1401. https://doi.org/10.1257/aer.91.5.1369\n\n\nCampbell, D. T., & Stanley, J. C. (1963). Experimental and Quasi-Experimental Designs for Research. Rand McNally & Company.\n\n\nEggers, A. C., Fowler, A., Hainmueller, J., Hall, A. B., & Snyder, J. M. (2015). On the Validity of the Regression Discontinuity Design for Estimating Electoral Effects: New Evidence from Over 40,000 Close Races. American Journal of Political Science, 59(1), 259-274.\n\n\nFlores, T. E., & Nooruddin, I. (2016). Experimentation in the Social Sciences. Cambridge University Press.\n\n\nGerber, A. S., & Green, D. P. (2008). Get Out the Vote: How to Increase Voter Turnout (2nd ed.). Brookings Institution Press.\n\n\nHolland, P. W. (1986). Statistics and Causal Inference. Journal of the American Statistical Association, 81(396), 945-960.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing Social Inquiry: Scientific Inference in Qualitative Research. Princeton University Press.\n\n\nLijphart, A. (1994). Electoral Systems and Party Systems: A Study of Twenty-Seven Democracies, 1945-1990. Oxford University Press.\n\n\nMeléndez, C., & Rovira Kaltwasser, C. (2019). The Collapse of the Venezuelan Party System: Institutionalization, Economic Crisis, and Mass Behavior. Cambridge University Press.\n\n\nPopper, K. R. (1959). The Logic of Scientific Discovery. Routledge.\n\n\nPrzeworski, A., Alvarez, M. E., Cheibub, J. A., & Limongi, F. (2000). Democracy and Development: Political Institutions and Well-Being in the World, 1950-1990. Cambridge University Press.\n\n\nRobinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. American Sociological Review, 15(3), 351-357.\n\n\nRubin, D. B. (1974). Estimating Causal Effects of Treatments in Randomized and Nonrandomized Studies. Journal of Educational Psychology, 66(5), 688-701.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and Quasi-Experimental Designs for Generalized Causal Inference. Houghton Mifflin.",
+    "text": "2.10 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nCampbell, D. T., & Stanley, J. C. (1963). Experimental and Quasi-Experimental Designs for Research. Rand McNally & Company.\n\n\nFlores, T. E., & Nooruddin, I. (2016). Experimentation in the Social Sciences. Cambridge University Press.\n\n\nGerber, A. S., & Green, D. P. (2008). Get Out the Vote: How to Increase Voter Turnout (2nd ed.). Brookings Institution Press.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing Social Inquiry: Scientific Inference in Qualitative Research. Princeton University Press.\n\n\nLijphart, A. (1994). Electoral Systems and Party Systems: A Study of Twenty-Seven Democracies, 1945-1990. Oxford University Press.\n\n\nPopper, K. R. (1959). The Logic of Scientific Discovery. Routledge.\n\n\nPrzeworski, A., Alvarez, M. E., Cheibub, J. A., & Limongi, F. (2000). Democracy and Development: Political Institutions and Well-Being in the World, 1950-1990. Cambridge University Press.\n\n\nRobinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. American Sociological Review, 15(3), 351-357.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and Quasi-Experimental Designs for Generalized Causal Inference. Houghton Mifflin.",
     "crumbs": [
       "I. Prerequisitos",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diseño de investigación</span>"
@@ -329,7 +329,7 @@
     "href": "03-medicion.html#conceptos-y-definiciones-operacionales",
     "title": "3  Medición: de conceptos a variables",
     "section": "3.3 Conceptos y definiciones operacionales",
-    "text": "3.3 Conceptos y definiciones operacionales\nLa conceptualización especifica qué entendemos por un término; sin ella, la medición carece de fundamento. Sartori (1970) advirtió sobre el “estiramiento conceptual”: usar un concepto en contextos donde no aplica, diluyendo su utilidad analítica. Por ejemplo, ¿qué es “participación política”? Una conceptualización minimalista^[EJEMPLO DE CONSECUENCIAS: Si usas definición minimalista (solo votar), Chile tendría participación “baja” (45-50% en elecciones recientes). Si usas definición expansiva (votar + protestar + activismo comunitario + participar en cabildos), Chile podría tener participación “alta” (recordar que en octubre 2019, millones participaron en protestas, y en 2021-2022 hubo amplia participación en proceso constituyente). ¿Cuál es “correcta”? Depende de tu pregunta de investigación: ¿te interesa legitimidad electoral o movilización social amplia? (acciones dirigidas a influir en la selección de gobernantes como votar y hacer campaña) exige solo datos electorales, mientras una expansiva (cualquier acción dirigida a influir en decisiones colectivas, incluyendo protesta y activismo comunitario) requiere información sobre múltiples formas de acción.\nLa operacionalización traduce el concepto en procedimientos específicos de medición, siendo el puente entre teoría y datos. Adcock & Collier (2001) identifican tres criterios para buena operacionalización: validez de fondo (los indicadores capturan el significado teórico del concepto; si conceptualizamos democracia como “gobierno del pueblo”, un indicador basado solo en elecciones es insuficiente), convergencia (múltiples indicadores del mismo concepto deberían correlacionar positivamente; si medimos “confianza institucional” con preguntas sobre Congreso, Poder Judicial y policía, estas medidas deberían correlacionar aunque imperfectamente), y discriminación (el indicador debe distinguir entre casos que difieren conceptualmente; una medida de democracia que asigna puntajes similares a Noruega y Venezuela tiene poca validez discriminante).\n\n3.3.1 El dilema minimalista-maximalista\nCollier & Levitsky (2006) analizan la tensión entre definiciones minimalistas (pocas dimensiones, alta precisión) y maximalistas (múltiples dimensiones, más comprehensivas pero menos precisas).\nDefiniciones minimalistas: - Ventaja: Mayor acuerdo intersubjetivo sobre casos que califican - Desventaja: Pueden omitir aspectos teóricamente importantes\nDefiniciones maximalistas: - Ventaja: Capturan complejidad conceptual - Desventaja: Dificultan acuerdo sobre clasificaciones; aumentan requisitos de datos\nNo hay solución única. La elección depende del propósito teórico. Para estudiar consecuencias de la democracia, definiciones minimalistas (ej: “elecciones competitivas”) permiten muestras grandes. Para estudiar calidad democrática, definiciones maximalistas (incluyendo rendición de cuentas, estado de derecho, etc.) son necesarias.",
+    "text": "3.3 Conceptos y definiciones operacionales\nLa conceptualización especifica qué entendemos por un término; sin ella, la medición carece de fundamento. Sartori (1970) advirtió sobre el “estiramiento conceptual”: usar un concepto en contextos donde no aplica, diluyendo su utilidad analítica. Por ejemplo, ¿qué es “participación política”? Una conceptualización minimalista^[EJEMPLO DE CONSECUENCIAS: Si usas definición minimalista (solo votar), Chile tendría participación “baja” (45-50% en elecciones recientes). Si usas definición expansiva (votar + protestar + activismo comunitario + participar en cabildos), Chile podría tener participación “alta” (recordar que en octubre 2019, millones participaron en protestas, y en 2021-2022 hubo amplia participación en proceso constituyente). ¿Cuál es “correcta”? Depende de tu pregunta de investigación: ¿te interesa legitimidad electoral o movilización social amplia? (acciones dirigidas a influir en la selección de gobernantes como votar y hacer campaña) exige solo datos electorales, mientras una expansiva (cualquier acción dirigida a influir en decisiones colectivas, incluyendo protesta y activismo comunitario) requiere información sobre múltiples formas de acción.\nLa operacionalización traduce el concepto en procedimientos específicos de medición, siendo el puente entre teoría y datos. Adcock & Collier (2001) identifican tres criterios para buena operacionalización: validez de fondo (los indicadores capturan el significado teórico del concepto; si conceptualizamos democracia como “gobierno del pueblo”, un indicador basado solo en elecciones es insuficiente), convergencia (múltiples indicadores del mismo concepto deberían correlacionar positivamente; si medimos “confianza institucional” con preguntas sobre Congreso, Poder Judicial y policía, estas medidas deberían correlacionar aunque imperfectamente), y discriminación (el indicador debe distinguir entre casos que difieren conceptualmente; una medida de democracia que asigna puntajes similares a Noruega y Venezuela tiene poca validez discriminante).",
     "crumbs": [
       "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
@@ -358,33 +358,11 @@
     ]
   },
   {
-    "objectID": "03-medicion.html#índices-y-escalas",
-    "href": "03-medicion.html#índices-y-escalas",
-    "title": "3  Medición: de conceptos a variables",
-    "section": "3.6 Índices y escalas",
-    "text": "3.6 Índices y escalas\nMuchos conceptos políticos son latentes—no directamente observables—y multidimensionales. Para medirlos, construimos índices o escalas agregando múltiples indicadores.\n\n3.6.1 Índices aditivos simples\nEl método más simple es sumar (o promediar) múltiples indicadores. Ejemplo: índice de participación política sumando si la persona (1) votó, (2) contactó oficial, (3) asistió a protesta, (4) trabajó en campaña. Rango: 0-4.\nVentaja: Simplicidad, transparencia.\nDesventaja: Asume que todos los indicadores tienen igual peso. ¿Votar importa igual que protestar?\n\n\n3.6.2 Escalas ponderadas\nPara reflejar importancia diferencial, podemos ponderar indicadores. Ejemplo: índice de democracia que pondera elecciones competitivas (peso 0.4), libertades civiles (0.3), rendición de cuentas (0.3).\nVentaja: Refleja teoría sobre importancia relativa.\nDesventaja: La elección de pesos es subjetiva y afecta resultados.\n\n\n3.6.3 Análisis factorial\nEl análisis factorial identifica dimensiones latentes subyacentes a múltiples indicadores observados. Si preguntamos a ciudadanos sobre confianza en Congreso, Ejecutivo, Judicial y policía, el análisis factorial puede revelar una dimensión latente de “confianza institucional general”.\nVentaja: Los pesos son determinados empíricamente por la estructura de covariación en los datos.\nDesventaja: Es ateórico—descubre dimensiones en los datos sin garantizar que correspondan a conceptos teóricos. Además, requiere supuestos fuertes sobre estructura de los datos.\n\n\n3.6.4 Escalas Likert\nLas escalas Likert son ubicuas en encuestas. Presentan afirmaciones y solicitan grado de acuerdo (ej: 1=muy en desacuerdo, 5=muy de acuerdo).\nConsideraciones al construir escalas Likert:\n1. Número de opciones: Escalas impares (5, 7 puntos) permiten respuesta neutral; escalas pares (4, 6) fuerzan elección. No hay consenso sobre qué es mejor.\n2. Direccionalidad: ¿Todas las preguntas van en la misma dirección o algunas están invertidas? Invertir algunas previene “aquiescencia” (tendencia a estar de acuerdo), pero puede confundir a respondentes.\n3. Agregación: Promediar múltiples ítems Likert crea un índice. Pero ítems deben medir el mismo constructo latente—verificable con alfa de Cronbach.\n\n\n3.6.5 Índices disponibles en ciencias políticas\nMuchos conceptos tienen índices estandarizados:\n\nDemocracia: Polity IV, Freedom House, V-Dem, BTI\nCorrupción: Transparency International CPI, Banco Mundial Control of Corruption\nCapacidad estatal: Fragile States Index, ICRG\nPolarización afectiva: Termómetros de sentimiento\nIdeología: Manifesto Project, DW-NOMINATE (para legisladores)\n\nUsar índices establecidos tiene ventajas (comparabilidad entre estudios) y desventajas (conceptualizaciones impuestas, decisiones de medición opacas). La decisión de usar índices existentes versus crear propios depende del propósito de investigación.",
-    "crumbs": [
-      "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
-    ]
-  },
-  {
     "objectID": "03-medicion.html#problemas-comunes-de-medición",
     "href": "03-medicion.html#problemas-comunes-de-medición",
     "title": "3  Medición: de conceptos a variables",
-    "section": "3.7 Problemas comunes de medición",
-    "text": "3.7 Problemas comunes de medición\nLa medición en ciencias sociales enfrenta problemas sistemáticos que amenazan validez e inferencia.\n\n3.7.1 Sesgo de deseabilidad social\nLos encuestados pueden responder lo que perciben como socialmente aceptable en lugar de sus verdaderas actitudes. Esto es particularmente problemático para temas sensibles: racismo, corrupción personal, comportamiento antisocial.\n\nEstrategias de mitigación:\n\nTécnicas de lista: Preguntar por comportamiento de otros, no del respondente\nPreguntas indirectas: Inferir actitudes de respuestas a escenarios hipotéticos\nEndorsement experiments: Evaluar apoyo a políticas variando quién las propone\n\n\n\n\n3.7.2 Sesgo de aquiescencia\nTendencia a estar de acuerdo con afirmaciones independientemente de su contenido. Particularmente problemático en culturas donde contradecir es descortés.\nMitigación: Incluir ítems con dirección invertida.\n\n\n3.7.3 No-respuesta diferencial\nCuando quienes no responden difieren sistemáticamente de quienes responden, las estimaciones se sesgan. Si en una encuesta sobre confianza institucional, los más desconfiados no responden, sobrestimamos confianza.\n\nMitigación: Ponderadores de no-respuesta, análisis de sensibilidad.\n\n3.7.4 Efecto del modo de encuesta\nLas respuestas pueden variar según cómo se administra la encuesta (cara a cara, telefónica, internet, autoaplicada). Holbrook et al. (2003) muestran que encuestas cara a cara generan más deseabilidad social que encuestas por internet.\n\n\n3.7.5 Errores de medición aleatorios vs. sistemáticos\nLos errores aleatorios reducen confiabilidad pero no sesgan estimaciones (en promedio se cancelan). Los errores sistemáticos sesgan estimaciones consistentemente en una dirección, amenazando validez.\nEjemplo: Si los termómetros para medir temperatura están mal calibrados y todos miden 2°C por encima del valor real, tenemos error sistemático. Si algunos miden ligeramente arriba y otros ligeramente abajo aleatoriamente, tenemos error aleatorio.\nTreier & Jackman (2008) muestran que índices de democracia contienen error de medición sustancial. Ignorar este error produce inferencias sesgadas sobre efectos de la democracia.",
-    "crumbs": [
-      "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
-      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
-    ]
-  },
-  {
-    "objectID": "03-medicion.html#medición-de-conceptos-específicos-en-ciencias-políticas",
-    "href": "03-medicion.html#medición-de-conceptos-específicos-en-ciencias-políticas",
-    "title": "3  Medición: de conceptos a variables",
-    "section": "3.8 Medición de conceptos específicos en ciencias políticas",
-    "text": "3.8 Medición de conceptos específicos en ciencias políticas\n\n3.8.1 Medir ideología\nLa ideología es multidimensional (económica, social, etc.) y contextual. Estrategias:\n1. Autoubicación: Preguntar a personas dónde se ubican en escala izquierda-derecha. Simple pero problemático: el significado de “izquierda” varía entre países y períodos.\n2. Baterías de ítems: Preguntas sobre posiciones en políticas específicas, agregadas en escala. Más válido pero requiere múltiples preguntas.\n3. Scaling de legisladores: Inferir ideología de comportamiento de voto. DW-NOMINATE usa votaciones nominales para ubicar legisladores en espacio ideológico.\n\n\n3.8.2 Medir polarización\nPolarización tiene múltiples dimensiones: ideológica, afectiva, por élites vs. masas.\nIyengar et al. (2012) distinguen polarización ideológica (distancia en posiciones políticas) de polarización afectiva (sentimientos negativos hacia out-group partidario).\nMediciones comunes:\n\nDistancia media entre posiciones ideológicas de grupos\nTermómetros de sentimiento hacia partidos opuestos\nDispersión de opiniones en la población\nDiferencia entre posiciones de líderes partidarios\n\nLa elección depende del concepto teórico específico de polarización que se investiga.\n\n\n3.8.3 Medir participación política\nVerba et al. (1995) distinguen modos de participación: electoral, activismo de campaña, contacto con oficiales, protesta, activismo comunitario.\nProblema: Estos modos no correlacionan fuertemente. Quien vota no necesariamente protesta. ¿Son expresiones de un constructo latente de “participación” o fenómenos distintos? La respuesta afecta cómo medimos.\nSolución pragmática: Medir modos por separado cuando las teorías predicen efectos diferenciados.",
+    "section": "3.6 Problemas comunes de medición",
+    "text": "3.6 Problemas comunes de medición\nLa medición en ciencias sociales enfrenta problemas sistemáticos que amenazan validez e inferencia.\n\n3.6.1 Sesgo de deseabilidad social\nLos encuestados pueden responder lo que perciben como socialmente aceptable en lugar de sus verdaderas actitudes. Esto es particularmente problemático para temas sensibles: racismo, corrupción personal, comportamiento antisocial.\n\n\n3.6.2 Sesgo de aquiescencia\nTendencia a estar de acuerdo con afirmaciones independientemente de su contenido. Particularmente problemático en culturas donde contradecir es descortés.\nMitigación: Incluir ítems con dirección invertida.\n\n\n3.6.3 No-respuesta diferencial\nCuando quienes no responden difieren sistemáticamente de quienes responden, las estimaciones se sesgan. Si en una encuesta sobre confianza institucional, los más desconfiados no responden, sobrestimamos confianza.",
     "crumbs": [
       "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
@@ -394,8 +372,8 @@
     "objectID": "03-medicion.html#resumen-del-capítulo",
     "href": "03-medicion.html#resumen-del-capítulo",
     "title": "3  Medición: de conceptos a variables",
-    "section": "3.9 Resumen del capítulo",
-    "text": "3.9 Resumen del capítulo\nLa medición traduce conceptos abstractos en indicadores empíricos. Este proceso involucra conceptualización (definir el concepto) y operacionalización (especificar procedimientos de medición). Cada paso implica decisiones que afectan qué capturamos.\nLas variables tienen niveles de medición (nominal, ordinal, intervalo, razón) que determinan qué operaciones estadísticas son apropiadas. Confundir niveles produce resultados sin sentido.\nBuenas mediciones son válidas (capturan el concepto teórico) y confiables (consistentes). Es posible tener una sin la otra, pero idealmente queremos ambas.\nLos conceptos latentes y multidimensionales requieren índices o escalas. Estos pueden construirse mediante agregación simple, ponderación, o análisis factorial. Los índices existentes en ciencias políticas ofrecen comparabilidad pero imponen conceptualizaciones.\nLa medición enfrenta problemas sistemáticos: sesgos de deseabilidad social y aquiescencia, no-respuesta diferencial, efectos de modo de encuesta, y errores de medición aleatorios o sistemáticos. Reconocer y, cuando es posible, mitigar estos problemas es responsabilidad del investigador.",
+    "section": "3.7 Resumen del capítulo",
+    "text": "3.7 Resumen del capítulo\nLa medición traduce conceptos abstractos en indicadores empíricos. Este proceso involucra conceptualización (definir el concepto) y operacionalización (especificar procedimientos de medición). Cada paso implica decisiones que afectan qué capturamos.\nLas variables tienen niveles de medición (nominal, ordinal, intervalo, razón) que determinan qué operaciones estadísticas son apropiadas. Confundir niveles produce resultados sin sentido.\nBuenas mediciones son válidas (capturan el concepto teórico) y confiables (consistentes). Es posible tener una sin la otra, pero idealmente queremos ambas.\nLos conceptos latentes y multidimensionales requieren índices o escalas. Estos pueden construirse mediante agregación simple, ponderación, o análisis factorial. Los índices existentes en ciencias políticas ofrecen comparabilidad pero imponen conceptualizaciones.\nLa medición enfrenta problemas sistemáticos: sesgos de deseabilidad social y aquiescencia, no-respuesta diferencial, efectos de modo de encuesta, y errores de medición aleatorios o sistemáticos. Reconocer y, cuando es posible, mitigar estos problemas es responsabilidad del investigador.",
     "crumbs": [
       "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
@@ -405,8 +383,8 @@
     "objectID": "03-medicion.html#lecturas-recomendadas",
     "href": "03-medicion.html#lecturas-recomendadas",
     "title": "3  Medición: de conceptos a variables",
-    "section": "3.10 Lecturas recomendadas",
-    "text": "3.10 Lecturas recomendadas\nFundamentos conceptuales de medición:\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. American Political Science Review, 95(3), 529-546.\n→ Artículo seminal sobre niveles de medición y validez.\nConstrucción de escalas e índices:\nDeVellis, R. F. (2017). Scale Development: Theory and Applications (4th ed.). SAGE.\n→ Guía práctica para desarrollar escalas de medición confiables y válidas.\nMedición en encuestas:\nGroves, R. M., et al. (2009). Survey Methodology (2nd ed.). Wiley.\n→ Tratamiento comprehensivo de todos los aspectos de medición mediante encuestas.\nProblemas de medición en ciencias políticas:\nTreier, S., & Jackman, S. (2008). Democracy as a latent variable. American Journal of Political Science, 52(1), 201-217.\n→ Análisis del error de medición en índices de democracia y sus consecuencias.\nSobre conceptualización:\nGoertz, G. (2006). Social Science Concepts: A User’s Guide. Princeton University Press.\n→ Discusión profunda sobre formación y uso de conceptos en ciencias sociales.",
+    "section": "3.8 Lecturas recomendadas",
+    "text": "3.8 Lecturas recomendadas\nFundamentos conceptuales de medición:\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. American Political Science Review, 95(3), 529-546.\n→ Artículo seminal sobre niveles de medición y validez.\nConstrucción de escalas e índices:\nDeVellis, R. F. (2017). Scale Development: Theory and Applications (4th ed.). SAGE.\n→ Guía práctica para desarrollar escalas de medición confiables y válidas.\nMedición en encuestas:\nGroves, R. M., et al. (2009). Survey Methodology (2nd ed.). Wiley.\n→ Tratamiento comprehensivo de todos los aspectos de medición mediante encuestas.\nProblemas de medición en ciencias políticas:\nTreier, S., & Jackman, S. (2008). Democracy as a latent variable. American Journal of Political Science, 52(1), 201-217.\n→ Análisis del error de medición en índices de democracia y sus consecuencias.\nSobre conceptualización:\nGoertz, G. (2006). Social Science Concepts: A User’s Guide. Princeton University Press.\n→ Discusión profunda sobre formación y uso de conceptos en ciencias sociales.",
     "crumbs": [
       "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
@@ -416,8 +394,8 @@
     "objectID": "03-medicion.html#ejercicios",
     "href": "03-medicion.html#ejercicios",
     "title": "3  Medición: de conceptos a variables",
-    "section": "3.11 Ejercicios",
-    "text": "3.11 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. American Political Science Review, 95(3), 529-546.\n\n\nCollier, D., & Levitsky, S. (2006). Democracy with Adjectives: Conceptual Innovation in Comparative Research. En G. L. Munck (Ed.), Regimes and Democracy in Latin America: Theories and Methods. Oxford University Press.\n\n\nHolbrook, A. L., Green, M. C., & Krosnick, J. A. (2003). Telephone versus Face-to-Face Interviewing of National Probability Samples with Long Questionnaires: Comparisons of Respondent Satisficing and Social Desirability Response Bias. Public Opinion Quarterly, 67(1), 79-125.\n\n\nIyengar, S., Sood, G., & Lelkes, Y. (2012). Affect, Not Ideology: A Social Identity Perspective on Polarization. Public Opinion Quarterly, 76(3), 405-431.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing Social Inquiry: Scientific Inference in Qualitative Research. Princeton University Press.\n\n\nSartori, G. (1970). Concept Misformation in Comparative Politics. American Political Science Review, 64(4), 1033-1053.\n\n\nTreier, S., & Jackman, S. (2008). Democracy as a Latent Variable. American Journal of Political Science, 52(1), 201-217.\n\n\nVerba, S., Schlozman, K. L., & Brady, H. E. (1995). Voice and Equality: Civic Voluntarism in American Politics. Harvard University Press.",
+    "section": "3.9 Ejercicios",
+    "text": "3.9 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.\n\n\nAdcock, R., & Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. American Political Science Review, 95(3), 529-546.\n\n\nKing, G., Keohane, R. O., & Verba, S. (1994). Designing Social Inquiry: Scientific Inference in Qualitative Research. Princeton University Press.\n\n\nSartori, G. (1970). Concept Misformation in Comparative Politics. American Political Science Review, 64(4), 1033-1053.",
     "crumbs": [
       "II. Unidad 1: Generalidades de la Investigación Cuantitativa",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Medición: de conceptos a variables</span>"
@@ -637,7 +615,7 @@
     "href": "05-estadistica-descriptiva.html#forma-de-la-distribución",
     "title": "5  Estadística descriptiva",
     "section": "5.6 Forma de la distribución",
-    "text": "5.6 Forma de la distribución\n\n5.6.1 Asimetría (skewness)\nLa asimetría mide si la distribución se inclina hacia un lado:\n\nAsimetría positiva (derecha): Cola larga hacia la derecha. Media &gt; Mediana.\nAsimetría negativa (izquierda): Cola larga hacia la izquierda. Media &lt; Mediana.\nSimétrica: Colas balanceadas. Media ≈ Mediana.\n\n\nCoeficiente de asimetría:\n\n# Coeficiente de asimetría (requiere paquete moments o e1071)\nlibrary(e1071)\nskewness(comunas$participacion)\n\n[1] -0.03970368\n\n\n\n\\(\\text{Skewness} \\approx 0\\): Simétrica\n\\(\\text{Skewness} &gt; 0\\): Asimétrica a la derecha\n\\(\\text{Skewness} &lt; 0\\): Asimétrica a la izquierda\n\n\nset.seed(111)\n# Asimétrica derecha\nder &lt;- rgamma(1000, shape = 2, rate = 1)\n# Simétrica\nsim &lt;- rnorm(1000, mean = 5, sd = 2)\n# Asimétrica izquierda\nizq &lt;- 10 - rgamma(1000, shape = 2, rate = 1)\n\ndatos_asimetria &lt;- data.frame(\n  valor = c(der, sim, izq),\n  tipo = rep(c(\"Asimétrica derecha\", \"Simétrica\", \"Asimétrica izquierda\"),\n             each = 1000)\n)\n\nggplot(datos_asimetria, aes(x = valor, fill = tipo)) +\n  geom_density(alpha = 0.6) +\n  facet_wrap(~tipo, scales = \"free\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\nDistribuciones con diferente asimetría\n\n\n\n\n\n5.6.2 Curtosis (kurtosis)\nLa curtosis mide si la distribución tiene colas pesadas o ligeras respecto a la normal:\n\nkurtosis(comunas$participacion)\n\n[1] 0.04203359\n\n\n\nLeptocúrtica (curtosis &gt; 3): Colas pesadas, más outliers\nMesocúrtica (curtosis ≈ 3): Similar a distribución normal\nPlaticúrtica (curtosis &lt; 3): Colas ligeras, pocos outliers\n\nEn práctica, la asimetría importa más que la curtosis para análisis aplicado.",
+    "text": "5.6 Forma de la distribución\n\n5.6.1 Asimetría (skewness)\nLa asimetría mide si la distribución se inclina hacia un lado:\n\nAsimetría positiva (derecha): Cola larga hacia la derecha. Media &gt; Mediana.\nAsimetría negativa (izquierda): Cola larga hacia la izquierda. Media &lt; Mediana.\nSimétrica: Colas balanceadas. Media ≈ Mediana.",
     "crumbs": [
       "III. Unidad 2: Fundamentos de Estadística Descriptiva",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Estadística descriptiva</span>"
@@ -659,7 +637,7 @@
     "href": "05-estadistica-descriptiva.html#detección-de-valores-atípicos",
     "title": "5  Estadística descriptiva",
     "section": "5.8 Detección de valores atípicos",
-    "text": "5.8 Detección de valores atípicos\nLos outliers son observaciones inusualmente extremas. Pueden ser errores de medición o casos genuinamente inusuales.\n\n5.8.1 Método IQR\nCriterio estándar: outliers están más allá de \\(Q1 - 1.5 \\times IQR\\) o \\(Q3 + 1.5 \\times IQR\\):\n\nQ1 &lt;- quantile(comunas$participacion, 0.25)\nQ3 &lt;- quantile(comunas$participacion, 0.75)\nIQR_val &lt;- IQR(comunas$participacion)\n\nlimite_inferior &lt;- Q1 - 1.5 * IQR_val\nlimite_superior &lt;- Q3 + 1.5 * IQR_val\n\n# Identificar outliers\noutliers &lt;- comunas %&gt;%\n  filter(participacion &lt; limite_inferior | participacion &gt; limite_superior)\n\nnrow(outliers)\n\n[1] 4\n\n\nHay 4 comunas con participación atípica.\n\n# Ver outliers\noutliers %&gt;%\n  select(comuna, participacion) %&gt;%\n  arrange(participacion) %&gt;%\n  head(10) %&gt;%\n  kable(digits = 1)\n\n\n\n\ncomuna\nparticipacion\n\n\n\n\nComuna 59\n23.1\n\n\nComuna 269\n25.4\n\n\nComuna 18\n25.7\n\n\nComuna 118\n68.6\n\n\n\n\n\n\n\n\n5.8.2 Método de puntuaciones z\nUn z-score mide cuántas desviaciones estándar se aleja una observación de la media:\n\\[z_i = \\frac{x_i - \\bar{x}}{s}\\]\n\ncomunas &lt;- comunas %&gt;%\n  mutate(z_participacion = (participacion - mean(participacion)) / sd(participacion))\n\n# Outliers: |z| &gt; 3 (criterio común)\noutliers_z &lt;- comunas %&gt;%\n  filter(abs(z_participacion) &gt; 3)\n\nnrow(outliers_z)\n\n[1] 1\n\n\nCon criterio \\(|z| &gt; 3\\), identificamos 1 outliers.\n\n\n5.8.3 Visualización de outliers\n\nggplot(comunas, aes(x = \"\", y = participacion)) +\n  geom_boxplot(outlier.color = \"red\", outlier.size = 3) +\n  geom_hline(yintercept = c(limite_inferior, limite_superior),\n             linetype = \"dashed\", color = \"red\", alpha = 0.5) +\n  labs(y = \"Participación electoral (%)\",\n       title = \"Outliers en participación electoral\") +\n  theme_minimal() +\n  theme(axis.text.x = element_blank(),\n        axis.title.x = element_blank())\n\n\n\n\nIdentificación visual de outliers\n\n\n\n\n¿Qué hacer con outliers?\n\nInvestigar: ¿Es error de datos o caso real extremo?\nNunca eliminar automáticamente: Outliers pueden ser teóricamente importantes\nAnálisis de sensibilidad: Repetir análisis con y sin outliers\nTransformaciones: Log, raíz cuadrada pueden reducir influencia de extremos\nMétodos robustos: Usar mediana en lugar de media, regresión robusta",
+    "text": "5.8 Detección de valores atípicos\nLos outliers son observaciones inusualmente extremas. Pueden ser errores de medición o casos genuinamente inusuales.\n\n5.8.1 Método IQR\nCriterio estándar: outliers están más allá de \\(Q1 - 1.5 \\times IQR\\) o \\(Q3 + 1.5 \\times IQR\\):\n\nQ1 &lt;- quantile(comunas$participacion, 0.25)\nQ3 &lt;- quantile(comunas$participacion, 0.75)\nIQR_val &lt;- IQR(comunas$participacion)\n\nlimite_inferior &lt;- Q1 - 1.5 * IQR_val\nlimite_superior &lt;- Q3 + 1.5 * IQR_val\n\n# Identificar outliers\noutliers &lt;- comunas %&gt;%\n  filter(participacion &lt; limite_inferior | participacion &gt; limite_superior)\n\nnrow(outliers)\n\n[1] 4\n\n\nHay 4 comunas con participación atípica.\n\n# Ver outliers\noutliers %&gt;%\n  select(comuna, participacion) %&gt;%\n  arrange(participacion) %&gt;%\n  head(10) %&gt;%\n  kable(digits = 1)\n\n\n\n\ncomuna\nparticipacion\n\n\n\n\nComuna 59\n23.1\n\n\nComuna 269\n25.4\n\n\nComuna 18\n25.7\n\n\nComuna 118\n68.6",
     "crumbs": [
       "III. Unidad 2: Fundamentos de Estadística Descriptiva",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Estadística descriptiva</span>"
@@ -956,7 +934,7 @@
     "href": "07-probabilidad.html#distribuciones-de-probabilidad-comunes",
     "title": "7  Introducción a probabilidad",
     "section": "7.5 Distribuciones de probabilidad comunes",
-    "text": "7.5 Distribuciones de probabilidad comunes\n\n7.5.1 Distribución Normal (Gaussiana)\nLa distribución más importante en estadística inferencial. Una variable \\(X\\) sigue una distribución Normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\):\n\\[X \\sim N(\\mu, \\sigma^2)\\]\nPropiedades:\n\nSimétrica alrededor de \\(\\mu\\)\nForma de campana\n68% de observaciones dentro de \\(\\mu \\pm 1\\sigma\\)\n95% dentro de \\(\\mu \\pm 1.96\\sigma\\)\n99.7% dentro de \\(\\mu \\pm 3\\sigma\\)\n\n\n\n\n\n\nDistribución Normal estándar con regla 68-95-99.7\n\n\n\n\nLas alturas de hombres adultos chilenos se distribuyen aproximadamente \\(N(170, 7^2)\\) cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?\n\n# ¿Qué proporción de hombres mide más de 180 cm?\n1 - pnorm(180, mean = 170, sd = 7)\n\n[1] 0.07656373\n\n# ¿Qué proporción mide entre 165 y 175 cm?\npnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)\n\n[1] 0.5249495\n\n\n\n\n7.5.2 Distribución Binomial\nModela el número de “éxitos” en \\(n\\) ensayos independientes, cada uno con probabilidad \\(p\\) de éxito:\n\\[X \\sim \\text{Binomial}(n, p)\\]\n\n\\(E(X) = np\\)\n\\(\\text{Var}(X) = np(1-p)\\)\n\nPor ejemplo, si encuestamos \\(n=1000\\) votantes y la verdadera proporción que apoya un candidato es \\(p=0.40\\), el número de encuestados que declaran apoyo sigue \\(X \\sim \\text{Binomial}(1000, 0.40)\\):\n\n# Probabilidad de observar exactamente 400 apoyos\ndbinom(400, size = 1000, prob = 0.40)\n\n[1] 0.02574482\n\n# Probabilidad de observar entre 380 y 420 apoyos\nsum(dbinom(380:420, size = 1000, prob = 0.40))\n\n[1] 0.814288\n\n# Valor esperado y desviación estándar\nn &lt;- 1000; p &lt;- 0.40\nc(media = n*p, sd = sqrt(n*p*(1-p)))\n\n    media        sd \n400.00000  15.49193 \n\n\n\n\n\n\n\nDistribución Binomial: Número de votantes que apoyan candidato (n=1000, p=0.40)\n\n\n\n\n\n\n7.5.3 Distribución de Poisson\nModela el número de eventos en un intervalo fijo de tiempo o espacio, cuando estos eventos ocurren a una tasa promedio constante \\(\\lambda\\):\n\\[X \\sim \\text{Poisson}(\\lambda)\\]\n\n\\(E(X) = \\lambda\\)\n\\(\\text{Var}(X) = \\lambda\\)\n\nPor ejemplo, si históricamente ocurren en promedio \\(\\lambda = 3.2\\) protestas por mes en una ciudad, podemos calcular probabilidades sobre el número de protestas en el próximo mes:\n\n# Probabilidad de exactamente 5 protestas este mes\ndpois(5, lambda = 3.2)\n\n[1] 0.1139794\n\n# Probabilidad de 0 protestas\ndpois(0, lambda = 3.2)\n\n[1] 0.0407622\n\n# Probabilidad de más de 6 protestas\n1 - ppois(6, lambda = 3.2)\n\n[1] 0.0446191",
+    "text": "7.5 Distribuciones de probabilidad comunes\n\n7.5.1 Distribución Normal (Gaussiana)\nLa distribución más importante en estadística inferencial. Una variable \\(X\\) sigue una distribución Normal con media \\(\\mu\\) y varianza \\(\\sigma^2\\):\n\\[X \\sim N(\\mu, \\sigma^2)\\]\nPropiedades:\n\nSimétrica alrededor de \\(\\mu\\)\nForma de campana\n68% de observaciones dentro de \\(\\mu \\pm 1\\sigma\\)\n95% dentro de \\(\\mu \\pm 1.96\\sigma\\)\n99.7% dentro de \\(\\mu \\pm 3\\sigma\\)\n\n\n\n\n\n\nDistribución Normal estándar con regla 68-95-99.7\n\n\n\n\nLas alturas de hombres adultos chilenos se distribuyen aproximadamente \\(N(170, 7^2)\\) cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?\n\n# ¿Qué proporción de hombres mide más de 180 cm?\n1 - pnorm(180, mean = 170, sd = 7)\n\n[1] 0.07656373\n\n# ¿Qué proporción mide entre 165 y 175 cm?\npnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)\n\n[1] 0.5249495\n\n\n\n\n7.5.2 Distribución Binomial\nModela el número de “éxitos” en \\(n\\) ensayos independientes, cada uno con probabilidad \\(p\\) de éxito:\n\\[X \\sim \\text{Binomial}(n, p)\\]\n\n\\(E(X) = np\\)\n\\(\\text{Var}(X) = np(1-p)\\)\n\nPor ejemplo, si encuestamos \\(n=1000\\) votantes y la verdadera proporción que apoya un candidato es \\(p=0.40\\), el número de encuestados que declaran apoyo sigue \\(X \\sim \\text{Binomial}(1000, 0.40)\\):\n\n# Probabilidad de observar exactamente 400 apoyos\ndbinom(400, size = 1000, prob = 0.40)\n\n[1] 0.02574482\n\n# Probabilidad de observar entre 380 y 420 apoyos\nsum(dbinom(380:420, size = 1000, prob = 0.40))\n\n[1] 0.814288\n\n# Valor esperado y desviación estándar\nn &lt;- 1000; p &lt;- 0.40\nc(media = n*p, sd = sqrt(n*p*(1-p)))\n\n    media        sd \n400.00000  15.49193 \n\n\n\n\n\n\n\nDistribución Binomial: Número de votantes que apoyan candidato (n=1000, p=0.40)",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Introducción a probabilidad</span>"
@@ -1088,18 +1066,7 @@
     "href": "08-inferencia.html#intervalos-de-confianza",
     "title": "8  Inferencia estadística",
     "section": "8.6 Intervalos de confianza",
-    "text": "8.6 Intervalos de confianza\nUn intervalo de confianza (IC) es un rango de valores plausibles para el parámetro poblacional, construido de tal manera que, si repitiéramos el muestreo infinitas veces, el IC contendría el valor verdadero en (por ejemplo) 95% de las muestras.\n\n8.6.1 Intervalo de confianza para la media\nFórmula general:\n\\[\\text{IC}_{95\\%} = \\bar{x} \\pm t_{n-1, 0.975} \\cdot \\frac{s}{\\sqrt{n}}\\]\ndonde \\(t_{n-1, 0.975}\\) es el valor crítico de la distribución \\(t\\) con \\(n-1\\) grados de libertad.\nCuando \\(n\\) es grande (\\(n \\geq 30\\)), \\(t \\approx 1.96\\), así que:\n\\[\\text{IC}_{95\\%} \\approx \\bar{x} \\pm 1.96 \\cdot \\text{SE}(\\bar{x})\\]\nLa interpretación correcta de un IC 95% es: “Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de \\(\\mu\\).” NO significa “Hay 95% de probabilidad de que \\(\\mu\\) esté en este intervalo específico.” (La diferencia es sutil pero importante: \\(\\mu\\) es fijo; el intervalo es lo que varía entre muestras.)\nPor ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:\n\n# Datos de ingresos (retomando ejemplo anterior)\nset.seed(789)\ningresos &lt;- rlnorm(200, meanlog = log(550), sdlog = 0.65)\n\nn &lt;- length(ingresos)\nmedia &lt;- mean(ingresos)\ns &lt;- sd(ingresos)\nse &lt;- s / sqrt(n)\n\n# Valor crítico t para 95% de confianza\nt_crit &lt;- qt(0.975, df = n - 1)\n\n# Intervalo de confianza\nic_inferior &lt;- media - t_crit * se\nic_superior &lt;- media + t_crit * se\n\ncat(\"Ingreso promedio mensual (n =\", n, \"hogares):\\n\")\n\nIngreso promedio mensual (n = 200 hogares):\n\ncat(\"Media muestral: $\", round(media, 0), \" mil\\n\", sep = \"\")\n\nMedia muestral: $653 mil\n\ncat(\"IC 95%: [$\", round(ic_inferior, 0), \", $\",\n    round(ic_superior, 0), \"] mil\\n\\n\", sep = \"\")\n\nIC 95%: [$588, $719] mil\n\ncat(\"Interpretación: Estamos 95% confiados de que el ingreso promedio\\n\")\n\nInterpretación: Estamos 95% confiados de que el ingreso promedio\n\ncat(\"poblacional está entre $\", round(ic_inferior, 0), \" y $\",\n    round(ic_superior, 0), \" mil.\\n\", sep = \"\")\n\npoblacional está entre $588 y $719 mil.\n\n\n\n\n8.6.2 Intervalo de confianza para la proporción\n\\[\\text{IC}_{95\\%} = \\hat{p} \\pm 1.96 \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n(Válido cuando \\(n\\hat{p} \\geq 10\\) y \\(n(1-\\hat{p}) \\geq 10\\))\nPor ejemplo, para una encuesta de intención de voto:\n\n# Encuesta: ¿Votará en próximas elecciones?\nn &lt;- 1500\nvotaran &lt;- 780\np_hat &lt;- votaran / n\nse_p &lt;- sqrt(p_hat * (1 - p_hat) / n)\n\n# IC 95%\nic_inf &lt;- p_hat - 1.96 * se_p\nic_sup &lt;- p_hat + 1.96 * se_p\n\ncat(\"Encuesta (n =\", n, \"):\\n\")\n\nEncuesta (n = 1500 ):\n\ncat(\"Declaran que votarán:\", votaran, \"personas (\", round(p_hat * 100, 1), \"%)\\n\", sep = \"\")\n\nDeclaran que votarán:780personas (52%)\n\ncat(\"IC 95%: [\", round(ic_inf * 100, 1), \"%, \",\n    round(ic_sup * 100, 1), \"%]\\n\\n\", sep = \"\")\n\nIC 95%: [49.5%, 54.5%]\n\ncat(\"Interpretación: El verdadero porcentaje de personas que votarán\\n\")\n\nInterpretación: El verdadero porcentaje de personas que votarán\n\ncat(\"está probablemente entre\", round(ic_inf * 100, 1), \"% y\",\n    round(ic_sup * 100, 1), \"%.\\n\")\n\nestá probablemente entre 49.5 % y 54.5 %.\n\n\n\n\n8.6.3 Niveles de confianza alternativos\nNo estamos limitados a 95%. Podemos construir ICs con cualquier nivel de confianza:\n\n\n\nNivel de Confianza\nValor Crítico \\(z\\)\nIntervalo\n\n\n\n\n90%\n1.645\n\\(\\bar{x} \\pm 1.645 \\cdot \\text{SE}\\)\n\n\n95%\n1.960\n\\(\\bar{x} \\pm 1.960 \\cdot \\text{SE}\\)\n\n\n99%\n2.576\n\\(\\bar{x} \\pm 2.576 \\cdot \\text{SE}\\)\n\n\n\nRelación inversa: Mayor confianza → Intervalo más ancho\n\n# Ejemplo con ingreso promedio\nmedia &lt;- 550\nse &lt;- 35\n\nniveles &lt;- c(0.90, 0.95, 0.99)\nz_valores &lt;- qnorm(1 - (1 - niveles)/2)\n\nresultados &lt;- data.frame(\n  nivel = paste0(niveles * 100, \"%\"),\n  z = round(z_valores, 3),\n  inferior = round(media - z_valores * se, 0),\n  superior = round(media + z_valores * se, 0)\n)\n\nresultados$ancho &lt;- resultados$superior - resultados$inferior\n\nprint(resultados)\n\n  nivel     z inferior superior ancho\n1   90% 1.645      492      608   116\n2   95% 1.960      481      619   138\n3   99% 2.576      460      640   180\n\n\n\n\n\n\n\nVisualización de ICs con diferentes niveles de confianza",
-    "crumbs": [
-      "IV. Unidad 3: Principios de Inferencia Estadística",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
-    ]
-  },
-  {
-    "objectID": "08-inferencia.html#determinación-del-tamaño-muestral",
-    "href": "08-inferencia.html#determinación-del-tamaño-muestral",
-    "title": "8  Inferencia estadística",
-    "section": "8.7 Determinación del tamaño muestral",
-    "text": "8.7 Determinación del tamaño muestral\nUna pregunta práctica crucial: ¿Qué tan grande debe ser mi muestra?\n\n8.7.1 Para estimar una media\nQueremos que el IC tenga ancho máximo \\(2E\\) (es decir, margen de error \\(E\\)):\n\\[n = \\left(\\frac{z_{\\alpha/2} \\cdot \\sigma}{E}\\right)^2\\]\nPor ejemplo, si queremos estimar el ingreso promedio con precisión de ±$20 mil:\n\n# Deseamos IC 95% con margen de error E = 20 mil\n# Estimamos σ ≈ 300 mil (de estudios previos)\nE &lt;- 20\nsigma &lt;- 300\nz &lt;- 1.96\n\nn_necesario &lt;- ceiling((z * sigma / E)^2)\n\ncat(\"Para estimar ingreso promedio con:\\n\")\n\nPara estimar ingreso promedio con:\n\ncat(\"- Nivel de confianza: 95%\\n\")\n\n- Nivel de confianza: 95%\n\ncat(\"- Margen de error: ±$\", E, \" mil\\n\", sep = \"\")\n\n- Margen de error: ±$20 mil\n\ncat(\"- σ estimado: $\", sigma, \" mil\\n\", sep = \"\")\n\n- σ estimado: $300 mil\n\ncat(\"\\nTamaño muestral necesario: n =\", n_necesario, \"hogares\\n\")\n\n\nTamaño muestral necesario: n = 865 hogares\n\n\n\n\n8.7.2 Para estimar una proporción\n\\[n = \\left(\\frac{z_{\\alpha/2}}{E}\\right)^2 \\cdot p(1-p)\\]\nSi no conocemos \\(p\\), usamos \\(p = 0.5\\) (el escenario más conservador):\n\\[n = \\left(\\frac{z_{\\alpha/2}}{E}\\right)^2 \\cdot 0.25\\]\n\nTamaño muestral para encuesta electoral\n¿Cuántos encuestados necesito para estimar intención de voto con margen de error de ±3% (95% de confianza)?\n\nE &lt;- 0.03  # 3 puntos porcentuales\nz &lt;- 1.96\np &lt;- 0.5   # Peor caso\n\nn_necesario &lt;- ceiling((z / E)^2 * p * (1 - p))\n\ncat(\"Para estimar proporción con:\\n\")\n\nPara estimar proporción con:\n\ncat(\"- Nivel de confianza: 95%\\n\")\n\n- Nivel de confianza: 95%\n\ncat(\"- Margen de error: ±\", E * 100, \"%\\n\", sep = \"\")\n\n- Margen de error: ±3%\n\ncat(\"\\nTamaño muestral necesario: n =\", n_necesario, \"\\n\")\n\n\nTamaño muestral necesario: n = 1068 \n\n\nPor eso las encuestas electorales típicamente tienen ~1,000-1,500 entrevistados.\n\n\n\n8.7.3 Tabla de referencia: Tamaño muestral para proporciones\n\n\n\nTamaño muestral necesario para estimar proporción (p=0.5)\n\n\nMargen error\n90%\n95%\n99%\n\n\n\n\n±1%\n6764\n9604\n16588\n\n\n±2%\n1691\n2401\n4147\n\n\n±3%\n752\n1068\n1844\n\n\n±4%\n423\n601\n1037\n\n\n±5%\n271\n385\n664\n\n\n±10%\n68\n97\n166",
+    "text": "8.6 Intervalos de confianza\nUn intervalo de confianza (IC) es un rango de valores plausibles para el parámetro poblacional, construido de tal manera que, si repitiéramos el muestreo infinitas veces, el IC contendría el valor verdadero en (por ejemplo) 95% de las muestras.\n\n8.6.1 Intervalo de confianza para la media\nFórmula general:\n\\[\\text{IC}_{95\\%} = \\bar{x} \\pm t_{n-1, 0.975} \\cdot \\frac{s}{\\sqrt{n}}\\]\ndonde \\(t_{n-1, 0.975}\\) es el valor crítico de la distribución \\(t\\) con \\(n-1\\) grados de libertad.\nCuando \\(n\\) es grande (\\(n \\geq 30\\)), \\(t \\approx 1.96\\), así que:\n\\[\\text{IC}_{95\\%} \\approx \\bar{x} \\pm 1.96 \\cdot \\text{SE}(\\bar{x})\\]\nLa interpretación correcta de un IC 95% es: “Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de \\(\\mu\\).” NO significa “Hay 95% de probabilidad de que \\(\\mu\\) esté en este intervalo específico.” (La diferencia es sutil pero importante: \\(\\mu\\) es fijo; el intervalo es lo que varía entre muestras.)\nPor ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:\n\n# Datos de ingresos (retomando ejemplo anterior)\nset.seed(789)\ningresos &lt;- rlnorm(200, meanlog = log(550), sdlog = 0.65)\n\nn &lt;- length(ingresos)\nmedia &lt;- mean(ingresos)\ns &lt;- sd(ingresos)\nse &lt;- s / sqrt(n)\n\n# Valor crítico t para 95% de confianza\nt_crit &lt;- qt(0.975, df = n - 1)\n\n# Intervalo de confianza\nic_inferior &lt;- media - t_crit * se\nic_superior &lt;- media + t_crit * se\n\ncat(\"Ingreso promedio mensual (n =\", n, \"hogares):\\n\")\n\nIngreso promedio mensual (n = 200 hogares):\n\ncat(\"Media muestral: $\", round(media, 0), \" mil\\n\", sep = \"\")\n\nMedia muestral: $653 mil\n\ncat(\"IC 95%: [$\", round(ic_inferior, 0), \", $\",\n    round(ic_superior, 0), \"] mil\\n\\n\", sep = \"\")\n\nIC 95%: [$588, $719] mil\n\ncat(\"Interpretación: Estamos 95% confiados de que el ingreso promedio\\n\")\n\nInterpretación: Estamos 95% confiados de que el ingreso promedio\n\ncat(\"poblacional está entre $\", round(ic_inferior, 0), \" y $\",\n    round(ic_superior, 0), \" mil.\\n\", sep = \"\")\n\npoblacional está entre $588 y $719 mil.\n\n\n\n\n8.6.2 Intervalo de confianza para la proporción\n\\[\\text{IC}_{95\\%} = \\hat{p} \\pm 1.96 \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}}\\]\n(Válido cuando \\(n\\hat{p} \\geq 10\\) y \\(n(1-\\hat{p}) \\geq 10\\))\nPor ejemplo, para una encuesta de intención de voto:\n\n# Encuesta: ¿Votará en próximas elecciones?\nn &lt;- 1500\nvotaran &lt;- 780\np_hat &lt;- votaran / n\nse_p &lt;- sqrt(p_hat * (1 - p_hat) / n)\n\n# IC 95%\nic_inf &lt;- p_hat - 1.96 * se_p\nic_sup &lt;- p_hat + 1.96 * se_p\n\ncat(\"Encuesta (n =\", n, \"):\\n\")\n\nEncuesta (n = 1500 ):\n\ncat(\"Declaran que votarán:\", votaran, \"personas (\", round(p_hat * 100, 1), \"%)\\n\", sep = \"\")\n\nDeclaran que votarán:780personas (52%)\n\ncat(\"IC 95%: [\", round(ic_inf * 100, 1), \"%, \",\n    round(ic_sup * 100, 1), \"%]\\n\\n\", sep = \"\")\n\nIC 95%: [49.5%, 54.5%]\n\ncat(\"Interpretación: El verdadero porcentaje de personas que votarán\\n\")\n\nInterpretación: El verdadero porcentaje de personas que votarán\n\ncat(\"está probablemente entre\", round(ic_inf * 100, 1), \"% y\",\n    round(ic_sup * 100, 1), \"%.\\n\")\n\nestá probablemente entre 49.5 % y 54.5 %.\n\n\n\n\n8.6.3 Niveles de confianza alternativos\nNo estamos limitados a 95%. Podemos construir ICs con cualquier nivel de confianza:\n\n\n\nNivel de Confianza\nValor Crítico \\(z\\)\nIntervalo\n\n\n\n\n90%\n1.645\n\\(\\bar{x} \\pm 1.645 \\cdot \\text{SE}\\)\n\n\n95%\n1.960\n\\(\\bar{x} \\pm 1.960 \\cdot \\text{SE}\\)\n\n\n99%\n2.576\n\\(\\bar{x} \\pm 2.576 \\cdot \\text{SE}\\)\n\n\n\nRelación inversa: Mayor confianza → Intervalo más ancho\n\n# Ejemplo con ingreso promedio\nmedia &lt;- 550\nse &lt;- 35\n\nniveles &lt;- c(0.90, 0.95, 0.99)\nz_valores &lt;- qnorm(1 - (1 - niveles)/2)\n\nresultados &lt;- data.frame(\n  nivel = paste0(niveles * 100, \"%\"),\n  z = round(z_valores, 3),\n  inferior = round(media - z_valores * se, 0),\n  superior = round(media + z_valores * se, 0)\n)\n\nresultados$ancho &lt;- resultados$superior - resultados$inferior\n\nprint(resultados)\n\n  nivel     z inferior superior ancho\n1   90% 1.645      492      608   116\n2   95% 1.960      481      619   138\n3   99% 2.576      460      640   180\n\n\n\n\n\n\n\nVisualización de ICs con diferentes niveles de confianza\n\n\n\n\n\n\n8.6.4 Tabla de referencia: Tamaño muestral para proporciones\n\n\n\nTamaño muestral necesario para estimar proporción (p=0.5)\n\n\nMargen error\n90%\n95%\n99%\n\n\n\n\n±1%\n6764\n9604\n16588\n\n\n±2%\n1691\n2401\n4147\n\n\n±3%\n752\n1068\n1844\n\n\n±4%\n423\n601\n1037\n\n\n±5%\n271\n385\n664\n\n\n±10%\n68\n97\n166\n\n\n\n\n\n:::",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
@@ -1109,8 +1076,8 @@
     "objectID": "08-inferencia.html#simulación-interpretación-de-ics",
     "href": "08-inferencia.html#simulación-interpretación-de-ics",
     "title": "8  Inferencia estadística",
-    "section": "8.8 Simulación: Interpretación de ICs",
-    "text": "8.8 Simulación: Interpretación de ICs\nDemostremos con simulación qué significa “95% de confianza”:\n\n# Parámetros poblacionales conocidos (para la simulación)\nmu_real &lt;- 500\nsigma_real &lt;- 120\nn &lt;- 50\n\n# Tomamos 100 muestras y calculamos IC para cada una\nset.seed(2025)\nn_simulaciones &lt;- 100\n\nresultados_sim &lt;- data.frame(\n  muestra = 1:n_simulaciones,\n  media = numeric(n_simulaciones),\n  ic_inf = numeric(n_simulaciones),\n  ic_sup = numeric(n_simulaciones)\n)\n\nfor (i in 1:n_simulaciones) {\n  muestra &lt;- rnorm(n, mean = mu_real, sd = sigma_real)\n  media &lt;- mean(muestra)\n  se &lt;- sd(muestra) / sqrt(n)\n  t_crit &lt;- qt(0.975, df = n - 1)\n\n  resultados_sim$media[i] &lt;- media\n  resultados_sim$ic_inf[i] &lt;- media - t_crit * se\n  resultados_sim$ic_sup[i] &lt;- media + t_crit * se\n}\n\n# ¿Cuántos ICs contienen μ?\nresultados_sim$contiene_mu &lt;- (resultados_sim$ic_inf &lt;= mu_real &\n                                 resultados_sim$ic_sup &gt;= mu_real)\n\nprop_contiene &lt;- mean(resultados_sim$contiene_mu)\n\ncat(\"De\", n_simulaciones, \"intervalos de confianza al 95%:\\n\")\n\nDe 100 intervalos de confianza al 95%:\n\ncat(sum(resultados_sim$contiene_mu), \"contienen el verdadero valor μ =\", mu_real, \"\\n\")\n\n93 contienen el verdadero valor μ = 500 \n\ncat(\"Proporción:\", round(prop_contiene, 3), \"\\n\")\n\nProporción: 0.93 \n\ncat(\"(Esperábamos ~0.95)\\n\")\n\n(Esperábamos ~0.95)\n\n\n\n\n\n\n\n100 intervalos de confianza: los verdes contienen μ, los rojos no\n\n\n\n\n\nMensaje clave: El “95%” NO se refiere a una muestra individual, sino al procedimiento. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían \\(\\mu\\). Para cualquier muestra específica, o contiene \\(\\mu\\) o no (pero no sabemos cuál).",
+    "section": "8.7 Simulación: Interpretación de ICs",
+    "text": "8.7 Simulación: Interpretación de ICs\nDemostremos con simulación qué significa “95% de confianza”:\n\n# Parámetros poblacionales conocidos (para la simulación)\nmu_real &lt;- 500\nsigma_real &lt;- 120\nn &lt;- 50\n\n# Tomamos 100 muestras y calculamos IC para cada una\nset.seed(2025)\nn_simulaciones &lt;- 100\n\nresultados_sim &lt;- data.frame(\n  muestra = 1:n_simulaciones,\n  media = numeric(n_simulaciones),\n  ic_inf = numeric(n_simulaciones),\n  ic_sup = numeric(n_simulaciones)\n)\n\nfor (i in 1:n_simulaciones) {\n  muestra &lt;- rnorm(n, mean = mu_real, sd = sigma_real)\n  media &lt;- mean(muestra)\n  se &lt;- sd(muestra) / sqrt(n)\n  t_crit &lt;- qt(0.975, df = n - 1)\n\n  resultados_sim$media[i] &lt;- media\n  resultados_sim$ic_inf[i] &lt;- media - t_crit * se\n  resultados_sim$ic_sup[i] &lt;- media + t_crit * se\n}\n\n# ¿Cuántos ICs contienen μ?\nresultados_sim$contiene_mu &lt;- (resultados_sim$ic_inf &lt;= mu_real &\n                                 resultados_sim$ic_sup &gt;= mu_real)\n\nprop_contiene &lt;- mean(resultados_sim$contiene_mu)\n\ncat(\"De\", n_simulaciones, \"intervalos de confianza al 95%:\\n\")\n\nDe 100 intervalos de confianza al 95%:\n\ncat(sum(resultados_sim$contiene_mu), \"contienen el verdadero valor μ =\", mu_real, \"\\n\")\n\n93 contienen el verdadero valor μ = 500 \n\ncat(\"Proporción:\", round(prop_contiene, 3), \"\\n\")\n\nProporción: 0.93 \n\ncat(\"(Esperábamos ~0.95)\\n\")\n\n(Esperábamos ~0.95)\n\n\n\n\n\n\n\n100 intervalos de confianza: los verdes contienen μ, los rojos no\n\n\n\n\n\nMensaje clave: El “95%” NO se refiere a una muestra individual, sino al procedimiento. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían \\(\\mu\\). Para cualquier muestra específica, o contiene \\(\\mu\\) o no (pero no sabemos cuál).",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
@@ -1120,8 +1087,8 @@
     "objectID": "08-inferencia.html#resumen-del-capítulo",
     "href": "08-inferencia.html#resumen-del-capítulo",
     "title": "8  Inferencia estadística",
-    "section": "8.9 Resumen del capítulo",
-    "text": "8.9 Resumen del capítulo\nConceptos clave:\n\nInferencia estadística: Usar muestras para hacer afirmaciones sobre poblaciones\nParámetros vs estadísticos: \\(\\mu, p\\) (poblacionales, fijos, desconocidos) vs \\(\\bar{x}, \\hat{p}\\) (muestrales, variables, observables)\nDistribución muestral: Distribución de un estadístico a través de todas las muestras posibles\nError estándar: SD de la distribución muestral; mide precisión de la estimación; \\(\\text{SE} = s/\\sqrt{n}\\)\nIntervalos de confianza: Rango plausible para el parámetro; nivel de confianza se refiere al procedimiento, no a un intervalo específico\nTamaño muestral: Determinar \\(n\\) necesario para lograr margen de error deseado\n\nFórmulas esenciales:\n\n\n\n\n\n\n\n\nConcepto\nMedia\nProporción\n\n\n\n\nError estándar\n\\(\\text{SE} = s/\\sqrt{n}\\)\n\\(\\text{SE} = \\sqrt{\\hat{p}(1-\\hat{p})/n}\\)\n\n\nIC 95%\n\\(\\bar{x} \\pm 1.96 \\cdot \\text{SE}\\)\n\\(\\hat{p} \\pm 1.96 \\cdot \\text{SE}\\)\n\n\nTamaño muestral\n\\(n = (z\\sigma/E)^2\\)\n\\(n = (z/E)^2 \\cdot 0.25\\)\n\n\n\nConexión con próximos capítulos:\n\nCap. 9 extenderá la lógica de inferencia a pruebas de hipótesis\nCaps. 10-11 aplicarán ICs y pruebas para comparar grupos y analizar relaciones",
+    "section": "8.8 Resumen del capítulo",
+    "text": "8.8 Resumen del capítulo\nConceptos clave:\n\nInferencia estadística: Usar muestras para hacer afirmaciones sobre poblaciones\nParámetros vs estadísticos: \\(\\mu, p\\) (poblacionales, fijos, desconocidos) vs \\(\\bar{x}, \\hat{p}\\) (muestrales, variables, observables)\nDistribución muestral: Distribución de un estadístico a través de todas las muestras posibles\nError estándar: SD de la distribución muestral; mide precisión de la estimación; \\(\\text{SE} = s/\\sqrt{n}\\)\nIntervalos de confianza: Rango plausible para el parámetro; nivel de confianza se refiere al procedimiento, no a un intervalo específico\nTamaño muestral: Determinar \\(n\\) necesario para lograr margen de error deseado\n\nFórmulas esenciales:\n\n\n\n\n\n\n\n\nConcepto\nMedia\nProporción\n\n\n\n\nError estándar\n\\(\\text{SE} = s/\\sqrt{n}\\)\n\\(\\text{SE} = \\sqrt{\\hat{p}(1-\\hat{p})/n}\\)\n\n\nIC 95%\n\\(\\bar{x} \\pm 1.96 \\cdot \\text{SE}\\)\n\\(\\hat{p} \\pm 1.96 \\cdot \\text{SE}\\)\n\n\nTamaño muestral\n\\(n = (z\\sigma/E)^2\\)\n\\(n = (z/E)^2 \\cdot 0.25\\)\n\n\n\nConexión con próximos capítulos:\n\nCap. 9 extenderá la lógica de inferencia a pruebas de hipótesis\nCaps. 10-11 aplicarán ICs y pruebas para comparar grupos y analizar relaciones",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
@@ -1131,8 +1098,8 @@
     "objectID": "08-inferencia.html#lecturas-recomendadas",
     "href": "08-inferencia.html#lecturas-recomendadas",
     "title": "8  Inferencia estadística",
-    "section": "8.10 Lecturas recomendadas",
-    "text": "8.10 Lecturas recomendadas\nFundamentos de inferencia estadística:\nAgresti, A., & Finlay, B. (2009). Statistical Methods for the Social Sciences (4th ed.). Pearson.\n→ Capítulo 5 cubre estimación estadística, intervalos de confianza y error estándar con claridad ejemplar.\nAplicaciones en análisis de datos sociales:\nLlaudet, E., & Imai, K. (2022). Data Analysis for Social Science: A Friendly and Practical Introduction. Princeton University Press.\n→ Capítulo 7 sobre incertidumbre conecta teoría con aplicaciones prácticas en investigación cuantitativa.\nRecurso complementario de acceso libre:\nDiez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). OpenIntro Statistics (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]\n→ Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.",
+    "section": "8.9 Lecturas recomendadas",
+    "text": "8.9 Lecturas recomendadas\nFundamentos de inferencia estadística:\nAgresti, A., & Finlay, B. (2009). Statistical Methods for the Social Sciences (4th ed.). Pearson.\n→ Capítulo 5 cubre estimación estadística, intervalos de confianza y error estándar con claridad ejemplar.\nAplicaciones en análisis de datos sociales:\nLlaudet, E., & Imai, K. (2022). Data Analysis for Social Science: A Friendly and Practical Introduction. Princeton University Press.\n→ Capítulo 7 sobre incertidumbre conecta teoría con aplicaciones prácticas en investigación cuantitativa.\nRecurso complementario de acceso libre:\nDiez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). OpenIntro Statistics (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]\n→ Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
@@ -1142,8 +1109,8 @@
     "objectID": "08-inferencia.html#ejercicios",
     "href": "08-inferencia.html#ejercicios",
     "title": "8  Inferencia estadística",
-    "section": "8.11 Ejercicios",
-    "text": "8.11 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
+    "section": "8.10 Ejercicios",
+    "text": "8.10 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
     "crumbs": [
       "IV. Unidad 3: Principios de Inferencia Estadística",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Inferencia estadística</span>"
@@ -1315,33 +1282,11 @@
     ]
   },
   {
-    "objectID": "10-comparacion-medias.html#anova",
-    "href": "10-comparacion-medias.html#anova",
-    "title": "10  Comparación de medias",
-    "section": "10.4 ANOVA",
-    "text": "10.4 ANOVA\nAnálisis de Varianza (ANOVA) compara medias de más de dos grupos.\nHipótesis: - \\(H_0: \\mu_1 = \\mu_2 = \\mu_3 = \\ldots = \\mu_k\\) - \\(H_1\\): Al menos una media es diferente\nIlustremos el uso de ANOVA con un caso frecuente en ciencias sociales: la comparación de ingresos según nivel educacional. Queremos determinar si existen diferencias significativas entre los ingresos promedio de personas con educación básica, media y superior.\n\n# Datos simulados: Ingresos por nivel educacional\nset.seed(456)\ndatos &lt;- data.frame(\n  ingreso = c(\n    rnorm(100, mean = 500, sd = 120),  # Básica\n    rnorm(100, mean = 650, sd = 150),  # Media\n    rnorm(100, mean = 900, sd = 200)   # Superior\n  ),\n  educacion = factor(rep(c(\"Básica\", \"Media\", \"Superior\"), each = 100))\n)\n\n# ANOVA\nmodelo &lt;- aov(ingreso ~ educacion, data = datos)\nsummary(modelo)\n\n             Df  Sum Sq Mean Sq F value Pr(&gt;F)    \neducacion     2 8688775 4344388   180.4 &lt;2e-16 ***\nResiduals   297 7151203   24078                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n# Comparaciones post-hoc (para identificar qué grupos difieren)\nTukeyHSD(modelo)\n\n  Tukey multiple comparisons of means\n    95% family-wise confidence level\n\nFit: aov(formula = ingreso ~ educacion, data = datos)\n\n$educacion\n                    diff       lwr      upr p adj\nMedia-Básica    118.0247  66.33382 169.7156 5e-07\nSuperior-Básica 405.2554 353.56452 456.9463 0e+00\nSuperior-Media  287.2307 235.53980 338.9216 0e+00",
-    "crumbs": [
-      "V. Unidad 4: Análisis Bivariado",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparación de medias</span>"
-    ]
-  },
-  {
-    "objectID": "10-comparacion-medias.html#supuestos-y-alternativas-no-paramétricas",
-    "href": "10-comparacion-medias.html#supuestos-y-alternativas-no-paramétricas",
-    "title": "10  Comparación de medias",
-    "section": "10.5 Supuestos y alternativas no paramétricas",
-    "text": "10.5 Supuestos y alternativas no paramétricas\n\n10.5.1 Supuestos de pruebas t y ANOVA\n\nNormalidad: Los datos siguen distribución normal\nHomogeneidad de varianzas: Las varianzas son iguales entre grupos\nIndependencia: Las observaciones son independientes\n\n\n\n10.5.2 Alternativas no paramétricas\nCuando los supuestos no se cumplen:\n\nMann-Whitney U (en lugar de t para dos muestras independientes)\nWilcoxon signed-rank (en lugar de t pareada)\nKruskal-Wallis (en lugar de ANOVA)",
-    "crumbs": [
-      "V. Unidad 4: Análisis Bivariado",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparación de medias</span>"
-    ]
-  },
-  {
     "objectID": "10-comparacion-medias.html#resumen-del-capítulo",
     "href": "10-comparacion-medias.html#resumen-del-capítulo",
     "title": "10  Comparación de medias",
-    "section": "10.6 Resumen del capítulo",
-    "text": "10.6 Resumen del capítulo\nConceptos clave:\n\nPrueba t: Compara medias entre grupos\nMuestras independientes vs pareadas: Requieren diferentes pruebas\nANOVA: Compara más de dos grupos simultáneamente\nSupuestos: Normalidad, homogeneidad, independencia\nAlternativas no paramétricas: Para cuando no se cumplen supuestos",
+    "section": "10.4 Resumen del capítulo",
+    "text": "10.4 Resumen del capítulo\nConceptos clave:\n\nPrueba t: Compara medias entre grupos\nMuestras independientes vs pareadas: Requieren diferentes pruebas\nANOVA: Compara más de dos grupos simultáneamente\nSupuestos: Normalidad, homogeneidad, independencia\nAlternativas no paramétricas: Para cuando no se cumplen supuestos",
     "crumbs": [
       "V. Unidad 4: Análisis Bivariado",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparación de medias</span>"
@@ -1351,8 +1296,8 @@
     "objectID": "10-comparacion-medias.html#lecturas-recomendadas",
     "href": "10-comparacion-medias.html#lecturas-recomendadas",
     "title": "10  Comparación de medias",
-    "section": "10.7 Lecturas recomendadas",
-    "text": "10.7 Lecturas recomendadas\nFundamentos de comparación de grupos:\nAgresti, A., & Finlay, B. (2009). Statistical Methods for the Social Sciences (4th ed.). Pearson.\n→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.\nInferencia causal mediante comparación de grupos:\nLlaudet, E., & Imai, K. (2022). Data Analysis for Social Science: A Friendly and Practical Introduction. Princeton University Press.\n→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.\nANOVA y diseños más complejos:\nMaxwell, S. E., Delaney, H. D., & Kelley, K. (2018). Designing Experiments and Analyzing Data: A Model Comparison Perspective (3rd ed.). Routledge.\n→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.",
+    "section": "10.5 Lecturas recomendadas",
+    "text": "10.5 Lecturas recomendadas\nFundamentos de comparación de grupos:\nAgresti, A., & Finlay, B. (2009). Statistical Methods for the Social Sciences (4th ed.). Pearson.\n→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.\nInferencia causal mediante comparación de grupos:\nLlaudet, E., & Imai, K. (2022). Data Analysis for Social Science: A Friendly and Practical Introduction. Princeton University Press.\n→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.\nANOVA y diseños más complejos:\nMaxwell, S. E., Delaney, H. D., & Kelley, K. (2018). Designing Experiments and Analyzing Data: A Model Comparison Perspective (3rd ed.). Routledge.\n→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.",
     "crumbs": [
       "V. Unidad 4: Análisis Bivariado",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparación de medias</span>"
@@ -1362,8 +1307,8 @@
     "objectID": "10-comparacion-medias.html#ejercicios",
     "href": "10-comparacion-medias.html#ejercicios",
     "title": "10  Comparación de medias",
-    "section": "10.8 Ejercicios",
-    "text": "10.8 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
+    "section": "10.6 Ejercicios",
+    "text": "10.6 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
     "crumbs": [
       "V. Unidad 4: Análisis Bivariado",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Comparación de medias</span>"
@@ -1488,303 +1433,6 @@
     "crumbs": [
       "V. Unidad 4: Análisis Bivariado",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Regresión bivariada</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html",
-    "href": "12-regresion-multiple.html",
-    "title": "12  Regresión múltiple",
-    "section": "",
-    "text": "12.1 Objetivos del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#el-modelo-de-regresión-múltiple",
-    "href": "12-regresion-multiple.html#el-modelo-de-regresión-múltiple",
-    "title": "12  Regresión múltiple",
-    "section": "12.2 El modelo de regresión múltiple",
-    "text": "12.2 El modelo de regresión múltiple",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#interpretación-de-coeficientes",
-    "href": "12-regresion-multiple.html#interpretación-de-coeficientes",
-    "title": "12  Regresión múltiple",
-    "section": "12.3 Interpretación de coeficientes",
-    "text": "12.3 Interpretación de coeficientes",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#variables-de-control",
-    "href": "12-regresion-multiple.html#variables-de-control",
-    "title": "12  Regresión múltiple",
-    "section": "12.4 Variables de control",
-    "text": "12.4 Variables de control",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#multicolinealidad",
-    "href": "12-regresion-multiple.html#multicolinealidad",
-    "title": "12  Regresión múltiple",
-    "section": "12.5 Multicolinealidad",
-    "text": "12.5 Multicolinealidad",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#variables-categóricas",
-    "href": "12-regresion-multiple.html#variables-categóricas",
-    "title": "12  Regresión múltiple",
-    "section": "12.6 Variables categóricas",
-    "text": "12.6 Variables categóricas",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#interacciones",
-    "href": "12-regresion-multiple.html#interacciones",
-    "title": "12  Regresión múltiple",
-    "section": "12.7 Interacciones",
-    "text": "12.7 Interacciones",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#resumen-del-capítulo",
-    "href": "12-regresion-multiple.html#resumen-del-capítulo",
-    "title": "12  Regresión múltiple",
-    "section": "12.8 Resumen del capítulo",
-    "text": "12.8 Resumen del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#lecturas-recomendadas",
-    "href": "12-regresion-multiple.html#lecturas-recomendadas",
-    "title": "12  Regresión múltiple",
-    "section": "12.9 Lecturas recomendadas",
-    "text": "12.9 Lecturas recomendadas",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "12-regresion-multiple.html#ejercicios",
-    "href": "12-regresion-multiple.html#ejercicios",
-    "title": "12  Regresión múltiple",
-    "section": "12.10 Ejercicios",
-    "text": "12.10 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>12</span>  <span class='chapter-title'>Regresión múltiple</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html",
-    "href": "13-supuestos-ols.html",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "",
-    "text": "13.1 Objetivos del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#los-supuestos-de-gauss-markov",
-    "href": "13-supuestos-ols.html#los-supuestos-de-gauss-markov",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.2 Los supuestos de Gauss-Markov",
-    "text": "13.2 Los supuestos de Gauss-Markov",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#diagnóstico-de-regresión",
-    "href": "13-supuestos-ols.html#diagnóstico-de-regresión",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.3 Diagnóstico de regresión",
-    "text": "13.3 Diagnóstico de regresión",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#heterocedasticidad",
-    "href": "13-supuestos-ols.html#heterocedasticidad",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.4 Heterocedasticidad",
-    "text": "13.4 Heterocedasticidad",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#autocorrelación",
-    "href": "13-supuestos-ols.html#autocorrelación",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.5 Autocorrelación",
-    "text": "13.5 Autocorrelación",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#valores-atípicos-e-influyentes",
-    "href": "13-supuestos-ols.html#valores-atípicos-e-influyentes",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.6 Valores atípicos e influyentes",
-    "text": "13.6 Valores atípicos e influyentes",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#resumen-del-capítulo",
-    "href": "13-supuestos-ols.html#resumen-del-capítulo",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.7 Resumen del capítulo",
-    "text": "13.7 Resumen del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#lecturas-recomendadas",
-    "href": "13-supuestos-ols.html#lecturas-recomendadas",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.8 Lecturas recomendadas",
-    "text": "13.8 Lecturas recomendadas",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "13-supuestos-ols.html#ejercicios",
-    "href": "13-supuestos-ols.html#ejercicios",
-    "title": "13  Supuestos de OLS y diagnósticos",
-    "section": "13.9 Ejercicios",
-    "text": "13.9 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>Supuestos de OLS y diagnósticos</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html",
-    "href": "14-glm.html",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "",
-    "text": "14.1 Objetivos del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#limitaciones-de-ols",
-    "href": "14-glm.html#limitaciones-de-ols",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.2 Limitaciones de OLS",
-    "text": "14.2 Limitaciones de OLS",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#la-familia-de-glm",
-    "href": "14-glm.html#la-familia-de-glm",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.3 La familia de GLM",
-    "text": "14.3 La familia de GLM",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#regresión-logística",
-    "href": "14-glm.html#regresión-logística",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.4 Regresión logística",
-    "text": "14.4 Regresión logística",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#regresión-de-poisson",
-    "href": "14-glm.html#regresión-de-poisson",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.5 Regresión de Poisson",
-    "text": "14.5 Regresión de Poisson",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#resumen-del-capítulo",
-    "href": "14-glm.html#resumen-del-capítulo",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.6 Resumen del capítulo",
-    "text": "14.6 Resumen del capítulo",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#lecturas-recomendadas",
-    "href": "14-glm.html#lecturas-recomendadas",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.7 Lecturas recomendadas",
-    "text": "14.7 Lecturas recomendadas",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
-    ]
-  },
-  {
-    "objectID": "14-glm.html#ejercicios",
-    "href": "14-glm.html#ejercicios",
-    "title": "14  Introducción a modelos lineales generalizados",
-    "section": "14.8 Ejercicios",
-    "text": "14.8 Ejercicios\nLos ejercicios para este capítulo se encuentran en el Anexo de Ejercicios.",
-    "crumbs": [
-      "VI. Contenido Avanzado",
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>Introducción a modelos lineales generalizados</span>"
     ]
   },
   {
@@ -1914,39 +1562,6 @@
     "title": "(APPENDIX) Anexos",
     "section": "Capítulo 11: Regresión bivariada",
     "text": "Capítulo 11: Regresión bivariada\n\nCalcula la correlación entre años de educación e ingreso. Interpreta el resultado.\nEstima un modelo de regresión para predecir participación electoral a partir de nivel educacional promedio por comuna.\nInterpreta los coeficientes y el \\(R^2\\) del modelo estimado en el ejercicio 2.\nDiscute por qué una correlación alta entre helado y ahogamientos NO implica causalidad.",
-    "crumbs": [
-      "Anexos",
-      "(APPENDIX) Anexos"
-    ]
-  },
-  {
-    "objectID": "anexo-ejercicios.html#ejercicios-cap12",
-    "href": "anexo-ejercicios.html#ejercicios-cap12",
-    "title": "(APPENDIX) Anexos",
-    "section": "Capítulo 12: Regresión múltiple",
-    "text": "Capítulo 12: Regresión múltiple",
-    "crumbs": [
-      "Anexos",
-      "(APPENDIX) Anexos"
-    ]
-  },
-  {
-    "objectID": "anexo-ejercicios.html#ejercicios-cap13",
-    "href": "anexo-ejercicios.html#ejercicios-cap13",
-    "title": "(APPENDIX) Anexos",
-    "section": "Capítulo 13: Supuestos OLS",
-    "text": "Capítulo 13: Supuestos OLS",
-    "crumbs": [
-      "Anexos",
-      "(APPENDIX) Anexos"
-    ]
-  },
-  {
-    "objectID": "anexo-ejercicios.html#ejercicios-cap14",
-    "href": "anexo-ejercicios.html#ejercicios-cap14",
-    "title": "(APPENDIX) Anexos",
-    "section": "Capítulo 14: GLM",
-    "text": "Capítulo 14: GLM",
     "crumbs": [
       "Anexos",
       "(APPENDIX) Anexos"

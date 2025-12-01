@@ -292,57 +292,6 @@ La **asimetría** mide si la distribución se inclina hacia un lado:
 - **Asimetría negativa (izquierda)**: Cola larga hacia la izquierda. Media < Mediana.
 - **Simétrica**: Colas balanceadas. Media ≈ Mediana.
 
-::: {.nivel data-nivel="avanzado"}
-
-**Coeficiente de asimetría:**
-
-```{r}
-# Coeficiente de asimetría (requiere paquete moments o e1071)
-library(e1071)
-skewness(comunas$participacion)
-```
-
-- $\text{Skewness} \approx 0$: Simétrica
-- $\text{Skewness} > 0$: Asimétrica a la derecha
-- $\text{Skewness} < 0$: Asimétrica a la izquierda
-
-```{r fig.cap="Distribuciones con diferente asimetría", fig.height=4}
-set.seed(111)
-# Asimétrica derecha
-der <- rgamma(1000, shape = 2, rate = 1)
-# Simétrica
-sim <- rnorm(1000, mean = 5, sd = 2)
-# Asimétrica izquierda
-izq <- 10 - rgamma(1000, shape = 2, rate = 1)
-
-datos_asimetria <- data.frame(
-  valor = c(der, sim, izq),
-  tipo = rep(c("Asimétrica derecha", "Simétrica", "Asimétrica izquierda"),
-             each = 1000)
-)
-
-ggplot(datos_asimetria, aes(x = valor, fill = tipo)) +
-  geom_density(alpha = 0.6) +
-  facet_wrap(~tipo, scales = "free") +
-  theme_minimal() +
-  theme(legend.position = "none")
-```
-
-### Curtosis (kurtosis)
-
-La **curtosis** mide si la distribución tiene colas pesadas o ligeras respecto a la normal:
-
-```{r}
-kurtosis(comunas$participacion)
-```
-
-- **Leptocúrtica** (curtosis > 3): Colas pesadas, más outliers
-- **Mesocúrtica** (curtosis ≈ 3): Similar a distribución normal
-- **Platicúrtica** (curtosis < 3): Colas ligeras, pocos outliers
-
-En práctica, la asimetría importa más que la curtosis para análisis aplicado.
-
-:::
 
 ## Gráficos exploratorios
 
@@ -453,50 +402,6 @@ outliers %>%
   kable(digits = 1)
 ```
 
-::: {.nivel data-nivel="avanzado"}
-
-### Método de puntuaciones z
-
-Un **z-score** mide cuántas desviaciones estándar se aleja una observación de la media:
-
-$$z_i = \frac{x_i - \bar{x}}{s}$$
-
-```{r}
-comunas <- comunas %>%
-  mutate(z_participacion = (participacion - mean(participacion)) / sd(participacion))
-
-# Outliers: |z| > 3 (criterio común)
-outliers_z <- comunas %>%
-  filter(abs(z_participacion) > 3)
-
-nrow(outliers_z)
-```
-
-Con criterio $|z| > 3$, identificamos `r nrow(outliers_z)` outliers.
-
-### Visualización de outliers
-
-```{r fig.cap="Identificación visual de outliers"}
-ggplot(comunas, aes(x = "", y = participacion)) +
-  geom_boxplot(outlier.color = "red", outlier.size = 3) +
-  geom_hline(yintercept = c(limite_inferior, limite_superior),
-             linetype = "dashed", color = "red", alpha = 0.5) +
-  labs(y = "Participación electoral (%)",
-       title = "Outliers en participación electoral") +
-  theme_minimal() +
-  theme(axis.text.x = element_blank(),
-        axis.title.x = element_blank())
-```
-
-**¿Qué hacer con outliers?**
-
-1. **Investigar**: ¿Es error de datos o caso real extremo?
-2. **Nunca eliminar automáticamente**: Outliers pueden ser teóricamente importantes
-3. **Análisis de sensibilidad**: Repetir análisis con y sin outliers
-4. **Transformaciones**: Log, raíz cuadrada pueden reducir influencia de extremos
-5. **Métodos robustos**: Usar mediana en lugar de media, regresión robusta
-
-:::
 
 ## Estadística descriptiva multivariada
 

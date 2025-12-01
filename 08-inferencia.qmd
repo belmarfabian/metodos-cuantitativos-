@@ -439,64 +439,6 @@ ggplot(df_ic, aes(y = nivel)) +
   theme(axis.text.y = element_text(size = 12, face = "bold"))
 ```
 
-::: {.nivel data-nivel="avanzado"}
-
-## Determinación del tamaño muestral
-
-Una pregunta práctica crucial: **¿Qué tan grande debe ser mi muestra?**
-
-### Para estimar una media
-
-Queremos que el IC tenga ancho máximo $2E$ (es decir, margen de error $E$):
-
-$$n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2$$
-
-Por ejemplo, si queremos estimar el ingreso promedio con precisión de ±$20 mil:
-
-```{r tam-muestra-media, echo=TRUE}
-# Deseamos IC 95% con margen de error E = 20 mil
-# Estimamos σ ≈ 300 mil (de estudios previos)
-E <- 20
-sigma <- 300
-z <- 1.96
-
-n_necesario <- ceiling((z * sigma / E)^2)
-
-cat("Para estimar ingreso promedio con:\n")
-cat("- Nivel de confianza: 95%\n")
-cat("- Margen de error: ±$", E, " mil\n", sep = "")
-cat("- σ estimado: $", sigma, " mil\n", sep = "")
-cat("\nTamaño muestral necesario: n =", n_necesario, "hogares\n")
-```
-
-### Para estimar una proporción
-
-$$n = \left(\frac{z_{\alpha/2}}{E}\right)^2 \cdot p(1-p)$$
-
-Si no conocemos $p$, usamos $p = 0.5$ (el escenario más conservador):
-
-$$n = \left(\frac{z_{\alpha/2}}{E}\right)^2 \cdot 0.25$$
-
-::: {.ejemplo}
-**Tamaño muestral para encuesta electoral**
-
-¿Cuántos encuestados necesito para estimar intención de voto con margen de error de ±3% (95% de confianza)?
-
-```{r tam-muestra-prop, echo=TRUE}
-E <- 0.03  # 3 puntos porcentuales
-z <- 1.96
-p <- 0.5   # Peor caso
-
-n_necesario <- ceiling((z / E)^2 * p * (1 - p))
-
-cat("Para estimar proporción con:\n")
-cat("- Nivel de confianza: 95%\n")
-cat("- Margen de error: ±", E * 100, "%\n", sep = "")
-cat("\nTamaño muestral necesario: n =", n_necesario, "\n")
-```
-
-Por eso las encuestas electorales típicamente tienen ~1,000-1,500 entrevistados.
-:::
 
 ### Tabla de referencia: Tamaño muestral para proporciones
 

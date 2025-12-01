@@ -2,7 +2,7 @@
 
 > **VERSIÓN BETA**: Este manual se encuentra en desarrollo activo. Algunos capítulos están pendientes de completar y el contenido seguirá evolucionando con el tiempo. Agradecemos reportar errores o sugerencias.
 
-Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. También puede servir como referencia para cursos más avanzados.
+Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. 
 
 ## ¿Por qué este libro? {.unnumbered}
 
@@ -12,13 +12,17 @@ A diferencia de textos que enfatizan la mecánica estadística, aquí privilegia
 
 ## Organización del libro {.unnumbered}
 
-El libro tiene tres niveles:
+El libro está organizado en cinco unidades:
 
-1. **Prerequisitos** (Caps 1-2): Repaso del curso "Introducción a Métodos" que cubre método científico y diseño de investigación.
+1. **Prerequisitos** (Caps 1-2): Repaso del método científico y diseño de investigación.
 
-2. **Contenido MCI** (Caps 3-11): Sigue el programa oficial del curso con cinco unidades: Generalidades (medición y datos), Fundamentos Descriptivos (clasificación de datos, tablas y gráficos), Estadística Descriptiva (medidas de tendencia central y dispersión), Inferencia Estadística (probabilidad, muestreo, pruebas de hipótesis), y Análisis Bivariado (comparación de medias, correlación, regresión simple).
+2. **Unidad 1 - Generalidades** (Caps 3-4): Medición y trabajo con datos.
 
-3. **Contenido Avanzado** (Caps 12-14): Regresión múltiple, diagnóstico OLS y modelos lineales generalizados para cursos posteriores.
+3. **Unidad 2 - Estadística Descriptiva** (Caps 5-6): Medidas de resumen y visualización de datos.
+
+4. **Unidad 3 - Inferencia Estadística** (Caps 7-9): Probabilidad, muestreo y pruebas de hipótesis.
+
+5. **Unidad 4 - Análisis Bivariado** (Caps 10-11): Comparación de medias y regresión simple.
 
 ## Software y convenciones {.unnumbered}
 

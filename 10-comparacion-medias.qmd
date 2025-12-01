@@ -62,55 +62,6 @@ resultado <- t.test(despues, antes, paired = TRUE)
 print(resultado)
 ```
 
-::: {.nivel data-nivel="avanzado"}
-
-## ANOVA
-
-Análisis de Varianza (ANOVA) compara medias de **más de dos grupos**.
-
-**Hipótesis:**
-- $H_0: \mu_1 = \mu_2 = \mu_3 = \ldots = \mu_k$
-- $H_1$: Al menos una media es diferente
-
-Ilustremos el uso de ANOVA con un caso frecuente en ciencias sociales: la comparación de ingresos según nivel educacional. Queremos determinar si existen diferencias significativas entre los ingresos promedio de personas con educación básica, media y superior.
-
-```{r anova-ejemplo, echo=TRUE}
-# Datos simulados: Ingresos por nivel educacional
-set.seed(456)
-datos <- data.frame(
-  ingreso = c(
-    rnorm(100, mean = 500, sd = 120),  # Básica
-    rnorm(100, mean = 650, sd = 150),  # Media
-    rnorm(100, mean = 900, sd = 200)   # Superior
-  ),
-  educacion = factor(rep(c("Básica", "Media", "Superior"), each = 100))
-)
-
-# ANOVA
-modelo <- aov(ingreso ~ educacion, data = datos)
-summary(modelo)
-
-# Comparaciones post-hoc (para identificar qué grupos difieren)
-TukeyHSD(modelo)
-```
-
-## Supuestos y alternativas no paramétricas
-
-### Supuestos de pruebas t y ANOVA
-
-1. **Normalidad**: Los datos siguen distribución normal
-2. **Homogeneidad de varianzas**: Las varianzas son iguales entre grupos
-3. **Independencia**: Las observaciones son independientes
-
-### Alternativas no paramétricas
-
-Cuando los supuestos no se cumplen:
-
-- **Mann-Whitney U** (en lugar de t para dos muestras independientes)
-- **Wilcoxon signed-rank** (en lugar de t pareada)
-- **Kruskal-Wallis** (en lugar de ANOVA)
-
-:::
 
 ## Resumen del capítulo
 

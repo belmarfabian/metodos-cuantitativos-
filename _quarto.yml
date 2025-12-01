@@ -31,11 +31,6 @@ book:
       chapters:
         - 10-comparacion-medias.qmd
         - 11-regresion-bivariada.qmd
-    - part: "VI. Contenido Avanzado"
-      chapters:
-        - 12-regresion-multiple.qmd
-        - 13-supuestos-ols.qmd
-        - 14-glm.qmd
     - part: "Anexos"
       chapters:
         - anexo-ejercicios.qmd

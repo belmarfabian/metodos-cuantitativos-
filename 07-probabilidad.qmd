@@ -286,31 +286,6 @@ data.frame(x = x, probabilidad = probs) %>%
   theme_minimal()
 ```
 
-::: {.nivel data-nivel="avanzado"}
-
-### Distribución de Poisson
-
-Modela el número de eventos en un intervalo fijo de tiempo o espacio, cuando estos eventos ocurren a una tasa promedio constante $\lambda$:
-
-$$X \sim \text{Poisson}(\lambda)$$
-
-- $E(X) = \lambda$
-- $\text{Var}(X) = \lambda$
-
-Por ejemplo, si históricamente ocurren en promedio $\lambda = 3.2$ protestas por mes en una ciudad, podemos calcular probabilidades sobre el número de protestas en el próximo mes:
-
-```{r poisson-ejemplo, echo=TRUE}
-# Probabilidad de exactamente 5 protestas este mes
-dpois(5, lambda = 3.2)
-
-# Probabilidad de 0 protestas
-dpois(0, lambda = 3.2)
-
-# Probabilidad de más de 6 protestas
-1 - ppois(6, lambda = 3.2)
-```
-
-:::
 
 ## Teorema del Límite Central
 
