@@ -52,6 +52,7 @@ format:
     code-fold: false
     code-tools: true
     highlight-style: github
+    reference-location: margin
 
 execute:
   echo: true

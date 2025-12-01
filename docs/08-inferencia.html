@@ -158,7 +158,7 @@ window.Quarto = {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -357,7 +357,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-probabilidad.html">IV. Unidad 3: Principios de Inferencia Estadística</a></li><li class="breadcrumb-item"><a href="./08-inferencia.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Inferencia estadística</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -466,7 +466,7 @@ window.Quarto = {
 </ol>
 </section>
 </section>
-<section id="distribuciones-muestrales" class="level2" data-number="8.3">
+<section id="distribuciones-muestrales" class="level2 page-columns page-full" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="distribuciones-muestrales"><span class="header-section-number">8.3</span> Distribuciones muestrales</h2>
 <p>La clave para entender la inferencia es reconocer que los <strong>estadísticos son variables aleatorias</strong>.</p>
 <section id="distribución-muestral-de-la-media" class="level4" data-number="8.3.0.1">
@@ -571,13 +571,13 @@ window.Quarto = {
 <h4 data-number="8.3.0.3" class="anchored" data-anchor-id="error-estándar"><span class="header-section-number">8.3.0.3</span> Error estándar</h4>
 <p>El <strong>error estándar</strong> (SE, <em>standard error</em>) es la desviación estándar de la distribución muestral de un estadístico.</p>
 </section>
-<section id="error-estándar-de-la-media" class="level4" data-number="8.3.0.4">
+<section id="error-estándar-de-la-media" class="level4 page-columns page-full" data-number="8.3.0.4">
 <h4 data-number="8.3.0.4" class="anchored" data-anchor-id="error-estándar-de-la-media"><span class="header-section-number">8.3.0.4</span> Error estándar de la media</h4>
 <p><span class="math display">\[\text{SE}(\bar{x}) = \frac{\sigma}{\sqrt{n}}\]</span></p>
 <p>Pero <span class="math inline">\(\sigma\)</span> (SD poblacional) es generalmente desconocido. Lo estimamos con <span class="math inline">\(s\)</span> (SD muestral):</p>
 <p><span class="math display">\[\widehat{\text{SE}}(\bar{x}) = \frac{s}{\sqrt{n}}\]</span></p>
 <p>Es importante distinguir entre <strong>error estándar</strong> y <strong>desviación estándar</strong>. La desviación estándar (<span class="math inline">\(s\)</span>) mide variabilidad en los <strong>datos</strong>, mientras que el error estándar (<span class="math inline">\(\text{SE}\)</span>) mide variabilidad del <strong>estadístico</strong> (precisión de la estimación). El <span class="math inline">\(\text{SE}\)</span> disminuye con <span class="math inline">\(n\)</span>; <span class="math inline">\(s\)</span> NO (permanece constante en promedio).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<p>Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;CONFUSIÓN COMÚN: El error estándar (<span class="math inline">\(\text{SE}\)</span>) mide qué tan precisa es nuestra estimación de la media. La desviación estándar (<span class="math inline">\(s\)</span>) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: <span class="math inline">\(\text{SE} = s/\sqrt{n}\)</span> siempre es menor que <span class="math inline">\(s\)</span> (excepto cuando <span class="math inline">\(n=1\)</span>).</p></div></div><p>Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados de ingresos (en miles de $)</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
@@ -1018,12 +1018,7 @@ window.Quarto = {
 <!-- -->
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>CONFUSIÓN COMÚN: El error estándar (<span class="math inline">\(\text{SE}\)</span>) mide qué tan precisa es nuestra estimación de la media. La desviación estándar (<span class="math inline">\(s\)</span>) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: <span class="math inline">\(\text{SE} = s/\sqrt{n}\)</span> siempre es menor que <span class="math inline">\(s\)</span> (excepto cuando <span class="math inline">\(n=1\)</span>).<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

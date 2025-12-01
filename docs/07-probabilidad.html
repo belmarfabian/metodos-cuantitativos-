@@ -158,7 +158,7 @@ window.Quarto = {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -357,7 +357,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./07-probabilidad.html">IV. Unidad 3: Principios de Inferencia Estadística</a></li><li class="breadcrumb-item"><a href="./07-probabilidad.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introducción a probabilidad</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -390,11 +390,11 @@ window.Quarto = {
 <li>Comprender el Teorema del Límite Central y su importancia para la inferencia</li>
 </ul>
 </section>
-<section id="fundamentos-de-probabilidad" class="level2" data-number="7.2">
+<section id="fundamentos-de-probabilidad" class="level2 page-columns page-full" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="fundamentos-de-probabilidad"><span class="header-section-number">7.2</span> Fundamentos de probabilidad</h2>
 <p>La investigación social cuantitativa enfrenta invariablemente la <strong>incertidumbre</strong>. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.</p>
 <p>La <strong>teoría de probabilidad</strong> nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<section id="conceptos-básicos" class="level4" data-number="7.2.0.1">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.</p></div></div><section id="conceptos-básicos" class="level4" data-number="7.2.0.1">
 <h4 data-number="7.2.0.1" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">7.2.0.1</span> Conceptos básicos</h4>
 </section>
 <section id="definición-y-notación" class="level4" data-number="7.2.0.2">
@@ -407,11 +407,11 @@ window.Quarto = {
 </ul>
 <p>Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: <span class="math inline">\(P(\text{Voto FA}) = \frac{360}{1200} = 0.30\)</span>. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).</p>
 </section>
-<section id="interpretaciones-de-probabilidad" class="level4" data-number="7.2.0.3">
+<section id="interpretaciones-de-probabilidad" class="level4 page-columns page-full" data-number="7.2.0.3">
 <h4 data-number="7.2.0.3" class="anchored" data-anchor-id="interpretaciones-de-probabilidad"><span class="header-section-number">7.2.0.3</span> Interpretaciones de probabilidad</h4>
 <p>Existen dos interpretaciones fundamentales de qué significa “probabilidad”:</p>
 <p><strong>1. Interpretación frecuentista</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;PERSPECTIVA DOMINANTE: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><p>La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.</p>
 <p><strong>2. Interpretación bayesiana</strong></p>
 <p>La probabilidad cuantifica <strong>grado de creencia</strong> o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como “¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?”).</p>
 <div class="cell">
@@ -441,13 +441,13 @@ window.Quarto = {
 <p>Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces <span class="math inline">\(P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33\)</span>. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).</p>
 </section>
 </section>
-<section id="variables-aleatorias-y-distribuciones" class="level2" data-number="7.3">
+<section id="variables-aleatorias-y-distribuciones" class="level2 page-columns page-full" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="variables-aleatorias-y-distribuciones"><span class="header-section-number">7.3</span> Variables aleatorias y distribuciones</h2>
 <p>Una <strong>variable aleatoria</strong> es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.</p>
-<section id="variables-aleatorias-discretas" class="level4" data-number="7.3.0.1">
+<section id="variables-aleatorias-discretas" class="level4 page-columns page-full" data-number="7.3.0.1">
 <h4 data-number="7.3.0.1" class="anchored" data-anchor-id="variables-aleatorias-discretas"><span class="header-section-number">7.3.0.1</span> Variables aleatorias discretas</h4>
 <p>Toman valores específicos y contables (generalmente enteros).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<p><strong>Función de masa de probabilidad (PMF)</strong></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;EJEMPLOS EN CIENCIAS SOCIALES: Número de partidos en el Congreso (1, 2, 3, …), número de protestas en un mes (0, 1, 2, 3, …), respuesta en escala Likert (1, 2, 3, 4, 5), número de votantes en una mesa (0, 1, 2, …, 300).</p></div></div><p><strong>Función de masa de probabilidad (PMF)</strong></p>
 <p>Para una variable aleatoria discreta <span class="math inline">\(X\)</span>, la PMF especifica la probabilidad de cada valor: <span class="math display">\[P(X = x)\]</span></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simulación: Número de protestas por mes en una ciudad</span></span>
@@ -474,10 +474,10 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="variables-aleatorias-continuas" class="level4" data-number="7.3.0.2">
+<section id="variables-aleatorias-continuas" class="level4 page-columns page-full" data-number="7.3.0.2">
 <h4 data-number="7.3.0.2" class="anchored" data-anchor-id="variables-aleatorias-continuas"><span class="header-section-number">7.3.0.2</span> Variables aleatorias continuas</h4>
 <p>Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<p><strong>Función de densidad de probabilidad (PDF)</strong></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;EJEMPLOS EN CIENCIAS SOCIALES: Porcentaje de votos obtenido (0% a 100%, cualquier valor decimal), ingreso mensual (cualquier valor positivo), índice de democracia (escala continua de 0 a 10), tiempo hasta próxima protesta (cualquier valor positivo).</p></div></div><p><strong>Función de densidad de probabilidad (PDF)</strong></p>
 <p>Para variables continuas, <span class="math inline">\(P(X = x) = 0\)</span> (la probabilidad de un valor exacto es cero). En su lugar, trabajamos con <strong>intervalos</strong>:</p>
 <p><span class="math display">\[P(a &lt; X &lt; b) = \int_a^b f(x)dx\]</span></p>
 <p>donde <span class="math inline">\(f(x)\)</span> es la función de densidad.</p>
@@ -709,15 +709,7 @@ window.Quarto = {
 <!-- -->
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>PERSPECTIVA DOMINANTE: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>EJEMPLOS EN CIENCIAS SOCIALES: Número de partidos en el Congreso (1, 2, 3, …), número de protestas en un mes (0, 1, 2, 3, …), respuesta en escala Likert (1, 2, 3, 4, 5), número de votantes en una mesa (0, 1, 2, …, 300).<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>EJEMPLOS EN CIENCIAS SOCIALES: Porcentaje de votos obtenido (0% a 100%, cualquier valor decimal), ingreso mensual (cualquier valor positivo), índice de democracia (escala continua de 0 a 10), tiempo hasta próxima protesta (cualquier valor positivo).<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
