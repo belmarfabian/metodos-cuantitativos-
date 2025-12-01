@@ -104,7 +104,7 @@ En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríam
 
 ## Bondad de ajuste
 
-### R cuadrado ($R^2$)
+#### R cuadrado ($R^2$)
 
 El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:
 

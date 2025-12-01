@@ -16,7 +16,7 @@ Al finalizar este capítulo, serás capaz de:
 
 Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?
 
-### La lógica de prueba por contradicción
+#### La lógica de prueba por contradicción
 
 Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:
 
@@ -29,7 +29,7 @@ Es crucial entender la asimetría fundamental de este razonamiento: nunca "acept
 
 ## Hipótesis nula y alternativa
 
-### Formulación de hipótesis
+#### Formulación de hipótesis
 
 **Hipótesis nula ($H_0$)**: Afirmación de "no efecto" o "no diferencia". Es lo que asumimos como cierto inicialmente.
 
@@ -41,7 +41,7 @@ Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efect
 
 ## Valores p y significancia estadística
 
-### ¿Qué es un valor p?
+#### ¿Qué es un valor p?
 
 El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos como los nuestros (o más), **asumiendo que $H_0$ es cierta**.
 

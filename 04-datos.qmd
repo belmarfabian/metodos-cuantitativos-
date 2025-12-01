@@ -15,7 +15,7 @@ Al finalizar este capítulo, serás capaz de:
 
 Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.
 
-### Según estructura
+#### Según estructura
 
 **Datos de corte transversal (cross-sectional)**
 
@@ -45,7 +45,7 @@ Observaciones anidadas en estructuras de múltiples niveles. Ejemplo: estudiante
 Ventaja: Modela variación en múltiples niveles simultáneamente.
 Limitación: Requiere técnicas multinivel (más allá del alcance de este libro introductorio).
 
-### Según granularidad
+#### Según granularidad
 
 **Datos micro (individuales)**
 
@@ -61,7 +61,7 @@ La unidad es el país o la región. Permiten comparación internacional pero pie
 
 La elección de granularidad no es neutral. @king1997 advierten sobre la **falacia ecológica**: inferir comportamiento individual desde patrones agregados puede ser erróneo si composición de agregados varía.
 
-### Según fuente
+#### Según fuente
 
 **Datos primarios**
 
@@ -93,7 +93,7 @@ Limitación: Representatividad problemática (no todos están en línea). Inferi
 
 ## Fuentes de datos para ciencias políticas
 
-### Encuestas de opinión pública
+#### Encuestas de opinión pública
 
 **Internacionales:**
 - **World Values Survey**: Actitudes y valores en ~100 países
@@ -105,27 +105,27 @@ Limitación: Representatividad problemática (no todos están en línea). Inferi
 - **CASEN**: Caracterización socioeconómica nacional (bienal)
 - **Encuesta Bicentenario UC-Adimark**
 
-### Datos electorales
+#### Datos electorales
 
 - **Servicio Electoral de Chile (SERVEL)**: Resultados electorales desagregados
 - **International IDEA**: Datos electorales comparados internacionalmente
 - **Database of Political Institutions (DPI)**: Instituciones y resultados electorales
 
-### Datos económicos y sociales
+#### Datos económicos y sociales
 
 - **Banco Mundial**: Indicadores de desarrollo mundial
 - **CEPAL**: Estadísticas económicas y sociales de América Latina
 - **INE Chile**: Estadísticas oficiales nacionales
 - **OECD**: Datos comparados de países desarrollados
 
-### Datos sobre instituciones políticas
+#### Datos sobre instituciones políticas
 
 - **Polity V**: Características de regímenes políticos
 - **V-Dem**: Variedades de democracia, múltiples dimensiones
 - **Database of Political Institutions (DPI)**: Sistemas electorales, estructuras gubernamentales
 - **Comparative Constitutions Project**: Contenido de constituciones
 
-### Datos legislativos
+#### Datos legislativos
 
 - **VoteView**: Votaciones nominales del Congreso de EE.UU.
 - **Manifesto Project**: Contenido de manifiestos partidarios
@@ -135,7 +135,7 @@ Limitación: Representatividad problemática (no todos están en línea). Inferi
 
 No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.
 
-### Dimensiones de calidad
+#### Dimensiones de calidad
 
 **1. Validez**
 
@@ -161,7 +161,7 @@ No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad de
 
 ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.
 
-### Problemas comunes
+#### Problemas comunes
 
 **Datos faltantes (missing data)**
 
@@ -193,7 +193,7 @@ Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusio
 
 R es un lenguaje de programación estadística y entorno para análisis de datos. RStudio es un entorno de desarrollo integrado (IDE) que hace más amigable trabajar con R.
 
-### ¿Por qué R?
+#### ¿Por qué R?
 
 **Ventajas:**
 - **Gratuito y de código abierto**: Sin costos de licencia
@@ -206,13 +206,13 @@ R es un lenguaje de programación estadística y entorno para análisis de datos
 - **Curva de aprendizaje**: Programar requiere práctica
 - **Múltiples formas de hacer lo mismo**: Puede ser confuso para principiantes
 
-### Instalación
+#### Instalación
 
 1. Descargar R: https://cran.r-project.org/
 2. Descargar RStudio: https://posit.co/download/rstudio-desktop/
 3. Instalar ambos (primero R, luego RStudio)
 
-### Anatomía de RStudio
+#### Anatomía de RStudio
 
 RStudio tiene cuatro paneles principales:
 
@@ -221,7 +221,7 @@ RStudio tiene cuatro paneles principales:
 3. **Environment** (arriba derecha): Muestra objetos en memoria (datasets, variables)
 4. **Files/Plots/Packages/Help** (abajo derecha): Navegación de archivos, gráficos, ayuda
 
-### Paquetes
+#### Paquetes
 
 R base es poderoso, pero paquetes extienden funcionalidad. Instalación (una vez):
 
@@ -239,7 +239,7 @@ library(tidyverse)
 library(haven)
 ```
 
-### Objetos básicos en R
+#### Objetos básicos en R
 
 **Vectores**: Secuencias de elementos del mismo tipo
 
@@ -267,7 +267,7 @@ sd(edades)          # Desviación estándar
 table(datos$voto)   # Tabla de frecuencias
 ```
 
-### Directorios de trabajo
+#### Directorios de trabajo
 
 R busca y guarda archivos en el "directorio de trabajo". Verificar:
 
@@ -287,7 +287,7 @@ Mejor práctica: usar **proyectos de RStudio** (`.Rproj`). Esto establece autom�
 
 Los datos pueden venir en múltiples formatos. R puede leer la mayoría.
 
-### Archivos de texto: CSV
+#### Archivos de texto: CSV
 
 Los archivos CSV (comma-separated values) son universales. Formato simple:
 
@@ -325,7 +325,7 @@ datos <- read_csv("encuesta.csv",
                                    partido = col_character()))
 ```
 
-### Archivos de Excel
+#### Archivos de Excel
 
 Excel es ubicuo en administración pública. Paquete `readxl`:
 
@@ -343,7 +343,7 @@ datos <- read_excel("archivo.xlsx",
                     range = "A1:F100")
 ```
 
-### Archivos de software estadístico
+#### Archivos de software estadístico
 
 **Stata (.dta):**
 
@@ -372,7 +372,7 @@ datos <- read_dta("encuesta.dta")
 attributes(datos$educ)$labels
 ```
 
-### Datos en línea
+#### Datos en línea
 
 Muchos datos están en URLs. Importar directamente:
 
@@ -386,7 +386,7 @@ Para datos de APIs, usar paquetes especializados:
 - `quantmod`: Datos financieros
 - `rtweet`: API de Twitter (ahora X)
 
-### Datos desde bases de datos
+#### Datos desde bases de datos
 
 Para bases SQL, usar `DBI`:
 
@@ -401,7 +401,7 @@ dbDisconnect(con)
 
 Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.
 
-### Inspeccionar datos
+#### Inspeccionar datos
 
 Primeros y últimos casos:
 
@@ -433,7 +433,7 @@ nrow(datos)       # Número de filas
 ncol(datos)       # Número de columnas
 ```
 
-### Seleccionar variables
+#### Seleccionar variables
 
 R base:
 
@@ -458,7 +458,7 @@ datos_reducido <- select(datos, starts_with("voto_"))
 datos_reducido <- select(datos, where(is.numeric))
 ```
 
-### Filtrar casos
+#### Filtrar casos
 
 R base:
 
@@ -473,7 +473,7 @@ jovenes <- filter(datos, edad < 30)
 jovenes_izquierda <- filter(datos, edad < 30 & partido %in% c("PS", "PC", "FA"))
 ```
 
-### Crear y transformar variables
+#### Crear y transformar variables
 
 R base:
 
@@ -495,7 +495,7 @@ datos <- mutate(datos,
                 ))
 ```
 
-### Recodificar variables
+#### Recodificar variables
 
 Cambiar categorías:
 
@@ -508,7 +508,7 @@ datos <- mutate(datos,
                 ))
 ```
 
-### Renombrar variables
+#### Renombrar variables
 
 R base:
 
@@ -524,7 +524,7 @@ datos <- rename(datos,
                 confianza_gobierno = p2)
 ```
 
-### Ordenar datos
+#### Ordenar datos
 
 Por edad (ascendente):
 
@@ -544,7 +544,7 @@ Por múltiples variables:
 datos_ordenado <- arrange(datos, partido, edad)
 ```
 
-### Agregar datos
+#### Agregar datos
 
 Resumir por grupos:
 
@@ -561,7 +561,7 @@ resumen_partido <- datos %>%
 
 El operador `%>%` (pipe) pasa el resultado de una función a la siguiente. El código anterior dice: "toma `datos`, agrúpalo por `partido`, calcula estadísticos".
 
-### Unir datasets
+#### Unir datasets
 
 **Left join**: Mantener todos los casos del dataset izquierdo
 
@@ -581,13 +581,13 @@ datos_completo <- inner_join(encuesta, resultados_electorales,
 
 Después de limpiar y transformar datos, es útil guardarlos.
 
-### CSV
+#### CSV
 
 ```{r eval=FALSE}
 write_csv(datos_limpios, "datos_procesados.csv")
 ```
 
-### Formato de R
+#### Formato de R
 
 Guardar como `.RDS` (R Data Serialization) preserva estructura completa:
 
@@ -601,14 +601,14 @@ Leer después:
 datos <- readRDS("datos_procesados.rds")
 ```
 
-### Stata
+#### Stata
 
 ```{r eval=FALSE}
 library(haven)
 write_dta(datos_limpios, "datos_procesados.dta")
 ```
 
-### Excel
+#### Excel
 
 ```{r eval=FALSE}
 library(writexl)
@@ -619,7 +619,7 @@ write_xlsx(datos_limpios, "datos_procesados.xlsx")
 
 La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.
 
-### Principios
+#### Principios
 
 **1. Usa scripts, no clics**
 
@@ -666,7 +666,7 @@ proyecto/
 
 Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.
 
-### R Markdown
+#### R Markdown
 
 R Markdown integra código, resultados y texto en un solo documento. Permite generar reportes reproducibles en HTML, PDF o Word.
 

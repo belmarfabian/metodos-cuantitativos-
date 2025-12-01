@@ -21,7 +21,7 @@ En ciencias sociales raramente tenemos acceso a poblaciones completas. Queremos 
 
 Pero solo podemos encuestar una **muestra** de cientos o miles de personas, no los millones que componen la población. La **inferencia estadística** es el proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.
 
-### Ejemplo motivador: Encuestas electorales en Chile
+#### Ejemplo motivador: Encuestas electorales en Chile
 
 Antes de las elecciones presidenciales 2021 (segunda vuelta), múltiples encuestadoras reportaron:
 
@@ -69,7 +69,7 @@ La inferencia estadística nos da herramientas para responder estas preguntas.
 
 ## Muestras y poblaciones
 
-### Definiciones fundamentales
+#### Definiciones fundamentales
 
 **Población**: Conjunto completo de unidades de interés. Tiene **parámetros** (valores fijos, generalmente desconocidos):
 - Media poblacional: $\mu$
@@ -85,7 +85,7 @@ Es fundamental distinguir que los **parámetros** $(\mu, p, \sigma^2)$ son valor
 
 Por ejemplo, consideremos el apoyo a una reforma tributaria. La **población** son 15 millones de votantes chilenos, y el **parámetro de interés** es $p$ = proporción que apoya la reforma (desconocida). Si tomamos una **muestra** de 1,200 votantes encuestados y observamos el **estadístico** $\hat{p} = 0.42$ (42% de la muestra apoya), la **pregunta inferencial** es: ¿Qué podemos decir sobre $p$ (desconocido) a partir de $\hat{p} = 0.42$ (conocido)?
 
-### Muestreo aleatorio simple
+#### Muestreo aleatorio simple
 
 Para que la inferencia sea válida, necesitamos **muestras probabilísticas**. El diseño más simple:
 
@@ -119,7 +119,7 @@ cat("Error de estimación: p̂ - p =", p_hat - p_verdadero, "\n")
 
 La clave para entender la inferencia es reconocer que los **estadísticos son variables aleatorias**.
 
-### Distribución muestral de la media
+#### Distribución muestral de la media
 
 Si tomamos muchas muestras de tamaño $n$ y calculamos $\bar{x}$ para cada una, la distribución de todos esos $\bar{x}$ es la **distribución muestral de la media**.
 
@@ -194,7 +194,7 @@ grid.arrange(p1, p2, ncol = 1)
 
 Aunque la población de ingresos es altamente asimétrica, la distribución de $\bar{X}$ es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.
 
-### Distribución muestral de la proporción
+#### Distribución muestral de la proporción
 
 Para proporciones, una lógica similar aplica. Si $\hat{p}$ es la proporción muestral:
 
@@ -225,7 +225,7 @@ cat("P(p̂ < 0.42) =", round(prob_error_grande, 3))
 
 El **error estándar** (SE, *standard error*) es la desviación estándar de la distribución muestral de un estadístico.
 
-### Error estándar de la media
+#### Error estándar de la media
 
 $$\text{SE}(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$
 
@@ -259,7 +259,7 @@ cat("- Nuestra estimación de la media tiene error típico de ±$", round(se, 0)
     " mil\n", sep = "")
 ```
 
-### Error estándar de la proporción
+#### Error estándar de la proporción
 
 $$\text{SE}(\hat{p}) = \sqrt{\frac{p(1-p)}{n}}$$
 
@@ -279,7 +279,7 @@ cat("Apoyan =", apoyos, "(", round(p_hat * 100, 1), "%)\n", sep = "")
 cat("SE(p̂) =", round(se_p, 4), "o", round(se_p * 100, 2), "puntos porcentuales\n")
 ```
 
-### El error estándar disminuye con $\sqrt{n}$
+#### El error estándar disminuye con $\sqrt{n}$
 
 Una implicación crucial: para **reducir el SE a la mitad**, necesitas **cuadruplicar** el tamaño muestral.
 
@@ -309,7 +309,7 @@ data.frame(n = n_seq, se = se_seq) %>%
 
 Un **intervalo de confianza** (IC) es un rango de valores plausibles para el parámetro poblacional, construido de tal manera que, si repitiéramos el muestreo infinitas veces, el IC contendría el valor verdadero en (por ejemplo) 95% de las muestras.
 
-### Intervalo de confianza para la media
+#### Intervalo de confianza para la media
 
 **Fórmula general:**
 
@@ -352,7 +352,7 @@ cat("poblacional está entre $", round(ic_inferior, 0), " y $",
     round(ic_superior, 0), " mil.\n", sep = "")
 ```
 
-### Intervalo de confianza para la proporción
+#### Intervalo de confianza para la proporción
 
 $$\text{IC}_{95\%} = \hat{p} \pm 1.96 \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
 
@@ -381,7 +381,7 @@ cat("está probablemente entre", round(ic_inf * 100, 1), "% y",
     round(ic_sup * 100, 1), "%.\n")
 ```
 
-### Niveles de confianza alternativos
+#### Niveles de confianza alternativos
 
 No estamos limitados a 95%. Podemos construir ICs con cualquier nivel de confianza:
 
@@ -440,7 +440,7 @@ ggplot(df_ic, aes(y = nivel)) +
 ```
 
 
-### Tabla de referencia: Tamaño muestral para proporciones
+#### Tabla de referencia: Tamaño muestral para proporciones
 
 ```{r tabla-n, echo=FALSE}
 library(knitr)

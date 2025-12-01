@@ -23,7 +23,7 @@ $$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
 
 ## Prueba t para dos muestras
 
-### Muestras independientes
+#### Muestras independientes
 
 Comparamos las medias de dos grupos independientes.
 
@@ -47,7 +47,7 @@ resultado <- t.test(ingresos_hombres, ingresos_mujeres)
 print(resultado)
 ```
 
-### Muestras pareadas
+#### Muestras pareadas
 
 Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:
 

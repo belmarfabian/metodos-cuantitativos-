@@ -345,16 +345,13 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">11.1</span> Objetivos del capítulo</a></li>
   <li><a href="#correlación" id="toc-correlación" class="nav-link" data-scroll-target="#correlación"><span class="header-section-number">11.2</span> Correlación</a></li>
   <li><a href="#el-modelo-de-regresión-lineal-simple" id="toc-el-modelo-de-regresión-lineal-simple" class="nav-link" data-scroll-target="#el-modelo-de-regresión-lineal-simple"><span class="header-section-number">11.3</span> El modelo de regresión lineal simple</a></li>
   <li><a href="#mínimos-cuadrados-ordinarios" id="toc-mínimos-cuadrados-ordinarios" class="nav-link" data-scroll-target="#mínimos-cuadrados-ordinarios"><span class="header-section-number">11.4</span> Mínimos cuadrados ordinarios</a></li>
   <li><a href="#interpretación-de-coeficientes" id="toc-interpretación-de-coeficientes" class="nav-link" data-scroll-target="#interpretación-de-coeficientes"><span class="header-section-number">11.5</span> Interpretación de coeficientes</a></li>
-  <li><a href="#bondad-de-ajuste" id="toc-bondad-de-ajuste" class="nav-link" data-scroll-target="#bondad-de-ajuste"><span class="header-section-number">11.6</span> Bondad de ajuste</a>
-  <ul class="collapse">
-  <li><a href="#r-cuadrado-r2" id="toc-r-cuadrado-r2" class="nav-link" data-scroll-target="#r-cuadrado-r2"><span class="header-section-number">11.6.1</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</a></li>
-  </ul></li>
+  <li><a href="#bondad-de-ajuste" id="toc-bondad-de-ajuste" class="nav-link" data-scroll-target="#bondad-de-ajuste"><span class="header-section-number">11.6</span> Bondad de ajuste</a></li>
   <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">11.7</span> Resumen del capítulo</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">11.8</span> Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">11.9</span> Ejercicios</a></li>
@@ -500,8 +497,8 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </section>
 <section id="bondad-de-ajuste" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="bondad-de-ajuste"><span class="header-section-number">11.6</span> Bondad de ajuste</h2>
-<section id="r-cuadrado-r2" class="level3" data-number="11.6.1">
-<h3 data-number="11.6.1" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.6.1</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h3>
+<section id="r-cuadrado-r2" class="level4" data-number="11.6.0.1">
+<h4 data-number="11.6.0.1" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.6.0.1</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
 <p>El <strong>coeficiente de determinación</strong> mide qué proporción de la variabilidad en <span class="math inline">\(Y\)</span> es explicada por <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}\]</span></p>
 <ul>
@@ -1133,7 +1130,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bondad de ajuste</span></span>
 <span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="fu">### R cuadrado ($R^2$)</span></span>
+<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="fu">#### R cuadrado ($R^2$)</span></span>
 <span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:</span>
 <span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>

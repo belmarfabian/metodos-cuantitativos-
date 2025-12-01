@@ -47,7 +47,7 @@ format:
     theme: cosmo
     css: css/style.css
     toc: true
-    toc-depth: 3
+    toc-depth: 2
     number-sections: true
     code-fold: false
     code-tools: true

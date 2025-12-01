@@ -317,16 +317,12 @@ div.csl-indent {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">2.1</span> Objetivos del capítulo</a></li>
   <li><a href="#preguntas-de-investigación" id="toc-preguntas-de-investigación" class="nav-link" data-scroll-target="#preguntas-de-investigación"><span class="header-section-number">2.2</span> Preguntas de investigación</a></li>
   <li><a href="#hipótesis-y-teoría" id="toc-hipótesis-y-teoría" class="nav-link" data-scroll-target="#hipótesis-y-teoría"><span class="header-section-number">2.3</span> Hipótesis y teoría</a></li>
   <li><a href="#causalidad" id="toc-causalidad" class="nav-link" data-scroll-target="#causalidad"><span class="header-section-number">2.4</span> Causalidad</a></li>
-  <li><a href="#tipos-de-diseños" id="toc-tipos-de-diseños" class="nav-link" data-scroll-target="#tipos-de-diseños"><span class="header-section-number">2.5</span> Tipos de diseños</a>
-  <ul class="collapse">
-  <li><a href="#diseños-experimentales" id="toc-diseños-experimentales" class="nav-link" data-scroll-target="#diseños-experimentales"><span class="header-section-number">2.5.1</span> Diseños experimentales</a></li>
-  <li><a href="#diseños-observacionales" id="toc-diseños-observacionales" class="nav-link" data-scroll-target="#diseños-observacionales"><span class="header-section-number">2.5.2</span> Diseños observacionales</a></li>
-  </ul></li>
+  <li><a href="#tipos-de-diseños" id="toc-tipos-de-diseños" class="nav-link" data-scroll-target="#tipos-de-diseños"><span class="header-section-number">2.5</span> Tipos de diseños</a></li>
   <li><a href="#validez-interna-y-externa" id="toc-validez-interna-y-externa" class="nav-link" data-scroll-target="#validez-interna-y-externa"><span class="header-section-number">2.6</span> Validez interna y externa</a></li>
   <li><a href="#casos-unidades-y-niveles-de-análisis" id="toc-casos-unidades-y-niveles-de-análisis" class="nav-link" data-scroll-target="#casos-unidades-y-niveles-de-análisis"><span class="header-section-number">2.7</span> Casos, unidades y niveles de análisis</a></li>
   <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">2.8</span> Resumen del capítulo</a></li>
@@ -386,15 +382,15 @@ div.csl-indent {
 <section id="tipos-de-diseños" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="tipos-de-diseños"><span class="header-section-number">2.5</span> Tipos de diseños</h2>
 <p>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</p>
-<section id="diseños-experimentales" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="diseños-experimentales"><span class="header-section-number">2.5.1</span> Diseños experimentales</h3>
+<section id="diseños-experimentales" class="level4" data-number="2.5.0.1">
+<h4 data-number="2.5.0.1" class="anchored" data-anchor-id="diseños-experimentales"><span class="header-section-number">2.5.0.1</span> Diseños experimentales</h4>
 <p>En un <strong>experimento</strong>, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</p>
 <p><strong>Ejemplo</strong>: <span class="citation" data-cites="gerber2008">Gerber &amp; Green (<a href="01-introduccion.html#ref-gerber2008" role="doc-biblioref">2008</a>)</span> realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.</p>
 <p><strong>Ventajas</strong>: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna</p>
 <p><strong>Limitaciones</strong>: - Muchas preguntas políticas no permiten experimentación (no podemos asignar aleatoriamente tipo de régimen político)^[LÍMITE ÉTICO OBVIO: No podemos experimentalmente asignar a países “democracia” vs “dictadura” para medir efectos sobre desarrollo económico. Tampoco podemos asignar aleatoriamente “corrupción gubernamental” para estudiar efectos sobre confianza ciudadana. Estos límites éticos y prácticos obligan a usar datos observacionales con estrategias cuasi-experimentales o de control estadístico (regresión múltiple, matching, etc.). - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables</p>
 </section>
-<section id="diseños-observacionales" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.5.2</span> Diseños observacionales</h3>
+<section id="diseños-observacionales" class="level4" data-number="2.5.0.2">
+<h4 data-number="2.5.0.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.5.0.2</span> Diseños observacionales</h4>
 <p>La mayoría de investigación en ciencias políticas usa <strong>datos observacionales</strong> —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</p>
 <p><strong>Estudios de corte transversal</strong></p>
 <p>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</p>
@@ -990,7 +986,7 @@ Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and 
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños experimentales</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Diseños experimentales</span></span>
 <span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</span>
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
@@ -1008,7 +1004,7 @@ Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and 
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>En ciencia política, solo ciertas preguntas son experimentables</span>
 <span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### Diseños observacionales</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Diseños observacionales</span></span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>

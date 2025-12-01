@@ -37,7 +37,7 @@ comunas$educ_superior[comunas$educ_superior < 0] <- abs(comunas$educ_superior[co
 
 Antes de calcular estadísticos, conviene visualizar cómo se distribuyen los datos. Una **distribución de frecuencia** muestra cuántas observaciones caen en cada valor o rango.
 
-### Tablas de frecuencia
+#### Tablas de frecuencia
 
 Para variables categóricas, contamos casos en cada categoría:
 
@@ -68,7 +68,7 @@ encuesta %>%
   mutate(porcentaje = n / sum(n) * 100)
 ```
 
-### Histogramas
+#### Histogramas
 
 Para variables continuas, agrupamos en intervalos (bins):
 
@@ -157,7 +157,7 @@ En distribuciones asimétricas a la derecha, la media excede la mediana (arrastr
 
 Las medidas de tendencia central resumen "dónde" están los datos. Las medidas de dispersión resumen cuánto varían.
 
-### Rango
+#### Rango
 
 El **rango** es la diferencia entre el máximo y el mínimo:
 
@@ -168,7 +168,7 @@ diff(range(comunas$participacion))
 
 Simple pero sensible a outliers. Un solo valor extremo determina el rango.
 
-### Rango intercuartílico (IQR)
+#### Rango intercuartílico (IQR)
 
 El **IQR** es la diferencia entre el tercer cuartil (Q3) y el primer cuartil (Q1). Captura el 50% central de los datos.
 
@@ -181,7 +181,7 @@ IQR(comunas$participacion)
 
 IQR es robusto a outliers—solo usa el 50% central.
 
-### Varianza
+#### Varianza
 
 La **varianza** ($s^2$) mide la dispersión promedio al cuadrado respecto a la media:
 
@@ -195,7 +195,7 @@ var(comunas$participacion)
 
 **Problema:** La varianza está en unidades al cuadrado (% al cuadrado), difícil de interpretar.
 
-### Desviación estándar
+#### Desviación estándar
 
 La **desviación estándar** ($s$) es la raíz cuadrada de la varianza:
 
@@ -209,7 +209,7 @@ sd(comunas$participacion)
 
 La desviación estándar está en las mismas unidades que los datos originales, facilitando interpretación.
 
-### Coeficiente de variación
+#### Coeficiente de variación
 
 El **coeficiente de variación** (CV) es la desviación estándar relativa a la media:
 
@@ -233,7 +233,7 @@ data.frame(
 ) %>% kable(digits = 3)
 ```
 
-### Comparación de medidas de dispersión
+#### Comparación de medidas de dispersión
 
 ```{r}
 # Resumen de dispersión
@@ -266,7 +266,7 @@ quantile(comunas$participacion, probs = c(0.05, 0.25, 0.50, 0.75, 0.95))
 
 **Interpretación:** El 25% de comunas tiene participación ≤ `r round(quantile(comunas$participacion, 0.25), 1)`%. El 75% tiene participación ≤ `r round(quantile(comunas$participacion, 0.75), 1)`%.
 
-### Resumen de cinco números
+#### Resumen de cinco números
 
 El **resumen de cinco números** (five-number summary) incluye:
 
@@ -284,7 +284,7 @@ Este resumen captura ubicación, dispersión y extremos. Es la base del boxplot.
 
 ## Forma de la distribución
 
-### Asimetría (skewness)
+#### Asimetría (skewness)
 
 La **asimetría** mide si la distribución se inclina hacia un lado:
 
@@ -295,7 +295,7 @@ La **asimetría** mide si la distribución se inclina hacia un lado:
 
 ## Gráficos exploratorios
 
-### Boxplot (diagrama de caja)
+#### Boxplot (diagrama de caja)
 
 El **boxplot** visualiza el resumen de cinco números:
 
@@ -334,7 +334,7 @@ ggplot(comunas, aes(x = pobreza_cat, y = participacion, fill = pobreza_cat)) +
   theme(legend.position = "none")
 ```
 
-### Violin plot
+#### Violin plot
 
 Combina boxplot con densidad:
 
@@ -348,7 +348,7 @@ ggplot(comunas, aes(x = pobreza_cat, y = participacion, fill = pobreza_cat)) +
   theme(legend.position = "none")
 ```
 
-### Gráfico de densidad
+#### Gráfico de densidad
 
 Alternativa suave al histograma:
 
@@ -372,7 +372,7 @@ ggplot(comunas, aes(x = participacion)) +
 
 Los **outliers** son observaciones inusualmente extremas. Pueden ser errores de medición o casos genuinamente inusuales.
 
-### Método IQR
+#### Método IQR
 
 Criterio estándar: outliers están más allá de $Q1 - 1.5 \times IQR$ o $Q3 + 1.5 \times IQR$:
 
@@ -407,7 +407,7 @@ outliers %>%
 
 Frecuentemente queremos describir relaciones entre variables.
 
-### Tablas de contingencia
+#### Tablas de contingencia
 
 Para dos variables categóricas:
 
@@ -434,7 +434,7 @@ prop.table(tabla, margin = 1)
 prop.table(tabla, margin = 2)
 ```
 
-### Covarianza
+#### Covarianza
 
 La **covarianza** mide cómo dos variables varían conjuntamente:
 
@@ -450,7 +450,7 @@ cov(comunas$participacion, comunas$educ_superior)
 
 **Problema:** La magnitud depende de las escalas. Difícil interpretar.
 
-### Correlación
+#### Correlación
 
 La **correlación de Pearson** ($r$) es la covarianza estandarizada:
 
@@ -481,7 +481,7 @@ ggplot(comunas, aes(x = educ_superior, y = participacion)) +
 
 **Importante:** Correlación mide **asociación lineal**, no causalidad. Alta correlación no implica que X causa Y.
 
-### Matriz de correlaciones
+#### Matriz de correlaciones
 
 Para múltiples variables:
 

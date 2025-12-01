@@ -345,20 +345,11 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">9.1</span> Objetivos del capítulo</a></li>
-  <li><a href="#lógica-de-las-pruebas-de-hipótesis" id="toc-lógica-de-las-pruebas-de-hipótesis" class="nav-link" data-scroll-target="#lógica-de-las-pruebas-de-hipótesis"><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis</a>
-  <ul class="collapse">
-  <li><a href="#la-lógica-de-prueba-por-contradicción" id="toc-la-lógica-de-prueba-por-contradicción" class="nav-link" data-scroll-target="#la-lógica-de-prueba-por-contradicción"><span class="header-section-number">9.2.1</span> La lógica de prueba por contradicción</a></li>
-  </ul></li>
-  <li><a href="#hipótesis-nula-y-alternativa" id="toc-hipótesis-nula-y-alternativa" class="nav-link" data-scroll-target="#hipótesis-nula-y-alternativa"><span class="header-section-number">9.3</span> Hipótesis nula y alternativa</a>
-  <ul class="collapse">
-  <li><a href="#formulación-de-hipótesis" id="toc-formulación-de-hipótesis" class="nav-link" data-scroll-target="#formulación-de-hipótesis"><span class="header-section-number">9.3.1</span> Formulación de hipótesis</a></li>
-  </ul></li>
-  <li><a href="#valores-p-y-significancia-estadística" id="toc-valores-p-y-significancia-estadística" class="nav-link" data-scroll-target="#valores-p-y-significancia-estadística"><span class="header-section-number">9.4</span> Valores p y significancia estadística</a>
-  <ul class="collapse">
-  <li><a href="#qué-es-un-valor-p" id="toc-qué-es-un-valor-p" class="nav-link" data-scroll-target="#qué-es-un-valor-p"><span class="header-section-number">9.4.1</span> ¿Qué es un valor p?</a></li>
-  </ul></li>
+  <li><a href="#lógica-de-las-pruebas-de-hipótesis" id="toc-lógica-de-las-pruebas-de-hipótesis" class="nav-link" data-scroll-target="#lógica-de-las-pruebas-de-hipótesis"><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis</a></li>
+  <li><a href="#hipótesis-nula-y-alternativa" id="toc-hipótesis-nula-y-alternativa" class="nav-link" data-scroll-target="#hipótesis-nula-y-alternativa"><span class="header-section-number">9.3</span> Hipótesis nula y alternativa</a></li>
+  <li><a href="#valores-p-y-significancia-estadística" id="toc-valores-p-y-significancia-estadística" class="nav-link" data-scroll-target="#valores-p-y-significancia-estadística"><span class="header-section-number">9.4</span> Valores p y significancia estadística</a></li>
   <li><a href="#errores-tipo-i-y-tipo-ii" id="toc-errores-tipo-i-y-tipo-ii" class="nav-link" data-scroll-target="#errores-tipo-i-y-tipo-ii"><span class="header-section-number">9.5</span> Errores tipo I y tipo II</a></li>
   <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">9.6</span> Resumen del capítulo</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">9.7</span> Lecturas recomendadas</a></li>
@@ -404,8 +395,8 @@ window.Quarto = {
 <section id="lógica-de-las-pruebas-de-hipótesis" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="lógica-de-las-pruebas-de-hipótesis"><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis</h2>
 <p>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: <strong>¿Este patrón que observo en mis datos es real, o podría ser producto del azar?</strong> Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</p>
-<section id="la-lógica-de-prueba-por-contradicción" class="level3" data-number="9.2.1">
-<h3 data-number="9.2.1" class="anchored" data-anchor-id="la-lógica-de-prueba-por-contradicción"><span class="header-section-number">9.2.1</span> La lógica de prueba por contradicción</h3>
+<section id="la-lógica-de-prueba-por-contradicción" class="level4" data-number="9.2.0.1">
+<h4 data-number="9.2.0.1" class="anchored" data-anchor-id="la-lógica-de-prueba-por-contradicción"><span class="header-section-number">9.2.0.1</span> La lógica de prueba por contradicción</h4>
 <p>Las pruebas de hipótesis usan un argumento de <strong>reducción al absurdo</strong>:</p>
 <ol type="1">
 <li>Asumimos que <strong>NO hay efecto</strong> (hipótesis nula: <span class="math inline">\(H_0\)</span>)</li>
@@ -418,8 +409,8 @@ window.Quarto = {
 </section>
 <section id="hipótesis-nula-y-alternativa" class="level2" data-number="9.3">
 <h2 data-number="9.3" class="anchored" data-anchor-id="hipótesis-nula-y-alternativa"><span class="header-section-number">9.3</span> Hipótesis nula y alternativa</h2>
-<section id="formulación-de-hipótesis" class="level3" data-number="9.3.1">
-<h3 data-number="9.3.1" class="anchored" data-anchor-id="formulación-de-hipótesis"><span class="header-section-number">9.3.1</span> Formulación de hipótesis</h3>
+<section id="formulación-de-hipótesis" class="level4" data-number="9.3.0.1">
+<h4 data-number="9.3.0.1" class="anchored" data-anchor-id="formulación-de-hipótesis"><span class="header-section-number">9.3.0.1</span> Formulación de hipótesis</h4>
 <p><strong>Hipótesis nula (<span class="math inline">\(H_0\)</span>)</strong>: Afirmación de “no efecto” o “no diferencia”. Es lo que asumimos como cierto inicialmente.</p>
 <p><strong>Hipótesis alternativa (<span class="math inline">\(H_1\)</span>)</strong>: Lo que esperamos encontrar si rechazamos <span class="math inline">\(H_0\)</span>. Puede ser: - <strong>Bilateral</strong> (dos colas): <span class="math inline">\(H_1: \mu \neq \mu_0\)</span> (hay diferencia, en cualquier dirección) - <strong>Unilateral</strong> (una cola): <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span> o <span class="math inline">\(H_1: \mu &lt; \mu_0\)</span> (dirección específica)</p>
 <p>Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear <span class="math inline">\(H_0: \mu = 8\%\)</span> (el desempleo se mantiene en 8%) versus <span class="math inline">\(H_1: \mu &lt; 8\%\)</span> (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos <span class="math inline">\(H_0: p_{\text{hombres}} = p_{\text{mujeres}}\)</span> (no hay diferencia) contra <span class="math inline">\(H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}\)</span> (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos <span class="math inline">\(H_0: \mu_{\text{región}} = 550\)</span> mil pesos (igual al promedio nacional) versus <span class="math inline">\(H_1: \mu_{\text{región}} \neq 550\)</span> mil (diferente al nacional).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
@@ -427,8 +418,8 @@ window.Quarto = {
 </section>
 <section id="valores-p-y-significancia-estadística" class="level2" data-number="9.4">
 <h2 data-number="9.4" class="anchored" data-anchor-id="valores-p-y-significancia-estadística"><span class="header-section-number">9.4</span> Valores p y significancia estadística</h2>
-<section id="qué-es-un-valor-p" class="level3" data-number="9.4.1">
-<h3 data-number="9.4.1" class="anchored" data-anchor-id="qué-es-un-valor-p"><span class="header-section-number">9.4.1</span> ¿Qué es un valor p?</h3>
+<section id="qué-es-un-valor-p" class="level4" data-number="9.4.0.1">
+<h4 data-number="9.4.0.1" class="anchored" data-anchor-id="qué-es-un-valor-p"><span class="header-section-number">9.4.0.1</span> ¿Qué es un valor p?</h4>
 <p>El <strong>valor p</strong> (<em>p-value</em>) es la probabilidad de observar datos tan extremos como los nuestros (o más), <strong>asumiendo que <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 <p><span class="math display">\[\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})\]</span></p>
 <p>La interpretación correcta del valor p es fundamental para evitar errores comunes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Cuando observamos <span class="math inline">\(p = 0.03\)</span>, debemos interpretar: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.” Un valor <span class="math inline">\(p = 0.001\)</span> indica: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).” Por el contrario, <span class="math inline">\(p = 0.45\)</span> significa: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.” El valor p <strong>NO</strong> representa la probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta.</p>
@@ -965,7 +956,7 @@ window.Quarto = {
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">### La lógica de prueba por contradicción</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">#### La lógica de prueba por contradicción</span></span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
@@ -978,7 +969,7 @@ window.Quarto = {
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hipótesis nula y alternativa</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">### Formulación de hipótesis</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Formulación de hipótesis</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Hipótesis nula ($H_0$)**: Afirmación de "no efecto" o "no diferencia". Es lo que asumimos como cierto inicialmente.</span>
 <span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
@@ -990,7 +981,7 @@ window.Quarto = {
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Valores p y significancia estadística</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">### ¿Qué es un valor p?</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">#### ¿Qué es un valor p?</span></span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos como los nuestros (o más), **asumiendo que $H_0$ es cierta**.</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>

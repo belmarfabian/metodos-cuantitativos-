@@ -46,7 +46,7 @@ Una buena medición debe ser **válida** (¿la medida captura el concepto que pr
 
 **4. Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
 
-### Confiabilidad
+#### Confiabilidad
 
 La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiable produce resultados similares cuando se aplica repetidamente al mismo fenómeno.
 
@@ -58,7 +58,7 @@ Tipos de confiabilidad:
 
 **3. Consistencia interna**: Para escalas multi-ítem (ver siguiente sección), ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
 
-### Relación entre validez y confiabilidad
+#### Relación entre validez y confiabilidad
 
 Es posible tener alta confiabilidad pero baja validez. Si medimos "democracia" solo con PIB per cápita, la medida será confiable (el PIB se mide consistentemente) pero inválida (el PIB no es democracia).^[ANALOGÍA ÚTIL: Imagina una balanza que consistentemente marca 5kg más de lo real. Es CONFIABLE (siempre da el mismo error), pero INVÁLIDA (no mide el peso verdadero). En ciencias sociales: si medimos "calidad democrática" solo con "número de partidos en el Congreso", podríamos medir eso de forma confiable, pero ¿es válido? Un país con 50 partidos fragmentados puede tener peor calidad democrática que uno con 3 partidos funcionales. La medida es confiable pero conceptualmente inválida.
 
@@ -71,18 +71,18 @@ Idealmente, queremos ambas. Pero si debemos priorizar, @king1994 argumentan que 
 
 La medición en ciencias sociales enfrenta problemas sistemáticos que amenazan validez e inferencia.
 
-### Sesgo de deseabilidad social
+#### Sesgo de deseabilidad social
 
 Los encuestados pueden responder lo que perciben como socialmente aceptable en lugar de sus verdaderas actitudes. Esto es particularmente problemático para temas sensibles: racismo, corrupción personal, comportamiento antisocial.
 
 
-### Sesgo de aquiescencia
+#### Sesgo de aquiescencia
 
 Tendencia a estar de acuerdo con afirmaciones independientemente de su contenido. Particularmente problemático en culturas donde contradecir es descortés.
 
 **Mitigación**: Incluir ítems con dirección invertida.
 
-### No-respuesta diferencial
+#### No-respuesta diferencial
 
 Cuando quienes no responden difieren sistemáticamente de quienes responden, las estimaciones se sesgan. Si en una encuesta sobre confianza institucional, los más desconfiados no responden, sobrestimamos confianza.
 

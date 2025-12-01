@@ -345,14 +345,10 @@ window.Quarto = {
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
-  <ul>
+  <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">10.1</span> Objetivos del capítulo</a></li>
   <li><a href="#prueba-t-para-una-muestra" id="toc-prueba-t-para-una-muestra" class="nav-link" data-scroll-target="#prueba-t-para-una-muestra"><span class="header-section-number">10.2</span> Prueba t para una muestra</a></li>
-  <li><a href="#prueba-t-para-dos-muestras" id="toc-prueba-t-para-dos-muestras" class="nav-link" data-scroll-target="#prueba-t-para-dos-muestras"><span class="header-section-number">10.3</span> Prueba t para dos muestras</a>
-  <ul class="collapse">
-  <li><a href="#muestras-independientes" id="toc-muestras-independientes" class="nav-link" data-scroll-target="#muestras-independientes"><span class="header-section-number">10.3.1</span> Muestras independientes</a></li>
-  <li><a href="#muestras-pareadas" id="toc-muestras-pareadas" class="nav-link" data-scroll-target="#muestras-pareadas"><span class="header-section-number">10.3.2</span> Muestras pareadas</a></li>
-  </ul></li>
+  <li><a href="#prueba-t-para-dos-muestras" id="toc-prueba-t-para-dos-muestras" class="nav-link" data-scroll-target="#prueba-t-para-dos-muestras"><span class="header-section-number">10.3</span> Prueba t para dos muestras</a></li>
   <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">10.4</span> Resumen del capítulo</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">10.5</span> Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">10.6</span> Ejercicios</a></li>
@@ -400,8 +396,8 @@ window.Quarto = {
 </section>
 <section id="prueba-t-para-dos-muestras" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="prueba-t-para-dos-muestras"><span class="header-section-number">10.3</span> Prueba t para dos muestras</h2>
-<section id="muestras-independientes" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="muestras-independientes"><span class="header-section-number">10.3.1</span> Muestras independientes</h3>
+<section id="muestras-independientes" class="level4" data-number="10.3.0.1">
+<h4 data-number="10.3.0.1" class="anchored" data-anchor-id="muestras-independientes"><span class="header-section-number">10.3.0.1</span> Muestras independientes</h4>
 <p>Comparamos las medias de dos grupos independientes.</p>
 <p><strong>Hipótesis:</strong> - <span class="math inline">\(H_0: \mu_1 = \mu_2\)</span> - <span class="math inline">\(H_1: \mu_1 \neq \mu_2\)</span></p>
 <p><strong>Estadístico t:</strong> <span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
@@ -430,8 +426,8 @@ mean of x mean of y
 </div>
 </div>
 </section>
-<section id="muestras-pareadas" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="muestras-pareadas"><span class="header-section-number">10.3.2</span> Muestras pareadas</h3>
+<section id="muestras-pareadas" class="level4" data-number="10.3.0.2">
+<h4 data-number="10.3.0.2" class="anchored" data-anchor-id="muestras-pareadas"><span class="header-section-number">10.3.0.2</span> Muestras pareadas</h4>
 <p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
@@ -982,7 +978,7 @@ mean difference
 <span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## Prueba t para dos muestras</span></span>
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Muestras independientes</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Muestras independientes</span></span>
 <span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>Comparamos las medias de dos grupos independientes.</span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a></span>
@@ -1006,7 +1002,7 @@ mean difference
 <span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span>
 <span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Muestras pareadas</span></span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Muestras pareadas</span></span>
 <span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</span>
 <span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a></span>

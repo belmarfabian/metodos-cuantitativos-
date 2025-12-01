@@ -33,7 +33,7 @@ El objetivo de mucha investigación cuantitativa es establecer **relaciones caus
 
 Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.
 
-### Diseños experimentales
+#### Diseños experimentales
 
 En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.
 
@@ -51,7 +51,7 @@ En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Est
 - En ciencia política, solo ciertas preguntas son experimentables
 
 
-### Diseños observacionales
+#### Diseños observacionales
 
 La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.
 
