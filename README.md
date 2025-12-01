@@ -1,4 +1,4 @@
-# Métodos Cuantitativos para Ciencias Políticas y Sociales
+# Métodos Cuantitativos para Ciencias Sociales
 
 Manual del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.
 

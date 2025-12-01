@@ -1,5 +1,5 @@
 ---
-title: "Métodos Cuantitativos para Ciencias Políticas y Sociales"
+title: "Métodos Cuantitativos para Ciencias Sociales"
 author: "Fabián Belmar"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

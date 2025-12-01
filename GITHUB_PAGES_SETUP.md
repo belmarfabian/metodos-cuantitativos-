@@ -13,7 +13,7 @@ El proyecto ya está listo para GitHub Pages:
 
 1. Ve a https://github.com/new
 2. Nombre del repositorio: `metodos-cuantitativos` (o el que prefieras)
-3. Descripción: "Manual de Métodos Cuantitativos para Ciencias Políticas y Sociales"
+3. Descripción: "Manual de Métodos Cuantitativos para Ciencias Sociales"
 4. **Público** (para que GitHub Pages funcione gratis)
 5. **NO** marcar "Add a README file" (ya tienes uno)
 6. Click en **"Create repository"**

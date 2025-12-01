@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Métodos Cuantitativos para Ciencias Políticas y Sociales",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "",
     "text": "Prefacio\nEste libro fue desarrollado como material del curso Métodos Cuantitativos Introductorios para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. También puede servir como referencia para cursos más avanzados.",
     "crumbs": [
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#por-qué-este-libro",
     "href": "index.html#por-qué-este-libro",
-    "title": "Métodos Cuantitativos para Ciencias Políticas y Sociales",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "¿Por qué este libro?",
     "text": "¿Por qué este libro?\nLa mayoría de manuales de métodos cuantitativos están escritos pensando en contextos anglosajones. Este libro integra ejemplos de la realidad política y social latinoamericana, utilizando datos de Chile y la región.\nA diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Las técnicas estadísticas son herramientas al servicio de responder preguntas sustantivas sobre el mundo social.",
     "crumbs": [
@@ -22,7 +22,7 @@
   {
     "objectID": "index.html#organización-del-libro",
     "href": "index.html#organización-del-libro",
-    "title": "Métodos Cuantitativos para Ciencias Políticas y Sociales",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "Organización del libro",
     "text": "Organización del libro\nEl libro tiene tres niveles:\n\nPrerequisitos (Caps 1-2): Repaso del curso “Introducción a Métodos” que cubre método científico y diseño de investigación.\nContenido MCI (Caps 3-11): Sigue el programa oficial del curso con cinco unidades: Generalidades (medición y datos), Fundamentos Descriptivos (clasificación de datos, tablas y gráficos), Estadística Descriptiva (medidas de tendencia central y dispersión), Inferencia Estadística (probabilidad, muestreo, pruebas de hipótesis), y Análisis Bivariado (comparación de medias, correlación, regresión simple).\nContenido Avanzado (Caps 12-14): Regresión múltiple, diagnóstico OLS y modelos lineales generalizados para cursos posteriores.",
     "crumbs": [
@@ -32,7 +32,7 @@
   {
     "objectID": "index.html#software-y-convenciones",
     "href": "index.html#software-y-convenciones",
-    "title": "Métodos Cuantitativos para Ciencias Políticas y Sociales",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "Software y convenciones",
     "text": "Software y convenciones\nTodo el análisis se realiza con R, lenguaje de código abierto estándar en ciencias sociales cuantitativas. Los códigos aparecen en fuente monoespaciada con su output, los conceptos clave en negritas, y las referencias en formato APA.",
     "crumbs": [
@@ -42,7 +42,7 @@
   {
     "objectID": "index.html#agradecimientos",
     "href": "index.html#agradecimientos",
-    "title": "Métodos Cuantitativos para Ciencias Políticas y Sociales",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "Agradecimientos",
     "text": "Agradecimientos\nEste proyecto es resultado de años de docencia en metodología cuantitativa. Agradezco a estudiantes que con sus preguntas obligaron a clarificar argumentos, y a colegas cuyas conversaciones enriquecieron este material.",
     "crumbs": [
