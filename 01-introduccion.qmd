@@ -112,3 +112,6 @@ Adcock, R., & Collier, D. (2001). Measurement Validity: A Shared Standard for Qu
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap1).
+
+::: {#refs}
+:::

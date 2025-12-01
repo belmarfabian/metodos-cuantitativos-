@@ -438,3 +438,6 @@ Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th 
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap7).
+
+::: {#refs}
+:::

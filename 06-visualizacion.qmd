@@ -750,3 +750,6 @@ Cairo, A. (2016). *The Truthful Art: Data, Charts, and Maps for Communication*. 
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap6).
+
+::: {#refs}
+:::

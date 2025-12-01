@@ -143,3 +143,6 @@ Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and 
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap10).
+
+::: {#refs}
+:::

@@ -746,3 +746,6 @@ Little, R. J., & Rubin, D. B. (2019). *Statistical Analysis with Missing Data* (
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap4).
+
+::: {#refs}
+:::

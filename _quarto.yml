@@ -39,12 +39,13 @@ book:
     - part: "Anexos"
       chapters:
         - anexo-ejercicios.qmd
-    - referencias.qmd
 
 bibliography:
   - book.bib
   - packages.bib
 csl: apa.csl
+reference-section-title: "Referencias"
+citeproc: true
 
 format:
   html:

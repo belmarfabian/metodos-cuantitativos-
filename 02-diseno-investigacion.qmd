@@ -210,3 +210,6 @@ Gerber, A. S., & Green, D. P. (2012). *Field Experiments: Design, Analysis, and 
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap2).
+
+::: {#refs}
+:::

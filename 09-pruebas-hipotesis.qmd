@@ -92,3 +92,6 @@ Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values: Cont
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap9).
+
+::: {#refs}
+:::

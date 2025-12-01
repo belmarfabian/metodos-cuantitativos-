@@ -267,3 +267,6 @@ Goertz, G. (2006). *Social Science Concepts: A User's Guide*. Princeton Universi
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap3).
+
+::: {#refs}
+:::

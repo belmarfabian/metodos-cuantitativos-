@@ -680,3 +680,6 @@ Wickham, H., & Grolemund, G. (2017). *R for Data Science*. O'Reilly. [https://r4
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap5).
+
+::: {#refs}
+:::

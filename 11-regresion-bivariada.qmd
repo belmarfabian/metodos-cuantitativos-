@@ -156,3 +156,6 @@ Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed
 ## Ejercicios
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap11).
+
+::: {#refs}
+:::
