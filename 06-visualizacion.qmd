@@ -50,7 +50,7 @@ aprobacion <- data.frame(
 aprobacion$indeciso <- 100 - aprobacion$aprobacion - aprobacion$desaprobacion
 ```
 
-## Principios de visualización efectiva
+## Principios y gramática de gráficos
 
 @tufte1983 estableció principios fundamentales de diseño gráfico que permanecen vigentes:
 
@@ -170,7 +170,7 @@ ggplot(comunas, aes(x = urbano, y = cambio_izquierda, fill = urbano)) +
 
 Combinar palabras, números y gráficos para una narrativa coherente.
 
-## Grammar of Graphics y ggplot2
+#### Grammar of Graphics y ggplot2
 
 @wilkinson2005 propuso que los gráficos estadísticos tienen una gramática—componentes sistemáticos que se combinan para producir visualizaciones.
 
@@ -218,7 +218,7 @@ p4 <- p3 + labs(x = "Voto izquierda 2017 (%)",
   (p4 + ggtitle("Paso 4: + etiquetas"))
 ```
 
-## Gráficos univariados
+## Tipos de gráficos
 
 #### Variables continuas
 
@@ -279,7 +279,7 @@ comunas %>%
   theme_minimal()
 ```
 
-## Gráficos bivariados
+#### Gráficos bivariados
 
 #### Dos variables continuas: scatter plots
 
@@ -390,7 +390,7 @@ ggplot(tabla_df, aes(x = Cambio, y = Urbano, fill = Freq)) +
   theme_minimal()
 ```
 
-## Series temporales
+#### Series temporales
 
 **Gráfico de líneas simple:**
 
@@ -449,7 +449,7 @@ ggplot(aprobacion_long, aes(x = mes, y = porcentaje, fill = categoria)) +
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Facetas (paneles múltiples)
+#### Facetas
 
 Dividir gráficos en paneles según una variable categórica.
 
@@ -489,7 +489,7 @@ ggplot(comunas_cat, aes(x = izquierda_2017, y = izquierda_2021)) +
   theme_minimal()
 ```
 
-## Personalización avanzada
+#### Personalización
 
 #### Temas predefinidos
 
@@ -553,7 +553,7 @@ p3 <- p_color + scale_fill_manual(values = c("#E41A1C", "#377EB8", "#4DAF4A", "#
 p1 / p2 / p3
 ```
 
-## Combinando gráficos
+#### Combinando gráficos
 
 El paquete `patchwork` permite combinar gráficos fácilmente.
 
@@ -586,7 +586,7 @@ p4 <- ggplot(comunas, aes(x = urbano, y = cambio_izquierda, fill = urbano)) +
 (p1 | p2) / (p3 | p4)
 ```
 
-## Anotaciones
+#### Anotaciones
 
 Agregar texto, flechas y formas para destacar patrones.
 
@@ -613,7 +613,7 @@ ggplot(aprobacion, aes(x = mes, y = aprobacion)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-## Exportar gráficos
+#### Exportar gráficos
 
 Guardar gráficos para publicación.
 
@@ -639,7 +639,7 @@ ggsave("grafico_cm.png", p, width = 20, height = 15, units = "cm", dpi = 300)
 - **SVG**: Para edición posterior en Illustrator/Inkscape
 - **Dimensiones**: Verificar requisitos de revista (ej: ancho máximo 180mm)
 
-## Visualizaciones problemáticas y cómo mejorarlas
+## Errores comunes en visualización
 
 #### Problema 1: Eje Y truncado
 

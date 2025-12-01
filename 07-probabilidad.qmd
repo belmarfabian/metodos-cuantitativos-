@@ -11,13 +11,13 @@ Al finalizar este capítulo, serás capaz de:
 - Reconocer distribuciones de probabilidad comunes en ciencias sociales
 - Comprender el Teorema del Límite Central y su importancia para la inferencia
 
-## ¿Por qué probabilidad en ciencias sociales?
+## Fundamentos de probabilidad
 
 La investigación social cuantitativa enfrenta invariablemente la **incertidumbre**. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.
 
 La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.^[CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.]
 
-## Conceptos básicos de probabilidad
+#### Conceptos básicos
 
 #### Definición y notación
 
@@ -101,7 +101,7 @@ $$P(A|B) = \frac{P(A \text{ y } B)}{P(B)}$$
 
 Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces $P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33$. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).
 
-## Variables aleatorias
+## Variables aleatorias y distribuciones
 
 Una **variable aleatoria** es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.
 
@@ -188,7 +188,7 @@ data.frame(votos = votos) %>%
 
 Es importante distinguir que estos son parámetros **poblacionales** (generalmente desconocidos). Los estimamos a partir de muestras usando $\bar{x}$ y $s^2$.
 
-## Distribuciones de probabilidad comunes
+#### Distribuciones comunes
 
 #### Distribución Normal (Gaussiana)
 

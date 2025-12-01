@@ -33,7 +33,7 @@ comunas$participacion[comunas$participacion < 0] <- abs(comunas$participacion[co
 comunas$educ_superior[comunas$educ_superior < 0] <- abs(comunas$educ_superior[comunas$educ_superior < 0])
 ```
 
-## Distribuciones de frecuencia
+## Describiendo datos
 
 Antes de calcular estadísticos, conviene visualizar cómo se distribuyen los datos. Una **distribución de frecuencia** muestra cuántas observaciones caen en cada valor o rango.
 
@@ -98,7 +98,7 @@ p1 | p2
 
 Muy pocos bins ocultan detalles; demasiados bins generan ruido. La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins.
 
-## Medidas de tendencia central
+#### Medidas de tendencia central
 
 Las medidas de tendencia central resumen la ubicación "típica" de los datos. La **media** ($\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$) es el promedio que usa toda la información pero es sensible a valores extremos (outliers)^[EJEMPLO DE DESIGUALDAD: En 2022, el ingreso PROMEDIO en Chile era ~$650,000, pero la MEDIANA era ~$420,000. ¿Por qué la diferencia? Porque la distribución de ingresos es asimétrica: pocos súper-ricos jalan la media hacia arriba, pero la mediana (ingreso de la persona en el medio de la distribución ordenada) es más representativa de la "persona típica". Por eso reportes de desigualdad SIEMPRE usan mediana, no media. La media puede ser engañosa cuando hay outliers o asimetría. y apropiada para distribuciones simétricas. La **mediana** es el valor que divide la distribución en dos mitades iguales (50% por debajo, 50% por encima), es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La **moda** es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.
 
@@ -249,7 +249,7 @@ data.frame(
 ) %>% kable(digits = 2)
 ```
 
-## Percentiles y cuartiles
+#### Percentiles y cuartiles
 
 Los **percentiles** dividen la distribución en 100 partes iguales. El percentil $p$ es el valor por debajo del cual cae el $p$% de observaciones.
 
@@ -282,7 +282,7 @@ summary(comunas$participacion)
 
 Este resumen captura ubicación, dispersión y extremos. Es la base del boxplot.
 
-## Forma de la distribución
+#### Forma de la distribución
 
 #### Asimetría (skewness)
 
@@ -368,7 +368,7 @@ ggplot(comunas, aes(x = participacion)) +
   theme_minimal()
 ```
 
-## Detección de valores atípicos
+#### Detección de valores atípicos
 
 Los **outliers** son observaciones inusualmente extremas. Pueden ser errores de medición o casos genuinamente inusuales.
 
@@ -403,7 +403,7 @@ outliers %>%
 ```
 
 
-## Estadística descriptiva multivariada
+## Relaciones entre variables
 
 Frecuentemente queremos describir relaciones entre variables.
 
@@ -505,7 +505,7 @@ corrplot(cor_matrix, method = "color", type = "upper",
          tl.col = "black", tl.srt = 45)
 ```
 
-## Estadística descriptiva por grupos
+#### Estadística por grupos
 
 Comparar estadísticos entre grupos:
 

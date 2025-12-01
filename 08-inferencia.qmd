@@ -11,7 +11,7 @@ Al finalizar este capítulo, serás capaz de:
 - Construir e interpretar intervalos de confianza para medias y proporciones
 - Evaluar el tamaño muestral necesario para cierto nivel de precisión
 
-## El problema fundamental de la inferencia
+## De muestras a poblaciones
 
 En ciencias sociales raramente tenemos acceso a poblaciones completas. Queremos saber:
 
@@ -67,7 +67,7 @@ ggplot(encuestas_long, aes(x = encuestadora, y = porcentaje,
 
 La inferencia estadística nos da herramientas para responder estas preguntas.
 
-## Muestras y poblaciones
+#### Muestras y poblaciones
 
 #### Definiciones fundamentales
 
@@ -221,7 +221,7 @@ prob_error_grande <- pnorm(0.42, mean = p, sd = sd_p_hat)
 cat("P(p̂ < 0.42) =", round(prob_error_grande, 3))
 ```
 
-## Error estándar
+#### Error estándar
 
 El **error estándar** (SE, *standard error*) es la desviación estándar de la distribución muestral de un estadístico.
 
@@ -475,7 +475,7 @@ kable(tabla_ancha,
 
 :::
 
-## Simulación: Interpretación de ICs
+#### Simulación de ICs
 
 Demostremos con simulación qué significa "95% de confianza":
 
