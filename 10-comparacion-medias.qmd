@@ -1,0 +1,145 @@
+# Comparación de medias {#comparacion}
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, serás capaz de:
+
+- Realizar pruebas t para comparar medias entre dos grupos
+- Distinguir entre pruebas t para muestras independientes y pareadas
+- Comprender los supuestos de las pruebas paramétricas
+- Usar ANOVA para comparar medias de más de dos grupos
+- Identificar cuándo usar alternativas no paramétricas
+
+## Prueba t para una muestra
+
+La prueba t para una muestra compara la media de una muestra con un valor teórico o poblacional.
+
+**Hipótesis:**
+- $H_0: \mu = \mu_0$
+- $H_1: \mu \neq \mu_0$
+
+**Estadístico t:**
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+
+## Prueba t para dos muestras
+
+### Muestras independientes
+
+Comparamos las medias de dos grupos independientes.
+
+**Hipótesis:**
+- $H_0: \mu_1 = \mu_2$
+- $H_1: \mu_1 \neq \mu_2$
+
+**Estadístico t:**
+$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+
+Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.
+
+```{r t-test-dos-muestras, echo=TRUE}
+# Datos simulados: Diferencia salarial por género
+set.seed(2024)
+ingresos_hombres <- rlnorm(150, meanlog = log(750), sdlog = 0.6)
+ingresos_mujeres <- rlnorm(150, meanlog = log(650), sdlog = 0.6)
+
+# Prueba t para dos muestras independientes
+resultado <- t.test(ingresos_hombres, ingresos_mujeres)
+print(resultado)
+```
+
+### Muestras pareadas
+
+Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:
+
+```{r t-test-pareado, echo=TRUE}
+# Datos: Percepción de seguridad antes y después de intervención policial
+set.seed(123)
+antes <- rnorm(50, mean = 4.2, sd = 1.5)
+despues <- antes + rnorm(50, mean = 0.8, sd = 1.0)  # Mejora promedio
+
+# Prueba t pareada
+resultado <- t.test(despues, antes, paired = TRUE)
+print(resultado)
+```
+
+::: {.nivel data-nivel="avanzado"}
+
+## ANOVA
+
+Análisis de Varianza (ANOVA) compara medias de **más de dos grupos**.
+
+**Hipótesis:**
+- $H_0: \mu_1 = \mu_2 = \mu_3 = \ldots = \mu_k$
+- $H_1$: Al menos una media es diferente
+
+Ilustremos el uso de ANOVA con un caso frecuente en ciencias sociales: la comparación de ingresos según nivel educacional. Queremos determinar si existen diferencias significativas entre los ingresos promedio de personas con educación básica, media y superior.
+
+```{r anova-ejemplo, echo=TRUE}
+# Datos simulados: Ingresos por nivel educacional
+set.seed(456)
+datos <- data.frame(
+  ingreso = c(
+    rnorm(100, mean = 500, sd = 120),  # Básica
+    rnorm(100, mean = 650, sd = 150),  # Media
+    rnorm(100, mean = 900, sd = 200)   # Superior
+  ),
+  educacion = factor(rep(c("Básica", "Media", "Superior"), each = 100))
+)
+
+# ANOVA
+modelo <- aov(ingreso ~ educacion, data = datos)
+summary(modelo)
+
+# Comparaciones post-hoc (para identificar qué grupos difieren)
+TukeyHSD(modelo)
+```
+
+## Supuestos y alternativas no paramétricas
+
+### Supuestos de pruebas t y ANOVA
+
+1. **Normalidad**: Los datos siguen distribución normal
+2. **Homogeneidad de varianzas**: Las varianzas son iguales entre grupos
+3. **Independencia**: Las observaciones son independientes
+
+### Alternativas no paramétricas
+
+Cuando los supuestos no se cumplen:
+
+- **Mann-Whitney U** (en lugar de t para dos muestras independientes)
+- **Wilcoxon signed-rank** (en lugar de t pareada)
+- **Kruskal-Wallis** (en lugar de ANOVA)
+
+:::
+
+## Resumen del capítulo
+
+**Conceptos clave:**
+
+1. **Prueba t**: Compara medias entre grupos
+2. **Muestras independientes vs pareadas**: Requieren diferentes pruebas
+3. **ANOVA**: Compara más de dos grupos simultáneamente
+4. **Supuestos**: Normalidad, homogeneidad, independencia
+5. **Alternativas no paramétricas**: Para cuando no se cumplen supuestos
+
+## Lecturas recomendadas
+
+**Fundamentos de comparación de grupos:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.
+
+**Inferencia causal mediante comparación de grupos:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.
+
+**ANOVA y diseños más complejos:**
+
+Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.  
+→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
+
+
+## Ejercicios
+
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap10).

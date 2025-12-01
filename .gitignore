@@ -37,3 +37,6 @@ Thumbs.db
 
 # Auto-generated bibliography
 packages.bib
+
+/.quarto/
+**/*.quarto_ipynb

@@ -1,0 +1,67 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Métodos Cuantitativos para Ciencias Políticas y Sociales"
+  author: "Fabián Belmar"
+  date: today
+  date-format: "YYYY"
+
+  chapters:
+    - index.qmd
+    - part: "I. Prerequisitos"
+      chapters:
+        - 01-introduccion.qmd
+        - 02-diseno-investigacion.qmd
+    - part: "II. Unidad 1: Generalidades de la Investigación Cuantitativa"
+      chapters:
+        - 03-medicion.qmd
+        - 04-datos.qmd
+    - part: "III. Unidad 2: Fundamentos de Estadística Descriptiva"
+      chapters:
+        - 05-estadistica-descriptiva.qmd
+        - 06-visualizacion.qmd
+    - part: "IV. Unidad 3: Principios de Inferencia Estadística"
+      chapters:
+        - 07-probabilidad.qmd
+        - 08-inferencia.qmd
+        - 09-pruebas-hipotesis.qmd
+    - part: "V. Unidad 4: Análisis Bivariado"
+      chapters:
+        - 10-comparacion-medias.qmd
+        - 11-regresion-bivariada.qmd
+    - part: "VI. Contenido Avanzado"
+      chapters:
+        - 12-regresion-multiple.qmd
+        - 13-supuestos-ols.qmd
+        - 14-glm.qmd
+    - part: "Anexos"
+      chapters:
+        - anexo-ejercicios.qmd
+    - referencias.qmd
+
+bibliography:
+  - book.bib
+  - packages.bib
+csl: apa.csl
+
+format:
+  html:
+    theme: cosmo
+    css: css/style.css
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+    code-tools: true
+    highlight-style: github
+
+execute:
+  echo: true
+  warning: false
+  message: false
+  fig-align: center
+  out-width: "80%"
+
+lang: es

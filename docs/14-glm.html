@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Referencias – Métodos Cuantitativos para Ciencias Políticas y Sociales</title>
+<title>14&nbsp; Introducción a modelos lineales generalizados – Métodos Cuantitativos para Ciencias Políticas y Sociales</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./anexo-ejercicios.html" rel="prev">
+<link href="./anexo-ejercicios.html" rel="next">
+<link href="./13-supuestos-ols.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -118,7 +119,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./referencias.html">Referencias</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-regresion-multiple.html">VI. Contenido Avanzado</a></li><li class="breadcrumb-item"><a href="./14-glm.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introducción a modelos lineales generalizados</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -293,7 +294,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./14-glm.html" class="sidebar-item-text sidebar-link">
+  <a href="./14-glm.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introducción a modelos lineales generalizados</span></span></a>
   </div>
 </li>
@@ -318,7 +319,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./referencias.html" class="sidebar-item-text sidebar-link active">
+  <a href="./referencias.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Referencias</span></a>
   </div>
 </li>
@@ -327,15 +328,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">14.1</span> Objetivos del capítulo</a></li>
+  <li><a href="#limitaciones-de-ols" id="toc-limitaciones-de-ols" class="nav-link" data-scroll-target="#limitaciones-de-ols"><span class="header-section-number">14.2</span> Limitaciones de OLS</a></li>
+  <li><a href="#la-familia-de-glm" id="toc-la-familia-de-glm" class="nav-link" data-scroll-target="#la-familia-de-glm"><span class="header-section-number">14.3</span> La familia de GLM</a></li>
+  <li><a href="#regresión-logística" id="toc-regresión-logística" class="nav-link" data-scroll-target="#regresión-logística"><span class="header-section-number">14.4</span> Regresión logística</a></li>
+  <li><a href="#regresión-de-poisson" id="toc-regresión-de-poisson" class="nav-link" data-scroll-target="#regresión-de-poisson"><span class="header-section-number">14.5</span> Regresión de Poisson</a></li>
+  <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">14.6</span> Resumen del capítulo</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">14.7</span> Lecturas recomendadas</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">14.8</span> Ejercicios</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./12-regresion-multiple.html">VI. Contenido Avanzado</a></li><li class="breadcrumb-item"><a href="./14-glm.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introducción a modelos lineales generalizados</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Referencias</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title"><span id="glm" class="quarto-section-identifier"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Introducción a modelos lineales generalizados</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
 </div>
 
 
@@ -352,10 +366,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="objetivos-del-capítulo" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="objetivos-del-capítulo"><span class="header-section-number">14.1</span> Objetivos del capítulo</h2>
+</section>
+<section id="limitaciones-de-ols" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="limitaciones-de-ols"><span class="header-section-number">14.2</span> Limitaciones de OLS</h2>
+</section>
+<section id="la-familia-de-glm" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="la-familia-de-glm"><span class="header-section-number">14.3</span> La familia de GLM</h2>
+</section>
+<section id="regresión-logística" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="regresión-logística"><span class="header-section-number">14.4</span> Regresión logística</h2>
+</section>
+<section id="regresión-de-poisson" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="regresión-de-poisson"><span class="header-section-number">14.5</span> Regresión de Poisson</h2>
+</section>
+<section id="resumen-del-capítulo" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="resumen-del-capítulo"><span class="header-section-number">14.6</span> Resumen del capítulo</h2>
+</section>
+<section id="lecturas-recomendadas" class="level2" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">14.7</span> Lecturas recomendadas</h2>
+</section>
+<section id="ejercicios" class="level2" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">14.8</span> Ejercicios</h2>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap14">Anexo de Ejercicios</a>.</p>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -811,14 +850,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./anexo-ejercicios.html" class="pagination-link" aria-label="(APPENDIX) Anexos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">(APPENDIX) Anexos</span>
+      <a href="./13-supuestos-ols.html" class="pagination-link" aria-label="Supuestos de OLS y diagnósticos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Supuestos de OLS y diagnósticos</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./anexo-ejercicios.html" class="pagination-link" aria-label="(APPENDIX) Anexos">
+        <span class="nav-page-text">(APPENDIX) Anexos</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Referencias {.unnumbered}</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introducción a modelos lineales generalizados {#glm}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Limitaciones de OLS</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">## La familia de GLM</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regresión logística</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regresión de Poisson</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen del capítulo</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap14)</span>.</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -1,0 +1,158 @@
+# Regresión bivariada {#regresion-bivariada}
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, serás capaz de:
+
+- Calcular e interpretar coeficientes de correlación
+- Comprender la diferencia entre correlación y causalidad
+- Estimar modelos de regresión lineal simple usando mínimos cuadrados ordinarios
+- Interpretar coeficientes de regresión e intercepto
+- Evaluar la bondad de ajuste usando $R^2$
+- Realizar pruebas de hipótesis sobre coeficientes de regresión
+
+## Correlación
+
+La **correlación** mide la fuerza y dirección de la relación lineal entre dos variables.
+
+**Coeficiente de correlación de Pearson:**
+$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}$$
+
+- $-1 \leq r \leq 1$
+- $r = 1$: Correlación positiva perfecta
+- $r = 0$: Sin correlación lineal
+- $r = -1$: Correlación negativa perfecta
+
+Para ilustrar el uso de la correlación, consideremos la relación entre desarrollo económico y democracia, un tema clásico en ciencia política. Analizamos datos de PIB per cápita y nivel de democracia en una muestra de países:
+
+```{r correlacion-ejemplo, echo=TRUE}
+# Datos simulados: PIB per cápita y nivel de democracia
+set.seed(2024)
+n <- 50
+pib <- rnorm(n, mean = 15000, sd = 8000)
+democracia <- 3 + 0.0003 * pib + rnorm(n, mean = 0, sd = 1.5)
+
+# Correlación de Pearson
+cor_pearson <- cor(pib, democracia)
+cat("Correlación de Pearson:", round(cor_pearson, 3), "\n")
+
+# Test de significancia
+cor.test(pib, democracia)
+```
+
+Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.^[ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.]
+
+## El modelo de regresión lineal simple
+
+La regresión lineal modela la relación entre una variable dependiente $Y$ y una variable independiente $X$:
+
+$$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$$
+
+donde:
+- $\beta_0$ = intercepto (valor de $Y$ cuando $X = 0$)
+- $\beta_1$ = pendiente (cambio en $Y$ por unidad de cambio en $X$)
+- $\epsilon_i$ = error (variación no explicada por el modelo)
+
+## Mínimos cuadrados ordinarios
+
+El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) estima $\beta_0$ y $\beta_1$ minimizando la suma de errores al cuadrado:
+
+$$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$
+
+**Fórmulas OLS:**
+
+$$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$
+
+$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
+
+Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.
+
+```{r regresion-ejemplo, echo=TRUE}
+# Datos simulados: Gasto público y crecimiento económico
+set.seed(456)
+gasto_publico <- runif(40, min = 15, max = 40)  # % del PIB
+crecimiento <- 5 - 0.15 * gasto_publico + rnorm(40, mean = 0, sd = 1.2)
+
+# Modelo de regresión lineal simple
+modelo <- lm(crecimiento ~ gasto_publico)
+summary(modelo)
+```
+
+```{r plot-regresion, echo=FALSE, fig.cap="Regresión lineal: Gasto público y crecimiento"}
+library(ggplot2)
+
+datos <- data.frame(gasto_publico, crecimiento)
+
+ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
+  geom_point(size = 3, alpha = 0.6, color = "#3498db") +
+  geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0.2) +
+  labs(
+    title = "Relación entre gasto público y crecimiento económico",
+    x = "Gasto público (% del PIB)",
+    y = "Crecimiento económico (%)"
+  ) +
+  theme_minimal()
+```
+
+## Interpretación de coeficientes
+
+**Intercepto ($\hat{\beta}_0$)**: Valor predicho de $Y$ cuando $X = 0$
+
+**Pendiente ($\hat{\beta}_1$)**: Cambio promedio en $Y$ asociado con un incremento de una unidad en $X$
+
+En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."^[INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica *asociación*, no necesariamente *causalidad*. Además, la unidad de medida importa: si $X$ está en miles y $Y$ en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.]
+
+## Bondad de ajuste
+
+### R cuadrado ($R^2$)
+
+El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:
+
+$$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$
+
+- $0 \leq R^2 \leq 1$
+- $R^2 = 0$: El modelo no explica nada
+- $R^2 = 1$: El modelo explica perfectamente
+
+Por ejemplo, si $R^2 = 0.42$, interpretamos: "El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores."
+
+Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.^[ADVERTENCIA SOBRE $R^2$: Un modelo puede tener $R^2$ alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el $R^2$ puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no necesariamente indican un modelo "malo" - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.]
+
+## Resumen del capítulo
+
+**Conceptos clave:**
+
+1. **Correlación**: Mide fuerza y dirección de relación lineal (no implica causalidad)
+2. **Regresión lineal**: Modela $Y$ como función lineal de $X$
+3. **OLS**: Método para estimar coeficientes minimizando errores al cuadrado
+4. **Interpretación**: $\beta_0$ = intercepto, $\beta_1$ = pendiente
+5. **$R^2$**: Proporción de variabilidad explicada por el modelo
+
+**Fórmulas clave:**
+
+- Correlación: $r = \frac{\text{Cov}(X,Y)}{s_X s_Y}$
+- Pendiente: $\hat{\beta}_1 = r \cdot \frac{s_Y}{s_X}$
+- Intercepto: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$
+- Bondad de ajuste: $R^2 = 1 - \frac{\text{SSR}}{\text{SST}}$
+
+## Lecturas recomendadas
+
+**Fundamentos de regresión lineal:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+→ Capítulo 9 ofrece introducción clara y accesible a regresión lineal y correlación con ejemplos de ciencias sociales.
+
+**Predicción y modelos lineales:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+→ Capítulo 4 sobre predicción conecta regresión con aplicaciones prácticas en análisis de datos sociales.
+
+**Tratamiento más técnico:**
+
+Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.  
+→ Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.
+
+
+## Ejercicios
+
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap11).

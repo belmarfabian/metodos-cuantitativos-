@@ -1,0 +1,657 @@
+# Inferencia estadística {#inferencia}
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, serás capaz de:
+
+- Comprender la lógica de la inferencia estadística: generalizar desde muestras a poblaciones
+- Distinguir entre parámetros poblacionales y estadísticos muestrales
+- Entender el concepto de distribución muestral y su relación con el Teorema del Límite Central
+- Calcular e interpretar el error estándar
+- Construir e interpretar intervalos de confianza para medias y proporciones
+- Evaluar el tamaño muestral necesario para cierto nivel de precisión
+
+## El problema fundamental de la inferencia
+
+En ciencias sociales raramente tenemos acceso a poblaciones completas. Queremos saber:
+
+- ¿Cuál es el apoyo real a la reforma de pensiones entre todos los chilenos?
+- ¿Cuál es el ingreso promedio de hogares en América Latina?
+- ¿Qué proporción de electores cambia su voto entre elecciones?
+
+Pero solo podemos encuestar una **muestra** de cientos o miles de personas, no los millones que componen la población. La **inferencia estadística** es el proceso de usar datos de una muestra para hacer afirmaciones sobre una población, cuantificando la incertidumbre asociada.
+
+### Ejemplo motivador: Encuestas electorales en Chile
+
+Antes de las elecciones presidenciales 2021 (segunda vuelta), múltiples encuestadoras reportaron:
+
+```{r encuestas-2021, echo=FALSE}
+library(ggplot2)
+library(dplyr)
+
+encuestas <- data.frame(
+  encuestadora = c("Cadem", "Activa", "Data Influye", "Criteria"),
+  boric = c(51, 52, 50, 51),
+  kast = c(39, 40, 41, 40),
+  n = c(1015, 1200, 1400, 1500),
+  fecha = c("10-12 dic", "10-12 dic", "9-12 dic", "10-13 dic")
+)
+
+encuestas_long <- encuestas %>%
+  tidyr::pivot_longer(cols = c(boric, kast),
+                      names_to = "candidato",
+                      values_to = "porcentaje") %>%
+  mutate(candidato = ifelse(candidato == "boric", "Boric", "Kast"))
+
+ggplot(encuestas_long, aes(x = encuestadora, y = porcentaje,
+                            fill = candidato, label = porcentaje)) +
+  geom_col(position = "dodge", width = 0.7) +
+  geom_text(position = position_dodge(width = 0.7), vjust = -0.5) +
+  scale_fill_manual(values = c("Boric" = "#3498db", "Kast" = "#e74c3c")) +
+  labs(
+    title = "Encuestas presidenciales Chile 2021 (2da vuelta)",
+    subtitle = "Diferentes muestras producen diferentes estimaciones",
+    x = NULL,
+    y = "Porcentaje de intención de voto (%)",
+    fill = "Candidato"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "top")
+```
+
+**Preguntas clave:**
+
+1. ¿Por qué las encuestas difieren si todas miden "lo mismo"?
+2. ¿Cuán confiables son estos números?
+3. ¿Qué tan grande debe ser la muestra?
+
+La inferencia estadística nos da herramientas para responder estas preguntas.
+
+## Muestras y poblaciones
+
+### Definiciones fundamentales
+
+**Población**: Conjunto completo de unidades de interés. Tiene **parámetros** (valores fijos, generalmente desconocidos):
+- Media poblacional: $\mu$
+- Proporción poblacional: $p$
+- Varianza poblacional: $\sigma^2$
+
+**Muestra**: Subconjunto de la población que observamos. Tiene **estadísticos** (valores calculados a partir de los datos):
+- Media muestral: $\bar{x}$
+- Proporción muestral: $\hat{p}$
+- Varianza muestral: $s^2$
+
+Es fundamental distinguir que los **parámetros** $(\mu, p, \sigma^2)$ son valores fijos (pero desconocidos) de la población, mientras que los **estadísticos** $(\bar{x}, \hat{p}, s^2)$ son calculados a partir de la muestra y **varían** entre muestras. Usamos estadísticos para **estimar** parámetros.
+
+Por ejemplo, consideremos el apoyo a una reforma tributaria. La **población** son 15 millones de votantes chilenos, y el **parámetro de interés** es $p$ = proporción que apoya la reforma (desconocida). Si tomamos una **muestra** de 1,200 votantes encuestados y observamos el **estadístico** $\hat{p} = 0.42$ (42% de la muestra apoya), la **pregunta inferencial** es: ¿Qué podemos decir sobre $p$ (desconocido) a partir de $\hat{p} = 0.42$ (conocido)?
+
+### Muestreo aleatorio simple
+
+Para que la inferencia sea válida, necesitamos **muestras probabilísticas**. El diseño más simple:
+
+**Muestreo Aleatorio Simple (MAS)**: Cada unidad de la población tiene la misma probabilidad de ser seleccionada.
+
+```{r muestreo-simple, echo=TRUE}
+# Simulación de población y muestra
+set.seed(2024)
+
+# Población de 10,000 votantes (40% apoya reforma)
+poblacion <- c(rep(1, 4000), rep(0, 6000))  # 1 = apoya, 0 = no apoya
+p_verdadero <- mean(poblacion)
+
+cat("Parámetro poblacional verdadero: p =", p_verdadero, "\n\n")
+
+# Tomamos una muestra aleatoria de n=1000
+muestra <- sample(poblacion, size = 1000, replace = FALSE)
+p_hat <- mean(muestra)
+
+cat("Estadístico muestral: p̂ =", p_hat, "\n")
+cat("Error de estimación: p̂ - p =", p_hat - p_verdadero, "\n")
+```
+
+**Propiedades del MAS:**
+
+1. **Insesgado**: En promedio, $E(\hat{p}) = p$ y $E(\bar{x}) = \mu$
+2. **Variable**: Diferentes muestras producen diferentes estimaciones
+3. **Más preciso con muestras grandes**: El error disminuye con $n$
+
+## Distribuciones muestrales
+
+La clave para entender la inferencia es reconocer que los **estadísticos son variables aleatorias**.
+
+### Distribución muestral de la media
+
+Si tomamos muchas muestras de tamaño $n$ y calculamos $\bar{x}$ para cada una, la distribución de todos esos $\bar{x}$ es la **distribución muestral de la media**.
+
+**Propiedades** (del Teorema del Límite Central, visto en Cap. 7):
+
+$$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$$
+
+- **Media**: $E(\bar{X}) = \mu$ (insesgado)
+- **Varianza**: $\text{Var}(\bar{X}) = \frac{\sigma^2}{n}$ (disminuye con $n$)
+- **Forma**: Aproximadamente Normal para $n \geq 30$
+
+```{r distribucion-muestral-media, echo=TRUE, fig.cap="Simulación de la distribución muestral de la media"}
+# Población: Ingresos mensuales (en miles de pesos)
+# Distribución asimétrica (lognormal)
+set.seed(123)
+poblacion_ingresos <- rlnorm(100000, meanlog = log(500), sdlog = 0.6)
+
+mu_real <- mean(poblacion_ingresos)
+sigma_real <- sd(poblacion_ingresos)
+
+cat("Población:\n")
+cat("Media (μ) =", round(mu_real, 1), "mil pesos\n")
+cat("SD (σ) =", round(sigma_real, 1), "mil pesos\n\n")
+
+# Tomamos 5000 muestras de n=100 y calculamos sus medias
+n_muestra <- 100
+medias_muestrales <- replicate(5000, mean(sample(poblacion_ingresos, n_muestra)))
+
+cat("Distribución muestral de X̄ (n=100):\n")
+cat("Media =", round(mean(medias_muestrales), 1), " (muy cerca de μ =", round(mu_real, 1), ")\n")
+cat("SD observada =", round(sd(medias_muestrales), 1), "\n")
+cat("SD teórica (σ/√n) =", round(sigma_real/sqrt(n_muestra), 1), "\n")
+```
+
+```{r plot-dist-muestral, echo=FALSE, fig.height=6, fig.cap="Distribución poblacional vs distribución muestral"}
+library(gridExtra)
+
+# Gráfico 1: Distribución poblacional
+p1 <- ggplot(data.frame(ingreso = sample(poblacion_ingresos, 10000)),
+             aes(x = ingreso)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 50,
+                 fill = "#3498db", color = "white", alpha = 0.7) +
+  geom_vline(xintercept = mu_real, color = "#e74c3c",
+             linetype = "dashed", size = 1.2) +
+  labs(
+    title = "Distribución Poblacional",
+    subtitle = "Ingresos individuales (asimétrica)",
+    x = "Ingreso mensual (miles de $)",
+    y = "Densidad"
+  ) +
+  theme_minimal()
+
+# Gráfico 2: Distribución muestral
+p2 <- ggplot(data.frame(media = medias_muestrales), aes(x = media)) +
+  geom_histogram(aes(y = after_stat(density)), bins = 40,
+                 fill = "#2ecc71", color = "white", alpha = 0.7) +
+  geom_vline(xintercept = mu_real, color = "#e74c3c",
+             linetype = "dashed", size = 1.2) +
+  stat_function(fun = dnorm,
+                args = list(mean = mu_real, sd = sigma_real/sqrt(n_muestra)),
+                color = "#e67e22", size = 1.2) +
+  labs(
+    title = "Distribución Muestral de X̄",
+    subtitle = "Medias de 5000 muestras de n=100 (aproximadamente Normal)",
+    x = "Media muestral (miles de $)",
+    y = "Densidad"
+  ) +
+  theme_minimal()
+
+grid.arrange(p1, p2, ncol = 1)
+```
+
+Aunque la población de ingresos es altamente asimétrica, la distribución de $\bar{X}$ es aproximadamente Normal. Esto es el Teorema del Límite Central en acción.
+
+### Distribución muestral de la proporción
+
+Para proporciones, una lógica similar aplica. Si $\hat{p}$ es la proporción muestral:
+
+$$\hat{p} \sim N\left(p, \frac{p(1-p)}{n}\right)$$
+
+(Aproximación válida cuando $np \geq 10$ y $n(1-p) \geq 10$)
+
+Por ejemplo, si en una encuesta electoral el verdadero apoyo es $p = 0.45$ y encuestamos $n = 1000$ personas:
+
+```{r dist-proporcion, echo=TRUE}
+p <- 0.45
+n <- 1000
+
+# Media y SD de p̂
+media_p_hat <- p
+sd_p_hat <- sqrt(p * (1 - p) / n)
+
+cat("Distribución de p̂:\n")
+cat("Media =", media_p_hat, "\n")
+cat("SD (error estándar) =", round(sd_p_hat, 4), "\n\n")
+
+# Probabilidad de que nuestra muestra subestime apoyo en >3%
+prob_error_grande <- pnorm(0.42, mean = p, sd = sd_p_hat)
+cat("P(p̂ < 0.42) =", round(prob_error_grande, 3))
+```
+
+## Error estándar
+
+El **error estándar** (SE, *standard error*) es la desviación estándar de la distribución muestral de un estadístico.
+
+### Error estándar de la media
+
+$$\text{SE}(\bar{x}) = \frac{\sigma}{\sqrt{n}}$$
+
+Pero $\sigma$ (SD poblacional) es generalmente desconocido. Lo estimamos con $s$ (SD muestral):
+
+$$\widehat{\text{SE}}(\bar{x}) = \frac{s}{\sqrt{n}}$$
+
+Es importante distinguir entre **error estándar** y **desviación estándar**. La desviación estándar ($s$) mide variabilidad en los **datos**, mientras que el error estándar ($\text{SE}$) mide variabilidad del **estadístico** (precisión de la estimación). El $\text{SE}$ disminuye con $n$; $s$ NO (permanece constante en promedio).^[CONFUSIÓN COMÚN: El error estándar ($\text{SE}$) mide qué tan precisa es nuestra estimación de la media. La desviación estándar ($s$) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: $\text{SE} = s/\sqrt{n}$ siempre es menor que $s$ (excepto cuando $n=1$).]
+
+Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:
+
+```{r ejemplo-se, echo=TRUE}
+# Datos simulados de ingresos (en miles de $)
+set.seed(456)
+ingresos <- rlnorm(500, meanlog = log(600), sdlog = 0.7)
+
+n <- length(ingresos)
+media <- mean(ingresos)
+s <- sd(ingresos)
+se <- s / sqrt(n)
+
+cat("Muestra de n =", n, "hogares\n")
+cat("Media muestral: $", round(media, 0), " mil\n", sep = "")
+cat("SD de ingresos (s): $", round(s, 0), " mil\n", sep = "")
+cat("SE de la media: $", round(se, 0), " mil\n\n", sep = "")
+
+cat("Interpretación:\n")
+cat("- Los ingresos individuales varían típicamente ±$", round(s, 0),
+    " mil alrededor de la media\n", sep = "")
+cat("- Nuestra estimación de la media tiene error típico de ±$", round(se, 0),
+    " mil\n", sep = "")
+```
+
+### Error estándar de la proporción
+
+$$\text{SE}(\hat{p}) = \sqrt{\frac{p(1-p)}{n}}$$
+
+Como $p$ es desconocido, lo estimamos con $\hat{p}$:
+
+$$\widehat{\text{SE}}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+```{r se-proporcion, echo=TRUE}
+# Encuesta: proporción que apoya política X
+n <- 1200
+apoyos <- 510
+p_hat <- apoyos / n
+se_p <- sqrt(p_hat * (1 - p_hat) / n)
+
+cat("n =", n, "encuestados\n")
+cat("Apoyan =", apoyos, "(", round(p_hat * 100, 1), "%)\n", sep = "")
+cat("SE(p̂) =", round(se_p, 4), "o", round(se_p * 100, 2), "puntos porcentuales\n")
+```
+
+### El error estándar disminuye con $\sqrt{n}$
+
+Una implicación crucial: para **reducir el SE a la mitad**, necesitas **cuadruplicar** el tamaño muestral.
+
+```{r se-vs-n, echo=FALSE, fig.cap="Relación entre tamaño muestral y error estándar"}
+n_seq <- seq(100, 5000, by = 50)
+se_seq <- sqrt(0.5 * 0.5 / n_seq)  # Peor caso: p = 0.5
+
+data.frame(n = n_seq, se = se_seq) %>%
+  ggplot(aes(x = n, y = se)) +
+  geom_line(color = "#3498db", size = 1.2) +
+  geom_hline(yintercept = c(0.01, 0.02, 0.03),
+             linetype = "dashed", alpha = 0.5) +
+  annotate("text", x = 4500, y = 0.01, label = "SE = 1%", vjust = -0.5) +
+  annotate("text", x = 4500, y = 0.02, label = "SE = 2%", vjust = -0.5) +
+  annotate("text", x = 4500, y = 0.03, label = "SE = 3%", vjust = -0.5) +
+  labs(
+    title = "Error Estándar vs Tamaño Muestral",
+    subtitle = "Para proporción (peor caso: p = 0.5)",
+    x = "Tamaño muestral (n)",
+    y = "Error estándar"
+  ) +
+  scale_y_continuous(labels = scales::percent) +
+  theme_minimal()
+```
+
+## Intervalos de confianza
+
+Un **intervalo de confianza** (IC) es un rango de valores plausibles para el parámetro poblacional, construido de tal manera que, si repitiéramos el muestreo infinitas veces, el IC contendría el valor verdadero en (por ejemplo) 95% de las muestras.
+
+### Intervalo de confianza para la media
+
+**Fórmula general:**
+
+$$\text{IC}_{95\%} = \bar{x} \pm t_{n-1, 0.975} \cdot \frac{s}{\sqrt{n}}$$
+
+donde $t_{n-1, 0.975}$ es el valor crítico de la distribución $t$ con $n-1$ grados de libertad.
+
+**Cuando $n$ es grande ($n \geq 30$)**, $t \approx 1.96$, así que:
+
+$$\text{IC}_{95\%} \approx \bar{x} \pm 1.96 \cdot \text{SE}(\bar{x})$$
+
+La interpretación correcta de un IC 95% es: "Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de $\mu$." NO significa "Hay 95% de probabilidad de que $\mu$ esté en este intervalo específico." (La diferencia es sutil pero importante: $\mu$ es fijo; el intervalo es lo que varía entre muestras.)
+
+Por ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:
+
+```{r ic-media, echo=TRUE}
+# Datos de ingresos (retomando ejemplo anterior)
+set.seed(789)
+ingresos <- rlnorm(200, meanlog = log(550), sdlog = 0.65)
+
+n <- length(ingresos)
+media <- mean(ingresos)
+s <- sd(ingresos)
+se <- s / sqrt(n)
+
+# Valor crítico t para 95% de confianza
+t_crit <- qt(0.975, df = n - 1)
+
+# Intervalo de confianza
+ic_inferior <- media - t_crit * se
+ic_superior <- media + t_crit * se
+
+cat("Ingreso promedio mensual (n =", n, "hogares):\n")
+cat("Media muestral: $", round(media, 0), " mil\n", sep = "")
+cat("IC 95%: [$", round(ic_inferior, 0), ", $",
+    round(ic_superior, 0), "] mil\n\n", sep = "")
+
+cat("Interpretación: Estamos 95% confiados de que el ingreso promedio\n")
+cat("poblacional está entre $", round(ic_inferior, 0), " y $",
+    round(ic_superior, 0), " mil.\n", sep = "")
+```
+
+### Intervalo de confianza para la proporción
+
+$$\text{IC}_{95\%} = \hat{p} \pm 1.96 \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
+
+(Válido cuando $n\hat{p} \geq 10$ y $n(1-\hat{p}) \geq 10$)
+
+Por ejemplo, para una encuesta de intención de voto:
+
+```{r ic-proporcion, echo=TRUE}
+# Encuesta: ¿Votará en próximas elecciones?
+n <- 1500
+votaran <- 780
+p_hat <- votaran / n
+se_p <- sqrt(p_hat * (1 - p_hat) / n)
+
+# IC 95%
+ic_inf <- p_hat - 1.96 * se_p
+ic_sup <- p_hat + 1.96 * se_p
+
+cat("Encuesta (n =", n, "):\n")
+cat("Declaran que votarán:", votaran, "personas (", round(p_hat * 100, 1), "%)\n", sep = "")
+cat("IC 95%: [", round(ic_inf * 100, 1), "%, ",
+    round(ic_sup * 100, 1), "%]\n\n", sep = "")
+
+cat("Interpretación: El verdadero porcentaje de personas que votarán\n")
+cat("está probablemente entre", round(ic_inf * 100, 1), "% y",
+    round(ic_sup * 100, 1), "%.\n")
+```
+
+### Niveles de confianza alternativos
+
+No estamos limitados a 95%. Podemos construir ICs con cualquier nivel de confianza:
+
+| Nivel de Confianza | Valor Crítico $z$ | Intervalo |
+|:------------------:|:-----------------:|:----------|
+| 90% | 1.645 | $\bar{x} \pm 1.645 \cdot \text{SE}$ |
+| 95% | 1.960 | $\bar{x} \pm 1.960 \cdot \text{SE}$ |
+| 99% | 2.576 | $\bar{x} \pm 2.576 \cdot \text{SE}$ |
+
+**Relación inversa**: Mayor confianza → Intervalo más ancho
+
+```{r ic-niveles, echo=TRUE, fig.cap="Intervalos de confianza con diferentes niveles"}
+# Ejemplo con ingreso promedio
+media <- 550
+se <- 35
+
+niveles <- c(0.90, 0.95, 0.99)
+z_valores <- qnorm(1 - (1 - niveles)/2)
+
+resultados <- data.frame(
+  nivel = paste0(niveles * 100, "%"),
+  z = round(z_valores, 3),
+  inferior = round(media - z_valores * se, 0),
+  superior = round(media + z_valores * se, 0)
+)
+
+resultados$ancho <- resultados$superior - resultados$inferior
+
+print(resultados)
+```
+
+```{r plot-ic-niveles, echo=FALSE, fig.cap="Visualización de ICs con diferentes niveles de confianza"}
+library(ggplot2)
+
+df_ic <- data.frame(
+  nivel = factor(c("90%", "95%", "99%"),
+                 levels = c("99%", "95%", "90%")),
+  media = rep(media, 3),
+  inferior = resultados$inferior,
+  superior = resultados$superior
+)
+
+ggplot(df_ic, aes(y = nivel)) +
+  geom_point(aes(x = media), size = 4, color = "#e74c3c") +
+  geom_errorbarh(aes(xmin = inferior, xmax = superior),
+                 height = 0.2, size = 1, color = "#3498db") +
+  geom_vline(xintercept = media, linetype = "dashed", alpha = 0.5) +
+  labs(
+    title = "Intervalos de Confianza: Mayor confianza = Intervalo más ancho",
+    subtitle = paste0("Media muestral = $", media, " mil, SE = $", se, " mil"),
+    x = "Ingreso mensual (miles de $)",
+    y = "Nivel de confianza"
+  ) +
+  theme_minimal() +
+  theme(axis.text.y = element_text(size = 12, face = "bold"))
+```
+
+::: {.nivel data-nivel="avanzado"}
+
+## Determinación del tamaño muestral
+
+Una pregunta práctica crucial: **¿Qué tan grande debe ser mi muestra?**
+
+### Para estimar una media
+
+Queremos que el IC tenga ancho máximo $2E$ (es decir, margen de error $E$):
+
+$$n = \left(\frac{z_{\alpha/2} \cdot \sigma}{E}\right)^2$$
+
+Por ejemplo, si queremos estimar el ingreso promedio con precisión de ±$20 mil:
+
+```{r tam-muestra-media, echo=TRUE}
+# Deseamos IC 95% con margen de error E = 20 mil
+# Estimamos σ ≈ 300 mil (de estudios previos)
+E <- 20
+sigma <- 300
+z <- 1.96
+
+n_necesario <- ceiling((z * sigma / E)^2)
+
+cat("Para estimar ingreso promedio con:\n")
+cat("- Nivel de confianza: 95%\n")
+cat("- Margen de error: ±$", E, " mil\n", sep = "")
+cat("- σ estimado: $", sigma, " mil\n", sep = "")
+cat("\nTamaño muestral necesario: n =", n_necesario, "hogares\n")
+```
+
+### Para estimar una proporción
+
+$$n = \left(\frac{z_{\alpha/2}}{E}\right)^2 \cdot p(1-p)$$
+
+Si no conocemos $p$, usamos $p = 0.5$ (el escenario más conservador):
+
+$$n = \left(\frac{z_{\alpha/2}}{E}\right)^2 \cdot 0.25$$
+
+::: {.ejemplo}
+**Tamaño muestral para encuesta electoral**
+
+¿Cuántos encuestados necesito para estimar intención de voto con margen de error de ±3% (95% de confianza)?
+
+```{r tam-muestra-prop, echo=TRUE}
+E <- 0.03  # 3 puntos porcentuales
+z <- 1.96
+p <- 0.5   # Peor caso
+
+n_necesario <- ceiling((z / E)^2 * p * (1 - p))
+
+cat("Para estimar proporción con:\n")
+cat("- Nivel de confianza: 95%\n")
+cat("- Margen de error: ±", E * 100, "%\n", sep = "")
+cat("\nTamaño muestral necesario: n =", n_necesario, "\n")
+```
+
+Por eso las encuestas electorales típicamente tienen ~1,000-1,500 entrevistados.
+:::
+
+### Tabla de referencia: Tamaño muestral para proporciones
+
+```{r tabla-n, echo=FALSE}
+library(knitr)
+
+margenes <- c(0.01, 0.02, 0.03, 0.04, 0.05, 0.10)
+confianzas <- c(0.90, 0.95, 0.99)
+
+calcular_n <- function(E, conf) {
+  z <- qnorm(1 - (1 - conf)/2)
+  ceiling((z / E)^2 * 0.25)
+}
+
+tabla <- expand.grid(
+  Margen = margenes,
+  Confianza = confianzas
+)
+
+tabla$n <- mapply(calcular_n, tabla$Margen, tabla$Confianza)
+
+tabla_ancha <- reshape(tabla,
+                       idvar = "Margen",
+                       timevar = "Confianza",
+                       direction = "wide")
+
+colnames(tabla_ancha) <- c("Margen error", "90%", "95%", "99%")
+tabla_ancha[, 1] <- paste0("±", tabla_ancha[, 1] * 100, "%")
+
+kable(tabla_ancha,
+      caption = "Tamaño muestral necesario para estimar proporción (p=0.5)",
+      align = c("l", "r", "r", "r"))
+```
+
+:::
+
+## Simulación: Interpretación de ICs
+
+Demostremos con simulación qué significa "95% de confianza":
+
+```{r simulacion-ic, echo=TRUE, fig.height=7, fig.cap="Simulación de 100 intervalos de confianza al 95%"}
+# Parámetros poblacionales conocidos (para la simulación)
+mu_real <- 500
+sigma_real <- 120
+n <- 50
+
+# Tomamos 100 muestras y calculamos IC para cada una
+set.seed(2025)
+n_simulaciones <- 100
+
+resultados_sim <- data.frame(
+  muestra = 1:n_simulaciones,
+  media = numeric(n_simulaciones),
+  ic_inf = numeric(n_simulaciones),
+  ic_sup = numeric(n_simulaciones)
+)
+
+for (i in 1:n_simulaciones) {
+  muestra <- rnorm(n, mean = mu_real, sd = sigma_real)
+  media <- mean(muestra)
+  se <- sd(muestra) / sqrt(n)
+  t_crit <- qt(0.975, df = n - 1)
+
+  resultados_sim$media[i] <- media
+  resultados_sim$ic_inf[i] <- media - t_crit * se
+  resultados_sim$ic_sup[i] <- media + t_crit * se
+}
+
+# ¿Cuántos ICs contienen μ?
+resultados_sim$contiene_mu <- (resultados_sim$ic_inf <= mu_real &
+                                 resultados_sim$ic_sup >= mu_real)
+
+prop_contiene <- mean(resultados_sim$contiene_mu)
+
+cat("De", n_simulaciones, "intervalos de confianza al 95%:\n")
+cat(sum(resultados_sim$contiene_mu), "contienen el verdadero valor μ =", mu_real, "\n")
+cat("Proporción:", round(prop_contiene, 3), "\n")
+cat("(Esperábamos ~0.95)\n")
+```
+
+```{r plot-sim-ic, echo=FALSE, fig.height=8, fig.cap="100 intervalos de confianza: los verdes contienen μ, los rojos no"}
+# Mostrar solo primeros 50 para claridad visual
+resultados_plot <- resultados_sim[1:50, ]
+resultados_plot$muestra <- factor(1:50)
+
+ggplot(resultados_plot, aes(y = muestra)) +
+  geom_point(aes(x = media), size = 2) +
+  geom_errorbarh(aes(xmin = ic_inf, xmax = ic_sup,
+                     color = contiene_mu),
+                 height = 0, size = 0.8) +
+  geom_vline(xintercept = mu_real, linetype = "dashed",
+             color = "black", size = 1.2) +
+  scale_color_manual(values = c("FALSE" = "#e74c3c", "TRUE" = "#2ecc71"),
+                     labels = c("No contiene μ", "Contiene μ")) +
+  labs(
+    title = "Interpretación de Intervalos de Confianza al 95%",
+    subtitle = paste0("Línea vertical = μ verdadero (500). ",
+                      sum(resultados_plot$contiene_mu), " de 50 ICs contienen μ"),
+    x = "Valor",
+    y = "Número de muestra",
+    color = NULL
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "top",
+    axis.text.y = element_blank()
+  )
+```
+
+::: {.importante}
+**Mensaje clave**: El "95%" NO se refiere a una muestra individual, sino al **procedimiento**. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían $\mu$. Para cualquier muestra específica, o contiene $\mu$ o no (pero no sabemos cuál).
+:::
+
+## Resumen del capítulo
+
+**Conceptos clave:**
+
+1. **Inferencia estadística**: Usar muestras para hacer afirmaciones sobre poblaciones
+2. **Parámetros vs estadísticos**: $\mu, p$ (poblacionales, fijos, desconocidos) vs $\bar{x}, \hat{p}$ (muestrales, variables, observables)
+3. **Distribución muestral**: Distribución de un estadístico a través de todas las muestras posibles
+4. **Error estándar**: SD de la distribución muestral; mide precisión de la estimación; $\text{SE} = s/\sqrt{n}$
+5. **Intervalos de confianza**: Rango plausible para el parámetro; nivel de confianza se refiere al procedimiento, no a un intervalo específico
+6. **Tamaño muestral**: Determinar $n$ necesario para lograr margen de error deseado
+
+**Fórmulas esenciales:**
+
+| Concepto | Media | Proporción |
+|:---------|:------|:-----------|
+| Error estándar | $\text{SE} = s/\sqrt{n}$ | $\text{SE} = \sqrt{\hat{p}(1-\hat{p})/n}$ |
+| IC 95% | $\bar{x} \pm 1.96 \cdot \text{SE}$ | $\hat{p} \pm 1.96 \cdot \text{SE}$ |
+| Tamaño muestral | $n = (z\sigma/E)^2$ | $n = (z/E)^2 \cdot 0.25$ |
+
+**Conexión con próximos capítulos:**
+
+- **Cap. 9** extenderá la lógica de inferencia a **pruebas de hipótesis**
+- **Caps. 10-11** aplicarán ICs y pruebas para comparar grupos y analizar relaciones
+
+## Lecturas recomendadas
+
+**Fundamentos de inferencia estadística:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+→ Capítulo 5 cubre estimación estadística, intervalos de confianza y error estándar con claridad ejemplar.
+
+**Aplicaciones en análisis de datos sociales:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+→ Capítulo 7 sobre incertidumbre conecta teoría con aplicaciones prácticas en investigación cuantitativa.
+
+**Recurso complementario de acceso libre:**
+
+Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]  
+→ Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.
+
+
+## Ejercicios
+
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap8).

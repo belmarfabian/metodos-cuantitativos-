@@ -1,0 +1,94 @@
+# Pruebas de hipótesis {#hipotesis}
+
+## Objetivos del capítulo
+
+Al finalizar este capítulo, serás capaz de:
+
+- Comprender la lógica de las pruebas de hipótesis estadísticas
+- Formular correctamente hipótesis nula ($H_0$) y alternativa ($H_1$)
+- Interpretar valores p y niveles de significancia
+- Distinguir entre significancia estadística y sustantiva
+- Reconocer y evitar errores tipo I y tipo II
+- Realizar pruebas de hipótesis para medias y proporciones
+- Entender las limitaciones y mal usos comunes de las pruebas de hipótesis
+
+## Lógica de las pruebas de hipótesis
+
+Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?
+
+### La lógica de prueba por contradicción
+
+Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:
+
+1. Asumimos que **NO hay efecto** (hipótesis nula: $H_0$)
+2. Preguntamos: ¿Qué tan probable es observar nuestros datos si $H_0$ fuera cierta?
+3. Si esa probabilidad es muy baja, **rechazamos** $H_0$ como implausible
+4. Si la probabilidad no es tan baja, **no rechazamos** $H_0$ (no tenemos evidencia suficiente contra ella)
+
+Es crucial entender la asimetría fundamental de este razonamiento: nunca "aceptamos" o "probamos" $H_0$. Solo podemos **rechazar** $H_0$ (cuando hay evidencia contra ella) o **no rechazar** $H_0$ (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no "probamos inocencia", solo establecemos que "no hay evidencia suficiente de culpabilidad".
+
+## Hipótesis nula y alternativa
+
+### Formulación de hipótesis
+
+**Hipótesis nula ($H_0$)**: Afirmación de "no efecto" o "no diferencia". Es lo que asumimos como cierto inicialmente.
+
+**Hipótesis alternativa ($H_1$)**: Lo que esperamos encontrar si rechazamos $H_0$. Puede ser:
+- **Bilateral** (dos colas): $H_1: \mu \neq \mu_0$ (hay diferencia, en cualquier dirección)
+- **Unilateral** (una cola): $H_1: \mu > \mu_0$ o $H_1: \mu < \mu_0$ (dirección específica)
+
+Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu < 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).^[EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación ($H_0: p_{\text{antes}} = p_{\text{después}}$ vs $H_1: p_{\text{después}} > p_{\text{antes}}$); comparar aprobación presidencial entre regiones urbanas y rurales ($H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}$ vs $H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}$).]
+
+## Valores p y significancia estadística
+
+### ¿Qué es un valor p?
+
+El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos como los nuestros (o más), **asumiendo que $H_0$ es cierta**.
+
+$$\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})$$
+
+La interpretación correcta del valor p es fundamental para evitar errores comunes.^[INTERPRETACIÓN ERRÓNEA COMÚN: "p = 0.03 significa que hay 3% de probabilidad de que $H_0$ sea cierta". FALSO. El valor p NO es $P(H_0 | \text{datos})$. Es $P(\text{datos} | H_0)$. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.] Cuando observamos $p = 0.03$, debemos interpretar: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces." Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
+
+## Errores tipo I y tipo II
+
+En pruebas de hipótesis, existen dos tipos de error posibles:
+
+**Error Tipo I**: Rechazar $H_0$ cuando es cierta (falso positivo)
+- Probabilidad: $\alpha$ (nivel de significancia)
+
+**Error Tipo II**: No rechazar $H_0$ cuando es falsa (falso negativo)
+- Probabilidad: $\beta$
+
+**Poder estadístico**: $1 - \beta$ (probabilidad de detectar un efecto real)
+
+## Resumen del capítulo
+
+**Conceptos clave:**
+
+1. **Pruebas de hipótesis** usan lógica de reducción al absurdo
+2. **Valor p**: Probabilidad de datos tan extremos bajo $H_0$
+3. **Errores**: Tipo I (falso positivo), Tipo II (falso negativo)
+4. **Significancia estadística vs sustantiva**
+5. **Nunca "aceptamos" $H_0$**: Solo podemos rechazarla o no rechazarla
+
+## Lecturas recomendadas
+
+**Fundamentos de pruebas de hipótesis:**
+
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+→ Capítulo 6 ofrece explicación rigurosa pero accesible de la lógica de pruebas de significancia estadística.
+
+**Aplicaciones en ciencias sociales:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+→ Sección 7.5 conecta pruebas de hipótesis con aplicaciones prácticas en investigación social y política.
+
+**Sobre problemas y mal uso de valores p:**
+
+Wasserstein, R. L., & Lazar, N. A. (2016). The ASA's statement on p-values: Context, process, and purpose. *The American Statistician*, 70(2), 129-133.  
+→ Declaración oficial de la Asociación Americana de Estadística sobre interpretación correcta de valores p y errores comunes.
+
+
+## Ejercicios
+
+Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap9).
