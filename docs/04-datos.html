@@ -318,18 +318,12 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">4.1</span> Objetivos del capítulo</a></li>
-  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos"><span class="header-section-number">4.2</span> Tipos de datos</a></li>
-  <li><a href="#fuentes-de-datos-para-ciencias-políticas" id="toc-fuentes-de-datos-para-ciencias-políticas" class="nav-link" data-scroll-target="#fuentes-de-datos-para-ciencias-políticas"><span class="header-section-number">4.3</span> Fuentes de datos para ciencias políticas</a></li>
-  <li><a href="#calidad-de-datos" id="toc-calidad-de-datos" class="nav-link" data-scroll-target="#calidad-de-datos"><span class="header-section-number">4.4</span> Calidad de datos</a></li>
-  <li><a href="#introducción-a-r-y-rstudio" id="toc-introducción-a-r-y-rstudio" class="nav-link" data-scroll-target="#introducción-a-r-y-rstudio"><span class="header-section-number">4.5</span> Introducción a R y RStudio</a></li>
-  <li><a href="#importar-datos" id="toc-importar-datos" class="nav-link" data-scroll-target="#importar-datos"><span class="header-section-number">4.6</span> Importar datos</a></li>
-  <li><a href="#manipulación-básica-de-datos" id="toc-manipulación-básica-de-datos" class="nav-link" data-scroll-target="#manipulación-básica-de-datos"><span class="header-section-number">4.7</span> Manipulación básica de datos</a></li>
-  <li><a href="#exportar-datos" id="toc-exportar-datos" class="nav-link" data-scroll-target="#exportar-datos"><span class="header-section-number">4.8</span> Exportar datos</a></li>
-  <li><a href="#flujo-de-trabajo-reproducible" id="toc-flujo-de-trabajo-reproducible" class="nav-link" data-scroll-target="#flujo-de-trabajo-reproducible"><span class="header-section-number">4.9</span> Flujo de trabajo reproducible</a></li>
-  <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">4.10</span> Resumen del capítulo</a></li>
-  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">4.11</span> Lecturas recomendadas</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">4.12</span> Ejercicios</a></li>
+  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
+  <li><a href="#tipos-y-fuentes-de-datos" id="toc-tipos-y-fuentes-de-datos" class="nav-link" data-scroll-target="#tipos-y-fuentes-de-datos"><span class="header-section-number">4.1</span> Tipos y fuentes de datos</a></li>
+  <li><a href="#trabajando-con-r" id="toc-trabajando-con-r" class="nav-link" data-scroll-target="#trabajando-con-r"><span class="header-section-number">4.2</span> Trabajando con R</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -355,8 +349,8 @@ div.csl-indent {
 </header>
 
 
-<section id="objetivos-del-capítulo" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="objetivos-del-capítulo"><span class="header-section-number">4.1</span> Objetivos del capítulo</h2>
+<section id="objetivos-del-capítulo" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
 <li>Distinguir entre tipos de datos según estructura y fuente</li>
@@ -367,11 +361,11 @@ div.csl-indent {
 <li>Exportar resultados para análisis posterior o publicación</li>
 </ul>
 </section>
-<section id="tipos-de-datos" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="tipos-de-datos"><span class="header-section-number">4.2</span> Tipos de datos</h2>
+<section id="tipos-y-fuentes-de-datos" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="tipos-y-fuentes-de-datos"><span class="header-section-number">4.1</span> Tipos y fuentes de datos</h2>
 <p>Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.</p>
-<section id="según-estructura" class="level4" data-number="4.2.0.1">
-<h4 data-number="4.2.0.1" class="anchored" data-anchor-id="según-estructura"><span class="header-section-number">4.2.0.1</span> Según estructura</h4>
+<section id="según-estructura" class="level4" data-number="4.1.0.1">
+<h4 data-number="4.1.0.1" class="anchored" data-anchor-id="según-estructura"><span class="header-section-number">4.1.0.1</span> Según estructura</h4>
 <p><strong>Datos de corte transversal (cross-sectional)</strong></p>
 <p>Observaciones de múltiples unidades en un solo momento. Ejemplo: encuesta a 1,500 votantes en octubre 2024. Cada fila es un individuo; columnas son variables (edad, educación, intención de voto).</p>
 <p>Ventaja: Simplicidad analítica. Limitación: No observamos cambio temporal. No podemos distinguir efectos de período de efectos de cohorte.</p>
@@ -385,8 +379,8 @@ div.csl-indent {
 <p>Observaciones anidadas en estructuras de múltiples niveles. Ejemplo: estudiantes (nivel 1) dentro de escuelas (nivel 2) dentro de comunas (nivel 3).</p>
 <p>Ventaja: Modela variación en múltiples niveles simultáneamente. Limitación: Requiere técnicas multinivel (más allá del alcance de este libro introductorio).</p>
 </section>
-<section id="según-granularidad" class="level4" data-number="4.2.0.2">
-<h4 data-number="4.2.0.2" class="anchored" data-anchor-id="según-granularidad"><span class="header-section-number">4.2.0.2</span> Según granularidad</h4>
+<section id="según-granularidad" class="level4" data-number="4.1.0.2">
+<h4 data-number="4.1.0.2" class="anchored" data-anchor-id="según-granularidad"><span class="header-section-number">4.1.0.2</span> Según granularidad</h4>
 <p><strong>Datos micro (individuales)</strong></p>
 <p>La unidad de observación es el individuo: persona, votante, legislador, manifestante. Estos datos permiten analizar comportamiento individual y heterogeneidad.</p>
 <p><strong>Datos meso (organizacionales/locales)</strong></p>
@@ -395,8 +389,8 @@ div.csl-indent {
 <p>La unidad es el país o la región. Permiten comparación internacional pero pierden variación subnacional. Además, típicamente N es pequeño (196 países en el mundo).</p>
 <p>La elección de granularidad no es neutral. <span class="citation" data-cites="king1997">King (<a href="01-introduccion.html#ref-king1997" role="doc-biblioref">1997</a>)</span> advierten sobre la <strong>falacia ecológica</strong>: inferir comportamiento individual desde patrones agregados puede ser erróneo si composición de agregados varía.</p>
 </section>
-<section id="según-fuente" class="level4" data-number="4.2.0.3">
-<h4 data-number="4.2.0.3" class="anchored" data-anchor-id="según-fuente"><span class="header-section-number">4.2.0.3</span> Según fuente</h4>
+<section id="según-fuente" class="level4" data-number="4.1.0.3">
+<h4 data-number="4.1.0.3" class="anchored" data-anchor-id="según-fuente"><span class="header-section-number">4.1.0.3</span> Según fuente</h4>
 <p><strong>Datos primarios</strong></p>
 <p>Recolectados por el investigador para el proyecto específico. Encuestas propias, experimentos, observación directa, entrevistas codificadas.</p>
 <p>Ventaja: Control total sobre qué se mide y cómo. Limitación: Costoso en tiempo y recursos.</p>
@@ -410,24 +404,24 @@ div.csl-indent {
 <p>Generados por actividad en línea: tweets, posts de Facebook, búsquedas en Google, patrones de navegación. Creciente uso en ciencias sociales computacionales.</p>
 <p>Ventaja: Volumen masivo, observación de comportamiento real (no reportado). Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.</p>
 </section>
+<section id="fuentes-de-datos" class="level4" data-number="4.1.0.4">
+<h4 data-number="4.1.0.4" class="anchored" data-anchor-id="fuentes-de-datos"><span class="header-section-number">4.1.0.4</span> Fuentes de datos</h4>
 </section>
-<section id="fuentes-de-datos-para-ciencias-políticas" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="fuentes-de-datos-para-ciencias-políticas"><span class="header-section-number">4.3</span> Fuentes de datos para ciencias políticas</h2>
-<section id="encuestas-de-opinión-pública" class="level4" data-number="4.3.0.1">
-<h4 data-number="4.3.0.1" class="anchored" data-anchor-id="encuestas-de-opinión-pública"><span class="header-section-number">4.3.0.1</span> Encuestas de opinión pública</h4>
+<section id="encuestas-de-opinión-pública" class="level4" data-number="4.1.0.5">
+<h4 data-number="4.1.0.5" class="anchored" data-anchor-id="encuestas-de-opinión-pública"><span class="header-section-number">4.1.0.5</span> Encuestas de opinión pública</h4>
 <p><strong>Internacionales:</strong> - <strong>World Values Survey</strong>: Actitudes y valores en ~100 países - <strong>Latinobarómetro</strong>: Opinión pública en 18 países latinoamericanos anualmente - <strong>AmericasBarometer (LAPOP)</strong>: Actitudes políticas en las Américas</p>
 <p><strong>Chile:</strong> - <strong>Encuesta CEP</strong>: Trimestral desde 1987, serie temporal más larga en Chile - <strong>CASEN</strong>: Caracterización socioeconómica nacional (bienal) - <strong>Encuesta Bicentenario UC-Adimark</strong></p>
 </section>
-<section id="datos-electorales" class="level4" data-number="4.3.0.2">
-<h4 data-number="4.3.0.2" class="anchored" data-anchor-id="datos-electorales"><span class="header-section-number">4.3.0.2</span> Datos electorales</h4>
+<section id="datos-electorales" class="level4" data-number="4.1.0.6">
+<h4 data-number="4.1.0.6" class="anchored" data-anchor-id="datos-electorales"><span class="header-section-number">4.1.0.6</span> Datos electorales</h4>
 <ul>
 <li><strong>Servicio Electoral de Chile (SERVEL)</strong>: Resultados electorales desagregados</li>
 <li><strong>International IDEA</strong>: Datos electorales comparados internacionalmente</li>
 <li><strong>Database of Political Institutions (DPI)</strong>: Instituciones y resultados electorales</li>
 </ul>
 </section>
-<section id="datos-económicos-y-sociales" class="level4" data-number="4.3.0.3">
-<h4 data-number="4.3.0.3" class="anchored" data-anchor-id="datos-económicos-y-sociales"><span class="header-section-number">4.3.0.3</span> Datos económicos y sociales</h4>
+<section id="datos-económicos-y-sociales" class="level4" data-number="4.1.0.7">
+<h4 data-number="4.1.0.7" class="anchored" data-anchor-id="datos-económicos-y-sociales"><span class="header-section-number">4.1.0.7</span> Datos económicos y sociales</h4>
 <ul>
 <li><strong>Banco Mundial</strong>: Indicadores de desarrollo mundial</li>
 <li><strong>CEPAL</strong>: Estadísticas económicas y sociales de América Latina</li>
@@ -435,8 +429,8 @@ div.csl-indent {
 <li><strong>OECD</strong>: Datos comparados de países desarrollados</li>
 </ul>
 </section>
-<section id="datos-sobre-instituciones-políticas" class="level4" data-number="4.3.0.4">
-<h4 data-number="4.3.0.4" class="anchored" data-anchor-id="datos-sobre-instituciones-políticas"><span class="header-section-number">4.3.0.4</span> Datos sobre instituciones políticas</h4>
+<section id="datos-sobre-instituciones-políticas" class="level4" data-number="4.1.0.8">
+<h4 data-number="4.1.0.8" class="anchored" data-anchor-id="datos-sobre-instituciones-políticas"><span class="header-section-number">4.1.0.8</span> Datos sobre instituciones políticas</h4>
 <ul>
 <li><strong>Polity V</strong>: Características de regímenes políticos</li>
 <li><strong>V-Dem</strong>: Variedades de democracia, múltiples dimensiones</li>
@@ -444,20 +438,20 @@ div.csl-indent {
 <li><strong>Comparative Constitutions Project</strong>: Contenido de constituciones</li>
 </ul>
 </section>
-<section id="datos-legislativos" class="level4" data-number="4.3.0.5">
-<h4 data-number="4.3.0.5" class="anchored" data-anchor-id="datos-legislativos"><span class="header-section-number">4.3.0.5</span> Datos legislativos</h4>
+<section id="datos-legislativos" class="level4" data-number="4.1.0.9">
+<h4 data-number="4.1.0.9" class="anchored" data-anchor-id="datos-legislativos"><span class="header-section-number">4.1.0.9</span> Datos legislativos</h4>
 <ul>
 <li><strong>VoteView</strong>: Votaciones nominales del Congreso de EE.UU.</li>
 <li><strong>Manifesto Project</strong>: Contenido de manifiestos partidarios</li>
 <li><strong>Cámara de Diputados de Chile</strong>: Votaciones nominales (requiere scraping)</li>
 </ul>
 </section>
-</section>
-<section id="calidad-de-datos" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="calidad-de-datos"><span class="header-section-number">4.4</span> Calidad de datos</h2>
+<section id="calidad-de-datos" class="level4" data-number="4.1.0.10">
+<h4 data-number="4.1.0.10" class="anchored" data-anchor-id="calidad-de-datos"><span class="header-section-number">4.1.0.10</span> Calidad de datos</h4>
 <p>No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.</p>
-<section id="dimensiones-de-calidad" class="level4" data-number="4.4.0.1">
-<h4 data-number="4.4.0.1" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.4.0.1</span> Dimensiones de calidad</h4>
+</section>
+<section id="dimensiones-de-calidad" class="level4" data-number="4.1.0.11">
+<h4 data-number="4.1.0.11" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.1.0.11</span> Dimensiones de calidad</h4>
 <p><strong>1. Validez</strong></p>
 <p>¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo @ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.</p>
 <p><strong>2. Confiabilidad</strong></p>
@@ -471,8 +465,8 @@ div.csl-indent {
 <p><strong>6. Accesibilidad</strong></p>
 <p>¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.</p>
 </section>
-<section id="problemas-comunes" class="level4" data-number="4.4.0.2">
-<h4 data-number="4.4.0.2" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.4.0.2</span> Problemas comunes</h4>
+<section id="problemas-comunes" class="level4" data-number="4.1.0.12">
+<h4 data-number="4.1.0.12" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.1.0.12</span> Problemas comunes</h4>
 <p><strong>Datos faltantes (missing data)</strong></p>
 <p>Los valores faltantes son ubicuos. Pueden ser:</p>
 <ul>
@@ -491,24 +485,24 @@ div.csl-indent {
 <p>Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusionan sin cuidado.</p>
 </section>
 </section>
-<section id="introducción-a-r-y-rstudio" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="introducción-a-r-y-rstudio"><span class="header-section-number">4.5</span> Introducción a R y RStudio</h2>
+<section id="trabajando-con-r" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="trabajando-con-r"><span class="header-section-number">4.2</span> Trabajando con R</h2>
 <p>R es un lenguaje de programación estadística y entorno para análisis de datos. RStudio es un entorno de desarrollo integrado (IDE) que hace más amigable trabajar con R.</p>
-<section id="por-qué-r" class="level4" data-number="4.5.0.1">
-<h4 data-number="4.5.0.1" class="anchored" data-anchor-id="por-qué-r"><span class="header-section-number">4.5.0.1</span> ¿Por qué R?</h4>
+<section id="por-qué-r" class="level4" data-number="4.2.0.1">
+<h4 data-number="4.2.0.1" class="anchored" data-anchor-id="por-qué-r"><span class="header-section-number">4.2.0.1</span> ¿Por qué R?</h4>
 <p><strong>Ventajas:</strong> - <strong>Gratuito y de código abierto</strong>: Sin costos de licencia - <strong>Reproducible</strong>: Scripts documentan exactamente qué se hizo - <strong>Extensible</strong>: Miles de paquetes para técnicas especializadas - <strong>Comunidad activa</strong>: Foros, tutoriales, ayuda abundante - <strong>Estándar en ciencias sociales cuantitativas</strong>: Facilita colaboración y replicación</p>
 <p><strong>Desventajas:</strong> - <strong>Curva de aprendizaje</strong>: Programar requiere práctica - <strong>Múltiples formas de hacer lo mismo</strong>: Puede ser confuso para principiantes</p>
 </section>
-<section id="instalación" class="level4" data-number="4.5.0.2">
-<h4 data-number="4.5.0.2" class="anchored" data-anchor-id="instalación"><span class="header-section-number">4.5.0.2</span> Instalación</h4>
+<section id="instalación" class="level4" data-number="4.2.0.2">
+<h4 data-number="4.2.0.2" class="anchored" data-anchor-id="instalación"><span class="header-section-number">4.2.0.2</span> Instalación</h4>
 <ol type="1">
 <li>Descargar R: https://cran.r-project.org/</li>
 <li>Descargar RStudio: https://posit.co/download/rstudio-desktop/</li>
 <li>Instalar ambos (primero R, luego RStudio)</li>
 </ol>
 </section>
-<section id="anatomía-de-rstudio" class="level4" data-number="4.5.0.3">
-<h4 data-number="4.5.0.3" class="anchored" data-anchor-id="anatomía-de-rstudio"><span class="header-section-number">4.5.0.3</span> Anatomía de RStudio</h4>
+<section id="anatomía-de-rstudio" class="level4" data-number="4.2.0.3">
+<h4 data-number="4.2.0.3" class="anchored" data-anchor-id="anatomía-de-rstudio"><span class="header-section-number">4.2.0.3</span> Anatomía de RStudio</h4>
 <p>RStudio tiene cuatro paneles principales:</p>
 <ol type="1">
 <li><strong>Editor de scripts</strong> (arriba izquierda): Donde escribes código para guardar y ejecutar</li>
@@ -517,8 +511,8 @@ div.csl-indent {
 <li><strong>Files/Plots/Packages/Help</strong> (abajo derecha): Navegación de archivos, gráficos, ayuda</li>
 </ol>
 </section>
-<section id="paquetes" class="level4" data-number="4.5.0.4">
-<h4 data-number="4.5.0.4" class="anchored" data-anchor-id="paquetes"><span class="header-section-number">4.5.0.4</span> Paquetes</h4>
+<section id="paquetes" class="level4" data-number="4.2.0.4">
+<h4 data-number="4.2.0.4" class="anchored" data-anchor-id="paquetes"><span class="header-section-number">4.2.0.4</span> Paquetes</h4>
 <p>R base es poderoso, pero paquetes extienden funcionalidad. Instalación (una vez):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)  <span class="co"># Suite de paquetes para manipulación de datos</span></span>
@@ -532,8 +526,8 @@ div.csl-indent {
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="objetos-básicos-en-r" class="level4" data-number="4.5.0.5">
-<h4 data-number="4.5.0.5" class="anchored" data-anchor-id="objetos-básicos-en-r"><span class="header-section-number">4.5.0.5</span> Objetos básicos en R</h4>
+<section id="objetos-básicos-en-r" class="level4" data-number="4.2.0.5">
+<h4 data-number="4.2.0.5" class="anchored" data-anchor-id="objetos-básicos-en-r"><span class="header-section-number">4.2.0.5</span> Objetos básicos en R</h4>
 <p><strong>Vectores</strong>: Secuencias de elementos del mismo tipo</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>edades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">45</span>, <span class="dv">67</span>, <span class="dv">34</span>, <span class="dv">29</span>)</span>
@@ -566,8 +560,8 @@ Apruebo Rechazo
 </div>
 </div>
 </section>
-<section id="directorios-de-trabajo" class="level4" data-number="4.5.0.6">
-<h4 data-number="4.5.0.6" class="anchored" data-anchor-id="directorios-de-trabajo"><span class="header-section-number">4.5.0.6</span> Directorios de trabajo</h4>
+<section id="directorios-de-trabajo" class="level4" data-number="4.2.0.6">
+<h4 data-number="4.2.0.6" class="anchored" data-anchor-id="directorios-de-trabajo"><span class="header-section-number">4.2.0.6</span> Directorios de trabajo</h4>
 <p>R busca y guarda archivos en el “directorio de trabajo”. Verificar:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getwd</span>()  <span class="co"># ¿Dónde estoy?</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -578,12 +572,12 @@ Apruebo Rechazo
 </div>
 <p>Mejor práctica: usar <strong>proyectos de RStudio</strong> (<code>.Rproj</code>). Esto establece automáticamente el directorio de trabajo en la carpeta del proyecto.</p>
 </section>
-</section>
-<section id="importar-datos" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="importar-datos"><span class="header-section-number">4.6</span> Importar datos</h2>
+<section id="importar-datos" class="level4" data-number="4.2.0.7">
+<h4 data-number="4.2.0.7" class="anchored" data-anchor-id="importar-datos"><span class="header-section-number">4.2.0.7</span> Importar datos</h4>
 <p>Los datos pueden venir en múltiples formatos. R puede leer la mayoría.</p>
-<section id="archivos-de-texto-csv" class="level4" data-number="4.6.0.1">
-<h4 data-number="4.6.0.1" class="anchored" data-anchor-id="archivos-de-texto-csv"><span class="header-section-number">4.6.0.1</span> Archivos de texto: CSV</h4>
+</section>
+<section id="archivos-de-texto-csv" class="level4" data-number="4.2.0.8">
+<h4 data-number="4.2.0.8" class="anchored" data-anchor-id="archivos-de-texto-csv"><span class="header-section-number">4.2.0.8</span> Archivos de texto: CSV</h4>
 <p>Los archivos CSV (comma-separated values) son universales. Formato simple:</p>
 <pre><code>id,edad,partido
 1,23,PS
@@ -607,8 +601,8 @@ Apruebo Rechazo
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">partido =</span> <span class="fu">col_character</span>()))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="archivos-de-excel" class="level4" data-number="4.6.0.2">
-<h4 data-number="4.6.0.2" class="anchored" data-anchor-id="archivos-de-excel"><span class="header-section-number">4.6.0.2</span> Archivos de Excel</h4>
+<section id="archivos-de-excel" class="level4" data-number="4.2.0.9">
+<h4 data-number="4.2.0.9" class="anchored" data-anchor-id="archivos-de-excel"><span class="header-section-number">4.2.0.9</span> Archivos de Excel</h4>
 <p>Excel es ubicuo en administración pública. Paquete <code>readxl</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
@@ -622,8 +616,8 @@ Apruebo Rechazo
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">range =</span> <span class="st">"A1:F100"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="archivos-de-software-estadístico" class="level4" data-number="4.6.0.3">
-<h4 data-number="4.6.0.3" class="anchored" data-anchor-id="archivos-de-software-estadístico"><span class="header-section-number">4.6.0.3</span> Archivos de software estadístico</h4>
+<section id="archivos-de-software-estadístico" class="level4" data-number="4.2.0.10">
+<h4 data-number="4.2.0.10" class="anchored" data-anchor-id="archivos-de-software-estadístico"><span class="header-section-number">4.2.0.10</span> Archivos de software estadístico</h4>
 <p><strong>Stata (.dta):</strong></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
@@ -644,8 +638,8 @@ Apruebo Rechazo
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(datos<span class="sc">$</span>educ)<span class="sc">$</span>labels</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="datos-en-línea" class="level4" data-number="4.6.0.4">
-<h4 data-number="4.6.0.4" class="anchored" data-anchor-id="datos-en-línea"><span class="header-section-number">4.6.0.4</span> Datos en línea</h4>
+<section id="datos-en-línea" class="level4" data-number="4.2.0.11">
+<h4 data-number="4.2.0.11" class="anchored" data-anchor-id="datos-en-línea"><span class="header-section-number">4.2.0.11</span> Datos en línea</h4>
 <p>Muchos datos están en URLs. Importar directamente:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://ejemplo.com/datos.csv"</span></span>
@@ -653,8 +647,8 @@ Apruebo Rechazo
 </div>
 <p>Para datos de APIs, usar paquetes especializados: - <code>WDI</code>: Banco Mundial - <code>quantmod</code>: Datos financieros - <code>rtweet</code>: API de Twitter (ahora X)</p>
 </section>
-<section id="datos-desde-bases-de-datos" class="level4" data-number="4.6.0.5">
-<h4 data-number="4.6.0.5" class="anchored" data-anchor-id="datos-desde-bases-de-datos"><span class="header-section-number">4.6.0.5</span> Datos desde bases de datos</h4>
+<section id="datos-desde-bases-de-datos" class="level4" data-number="4.2.0.12">
+<h4 data-number="4.2.0.12" class="anchored" data-anchor-id="datos-desde-bases-de-datos"><span class="header-section-number">4.2.0.12</span> Datos desde bases de datos</h4>
 <p>Para bases SQL, usar <code>DBI</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -663,12 +657,12 @@ Apruebo Rechazo
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="manipulación-básica-de-datos" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="manipulación-básica-de-datos"><span class="header-section-number">4.7</span> Manipulación básica de datos</h2>
+<section id="manipulación-de-datos" class="level4" data-number="4.2.0.13">
+<h4 data-number="4.2.0.13" class="anchored" data-anchor-id="manipulación-de-datos"><span class="header-section-number">4.2.0.13</span> Manipulación de datos</h4>
 <p>Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.</p>
-<section id="inspeccionar-datos" class="level4" data-number="4.7.0.1">
-<h4 data-number="4.7.0.1" class="anchored" data-anchor-id="inspeccionar-datos"><span class="header-section-number">4.7.0.1</span> Inspeccionar datos</h4>
+</section>
+<section id="inspeccionar-datos" class="level4" data-number="4.2.0.14">
+<h4 data-number="4.2.0.14" class="anchored" data-anchor-id="inspeccionar-datos"><span class="header-section-number">4.2.0.14</span> Inspeccionar datos</h4>
 <p>Primeros y últimos casos:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)       <span class="co"># Primeros 6 casos</span></span>
@@ -692,8 +686,8 @@ Apruebo Rechazo
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(datos)       <span class="co"># Número de columnas</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="seleccionar-variables" class="level4" data-number="4.7.0.2">
-<h4 data-number="4.7.0.2" class="anchored" data-anchor-id="seleccionar-variables"><span class="header-section-number">4.7.0.2</span> Seleccionar variables</h4>
+<section id="seleccionar-variables" class="level4" data-number="4.2.0.15">
+<h4 data-number="4.2.0.15" class="anchored" data-anchor-id="seleccionar-variables"><span class="header-section-number">4.2.0.15</span> Seleccionar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>datos_reducido <span class="ot">&lt;-</span> datos[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"edad"</span>, <span class="st">"partido"</span>)]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -712,8 +706,8 @@ Apruebo Rechazo
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>datos_reducido <span class="ot">&lt;-</span> <span class="fu">select</span>(datos, <span class="fu">where</span>(is.numeric))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="filtrar-casos" class="level4" data-number="4.7.0.3">
-<h4 data-number="4.7.0.3" class="anchored" data-anchor-id="filtrar-casos"><span class="header-section-number">4.7.0.3</span> Filtrar casos</h4>
+<section id="filtrar-casos" class="level4" data-number="4.2.0.16">
+<h4 data-number="4.2.0.16" class="anchored" data-anchor-id="filtrar-casos"><span class="header-section-number">4.2.0.16</span> Filtrar casos</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>jovenes <span class="ot">&lt;-</span> datos[datos<span class="sc">$</span>edad <span class="sc">&lt;</span> <span class="dv">30</span>, ]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -724,8 +718,8 @@ Apruebo Rechazo
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>jovenes_izquierda <span class="ot">&lt;-</span> <span class="fu">filter</span>(datos, edad <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">&amp;</span> partido <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"PS"</span>, <span class="st">"PC"</span>, <span class="st">"FA"</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="crear-y-transformar-variables" class="level4" data-number="4.7.0.4">
-<h4 data-number="4.7.0.4" class="anchored" data-anchor-id="crear-y-transformar-variables"><span class="header-section-number">4.7.0.4</span> Crear y transformar variables</h4>
+<section id="crear-y-transformar-variables" class="level4" data-number="4.2.0.17">
+<h4 data-number="4.2.0.17" class="anchored" data-anchor-id="crear-y-transformar-variables"><span class="header-section-number">4.2.0.17</span> Crear y transformar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>edad_decadas <span class="ot">&lt;-</span> datos<span class="sc">$</span>edad <span class="sc">/</span> <span class="dv">10</span></span>
@@ -743,8 +737,8 @@ Apruebo Rechazo
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                ))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="recodificar-variables" class="level4" data-number="4.7.0.5">
-<h4 data-number="4.7.0.5" class="anchored" data-anchor-id="recodificar-variables"><span class="header-section-number">4.7.0.5</span> Recodificar variables</h4>
+<section id="recodificar-variables" class="level4" data-number="4.2.0.18">
+<h4 data-number="4.2.0.18" class="anchored" data-anchor-id="recodificar-variables"><span class="header-section-number">4.2.0.18</span> Recodificar variables</h4>
 <p>Cambiar categorías:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">mutate</span>(datos,</span>
@@ -755,8 +749,8 @@ Apruebo Rechazo
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                ))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="renombrar-variables" class="level4" data-number="4.7.0.6">
-<h4 data-number="4.7.0.6" class="anchored" data-anchor-id="renombrar-variables"><span class="header-section-number">4.7.0.6</span> Renombrar variables</h4>
+<section id="renombrar-variables" class="level4" data-number="4.2.0.19">
+<h4 data-number="4.2.0.19" class="anchored" data-anchor-id="renombrar-variables"><span class="header-section-number">4.2.0.19</span> Renombrar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)[<span class="fu">names</span>(datos) <span class="sc">==</span> <span class="st">"p1"</span>] <span class="ot">&lt;-</span> <span class="st">"confianza_congreso"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -768,8 +762,8 @@ Apruebo Rechazo
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">confianza_gobierno =</span> p2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="ordenar-datos" class="level4" data-number="4.7.0.7">
-<h4 data-number="4.7.0.7" class="anchored" data-anchor-id="ordenar-datos"><span class="header-section-number">4.7.0.7</span> Ordenar datos</h4>
+<section id="ordenar-datos" class="level4" data-number="4.2.0.20">
+<h4 data-number="4.2.0.20" class="anchored" data-anchor-id="ordenar-datos"><span class="header-section-number">4.2.0.20</span> Ordenar datos</h4>
 <p>Por edad (ascendente):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>datos_ordenado <span class="ot">&lt;-</span> <span class="fu">arrange</span>(datos, edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -783,8 +777,8 @@ Apruebo Rechazo
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>datos_ordenado <span class="ot">&lt;-</span> <span class="fu">arrange</span>(datos, partido, edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="agregar-datos" class="level4" data-number="4.7.0.8">
-<h4 data-number="4.7.0.8" class="anchored" data-anchor-id="agregar-datos"><span class="header-section-number">4.7.0.8</span> Agregar datos</h4>
+<section id="agregar-datos" class="level4" data-number="4.2.0.21">
+<h4 data-number="4.2.0.21" class="anchored" data-anchor-id="agregar-datos"><span class="header-section-number">4.2.0.21</span> Agregar datos</h4>
 <p>Resumir por grupos:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
@@ -798,8 +792,8 @@ Apruebo Rechazo
 </div>
 <p>El operador <code>%&gt;%</code> (pipe) pasa el resultado de una función a la siguiente. El código anterior dice: “toma <code>datos</code>, agrúpalo por <code>partido</code>, calcula estadísticos”.</p>
 </section>
-<section id="unir-datasets" class="level4" data-number="4.7.0.9">
-<h4 data-number="4.7.0.9" class="anchored" data-anchor-id="unir-datasets"><span class="header-section-number">4.7.0.9</span> Unir datasets</h4>
+<section id="unir-datasets" class="level4" data-number="4.2.0.22">
+<h4 data-number="4.2.0.22" class="anchored" data-anchor-id="unir-datasets"><span class="header-section-number">4.2.0.22</span> Unir datasets</h4>
 <p><strong>Left join</strong>: Mantener todos los casos del dataset izquierdo</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>datos_completo <span class="ot">&lt;-</span> <span class="fu">left_join</span>(encuesta, resultados_electorales, </span>
@@ -811,18 +805,18 @@ Apruebo Rechazo
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">by =</span> <span class="st">"comuna_id"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="exportar-datos" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="exportar-datos"><span class="header-section-number">4.8</span> Exportar datos</h2>
+<section id="exportar-datos" class="level4" data-number="4.2.0.23">
+<h4 data-number="4.2.0.23" class="anchored" data-anchor-id="exportar-datos"><span class="header-section-number">4.2.0.23</span> Exportar datos</h4>
 <p>Después de limpiar y transformar datos, es útil guardarlos.</p>
-<section id="csv" class="level4" data-number="4.8.0.1">
-<h4 data-number="4.8.0.1" class="anchored" data-anchor-id="csv"><span class="header-section-number">4.8.0.1</span> CSV</h4>
+</section>
+<section id="csv" class="level4" data-number="4.2.0.24">
+<h4 data-number="4.2.0.24" class="anchored" data-anchor-id="csv"><span class="header-section-number">4.2.0.24</span> CSV</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(datos_limpios, <span class="st">"datos_procesados.csv"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="formato-de-r" class="level4" data-number="4.8.0.2">
-<h4 data-number="4.8.0.2" class="anchored" data-anchor-id="formato-de-r"><span class="header-section-number">4.8.0.2</span> Formato de R</h4>
+<section id="formato-de-r" class="level4" data-number="4.2.0.25">
+<h4 data-number="4.2.0.25" class="anchored" data-anchor-id="formato-de-r"><span class="header-section-number">4.2.0.25</span> Formato de R</h4>
 <p>Guardar como <code>.RDS</code> (R Data Serialization) preserva estructura completa:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(datos_limpios, <span class="st">"datos_procesados.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -832,26 +826,26 @@ Apruebo Rechazo
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"datos_procesados.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="stata" class="level4" data-number="4.8.0.3">
-<h4 data-number="4.8.0.3" class="anchored" data-anchor-id="stata"><span class="header-section-number">4.8.0.3</span> Stata</h4>
+<section id="stata" class="level4" data-number="4.2.0.26">
+<h4 data-number="4.2.0.26" class="anchored" data-anchor-id="stata"><span class="header-section-number">4.2.0.26</span> Stata</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(datos_limpios, <span class="st">"datos_procesados.dta"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="excel" class="level4" data-number="4.8.0.4">
-<h4 data-number="4.8.0.4" class="anchored" data-anchor-id="excel"><span class="header-section-number">4.8.0.4</span> Excel</h4>
+<section id="excel" class="level4" data-number="4.2.0.27">
+<h4 data-number="4.2.0.27" class="anchored" data-anchor-id="excel"><span class="header-section-number">4.2.0.27</span> Excel</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(datos_limpios, <span class="st">"datos_procesados.xlsx"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-</section>
-<section id="flujo-de-trabajo-reproducible" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="flujo-de-trabajo-reproducible"><span class="header-section-number">4.9</span> Flujo de trabajo reproducible</h2>
+<section id="flujo-reproducible" class="level4" data-number="4.2.0.28">
+<h4 data-number="4.2.0.28" class="anchored" data-anchor-id="flujo-reproducible"><span class="header-section-number">4.2.0.28</span> Flujo reproducible</h4>
 <p>La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.</p>
-<section id="principios" class="level4" data-number="4.9.0.1">
-<h4 data-number="4.9.0.1" class="anchored" data-anchor-id="principios"><span class="header-section-number">4.9.0.1</span> Principios</h4>
+</section>
+<section id="principios" class="level4" data-number="4.2.0.29">
+<h4 data-number="4.2.0.29" class="anchored" data-anchor-id="principios"><span class="header-section-number">4.2.0.29</span> Principios</h4>
 <p><strong>1. Usa scripts, no clics</strong></p>
 <p>Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.</p>
 <p><strong>2. Nunca modifiques datos originales</strong></p>
@@ -884,8 +878,8 @@ Apruebo Rechazo
 <p><strong>5. Usa control de versiones</strong></p>
 <p>Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.</p>
 </section>
-<section id="r-markdown" class="level4" data-number="4.9.0.2">
-<h4 data-number="4.9.0.2" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">4.9.0.2</span> R Markdown</h4>
+<section id="r-markdown" class="level4" data-number="4.2.0.30">
+<h4 data-number="4.2.0.30" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">4.2.0.30</span> R Markdown</h4>
 <p>R Markdown integra código, resultados y texto en un solo documento. Permite generar reportes reproducibles en HTML, PDF o Word.</p>
 <p>Ejemplo básico (<code>analisis.Rmd</code>):</p>
 <pre><code>---
@@ -895,13 +889,13 @@ date: "2025-12-01"
 output: html_document
 ---
 
-## Introducción
+#### Introducción
 
 Este análisis examina factores asociados a participación electoral.
 
 
 
-## Resultados
+#### Resultados
 
 La participación promedio fue XX%.
 
@@ -913,16 +907,16 @@ La participación promedio fue XX%.
 <p>Al compilar (“Knit”), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.</p>
 </section>
 </section>
-<section id="resumen-del-capítulo" class="level2" data-number="4.10">
-<h2 data-number="4.10" class="anchored" data-anchor-id="resumen-del-capítulo"><span class="header-section-number">4.10</span> Resumen del capítulo</h2>
+<section id="resumen" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
 <p>Los datos de ciencias políticas varían en estructura (corte transversal, series temporales, panel, jerárquicos), granularidad (micro, meso, macro) y fuente (primarios, secundarios, administrativos, digitales). Cada tipo tiene ventajas y limitaciones.</p>
 <p>Evaluar calidad de datos es crucial: validez, confiabilidad, cobertura, precisión, actualidad, accesibilidad. Problemas comunes incluyen datos faltantes, errores de medición, codificación inconsistente, outliers y duplicados.</p>
 <p>R y RStudio proveen un entorno poderoso y reproducible para análisis cuantitativo. Los datos pueden importarse desde múltiples formatos (CSV, Excel, Stata, SPSS, bases de datos, URLs). Los paquetes <code>readr</code>, <code>haven</code>, <code>readxl</code> y <code>foreign</code> facilitan importación.</p>
 <p>La manipulación de datos involucra inspeccionar, seleccionar variables, filtrar casos, crear nuevas variables, recodificar, ordenar, agregar y unir datasets. El paquete <code>dplyr</code> (parte de tidyverse) provee funciones intuitivas para estas operaciones.</p>
 <p>Exportar datos procesados en formatos apropiados preserva trabajo y facilita colaboración. El flujo de trabajo reproducible —usando scripts, documentando código, manteniendo organización clara, nunca modificando datos originales— es esencial para investigación rigurosa.</p>
 </section>
-<section id="lecturas-recomendadas" class="level2" data-number="4.11">
-<h2 data-number="4.11" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">4.11</span> Lecturas recomendadas</h2>
+<section id="lecturas-recomendadas" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
 <p><strong>Manipulación de datos en R:</strong></p>
 <p>Wickham, H., &amp; Grolemund, G. (2017). <em>R for Data Science</em>. O’Reilly. [Disponible gratis en https://r4ds.had.co.nz/]<br>
 → Guía comprehensiva y accesible sobre tidyverse.</p>
@@ -942,8 +936,8 @@ La participación promedio fue XX%.
 <li>Stack Overflow (para preguntas específicas): https://stackoverflow.com/questions/tagged/r</li>
 </ul>
 </section>
-<section id="ejercicios" class="level2" data-number="4.12">
-<h2 data-number="4.12" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">4.12</span> Ejercicios</h2>
+<section id="ejercicios" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap4">Anexo de Ejercicios</a>.</p>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-king1997" class="csl-entry" role="listitem">
@@ -1422,7 +1416,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb53" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Trabajando con datos {#datos}</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo {.unnumbered}</span></span>
 <span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>Al finalizar este capítulo, serás capaz de:</span>
 <span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a></span>
@@ -1433,7 +1427,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Realizar operaciones básicas de manipulación de datos en R</span>
 <span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Exportar resultados para análisis posterior o publicación</span>
 <span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos de datos</span></span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos y fuentes de datos</span></span>
 <span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.</span>
 <span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -1513,7 +1507,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-91"><a href="#cb53-91" aria-hidden="true" tabindex="-1"></a>Ventaja: Volumen masivo, observación de comportamiento real (no reportado).</span>
 <span id="cb53-92"><a href="#cb53-92" aria-hidden="true" tabindex="-1"></a>Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.</span>
 <span id="cb53-93"><a href="#cb53-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-94"><a href="#cb53-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Fuentes de datos para ciencias políticas</span></span>
+<span id="cb53-94"><a href="#cb53-94" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Fuentes de datos</span></span>
 <span id="cb53-95"><a href="#cb53-95" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-96"><a href="#cb53-96" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Encuestas de opinión pública</span></span>
 <span id="cb53-97"><a href="#cb53-97" aria-hidden="true" tabindex="-1"></a></span>
@@ -1553,7 +1547,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-131"><a href="#cb53-131" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Manifesto Project**: Contenido de manifiestos partidarios</span>
 <span id="cb53-132"><a href="#cb53-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Cámara de Diputados de Chile**: Votaciones nominales (requiere scraping)</span>
 <span id="cb53-133"><a href="#cb53-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-134"><a href="#cb53-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## Calidad de datos</span></span>
+<span id="cb53-134"><a href="#cb53-134" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Calidad de datos</span></span>
 <span id="cb53-135"><a href="#cb53-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-136"><a href="#cb53-136" aria-hidden="true" tabindex="-1"></a>No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.</span>
 <span id="cb53-137"><a href="#cb53-137" aria-hidden="true" tabindex="-1"></a></span>
@@ -1611,7 +1605,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-189"><a href="#cb53-189" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-190"><a href="#cb53-190" aria-hidden="true" tabindex="-1"></a>Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusionan sin cuidado.</span>
 <span id="cb53-191"><a href="#cb53-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-192"><a href="#cb53-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introducción a R y RStudio</span></span>
+<span id="cb53-192"><a href="#cb53-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## Trabajando con R</span></span>
 <span id="cb53-193"><a href="#cb53-193" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-194"><a href="#cb53-194" aria-hidden="true" tabindex="-1"></a>R es un lenguaje de programación estadística y entorno para análisis de datos. RStudio es un entorno de desarrollo integrado (IDE) que hace más amigable trabajar con R.</span>
 <span id="cb53-195"><a href="#cb53-195" aria-hidden="true" tabindex="-1"></a></span>
@@ -1705,7 +1699,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-289"><a href="#cb53-289" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-290"><a href="#cb53-290" aria-hidden="true" tabindex="-1"></a>Mejor práctica: usar **proyectos de RStudio** (<span class="in">`.Rproj`</span>). Esto establece automáticamente el directorio de trabajo en la carpeta del proyecto.</span>
 <span id="cb53-291"><a href="#cb53-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-292"><a href="#cb53-292" aria-hidden="true" tabindex="-1"></a><span class="fu">## Importar datos</span></span>
+<span id="cb53-292"><a href="#cb53-292" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Importar datos</span></span>
 <span id="cb53-293"><a href="#cb53-293" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-294"><a href="#cb53-294" aria-hidden="true" tabindex="-1"></a>Los datos pueden venir en múltiples formatos. R puede leer la mayoría.</span>
 <span id="cb53-295"><a href="#cb53-295" aria-hidden="true" tabindex="-1"></a></span>
@@ -1819,7 +1813,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-403"><a href="#cb53-403" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span>
 <span id="cb53-404"><a href="#cb53-404" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb53-405"><a href="#cb53-405" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-406"><a href="#cb53-406" aria-hidden="true" tabindex="-1"></a><span class="fu">## Manipulación básica de datos</span></span>
+<span id="cb53-406"><a href="#cb53-406" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Manipulación de datos</span></span>
 <span id="cb53-407"><a href="#cb53-407" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-408"><a href="#cb53-408" aria-hidden="true" tabindex="-1"></a>Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.</span>
 <span id="cb53-409"><a href="#cb53-409" aria-hidden="true" tabindex="-1"></a></span>
@@ -1999,7 +1993,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-583"><a href="#cb53-583" aria-hidden="true" tabindex="-1"></a>                              <span class="at">by =</span> <span class="st">"comuna_id"</span>)</span>
 <span id="cb53-584"><a href="#cb53-584" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb53-585"><a href="#cb53-585" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-586"><a href="#cb53-586" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exportar datos</span></span>
+<span id="cb53-586"><a href="#cb53-586" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exportar datos</span></span>
 <span id="cb53-587"><a href="#cb53-587" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-588"><a href="#cb53-588" aria-hidden="true" tabindex="-1"></a>Después de limpiar y transformar datos, es útil guardarlos.</span>
 <span id="cb53-589"><a href="#cb53-589" aria-hidden="true" tabindex="-1"></a></span>
@@ -2037,7 +2031,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-621"><a href="#cb53-621" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(datos_limpios, <span class="st">"datos_procesados.xlsx"</span>)</span>
 <span id="cb53-622"><a href="#cb53-622" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb53-623"><a href="#cb53-623" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-624"><a href="#cb53-624" aria-hidden="true" tabindex="-1"></a><span class="fu">## Flujo de trabajo reproducible</span></span>
+<span id="cb53-624"><a href="#cb53-624" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Flujo reproducible</span></span>
 <span id="cb53-625"><a href="#cb53-625" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-626"><a href="#cb53-626" aria-hidden="true" tabindex="-1"></a>La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.</span>
 <span id="cb53-627"><a href="#cb53-627" aria-hidden="true" tabindex="-1"></a></span>
@@ -2102,7 +2096,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-686"><a href="#cb53-686" aria-hidden="true" tabindex="-1"></a><span class="in">output: html_document</span></span>
 <span id="cb53-687"><a href="#cb53-687" aria-hidden="true" tabindex="-1"></a><span class="in">---</span></span>
 <span id="cb53-688"><a href="#cb53-688" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-689"><a href="#cb53-689" aria-hidden="true" tabindex="-1"></a><span class="in">## Introducción</span></span>
+<span id="cb53-689"><a href="#cb53-689" aria-hidden="true" tabindex="-1"></a><span class="in">#### Introducción</span></span>
 <span id="cb53-690"><a href="#cb53-690" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-691"><a href="#cb53-691" aria-hidden="true" tabindex="-1"></a><span class="in">Este análisis examina factores asociados a participación electoral.</span></span>
 <span id="cb53-692"><a href="#cb53-692" aria-hidden="true" tabindex="-1"></a></span>
@@ -2111,7 +2105,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-695"><a href="#cb53-695" aria-hidden="true" tabindex="-1"></a><span class="in">datos &lt;- read_csv("datos/encuesta.csv")</span></span>
 <span id="cb53-696"><a href="#cb53-696" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb53-697"><a href="#cb53-697" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-698"><a href="#cb53-698" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados</span></span>
+<span id="cb53-698"><a href="#cb53-698" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Resultados</span></span>
 <span id="cb53-699"><a href="#cb53-699" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-700"><a href="#cb53-700" aria-hidden="true" tabindex="-1"></a>La participación promedio fue XX%.</span>
 <span id="cb53-701"><a href="#cb53-701" aria-hidden="true" tabindex="-1"></a></span>
@@ -2124,7 +2118,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-708"><a href="#cb53-708" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-709"><a href="#cb53-709" aria-hidden="true" tabindex="-1"></a><span class="in">Al compilar ("Knit"), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.</span></span>
 <span id="cb53-710"><a href="#cb53-710" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-711"><a href="#cb53-711" aria-hidden="true" tabindex="-1"></a><span class="in">## Resumen del capítulo</span></span>
+<span id="cb53-711"><a href="#cb53-711" aria-hidden="true" tabindex="-1"></a><span class="in">## Resumen {.unnumbered}</span></span>
 <span id="cb53-712"><a href="#cb53-712" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-713"><a href="#cb53-713" aria-hidden="true" tabindex="-1"></a><span class="in">Los datos de ciencias políticas varían en estructura (corte transversal, series temporales, panel, jerárquicos), granularidad (micro, meso, macro) y fuente (primarios, secundarios, administrativos, digitales). Cada tipo tiene ventajas y limitaciones.</span></span>
 <span id="cb53-714"><a href="#cb53-714" aria-hidden="true" tabindex="-1"></a></span>
@@ -2136,7 +2130,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-720"><a href="#cb53-720" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-721"><a href="#cb53-721" aria-hidden="true" tabindex="-1"></a><span class="in">Exportar datos procesados en formatos apropiados preserva trabajo y facilita colaboración. El flujo de trabajo reproducible —usando scripts, documentando código, manteniendo organización clara, nunca modificando datos originales— es esencial para investigación rigurosa.</span></span>
 <span id="cb53-722"><a href="#cb53-722" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-723"><a href="#cb53-723" aria-hidden="true" tabindex="-1"></a><span class="in">## Lecturas recomendadas</span></span>
+<span id="cb53-723"><a href="#cb53-723" aria-hidden="true" tabindex="-1"></a><span class="in">## Lecturas recomendadas {.unnumbered}</span></span>
 <span id="cb53-724"><a href="#cb53-724" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-725"><a href="#cb53-725" aria-hidden="true" tabindex="-1"></a><span class="in">**Manipulación de datos en R:**</span></span>
 <span id="cb53-726"><a href="#cb53-726" aria-hidden="true" tabindex="-1"></a></span>
@@ -2165,7 +2159,7 @@ King, G. (1997). A Solution to the Ecological Inference Problem: Reconstructing 
 <span id="cb53-749"><a href="#cb53-749" aria-hidden="true" tabindex="-1"></a><span class="in">- Stack Overflow (para preguntas específicas): https://stackoverflow.com/questions/tagged/r</span></span>
 <span id="cb53-750"><a href="#cb53-750" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-751"><a href="#cb53-751" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb53-752"><a href="#cb53-752" aria-hidden="true" tabindex="-1"></a><span class="in">## Ejercicios</span></span>
+<span id="cb53-752"><a href="#cb53-752" aria-hidden="true" tabindex="-1"></a><span class="in">## Ejercicios {.unnumbered}</span></span>
 <span id="cb53-753"><a href="#cb53-753" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb53-754"><a href="#cb53-754" aria-hidden="true" tabindex="-1"></a><span class="in">Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap4).</span></span>
 <span id="cb53-755"><a href="#cb53-755" aria-hidden="true" tabindex="-1"></a></span>

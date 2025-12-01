@@ -1,6 +1,6 @@
 # Regresión bivariada {#regresion-bivariada}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -11,7 +11,7 @@ Al finalizar este capítulo, serás capaz de:
 - Evaluar la bondad de ajuste usando $R^2$
 - Realizar pruebas de hipótesis sobre coeficientes de regresión
 
-## Correlación
+## Correlación y regresión
 
 La **correlación** mide la fuerza y dirección de la relación lineal entre dos variables.
 
@@ -42,7 +42,7 @@ cor.test(pib, democracia)
 
 Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.^[ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.]
 
-## El modelo de regresión lineal simple
+#### El modelo de regresión
 
 La regresión lineal modela la relación entre una variable dependiente $Y$ y una variable independiente $X$:
 
@@ -53,7 +53,7 @@ donde:
 - $\beta_1$ = pendiente (cambio en $Y$ por unidad de cambio en $X$)
 - $\epsilon_i$ = error (variación no explicada por el modelo)
 
-## Mínimos cuadrados ordinarios
+#### Mínimos cuadrados ordinarios
 
 El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) estima $\beta_0$ y $\beta_1$ minimizando la suma de errores al cuadrado:
 
@@ -94,7 +94,7 @@ ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
   theme_minimal()
 ```
 
-## Interpretación de coeficientes
+## Interpretación y ajuste
 
 **Intercepto ($\hat{\beta}_0$)**: Valor predicho de $Y$ cuando $X = 0$
 
@@ -102,7 +102,7 @@ ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
 
 En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."^[INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica *asociación*, no necesariamente *causalidad*. Además, la unidad de medida importa: si $X$ está en miles y $Y$ en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.]
 
-## Bondad de ajuste
+#### Bondad de ajuste
 
 #### R cuadrado ($R^2$)
 
@@ -118,7 +118,7 @@ Por ejemplo, si $R^2 = 0.42$, interpretamos: "El 42% de la variabilidad en el cr
 
 Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.^[ADVERTENCIA SOBRE $R^2$: Un modelo puede tener $R^2$ alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el $R^2$ puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no necesariamente indican un modelo "malo" - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.]
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 **Conceptos clave:**
 
@@ -135,7 +135,7 @@ Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede hab
 - Intercepto: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$
 - Bondad de ajuste: $R^2 = 1 - \frac{\text{SSR}}{\text{SST}}$
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de regresión lineal:**
 
@@ -153,7 +153,7 @@ Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed
 → Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap11).
 

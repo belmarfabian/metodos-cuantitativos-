@@ -346,14 +346,12 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">9.1</span> Objetivos del capítulo</a></li>
-  <li><a href="#lógica-de-las-pruebas-de-hipótesis" id="toc-lógica-de-las-pruebas-de-hipótesis" class="nav-link" data-scroll-target="#lógica-de-las-pruebas-de-hipótesis"><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis</a></li>
-  <li><a href="#hipótesis-nula-y-alternativa" id="toc-hipótesis-nula-y-alternativa" class="nav-link" data-scroll-target="#hipótesis-nula-y-alternativa"><span class="header-section-number">9.3</span> Hipótesis nula y alternativa</a></li>
-  <li><a href="#valores-p-y-significancia-estadística" id="toc-valores-p-y-significancia-estadística" class="nav-link" data-scroll-target="#valores-p-y-significancia-estadística"><span class="header-section-number">9.4</span> Valores p y significancia estadística</a></li>
-  <li><a href="#errores-tipo-i-y-tipo-ii" id="toc-errores-tipo-i-y-tipo-ii" class="nav-link" data-scroll-target="#errores-tipo-i-y-tipo-ii"><span class="header-section-number">9.5</span> Errores tipo I y tipo II</a></li>
-  <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">9.6</span> Resumen del capítulo</a></li>
-  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">9.7</span> Lecturas recomendadas</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">9.8</span> Ejercicios</a></li>
+  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
+  <li><a href="#lógica-de-pruebas-de-hipótesis" id="toc-lógica-de-pruebas-de-hipótesis" class="nav-link" data-scroll-target="#lógica-de-pruebas-de-hipótesis"><span class="header-section-number">9.1</span> Lógica de pruebas de hipótesis</a></li>
+  <li><a href="#valores-p-y-errores" id="toc-valores-p-y-errores" class="nav-link" data-scroll-target="#valores-p-y-errores"><span class="header-section-number">9.2</span> Valores p y errores</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -379,8 +377,8 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos-del-capítulo" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="objetivos-del-capítulo"><span class="header-section-number">9.1</span> Objetivos del capítulo</h2>
+<section id="objetivos-del-capítulo" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
 <li>Comprender la lógica de las pruebas de hipótesis estadísticas</li>
@@ -392,11 +390,11 @@ window.Quarto = {
 <li>Entender las limitaciones y mal usos comunes de las pruebas de hipótesis</li>
 </ul>
 </section>
-<section id="lógica-de-las-pruebas-de-hipótesis" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="lógica-de-las-pruebas-de-hipótesis"><span class="header-section-number">9.2</span> Lógica de las pruebas de hipótesis</h2>
+<section id="lógica-de-pruebas-de-hipótesis" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="lógica-de-pruebas-de-hipótesis"><span class="header-section-number">9.1</span> Lógica de pruebas de hipótesis</h2>
 <p>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: <strong>¿Este patrón que observo en mis datos es real, o podría ser producto del azar?</strong> Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</p>
-<section id="la-lógica-de-prueba-por-contradicción" class="level4" data-number="9.2.0.1">
-<h4 data-number="9.2.0.1" class="anchored" data-anchor-id="la-lógica-de-prueba-por-contradicción"><span class="header-section-number">9.2.0.1</span> La lógica de prueba por contradicción</h4>
+<section id="la-lógica-de-prueba-por-contradicción" class="level4" data-number="9.1.0.1">
+<h4 data-number="9.1.0.1" class="anchored" data-anchor-id="la-lógica-de-prueba-por-contradicción"><span class="header-section-number">9.1.0.1</span> La lógica de prueba por contradicción</h4>
 <p>Las pruebas de hipótesis usan un argumento de <strong>reducción al absurdo</strong>:</p>
 <ol type="1">
 <li>Asumimos que <strong>NO hay efecto</strong> (hipótesis nula: <span class="math inline">\(H_0\)</span>)</li>
@@ -406,34 +404,34 @@ window.Quarto = {
 </ol>
 <p>Es crucial entender la asimetría fundamental de este razonamiento: nunca “aceptamos” o “probamos” <span class="math inline">\(H_0\)</span>. Solo podemos <strong>rechazar</strong> <span class="math inline">\(H_0\)</span> (cuando hay evidencia contra ella) o <strong>no rechazar</strong> <span class="math inline">\(H_0\)</span> (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no “probamos inocencia”, solo establecemos que “no hay evidencia suficiente de culpabilidad”.</p>
 </section>
+<section id="hipótesis-nula-y-alternativa" class="level4" data-number="9.1.0.2">
+<h4 data-number="9.1.0.2" class="anchored" data-anchor-id="hipótesis-nula-y-alternativa"><span class="header-section-number">9.1.0.2</span> Hipótesis nula y alternativa</h4>
 </section>
-<section id="hipótesis-nula-y-alternativa" class="level2 page-columns page-full" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="hipótesis-nula-y-alternativa"><span class="header-section-number">9.3</span> Hipótesis nula y alternativa</h2>
-<section id="formulación-de-hipótesis" class="level4 page-columns page-full" data-number="9.3.0.1">
-<h4 data-number="9.3.0.1" class="anchored" data-anchor-id="formulación-de-hipótesis"><span class="header-section-number">9.3.0.1</span> Formulación de hipótesis</h4>
+<section id="formulación-de-hipótesis" class="level4 page-columns page-full" data-number="9.1.0.3">
+<h4 data-number="9.1.0.3" class="anchored" data-anchor-id="formulación-de-hipótesis"><span class="header-section-number">9.1.0.3</span> Formulación de hipótesis</h4>
 <p><strong>Hipótesis nula (<span class="math inline">\(H_0\)</span>)</strong>: Afirmación de “no efecto” o “no diferencia”. Es lo que asumimos como cierto inicialmente.</p>
 <p><strong>Hipótesis alternativa (<span class="math inline">\(H_1\)</span>)</strong>: Lo que esperamos encontrar si rechazamos <span class="math inline">\(H_0\)</span>. Puede ser: - <strong>Bilateral</strong> (dos colas): <span class="math inline">\(H_1: \mu \neq \mu_0\)</span> (hay diferencia, en cualquier dirección) - <strong>Unilateral</strong> (una cola): <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span> o <span class="math inline">\(H_1: \mu &lt; \mu_0\)</span> (dirección específica)</p>
 <p>Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear <span class="math inline">\(H_0: \mu = 8\%\)</span> (el desempleo se mantiene en 8%) versus <span class="math inline">\(H_1: \mu &lt; 8\%\)</span> (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos <span class="math inline">\(H_0: p_{\text{hombres}} = p_{\text{mujeres}}\)</span> (no hay diferencia) contra <span class="math inline">\(H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}\)</span> (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos <span class="math inline">\(H_0: \mu_{\text{región}} = 550\)</span> mil pesos (igual al promedio nacional) versus <span class="math inline">\(H_1: \mu_{\text{región}} \neq 550\)</span> mil (diferente al nacional).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación (<span class="math inline">\(H_0: p_{\text{antes}} = p_{\text{después}}\)</span> vs <span class="math inline">\(H_1: p_{\text{después}} &gt; p_{\text{antes}}\)</span>); comparar aprobación presidencial entre regiones urbanas y rurales (<span class="math inline">\(H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}\)</span> vs <span class="math inline">\(H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}\)</span>).</p></div></div></section>
 </section>
-<section id="valores-p-y-significancia-estadística" class="level2 page-columns page-full" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="valores-p-y-significancia-estadística"><span class="header-section-number">9.4</span> Valores p y significancia estadística</h2>
-<section id="qué-es-un-valor-p" class="level4 page-columns page-full" data-number="9.4.0.1">
-<h4 data-number="9.4.0.1" class="anchored" data-anchor-id="qué-es-un-valor-p"><span class="header-section-number">9.4.0.1</span> ¿Qué es un valor p?</h4>
+<section id="valores-p-y-errores" class="level2 page-columns page-full" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="valores-p-y-errores"><span class="header-section-number">9.2</span> Valores p y errores</h2>
+<section id="qué-es-un-valor-p" class="level4 page-columns page-full" data-number="9.2.0.1">
+<h4 data-number="9.2.0.1" class="anchored" data-anchor-id="qué-es-un-valor-p"><span class="header-section-number">9.2.0.1</span> ¿Qué es un valor p?</h4>
 <p>El <strong>valor p</strong> (<em>p-value</em>) es la probabilidad de observar datos tan extremos como los nuestros (o más), <strong>asumiendo que <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 <p><span class="math display">\[\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})\]</span></p>
 <p>La interpretación correcta del valor p es fundamental para evitar errores comunes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Cuando observamos <span class="math inline">\(p = 0.03\)</span>, debemos interpretar: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.” Un valor <span class="math inline">\(p = 0.001\)</span> indica: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).” Por el contrario, <span class="math inline">\(p = 0.45\)</span> significa: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.” El valor p <strong>NO</strong> representa la probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta.</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;INTERPRETACIÓN ERRÓNEA COMÚN: “p = 0.03 significa que hay 3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”. FALSO. El valor p NO es <span class="math inline">\(P(H_0 | \text{datos})\)</span>. Es <span class="math inline">\(P(\text{datos} | H_0)\)</span>. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.</p></div></div></section>
-</section>
-<section id="errores-tipo-i-y-tipo-ii" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="errores-tipo-i-y-tipo-ii"><span class="header-section-number">9.5</span> Errores tipo I y tipo II</h2>
+<section id="errores-tipo-i-y-tipo-ii" class="level4" data-number="9.2.0.2">
+<h4 data-number="9.2.0.2" class="anchored" data-anchor-id="errores-tipo-i-y-tipo-ii"><span class="header-section-number">9.2.0.2</span> Errores tipo I y tipo II</h4>
 <p>En pruebas de hipótesis, existen dos tipos de error posibles:</p>
 <p><strong>Error Tipo I</strong>: Rechazar <span class="math inline">\(H_0\)</span> cuando es cierta (falso positivo) - Probabilidad: <span class="math inline">\(\alpha\)</span> (nivel de significancia)</p>
 <p><strong>Error Tipo II</strong>: No rechazar <span class="math inline">\(H_0\)</span> cuando es falsa (falso negativo) - Probabilidad: <span class="math inline">\(\beta\)</span></p>
 <p><strong>Poder estadístico</strong>: <span class="math inline">\(1 - \beta\)</span> (probabilidad de detectar un efecto real)</p>
 </section>
-<section id="resumen-del-capítulo" class="level2" data-number="9.6">
-<h2 data-number="9.6" class="anchored" data-anchor-id="resumen-del-capítulo"><span class="header-section-number">9.6</span> Resumen del capítulo</h2>
+</section>
+<section id="resumen" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
 <p><strong>Conceptos clave:</strong></p>
 <ol type="1">
 <li><strong>Pruebas de hipótesis</strong> usan lógica de reducción al absurdo</li>
@@ -443,8 +441,8 @@ window.Quarto = {
 <li><strong>Nunca “aceptamos” <span class="math inline">\(H_0\)</span></strong>: Solo podemos rechazarla o no rechazarla</li>
 </ol>
 </section>
-<section id="lecturas-recomendadas" class="level2" data-number="9.7">
-<h2 data-number="9.7" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">9.7</span> Lecturas recomendadas</h2>
+<section id="lecturas-recomendadas" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
 <p><strong>Fundamentos de pruebas de hipótesis:</strong></p>
 <p>Agresti, A., &amp; Finlay, B. (2009). <em>Statistical Methods for the Social Sciences</em> (4th ed.). Pearson.<br>
 → Capítulo 6 ofrece explicación rigurosa pero accesible de la lógica de pruebas de significancia estadística.</p>
@@ -455,8 +453,8 @@ window.Quarto = {
 <p>Wasserstein, R. L., &amp; Lazar, N. A. (2016). The ASA’s statement on p-values: Context, process, and purpose. <em>The American Statistician</em>, 70(2), 129-133.<br>
 → Declaración oficial de la Asociación Americana de Estadística sobre interpretación correcta de valores p y errores comunes.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="9.8">
-<h2 data-number="9.8" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">9.8</span> Ejercicios</h2>
+<section id="ejercicios" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap9">Anexo de Ejercicios</a>.</p>
 <div id="refs" role="list" style="display: none">
 
@@ -934,7 +932,7 @@ window.Quarto = {
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Pruebas de hipótesis {#hipotesis}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo {.unnumbered}</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Al finalizar este capítulo, serás capaz de:</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
@@ -946,7 +944,7 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Realizar pruebas de hipótesis para medias y proporciones</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Entender las limitaciones y mal usos comunes de las pruebas de hipótesis</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lógica de las pruebas de hipótesis</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lógica de pruebas de hipótesis</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
@@ -961,7 +959,7 @@ window.Quarto = {
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Es crucial entender la asimetría fundamental de este razonamiento: nunca "aceptamos" o "probamos" $H_0$. Solo podemos **rechazar** $H_0$ (cuando hay evidencia contra ella) o **no rechazar** $H_0$ (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no "probamos inocencia", solo establecemos que "no hay evidencia suficiente de culpabilidad".</span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Hipótesis nula y alternativa</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Hipótesis nula y alternativa</span></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Formulación de hipótesis</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
@@ -973,7 +971,7 @@ window.Quarto = {
 <span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu &lt; 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).^<span class="co">[</span><span class="ot">EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación ($H_0: p_{\text{antes}} = p_{\text{después}}$ vs $H_1: p_{\text{después}} &gt; p_{\text{antes}}$); comparar aprobación presidencial entre regiones urbanas y rurales ($H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}$ vs $H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}$).</span><span class="co">]</span></span>
 <span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Valores p y significancia estadística</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## Valores p y errores</span></span>
 <span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="fu">#### ¿Qué es un valor p?</span></span>
 <span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
@@ -983,7 +981,7 @@ window.Quarto = {
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>La interpretación correcta del valor p es fundamental para evitar errores comunes.^<span class="co">[</span><span class="ot">INTERPRETACIÓN ERRÓNEA COMÚN: "p = 0.03 significa que hay 3% de probabilidad de que $H_0$ sea cierta". FALSO. El valor p NO es $P(H_0 | \text{datos})$. Es $P(\text{datos} | H_0)$. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.</span><span class="co">]</span> Cuando observamos $p = 0.03$, debemos interpretar: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces." Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.</span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Errores tipo I y tipo II</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Errores tipo I y tipo II</span></span>
 <span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>En pruebas de hipótesis, existen dos tipos de error posibles:</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
@@ -995,7 +993,7 @@ window.Quarto = {
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>**Poder estadístico**: $1 - \beta$ (probabilidad de detectar un efecto real)</span>
 <span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen del capítulo</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen {.unnumbered}</span></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>**Conceptos clave:**</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
@@ -1005,7 +1003,7 @@ window.Quarto = {
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Significancia estadística vs sustantiva**</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Nunca "aceptamos" $H_0$**: Solo podemos rechazarla o no rechazarla</span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas {.unnumbered}</span></span>
 <span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>**Fundamentos de pruebas de hipótesis:**</span>
 <span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
@@ -1023,7 +1021,7 @@ window.Quarto = {
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>→ Declaración oficial de la Asociación Americana de Estadística sobre interpretación correcta de valores p y errores comunes.</span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios {.unnumbered}</span></span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap9)</span>.</span>
 <span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>

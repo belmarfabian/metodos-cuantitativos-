@@ -1,6 +1,6 @@
 # Medición: de conceptos a variables {#medicion}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -10,7 +10,7 @@ Al finalizar este capítulo, serás capaz de:
 - Comprender estrategias para construir índices y escalas
 - Reconocer problemas comunes de medición en ciencias políticas
 
-## El problema de la medición
+## Conceptos y operacionalización
 
 Los conceptos centrales de la ciencia política —democracia, legitimidad, participación, corrupción— no son directamente observables. Son **abstracciones teóricas** que requieren traducción a indicadores empíricos. Esta traducción es el problema de la **medición**.
 
@@ -23,7 +23,7 @@ Los conceptos centrales de la ciencia política —democracia, legitimidad, part
 
 Cada transición entre niveles implica decisiones. No hay una única forma "correcta" de medir democracia, capital social, o polarización. Las mediciones son construcciones que reflejan decisiones conceptuales y pragmáticas.^[IMPLICACIÓN PRÁCTICA: Cuando lees "Chile tiene un puntaje de democracia de 8.5", pregúntate: ¿Qué definición de democracia usa ese índice? ¿Incluye solo elecciones o también estado de derecho, libertades civiles, rendición de cuentas? ¿Cómo ponderan estos componentes? Índices diferentes = puntajes diferentes. No hay una medición "verdadera" de democracia, solo mediciones más o menos útiles para propósitos específicos.
 
-## Conceptos y definiciones operacionales
+#### Definiciones operacionales
 
 La **conceptualización** especifica qué entendemos por un término; sin ella, la medición carece de fundamento. @sartori1970 advirtió sobre el "estiramiento conceptual": usar un concepto en contextos donde no aplica, diluyendo su utilidad analítica. Por ejemplo, ¿qué es "participación política"? Una conceptualización **minimalista**^[EJEMPLO DE CONSECUENCIAS: Si usas definición minimalista (solo votar), Chile tendría participación "baja" (45-50% en elecciones recientes). Si usas definición expansiva (votar + protestar + activismo comunitario + participar en cabildos), Chile podría tener participación "alta" (recordar que en octubre 2019, millones participaron en protestas, y en 2021-2022 hubo amplia participación en proceso constituyente). ¿Cuál es "correcta"? Depende de tu pregunta de investigación: ¿te interesa legitimidad electoral o movilización social amplia? (acciones dirigidas a influir en la selección de gobernantes como votar y hacer campaña) exige solo datos electorales, mientras una **expansiva** (cualquier acción dirigida a influir en decisiones colectivas, incluyendo protesta y activismo comunitario) requiere información sobre múltiples formas de acción.
 
@@ -67,7 +67,7 @@ También es posible tener alta validez conceptual pero baja confiabilidad. Medic
 Idealmente, queremos ambas. Pero si debemos priorizar, @king1994 argumentan que validez importa más: una medición inválida es inútil sin importar cuán confiable sea.
 
 
-## Problemas comunes de medición
+#### Problemas comunes
 
 La medición en ciencias sociales enfrenta problemas sistemáticos que amenazan validez e inferencia.
 
@@ -88,7 +88,7 @@ Cuando quienes no responden difieren sistemáticamente de quienes responden, las
 
 
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 La medición traduce conceptos abstractos en indicadores empíricos. Este proceso involucra conceptualización (definir el concepto) y operacionalización (especificar procedimientos de medición). Cada paso implica decisiones que afectan qué capturamos.
 
@@ -100,7 +100,7 @@ Los conceptos latentes y multidimensionales requieren índices o escalas. Estos 
 
 La medición enfrenta problemas sistemáticos: sesgos de deseabilidad social y aquiescencia, no-respuesta diferencial, efectos de modo de encuesta, y errores de medición aleatorios o sistemáticos. Reconocer y, cuando es posible, mitigar estos problemas es responsabilidad del investigador.
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos conceptuales de medición:**
 
@@ -128,7 +128,7 @@ Goertz, G. (2006). *Social Science Concepts: A User's Guide*. Princeton Universi
 → Discusión profunda sobre formación y uso de conceptos en ciencias sociales.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap3).
 

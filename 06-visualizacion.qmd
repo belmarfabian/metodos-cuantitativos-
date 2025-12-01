@@ -1,6 +1,6 @@
 # Visualización de datos {#visualizacion}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -704,7 +704,7 @@ Los dobles ejes Y pueden ser engañosos—la escala de cada eje puede manipulars
 
 **Mejor práctica:** Usar facetas o gráficos separados.
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 La visualización efectiva comunica patrones de datos clara y honestamente. Los principios de Tufte—maximizar ratio datos-tinta, usar canales visuales apropiados, mostrar comparaciones, sugerir causalidad—guían el diseño.
 
@@ -718,7 +718,7 @@ Combinar gráficos (patchwork) y agregar anotaciones (annotate) crean narrativas
 
 Evitar visualizaciones problemáticas—ejes truncados, demasiadas categorías, dobles ejes Y engañosos—es responsabilidad del investigador. La visualización no solo describe datos; argumenta e informa decisiones.
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de visualización:**
 
@@ -747,7 +747,7 @@ Cairo, A. (2016). *The Truthful Art: Data, Charts, and Maps for Communication*. 
 - ColorBrewer (paletas): https://colorbrewer2.org/
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap6).
 

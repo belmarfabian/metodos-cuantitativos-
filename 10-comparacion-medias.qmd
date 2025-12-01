@@ -1,6 +1,6 @@
 # Comparación de medias {#comparacion}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -63,7 +63,7 @@ print(resultado)
 ```
 
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 **Conceptos clave:**
 
@@ -73,7 +73,7 @@ print(resultado)
 4. **Supuestos**: Normalidad, homogeneidad, independencia
 5. **Alternativas no paramétricas**: Para cuando no se cumplen supuestos
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de comparación de grupos:**
 
@@ -91,7 +91,7 @@ Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and 
 → Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap10).
 

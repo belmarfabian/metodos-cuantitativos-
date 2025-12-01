@@ -1,6 +1,6 @@
 # Trabajando con datos {#datos}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -11,7 +11,7 @@ Al finalizar este capítulo, serás capaz de:
 - Realizar operaciones básicas de manipulación de datos en R
 - Exportar resultados para análisis posterior o publicación
 
-## Tipos de datos
+## Tipos y fuentes de datos
 
 Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.
 
@@ -91,7 +91,7 @@ Generados por actividad en línea: tweets, posts de Facebook, búsquedas en Goog
 Ventaja: Volumen masivo, observación de comportamiento real (no reportado).
 Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.
 
-## Fuentes de datos para ciencias políticas
+#### Fuentes de datos
 
 #### Encuestas de opinión pública
 
@@ -131,7 +131,7 @@ Limitación: Representatividad problemática (no todos están en línea). Inferi
 - **Manifesto Project**: Contenido de manifiestos partidarios
 - **Cámara de Diputados de Chile**: Votaciones nominales (requiere scraping)
 
-## Calidad de datos
+#### Calidad de datos
 
 No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.
 
@@ -189,7 +189,7 @@ Observaciones extremas. Pueden ser errores de digitación o casos genuinos inusu
 
 Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusionan sin cuidado.
 
-## Introducción a R y RStudio
+## Trabajando con R
 
 R es un lenguaje de programación estadística y entorno para análisis de datos. RStudio es un entorno de desarrollo integrado (IDE) que hace más amigable trabajar con R.
 
@@ -283,7 +283,7 @@ setwd("~/Documentos/Investigacion/datos")
 
 Mejor práctica: usar **proyectos de RStudio** (`.Rproj`). Esto establece automáticamente el directorio de trabajo en la carpeta del proyecto.
 
-## Importar datos
+#### Importar datos
 
 Los datos pueden venir en múltiples formatos. R puede leer la mayoría.
 
@@ -397,7 +397,7 @@ datos <- dbGetQuery(con, "SELECT * FROM votaciones WHERE year = 2021")
 dbDisconnect(con)
 ```
 
-## Manipulación básica de datos
+#### Manipulación de datos
 
 Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.
 
@@ -577,7 +577,7 @@ datos_completo <- inner_join(encuesta, resultados_electorales,
                               by = "comuna_id")
 ```
 
-## Exportar datos
+#### Exportar datos
 
 Después de limpiar y transformar datos, es útil guardarlos.
 
@@ -615,7 +615,7 @@ library(writexl)
 write_xlsx(datos_limpios, "datos_procesados.xlsx")
 ```
 
-## Flujo de trabajo reproducible
+#### Flujo reproducible
 
 La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.
 
@@ -680,7 +680,7 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-## Introducción
+#### Introducción
 
 Este análisis examina factores asociados a participación electoral.
 
@@ -689,7 +689,7 @@ library(tidyverse)
 datos <- read_csv("datos/encuesta.csv")
 ```
 
-## Resultados
+#### Resultados
 
 La participación promedio fue XX%.
 
@@ -702,7 +702,7 @@ ggplot(datos, aes(x = edad, y = participo)) +
 
 Al compilar ("Knit"), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 Los datos de ciencias políticas varían en estructura (corte transversal, series temporales, panel, jerárquicos), granularidad (micro, meso, macro) y fuente (primarios, secundarios, administrativos, digitales). Cada tipo tiene ventajas y limitaciones.
 
@@ -714,7 +714,7 @@ La manipulación de datos involucra inspeccionar, seleccionar variables, filtrar
 
 Exportar datos procesados en formatos apropiados preserva trabajo y facilita colaboración. El flujo de trabajo reproducible —usando scripts, documentando código, manteniendo organización clara, nunca modificando datos originales— es esencial para investigación rigurosa.
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Manipulación de datos en R:**
 
@@ -743,7 +743,7 @@ Little, R. J., & Rubin, D. B. (2019). *Statistical Analysis with Missing Data* (
 - Stack Overflow (para preguntas específicas): https://stackoverflow.com/questions/tagged/r
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap4).
 

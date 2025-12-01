@@ -346,15 +346,12 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul class="collapse">
-  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo"><span class="header-section-number">11.1</span> Objetivos del capítulo</a></li>
-  <li><a href="#correlación" id="toc-correlación" class="nav-link" data-scroll-target="#correlación"><span class="header-section-number">11.2</span> Correlación</a></li>
-  <li><a href="#el-modelo-de-regresión-lineal-simple" id="toc-el-modelo-de-regresión-lineal-simple" class="nav-link" data-scroll-target="#el-modelo-de-regresión-lineal-simple"><span class="header-section-number">11.3</span> El modelo de regresión lineal simple</a></li>
-  <li><a href="#mínimos-cuadrados-ordinarios" id="toc-mínimos-cuadrados-ordinarios" class="nav-link" data-scroll-target="#mínimos-cuadrados-ordinarios"><span class="header-section-number">11.4</span> Mínimos cuadrados ordinarios</a></li>
-  <li><a href="#interpretación-de-coeficientes" id="toc-interpretación-de-coeficientes" class="nav-link" data-scroll-target="#interpretación-de-coeficientes"><span class="header-section-number">11.5</span> Interpretación de coeficientes</a></li>
-  <li><a href="#bondad-de-ajuste" id="toc-bondad-de-ajuste" class="nav-link" data-scroll-target="#bondad-de-ajuste"><span class="header-section-number">11.6</span> Bondad de ajuste</a></li>
-  <li><a href="#resumen-del-capítulo" id="toc-resumen-del-capítulo" class="nav-link" data-scroll-target="#resumen-del-capítulo"><span class="header-section-number">11.7</span> Resumen del capítulo</a></li>
-  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas"><span class="header-section-number">11.8</span> Lecturas recomendadas</a></li>
-  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios"><span class="header-section-number">11.9</span> Ejercicios</a></li>
+  <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
+  <li><a href="#correlación-y-regresión" id="toc-correlación-y-regresión" class="nav-link" data-scroll-target="#correlación-y-regresión"><span class="header-section-number">11.1</span> Correlación y regresión</a></li>
+  <li><a href="#interpretación-y-ajuste" id="toc-interpretación-y-ajuste" class="nav-link" data-scroll-target="#interpretación-y-ajuste"><span class="header-section-number">11.2</span> Interpretación y ajuste</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
+  <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
+  <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
   </ul>
 </nav>
     </div>
@@ -380,8 +377,8 @@ window.Quarto = {
 </header>
 
 
-<section id="objetivos-del-capítulo" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="objetivos-del-capítulo"><span class="header-section-number">11.1</span> Objetivos del capítulo</h2>
+<section id="objetivos-del-capítulo" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
 <li>Calcular e interpretar coeficientes de correlación</li>
@@ -392,8 +389,8 @@ window.Quarto = {
 <li>Realizar pruebas de hipótesis sobre coeficientes de regresión</li>
 </ul>
 </section>
-<section id="correlación" class="level2 page-columns page-full" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="correlación"><span class="header-section-number">11.2</span> Correlación</h2>
+<section id="correlación-y-regresión" class="level2 page-columns page-full" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="correlación-y-regresión"><span class="header-section-number">11.1</span> Correlación y regresión</h2>
 <p>La <strong>correlación</strong> mide la fuerza y dirección de la relación lineal entre dos variables.</p>
 <p><strong>Coeficiente de correlación de Pearson:</strong> <span class="math display">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}\]</span></p>
 <ul>
@@ -433,15 +430,14 @@ sample estimates:
 </div>
 </div>
 <p>Es fundamental recordar que una correlación fuerte <strong>NO implica que una variable cause la otra</strong>. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.</p></div></div></section>
-<section id="el-modelo-de-regresión-lineal-simple" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="el-modelo-de-regresión-lineal-simple"><span class="header-section-number">11.3</span> El modelo de regresión lineal simple</h2>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.</p></div></div><section id="el-modelo-de-regresión" class="level4" data-number="11.1.0.1">
+<h4 data-number="11.1.0.1" class="anchored" data-anchor-id="el-modelo-de-regresión"><span class="header-section-number">11.1.0.1</span> El modelo de regresión</h4>
 <p>La regresión lineal modela la relación entre una variable dependiente <span class="math inline">\(Y\)</span> y una variable independiente <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
 <p>donde: - <span class="math inline">\(\beta_0\)</span> = intercepto (valor de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span>) - <span class="math inline">\(\beta_1\)</span> = pendiente (cambio en <span class="math inline">\(Y\)</span> por unidad de cambio en <span class="math inline">\(X\)</span>) - <span class="math inline">\(\epsilon_i\)</span> = error (variación no explicada por el modelo)</p>
 </section>
-<section id="mínimos-cuadrados-ordinarios" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="mínimos-cuadrados-ordinarios"><span class="header-section-number">11.4</span> Mínimos cuadrados ordinarios</h2>
+<section id="mínimos-cuadrados-ordinarios" class="level4" data-number="11.1.0.2">
+<h4 data-number="11.1.0.2" class="anchored" data-anchor-id="mínimos-cuadrados-ordinarios"><span class="header-section-number">11.1.0.2</span> Mínimos cuadrados ordinarios</h4>
 <p>El método de <strong>mínimos cuadrados ordinarios</strong> (OLS, <em>Ordinary Least Squares</em>) estima <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> minimizando la suma de errores al cuadrado:</p>
 <p><span class="math display">\[\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2\]</span></p>
 <p><strong>Fórmulas OLS:</strong></p>
@@ -489,16 +485,17 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </div>
 </div>
 </section>
-<section id="interpretación-de-coeficientes" class="level2 page-columns page-full" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="interpretación-de-coeficientes"><span class="header-section-number">11.5</span> Interpretación de coeficientes</h2>
+</section>
+<section id="interpretación-y-ajuste" class="level2 page-columns page-full" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="interpretación-y-ajuste"><span class="header-section-number">11.2</span> Interpretación y ajuste</h2>
 <p><strong>Intercepto (<span class="math inline">\(\hat{\beta}_0\)</span>)</strong>: Valor predicho de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span></p>
 <p><strong>Pendiente (<span class="math inline">\(\hat{\beta}_1\)</span>)</strong>: Cambio promedio en <span class="math inline">\(Y\)</span> asociado con un incremento de una unidad en <span class="math inline">\(X\)</span></p>
 <p>En el modelo anterior, si obtuviéramos <span class="math inline">\(\hat{\beta}_1 = -0.15\)</span>, interpretaríamos: “Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica <em>asociación</em>, no necesariamente <em>causalidad</em>. Además, la unidad de medida importa: si <span class="math inline">\(X\)</span> está en miles y <span class="math inline">\(Y\)</span> en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</p></div></div></section>
-<section id="bondad-de-ajuste" class="level2 page-columns page-full" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="bondad-de-ajuste"><span class="header-section-number">11.6</span> Bondad de ajuste</h2>
-<section id="r-cuadrado-r2" class="level4 page-columns page-full" data-number="11.6.0.1">
-<h4 data-number="11.6.0.1" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.6.0.1</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica <em>asociación</em>, no necesariamente <em>causalidad</em>. Además, la unidad de medida importa: si <span class="math inline">\(X\)</span> está en miles y <span class="math inline">\(Y\)</span> en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</p></div></div><section id="bondad-de-ajuste" class="level4" data-number="11.2.0.1">
+<h4 data-number="11.2.0.1" class="anchored" data-anchor-id="bondad-de-ajuste"><span class="header-section-number">11.2.0.1</span> Bondad de ajuste</h4>
+</section>
+<section id="r-cuadrado-r2" class="level4 page-columns page-full" data-number="11.2.0.2">
+<h4 data-number="11.2.0.2" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.2.0.2</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
 <p>El <strong>coeficiente de determinación</strong> mide qué proporción de la variabilidad en <span class="math inline">\(Y\)</span> es explicada por <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}\]</span></p>
 <ul>
@@ -510,8 +507,8 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <p>Es crucial entender que un <span class="math inline">\(R^2\)</span> alto <strong>NO implica relación causal</strong>. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;ADVERTENCIA SOBRE <span class="math inline">\(R^2\)</span>: Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el <span class="math inline">\(R^2\)</span> puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no necesariamente indican un modelo “malo” - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.</p></div></div></section>
 </section>
-<section id="resumen-del-capítulo" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="resumen-del-capítulo"><span class="header-section-number">11.7</span> Resumen del capítulo</h2>
+<section id="resumen" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
 <p><strong>Conceptos clave:</strong></p>
 <ol type="1">
 <li><strong>Correlación</strong>: Mide fuerza y dirección de relación lineal (no implica causalidad)</li>
@@ -528,8 +525,8 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <li>Bondad de ajuste: <span class="math inline">\(R^2 = 1 - \frac{\text{SSR}}{\text{SST}}\)</span></li>
 </ul>
 </section>
-<section id="lecturas-recomendadas" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="lecturas-recomendadas"><span class="header-section-number">11.8</span> Lecturas recomendadas</h2>
+<section id="lecturas-recomendadas" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
 <p><strong>Fundamentos de regresión lineal:</strong></p>
 <p>Agresti, A., &amp; Finlay, B. (2009). <em>Statistical Methods for the Social Sciences</em> (4th ed.). Pearson.<br>
 → Capítulo 9 ofrece introducción clara y accesible a regresión lineal y correlación con ejemplos de ciencias sociales.</p>
@@ -540,8 +537,8 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <p>Wooldridge, J. M. (2020). <em>Introductory Econometrics: A Modern Approach</em> (7th ed.). Cengage Learning.<br>
 → Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.</p>
 </section>
-<section id="ejercicios" class="level2" data-number="11.9">
-<h2 data-number="11.9" class="anchored" data-anchor-id="ejercicios"><span class="header-section-number">11.9</span> Ejercicios</h2>
+<section id="ejercicios" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap11">Anexo de Ejercicios</a>.</p>
 <div id="refs" role="list" style="display: none">
 
@@ -1019,7 +1016,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Regresión bivariada {#regresion-bivariada}</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo {.unnumbered}</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>Al finalizar este capítulo, serás capaz de:</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
@@ -1030,7 +1027,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluar la bondad de ajuste usando $R^2$</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Realizar pruebas de hipótesis sobre coeficientes de regresión</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlación</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlación y regresión</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>La **correlación** mide la fuerza y dirección de la relación lineal entre dos variables.</span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -1061,7 +1058,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.^<span class="co">[</span><span class="ot">ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.</span><span class="co">]</span></span>
 <span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## El modelo de regresión lineal simple</span></span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="fu">#### El modelo de regresión</span></span>
 <span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>La regresión lineal modela la relación entre una variable dependiente $Y$ y una variable independiente $X$:</span>
 <span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
@@ -1072,7 +1069,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\beta_1$ = pendiente (cambio en $Y$ por unidad de cambio en $X$)</span>
 <span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\epsilon_i$ = error (variación no explicada por el modelo)</span>
 <span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mínimos cuadrados ordinarios</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Mínimos cuadrados ordinarios</span></span>
 <span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) estima $\beta_0$ y $\beta_1$ minimizando la suma de errores al cuadrado:</span>
 <span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
@@ -1113,7 +1110,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
 <span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación de coeficientes</span></span>
+<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación y ajuste</span></span>
 <span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>**Intercepto ($\hat{\beta}_0$)**: Valor predicho de $Y$ cuando $X = 0$</span>
 <span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
@@ -1121,7 +1118,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."^<span class="co">[</span><span class="ot">INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica *asociación*, no necesariamente *causalidad*. Además, la unidad de medida importa: si $X$ está en miles y $Y$ en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</span><span class="co">]</span></span>
 <span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Bondad de ajuste</span></span>
+<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Bondad de ajuste</span></span>
 <span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="fu">#### R cuadrado ($R^2$)</span></span>
 <span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
@@ -1137,7 +1134,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.^<span class="co">[</span><span class="ot">ADVERTENCIA SOBRE $R^2$: Un modelo puede tener $R^2$ alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el $R^2$ puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no necesariamente indican un modelo "malo" - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.</span><span class="co">]</span></span>
 <span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen del capítulo</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen {.unnumbered}</span></span>
 <span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>**Conceptos clave:**</span>
 <span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
@@ -1154,7 +1151,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Intercepto: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$</span>
 <span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bondad de ajuste: $R^2 = 1 - \frac{\text{SSR}}{\text{SST}}$</span>
 <span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas</span></span>
+<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas {.unnumbered}</span></span>
 <span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>**Fundamentos de regresión lineal:**</span>
 <span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
@@ -1172,7 +1169,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>→ Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.</span>
 <span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios</span></span>
+<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios {.unnumbered}</span></span>
 <span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap11)</span>.</span>
 <span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>

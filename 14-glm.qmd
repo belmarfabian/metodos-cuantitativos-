@@ -1,6 +1,6 @@
 # Introducción a modelos lineales generalizados {#glm}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 ## Limitaciones de OLS
 
@@ -10,12 +10,12 @@
 
 ## Regresión de Poisson
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap14).
 

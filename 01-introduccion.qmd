@@ -1,6 +1,6 @@
 # Introducción: El método científico en ciencias sociales {#introduccion}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -9,7 +9,7 @@ Al finalizar este capítulo, serás capaz de:
 - Comprender la relación entre teoría y análisis empírico en ciencias sociales
 - Reconocer fortalezas y límites del enfoque cuantitativo para estudiar política
 
-## ¿Qué es el método científico?
+## El método científico
 
 El **método científico** es un procedimiento sistemático para producir conocimiento confiable sobre el mundo. No es exclusivo de las ciencias naturales. Las ciencias sociales —incluida la ciencia política— lo emplean para generar afirmaciones empíricas verificables sobre fenómenos sociales.
 
@@ -25,7 +25,7 @@ Esto no implica que el conocimiento científico sea "objetivo" en sentido ingenu
 
 @king1994 argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares. Sin embargo, las ciencias sociales enfrentan desafíos específicos como la **reflexividad**^[EJEMPLO CHILENO: Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas. En física, las partículas no leen teorías sobre partículas y modifican su comportamiento.] (los sujetos modifican su comportamiento al conocer teorías sobre ellos [@giddens1984]), la **complejidad causal** (fenómenos con múltiples causas interdependientes), la **imposibilidad de experimentación** (frecuentemente no podemos manipular variables por razones éticas o prácticas), y la **dependencia del contexto** (las regularidades sociales son históricamente contingentes [@Abbott2001]). Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.
 
-## Ciencia social y cuantificación
+#### Ciencia social y cuantificación
 
 La **cuantificación** —convertir conceptos en números— es una estrategia metodológica, no un fin en sí mismo. Su utilidad depende del tipo de pregunta que formulamos.
 
@@ -42,7 +42,7 @@ La decisión de cuantificar debe responder a la pregunta de investigación, no a
 
 En ciencia política, cuantificamos **actitudes y opiniones** (preferencias electorales, apoyo a políticas, confianza institucional), **comportamiento** (participación electoral, protesta, corrupción declarada), **atributos institucionales** (sistemas electorales, grado de federalismo, independencia judicial), y **resultados agregados** (nivel de democracia, desigualdad de ingresos, gasto público). Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos "democracia"? @munck2009 muestran que distintos índices (Polity, Freedom House, V-Dem) operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.^[CASO CONCRETO: En 2022, Freedom House clasificó a Chile como "Libre" (score: 94/100), mientras que V-Dem lo ubicó ligeramente por debajo de Costa Rica en su índice de democracia liberal. Estas diferencias no significan que un índice esté "equivocado"; reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más.] Esta tensión entre concepto y medición es constitutiva de la investigación cuantitativa. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.
 
-## El papel de la teoría
+#### El papel de la teoría
 
 Un error común en estudiantes principiantes es creer que la investigación cuantitativa consiste en "dejar que los datos hablen". Los datos nunca hablan solos. Requieren un marco teórico que los haga inteligibles.
 
@@ -68,13 +68,13 @@ El **diseño de investigación y medición** especifica cómo testearemos las hi
 
 La **interpretación** evalúa qué implican los resultados para nuestra teoría: resultados **consistentes** fortalecen confianza (sin probarla definitivamente), resultados **inconsistentes** debilitan la teoría (sin refutarla definitivamente), resultados **ambiguos** pueden deberse a problemas de datos, medición o especificación del modelo. La investigación científica nunca "prueba" teorías; solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles. Finalmente, la **comunicación** presenta los hallazgos de forma que otros puedan evaluarlos y replicarlos.
 
-## Fortalezas y limitaciones del enfoque cuantitativo
+#### Fortalezas y limitaciones
 
 El enfoque cuantitativo tiene fortalezas importantes: permite **generalización** (inferir de 1,500 encuestados a 15 millones de votantes si muestreamos correctamente), **precisión** (no solo "X y Y se relacionan", sino "un aumento de una desviación estándar en X se asocia con un incremento de 0.23 desviaciones estándar en Y"), **testeo sistemático** (evaluar si un patrón podría deberse al azar o refleja una relación real), **comparabilidad** (estandarización de mediciones permite comparaciones rigurosas entre casos, países o períodos), y **transparencia** (procedimientos explícitos y replicables que otros pueden verificar o cuestionar).
 
 También tiene limitaciones: **reducción de complejidad** (cuantificar exige simplificar; aspectos importantes pueden perderse al convertir fenómenos complejos en números), **correlación no es causalidad**^[EJEMPLO ENGAÑOSO CLÁSICO: En comunas chilenas, el número de templos evangélicos correlaciona positivamente con tasas de crimen. ¿Los templos CAUSAN crimen? No. Ambos son causados por una tercera variable (tamaño poblacional): comunas grandes tienen más templos Y más crimen. Esta es una **variable confusora**. Otro ejemplo: consumo de helado correlaciona con ahogamientos en piscinas. ¿Causa? No: ambos aumentan en verano (temperatura es la confusora).] (observar que X e Y covarían no implica que X cause Y; puede haber causalidad inversa, variables confusoras, o mera coincidencia), **dependencia de supuestos** (las técnicas estadísticas asumen propiedades de los datos; violar estos supuestos compromete las inferencias), **decontextualización** (al agregar muchos casos podemos perder especificidades contextuales teóricamente importantes [@ragin1987]), y **"dictadura de las variables disponibles"** (la investigación puede ser determinada por qué datos existen, no por qué preguntas son importantes). Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. Los resultados estadísticos son insumos para argumentación teórica, no veredictos finales. @mahoney2008 argumentan persuasivamente que métodos cuantitativos y cualitativos tienen fortalezas complementarias; los mejores estudios frecuentemente combinan ambos.
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 Este capítulo introdujo la lógica del método científico aplicado a ciencias sociales. El conocimiento científico se distingue por su sistematicidad, falsabilidad y acumulación. Las ciencias sociales enfrentan desafíos específicos (reflexividad, complejidad causal, imposibilidad de experimentación), pero esto no invalida la empresa científica.
 
@@ -86,7 +86,7 @@ La investigación cuantitativa sigue una secuencia: pregunta → literatura → 
 
 El enfoque cuantitativo tiene fortalezas (generalización, precisión, testeo sistemático) y límites (reducción de complejidad, correlación ≠ causalidad, dependencia de supuestos). Reconocer ambos es condición de investigación rigurosa.
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de inferencia en ciencias sociales:**
 
@@ -109,7 +109,7 @@ Adcock, R., & Collier, D. (2001). Measurement Validity: A Shared Standard for Qu
 → Artículo seminal sobre conceptualización y operacionalización.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap1).
 

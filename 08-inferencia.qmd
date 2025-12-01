@@ -1,6 +1,6 @@
 # Inferencia estadística {#inferencia}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -552,7 +552,7 @@ ggplot(resultados_plot, aes(y = muestra)) +
 **Mensaje clave**: El "95%" NO se refiere a una muestra individual, sino al **procedimiento**. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían $\mu$. Para cualquier muestra específica, o contiene $\mu$ o no (pero no sabemos cuál).
 :::
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 **Conceptos clave:**
 
@@ -576,7 +576,7 @@ ggplot(resultados_plot, aes(y = muestra)) +
 - **Cap. 9** extenderá la lógica de inferencia a **pruebas de hipótesis**
 - **Caps. 10-11** aplicarán ICs y pruebas para comparar grupos y analizar relaciones
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de inferencia estadística:**
 
@@ -594,7 +594,7 @@ Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th 
 → Capítulo 4 sobre fundamentos de inferencia, con ejercicios y ejemplos interactivos.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap8).
 

@@ -1,6 +1,6 @@
 # Estadística descriptiva {#descriptiva}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -543,7 +543,7 @@ ggplot(resumen, aes(x = pobreza_cat, y = Valor, fill = Estadistico)) +
   theme_minimal()
 ```
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 La estadística descriptiva resume datos mediante medidas numéricas y gráficos. Las medidas de tendencia central (media, mediana, moda) capturan la ubicación típica. Para distribuciones simétricas, usar la media; para asimétricas, la mediana es más robusta.
 
@@ -559,7 +559,7 @@ Para relaciones bivariadas, la covarianza mide asociación conjunta pero depende
 
 La estadística descriptiva es exploratoria. Revela patrones, sugiere hipótesis, detecta problemas de datos. Pero no prueba nada—eso requiere inferencia estadística (Capítulos siguientes).
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de estadística descriptiva:**
 
@@ -582,7 +582,7 @@ Wickham, H., & Grolemund, G. (2017). *R for Data Science*. O'Reilly. [https://r4
 → Capítulos 5 y 7 sobre transformación y análisis exploratorio.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap5).
 

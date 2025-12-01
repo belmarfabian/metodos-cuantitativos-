@@ -1,6 +1,6 @@
 # Introducción a probabilidad {#probabilidad}
 
-## Objetivos del capítulo
+## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
@@ -376,7 +376,7 @@ ggplot(df_medias, aes(x = media)) +
 
 Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales **se distribuyen cada vez más normalmente** conforme aumenta $n$. Con $n=100$, la distribución de $\bar{X}$ es prácticamente Normal.
 
-## Resumen del capítulo
+## Resumen {.unnumbered}
 
 **Conceptos clave:**
 
@@ -392,7 +392,7 @@ Aunque la población original es extremadamente asimétrica (la mayoría tiene v
 - **Cap. 9** aplicará distribuciones de probabilidad para pruebas de hipótesis
 - **Caps. 10-11** usarán la distribución Normal para comparar medias y hacer regresión
 
-## Lecturas recomendadas
+## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de teoría de probabilidad:**
 
@@ -410,7 +410,7 @@ Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th 
 → Capítulo 3 sobre distribuciones de variables aleatorias, con ejercicios interactivos.
 
 
-## Ejercicios
+## Ejercicios {.unnumbered}
 
 Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap7).
 
