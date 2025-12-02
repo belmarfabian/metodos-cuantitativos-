@@ -50,9 +50,9 @@ format:
     toc-depth: 2
     number-sections: true
     code-fold: false
-    code-tools: true
+    code-tools: false
     highlight-style: github
-    reference-location: margin
+    reference-location: document
 
 execute:
   echo: true

@@ -37,7 +37,9 @@ Es crucial entender la asimetría fundamental de este razonamiento: nunca "acept
 - **Bilateral** (dos colas): $H_1: \mu \neq \mu_0$ (hay diferencia, en cualquier dirección)
 - **Unilateral** (una cola): $H_1: \mu > \mu_0$ o $H_1: \mu < \mu_0$ (dirección específica)
 
-Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu < 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).^[EJEMPLOS ADICIONALES EN CIENCIAS POLÍTICAS: Evaluar si una reforma electoral aumentó la participación ($H_0: p_{\text{antes}} = p_{\text{después}}$ vs $H_1: p_{\text{después}} > p_{\text{antes}}$); comparar aprobación presidencial entre regiones urbanas y rurales ($H_0: \mu_{\text{urbana}} = \mu_{\text{rural}}$ vs $H_1: \mu_{\text{urbana}} \neq \mu_{\text{rural}}$).]
+Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu < 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).[^ejemplos-hipotesis]
+
+[^ejemplos-hipotesis]: Otros ejemplos en ciencias políticas: evaluar si una reforma electoral aumentó la participación, o comparar aprobación presidencial entre regiones urbanas y rurales.
 
 ## Valores p y errores
 
@@ -47,7 +49,11 @@ El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos com
 
 $$\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})$$
 
-La interpretación correcta del valor p es fundamental para evitar errores comunes.^[INTERPRETACIÓN ERRÓNEA COMÚN: "p = 0.03 significa que hay 3% de probabilidad de que $H_0$ sea cierta". FALSO. El valor p NO es $P(H_0 | \text{datos})$. Es $P(\text{datos} | H_0)$. La hipótesis nula es una afirmación fija, no una variable aleatoria con probabilidad asociada. Esta confusión entre probabilidades condicionales es uno de los errores más frecuentes en la interpretación de resultados estadísticos.] Cuando observamos $p = 0.03$, debemos interpretar: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces." Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
+La interpretación correcta del valor p es fundamental para evitar errores comunes.[^error-valor-p] Cuando observamos $p = 0.03$, debemos interpretar: "Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces."
+
+[^error-valor-p]: Error común: "p = 0.03 significa 3% de probabilidad de que $H_0$ sea cierta". Falso. El valor p es $P(\text{datos} | H_0)$, no $P(H_0 | \text{datos})$. La hipótesis nula no es una variable aleatoria.
+
+Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
 
 #### Errores tipo I y tipo II
 

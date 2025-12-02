@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -130,7 +95,7 @@ div.csl-indent {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating slimcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -328,11 +293,11 @@ div.csl-indent {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduccion.html">I. Prerequisitos</a></li><li class="breadcrumb-item"><a href="./01-introduccion.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción: El método científico en ciencias sociales</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="introduccion" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción: El método científico en ciencias sociales</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title"><span id="introduccion" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción: El método científico en ciencias sociales</span></span></h1>
 </div>
 
 
@@ -359,16 +324,16 @@ div.csl-indent {
 <li>Reconocer fortalezas y límites del enfoque cuantitativo para estudiar política</li>
 </ul>
 </section>
-<section id="el-método-científico" class="level2 page-columns page-full" data-number="1.1">
+<section id="el-método-científico" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="el-método-científico"><span class="header-section-number">1.1</span> El método científico</h2>
 <p>El <strong>método científico</strong> es un procedimiento sistemático para producir conocimiento confiable sobre el mundo. No es exclusivo de las ciencias naturales. Las ciencias sociales —incluida la ciencia política— lo emplean para generar afirmaciones empíricas verificables sobre fenómenos sociales.</p>
 <p>Tres características distinguen el conocimiento científico de otras formas de conocer:</p>
 <p><strong>1. Sistematicidad</strong>: Sigue procedimientos explícitos y replicables. Otro investigador, con los mismos datos y métodos, debería llegar a conclusiones similares.</p>
 <p><strong>2. Falsabilidad</strong>: Las afirmaciones científicas pueden ser, en principio, refutadas por evidencia empírica <span class="citation" data-cites="popper1959">(<a href="01-introduccion.html#ref-popper1959" role="doc-biblioref">Popper, 1959</a>)</span>. Una proposición que no puede ser contrastada con datos no es científica.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;EJEMPLO: “El alma humana es inmortal” no es falsable empíricamente (no hay datos observables que puedan refutarla). “Las personas religiosas votan más por candidatos conservadores” SÍ es falsable mediante encuestas. Ambas afirmaciones pueden ser importantes, pero solo la segunda es científica en sentido metodológico.</p></div></div><p><strong>3. Acumulación</strong>: El conocimiento científico es acumulativo. Se construye sobre investigación previa, refinando teorías y mejorando mediciones <span class="citation" data-cites="kuhn1962">(<a href="01-introduccion.html#ref-kuhn1962" role="doc-biblioref">Kuhn, 1962</a>)</span>.</p>
+<p><strong>3. Acumulación</strong>: El conocimiento científico es acumulativo. Se construye sobre investigación previa, refinando teorías y mejorando mediciones <span class="citation" data-cites="kuhn1962">(<a href="01-introduccion.html#ref-kuhn1962" role="doc-biblioref">Kuhn, 1962</a>)</span>.</p>
 <p>Esto no implica que el conocimiento científico sea “objetivo” en sentido ingenuo. Toda investigación parte de supuestos teóricos y decisiones metodológicas que reflejan posiciones epistemológicas. Pero estas decisiones deben ser transparentes y sometidas a escrutinio.</p>
-<p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares. Sin embargo, las ciencias sociales enfrentan desafíos específicos como la <strong>reflexividad</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (los sujetos modifican su comportamiento al conocer teorías sobre ellos <span class="citation" data-cites="giddens1984">(<a href="01-introduccion.html#ref-giddens1984" role="doc-biblioref">Giddens, 1984</a>)</span>), la <strong>complejidad causal</strong> (fenómenos con múltiples causas interdependientes), la <strong>imposibilidad de experimentación</strong> (frecuentemente no podemos manipular variables por razones éticas o prácticas), y la <strong>dependencia del contexto</strong> (las regularidades sociales son históricamente contingentes <span class="citation" data-cites="Abbott2001">(<a href="01-introduccion.html#ref-Abbott2001" role="doc-biblioref">Abbott, 2001</a>)</span>). Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;EJEMPLO CHILENO: Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas. En física, las partículas no leen teorías sobre partículas y modifican su comportamiento.</p></div></div><section id="ciencia-social-y-cuantificación" class="level4 page-columns page-full" data-number="1.1.0.1">
+<p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares. Sin embargo, las ciencias sociales enfrentan desafíos específicos como la <strong>reflexividad</strong> —los sujetos modifican su comportamiento al conocer teorías sobre ellos <span class="citation" data-cites="giddens1984">(<a href="01-introduccion.html#ref-giddens1984" role="doc-biblioref">Giddens, 1984</a>)</span>—, la <strong>complejidad causal</strong> —fenómenos con múltiples causas interdependientes—, la <strong>imposibilidad de experimentación</strong> —frecuentemente no podemos manipular variables por razones éticas o prácticas—, y la <strong>dependencia del contexto</strong> —las regularidades sociales son históricamente contingentes <span class="citation" data-cites="Abbott2001">(<a href="01-introduccion.html#ref-Abbott2001" role="doc-biblioref">Abbott, 2001</a>)</span>—. Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<section id="ciencia-social-y-cuantificación" class="level4" data-number="1.1.0.1">
 <h4 data-number="1.1.0.1" class="anchored" data-anchor-id="ciencia-social-y-cuantificación"><span class="header-section-number">1.1.0.1</span> Ciencia social y cuantificación</h4>
 <p>La <strong>cuantificación</strong> —convertir conceptos en números— es una estrategia metodológica, no un fin en sí mismo. Su utilidad depende del tipo de pregunta que formulamos.</p>
 <p><span class="citation" data-cites="lazarsfeld1955">Lazarsfeld &amp; Rosenberg (<a href="01-introduccion.html#ref-lazarsfeld1955" role="doc-biblioref">1955</a>)</span> identificó que cuantificar permite:</p>
@@ -380,9 +345,9 @@ div.csl-indent {
 </ol>
 <p>Sin embargo, no todo fenómeno político es susceptible de cuantificación útil. Algunos objetos de estudio —como significados culturales profundos, procesos deliberativos, o lógicas institucionales— pueden empobrecerse al ser reducidos a números.</p>
 <p>La decisión de cuantificar debe responder a la pregunta de investigación, no a preferencias metodológicas preconcebidas. Como afirma <span class="citation" data-cites="abbott1988">Abbott (<a href="01-introduccion.html#ref-abbott1988" role="doc-biblioref">1988</a>)</span>, “los métodos son herramientas, no paradigmas”. El investigador competente domina múltiples herramientas y selecciona la apropiada para cada problema.</p>
-<p>En ciencia política, cuantificamos <strong>actitudes y opiniones</strong> (preferencias electorales, apoyo a políticas, confianza institucional), <strong>comportamiento</strong> (participación electoral, protesta, corrupción declarada), <strong>atributos institucionales</strong> (sistemas electorales, grado de federalismo, independencia judicial), y <strong>resultados agregados</strong> (nivel de democracia, desigualdad de ingresos, gasto público). Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos “democracia”? <span class="citation" data-cites="munck2009">Munck (<a href="01-introduccion.html#ref-munck2009" role="doc-biblioref">2009</a>)</span> muestran que distintos índices (Polity, Freedom House, V-Dem) operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Esta tensión entre concepto y medición es constitutiva de la investigación cuantitativa. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;CASO CONCRETO: En 2022, Freedom House clasificó a Chile como “Libre” (score: 94/100), mientras que V-Dem lo ubicó ligeramente por debajo de Costa Rica en su índice de democracia liberal. Estas diferencias no significan que un índice esté “equivocado”; reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más.</p></div></div></section>
-<section id="el-papel-de-la-teoría" class="level4 page-columns page-full" data-number="1.1.0.2">
+<p>En ciencia política, cuantificamos <strong>actitudes y opiniones</strong> —preferencias electorales, apoyo a políticas, confianza institucional—, <strong>comportamiento</strong> —participación electoral, protesta, corrupción declarada—, <strong>atributos institucionales</strong> —sistemas electorales, grado de federalismo, independencia judicial—, y <strong>resultados agregados</strong> —nivel de democracia, desigualdad de ingresos, gasto público—. Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos “democracia”? <span class="citation" data-cites="munck2009">Munck (<a href="01-introduccion.html#ref-munck2009" role="doc-biblioref">2009</a>)</span> muestran que distintos índices operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Esta tensión entre concepto y medición es constitutiva de la investigación cuantitativa.</p>
+</section>
+<section id="el-papel-de-la-teoría" class="level4" data-number="1.1.0.2">
 <h4 data-number="1.1.0.2" class="anchored" data-anchor-id="el-papel-de-la-teoría"><span class="header-section-number">1.1.0.2</span> El papel de la teoría</h4>
 <p>Un error común en estudiantes principiantes es creer que la investigación cuantitativa consiste en “dejar que los datos hablen”. Los datos nunca hablan solos. Requieren un marco teórico que los haga inteligibles.</p>
 <p>La <strong>teoría</strong> cumple tres funciones en investigación cuantitativa:</p>
@@ -391,19 +356,19 @@ div.csl-indent {
 <p><strong>3. Interpreta hallazgos</strong>: Permite dotar de sentido a los patrones estadísticos. Una correlación es solo eso —covariación— hasta que la teoría la conecta con un mecanismo causal.</p>
 <p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> insisten en que “diseñar investigación social es diseñar un test de teoría”. No existe investigación “ateórica”. Incluso el análisis exploratorio más inductivo parte de intuiciones teóricas sobre qué buscar.</p>
 <p>Las teorías varían en su nivel de abstracción: <strong>gran teoría</strong> (marcos conceptuales amplios como marxismo o funcionalismo estructural), <strong>teorías de rango medio</strong> que explican clases específicas de fenómenos sin pretensión de aplicabilidad universal <span class="citation" data-cites="merton1949">(<a href="01-introduccion.html#ref-merton1949" role="doc-biblioref">Merton, 1949</a>)</span> (ej: teoría de la modernización para democratización), y <strong>modelos formales</strong> que representan matemáticamente mecanismos causales específicos (ej: modelos de teoría de juegos sobre negociación legislativa). En investigación cuantitativa en ciencias políticas predominan teorías de rango medio: suficientemente específicas para generar hipótesis testeables, pero suficientemente generales para trascender casos únicos.</p>
-<p>El objetivo último de la investigación cuantitativa explicativa es establecer <strong>relaciones causales</strong>: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y. <span class="citation" data-cites="brady2008">Mahoney &amp; Goertz (<a href="01-introduccion.html#ref-brady2008" role="doc-biblioref">2006</a>)</span> distinguen dos tradiciones: el <strong>enfoque neopositivista</strong><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (dominante en economía y partes de la ciencia política) que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales preguntando “¿cuál es el efecto causal de X sobre Y?”, y el <strong>enfoque interpretativo-mecanísmico</strong> que privilegia comprensión de mecanismos causales —los procesos mediante los cuales X produce Y— preguntando “¿cómo X causa Y?”. Ambos enfoques son legítimos pero implican estrategias metodológicas distintas. Este libro enfatiza el primero, aunque reconocemos la importancia de teorizar mecanismos.</p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;EJEMPLO NEOPOSITIVISTA: “¿Cuánto aumenta la probabilidad de votar si una persona es contactada telefónicamente por una campaña?” Respuesta: experimento aleatorio donde asignamos contacto/no contacto y medimos diferencia en tasas de participación. EJEMPLO MECANÍSMICO: “¿CÓMO el contacto telefónico aumenta la participación?” Respuesta: entrevistas cualitativas revelando que las llamadas funcionan mediante recordatorio de fecha de elección + presión social de compromiso público. Ambas preguntas son legítimas pero requieren métodos diferentes.</p></div></div></section>
+<p>El objetivo último de la investigación cuantitativa explicativa es establecer <strong>relaciones causales</strong>: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y. <span class="citation" data-cites="brady2008">Mahoney &amp; Goertz (<a href="01-introduccion.html#ref-brady2008" role="doc-biblioref">2006</a>)</span> distinguen dos tradiciones: el <strong>enfoque neopositivista</strong> —dominante en economía y partes de la ciencia política— que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales, y el <strong>enfoque interpretativo-mecanísmico</strong> que privilegia comprensión de los procesos mediante los cuales X produce Y.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> Ambos enfoques son legítimos pero implican estrategias metodológicas distintas.</p>
 </section>
-<section id="lógica-de-la-investigación-cuantitativa" class="level2 page-columns page-full" data-number="1.2">
+</section>
+<section id="lógica-de-la-investigación-cuantitativa" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="lógica-de-la-investigación-cuantitativa"><span class="header-section-number">1.2</span> Lógica de la investigación cuantitativa</h2>
-<p>La investigación cuantitativa sigue una secuencia lógica (aunque no siempre cronológica). Todo comienza con una <strong>pregunta de investigación</strong> específica, empíricamente respondible y relevante (por ejemplo: “¿En qué medida la desigualdad de ingresos explica la intensidad de protestas en comunas chilenas durante octubre-diciembre 2019?”). Luego hacemos una <strong>revisión de literatura</strong> que identifica teorías existentes, hallazgos previos, debates no resueltos y limitaciones de investigación previa, posicionando nuestra contribución en una conversación académica en curso. Con base en literatura, desarrollamos <strong>teoría e hipótesis</strong><a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> —afirmaciones sobre relaciones entre variables que esperamos observar si la teoría es correcta (ej: si la desigualdad económica genera frustración relativa que reduce legitimidad <span class="citation" data-cites="gurr1970">(<a href="01-introduccion.html#ref-gurr1970" role="doc-biblioref">Gurr, 1970</a>)</span>, entonces a mayor desigualdad en una comuna, mayor tasa de participación en protestas).</p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;EJEMPLO COMPLETO CON CASO CHILENO: TEORÍA: Los sistemas proporcionales facilitan entrada de nuevos partidos (Duverger). MECANISMO: En distritos grandes, partidos pequeños pueden ganar escaños con pocos votos, haciendo viable su formación. IMPLICACIÓN: Tras cambio de sistema binominal (2013) a proporcional (2015) en Chile, debería aumentar el número de partidos. HIPÓTESIS TESTEABLE: “El número efectivo de partidos en la Cámara de Diputados chilena será mayor en 2018-2022 que en 2010-2014”. RESULTADO OBSERVADO: Pasó de 5.6 a 8.2 partidos efectivos, consistente con la teoría.</p></div></div><p>El <strong>diseño de investigación y medición</strong> especifica cómo testearemos las hipótesis: qué casos observaremos (muestra/población), cómo mediremos nuestras variables (operacionalización), y qué técnica analítica usaremos (estadística descriptiva, regresión, etc.). Estas decisiones tienen consecuencias: un mismo concepto puede medirse de múltiples formas, y cada medición captura aspectos distintos. La <strong>recolección de datos</strong> obtiene la información (encuestas propias, datos administrativos, fuentes secundarias); la calidad del dato es crítica porque análisis sofisticado de datos malos produce conclusiones incorrectas con alta precisión. El <strong>análisis</strong> aplica técnicas estadísticas para evaluar hipótesis, resumiendo información en datos para detectar patrones sistemáticos.</p>
+<p>La investigación cuantitativa sigue una secuencia lógica, aunque no siempre cronológica. Todo comienza con una <strong>pregunta de investigación</strong> específica, empíricamente respondible y relevante. Luego hacemos una <strong>revisión de literatura</strong> que identifica teorías existentes, hallazgos previos, debates no resueltos y limitaciones de investigación previa, posicionando nuestra contribución en una conversación académica en curso. Con base en literatura, desarrollamos <strong>teoría e hipótesis</strong> —afirmaciones sobre relaciones entre variables que esperamos observar si la teoría es correcta—.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
+<p>El <strong>diseño de investigación y medición</strong> especifica cómo testearemos las hipótesis: qué casos observaremos (muestra/población), cómo mediremos nuestras variables (operacionalización), y qué técnica analítica usaremos (estadística descriptiva, regresión, etc.). Estas decisiones tienen consecuencias: un mismo concepto puede medirse de múltiples formas, y cada medición captura aspectos distintos. La <strong>recolección de datos</strong> obtiene la información (encuestas propias, datos administrativos, fuentes secundarias); la calidad del dato es crítica porque análisis sofisticado de datos malos produce conclusiones incorrectas con alta precisión. El <strong>análisis</strong> aplica técnicas estadísticas para evaluar hipótesis, resumiendo información en datos para detectar patrones sistemáticos.</p>
 <p>La <strong>interpretación</strong> evalúa qué implican los resultados para nuestra teoría: resultados <strong>consistentes</strong> fortalecen confianza (sin probarla definitivamente), resultados <strong>inconsistentes</strong> debilitan la teoría (sin refutarla definitivamente), resultados <strong>ambiguos</strong> pueden deberse a problemas de datos, medición o especificación del modelo. La investigación científica nunca “prueba” teorías; solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles. Finalmente, la <strong>comunicación</strong> presenta los hallazgos de forma que otros puedan evaluarlos y replicarlos.</p>
-<section id="fortalezas-y-limitaciones" class="level4 page-columns page-full" data-number="1.2.0.1">
+<section id="fortalezas-y-limitaciones" class="level4" data-number="1.2.0.1">
 <h4 data-number="1.2.0.1" class="anchored" data-anchor-id="fortalezas-y-limitaciones"><span class="header-section-number">1.2.0.1</span> Fortalezas y limitaciones</h4>
 <p>El enfoque cuantitativo tiene fortalezas importantes: permite <strong>generalización</strong> (inferir de 1,500 encuestados a 15 millones de votantes si muestreamos correctamente), <strong>precisión</strong> (no solo “X y Y se relacionan”, sino “un aumento de una desviación estándar en X se asocia con un incremento de 0.23 desviaciones estándar en Y”), <strong>testeo sistemático</strong> (evaluar si un patrón podría deberse al azar o refleja una relación real), <strong>comparabilidad</strong> (estandarización de mediciones permite comparaciones rigurosas entre casos, países o períodos), y <strong>transparencia</strong> (procedimientos explícitos y replicables que otros pueden verificar o cuestionar).</p>
-<p>También tiene limitaciones: <strong>reducción de complejidad</strong> (cuantificar exige simplificar; aspectos importantes pueden perderse al convertir fenómenos complejos en números), <strong>correlación no es causalidad</strong><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> (observar que X e Y covarían no implica que X cause Y; puede haber causalidad inversa, variables confusoras, o mera coincidencia), <strong>dependencia de supuestos</strong> (las técnicas estadísticas asumen propiedades de los datos; violar estos supuestos compromete las inferencias), <strong>decontextualización</strong> (al agregar muchos casos podemos perder especificidades contextuales teóricamente importantes <span class="citation" data-cites="ragin1987">(<a href="01-introduccion.html#ref-ragin1987" role="doc-biblioref">Ragin, 1987</a>)</span>), y <strong>“dictadura de las variables disponibles”</strong> (la investigación puede ser determinada por qué datos existen, no por qué preguntas son importantes). Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. Los resultados estadísticos son insumos para argumentación teórica, no veredictos finales. <span class="citation" data-cites="mahoney2008">Goertz &amp; Mahoney (<a href="01-introduccion.html#ref-mahoney2008" role="doc-biblioref">2012</a>)</span> argumentan persuasivamente que métodos cuantitativos y cualitativos tienen fortalezas complementarias; los mejores estudios frecuentemente combinan ambos.</p>
-<div class="no-row-height column-margin column-container"><div id="fn6"><p><sup>6</sup>&nbsp;EJEMPLO ENGAÑOSO CLÁSICO: En comunas chilenas, el número de templos evangélicos correlaciona positivamente con tasas de crimen. ¿Los templos CAUSAN crimen? No.&nbsp;Ambos son causados por una tercera variable (tamaño poblacional): comunas grandes tienen más templos Y más crimen. Esta es una <strong>variable confusora</strong>. Otro ejemplo: consumo de helado correlaciona con ahogamientos en piscinas. ¿Causa? No: ambos aumentan en verano (temperatura es la confusora).</p></div></div></section>
+<p>También tiene limitaciones: <strong>reducción de complejidad</strong> —cuantificar exige simplificar y aspectos importantes pueden perderse—, el hecho de que <strong>correlación no es causalidad</strong><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> —observar que X e Y covarían no implica que X cause Y—, <strong>dependencia de supuestos</strong> —las técnicas estadísticas asumen propiedades de los datos—, <strong>decontextualización</strong> —al agregar muchos casos podemos perder especificidades contextuales importantes <span class="citation" data-cites="ragin1987">(<a href="01-introduccion.html#ref-ragin1987" role="doc-biblioref">Ragin, 1987</a>)</span>—, y <strong>“dictadura de las variables disponibles”</strong> —la investigación puede ser determinada por qué datos existen, no por qué preguntas son importantes—. Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. Los resultados estadísticos son insumos para argumentación teórica, no veredictos finales. <span class="citation" data-cites="mahoney2008">Goertz &amp; Mahoney (<a href="01-introduccion.html#ref-mahoney2008" role="doc-biblioref">2012</a>)</span> argumentan que métodos cuantitativos y cualitativos tienen fortalezas complementarias; los mejores estudios frecuentemente combinan ambos.</p>
+</section>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
@@ -466,9 +431,6 @@ theory of structuration</em>. Polity Press.
 Goertz, G., &amp; Mahoney, J. (2012). <em>A tale of two cultures:
 Qualitative and quantitative research in the social sciences</em>.
 Princeton University Press.
-</div>
-<div id="ref-gurr1970" class="csl-entry" role="listitem">
-Gurr, T. R. (1970). <em>Why men rebel</em>. Princeton University Press.
 </div>
 <div id="ref-king1997" class="csl-entry" role="listitem">
 King, G. (1997). A solution to the ecological inference problem:
@@ -550,10 +512,18 @@ Springer-Verlag.
 </div>
 
 
-<!-- -->
-
 </section>
-
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>“El alma humana es inmortal” no es falsable empíricamente. “Las personas religiosas votan más por candidatos conservadores” sí es falsable mediante encuestas. Solo la segunda afirmación es científica en sentido metodológico.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>En 2022, Freedom House clasificó a Chile como “Libre” con 94/100 puntos, mientras V-Dem lo ubicó ligeramente por debajo de Costa Rica. Estas diferencias reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>El enfoque neopositivista pregunta “¿cuánto aumenta la probabilidad de votar si una persona es contactada telefónicamente?” y responde con experimentos aleatorios. El enfoque mecanísmico pregunta “¿cómo funciona ese contacto?” y responde con entrevistas sobre recordatorios y presión social. Este libro enfatiza el primero, aunque reconocemos la importancia de teorizar mecanismos.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>La teoría de Duverger predice que sistemas proporcionales facilitan nuevos partidos. Tras el cambio del binominal al proporcional en Chile, el número efectivo de partidos en la Cámara pasó de 5.6 a 8.2, consistente con la teoría.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>En comunas chilenas, el número de templos evangélicos correlaciona positivamente con tasas de crimen. ¿Los templos causan crimen? No.&nbsp;Ambos son causados por el tamaño poblacional: comunas grandes tienen más templos y más crimen. Esta es una variable confusora.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -626,57 +596,6 @@ Springer-Verlag.
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1018,125 +937,7 @@ Springer-Verlag.
         <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Introducción: El método científico en ciencias sociales {#introduccion}</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo {.unnumbered}</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>Al finalizar este capítulo, serás capaz de:</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Distinguir conocimiento científico de otras formas de conocimiento sobre la realidad social</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Identificar los elementos del método científico aplicado a fenómenos políticos</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comprender la relación entre teoría y análisis empírico en ciencias sociales</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Reconocer fortalezas y límites del enfoque cuantitativo para estudiar política</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## El método científico</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>El **método científico** es un procedimiento sistemático para producir conocimiento confiable sobre el mundo. No es exclusivo de las ciencias naturales. Las ciencias sociales —incluida la ciencia política— lo emplean para generar afirmaciones empíricas verificables sobre fenómenos sociales.</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Tres características distinguen el conocimiento científico de otras formas de conocer:</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>**1. Sistematicidad**: Sigue procedimientos explícitos y replicables. Otro investigador, con los mismos datos y métodos, debería llegar a conclusiones similares.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>**2. Falsabilidad**: Las afirmaciones científicas pueden ser, en principio, refutadas por evidencia empírica <span class="co">[</span><span class="ot">@popper1959</span><span class="co">]</span>. Una proposición que no puede ser contrastada con datos no es científica.^<span class="co">[</span><span class="ot">EJEMPLO: "El alma humana es inmortal" no es falsable empíricamente (no hay datos observables que puedan refutarla). "Las personas religiosas votan más por candidatos conservadores" SÍ es falsable mediante encuestas. Ambas afirmaciones pueden ser importantes, pero solo la segunda es científica en sentido metodológico.</span><span class="co">]</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>**3. Acumulación**: El conocimiento científico es acumulativo. Se construye sobre investigación previa, refinando teorías y mejorando mediciones <span class="co">[</span><span class="ot">@kuhn1962</span><span class="co">]</span>.</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Esto no implica que el conocimiento científico sea "objetivo" en sentido ingenuo. Toda investigación parte de supuestos teóricos y decisiones metodológicas que reflejan posiciones epistemológicas. Pero estas decisiones deben ser transparentes y sometidas a escrutinio.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>@king1994 argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares. Sin embargo, las ciencias sociales enfrentan desafíos específicos como la **reflexividad**^[EJEMPLO CHILENO: Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas. En física, las partículas no leen teorías sobre partículas y modifican su comportamiento.] (los sujetos modifican su comportamiento al conocer teorías sobre ellos [@giddens1984]), la **complejidad causal** (fenómenos con múltiples causas interdependientes), la **imposibilidad de experimentación** (frecuentemente no podemos manipular variables por razones éticas o prácticas), y la **dependencia del contexto** (las regularidades sociales son históricamente contingentes <span class="co">[</span><span class="ot">@Abbott2001</span><span class="co">]</span>). Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Ciencia social y cuantificación</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>La **cuantificación** —convertir conceptos en números— es una estrategia metodológica, no un fin en sí mismo. Su utilidad depende del tipo de pregunta que formulamos.</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>@lazarsfeld1955 identificó que cuantificar permite:</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Precisión**: Especificar exactamente qué grado de una propiedad exhibe un caso.</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Comparabilidad**: Evaluar sistemáticamente similitudes y diferencias entre casos.</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Agregación**: Resumir patrones en poblaciones grandes.</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Testeo de relaciones**: Evaluar si dos variables covarían de manera consistente con una hipótesis teórica.</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Sin embargo, no todo fenómeno político es susceptible de cuantificación útil. Algunos objetos de estudio —como significados culturales profundos, procesos deliberativos, o lógicas institucionales— pueden empobrecerse al ser reducidos a números.</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>La decisión de cuantificar debe responder a la pregunta de investigación, no a preferencias metodológicas preconcebidas. Como afirma @abbott1988, "los métodos son herramientas, no paradigmas". El investigador competente domina múltiples herramientas y selecciona la apropiada para cada problema.</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>En ciencia política, cuantificamos **actitudes y opiniones** (preferencias electorales, apoyo a políticas, confianza institucional), **comportamiento** (participación electoral, protesta, corrupción declarada), **atributos institucionales** (sistemas electorales, grado de federalismo, independencia judicial), y **resultados agregados** (nivel de democracia, desigualdad de ingresos, gasto público). Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos "democracia"? @munck2009 muestran que distintos índices (Polity, Freedom House, V-Dem) operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.^<span class="co">[</span><span class="ot">CASO CONCRETO: En 2022, Freedom House clasificó a Chile como "Libre" (score: 94/100), mientras que V-Dem lo ubicó ligeramente por debajo de Costa Rica en su índice de democracia liberal. Estas diferencias no significan que un índice esté "equivocado"; reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más.</span><span class="co">]</span> Esta tensión entre concepto y medición es constitutiva de la investigación cuantitativa. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.</span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="fu">#### El papel de la teoría</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Un error común en estudiantes principiantes es creer que la investigación cuantitativa consiste en "dejar que los datos hablen". Los datos nunca hablan solos. Requieren un marco teórico que los haga inteligibles.</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>La **teoría** cumple tres funciones en investigación cuantitativa:</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>**1. Orienta la observación**: Indica qué aspectos de la realidad son relevantes para nuestra pregunta. Sin teoría, todo es igualmente importante (y nada lo es).</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>**2. Genera hipótesis**: Especifica relaciones esperadas entre variables. Una hipótesis es una conjetura derivada de la teoría sobre qué patrón observaremos en los datos.</span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>**3. Interpreta hallazgos**: Permite dotar de sentido a los patrones estadísticos. Una correlación es solo eso —covariación— hasta que la teoría la conecta con un mecanismo causal.</span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>@king1994 insisten en que "diseñar investigación social es diseñar un test de teoría". No existe investigación "ateórica". Incluso el análisis exploratorio más inductivo parte de intuiciones teóricas sobre qué buscar.</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>Las teorías varían en su nivel de abstracción: **gran teoría** (marcos conceptuales amplios como marxismo o funcionalismo estructural), **teorías de rango medio** que explican clases específicas de fenómenos sin pretensión de aplicabilidad universal [@merton1949] (ej: teoría de la modernización para democratización), y **modelos formales** que representan matemáticamente mecanismos causales específicos (ej: modelos de teoría de juegos sobre negociación legislativa). En investigación cuantitativa en ciencias políticas predominan teorías de rango medio: suficientemente específicas para generar hipótesis testeables, pero suficientemente generales para trascender casos únicos.</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>El objetivo último de la investigación cuantitativa explicativa es establecer **relaciones causales**: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y. @brady2008 distinguen dos tradiciones: el **enfoque neopositivista**^[EJEMPLO NEOPOSITIVISTA: "¿Cuánto aumenta la probabilidad de votar si una persona es contactada telefónicamente por una campaña?" Respuesta: experimento aleatorio donde asignamos contacto/no contacto y medimos diferencia en tasas de participación. EJEMPLO MECANÍSMICO: "¿CÓMO el contacto telefónico aumenta la participación?" Respuesta: entrevistas cualitativas revelando que las llamadas funcionan mediante recordatorio de fecha de elección + presión social de compromiso público. Ambas preguntas son legítimas pero requieren métodos diferentes.] (dominante en economía y partes de la ciencia política) que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales preguntando "¿cuál es el efecto causal de X sobre Y?", y el **enfoque interpretativo-mecanísmico** que privilegia comprensión de mecanismos causales —los procesos mediante los cuales X produce Y— preguntando "¿cómo X causa Y?". Ambos enfoques son legítimos pero implican estrategias metodológicas distintas. Este libro enfatiza el primero, aunque reconocemos la importancia de teorizar mecanismos.</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lógica de la investigación cuantitativa</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>La investigación cuantitativa sigue una secuencia lógica (aunque no siempre cronológica). Todo comienza con una **pregunta de investigación** específica, empíricamente respondible y relevante (por ejemplo: "¿En qué medida la desigualdad de ingresos explica la intensidad de protestas en comunas chilenas durante octubre-diciembre 2019?"). Luego hacemos una **revisión de literatura** que identifica teorías existentes, hallazgos previos, debates no resueltos y limitaciones de investigación previa, posicionando nuestra contribución en una conversación académica en curso. Con base en literatura, desarrollamos **teoría e hipótesis**^<span class="co">[</span><span class="ot">EJEMPLO COMPLETO CON CASO CHILENO: TEORÍA: Los sistemas proporcionales facilitan entrada de nuevos partidos (Duverger). MECANISMO: En distritos grandes, partidos pequeños pueden ganar escaños con pocos votos, haciendo viable su formación. IMPLICACIÓN: Tras cambio de sistema binominal (2013) a proporcional (2015) en Chile, debería aumentar el número de partidos. HIPÓTESIS TESTEABLE: "El número efectivo de partidos en la Cámara de Diputados chilena será mayor en 2018-2022 que en 2010-2014". RESULTADO OBSERVADO: Pasó de 5.6 a 8.2 partidos efectivos, consistente con la teoría.</span><span class="co">]</span> —afirmaciones sobre relaciones entre variables que esperamos observar si la teoría es correcta (ej: si la desigualdad económica genera frustración relativa que reduce legitimidad <span class="co">[</span><span class="ot">@gurr1970</span><span class="co">]</span>, entonces a mayor desigualdad en una comuna, mayor tasa de participación en protestas).</span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>El **diseño de investigación y medición** especifica cómo testearemos las hipótesis: qué casos observaremos (muestra/población), cómo mediremos nuestras variables (operacionalización), y qué técnica analítica usaremos (estadística descriptiva, regresión, etc.). Estas decisiones tienen consecuencias: un mismo concepto puede medirse de múltiples formas, y cada medición captura aspectos distintos. La **recolección de datos** obtiene la información (encuestas propias, datos administrativos, fuentes secundarias); la calidad del dato es crítica porque análisis sofisticado de datos malos produce conclusiones incorrectas con alta precisión. El **análisis** aplica técnicas estadísticas para evaluar hipótesis, resumiendo información en datos para detectar patrones sistemáticos.</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>La **interpretación** evalúa qué implican los resultados para nuestra teoría: resultados **consistentes** fortalecen confianza (sin probarla definitivamente), resultados **inconsistentes** debilitan la teoría (sin refutarla definitivamente), resultados **ambiguos** pueden deberse a problemas de datos, medición o especificación del modelo. La investigación científica nunca "prueba" teorías; solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles. Finalmente, la **comunicación** presenta los hallazgos de forma que otros puedan evaluarlos y replicarlos.</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Fortalezas y limitaciones</span></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>El enfoque cuantitativo tiene fortalezas importantes: permite **generalización** (inferir de 1,500 encuestados a 15 millones de votantes si muestreamos correctamente), **precisión** (no solo "X y Y se relacionan", sino "un aumento de una desviación estándar en X se asocia con un incremento de 0.23 desviaciones estándar en Y"), **testeo sistemático** (evaluar si un patrón podría deberse al azar o refleja una relación real), **comparabilidad** (estandarización de mediciones permite comparaciones rigurosas entre casos, países o períodos), y **transparencia** (procedimientos explícitos y replicables que otros pueden verificar o cuestionar).</span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>También tiene limitaciones: **reducción de complejidad** (cuantificar exige simplificar; aspectos importantes pueden perderse al convertir fenómenos complejos en números), **correlación no es causalidad**^[EJEMPLO ENGAÑOSO CLÁSICO: En comunas chilenas, el número de templos evangélicos correlaciona positivamente con tasas de crimen. ¿Los templos CAUSAN crimen? No. Ambos son causados por una tercera variable (tamaño poblacional): comunas grandes tienen más templos Y más crimen. Esta es una **variable confusora**. Otro ejemplo: consumo de helado correlaciona con ahogamientos en piscinas. ¿Causa? No: ambos aumentan en verano (temperatura es la confusora).] (observar que X e Y covarían no implica que X cause Y; puede haber causalidad inversa, variables confusoras, o mera coincidencia), **dependencia de supuestos** (las técnicas estadísticas asumen propiedades de los datos; violar estos supuestos compromete las inferencias), **decontextualización** (al agregar muchos casos podemos perder especificidades contextuales teóricamente importantes [@ragin1987]), y **"dictadura de las variables disponibles"** (la investigación puede ser determinada por qué datos existen, no por qué preguntas son importantes). Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. Los resultados estadísticos son insumos para argumentación teórica, no veredictos finales. @mahoney2008 argumentan persuasivamente que métodos cuantitativos y cualitativos tienen fortalezas complementarias; los mejores estudios frecuentemente combinan ambos.</span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen {.unnumbered}</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Este capítulo introdujo la lógica del método científico aplicado a ciencias sociales. El conocimiento científico se distingue por su sistematicidad, falsabilidad y acumulación. Las ciencias sociales enfrentan desafíos específicos (reflexividad, complejidad causal, imposibilidad de experimentación), pero esto no invalida la empresa científica.</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>La cuantificación es una estrategia metodológica útil para ciertos propósitos: permite precisión, comparabilidad, agregación y testeo sistemático de hipótesis. Sin embargo, no todo fenómeno político debería cuantificarse.</span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>La teoría es indispensable en investigación cuantitativa. Orienta qué observar, genera hipótesis testeables, e interpreta hallazgos. Sin teoría, los datos son ininteligibles.</span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>La investigación cuantitativa sigue una secuencia: pregunta → literatura → teoría/hipótesis → diseño → datos → análisis → interpretación → comunicación. Cada paso implica decisiones metodológicas que afectan las conclusiones.</span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>El enfoque cuantitativo tiene fortalezas (generalización, precisión, testeo sistemático) y límites (reducción de complejidad, correlación ≠ causalidad, dependencia de supuestos). Reconocer ambos es condición de investigación rigurosa.</span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas {.unnumbered}</span></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>**Fundamentos de inferencia en ciencias sociales:**</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>King, G., Keohane, R. O., &amp; Verba, S. (1994). *Designing Social Inquiry: Scientific Inference in Qualitative Research*. Princeton University Press.  </span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>→ Discusión clásica sobre lógica de inferencia aplicable a investigación cualitativa y cuantitativa.</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>**Filosofía de la ciencia para ciencias sociales:**</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>Gerring, J. (2012). *Social Science Methodology: A Unified Framework* (2nd ed.). Cambridge University Press.  </span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>→ Visión comprehensiva de debates metodológicos en ciencias sociales.</span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>**Defensa del pluralismo metodológico:**</span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>Brady, H. E., &amp; Collier, D. (Eds.). (2010). *Rethinking Social Inquiry: Diverse Tools, Shared Standards* (2nd ed.). Rowman &amp; Littlefield.  </span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>→ Debate sobre relación entre métodos cuantitativos y cualitativos, con énfasis en complementariedad.</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>**Para profundizar en medición:**</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>Adcock, R., &amp; Collier, D. (2001). Measurement Validity: A Shared Standard for Qualitative and Quantitative Research. *American Political Science Review*, 95(3), 529-546.  </span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>→ Artículo seminal sobre conceptualización y operacionalización.</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios {.unnumbered}</span></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap1)</span>.</span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 
 

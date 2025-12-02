@@ -15,7 +15,9 @@ Al finalizar este capítulo, serás capaz de:
 
 La investigación social cuantitativa enfrenta invariablemente la **incertidumbre**. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.
 
-La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.^[CONCEPTO CLAVE: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.]
+La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.[^prob-concepto]
+
+[^prob-concepto]: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.
 
 #### Conceptos básicos
 
@@ -33,7 +35,9 @@ Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votar�
 
 Existen dos interpretaciones fundamentales de qué significa "probabilidad":
 
-**1. Interpretación frecuentista**^[PERSPECTIVA DOMINANTE: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta "p < 0.05", está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.]
+**1. Interpretación frecuentista**[^frecuentista]
+
+[^frecuentista]: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta "p < 0.05", está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.
 
 La probabilidad es el **límite de la frecuencia relativa** cuando un experimento se repite infinitas veces. Por ejemplo, $P(\text{Cara}) = 0.5$ al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.
 
@@ -107,7 +111,9 @@ Una **variable aleatoria** es una función que asigna un valor numérico a cada 
 
 #### Variables aleatorias discretas
 
-Toman valores específicos y contables (generalmente enteros).^[EJEMPLOS EN CIENCIAS SOCIALES: Número de partidos en el Congreso (1, 2, 3, ...), número de protestas en un mes (0, 1, 2, 3, ...), respuesta en escala Likert (1, 2, 3, 4, 5), número de votantes en una mesa (0, 1, 2, ..., 300).]
+Toman valores específicos y contables (generalmente enteros).[^var-discretas]
+
+[^var-discretas]: Ejemplos en ciencias sociales: número de partidos en el Congreso, número de protestas en un mes, respuesta en escala Likert, número de votantes en una mesa.
 
 **Función de masa de probabilidad (PMF)**
 
@@ -141,7 +147,9 @@ data.frame(protestas = protestas) %>%
 
 #### Variables aleatorias continuas
 
-Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).^[EJEMPLOS EN CIENCIAS SOCIALES: Porcentaje de votos obtenido (0% a 100%, cualquier valor decimal), ingreso mensual (cualquier valor positivo), índice de democracia (escala continua de 0 a 10), tiempo hasta próxima protesta (cualquier valor positivo).]
+Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).[^var-continuas]
+
+[^var-continuas]: Ejemplos en ciencias sociales: porcentaje de votos obtenido, ingreso mensual, índice de democracia, tiempo hasta próxima protesta.
 
 **Función de densidad de probabilidad (PDF)**
 

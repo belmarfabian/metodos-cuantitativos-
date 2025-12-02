@@ -1,5 +1,33 @@
 /* Estilo minimalista - Solo bloques de contenido personalizados */
 
+/* NOTAS AL MARGEN */
+
+/* Asegurar que el body tenga espacio para márgenes */
+.page-columns .column-margin {
+  width: 300px;
+}
+
+/* Estilo de las notas al margen */
+.margin-note,
+.column-margin aside,
+.sidenote,
+aside.margin {
+  font-size: 0.85em;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Para pantallas grandes, mostrar margen derecho */
+@media (min-width: 992px) {
+  .column-body {
+    max-width: 700px;
+  }
+
+  .column-margin {
+    margin-left: 2rem;
+  }
+}
+
 /* BLOQUES PERSONALIZADOS para el contenido del libro */
 
 .objetivos {

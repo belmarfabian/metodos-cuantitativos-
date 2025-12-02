@@ -100,7 +100,9 @@ Muy pocos bins ocultan detalles; demasiados bins generan ruido. La regla de Stur
 
 #### Medidas de tendencia central
 
-Las medidas de tendencia central resumen la ubicación "típica" de los datos. La **media** ($\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$) es el promedio que usa toda la información pero es sensible a valores extremos (outliers)^[EJEMPLO DE DESIGUALDAD: En 2022, el ingreso PROMEDIO en Chile era ~$650,000, pero la MEDIANA era ~$420,000. ¿Por qué la diferencia? Porque la distribución de ingresos es asimétrica: pocos súper-ricos jalan la media hacia arriba, pero la mediana (ingreso de la persona en el medio de la distribución ordenada) es más representativa de la "persona típica". Por eso reportes de desigualdad SIEMPRE usan mediana, no media. La media puede ser engañosa cuando hay outliers o asimetría. y apropiada para distribuciones simétricas. La **mediana** es el valor que divide la distribución en dos mitades iguales (50% por debajo, 50% por encima), es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La **moda** es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.
+Las medidas de tendencia central resumen la ubicación "típica" de los datos. La **media** ($\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$) es el promedio que usa toda la información pero es sensible a valores extremos, siendo apropiada para distribuciones simétricas.[^media-mediana] La **mediana** es el valor que divide la distribución en dos mitades iguales, es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La **moda** es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.
+
+[^media-mediana]: En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.
 
 ```{r}
 mean(comunas$participacion)
@@ -129,7 +131,9 @@ ggplot(data.frame(x = bimodal), aes(x = x)) +
   theme_minimal()
 ```
 
-**Regla general** para elegir: **distribuciones simétricas** (media, usa toda la información), **distribuciones asimétricas**^[¿CÓMO SABER SI TU DISTRIBUCIÓN ES ASIMÉTRICA? (1) Haz un histograma: si tiene "cola" larga a un lado, es asimétrica. (2) Compara media y mediana: si media >> mediana, asimetría a la derecha (ej: ingresos); si media << mediana, asimetría a la izquierda (raro en ciencias sociales). (3) Variables que NO pueden ser negativas (ingresos, edad, votos) frecuentemente son asimétricas a la derecha. DEFAULT SEGURO: reporta AMBAS (media Y mediana) siempre. (mediana, robusta a extremos), **variables ordinales** (mediana, la media no tiene sentido para categorías ordenadas), **variables nominales** (moda, única medida con sentido)
+**Regla general** para elegir: **distribuciones simétricas** usa media porque usa toda la información; **distribuciones asimétricas** usa mediana porque es robusta a extremos;[^asimetria] **variables ordinales** usa mediana porque la media no tiene sentido para categorías ordenadas; **variables nominales** usa moda porque es la única medida con sentido.
+
+[^asimetria]: Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene "cola" larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.
 
 ```{r fig.cap="Media vs. mediana en distribución asimétrica", fig.height=3}
 # Distribución asimétrica a la derecha

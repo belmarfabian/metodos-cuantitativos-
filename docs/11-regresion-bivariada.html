@@ -158,7 +158,7 @@ window.Quarto = {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating slimcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -356,11 +356,11 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-comparacion-medias.html">V. Unidad 4: Análisis Bivariado</a></li><li class="breadcrumb-item"><a href="./11-regresion-bivariada.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regresión bivariada</span></a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title"><span id="regresion-bivariada" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regresión bivariada</span></span></h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Código</button></div></div>
+<h1 class="title"><span id="regresion-bivariada" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regresión bivariada</span></span></h1>
 </div>
 
 
@@ -389,7 +389,7 @@ window.Quarto = {
 <li>Realizar pruebas de hipótesis sobre coeficientes de regresión</li>
 </ul>
 </section>
-<section id="correlación-y-regresión" class="level2 page-columns page-full" data-number="11.1">
+<section id="correlación-y-regresión" class="level2" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="correlación-y-regresión"><span class="header-section-number">11.1</span> Correlación y regresión</h2>
 <p>La <strong>correlación</strong> mide la fuerza y dirección de la relación lineal entre dos variables.</p>
 <p><strong>Coeficiente de correlación de Pearson:</strong> <span class="math display">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}\]</span></p>
@@ -430,7 +430,7 @@ sample estimates:
 </div>
 </div>
 <p>Es fundamental recordar que una correlación fuerte <strong>NO implica que una variable cause la otra</strong>. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.</p></div></div><section id="el-modelo-de-regresión" class="level4" data-number="11.1.0.1">
+<section id="el-modelo-de-regresión" class="level4" data-number="11.1.0.1">
 <h4 data-number="11.1.0.1" class="anchored" data-anchor-id="el-modelo-de-regresión"><span class="header-section-number">11.1.0.1</span> El modelo de regresión</h4>
 <p>La regresión lineal modela la relación entre una variable dependiente <span class="math inline">\(Y\)</span> y una variable independiente <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
@@ -486,15 +486,15 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </div>
 </section>
 </section>
-<section id="interpretación-y-ajuste" class="level2 page-columns page-full" data-number="11.2">
+<section id="interpretación-y-ajuste" class="level2" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="interpretación-y-ajuste"><span class="header-section-number">11.2</span> Interpretación y ajuste</h2>
 <p><strong>Intercepto (<span class="math inline">\(\hat{\beta}_0\)</span>)</strong>: Valor predicho de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span></p>
 <p><strong>Pendiente (<span class="math inline">\(\hat{\beta}_1\)</span>)</strong>: Cambio promedio en <span class="math inline">\(Y\)</span> asociado con un incremento de una unidad en <span class="math inline">\(X\)</span></p>
 <p>En el modelo anterior, si obtuviéramos <span class="math inline">\(\hat{\beta}_1 = -0.15\)</span>, interpretaríamos: “Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica <em>asociación</em>, no necesariamente <em>causalidad</em>. Además, la unidad de medida importa: si <span class="math inline">\(X\)</span> está en miles y <span class="math inline">\(Y\)</span> en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</p></div></div><section id="bondad-de-ajuste" class="level4" data-number="11.2.0.1">
+<section id="bondad-de-ajuste" class="level4" data-number="11.2.0.1">
 <h4 data-number="11.2.0.1" class="anchored" data-anchor-id="bondad-de-ajuste"><span class="header-section-number">11.2.0.1</span> Bondad de ajuste</h4>
 </section>
-<section id="r-cuadrado-r2" class="level4 page-columns page-full" data-number="11.2.0.2">
+<section id="r-cuadrado-r2" class="level4" data-number="11.2.0.2">
 <h4 data-number="11.2.0.2" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.2.0.2</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
 <p>El <strong>coeficiente de determinación</strong> mide qué proporción de la variabilidad en <span class="math inline">\(Y\)</span> es explicada por <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}\]</span></p>
@@ -505,7 +505,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </ul>
 <p>Por ejemplo, si <span class="math inline">\(R^2 = 0.42\)</span>, interpretamos: “El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores.”</p>
 <p>Es crucial entender que un <span class="math inline">\(R^2\)</span> alto <strong>NO implica relación causal</strong>. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;ADVERTENCIA SOBRE <span class="math inline">\(R^2\)</span>: Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el <span class="math inline">\(R^2\)</span> puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no necesariamente indican un modelo “malo” - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.</p></div></div></section>
+</section>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
@@ -545,10 +545,15 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </div>
 
 
-<!-- -->
-
 </section>
-
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Correlación no implica causalidad. Por ejemplo, ventas de helado y ahogamientos correlacionan, pero ambas son causadas por una tercera variable (temperatura). Establecer causalidad requiere teoría, diseños apropiados y control de confusores.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>El coeficiente indica asociación, no necesariamente causalidad. La unidad de medida importa: siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y ser inválido para inferencia causal si omite confusores. En ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no indican un modelo “malo”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -621,57 +626,6 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
-    }
-    const viewSource = window.document.getElementById('quarto-view-source') ||
-                       window.document.getElementById('quarto-code-tools-source');
-    if (viewSource) {
-      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-      viewSource.addEventListener("click", function(e) {
-        if (sourceUrl) {
-          // rstudio viewer pane
-          if (/\bcapabilities=\b/.test(window.location)) {
-            window.open(sourceUrl);
-          } else {
-            window.location.href = sourceUrl;
-          }
-        } else {
-          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-          modal.show();
-        }
-        return false;
-      });
-    }
-    function toggleCodeHandler(show) {
-      return function(e) {
-        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-        for (let i=0; i<detailsSrc.length; i++) {
-          const details = detailsSrc[i].parentElement;
-          if (show) {
-            details.open = true;
-          } else {
-            details.removeAttribute("open");
-          }
-        }
-        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-        const fromCls = show ? "hidden" : "unhidden";
-        const toCls = show ? "unhidden" : "hidden";
-        for (let i=0; i<cellCodeDivs.length; i++) {
-          const codeDiv = cellCodeDivs[i];
-          if (codeDiv.classList.contains(fromCls)) {
-            codeDiv.classList.remove(fromCls);
-            codeDiv.classList.add(toCls);
-          } 
-        }
-        return false;
-      }
-    }
-    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-    if (hideAllCode) {
-      hideAllCode.addEventListener("click", toggleCodeHandler(false));
-    }
-    const showAllCode = window.document.getElementById("quarto-show-all-code");
-    if (showAllCode) {
-      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
@@ -1013,169 +967,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
         <span class="nav-page-text">(APPENDIX) Anexos</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Ejecutar el código</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Regresión bivariada {#regresion-bivariada}</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">## Objetivos del capítulo {.unnumbered}</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>Al finalizar este capítulo, serás capaz de:</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Calcular e interpretar coeficientes de correlación</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comprender la diferencia entre correlación y causalidad</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Estimar modelos de regresión lineal simple usando mínimos cuadrados ordinarios</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Interpretar coeficientes de regresión e intercepto</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Evaluar la bondad de ajuste usando $R^2$</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Realizar pruebas de hipótesis sobre coeficientes de regresión</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlación y regresión</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>La **correlación** mide la fuerza y dirección de la relación lineal entre dos variables.</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>**Coeficiente de correlación de Pearson:**</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>$$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}$$</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$-1 \leq r \leq 1$</span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$r = 1$: Correlación positiva perfecta</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$r = 0$: Sin correlación lineal</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$r = -1$: Correlación negativa perfecta</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>Para ilustrar el uso de la correlación, consideremos la relación entre desarrollo económico y democracia, un tema clásico en ciencia política. Analizamos datos de PIB per cápita y nivel de democracia en una muestra de países:</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r correlacion-ejemplo, echo=TRUE}</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: PIB per cápita y nivel de democracia</span></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>pib <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">15000</span>, <span class="at">sd =</span> <span class="dv">8000</span>)</span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>democracia <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.0003</span> <span class="sc">*</span> pib <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlación de Pearson</span></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>cor_pearson <span class="ot">&lt;-</span> <span class="fu">cor</span>(pib, democracia)</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Correlación de Pearson:"</span>, <span class="fu">round</span>(cor_pearson, <span class="dv">3</span>), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de significancia</span></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(pib, democracia)</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.^<span class="co">[</span><span class="ot">ADVERTENCIA CRUCIAL: La distinción entre correlación y causalidad es uno de los conceptos más importantes en metodología cuantitativa. Que dos variables estén correlacionadas no significa que una cause la otra. Por ejemplo, existe correlación entre ventas de helado y ahogamientos en playas, pero ninguna causa la otra; ambas son causadas por una tercera variable (temperatura/verano). En ciencias sociales, establecer causalidad requiere teoría sólida, diseños de investigación apropiados (experimentos, diseños quasi-experimentales), y control de variables confusoras.</span><span class="co">]</span></span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="fu">#### El modelo de regresión</span></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>La regresión lineal modela la relación entre una variable dependiente $Y$ y una variable independiente $X$:</span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>$$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$$</span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>donde:</span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\beta_0$ = intercepto (valor de $Y$ cuando $X = 0$)</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\beta_1$ = pendiente (cambio en $Y$ por unidad de cambio en $X$)</span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$\epsilon_i$ = error (variación no explicada por el modelo)</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Mínimos cuadrados ordinarios</span></span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) estima $\beta_0$ y $\beta_1$ minimizando la suma de errores al cuadrado:</span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>$$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$</span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>**Fórmulas OLS:**</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>$$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$</span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.</span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r regresion-ejemplo, echo=TRUE}</span></span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: Gasto público y crecimiento económico</span></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>gasto_publico <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="at">min =</span> <span class="dv">15</span>, <span class="at">max =</span> <span class="dv">40</span>)  <span class="co"># % del PIB</span></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>crecimiento <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">-</span> <span class="fl">0.15</span> <span class="sc">*</span> gasto_publico <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="fl">1.2</span>)</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión lineal simple</span></span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(crecimiento <span class="sc">~</span> gasto_publico)</span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r plot-regresion, echo=FALSE, fig.cap="Regresión lineal: Gasto público y crecimiento"}</span></span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(gasto_publico, crecimiento)</span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> gasto_publico, <span class="at">y =</span> crecimiento)) <span class="sc">+</span></span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"#3498db"</span>) <span class="sc">+</span></span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"#e74c3c"</span>, <span class="at">fill =</span> <span class="st">"#e74c3c"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relación entre gasto público y crecimiento económico"</span>,</span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Gasto público (% del PIB)"</span>,</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Crecimiento económico (%)"</span></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## Interpretación y ajuste</span></span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a>**Intercepto ($\hat{\beta}_0$)**: Valor predicho de $Y$ cuando $X = 0$</span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a>**Pendiente ($\hat{\beta}_1$)**: Cambio promedio en $Y$ asociado con un incremento de una unidad en $X$</span>
-<span id="cb7-102"><a href="#cb7-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."^<span class="co">[</span><span class="ot">INTERPRETACIÓN DE COEFICIENTES: Es crucial ser preciso en la interpretación. El coeficiente indica *asociación*, no necesariamente *causalidad*. Además, la unidad de medida importa: si $X$ está en miles y $Y$ en porcentajes, debemos ajustar nuestra interpretación en consecuencia. Siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</span><span class="co">]</span></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Bondad de ajuste</span></span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="fu">#### R cuadrado ($R^2$)</span></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a>El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>$$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$0 \leq R^2 \leq 1$</span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$R^2 = 0$: El modelo no explica nada</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>$R^2 = 1$: El modelo explica perfectamente</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>Por ejemplo, si $R^2 = 0.42$, interpretamos: "El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores."</span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a>Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.^<span class="co">[</span><span class="ot">ADVERTENCIA SOBRE $R^2$: Un modelo puede tener $R^2$ alto y aún así ser inválido para inferencia causal. Por ejemplo, si omitimos una variable confusora importante (como nivel educacional al estudiar la relación entre edad e ingreso), el $R^2$ puede ser alto pero los coeficientes estarán sesgados. Además, en ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no necesariamente indican un modelo "malo" - simplemente reflejan que el comportamiento humano y social es multifactorial y difícil de predecir completamente.</span><span class="co">]</span></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resumen {.unnumbered}</span></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a>**Conceptos clave:**</span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Correlación**: Mide fuerza y dirección de relación lineal (no implica causalidad)</span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Regresión lineal**: Modela $Y$ como función lineal de $X$</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**OLS**: Método para estimar coeficientes minimizando errores al cuadrado</span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Interpretación**: $\beta_0$ = intercepto, $\beta_1$ = pendiente</span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**$R^2$**: Proporción de variabilidad explicada por el modelo</span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a>**Fórmulas clave:**</span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Correlación: $r = \frac{\text{Cov}(X,Y)}{s_X s_Y}$</span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pendiente: $\hat{\beta}_1 = r \cdot \frac{s_Y}{s_X}$</span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Intercepto: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$</span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bondad de ajuste: $R^2 = 1 - \frac{\text{SSR}}{\text{SST}}$</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## Lecturas recomendadas {.unnumbered}</span></span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a>**Fundamentos de regresión lineal:**</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a>Agresti, A., &amp; Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  </span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a>→ Capítulo 9 ofrece introducción clara y accesible a regresión lineal y correlación con ejemplos de ciencias sociales.</span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a>**Predicción y modelos lineales:**</span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a>Llaudet, E., &amp; Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  </span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a>→ Capítulo 4 sobre predicción conecta regresión con aplicaciones prácticas en análisis de datos sociales.</span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a>**Tratamiento más técnico:**</span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a>Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.  </span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>→ Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.</span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a><span class="fu">## Ejercicios {.unnumbered}</span></span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a>Los ejercicios para este capítulo se encuentran en el <span class="co">[</span><span class="ot">Anexo de Ejercicios</span><span class="co">](#ejercicios-cap11)</span>.</span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb7-161"><a href="#cb7-161" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
-</div></div></div></div></div>
+</nav>
 </div> <!-- /content -->
 
 

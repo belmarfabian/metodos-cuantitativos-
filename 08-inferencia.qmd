@@ -233,7 +233,9 @@ Pero $\sigma$ (SD poblacional) es generalmente desconocido. Lo estimamos con $s$
 
 $$\widehat{\text{SE}}(\bar{x}) = \frac{s}{\sqrt{n}}$$
 
-Es importante distinguir entre **error estándar** y **desviación estándar**. La desviación estándar ($s$) mide variabilidad en los **datos**, mientras que el error estándar ($\text{SE}$) mide variabilidad del **estadístico** (precisión de la estimación). El $\text{SE}$ disminuye con $n$; $s$ NO (permanece constante en promedio).^[CONFUSIÓN COMÚN: El error estándar ($\text{SE}$) mide qué tan precisa es nuestra estimación de la media. La desviación estándar ($s$) mide qué tan dispersos están los datos individuales. Son conceptos diferentes: $\text{SE} = s/\sqrt{n}$ siempre es menor que $s$ (excepto cuando $n=1$).]
+Es importante distinguir entre **error estándar** y **desviación estándar**. La desviación estándar ($s$) mide variabilidad en los **datos**, mientras que el error estándar ($\text{SE}$) mide variabilidad del **estadístico** (precisión de la estimación). El $\text{SE}$ disminuye con $n$; $s$ NO (permanece constante en promedio).[^se-vs-sd]
+
+[^se-vs-sd]: El error estándar mide qué tan precisa es nuestra estimación de la media. La desviación estándar mide qué tan dispersos están los datos individuales. $\text{SE} = s/\sqrt{n}$ siempre es menor que $s$ (excepto cuando $n=1$).
 
 Por ejemplo, consideremos datos de ingreso familiar en una encuesta tipo CASEN:
 
