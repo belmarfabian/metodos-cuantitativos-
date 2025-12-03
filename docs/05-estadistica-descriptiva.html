@@ -96,7 +96,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-edaf08ed7d27d62012077beed0893dcb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-737c3328614c4f1bf80657df1834dbc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -158,7 +158,7 @@ window.Quarto = {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -358,7 +358,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05-estadistica-descriptiva.html">III. Unidad 2: Fundamentos de Estadística Descriptiva</a></li><li class="breadcrumb-item"><a href="./05-estadistica-descriptiva.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Estadística descriptiva</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -391,7 +391,7 @@ window.Quarto = {
 <li>Detectar valores atípicos mediante métodos gráficos y numéricos</li>
 </ul>
 </section>
-<section id="describiendo-datos" class="level2" data-number="5.1">
+<section id="describiendo-datos" class="level2 page-columns page-full" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="describiendo-datos"><span class="header-section-number">5.1</span> Describiendo datos</h2>
 <p>Antes de calcular estadísticos, conviene visualizar cómo se distribuyen los datos. Una <strong>distribución de frecuencia</strong> muestra cuántas observaciones caen en cada valor o rango.</p>
 <section id="tablas-de-frecuencia" class="level4" data-number="5.1.0.1">
@@ -484,10 +484,10 @@ window.Quarto = {
 </div>
 <p>Muy pocos bins ocultan detalles; demasiados bins generan ruido. La regla de Sturges sugiere <span class="math inline">\(k = 1 + 3.322 \log(n)\)</span> bins.</p>
 </section>
-<section id="medidas-de-tendencia-central" class="level4" data-number="5.1.0.3">
+<section id="medidas-de-tendencia-central" class="level4 page-columns page-full" data-number="5.1.0.3">
 <h4 data-number="5.1.0.3" class="anchored" data-anchor-id="medidas-de-tendencia-central"><span class="header-section-number">5.1.0.3</span> Medidas de tendencia central</h4>
 <p>Las medidas de tendencia central resumen la ubicación “típica” de los datos. La <strong>media</strong> (<span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\)</span>) es el promedio que usa toda la información pero es sensible a valores extremos, siendo apropiada para distribuciones simétricas.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> La <strong>mediana</strong> es el valor que divide la distribución en dos mitades iguales, es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La <strong>moda</strong> es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.</p>
-<div class="cell">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.</p></div></div><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 46.75662</code></pre>
@@ -531,7 +531,7 @@ window.Quarto = {
 </div>
 </div>
 <p><strong>Regla general</strong> para elegir: <strong>distribuciones simétricas</strong> usa media porque usa toda la información; <strong>distribuciones asimétricas</strong> usa mediana porque es robusta a extremos;<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <strong>variables ordinales</strong> usa mediana porque la media no tiene sentido para categorías ordenadas; <strong>variables nominales</strong> usa moda porque es la única medida con sentido.</p>
-<div class="cell">
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene “cola” larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.</p></div></div><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribución asimétrica a la derecha</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>asimetrica <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
@@ -1221,13 +1221,7 @@ window.Quarto = {
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene “cola” larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

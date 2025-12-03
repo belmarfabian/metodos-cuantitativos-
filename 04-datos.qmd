@@ -137,29 +137,12 @@ No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad de
 
 #### Dimensiones de calidad
 
-**1. Validez**
-
-¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo \@ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.
-
-**2. Confiabilidad**
-
-¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.
-
-**3. Cobertura**
-
-¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.
-
-**4. Precisión**
-
-¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.
-
-**5. Actualidad (timeliness)**
-
-¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.
-
-**6. Accesibilidad**
-
-¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.
+1. **Validez**: ¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo \@ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.
+2. **Confiabilidad**: ¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.
+3. **Cobertura**: ¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.
+4. **Precisión**: ¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.
+5. **Actualidad (timeliness)**: ¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.
+6. **Accesibilidad**: ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.
 
 #### Problemas comunes
 
@@ -621,17 +604,9 @@ La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder r
 
 #### Principios
 
-**1. Usa scripts, no clics**
-
-Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.
-
-**2. Nunca modifiques datos originales**
-
-Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.
-
-**3. Documenta tu código**
-
-Comentarios explican *por qué* hiciste algo:
+1. **Usa scripts, no clics**: Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.
+2. **Nunca modifiques datos originales**: Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.
+3. **Documenta tu código**: Comentarios explican *por qué* hiciste algo:
 
 ```{r eval=FALSE}
 # Recodifico educación en tres categorías para simplificar análisis
@@ -644,9 +619,7 @@ datos <- mutate(datos,
                 ))
 ```
 
-**4. Organiza tu proyecto**
-
-Estructura de carpetas clara:
+4. **Organiza tu proyecto**: Estructura de carpetas clara:
 
 ```
 proyecto/
@@ -662,9 +635,7 @@ proyecto/
   documento/
 ```
 
-**5. Usa control de versiones**
-
-Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.
+5. **Usa control de versiones**: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.
 
 #### R Markdown
 

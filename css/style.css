@@ -1,30 +1,52 @@
 /* Estilo minimalista - Solo bloques de contenido personalizados */
 
-/* NOTAS AL MARGEN */
+/* ============================================
+   NOTAS AL MARGEN (estilo Tufte)
+   ============================================ */
 
-/* Asegurar que el body tenga espacio para márgenes */
-.page-columns .column-margin {
-  width: 300px;
+/* Contenedor principal con grid para márgenes */
+.page-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 350px);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* Estilo de las notas al margen */
-.margin-note,
-.column-margin aside,
-.sidenote,
-aside.margin {
-  font-size: 0.85em;
+/* Columna principal del contenido */
+.page-columns > section,
+.page-columns > p,
+.page-columns > div:not(.column-margin) {
+  grid-column: 1;
+}
+
+/* Columna del margen derecho */
+.column-margin {
+  grid-column: 2;
+  font-size: 0.85rem;
   color: #555;
-  line-height: 1.4;
+  line-height: 1.5;
+  padding-left: 1rem;
+  border-left: 1px solid #ddd;
 }
 
-/* Para pantallas grandes, mostrar margen derecho */
-@media (min-width: 992px) {
-  .column-body {
-    max-width: 700px;
+.column-margin p {
+  margin: 0 0 0.5rem 0;
+}
+
+/* En pantallas pequeñas, las notas van debajo */
+@media (max-width: 991px) {
+  .page-columns {
+    display: block;
   }
 
   .column-margin {
-    margin-left: 2rem;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 3px solid #6c757d;
+    border-radius: 0 4px 4px 0;
   }
 }
 

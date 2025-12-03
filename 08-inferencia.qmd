@@ -323,7 +323,15 @@ donde $t_{n-1, 0.975}$ es el valor crítico de la distribución $t$ con $n-1$ gr
 
 $$\text{IC}_{95\%} \approx \bar{x} \pm 1.96 \cdot \text{SE}(\bar{x})$$
 
-La interpretación correcta de un IC 95% es: "Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de $\mu$." NO significa "Hay 95% de probabilidad de que $\mu$ esté en este intervalo específico." (La diferencia es sutil pero importante: $\mu$ es fijo; el intervalo es lo que varía entre muestras.)
+::: {.callout-warning}
+## Error común: Interpretación incorrecta del IC
+
+**INCORRECTO**: "Hay 95% de probabilidad de que $\mu$ esté en este intervalo."
+
+**CORRECTO**: "Si repitiéramos este proceso de muestreo muchas veces, aproximadamente 95% de los intervalos construidos contendrían el verdadero valor de $\mu$."
+
+La diferencia es sutil pero importante: $\mu$ es un valor fijo (aunque desconocido). No es aleatorio. Lo que varía entre muestras es el intervalo, no el parámetro.
+:::
 
 Por ejemplo, consideremos el cálculo de un intervalo de confianza para el ingreso promedio:
 
@@ -354,6 +362,25 @@ cat("poblacional está entre $", round(ic_inferior, 0), " y $",
     round(ic_superior, 0), " mil.\n", sep = "")
 ```
 
+::: {.callout-tip}
+## Forma rápida en R: `t.test()`
+
+En lugar de calcular manualmente, puedes usar la función `t.test()`:
+
+```{r}
+# Usando los mismos datos de ingresos
+resultado <- t.test(ingresos, conf.level = 0.95)
+
+# Ver el intervalo de confianza
+resultado$conf.int
+
+# Ver todos los resultados
+resultado
+```
+
+La función `t.test()` calcula automáticamente el IC y además realiza una prueba de hipótesis (que veremos en el próximo capítulo).
+:::
+
 #### Intervalo de confianza para la proporción
 
 $$\text{IC}_{95\%} = \hat{p} \pm 1.96 \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$$
@@ -382,6 +409,17 @@ cat("Interpretación: El verdadero porcentaje de personas que votarán\n")
 cat("está probablemente entre", round(ic_inf * 100, 1), "% y",
     round(ic_sup * 100, 1), "%.\n")
 ```
+
+::: {.callout-tip}
+## IC para proporciones en R: `prop.test()`
+
+```{r}
+# Forma directa con prop.test()
+prop.test(x = 780, n = 1500, conf.level = 0.95)
+```
+
+Nota: `prop.test()` usa una corrección de continuidad por defecto. Para obtener el IC "clásico", usa `correct = FALSE`.
+:::
 
 #### Niveles de confianza alternativos
 

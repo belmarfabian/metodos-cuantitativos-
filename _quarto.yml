@@ -44,7 +44,7 @@ citeproc: true
 
 format:
   html:
-    theme: cosmo
+    theme: default
     css: css/style.css
     toc: true
     toc-depth: 2
@@ -52,7 +52,7 @@ format:
     code-fold: false
     code-tools: false
     highlight-style: github
-    reference-location: document
+    reference-location: margin
 
 execute:
   echo: true

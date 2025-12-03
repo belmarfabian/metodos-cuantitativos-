@@ -55,27 +55,374 @@ La interpretación correcta del valor p es fundamental para evitar errores comun
 
 Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
 
+#### Nivel de significancia ($\alpha$)
+
+El **nivel de significancia** $\alpha$ es el umbral que elegimos *antes* de analizar los datos para decidir cuándo rechazar $H_0$. Convencionalmente se usa $\alpha = 0.05$, pero esta elección es arbitraria.[^alpha-arbitrario]
+
+[^alpha-arbitrario]: ¿Por qué 0.05? R.A. Fisher lo propuso como "conveniente" en los años 1920. No hay nada mágico en este número. En física de partículas usan $\alpha = 0.0000003$ (5 sigmas). En estudios exploratorios, algunos usan $\alpha = 0.10$. La elección debería depender del costo relativo de los errores tipo I y II.
+
+La regla de decisión es:
+
+- Si $p < \alpha$: Rechazamos $H_0$ (resultado "estadísticamente significativo")
+- Si $p \geq \alpha$: No rechazamos $H_0$ (no hay evidencia suficiente)
+
+::: {.callout-warning}
+## Cuidado con el término "significativo"
+
+"Estadísticamente significativo" NO significa "importante" o "relevante". Solo significa que el resultado es improbable bajo $H_0$. Un efecto puede ser estadísticamente significativo pero prácticamente irrelevante (especialmente con muestras grandes), o puede ser sustantivamente importante pero no alcanzar significancia estadística (con muestras pequeñas).
+:::
+
 #### Errores tipo I y tipo II
 
 En pruebas de hipótesis, existen dos tipos de error posibles:
 
-**Error Tipo I**: Rechazar $H_0$ cuando es cierta (falso positivo)
-- Probabilidad: $\alpha$ (nivel de significancia)
+|                        | $H_0$ es verdadera | $H_0$ es falsa |
+|------------------------|:------------------:|:--------------:|
+| **Rechazar $H_0$**     | Error Tipo I ($\alpha$) | Decisión correcta (Poder) |
+| **No rechazar $H_0$**  | Decisión correcta | Error Tipo II ($\beta$) |
 
-**Error Tipo II**: No rechazar $H_0$ cuando es falsa (falso negativo)
-- Probabilidad: $\beta$
+**Error Tipo I** (falso positivo): Rechazar $H_0$ cuando es cierta. Es como condenar a un inocente. La probabilidad de cometerlo es $\alpha$, que nosotros controlamos al elegir el nivel de significancia.
 
-**Poder estadístico**: $1 - \beta$ (probabilidad de detectar un efecto real)
+**Error Tipo II** (falso negativo): No rechazar $H_0$ cuando es falsa. Es como absolver a un culpable. La probabilidad de cometerlo es $\beta$, que depende del tamaño del efecto real y del tamaño muestral.
+
+**Poder estadístico**: $1 - \beta$ es la probabilidad de detectar un efecto real cuando existe. Un estudio con poder de 0.80 detectará el efecto en 80% de las réplicas.
+
+```{r}
+#| label: fig-errores
+#| fig-cap: "Visualización de errores Tipo I y Tipo II"
+#| code-fold: true
+
+library(ggplot2)
+
+# Crear datos para dos distribuciones
+x <- seq(-4, 8, length.out = 1000)
+h0 <- dnorm(x, mean = 0, sd = 1)  # Distribución bajo H0
+h1 <- dnorm(x, mean = 3, sd = 1)  # Distribución bajo H1 (efecto real)
+
+datos <- data.frame(
+  x = rep(x, 2),
+  densidad = c(h0, h1),
+  hipotesis = rep(c("H0: No hay efecto", "H1: Hay efecto real"), each = 1000)
+)
+
+# Valor crítico para alpha = 0.05 (una cola)
+valor_critico <- qnorm(0.95, mean = 0, sd = 1)
+
+ggplot(datos, aes(x = x, y = densidad, color = hipotesis, fill = hipotesis)) +
+  geom_line(linewidth = 1) +
+  geom_area(data = subset(datos, hipotesis == "H0: No hay efecto" & x > valor_critico),
+            alpha = 0.4) +
+  geom_area(data = subset(datos, hipotesis == "H1: Hay efecto real" & x < valor_critico),
+            alpha = 0.4) +
+  geom_vline(xintercept = valor_critico, linetype = "dashed", color = "black") +
+  annotate("text", x = valor_critico + 0.3, y = 0.35,
+           label = "Valor crítico", hjust = 0, size = 3) +
+  annotate("text", x = 2.5, y = 0.05,
+           label = "Error Tipo I\n(α)", size = 3, color = "#E41A1C") +
+  annotate("text", x = 0.5, y = 0.05,
+           label = "Error Tipo II\n(β)", size = 3, color = "#377EB8") +
+  scale_color_manual(values = c("#E41A1C", "#377EB8")) +
+  scale_fill_manual(values = c("#E41A1C", "#377EB8")) +
+  labs(x = "Estadístico de prueba", y = "Densidad",
+       color = "", fill = "") +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+::: {.callout-tip}
+## Analogía judicial
+
+Piensa en un juicio criminal:
+
+- **$H_0$**: El acusado es inocente (presunción de inocencia)
+- **$H_1$**: El acusado es culpable
+- **Error Tipo I**: Condenar a un inocente (grave)
+- **Error Tipo II**: Absolver a un culpable (también malo, pero el sistema prefiere este error)
+- **$\alpha$ bajo**: Exigimos mucha evidencia para condenar, protegiendo a inocentes
+
+El sistema judicial prefiere errores Tipo II sobre Tipo I ("mejor 10 culpables libres que un inocente preso"). En investigación, la elección de $\alpha$ refleja una decisión similar sobre qué error es más costoso.
+:::
+
+## Prueba t para una media
+
+La prueba t evalúa si la media de una población difiere de un valor específico. Se usa cuando la desviación estándar poblacional es desconocida (el caso habitual).
+
+#### Ejemplo: Satisfacción con la democracia
+
+Supongamos que queremos evaluar si los chilenos tienen una satisfacción con la democracia diferente al promedio latinoamericano, que según datos regionales es 5.0 en una escala de 1 a 10. Recopilamos una muestra de 150 personas.
+
+```{r}
+# Simulamos datos de una encuesta
+set.seed(2024)
+satisfaccion <- rnorm(150, mean = 4.2, sd = 2.1)
+satisfaccion <- pmax(1, pmin(10, satisfaccion))  # Limitar a escala 1-10
+```
+
+**Paso 1: Formular hipótesis**
+
+- $H_0: \mu = 5.0$ (satisfacción igual al promedio regional)
+- $H_1: \mu \neq 5.0$ (satisfacción diferente al promedio regional)
+
+**Paso 2: Calcular estadístico de prueba**
+
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+
+```{r}
+# Cálculo manual
+media_muestral <- mean(satisfaccion)
+desv_estandar <- sd(satisfaccion)
+n <- length(satisfaccion)
+mu_0 <- 5.0
+
+t_calculado <- (media_muestral - mu_0) / (desv_estandar / sqrt(n))
+
+cat("Media muestral:", round(media_muestral, 2), "\n")
+cat("Desviación estándar:", round(desv_estandar, 2), "\n")
+cat("Estadístico t:", round(t_calculado, 2), "\n")
+```
+
+**Paso 3: Obtener valor p**
+
+```{r}
+# Valor p (bilateral)
+valor_p <- 2 * pt(abs(t_calculado), df = n - 1, lower.tail = FALSE)
+cat("Valor p:", round(valor_p, 4), "\n")
+```
+
+**Paso 4: Usar la función `t.test()` de R**
+
+```{r}
+# Forma directa en R
+resultado <- t.test(satisfaccion, mu = 5.0)
+resultado
+```
+
+**Paso 5: Interpretar resultados**
+
+```{r}
+#| echo: false
+if(resultado$p.value < 0.05) {
+  cat("Conclusión: Con p =", round(resultado$p.value, 4), "< 0.05, rechazamos H0.\n")
+  cat("Hay evidencia estadística de que la satisfacción promedio difiere de 5.0.\n")
+  cat("El intervalo de confianza al 95% es [", round(resultado$conf.int[1], 2),
+      ",", round(resultado$conf.int[2], 2), "].\n")
+} else {
+  cat("Conclusión: Con p =", round(resultado$p.value, 4), ">= 0.05, no rechazamos H0.\n")
+  cat("No hay evidencia suficiente de diferencia.\n")
+}
+```
+
+## Prueba t para dos muestras independientes
+
+Frecuentemente queremos comparar medias entre dos grupos. Por ejemplo: ¿hay diferencia en confianza institucional entre hombres y mujeres?
+
+```{r}
+# Simulamos datos de encuesta sobre confianza en el Congreso (1-10)
+set.seed(2024)
+confianza_hombres <- rnorm(120, mean = 3.8, sd = 1.8)
+confianza_mujeres <- rnorm(130, mean = 3.2, sd = 1.9)
+
+# Limitar a escala 1-10
+confianza_hombres <- pmax(1, pmin(10, confianza_hombres))
+confianza_mujeres <- pmax(1, pmin(10, confianza_mujeres))
+```
+
+**Hipótesis:**
+
+- $H_0: \mu_H = \mu_M$ (no hay diferencia entre géneros)
+- $H_1: \mu_H \neq \mu_M$ (hay diferencia)
+
+```{r}
+# Prueba t para dos muestras
+resultado_2muestras <- t.test(confianza_hombres, confianza_mujeres)
+resultado_2muestras
+```
+
+```{r}
+#| label: fig-boxplot-genero
+#| fig-cap: "Confianza en el Congreso por género"
+#| code-fold: true
+
+# Visualización
+datos_genero <- data.frame(
+  confianza = c(confianza_hombres, confianza_mujeres),
+  genero = factor(c(rep("Hombres", length(confianza_hombres)),
+                    rep("Mujeres", length(confianza_mujeres))))
+)
+
+ggplot(datos_genero, aes(x = genero, y = confianza, fill = genero)) +
+  geom_boxplot(alpha = 0.7) +
+  geom_jitter(width = 0.2, alpha = 0.3, size = 1) +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  scale_fill_manual(values = c("#4ECDC4", "#FF6B6B")) +
+  labs(x = "", y = "Confianza en el Congreso (1-10)",
+       caption = "El diamante rojo indica la media de cada grupo") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+## Prueba chi-cuadrado para independencia
+
+Cuando ambas variables son categóricas, usamos la prueba chi-cuadrado ($\chi^2$) para evaluar si están asociadas.
+
+#### Ejemplo: Voto y nivel educativo
+
+¿Existe asociación entre nivel educativo y preferencia de voto?
+
+```{r}
+# Crear tabla de contingencia
+set.seed(2024)
+voto_educacion <- matrix(c(
+  45, 35, 20,   # Educación básica: Izquierda, Centro, Derecha
+  40, 45, 35,   # Educación media
+  25, 40, 50    # Educación superior
+), nrow = 3, byrow = TRUE)
+
+rownames(voto_educacion) <- c("Básica", "Media", "Superior")
+colnames(voto_educacion) <- c("Izquierda", "Centro", "Derecha")
+
+# Mostrar tabla
+voto_educacion
+```
+
+**Hipótesis:**
+
+- $H_0$: Nivel educativo y preferencia de voto son independientes
+- $H_1$: Existe asociación entre nivel educativo y preferencia de voto
+
+```{r}
+# Prueba chi-cuadrado
+resultado_chi <- chisq.test(voto_educacion)
+resultado_chi
+```
+
+```{r}
+#| label: fig-mosaico
+#| fig-cap: "Relación entre nivel educativo y preferencia de voto"
+#| code-fold: true
+
+# Convertir a data frame para visualización
+library(tidyr)
+datos_voto <- as.data.frame(as.table(voto_educacion))
+names(datos_voto) <- c("Educacion", "Voto", "Frecuencia")
+
+ggplot(datos_voto, aes(x = Educacion, y = Frecuencia, fill = Voto)) +
+  geom_bar(stat = "identity", position = "fill") +
+  scale_fill_manual(values = c("#E41A1C", "#984EA3", "#377EB8")) +
+  scale_y_continuous(labels = scales::percent) +
+  labs(x = "Nivel educativo", y = "Proporción", fill = "Preferencia") +
+  theme_minimal()
+```
+
+```{r}
+# Residuos estandarizados (qué celdas contribuyen más)
+cat("Residuos estandarizados:\n")
+round(resultado_chi$residuals, 2)
+```
+
+::: {.callout-note}
+## Interpretando residuos
+
+Los residuos estandarizados mayores a 2 (o menores a -2) indican celdas donde hay más (o menos) casos de los esperados bajo independencia. En este ejemplo, personas con educación básica votan más por la izquierda de lo esperado, mientras personas con educación superior votan más por la derecha.
+:::
+
+## Significancia estadística vs. sustantiva
+
+::: {.callout-important}
+## La distinción más importante del capítulo
+
+**Significancia estadística** ($p < 0.05$) solo indica que el efecto probablemente no es cero. No dice nada sobre si el efecto es *importante* o *relevante*.
+
+**Significancia sustantiva** pregunta: ¿el efecto es lo suficientemente grande como para importar en la práctica?
+:::
+
+Consideremos un ejemplo. Supongamos que un programa de educación cívica aumenta el conocimiento político de 50.0 a 50.5 puntos (en escala de 0-100). Con una muestra de 10,000 personas, este efecto de 0.5 puntos podría ser estadísticamente significativo ($p < 0.001$). Pero ¿importa prácticamente una diferencia de medio punto en 100?
+
+```{r}
+# Demostración: efecto pequeño pero "significativo" con n grande
+set.seed(2024)
+control <- rnorm(5000, mean = 50, sd = 15)
+tratamiento <- rnorm(5000, mean = 50.5, sd = 15)  # Diferencia de 0.5 puntos
+
+t.test(tratamiento, control)
+```
+
+El resultado es "significativo" ($p < 0.05$), pero la diferencia de medias es solo 0.5 puntos. Esto ilustra por qué siempre debemos reportar:
+
+1. El **tamaño del efecto** (diferencia de medias, odds ratio, etc.)
+2. El **intervalo de confianza** (rango plausible del efecto)
+3. La **significancia práctica** (¿este efecto importa en el mundo real?)
+
+#### Tamaño del efecto: d de Cohen
+
+Una medida estandarizada del tamaño del efecto es la **d de Cohen**:
+
+$$d = \frac{\bar{x}_1 - \bar{x}_2}{s_{pooled}}$$
+
+- $d = 0.2$: efecto pequeño
+- $d = 0.5$: efecto mediano
+- $d = 0.8$: efecto grande
+
+```{r}
+# Calcular d de Cohen
+diferencia <- mean(tratamiento) - mean(control)
+s_pooled <- sqrt((var(tratamiento) + var(control)) / 2)
+d_cohen <- diferencia / s_pooled
+
+cat("d de Cohen:", round(d_cohen, 3), "\n")
+cat("Interpretación: efecto",
+    ifelse(abs(d_cohen) < 0.2, "trivial",
+           ifelse(abs(d_cohen) < 0.5, "pequeño",
+                  ifelse(abs(d_cohen) < 0.8, "mediano", "grande"))))
+```
+
+## Errores comunes y malas prácticas
+
+::: {.callout-caution}
+## Errores que debes evitar
+
+1. **Confundir valor p con probabilidad de $H_0$**: $p = 0.03$ NO significa "3% de probabilidad de que $H_0$ sea cierta"
+
+2. **Dicotomizar en "significativo/no significativo"**: $p = 0.049$ y $p = 0.051$ son prácticamente idénticos, pero uno es "significativo" y otro no
+
+3. **P-hacking**: Probar múltiples análisis y reportar solo los significativos
+
+4. **Interpretar "no significativo" como "no hay efecto"**: Ausencia de evidencia no es evidencia de ausencia
+
+5. **Ignorar el tamaño del efecto**: Un efecto significativo puede ser irrelevante prácticamente
+:::
+
+#### El problema de las comparaciones múltiples
+
+Si pruebas 20 hipótesis independientes con $\alpha = 0.05$, esperarías encontrar 1 resultado "significativo" por azar puro, incluso si todas las $H_0$ son ciertas.
+
+```{r}
+# Simulación: 20 pruebas cuando H0 es siempre cierta
+set.seed(2024)
+valores_p <- replicate(20, {
+  x <- rnorm(50)  # Datos puramente aleatorios
+  y <- rnorm(50)
+  t.test(x, y)$p.value
+})
+
+cat("Valores p de 20 pruebas (H0 siempre cierta):\n")
+round(sort(valores_p), 3)
+cat("\n\nNúmero de 'significativos' (p < 0.05):", sum(valores_p < 0.05))
+```
+
+**Corrección de Bonferroni**: Si haces $m$ pruebas, usa $\alpha' = \alpha / m$. Para 20 pruebas con $\alpha = 0.05$, usarías $\alpha' = 0.0025$.
 
 ## Resumen {.unnumbered}
 
-**Conceptos clave:**
+Las pruebas de hipótesis evalúan si un patrón observado en los datos podría deberse al azar. La lógica es de reducción al absurdo: asumimos que no hay efecto ($H_0$) y preguntamos qué tan probable sería observar nuestros datos bajo ese supuesto.
 
-1. **Pruebas de hipótesis** usan lógica de reducción al absurdo
-2. **Valor p**: Probabilidad de datos tan extremos bajo $H_0$
-3. **Errores**: Tipo I (falso positivo), Tipo II (falso negativo)
-4. **Significancia estadística vs sustantiva**
-5. **Nunca "aceptamos" $H_0$**: Solo podemos rechazarla o no rechazarla
+El **valor p** es la probabilidad de observar datos tan extremos como los nuestros si $H_0$ fuera cierta. NO es la probabilidad de que $H_0$ sea cierta. Si $p < \alpha$ (usualmente 0.05), rechazamos $H_0$; si no, no la rechazamos (pero tampoco la "aceptamos").
+
+Existen dos tipos de error: **Tipo I** (rechazar $H_0$ cuando es cierta, controlado por $\alpha$) y **Tipo II** (no rechazar $H_0$ cuando es falsa, probabilidad $\beta$). El **poder** ($1-\beta$) es nuestra capacidad de detectar efectos reales.
+
+Las pruebas más comunes incluyen la **prueba t** (para comparar medias) y **chi-cuadrado** (para asociación entre variables categóricas). En R, usamos `t.test()` y `chisq.test()`.
+
+La distinción crucial es entre **significancia estadística** (el efecto probablemente no es cero) y **significancia sustantiva** (el efecto es lo suficientemente grande para importar). Siempre reporta el tamaño del efecto y los intervalos de confianza, no solo el valor p
 
 ## Lecturas recomendadas {.unnumbered}
 

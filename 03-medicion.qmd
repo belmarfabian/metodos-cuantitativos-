@@ -46,13 +46,24 @@ El nivel de medición determina qué estadísticos son apropiados: **nominal** u
 
 [^religion-promedio]: Si codificas religión como Católico=1, Evangélico=2, Ateo=3, y calculas "promedio = 2.3", el resultado carece de significado. Los números son solo etiquetas. En cambio, "ingreso promedio = $650,000" sí tiene sentido porque los números representan cantidades reales.
 
+::: {.callout-important}
+## Resumen: ¿Qué estadísticos puedo usar?
+
+| Nivel | Ejemplos | Estadísticos válidos |
+|-------|----------|---------------------|
+| **Nominal** | Religión, partido político, región | Moda, frecuencias, % |
+| **Ordinal** | Nivel educativo, satisfacción (Likert) | Mediana, percentiles, rangos |
+| **Intervalo/Razón** | Ingresos, edad, % de votos | Media, SD, correlación, regresión |
+
+**Regla práctica**: Siempre puedes usar estadísticos de niveles *inferiores*, pero nunca de niveles *superiores*.
+:::
+
 ## Validez y confiabilidad
 
 Una buena medición debe ser **válida** (¿la medida captura el concepto que pretende medir?) y **confiable** (¿la medición es consistente?). @adcock2001 distinguen varios tipos de validez: **validez de contenido** (los indicadores cubren el dominio del concepto; si conceptualizamos "calidad democrática" incluyendo libertades civiles, procedimientos electorales y rendición de cuentas, una medida basada solo en elecciones tiene baja validez de contenido), **validez de constructo** (la medida se relaciona como esperado con otras variables; si teorizamos que confianza institucional reduce protesta pero nuestra medida predice *más* protesta, hay un problema de validez)
 
-**3. Validez convergente**: Diferentes mediciones del mismo concepto deberían correlacionar. Índices de democracia de Polity, Freedom House y V-Dem miden el mismo concepto; deberían correlacionar fuertemente (y lo hacen, aunque imperfectamente).
-
-**4. Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
+3. **Validez convergente**: Diferentes mediciones del mismo concepto deberían correlacionar. Índices de democracia de Polity, Freedom House y V-Dem miden el mismo concepto; deberían correlacionar fuertemente (y lo hacen, aunque imperfectamente).
+4. **Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
 
 #### Confiabilidad
 
@@ -60,11 +71,9 @@ La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiab
 
 Tipos de confiabilidad:
 
-**1. Test-retest**: Aplicar la misma medición en dos momentos cercanos. Si puntajes cambian dramáticamente sin razón sustantiva, la medición es poco confiable.
-
-**2. Confiabilidad inter-codificadores**: Cuando codificadores humanos clasifican datos (ej: codificar manifiestos partidarios), ¿acuerdan? El coeficiente kappa de Cohen mide esto.
-
-**3. Consistencia interna**: Para escalas multi-ítem (ver siguiente sección), ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
+1. **Test-retest**: Aplicar la misma medición en dos momentos cercanos. Si puntajes cambian dramáticamente sin razón sustantiva, la medición es poco confiable.
+2. **Confiabilidad inter-codificadores**: Cuando codificadores humanos clasifican datos (ej: codificar manifiestos partidarios), ¿acuerdan? El coeficiente kappa de Cohen mide esto.
+3. **Consistencia interna**: Para escalas multi-ítem (ver siguiente sección), ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
 
 #### Relación entre validez y confiabilidad
 
@@ -75,6 +84,19 @@ Es posible tener alta confiabilidad pero baja validez. Si medimos "democracia" s
 También es posible tener alta validez conceptual pero baja confiabilidad. Mediciones de conceptos complejos mediante juicio experto pueden ser válidas pero inconsistentes si expertos desacuerdan.
 
 Idealmente, queremos ambas. Pero si debemos priorizar, @king1994 argumentan que validez importa más: una medición inválida es inútil sin importar cuán confiable sea.
+
+::: {.callout-tip}
+## Analogía: El arquero y el blanco
+
+Imagina un arquero disparando flechas a un blanco:
+
+- **Alta validez + Alta confiabilidad**: Todas las flechas dan en el centro (ideal)
+- **Baja validez + Alta confiabilidad**: Todas las flechas dan juntas, pero lejos del centro (sesgo sistemático)
+- **Alta validez + Baja confiabilidad**: Las flechas se dispersan alrededor del centro (imprecisión)
+- **Baja validez + Baja confiabilidad**: Las flechas se dispersan lejos del centro (el peor caso)
+
+En investigación, preferimos alta confiabilidad (consistencia) Y alta validez (medir lo correcto), pero si debemos elegir, es mejor ser válido que consistentemente equivocado.
+:::
 
 
 #### Problemas comunes

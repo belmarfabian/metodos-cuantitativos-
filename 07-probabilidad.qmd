@@ -35,15 +35,11 @@ Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votar�
 
 Existen dos interpretaciones fundamentales de qué significa "probabilidad":
 
-**1. Interpretación frecuentista**[^frecuentista]
+1. **Interpretación frecuentista**:[^frecuentista] La probabilidad es el **límite de la frecuencia relativa** cuando un experimento se repite infinitas veces. Por ejemplo, $P(\text{Cara}) = 0.5$ al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.
 
 [^frecuentista]: En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta "p < 0.05", está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.
 
-La probabilidad es el **límite de la frecuencia relativa** cuando un experimento se repite infinitas veces. Por ejemplo, $P(\text{Cara}) = 0.5$ al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.
-
-**2. Interpretación bayesiana**
-
-La probabilidad cuantifica **grado de creencia** o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como "¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?").
+2. **Interpretación bayesiana**: La probabilidad cuantifica **grado de creencia** o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como "¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?").
 
 ```{r probabilidad-interpretaciones, echo=FALSE, fig.cap="Comparación de interpretaciones de probabilidad"}
 library(ggplot2)
@@ -104,6 +100,61 @@ La probabilidad de $A$ dado que ya sabemos que $B$ ocurrió:
 $$P(A|B) = \frac{P(A \text{ y } B)}{P(B)}$$
 
 Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces $P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33$. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).
+
+::: {.callout-tip}
+## Ejemplo paso a paso: Calculando probabilidades
+
+Una encuesta de 500 personas recopiló información sobre género y preferencia de voto:
+
+|             | Aprueba | Rechaza | Total |
+|-------------|:-------:|:-------:|:-----:|
+| Hombres     |   80    |   120   |  200  |
+| Mujeres     |  150    |   150   |  300  |
+| **Total**   |  230    |   270   |  500  |
+
+Calculemos algunas probabilidades:
+
+```{r}
+# Definir los datos
+total <- 500
+hombres <- 200
+mujeres <- 300
+aprueba <- 230
+rechaza <- 270
+hombres_aprueba <- 80
+mujeres_aprueba <- 150
+
+# P(Aprueba) - probabilidad marginal
+P_aprueba <- aprueba / total
+cat("P(Aprueba) =", P_aprueba, "\n")
+
+# P(Mujer) - probabilidad marginal
+P_mujer <- mujeres / total
+cat("P(Mujer) =", P_mujer, "\n")
+
+# P(Mujer Y Aprueba) - probabilidad conjunta
+P_mujer_y_aprueba <- mujeres_aprueba / total
+cat("P(Mujer Y Aprueba) =", P_mujer_y_aprueba, "\n")
+
+# P(Aprueba | Mujer) - probabilidad condicional
+P_aprueba_dado_mujer <- P_mujer_y_aprueba / P_mujer
+cat("P(Aprueba | Mujer) =", P_aprueba_dado_mujer, "\n")
+
+# Verificación directa
+cat("Verificación: 150/300 =", 150/300, "\n")
+```
+:::
+
+::: {.callout-warning}
+## Error común: Confundir P(A|B) con P(B|A)
+
+$P(\text{Aprueba}|\text{Mujer}) \neq P(\text{Mujer}|\text{Aprueba})$
+
+- $P(\text{Aprueba}|\text{Mujer}) = 150/300 = 0.50$ → "De las mujeres, ¿qué proporción aprueba?"
+- $P(\text{Mujer}|\text{Aprueba}) = 150/230 = 0.65$ → "De quienes aprueban, ¿qué proporción son mujeres?"
+
+Este error es muy común y puede llevar a conclusiones incorrectas. Siempre pregúntate: "¿Cuál es mi población de referencia?"
+:::
 
 ## Variables aleatorias y distribuciones
 
@@ -251,6 +302,25 @@ Las alturas de hombres adultos chilenos se distribuyen aproximadamente $N(170, 7
 # ¿Qué proporción mide entre 165 y 175 cm?
 pnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)
 ```
+
+::: {.callout-note}
+## Funciones de R para distribución Normal
+
+R tiene cuatro funciones para trabajar con la distribución Normal:
+
+| Función | Qué hace | Ejemplo |
+|---------|----------|---------|
+| `dnorm(x)` | Densidad en el punto x | `dnorm(0)` = 0.399 (altura de la curva en x=0) |
+| `pnorm(x)` | Probabilidad acumulada P(X ≤ x) | `pnorm(0)` = 0.5 (50% está por debajo de la media) |
+| `qnorm(p)` | Cuantil: ¿qué valor tiene probabilidad p por debajo? | `qnorm(0.975)` = 1.96 |
+| `rnorm(n)` | Genera n valores aleatorios | `rnorm(100)` genera 100 valores |
+
+```{r}
+# Ejemplo práctico: ¿Cuál es el percentil 90 de alturas?
+# Es decir, ¿qué altura es mayor que el 90% de los hombres?
+qnorm(0.90, mean = 170, sd = 7)
+```
+:::
 
 #### Distribución Binomial
 

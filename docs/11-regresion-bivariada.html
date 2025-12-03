@@ -96,7 +96,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-edaf08ed7d27d62012077beed0893dcb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-737c3328614c4f1bf80657df1834dbc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -158,7 +158,7 @@ window.Quarto = {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating slimcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -356,7 +356,7 @@ window.Quarto = {
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-comparacion-medias.html">V. Unidad 4: Análisis Bivariado</a></li><li class="breadcrumb-item"><a href="./11-regresion-bivariada.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regresión bivariada</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -389,7 +389,7 @@ window.Quarto = {
 <li>Realizar pruebas de hipótesis sobre coeficientes de regresión</li>
 </ul>
 </section>
-<section id="correlación-y-regresión" class="level2" data-number="11.1">
+<section id="correlación-y-regresión" class="level2 page-columns page-full" data-number="11.1">
 <h2 data-number="11.1" class="anchored" data-anchor-id="correlación-y-regresión"><span class="header-section-number">11.1</span> Correlación y regresión</h2>
 <p>La <strong>correlación</strong> mide la fuerza y dirección de la relación lineal entre dos variables.</p>
 <p><strong>Coeficiente de correlación de Pearson:</strong> <span class="math display">\[r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}\]</span></p>
@@ -430,7 +430,7 @@ sample estimates:
 </div>
 </div>
 <p>Es fundamental recordar que una correlación fuerte <strong>NO implica que una variable cause la otra</strong>. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<section id="el-modelo-de-regresión" class="level4" data-number="11.1.0.1">
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Correlación no implica causalidad. Por ejemplo, ventas de helado y ahogamientos correlacionan, pero ambas son causadas por una tercera variable (temperatura). Establecer causalidad requiere teoría, diseños apropiados y control de confusores.</p></div></div><section id="el-modelo-de-regresión" class="level4" data-number="11.1.0.1">
 <h4 data-number="11.1.0.1" class="anchored" data-anchor-id="el-modelo-de-regresión"><span class="header-section-number">11.1.0.1</span> El modelo de regresión</h4>
 <p>La regresión lineal modela la relación entre una variable dependiente <span class="math inline">\(Y\)</span> y una variable independiente <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[Y_i = \beta_0 + \beta_1 X_i + \epsilon_i\]</span></p>
@@ -486,15 +486,15 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </div>
 </section>
 </section>
-<section id="interpretación-y-ajuste" class="level2" data-number="11.2">
+<section id="interpretación-y-ajuste" class="level2 page-columns page-full" data-number="11.2">
 <h2 data-number="11.2" class="anchored" data-anchor-id="interpretación-y-ajuste"><span class="header-section-number">11.2</span> Interpretación y ajuste</h2>
 <p><strong>Intercepto (<span class="math inline">\(\hat{\beta}_0\)</span>)</strong>: Valor predicho de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span></p>
 <p><strong>Pendiente (<span class="math inline">\(\hat{\beta}_1\)</span>)</strong>: Cambio promedio en <span class="math inline">\(Y\)</span> asociado con un incremento de una unidad en <span class="math inline">\(X\)</span></p>
 <p>En el modelo anterior, si obtuviéramos <span class="math inline">\(\hat{\beta}_1 = -0.15\)</span>, interpretaríamos: “Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.”<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<section id="bondad-de-ajuste" class="level4" data-number="11.2.0.1">
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;El coeficiente indica asociación, no necesariamente causalidad. La unidad de medida importa: siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.</p></div></div><section id="bondad-de-ajuste" class="level4" data-number="11.2.0.1">
 <h4 data-number="11.2.0.1" class="anchored" data-anchor-id="bondad-de-ajuste"><span class="header-section-number">11.2.0.1</span> Bondad de ajuste</h4>
 </section>
-<section id="r-cuadrado-r2" class="level4" data-number="11.2.0.2">
+<section id="r-cuadrado-r2" class="level4 page-columns page-full" data-number="11.2.0.2">
 <h4 data-number="11.2.0.2" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.2.0.2</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
 <p>El <strong>coeficiente de determinación</strong> mide qué proporción de la variabilidad en <span class="math inline">\(Y\)</span> es explicada por <span class="math inline">\(X\)</span>:</p>
 <p><span class="math display">\[R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}\]</span></p>
@@ -505,7 +505,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </ul>
 <p>Por ejemplo, si <span class="math inline">\(R^2 = 0.42\)</span>, interpretamos: “El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores.”</p>
 <p>Es crucial entender que un <span class="math inline">\(R^2\)</span> alto <strong>NO implica relación causal</strong>. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-</section>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y ser inválido para inferencia causal si omite confusores. En ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no indican un modelo “malo”.</p></div></div></section>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
@@ -546,14 +546,7 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 
 
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>Correlación no implica causalidad. Por ejemplo, ventas de helado y ahogamientos correlacionan, pero ambas son causadas por una tercera variable (temperatura). Establecer causalidad requiere teoría, diseños apropiados y control de confusores.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>El coeficiente indica asociación, no necesariamente causalidad. La unidad de medida importa: siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Un modelo puede tener <span class="math inline">\(R^2\)</span> alto y ser inválido para inferencia causal si omite confusores. En ciencias sociales, valores bajos de <span class="math inline">\(R^2\)</span> (0.10-0.30) son frecuentes y no indican un modelo “malo”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
