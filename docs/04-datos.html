@@ -452,18 +452,14 @@ div.csl-indent {
 </section>
 <section id="dimensiones-de-calidad" class="level4" data-number="4.1.0.11">
 <h4 data-number="4.1.0.11" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.1.0.11</span> Dimensiones de calidad</h4>
-<p><strong>1. Validez</strong></p>
-<p>¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo @ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.</p>
-<p><strong>2. Confiabilidad</strong></p>
-<p>¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.</p>
-<p><strong>3. Cobertura</strong></p>
-<p>¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.</p>
-<p><strong>4. Precisión</strong></p>
-<p>¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.</p>
-<p><strong>5. Actualidad (timeliness)</strong></p>
-<p>¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.</p>
-<p><strong>6. Accesibilidad</strong></p>
-<p>¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.</p>
+<ol type="1">
+<li><strong>Validez</strong>: ¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo @ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.</li>
+<li><strong>Confiabilidad</strong>: ¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.</li>
+<li><strong>Cobertura</strong>: ¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.</li>
+<li><strong>Precisión</strong>: ¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.</li>
+<li><strong>Actualidad (timeliness)</strong>: ¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.</li>
+<li><strong>Accesibilidad</strong>: ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.</li>
+</ol>
 </section>
 <section id="problemas-comunes" class="level4" data-number="4.1.0.12">
 <h4 data-number="4.1.0.12" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.1.0.12</span> Problemas comunes</h4>
@@ -846,12 +842,11 @@ Apruebo Rechazo
 </section>
 <section id="principios" class="level4" data-number="4.2.0.29">
 <h4 data-number="4.2.0.29" class="anchored" data-anchor-id="principios"><span class="header-section-number">4.2.0.29</span> Principios</h4>
-<p><strong>1. Usa scripts, no clics</strong></p>
-<p>Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.</p>
-<p><strong>2. Nunca modifiques datos originales</strong></p>
-<p>Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.</p>
-<p><strong>3. Documenta tu código</strong></p>
-<p>Comentarios explican <em>por qué</em> hiciste algo:</p>
+<ol type="1">
+<li><strong>Usa scripts, no clics</strong>: Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.</li>
+<li><strong>Nunca modifiques datos originales</strong>: Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.</li>
+<li><strong>Documenta tu código</strong>: Comentarios explican <em>por qué</em> hiciste algo:</li>
+</ol>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Recodifico educación en tres categorías para simplificar análisis</span></span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La categoría "técnica" es pequeña y la combino con "secundaria"</span></span>
@@ -862,8 +857,9 @@ Apruebo Rechazo
 <span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>                  educ <span class="sc">&gt;=</span> <span class="dv">5</span> <span class="sc">~</span> <span class="st">"Superior"</span></span>
 <span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>                ))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>4. Organiza tu proyecto</strong></p>
-<p>Estructura de carpetas clara:</p>
+<ol start="4" type="1">
+<li><strong>Organiza tu proyecto</strong>: Estructura de carpetas clara:</li>
+</ol>
 <pre><code>proyecto/
   datos/
     crudos/
@@ -875,8 +871,9 @@ Apruebo Rechazo
     tablas/
     graficos/
   documento/</code></pre>
-<p><strong>5. Usa control de versiones</strong></p>
-<p>Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.</p>
+<ol start="5" type="1">
+<li><strong>Usa control de versiones</strong>: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.</li>
+</ol>
 </section>
 <section id="r-markdown" class="level4" data-number="4.2.0.30">
 <h4 data-number="4.2.0.30" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">4.2.0.30</span> R Markdown</h4>

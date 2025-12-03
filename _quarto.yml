@@ -53,6 +53,8 @@ format:
     code-tools: false
     highlight-style: github
     reference-location: margin
+    citations-hover: true
+    citeproc: true
 
 execute:
   echo: true
