@@ -2,13 +2,22 @@
 
 > **VERSIÓN BETA**: Este manual se encuentra en desarrollo activo. Algunos capítulos están pendientes de completar y el contenido seguirá evolucionando con el tiempo. Agradecemos reportar errores o sugerencias.
 
-Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025. 
+## Objetivo de este manual {.unnumbered}
+
+Este es un **manual de preparación para el examen** del curso Métodos Cuantitativos Introductorios. Su propósito es presentar de forma clara y concisa los conceptos fundamentales que necesitas dominar para aprobar el curso.
+
+El manual está diseñado para ser una guía de estudio práctica: cada capítulo cubre los temas esenciales, con ejemplos concretos y ejercicios para practicar. Úsalo como referencia rápida para repasar antes del examen.
+
+::: {.callout-note}
+## Contenido avanzado
+Las secciones marcadas como **"Avanzado"** contienen material complementario que va más allá de lo requerido para el examen. Puedes omitirlas en tu primera lectura y volver a ellas si deseas profundizar.
+:::
 
 ## ¿Por qué este libro? {.unnumbered}
 
-La mayoría de manuales de métodos cuantitativos están escritos pensando en contextos anglosajones. Este libro integra ejemplos de la realidad política y social latinoamericana, utilizando datos de Chile y la región.
+Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.
 
-A diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Las técnicas estadísticas son herramientas al servicio de responder preguntas sustantivas sobre el mundo social.
+A diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Los ejemplos provienen de la realidad política y social latinoamericana, utilizando datos de Chile y la región.
 
 ## Organización del libro {.unnumbered}
 

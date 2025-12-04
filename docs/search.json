@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "",
-    "text": "Prefacio\nEste libro fue desarrollado como material del curso Métodos Cuantitativos Introductorios para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.",
+    "text": "Prefacio",
     "crumbs": [
       "Prefacio"
     ]
@@ -14,7 +14,7 @@
     "href": "index.html#por-qué-este-libro",
     "title": "Métodos Cuantitativos para Ciencias Sociales",
     "section": "¿Por qué este libro?",
-    "text": "¿Por qué este libro?\nLa mayoría de manuales de métodos cuantitativos están escritos pensando en contextos anglosajones. Este libro integra ejemplos de la realidad política y social latinoamericana, utilizando datos de Chile y la región.\nA diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Las técnicas estadísticas son herramientas al servicio de responder preguntas sustantivas sobre el mundo social.",
+    "text": "¿Por qué este libro?\nEste libro fue desarrollado como material del curso Métodos Cuantitativos Introductorios para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.\nA diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Los ejemplos provienen de la realidad política y social latinoamericana, utilizando datos de Chile y la región.",
     "crumbs": [
       "Prefacio"
     ]
@@ -1169,6 +1169,16 @@
     "crumbs": [
       "Anexos",
       "(APPENDIX) Anexos"
+    ]
+  },
+  {
+    "objectID": "index.html#objetivo-de-este-manual",
+    "href": "index.html#objetivo-de-este-manual",
+    "title": "Métodos Cuantitativos para Ciencias Sociales",
+    "section": "Objetivo de este manual",
+    "text": "Objetivo de este manual\nEste es un manual de preparación para el examen del curso Métodos Cuantitativos Introductorios. Su propósito es presentar de forma clara y concisa los conceptos fundamentales que necesitas dominar para aprobar el curso.\nEl manual está diseñado para ser una guía de estudio práctica: cada capítulo cubre los temas esenciales, con ejemplos concretos y ejercicios para practicar. Úsalo como referencia rápida para repasar antes del examen.\n\n\n\n\n\n\nNotaContenido avanzado\n\n\n\nLas secciones marcadas como “Avanzado” contienen material complementario que va más allá de lo requerido para el examen. Puedes omitirlas en tu primera lectura y volver a ellas si deseas profundizar.",
+    "crumbs": [
+      "Prefacio"
     ]
   }
 ]
