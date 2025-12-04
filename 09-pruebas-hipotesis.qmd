@@ -353,6 +353,7 @@ El resultado es "significativo" ($p < 0.05$), pero la diferencia de medias es so
 2. El **intervalo de confianza** (rango plausible del efecto)
 3. La **significancia práctica** (¿este efecto importa en el mundo real?)
 
+::: {.nivel data-nivel="avanzado"}
 #### Tamaño del efecto: d de Cohen
 
 Una medida estandarizada del tamaño del efecto es la **d de Cohen**:
@@ -375,6 +376,7 @@ cat("Interpretación: efecto",
            ifelse(abs(d_cohen) < 0.5, "pequeño",
                   ifelse(abs(d_cohen) < 0.8, "mediano", "grande"))))
 ```
+:::
 
 ## Errores comunes y malas prácticas
 
@@ -392,6 +394,7 @@ cat("Interpretación: efecto",
 5. **Ignorar el tamaño del efecto**: Un efecto significativo puede ser irrelevante prácticamente
 :::
 
+::: {.nivel data-nivel="avanzado"}
 #### El problema de las comparaciones múltiples
 
 Si pruebas 20 hipótesis independientes con $\alpha = 0.05$, esperarías encontrar 1 resultado "significativo" por azar puro, incluso si todas las $H_0$ son ciertas.
@@ -411,6 +414,9 @@ cat("\n\nNúmero de 'significativos' (p < 0.05):", sum(valores_p < 0.05))
 ```
 
 **Corrección de Bonferroni**: Si haces $m$ pruebas, usa $\alpha' = \alpha / m$. Para 20 pruebas con $\alpha = 0.05$, usarías $\alpha' = 0.0025$.
+
+**Otras correcciones**: Holm, Benjamini-Hochberg (FDR), que son menos conservadoras que Bonferroni.
+:::
 
 ## Resumen {.unnumbered}
 

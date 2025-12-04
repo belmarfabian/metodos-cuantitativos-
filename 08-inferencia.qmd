@@ -480,7 +480,14 @@ ggplot(df_ic, aes(y = nivel)) +
 ```
 
 
-#### Tabla de referencia: Tamaño muestral para proporciones
+::: {.nivel data-nivel="avanzado"}
+#### Determinación del tamaño muestral
+
+Para determinar el tamaño muestral necesario para un margen de error deseado:
+
+**Para proporciones:** $n = \left(\frac{z}{E}\right)^2 \cdot p(1-p)$
+
+Usando $p = 0.5$ (peor caso, máxima varianza):
 
 ```{r tabla-n, echo=FALSE}
 library(knitr)
@@ -513,6 +520,9 @@ kable(tabla_ancha,
       align = c("l", "r", "r", "r"))
 ```
 
+**Para medias:** $n = \left(\frac{z \cdot \sigma}{E}\right)^2$
+
+donde $\sigma$ es la desviación estándar poblacional (estimada de estudios previos).
 :::
 
 #### Simulación de ICs

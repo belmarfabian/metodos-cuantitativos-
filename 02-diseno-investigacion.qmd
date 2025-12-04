@@ -77,19 +77,27 @@ Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar varia
 
 **Panel (longitudinal)**
 
-Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando **efectos fijos**.
+Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.
 
-**Ejemplo**: @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.
+::: {.nivel data-nivel="avanzado"}
+Los datos de panel permiten usar **efectos fijos**, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.
+:::
 
 **Estrategias para fortalecer inferencia causal en diseños observacionales**:
 
 1. **Controles estadísticos**: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores *observados*.
 
-2. **Matching**: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.
+2. **Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).
 
-3. **Diseño de investigación robusto**: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.
+::: {.nivel data-nivel="avanzado"}
+**Técnicas avanzadas de inferencia causal:**
 
-4. **Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).
+3. **Matching**: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.
+
+4. **Diseños cuasi-experimentales**: Incluyen diferencias-en-diferencias, regresión discontinua, y variables instrumentales. Explotan variación "natural" que aproxima aleatorización.
+
+5. **Análisis de sensibilidad**: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.
+:::
 
 #### Validez interna y externa
 
@@ -103,9 +111,15 @@ Existe tensión fundamental: los diseños con mejor validez interna (experimento
 
 Una decisión crucial en diseño de investigación es qué constituye un "caso" —la **unidad de análisis**: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.
 
-Debemos evitar dos falacias. **Falacia ecológica** [@robinson1950]: inferir relaciones a nivel individual desde asociaciones a nivel agregado (si comunas con más inmigrantes votan más por la derecha, ¿significa que inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente, mientras inmigrantes votan izquierda). **Falacia atómica** (o "individualista"): inferir relaciones a nivel agregado desde patrones individuales (si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente; puede haber efectos contextuales que cambian relaciones).
+::: {.nivel data-nivel="avanzado"}
+**Falacias de nivel de análisis:**
 
-La inferencia estadística requiere suficientes observaciones relativas al número de parámetros estimados. @king1994 enfatizan el problema de "muchas variables, pocas observaciones" (MVPO): si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes **grados de libertad** para distinguir patrones genuinos de ruido. Soluciones: aumentar observaciones (datos de panel con múltiples países × múltiples años), reducir parámetros (selección teórica de variables, análisis factorial), o combinar enfoques (análisis cuantitativo de patrones generales + estudios de caso que elucidan mecanismos).
+Debemos evitar dos falacias al cambiar de nivel de análisis. La **falacia ecológica** [@robinson1950] ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La **falacia atómica** es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.
+
+**El problema de "muchas variables, pocas observaciones":**
+
+@king1994 enfatizan que si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes **grados de libertad** para distinguir señal de ruido. Soluciones: aumentar observaciones (datos de panel), reducir parámetros (selección teórica), o combinar enfoques cuantitativos y cualitativos.
+:::
 
 ## Resumen {.unnumbered}
 

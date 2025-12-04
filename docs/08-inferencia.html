@@ -905,8 +905,11 @@ sample estimates:
 </div>
 </div>
 </section>
-<section id="tabla-de-referencia-tamaño-muestral-para-proporciones" class="level4" data-number="8.3.0.4">
-<h4 data-number="8.3.0.4" class="anchored" data-anchor-id="tabla-de-referencia-tamaño-muestral-para-proporciones"><span class="header-section-number">8.3.0.4</span> Tabla de referencia: Tamaño muestral para proporciones</h4>
+<section id="determinación-del-tamaño-muestral" class="level4 nivel" data-nivel="avanzado" data-number="8.3.0.4">
+<h4 data-number="8.3.0.4" class="anchored" data-anchor-id="determinación-del-tamaño-muestral"><span class="header-section-number">8.3.0.4</span> Determinación del tamaño muestral</h4>
+<p>Para determinar el tamaño muestral necesario para un margen de error deseado:</p>
+<p><strong>Para proporciones:</strong> <span class="math inline">\(n = \left(\frac{z}{E}\right)^2 \cdot p(1-p)\)</span></p>
+<p>Usando <span class="math inline">\(p = 0.5\)</span> (peor caso, máxima varianza):</p>
 <div class="cell">
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
@@ -960,7 +963,8 @@ sample estimates:
 </table>
 </div>
 </div>
-<p>:::</p>
+<p><strong>Para medias:</strong> <span class="math inline">\(n = \left(\frac{z \cdot \sigma}{E}\right)^2\)</span></p>
+<p>donde <span class="math inline">\(\sigma\)</span> es la desviación estándar poblacional (estimada de estudios previos).</p>
 </section>
 <section id="simulación-de-ics" class="level4" data-number="8.3.0.5">
 <h4 data-number="8.3.0.5" class="anchored" data-anchor-id="simulación-de-ics"><span class="header-section-number">8.3.0.5</span> Simulación de ICs</h4>

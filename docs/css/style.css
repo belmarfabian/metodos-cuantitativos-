@@ -84,10 +84,16 @@
 }
 
 /* Bibliografía final generada por Pandoc/CSL */
+/* Forzar que las referencias aparezcan al final del capítulo */
+/* (Quarto las oculta cuando reference-location: margin está activo) */
 #refs {
+  display: block !important;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #e0e0e0;
 }
 
 .csl-bib-body {

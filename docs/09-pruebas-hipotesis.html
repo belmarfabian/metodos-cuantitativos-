@@ -851,7 +851,7 @@ mean of x mean of y
 <li>El <strong>intervalo de confianza</strong> (rango plausible del efecto)</li>
 <li>La <strong>significancia práctica</strong> (¿este efecto importa en el mundo real?)</li>
 </ol>
-<section id="tamaño-del-efecto-d-de-cohen" class="level4" data-number="9.6.0.1">
+<section id="tamaño-del-efecto-d-de-cohen" class="level4 nivel" data-nivel="avanzado" data-number="9.6.0.1">
 <h4 data-number="9.6.0.1" class="anchored" data-anchor-id="tamaño-del-efecto-d-de-cohen"><span class="header-section-number">9.6.0.1</span> Tamaño del efecto: d de Cohen</h4>
 <p>Una medida estandarizada del tamaño del efecto es la <strong>d de Cohen</strong>:</p>
 <p><span class="math display">\[d = \frac{\bar{x}_1 - \bar{x}_2}{s_{pooled}}\]</span></p>
@@ -901,7 +901,7 @@ mean of x mean of y
 </ol>
 </div>
 </div>
-<section id="el-problema-de-las-comparaciones-múltiples" class="level4" data-number="9.7.0.1">
+<section id="el-problema-de-las-comparaciones-múltiples" class="level4 nivel" data-nivel="avanzado" data-number="9.7.0.1">
 <h4 data-number="9.7.0.1" class="anchored" data-anchor-id="el-problema-de-las-comparaciones-múltiples"><span class="header-section-number">9.7.0.1</span> El problema de las comparaciones múltiples</h4>
 <p>Si pruebas 20 hipótesis independientes con <span class="math inline">\(\alpha = 0.05\)</span>, esperarías encontrar 1 resultado “significativo” por azar puro, incluso si todas las <span class="math inline">\(H_0\)</span> son ciertas.</p>
 <div class="cell">
@@ -930,6 +930,7 @@ Número de 'significativos' (p &lt; 0.05): 2</code></pre>
 </div>
 </div>
 <p><strong>Corrección de Bonferroni</strong>: Si haces <span class="math inline">\(m\)</span> pruebas, usa <span class="math inline">\(\alpha' = \alpha / m\)</span>. Para 20 pruebas con <span class="math inline">\(\alpha = 0.05\)</span>, usarías <span class="math inline">\(\alpha' = 0.0025\)</span>.</p>
+<p><strong>Otras correcciones</strong>: Holm, Benjamini-Hochberg (FDR), que son menos conservadoras que Bonferroni.</p>
 </section>
 </section>
 <section id="resumen" class="level2 unnumbered">

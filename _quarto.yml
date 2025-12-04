@@ -55,6 +55,7 @@ format:
     reference-location: margin
     citations-hover: true
     citeproc: true
+    split-bibliography: true
 
 execute:
   echo: true

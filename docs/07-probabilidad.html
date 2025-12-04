@@ -410,12 +410,10 @@ window.Quarto = {
 <section id="interpretaciones-de-probabilidad" class="level4 page-columns page-full" data-number="7.1.0.3">
 <h4 data-number="7.1.0.3" class="anchored" data-anchor-id="interpretaciones-de-probabilidad"><span class="header-section-number">7.1.0.3</span> Interpretaciones de probabilidad</h4>
 <p>Existen dos interpretaciones fundamentales de qué significa “probabilidad”:</p>
-<ol type="1">
-<li><strong>Interpretación frecuentista</strong>:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras.</li>
-</ol>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;En ciencias sociales cuantitativas, la interpretación frecuentista es el estándar. Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><ol start="2" type="1">
-<li><strong>Interpretación bayesiana</strong>: La probabilidad cuantifica <strong>grado de creencia</strong> o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como “¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?”).</li>
-</ol>
+<p><strong>Interpretación frecuentista</strong>:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras. Esta es la interpretación estándar en ciencias sociales cuantitativas.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><div class="nivel" data-nivel="avanzado">
+<p><strong>Interpretación bayesiana</strong>: La probabilidad cuantifica <strong>grado de creencia</strong> o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como “¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?”). La estadística bayesiana actualiza creencias previas (prior) con nueva evidencia usando el teorema de Bayes. Es cada vez más usada en ciencias sociales, pero requiere fundamentos matemáticos adicionales.</p>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -611,13 +609,18 @@ window.Quarto = {
 <section id="valor-esperado-y-varianza" class="level4" data-number="7.2.0.3">
 <h4 data-number="7.2.0.3" class="anchored" data-anchor-id="valor-esperado-y-varianza"><span class="header-section-number">7.2.0.3</span> Valor esperado y varianza</h4>
 <p><strong>Valor esperado</strong> (media poblacional): <span class="math inline">\(E(X) = \mu\)</span></p>
+<p>El valor esperado es el promedio “teórico” de una variable aleatoria si pudiéramos observarla infinitas veces. Para variables discretas, se calcula sumando cada valor multiplicado por su probabilidad.</p>
+<p><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \sigma^2\)</span> mide la dispersión alrededor del valor esperado.</p>
+<p><strong>Desviación estándar</strong>: <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p>
+<p>Es importante distinguir que estos son parámetros <strong>poblacionales</strong> (generalmente desconocidos). Los estimamos a partir de muestras usando <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s^2\)</span>.</p>
+<div class="nivel" data-nivel="avanzado">
+<p><strong>Fórmulas matemáticas del valor esperado:</strong></p>
 <ul>
 <li>Para variable discreta: <span class="math inline">\(E(X) = \sum x \cdot P(X=x)\)</span></li>
 <li>Para variable continua: <span class="math inline">\(E(X) = \int x \cdot f(x)dx\)</span></li>
+<li>Varianza: <span class="math inline">\(\text{Var}(X) = E[(X - \mu)^2] = E(X^2) - [E(X)]^2\)</span></li>
 </ul>
-<p><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \sigma^2 = E[(X - \mu)^2]\)</span></p>
-<p><strong>Desviación estándar</strong>: <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p>
-<p>Es importante distinguir que estos son parámetros <strong>poblacionales</strong> (generalmente desconocidos). Los estimamos a partir de muestras usando <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s^2\)</span>.</p>
+</div>
 </section>
 <section id="distribuciones-comunes" class="level4" data-number="7.2.0.4">
 <h4 data-number="7.2.0.4" class="anchored" data-anchor-id="distribuciones-comunes"><span class="header-section-number">7.2.0.4</span> Distribuciones comunes</h4>

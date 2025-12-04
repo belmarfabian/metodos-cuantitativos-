@@ -321,6 +321,8 @@ div.csl-indent {
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
   <li><a href="#tipos-y-fuentes-de-datos" id="toc-tipos-y-fuentes-de-datos" class="nav-link" data-scroll-target="#tipos-y-fuentes-de-datos"><span class="header-section-number">4.1</span> Tipos y fuentes de datos</a></li>
   <li><a href="#trabajando-con-r" id="toc-trabajando-con-r" class="nav-link" data-scroll-target="#trabajando-con-r"><span class="header-section-number">4.2</span> Trabajando con R</a></li>
+  <li><a href="#manipulación-de-datos" id="toc-manipulación-de-datos" class="nav-link" data-scroll-target="#manipulación-de-datos"><span class="header-section-number">4.3</span> Manipulación de datos</a></li>
+  <li><a href="#exportar-datos" id="toc-exportar-datos" class="nav-link" data-scroll-target="#exportar-datos"><span class="header-section-number">4.4</span> Exportar datos</a></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
@@ -404,54 +406,28 @@ div.csl-indent {
 <p>Generados por actividad en línea: tweets, posts de Facebook, búsquedas en Google, patrones de navegación. Creciente uso en ciencias sociales computacionales.</p>
 <p>Ventaja: Volumen masivo, observación de comportamiento real (no reportado). Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.</p>
 </section>
-<section id="fuentes-de-datos" class="level4" data-number="4.1.0.4">
-<h4 data-number="4.1.0.4" class="anchored" data-anchor-id="fuentes-de-datos"><span class="header-section-number">4.1.0.4</span> Fuentes de datos</h4>
-</section>
-<section id="encuestas-de-opinión-pública" class="level4" data-number="4.1.0.5">
-<h4 data-number="4.1.0.5" class="anchored" data-anchor-id="encuestas-de-opinión-pública"><span class="header-section-number">4.1.0.5</span> Encuestas de opinión pública</h4>
-<p><strong>Internacionales:</strong> - <strong>World Values Survey</strong>: Actitudes y valores en ~100 países - <strong>Latinobarómetro</strong>: Opinión pública en 18 países latinoamericanos anualmente - <strong>AmericasBarometer (LAPOP)</strong>: Actitudes políticas en las Américas</p>
-<p><strong>Chile:</strong> - <strong>Encuesta CEP</strong>: Trimestral desde 1987, serie temporal más larga en Chile - <strong>CASEN</strong>: Caracterización socioeconómica nacional (bienal) - <strong>Encuesta Bicentenario UC-Adimark</strong></p>
-</section>
-<section id="datos-electorales" class="level4" data-number="4.1.0.6">
-<h4 data-number="4.1.0.6" class="anchored" data-anchor-id="datos-electorales"><span class="header-section-number">4.1.0.6</span> Datos electorales</h4>
+<section id="principales-fuentes-de-datos" class="level4" data-number="4.1.0.4">
+<h4 data-number="4.1.0.4" class="anchored" data-anchor-id="principales-fuentes-de-datos"><span class="header-section-number">4.1.0.4</span> Principales fuentes de datos</h4>
+<p>Para ciencias sociales en Chile y América Latina, las fuentes más utilizadas incluyen:</p>
 <ul>
-<li><strong>Servicio Electoral de Chile (SERVEL)</strong>: Resultados electorales desagregados</li>
-<li><strong>International IDEA</strong>: Datos electorales comparados internacionalmente</li>
-<li><strong>Database of Political Institutions (DPI)</strong>: Instituciones y resultados electorales</li>
+<li><strong>Encuestas</strong>: CEP, CASEN, Latinobarómetro, LAPOP</li>
+<li><strong>Datos electorales</strong>: SERVEL (Chile), International IDEA</li>
+<li><strong>Datos económicos</strong>: Banco Mundial, INE, CEPAL</li>
+<li><strong>Datos de instituciones</strong>: V-Dem, Polity V</li>
 </ul>
+<div class="nivel" data-nivel="avanzado">
+<p><strong>Catálogo completo de fuentes de datos:</strong></p>
+<p><strong>Encuestas de opinión pública internacionales:</strong> - World Values Survey: Actitudes y valores en ~100 países - Latinobarómetro: 18 países latinoamericanos - AmericasBarometer (LAPOP): Actitudes políticas en las Américas</p>
+<p><strong>Datos sobre instituciones políticas:</strong> - Polity V: Características de regímenes políticos - V-Dem: Variedades de democracia, múltiples dimensiones - Database of Political Institutions (DPI): Sistemas electorales - Comparative Constitutions Project: Contenido de constituciones</p>
+<p><strong>Datos legislativos:</strong> - VoteView: Votaciones nominales del Congreso de EE.UU. - Manifesto Project: Contenido de manifiestos partidarios</p>
+</div>
 </section>
-<section id="datos-económicos-y-sociales" class="level4" data-number="4.1.0.7">
-<h4 data-number="4.1.0.7" class="anchored" data-anchor-id="datos-económicos-y-sociales"><span class="header-section-number">4.1.0.7</span> Datos económicos y sociales</h4>
-<ul>
-<li><strong>Banco Mundial</strong>: Indicadores de desarrollo mundial</li>
-<li><strong>CEPAL</strong>: Estadísticas económicas y sociales de América Latina</li>
-<li><strong>INE Chile</strong>: Estadísticas oficiales nacionales</li>
-<li><strong>OECD</strong>: Datos comparados de países desarrollados</li>
-</ul>
-</section>
-<section id="datos-sobre-instituciones-políticas" class="level4" data-number="4.1.0.8">
-<h4 data-number="4.1.0.8" class="anchored" data-anchor-id="datos-sobre-instituciones-políticas"><span class="header-section-number">4.1.0.8</span> Datos sobre instituciones políticas</h4>
-<ul>
-<li><strong>Polity V</strong>: Características de regímenes políticos</li>
-<li><strong>V-Dem</strong>: Variedades de democracia, múltiples dimensiones</li>
-<li><strong>Database of Political Institutions (DPI)</strong>: Sistemas electorales, estructuras gubernamentales</li>
-<li><strong>Comparative Constitutions Project</strong>: Contenido de constituciones</li>
-</ul>
-</section>
-<section id="datos-legislativos" class="level4" data-number="4.1.0.9">
-<h4 data-number="4.1.0.9" class="anchored" data-anchor-id="datos-legislativos"><span class="header-section-number">4.1.0.9</span> Datos legislativos</h4>
-<ul>
-<li><strong>VoteView</strong>: Votaciones nominales del Congreso de EE.UU.</li>
-<li><strong>Manifesto Project</strong>: Contenido de manifiestos partidarios</li>
-<li><strong>Cámara de Diputados de Chile</strong>: Votaciones nominales (requiere scraping)</li>
-</ul>
-</section>
-<section id="calidad-de-datos" class="level4" data-number="4.1.0.10">
-<h4 data-number="4.1.0.10" class="anchored" data-anchor-id="calidad-de-datos"><span class="header-section-number">4.1.0.10</span> Calidad de datos</h4>
+<section id="calidad-de-datos" class="level4" data-number="4.1.0.5">
+<h4 data-number="4.1.0.5" class="anchored" data-anchor-id="calidad-de-datos"><span class="header-section-number">4.1.0.5</span> Calidad de datos</h4>
 <p>No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.</p>
 </section>
-<section id="dimensiones-de-calidad" class="level4" data-number="4.1.0.11">
-<h4 data-number="4.1.0.11" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.1.0.11</span> Dimensiones de calidad</h4>
+<section id="dimensiones-de-calidad" class="level4" data-number="4.1.0.6">
+<h4 data-number="4.1.0.6" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.1.0.6</span> Dimensiones de calidad</h4>
 <ol type="1">
 <li><strong>Validez</strong>: ¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo @ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.</li>
 <li><strong>Confiabilidad</strong>: ¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.</li>
@@ -461,8 +437,8 @@ div.csl-indent {
 <li><strong>Accesibilidad</strong>: ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.</li>
 </ol>
 </section>
-<section id="problemas-comunes" class="level4" data-number="4.1.0.12">
-<h4 data-number="4.1.0.12" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.1.0.12</span> Problemas comunes</h4>
+<section id="problemas-comunes" class="level4" data-number="4.1.0.7">
+<h4 data-number="4.1.0.7" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.1.0.7</span> Problemas comunes</h4>
 <p><strong>Datos faltantes (missing data)</strong></p>
 <p>Los valores faltantes son ubicuos. Pueden ser:</p>
 <ul>
@@ -634,17 +610,14 @@ Apruebo Rechazo
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(datos<span class="sc">$</span>educ)<span class="sc">$</span>labels</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="datos-en-línea" class="level4" data-number="4.2.0.11">
-<h4 data-number="4.2.0.11" class="anchored" data-anchor-id="datos-en-línea"><span class="header-section-number">4.2.0.11</span> Datos en línea</h4>
+<section id="datos-en-línea-y-bases-de-datos" class="level4 nivel" data-nivel="avanzado" data-number="4.2.0.11">
+<h4 data-number="4.2.0.11" class="anchored" data-anchor-id="datos-en-línea-y-bases-de-datos"><span class="header-section-number">4.2.0.11</span> Datos en línea y bases de datos</h4>
 <p>Muchos datos están en URLs. Importar directamente:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>url <span class="ot">&lt;-</span> <span class="st">"https://ejemplo.com/datos.csv"</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(url)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Para datos de APIs, usar paquetes especializados: - <code>WDI</code>: Banco Mundial - <code>quantmod</code>: Datos financieros - <code>rtweet</code>: API de Twitter (ahora X)</p>
-</section>
-<section id="datos-desde-bases-de-datos" class="level4" data-number="4.2.0.12">
-<h4 data-number="4.2.0.12" class="anchored" data-anchor-id="datos-desde-bases-de-datos"><span class="header-section-number">4.2.0.12</span> Datos desde bases de datos</h4>
+<p>Para datos de APIs, usar paquetes especializados: <code>WDI</code> (Banco Mundial), <code>quantmod</code> (datos financieros).</p>
 <p>Para bases SQL, usar <code>DBI</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -653,12 +626,12 @@ Apruebo Rechazo
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="manipulación-de-datos" class="level4" data-number="4.2.0.13">
-<h4 data-number="4.2.0.13" class="anchored" data-anchor-id="manipulación-de-datos"><span class="header-section-number">4.2.0.13</span> Manipulación de datos</h4>
-<p>Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.</p>
 </section>
-<section id="inspeccionar-datos" class="level4" data-number="4.2.0.14">
-<h4 data-number="4.2.0.14" class="anchored" data-anchor-id="inspeccionar-datos"><span class="header-section-number">4.2.0.14</span> Inspeccionar datos</h4>
+<section id="manipulación-de-datos" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="manipulación-de-datos"><span class="header-section-number">4.3</span> Manipulación de datos</h2>
+<p>Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.</p>
+<section id="inspeccionar-datos" class="level4" data-number="4.3.0.1">
+<h4 data-number="4.3.0.1" class="anchored" data-anchor-id="inspeccionar-datos"><span class="header-section-number">4.3.0.1</span> Inspeccionar datos</h4>
 <p>Primeros y últimos casos:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)       <span class="co"># Primeros 6 casos</span></span>
@@ -682,8 +655,8 @@ Apruebo Rechazo
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(datos)       <span class="co"># Número de columnas</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="seleccionar-variables" class="level4" data-number="4.2.0.15">
-<h4 data-number="4.2.0.15" class="anchored" data-anchor-id="seleccionar-variables"><span class="header-section-number">4.2.0.15</span> Seleccionar variables</h4>
+<section id="seleccionar-variables" class="level4" data-number="4.3.0.2">
+<h4 data-number="4.3.0.2" class="anchored" data-anchor-id="seleccionar-variables"><span class="header-section-number">4.3.0.2</span> Seleccionar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>datos_reducido <span class="ot">&lt;-</span> datos[, <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"edad"</span>, <span class="st">"partido"</span>)]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -702,8 +675,8 @@ Apruebo Rechazo
 <span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>datos_reducido <span class="ot">&lt;-</span> <span class="fu">select</span>(datos, <span class="fu">where</span>(is.numeric))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="filtrar-casos" class="level4" data-number="4.2.0.16">
-<h4 data-number="4.2.0.16" class="anchored" data-anchor-id="filtrar-casos"><span class="header-section-number">4.2.0.16</span> Filtrar casos</h4>
+<section id="filtrar-casos" class="level4" data-number="4.3.0.3">
+<h4 data-number="4.3.0.3" class="anchored" data-anchor-id="filtrar-casos"><span class="header-section-number">4.3.0.3</span> Filtrar casos</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>jovenes <span class="ot">&lt;-</span> datos[datos<span class="sc">$</span>edad <span class="sc">&lt;</span> <span class="dv">30</span>, ]</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -714,8 +687,8 @@ Apruebo Rechazo
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>jovenes_izquierda <span class="ot">&lt;-</span> <span class="fu">filter</span>(datos, edad <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">&amp;</span> partido <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"PS"</span>, <span class="st">"PC"</span>, <span class="st">"FA"</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="crear-y-transformar-variables" class="level4" data-number="4.2.0.17">
-<h4 data-number="4.2.0.17" class="anchored" data-anchor-id="crear-y-transformar-variables"><span class="header-section-number">4.2.0.17</span> Crear y transformar variables</h4>
+<section id="crear-y-transformar-variables" class="level4" data-number="4.3.0.4">
+<h4 data-number="4.3.0.4" class="anchored" data-anchor-id="crear-y-transformar-variables"><span class="header-section-number">4.3.0.4</span> Crear y transformar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>datos<span class="sc">$</span>edad_decadas <span class="ot">&lt;-</span> datos<span class="sc">$</span>edad <span class="sc">/</span> <span class="dv">10</span></span>
@@ -733,8 +706,8 @@ Apruebo Rechazo
 <span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>                ))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="recodificar-variables" class="level4" data-number="4.2.0.18">
-<h4 data-number="4.2.0.18" class="anchored" data-anchor-id="recodificar-variables"><span class="header-section-number">4.2.0.18</span> Recodificar variables</h4>
+<section id="recodificar-variables" class="level4" data-number="4.3.0.5">
+<h4 data-number="4.3.0.5" class="anchored" data-anchor-id="recodificar-variables"><span class="header-section-number">4.3.0.5</span> Recodificar variables</h4>
 <p>Cambiar categorías:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">mutate</span>(datos,</span>
@@ -745,8 +718,8 @@ Apruebo Rechazo
 <span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>                ))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="renombrar-variables" class="level4" data-number="4.2.0.19">
-<h4 data-number="4.2.0.19" class="anchored" data-anchor-id="renombrar-variables"><span class="header-section-number">4.2.0.19</span> Renombrar variables</h4>
+<section id="renombrar-variables" class="level4" data-number="4.3.0.6">
+<h4 data-number="4.3.0.6" class="anchored" data-anchor-id="renombrar-variables"><span class="header-section-number">4.3.0.6</span> Renombrar variables</h4>
 <p>R base:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(datos)[<span class="fu">names</span>(datos) <span class="sc">==</span> <span class="st">"p1"</span>] <span class="ot">&lt;-</span> <span class="st">"confianza_congreso"</span></span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -758,8 +731,8 @@ Apruebo Rechazo
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">confianza_gobierno =</span> p2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="ordenar-datos" class="level4" data-number="4.2.0.20">
-<h4 data-number="4.2.0.20" class="anchored" data-anchor-id="ordenar-datos"><span class="header-section-number">4.2.0.20</span> Ordenar datos</h4>
+<section id="ordenar-datos" class="level4" data-number="4.3.0.7">
+<h4 data-number="4.3.0.7" class="anchored" data-anchor-id="ordenar-datos"><span class="header-section-number">4.3.0.7</span> Ordenar datos</h4>
 <p>Por edad (ascendente):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>datos_ordenado <span class="ot">&lt;-</span> <span class="fu">arrange</span>(datos, edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -773,9 +746,10 @@ Apruebo Rechazo
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>datos_ordenado <span class="ot">&lt;-</span> <span class="fu">arrange</span>(datos, partido, edad)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="agregar-datos" class="level4" data-number="4.2.0.21">
-<h4 data-number="4.2.0.21" class="anchored" data-anchor-id="agregar-datos"><span class="header-section-number">4.2.0.21</span> Agregar datos</h4>
-<p>Resumir por grupos:</p>
+<div class="nivel" data-nivel="avanzado">
+<section id="agregar-datos-por-grupos" class="level4" data-number="4.3.0.8">
+<h4 data-number="4.3.0.8" class="anchored" data-anchor-id="agregar-datos-por-grupos"><span class="header-section-number">4.3.0.8</span> Agregar datos por grupos</h4>
+<p>Resumir por grupos usando el operador pipe (<code>%&gt;%</code>):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>resumen_partido <span class="ot">&lt;-</span> datos <span class="sc">%&gt;%</span></span>
@@ -786,33 +760,34 @@ Apruebo Rechazo
 <span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">edad_sd =</span> <span class="fu">sd</span>(edad, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>El operador <code>%&gt;%</code> (pipe) pasa el resultado de una función a la siguiente. El código anterior dice: “toma <code>datos</code>, agrúpalo por <code>partido</code>, calcula estadísticos”.</p>
+<p>El operador <code>%&gt;%</code> pasa el resultado de una función a la siguiente.</p>
 </section>
-<section id="unir-datasets" class="level4" data-number="4.2.0.22">
-<h4 data-number="4.2.0.22" class="anchored" data-anchor-id="unir-datasets"><span class="header-section-number">4.2.0.22</span> Unir datasets</h4>
+<section id="unir-datasets" class="level4" data-number="4.3.0.9">
+<h4 data-number="4.3.0.9" class="anchored" data-anchor-id="unir-datasets"><span class="header-section-number">4.3.0.9</span> Unir datasets</h4>
 <p><strong>Left join</strong>: Mantener todos los casos del dataset izquierdo</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>datos_completo <span class="ot">&lt;-</span> <span class="fu">left_join</span>(encuesta, resultados_electorales, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>datos_completo <span class="ot">&lt;-</span> <span class="fu">left_join</span>(encuesta, resultados_electorales,</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>                             <span class="at">by =</span> <span class="st">"comuna_id"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p><strong>Inner join</strong>: Mantener solo casos presentes en ambos datasets</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>datos_completo <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(encuesta, resultados_electorales, </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>datos_completo <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(encuesta, resultados_electorales,</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                              <span class="at">by =</span> <span class="st">"comuna_id"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="exportar-datos" class="level4" data-number="4.2.0.23">
-<h4 data-number="4.2.0.23" class="anchored" data-anchor-id="exportar-datos"><span class="header-section-number">4.2.0.23</span> Exportar datos</h4>
-<p>Después de limpiar y transformar datos, es útil guardarlos.</p>
+</div>
 </section>
-<section id="csv" class="level4" data-number="4.2.0.24">
-<h4 data-number="4.2.0.24" class="anchored" data-anchor-id="csv"><span class="header-section-number">4.2.0.24</span> CSV</h4>
+<section id="exportar-datos" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="exportar-datos"><span class="header-section-number">4.4</span> Exportar datos</h2>
+<p>Después de limpiar y transformar datos, es útil guardarlos.</p>
+<section id="csv" class="level4" data-number="4.4.0.1">
+<h4 data-number="4.4.0.1" class="anchored" data-anchor-id="csv"><span class="header-section-number">4.4.0.1</span> CSV</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(datos_limpios, <span class="st">"datos_procesados.csv"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="formato-de-r" class="level4" data-number="4.2.0.25">
-<h4 data-number="4.2.0.25" class="anchored" data-anchor-id="formato-de-r"><span class="header-section-number">4.2.0.25</span> Formato de R</h4>
+<section id="formato-de-r" class="level4" data-number="4.4.0.2">
+<h4 data-number="4.4.0.2" class="anchored" data-anchor-id="formato-de-r"><span class="header-section-number">4.4.0.2</span> Formato de R</h4>
 <p>Guardar como <code>.RDS</code> (R Data Serialization) preserva estructura completa:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(datos_limpios, <span class="st">"datos_procesados.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
@@ -822,26 +797,26 @@ Apruebo Rechazo
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">"datos_procesados.rds"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="stata" class="level4" data-number="4.2.0.26">
-<h4 data-number="4.2.0.26" class="anchored" data-anchor-id="stata"><span class="header-section-number">4.2.0.26</span> Stata</h4>
+<section id="stata" class="level4" data-number="4.4.0.3">
+<h4 data-number="4.4.0.3" class="anchored" data-anchor-id="stata"><span class="header-section-number">4.4.0.3</span> Stata</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_dta</span>(datos_limpios, <span class="st">"datos_procesados.dta"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="excel" class="level4" data-number="4.2.0.27">
-<h4 data-number="4.2.0.27" class="anchored" data-anchor-id="excel"><span class="header-section-number">4.2.0.27</span> Excel</h4>
+<section id="excel" class="level4" data-number="4.4.0.4">
+<h4 data-number="4.4.0.4" class="anchored" data-anchor-id="excel"><span class="header-section-number">4.4.0.4</span> Excel</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(writexl)</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_xlsx</span>(datos_limpios, <span class="st">"datos_procesados.xlsx"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="flujo-reproducible" class="level4" data-number="4.2.0.28">
-<h4 data-number="4.2.0.28" class="anchored" data-anchor-id="flujo-reproducible"><span class="header-section-number">4.2.0.28</span> Flujo reproducible</h4>
+<section id="flujo-reproducible" class="level4" data-number="4.4.0.5">
+<h4 data-number="4.4.0.5" class="anchored" data-anchor-id="flujo-reproducible"><span class="header-section-number">4.4.0.5</span> Flujo reproducible</h4>
 <p>La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.</p>
 </section>
-<section id="principios" class="level4" data-number="4.2.0.29">
-<h4 data-number="4.2.0.29" class="anchored" data-anchor-id="principios"><span class="header-section-number">4.2.0.29</span> Principios</h4>
+<section id="principios" class="level4" data-number="4.4.0.6">
+<h4 data-number="4.4.0.6" class="anchored" data-anchor-id="principios"><span class="header-section-number">4.4.0.6</span> Principios</h4>
 <ol type="1">
 <li><strong>Usa scripts, no clics</strong>: Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.</li>
 <li><strong>Nunca modifiques datos originales</strong>: Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.</li>
@@ -875,34 +850,29 @@ Apruebo Rechazo
 <li><strong>Usa control de versiones</strong>: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.</li>
 </ol>
 </section>
-<section id="r-markdown" class="level4" data-number="4.2.0.30">
-<h4 data-number="4.2.0.30" class="anchored" data-anchor-id="r-markdown"><span class="header-section-number">4.2.0.30</span> R Markdown</h4>
-<p>R Markdown integra código, resultados y texto en un solo documento. Permite generar reportes reproducibles en HTML, PDF o Word.</p>
-<p>Ejemplo básico (<code>analisis.Rmd</code>):</p>
+<section id="r-markdown-y-quarto" class="level4 nivel" data-nivel="avanzado" data-number="4.4.0.7">
+<h4 data-number="4.4.0.7" class="anchored" data-anchor-id="r-markdown-y-quarto"><span class="header-section-number">4.4.0.7</span> R Markdown y Quarto</h4>
+<p>R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.</p>
 <pre><code>---
 title: "Análisis de participación electoral"
 author: "Tu Nombre"
-date: "2025-12-03"
 output: html_document
 ---
 
-#### Introducción
+## Introducción
 
 Este análisis examina factores asociados a participación electoral.
 
 
-
-#### Resultados
-
-La participación promedio fue XX%.
-
-
 ::: {.cell}
 
-:::
-</code></pre>
-<p>Al compilar (“Knit”), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.</p>
+```{.r .cell-code}
+library(tidyverse)
+datos &lt;- read_csv("datos/encuesta.csv")
+summary(datos)</code></pre>
 </section>
+<p>```</p>
+<p>Al compilar (“Knit” o “Render”), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente. :::</p>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>

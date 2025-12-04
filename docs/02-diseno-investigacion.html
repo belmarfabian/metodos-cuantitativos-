@@ -360,15 +360,23 @@ div.csl-indent {
 <p>Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.</p>
 <p><strong>Ejemplo</strong>: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.</p>
 <p><strong>Panel (longitudinal)</strong></p>
-<p>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades usando <strong>efectos fijos</strong>.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="flores2019">Flores &amp; Nooruddin (<a href="01-introduccion.html#ref-flores2019" role="doc-biblioref">2016</a>)</span> usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios.</p>
+<p>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.</p>
+<div class="nivel" data-nivel="avanzado">
+<p>Los datos de panel permiten usar <strong>efectos fijos</strong>, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, <span class="citation" data-cites="flores2019">Flores &amp; Nooruddin (<a href="01-introduccion.html#ref-flores2019" role="doc-biblioref">2016</a>)</span> usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.</p>
+</div>
 <p><strong>Estrategias para fortalecer inferencia causal en diseños observacionales</strong>:</p>
 <ol type="1">
 <li><p><strong>Controles estadísticos</strong>: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores <em>observados</em>.</p></li>
-<li><p><strong>Matching</strong>: Emparejar casos tratados con controles similares. Aproxima balance experimental, pero depende de calidad del emparejamiento.</p></li>
-<li><p><strong>Diseño de investigación robusto</strong>: Múltiples tests de robustez, placebo tests, análisis de sensibilidad.</p></li>
 <li><p><strong>Triangulación</strong>: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).</p></li>
 </ol>
+<div class="nivel" data-nivel="avanzado">
+<p><strong>Técnicas avanzadas de inferencia causal:</strong></p>
+<ol start="3" type="1">
+<li><p><strong>Matching</strong>: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.</p></li>
+<li><p><strong>Diseños cuasi-experimentales</strong>: Incluyen diferencias-en-diferencias, regresión discontinua, y variables instrumentales. Explotan variación “natural” que aproxima aleatorización.</p></li>
+<li><p><strong>Análisis de sensibilidad</strong>: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.</p></li>
+</ol>
+</div>
 </section>
 <section id="validez-interna-y-externa" class="level4" data-number="2.2.0.3">
 <h4 data-number="2.2.0.3" class="anchored" data-anchor-id="validez-interna-y-externa"><span class="header-section-number">2.2.0.3</span> Validez interna y externa</h4>
@@ -379,8 +387,12 @@ div.csl-indent {
 <section id="casos-y-unidades-de-análisis" class="level4" data-number="2.2.0.4">
 <h4 data-number="2.2.0.4" class="anchored" data-anchor-id="casos-y-unidades-de-análisis"><span class="header-section-number">2.2.0.4</span> Casos y unidades de análisis</h4>
 <p>Una decisión crucial en diseño de investigación es qué constituye un “caso” —la <strong>unidad de análisis</strong>: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</p>
-<p>Debemos evitar dos falacias. <strong>Falacia ecológica</strong> <span class="citation" data-cites="robinson1950">(<a href="01-introduccion.html#ref-robinson1950" role="doc-biblioref">Robinson, 1950</a>)</span>: inferir relaciones a nivel individual desde asociaciones a nivel agregado (si comunas con más inmigrantes votan más por la derecha, ¿significa que inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente, mientras inmigrantes votan izquierda). <strong>Falacia atómica</strong> (o “individualista”): inferir relaciones a nivel agregado desde patrones individuales (si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente; puede haber efectos contextuales que cambian relaciones).</p>
-<p>La inferencia estadística requiere suficientes observaciones relativas al número de parámetros estimados. <span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> enfatizan el problema de “muchas variables, pocas observaciones” (MVPO): si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes <strong>grados de libertad</strong> para distinguir patrones genuinos de ruido. Soluciones: aumentar observaciones (datos de panel con múltiples países × múltiples años), reducir parámetros (selección teórica de variables, análisis factorial), o combinar enfoques (análisis cuantitativo de patrones generales + estudios de caso que elucidan mecanismos).</p>
+<div class="nivel" data-nivel="avanzado">
+<p><strong>Falacias de nivel de análisis:</strong></p>
+<p>Debemos evitar dos falacias al cambiar de nivel de análisis. La <strong>falacia ecológica</strong> <span class="citation" data-cites="robinson1950">(<a href="01-introduccion.html#ref-robinson1950" role="doc-biblioref">Robinson, 1950</a>)</span> ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La <strong>falacia atómica</strong> es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.</p>
+<p><strong>El problema de “muchas variables, pocas observaciones”:</strong></p>
+<p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> enfatizan que si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes <strong>grados de libertad</strong> para distinguir señal de ruido. Soluciones: aumentar observaciones (datos de panel), reducir parámetros (selección teórica), o combinar enfoques cuantitativos y cualitativos.</p>
+</div>
 </section>
 </section>
 <section id="resumen" class="level2 unnumbered">
