@@ -31,7 +31,13 @@ La **conceptualización** especifica qué entendemos por un término; sin ella, 
 
 [^participacion]: Si usas definición minimalista, Chile tendría participación "baja" con 45-50% en elecciones recientes. Si usas definición expansiva incluyendo protestas y cabildos, Chile podría tener participación "alta". La elección depende de tu pregunta de investigación.
 
-La **operacionalización** traduce el concepto en procedimientos específicos de medición, siendo el puente entre teoría y datos. @adcock2001 identifican tres criterios para buena operacionalización: **validez de fondo** (los indicadores capturan el significado teórico del concepto; si conceptualizamos democracia como "gobierno del pueblo", un indicador basado solo en elecciones es insuficiente), **convergencia** (múltiples indicadores del mismo concepto deberían correlacionar positivamente; si medimos "confianza institucional" con preguntas sobre Congreso, Poder Judicial y policía, estas medidas deberían correlacionar aunque imperfectamente), y **discriminación** (el indicador debe distinguir entre casos que difieren conceptualmente; una medida de democracia que asigna puntajes similares a Noruega y Venezuela tiene poca validez discriminante).
+La **operacionalización** traduce el concepto en procedimientos específicos de medición, siendo el puente entre teoría y datos.
+
+::: {.nivel data-nivel="avanzado"}
+**Criterios para buena operacionalización**
+
+@adcock2001 identifican tres criterios para buena operacionalización: **validez de fondo** (los indicadores capturan el significado teórico del concepto; si conceptualizamos democracia como "gobierno del pueblo", un indicador basado solo en elecciones es insuficiente), **convergencia** (múltiples indicadores del mismo concepto deberían correlacionar positivamente; si medimos "confianza institucional" con preguntas sobre Congreso, Poder Judicial y policía, estas medidas deberían correlacionar aunque imperfectamente), y **discriminación** (el indicador debe distinguir entre casos que difieren conceptualmente; una medida de democracia que asigna puntajes similares a Noruega y Venezuela tiene poca validez discriminante).
+:::
 
 
 ## Niveles de medición
@@ -60,20 +66,29 @@ El nivel de medición determina qué estadísticos son apropiados: **nominal** u
 
 ## Validez y confiabilidad
 
-Una buena medición debe ser **válida** (¿la medida captura el concepto que pretende medir?) y **confiable** (¿la medición es consistente?). @adcock2001 distinguen varios tipos de validez: **validez de contenido** (los indicadores cubren el dominio del concepto; si conceptualizamos "calidad democrática" incluyendo libertades civiles, procedimientos electorales y rendición de cuentas, una medida basada solo en elecciones tiene baja validez de contenido), **validez de constructo** (la medida se relaciona como esperado con otras variables; si teorizamos que confianza institucional reduce protesta pero nuestra medida predice *más* protesta, hay un problema de validez)
+Una buena medición debe ser **válida** (¿la medida captura el concepto que pretende medir?) y **confiable** (¿la medición es consistente?). La **validez de contenido** evalúa si los indicadores cubren el dominio del concepto: si conceptualizamos "calidad democrática" incluyendo libertades civiles, procedimientos electorales y rendición de cuentas, una medida basada solo en elecciones tiene baja validez de contenido.
 
-3. **Validez convergente**: Diferentes mediciones del mismo concepto deberían correlacionar. Índices de democracia de Polity, Freedom House y V-Dem miden el mismo concepto; deberían correlacionar fuertemente (y lo hacen, aunque imperfectamente).
-4. **Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
+::: {.nivel data-nivel="avanzado"}
+**Tipos de validez**
+
+@adcock2001 distinguen varios tipos adicionales de validez:
+
+- **Validez de constructo**: La medida se relaciona como esperado con otras variables. Si teorizamos que confianza institucional reduce protesta pero nuestra medida predice *más* protesta, hay un problema de validez.
+- **Validez convergente**: Diferentes mediciones del mismo concepto deberían correlacionar. Índices de democracia de Polity, Freedom House y V-Dem miden el mismo concepto; deberían correlacionar fuertemente (y lo hacen, aunque imperfectamente).
+- **Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
+:::
 
 #### Confiabilidad
 
 La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiable produce resultados similares cuando se aplica repetidamente al mismo fenómeno.
 
-Tipos de confiabilidad:
+::: {.nivel data-nivel="avanzado"}
+**Tipos de confiabilidad**
 
 1. **Test-retest**: Aplicar la misma medición en dos momentos cercanos. Si puntajes cambian dramáticamente sin razón sustantiva, la medición es poco confiable.
 2. **Confiabilidad inter-codificadores**: Cuando codificadores humanos clasifican datos (ej: codificar manifiestos partidarios), ¿acuerdan? El coeficiente kappa de Cohen mide esto.
-3. **Consistencia interna**: Para escalas multi-ítem (ver siguiente sección), ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
+3. **Consistencia interna**: Para escalas multi-ítem, ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
+:::
 
 #### Relación entre validez y confiabilidad
 

@@ -96,7 +96,13 @@ library(patchwork)
 p1 | p2
 ```
 
-Muy pocos bins ocultan detalles; demasiados bins generan ruido. La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins.
+Muy pocos bins ocultan detalles; demasiados bins generan ruido.
+
+::: {.nivel data-nivel="avanzado"}
+**Regla de Sturges**
+
+La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins, donde $n$ es el número de observaciones.
+:::
 
 #### Medidas de tendencia central
 
@@ -195,7 +201,9 @@ $$s^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2$$
 var(comunas$participacion)
 ```
 
+::: {.nivel data-nivel="avanzado"}
 **¿Por qué $n-1$ y no $n$?** La corrección de Bessel ajusta por usar la media muestral en lugar de la media poblacional. Esto hace que la varianza muestral sea un estimador insesgado de la varianza poblacional.
+:::
 
 **Problema:** La varianza está en unidades al cuadrado (% al cuadrado), difícil de interpretar.
 
@@ -213,6 +221,7 @@ sd(comunas$participacion)
 
 La desviación estándar está en las mismas unidades que los datos originales, facilitando interpretación.
 
+::: {.nivel data-nivel="avanzado"}
 #### Coeficiente de variación
 
 El **coeficiente de variación** (CV) es la desviación estándar relativa a la media:
@@ -236,6 +245,7 @@ data.frame(
   CV = c(cv_participacion, cv_educacion)
 ) %>% kable(digits = 3)
 ```
+:::
 
 #### Comparación de medidas de dispersión
 

@@ -440,9 +440,11 @@ sample estimates:
 <h4 data-number="11.1.0.2" class="anchored" data-anchor-id="mínimos-cuadrados-ordinarios"><span class="header-section-number">11.1.0.2</span> Mínimos cuadrados ordinarios</h4>
 <p>El método de <strong>mínimos cuadrados ordinarios</strong> (OLS, <em>Ordinary Least Squares</em>) estima <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> minimizando la suma de errores al cuadrado:</p>
 <p><span class="math display">\[\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2\]</span></p>
+<div class="nivel" data-nivel="avanzado">
 <p><strong>Fórmulas OLS:</strong></p>
 <p><span class="math display">\[\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}\]</span></p>
 <p><span class="math display">\[\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}\]</span></p>
+</div>
 <p>Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: Gasto público y crecimiento económico</span></span>
@@ -497,7 +499,9 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 <section id="r-cuadrado-r2" class="level4 page-columns page-full" data-number="11.2.0.2">
 <h4 data-number="11.2.0.2" class="anchored" data-anchor-id="r-cuadrado-r2"><span class="header-section-number">11.2.0.2</span> R cuadrado (<span class="math inline">\(R^2\)</span>)</h4>
 <p>El <strong>coeficiente de determinación</strong> mide qué proporción de la variabilidad en <span class="math inline">\(Y\)</span> es explicada por <span class="math inline">\(X\)</span>:</p>
+<div class="nivel" data-nivel="avanzado">
 <p><span class="math display">\[R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}\]</span></p>
+</div>
 <ul>
 <li><span class="math inline">\(0 \leq R^2 \leq 1\)</span></li>
 <li><span class="math inline">\(R^2 = 0\)</span>: El modelo no explica nada</li>

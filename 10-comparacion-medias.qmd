@@ -62,6 +62,111 @@ resultado <- t.test(despues, antes, paired = TRUE)
 print(resultado)
 ```
 
+## ANOVA: Comparar más de dos grupos
+
+Cuando queremos comparar las medias de **tres o más grupos**, la prueba t no es apropiada porque haríamos múltiples comparaciones, aumentando la probabilidad de error tipo I. El **ANOVA** (Analysis of Variance) resuelve esto comparando todos los grupos simultáneamente.
+
+**Hipótesis:**
+
+- $H_0$: Todas las medias son iguales ($\mu_1 = \mu_2 = \mu_3 = ...$)
+- $H_1$: Al menos una media es diferente
+
+**Ejemplo:** Comparamos la satisfacción con la democracia según orientación política (izquierda, centro, derecha).
+
+```{r anova-ejemplo, echo=TRUE}
+# Datos simulados: satisfacción con democracia por orientación política
+set.seed(2024)
+n_grupo <- 100
+
+datos_anova <- data.frame(
+  satisfaccion = c(
+    rnorm(n_grupo, mean = 4.5, sd = 1.2),  # Izquierda
+    rnorm(n_grupo, mean = 5.2, sd = 1.1),  # Centro
+    rnorm(n_grupo, mean = 4.0, sd = 1.3)   # Derecha
+  ),
+  orientacion = rep(c("Izquierda", "Centro", "Derecha"), each = n_grupo)
+)
+
+# ANOVA de una vía
+modelo_anova <- aov(satisfaccion ~ orientacion, data = datos_anova)
+summary(modelo_anova)
+```
+
+**Interpretación:** Si el valor p es menor a 0.05, rechazamos $H_0$ y concluimos que al menos un grupo tiene una media significativamente diferente.
+
+```{r anova-plot, echo=TRUE, fig.cap="Satisfacción con democracia por orientación política"}
+library(ggplot2)
+
+ggplot(datos_anova, aes(x = orientacion, y = satisfaccion, fill = orientacion)) +
+  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  labs(x = "Orientación política",
+       y = "Satisfacción con la democracia (1-7)",
+       title = "Satisfacción según orientación política",
+       subtitle = "Punto rojo = media del grupo") +
+  theme_minimal()
+```
+
+::: {.nivel data-nivel="avanzado"}
+#### Comparaciones post-hoc
+
+Si ANOVA indica diferencias significativas, ¿entre qué grupos están las diferencias? Las pruebas **post-hoc** (como Tukey HSD) comparan todos los pares de grupos controlando el error tipo I.
+
+```{r posthoc, echo=TRUE}
+# Comparaciones post-hoc de Tukey
+TukeyHSD(modelo_anova)
+```
+
+**Interpretación:** El intervalo de confianza que no incluye 0 indica diferencia significativa entre esos dos grupos.
+:::
+
+## Supuestos de las pruebas paramétricas
+
+Las pruebas t y ANOVA asumen:
+
+1. **Independencia**: Las observaciones son independientes entre sí
+2. **Normalidad**: Los datos en cada grupo se distribuyen normalmente
+3. **Homogeneidad de varianzas**: Las varianzas de los grupos son similares
+
+::: {.callout-tip}
+## ¿Qué tan importantes son los supuestos?
+
+En la práctica:
+
+- **Independencia** es el supuesto más importante. Si no se cumple, los resultados pueden ser muy sesgados.
+- **Normalidad** es menos crítica con muestras grandes (n > 30 por grupo) gracias al teorema del límite central.
+- **Homogeneidad** puede relajarse usando versiones corregidas de las pruebas (como el ajuste de Welch en t.test).
+:::
+
+::: {.nivel data-nivel="avanzado"}
+#### Alternativas no paramétricas
+
+Cuando los supuestos no se cumplen, especialmente con muestras pequeñas, usamos pruebas no paramétricas:
+
+| Prueba paramétrica | Alternativa no paramétrica |
+|-------------------|---------------------------|
+| t de una muestra | Wilcoxon signed-rank |
+| t de dos muestras independientes | Mann-Whitney U |
+| t pareada | Wilcoxon signed-rank pareada |
+| ANOVA | Kruskal-Wallis |
+
+```{r no-parametrico, echo=TRUE}
+# Ejemplo: Mann-Whitney U (alternativa a t de dos muestras)
+wilcox.test(ingresos_hombres, ingresos_mujeres)
+
+# Ejemplo: Kruskal-Wallis (alternativa a ANOVA)
+kruskal.test(satisfaccion ~ orientacion, data = datos_anova)
+```
+:::
+
+## ¿Qué prueba usar?
+
+| Situación | Prueba recomendada |
+|-----------|-------------------|
+| Comparar una media con un valor teórico | t de una muestra |
+| Comparar medias de 2 grupos independientes | t de dos muestras |
+| Comparar medias antes/después (mismos sujetos) | t pareada |
+| Comparar medias de 3+ grupos | ANOVA |
 
 ## Resumen {.unnumbered}
 

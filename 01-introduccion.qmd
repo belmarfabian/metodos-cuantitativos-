@@ -35,9 +35,15 @@ Antes de creer cualquier afirmación sobre el mundo social, pregúntate:
 Estas preguntas aplican tanto para evaluar investigación ajena como para diseñar la propia.
 :::
 
-@king1994 argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares. Sin embargo, las ciencias sociales enfrentan desafíos específicos como la **reflexividad** ---los sujetos modifican su comportamiento al conocer teorías sobre ellos [@giddens1984]---, la **complejidad causal** ---fenómenos con múltiples causas interdependientes---, la **imposibilidad de experimentación** ---frecuentemente no podemos manipular variables por razones éticas o prácticas---, y la **dependencia del contexto** ---las regularidades sociales son históricamente contingentes [@Abbott2001]---. Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.[^reflexividad]
+@king1994 argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares.
+
+::: {.nivel data-nivel="avanzado"}
+**Desafíos específicos de las ciencias sociales**
+
+Las ciencias sociales enfrentan desafíos específicos como la **reflexividad** ---los sujetos modifican su comportamiento al conocer teorías sobre ellos [@giddens1984]---, la **complejidad causal** ---fenómenos con múltiples causas interdependientes---, la **imposibilidad de experimentación** ---frecuentemente no podemos manipular variables por razones éticas o prácticas---, y la **dependencia del contexto** ---las regularidades sociales son históricamente contingentes [@Abbott2001]---. Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.[^reflexividad]
 
 [^reflexividad]: Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas.
+:::
 
 #### Ciencia social y cuantificación
 
@@ -70,11 +76,21 @@ La **teoría** cumple tres funciones en investigación cuantitativa:
 
 @king1994 insisten en que "diseñar investigación social es diseñar un test de teoría". No existe investigación "ateórica". Incluso el análisis exploratorio más inductivo parte de intuiciones teóricas sobre qué buscar.
 
-Las teorías varían en su nivel de abstracción: **gran teoría** (marcos conceptuales amplios como marxismo o funcionalismo estructural), **teorías de rango medio** que explican clases específicas de fenómenos sin pretensión de aplicabilidad universal [@merton1949] (ej: teoría de la modernización para democratización), y **modelos formales** que representan matemáticamente mecanismos causales específicos (ej: modelos de teoría de juegos sobre negociación legislativa). En investigación cuantitativa en ciencias políticas predominan teorías de rango medio: suficientemente específicas para generar hipótesis testeables, pero suficientemente generales para trascender casos únicos.
+::: {.nivel data-nivel="avanzado"}
+**Niveles de teoría**
 
-El objetivo último de la investigación cuantitativa explicativa es establecer **relaciones causales**: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y. @brady2008 distinguen dos tradiciones: el **enfoque neopositivista** ---dominante en economía y partes de la ciencia política--- que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales, y el **enfoque interpretativo-mecanísmico** que privilegia comprensión de los procesos mediante los cuales X produce Y.[^enfoques-causales] Ambos enfoques son legítimos pero implican estrategias metodológicas distintas.
+Las teorías varían en su nivel de abstracción: **gran teoría** (marcos conceptuales amplios como marxismo o funcionalismo estructural), **teorías de rango medio** que explican clases específicas de fenómenos sin pretensión de aplicabilidad universal [@merton1949] (ej: teoría de la modernización para democratización), y **modelos formales** que representan matemáticamente mecanismos causales específicos (ej: modelos de teoría de juegos sobre negociación legislativa). En investigación cuantitativa en ciencias políticas predominan teorías de rango medio: suficientemente específicas para generar hipótesis testeables, pero suficientemente generales para trascender casos únicos.
+:::
+
+El objetivo último de la investigación cuantitativa explicativa es establecer **relaciones causales**: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y.
+
+::: {.nivel data-nivel="avanzado"}
+**Tradiciones de inferencia causal**
+
+@brady2008 distinguen dos tradiciones: el **enfoque neopositivista** ---dominante en economía y partes de la ciencia política--- que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales, y el **enfoque interpretativo-mecanísmico** que privilegia comprensión de los procesos mediante los cuales X produce Y.[^enfoques-causales] Ambos enfoques son legítimos pero implican estrategias metodológicas distintas.
 
 [^enfoques-causales]: El enfoque neopositivista pregunta "¿cuánto aumenta la probabilidad de votar si una persona es contactada telefónicamente?" y responde con experimentos aleatorios. El enfoque mecanísmico pregunta "¿cómo funciona ese contacto?" y responde con entrevistas sobre recordatorios y presión social. Este libro enfatiza el primero, aunque reconocemos la importancia de teorizar mecanismos.
+:::
 
 ## Lógica de la investigación cuantitativa
 

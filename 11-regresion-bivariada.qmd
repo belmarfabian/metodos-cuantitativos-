@@ -61,11 +61,13 @@ El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) 
 
 $$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$
 
+::: {.nivel data-nivel="avanzado"}
 **Fórmulas OLS:**
 
 $$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$
 
 $$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
+:::
 
 Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.
 
@@ -112,7 +114,9 @@ En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríam
 
 El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:
 
+::: {.nivel data-nivel="avanzado"}
 $$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$
+:::
 
 - $0 \leq R^2 \leq 1$
 - $R^2 = 0$: El modelo no explica nada
