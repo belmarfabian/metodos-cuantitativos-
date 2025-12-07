@@ -42,26 +42,27 @@ La **operacionalización** traduce el concepto en procedimientos específicos de
 
 ## Niveles de medición
 
-Las variables se clasifican según su **nivel de medición**, que determina qué operaciones matemáticas y estadísticas son apropiadas. Las variables **nominales** clasifican casos en categorías mutuamente excluyentes sin ordenamiento ---religión, región geográfica, tipo de sistema electoral---; las únicas operaciones válidas son contar frecuencias y comparar igualdad/diferencia. Las variables **ordinales** ordenan casos sin especificar distancias entre categorías ---nivel educativo, acuerdo en escala Likert---; podemos ordenar, pero no sabemos si la distancia entre "primaria" y "secundaria" es igual a la entre "secundaria" y "universitaria".[^ordinal-promedio] Técnicamente, calcular promedios con datos ordinales es problemático, aunque en práctica se hace frecuentemente con escalas Likert.
+Las variables se clasifican según su **nivel de medición**, que determina qué operaciones estadísticas son apropiadas:
 
-[^ordinal-promedio]: Si preguntas "¿Cuán satisfecho está con la democracia?" en escala 1-5, no sabemos si la distancia entre 1 y 2 es igual a la entre 4 y 5. Calcular promedios es técnicamente inapropiado, pero en práctica todos los estudios de opinión pública lo hacen asumiendo equidistancia. Si te preocupa, usa medianas y tests no-paramétricos.
+| Nivel | Características | Ejemplos | Operaciones válidas |
+|-------|-----------------|----------|---------------------|
+| **Nominal** | Categorías sin orden | Religión, región, partido | Contar frecuencias, comparar igualdad |
+| **Ordinal** | Categorías ordenadas, distancias desconocidas | Nivel educativo, Likert | Lo anterior + ordenar, calcular medianas |
+| **Intervalo** | Distancias constantes, sin cero absoluto | Temperatura Celsius | Lo anterior + promedios, diferencias |
+| **Razón** | Distancias constantes, cero absoluto | Ingresos, edad, % de votos | Todas las operaciones matemáticas |
 
-Las variables de **intervalo** tienen distancias constantes entre valores pero carecen de cero absoluto (ej: temperatura en Celsius donde la diferencia entre 10°C y 20°C es igual a la entre 20°C y 30°C, pero 0°C no significa "ausencia de temperatura"); en ciencias sociales son raras, y la mayoría de escalas (puntajes de democracia, índices de ideología) deberían tratarse como ordinales aunque frecuentemente las tratamos "como si" fueran de intervalo. Las variables de **razón** tienen distancias constantes y cero absoluto (ej: ingresos, población, porcentaje de votos, edad); aquí podemos decir que alguien con $2 millones gana el doble que alguien con $1 millón, y todas las operaciones matemáticas son válidas.
+::: {.callout-warning}
+## Cuidado con las escalas Likert
+Técnicamente son ordinales, pero en práctica se tratan como de intervalo. Si te preocupa, usa medianas y tests no-paramétricos.
+:::
 
-El nivel de medición determina qué estadísticos son apropiados: **nominal** usa moda, frecuencias y chi-cuadrado; **ordinal** usa mediana, rangos y correlación de Spearman; **intervalo/razón** usa media, desviación estándar, correlación de Pearson y regresión. Usar estadísticos inapropiados produce resultados sin sentido: calcular "ingreso promedio" tiene sentido; calcular "religión promedio" no.[^religion-promedio]
+Usar estadísticos inapropiados produce resultados sin sentido: "ingreso promedio = $650,000" tiene sentido; "religión promedio = 2.3" no (los números son solo etiquetas).[^religion-promedio]
 
-[^religion-promedio]: Si codificas religión como Católico=1, Evangélico=2, Ateo=3, y calculas "promedio = 2.3", el resultado carece de significado. Los números son solo etiquetas. En cambio, "ingreso promedio = $650,000" sí tiene sentido porque los números representan cantidades reales.
+[^religion-promedio]: Si codificas religión como Católico=1, Evangélico=2, Ateo=3, y calculas "promedio = 2.3", el resultado carece de significado.
 
-::: {.callout-important}
-## Resumen: ¿Qué estadísticos puedo usar?
-
-| Nivel | Ejemplos | Estadísticos válidos |
-|-------|----------|---------------------|
-| **Nominal** | Religión, partido político, región | Moda, frecuencias, % |
-| **Ordinal** | Nivel educativo, satisfacción (Likert) | Mediana, percentiles, rangos |
-| **Intervalo/Razón** | Ingresos, edad, % de votos | Media, SD, correlación, regresión |
-
-**Regla práctica**: Siempre puedes usar estadísticos de niveles *inferiores*, pero nunca de niveles *superiores*.
+::: {.callout-tip}
+## Regla práctica
+Siempre puedes usar estadísticos de niveles *inferiores*, pero nunca de niveles *superiores*.
 :::
 
 ## Validez y confiabilidad

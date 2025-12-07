@@ -349,51 +349,74 @@ div.csl-indent {
 </section>
 <section id="niveles-de-medición" class="level2 page-columns page-full" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="niveles-de-medición"><span class="header-section-number">3.2</span> Niveles de medición</h2>
-<p>Las variables se clasifican según su <strong>nivel de medición</strong>, que determina qué operaciones matemáticas y estadísticas son apropiadas. Las variables <strong>nominales</strong> clasifican casos en categorías mutuamente excluyentes sin ordenamiento —religión, región geográfica, tipo de sistema electoral—; las únicas operaciones válidas son contar frecuencias y comparar igualdad/diferencia. Las variables <strong>ordinales</strong> ordenan casos sin especificar distancias entre categorías —nivel educativo, acuerdo en escala Likert—; podemos ordenar, pero no sabemos si la distancia entre “primaria” y “secundaria” es igual a la entre “secundaria” y “universitaria”.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> Técnicamente, calcular promedios con datos ordinales es problemático, aunque en práctica se hace frecuentemente con escalas Likert.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Si preguntas “¿Cuán satisfecho está con la democracia?” en escala 1-5, no sabemos si la distancia entre 1 y 2 es igual a la entre 4 y 5. Calcular promedios es técnicamente inapropiado, pero en práctica todos los estudios de opinión pública lo hacen asumiendo equidistancia. Si te preocupa, usa medianas y tests no-paramétricos.</p></div></div><p>Las variables de <strong>intervalo</strong> tienen distancias constantes entre valores pero carecen de cero absoluto (ej: temperatura en Celsius donde la diferencia entre 10°C y 20°C es igual a la entre 20°C y 30°C, pero 0°C no significa “ausencia de temperatura”); en ciencias sociales son raras, y la mayoría de escalas (puntajes de democracia, índices de ideología) deberían tratarse como ordinales aunque frecuentemente las tratamos “como si” fueran de intervalo. Las variables de <strong>razón</strong> tienen distancias constantes y cero absoluto (ej: ingresos, población, porcentaje de votos, edad); aquí podemos decir que alguien con $2 millones gana el doble que alguien con $1 millón, y todas las operaciones matemáticas son válidas.</p>
-<p>El nivel de medición determina qué estadísticos son apropiados: <strong>nominal</strong> usa moda, frecuencias y chi-cuadrado; <strong>ordinal</strong> usa mediana, rangos y correlación de Spearman; <strong>intervalo/razón</strong> usa media, desviación estándar, correlación de Pearson y regresión. Usar estadísticos inapropiados produce resultados sin sentido: calcular “ingreso promedio” tiene sentido; calcular “religión promedio” no.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Si codificas religión como Católico=1, Evangélico=2, Ateo=3, y calculas “promedio = 2.3”, el resultado carece de significado. Los números son solo etiquetas. En cambio, “ingreso promedio = $650,000” sí tiene sentido porque los números representan cantidades reales.</p></div></div><div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Importante</span>Resumen: ¿Qué estadísticos puedo usar?
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p>Las variables se clasifican según su <strong>nivel de medición</strong>, que determina qué operaciones estadísticas son apropiadas:</p>
 <table class="caption-top table">
 <colgroup>
+<col style="width: 12%">
+<col style="width: 30%">
 <col style="width: 18%">
-<col style="width: 26%">
-<col style="width: 55%">
+<col style="width: 38%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Nivel</th>
+<th>Características</th>
 <th>Ejemplos</th>
-<th>Estadísticos válidos</th>
+<th>Operaciones válidas</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>Nominal</strong></td>
-<td>Religión, partido político, región</td>
-<td>Moda, frecuencias, %</td>
+<td>Categorías sin orden</td>
+<td>Religión, región, partido</td>
+<td>Contar frecuencias, comparar igualdad</td>
 </tr>
 <tr class="even">
 <td><strong>Ordinal</strong></td>
-<td>Nivel educativo, satisfacción (Likert)</td>
-<td>Mediana, percentiles, rangos</td>
+<td>Categorías ordenadas, distancias desconocidas</td>
+<td>Nivel educativo, Likert</td>
+<td>Lo anterior + ordenar, calcular medianas</td>
 </tr>
 <tr class="odd">
-<td><strong>Intervalo/Razón</strong></td>
+<td><strong>Intervalo</strong></td>
+<td>Distancias constantes, sin cero absoluto</td>
+<td>Temperatura Celsius</td>
+<td>Lo anterior + promedios, diferencias</td>
+</tr>
+<tr class="even">
+<td><strong>Razón</strong></td>
+<td>Distancias constantes, cero absoluto</td>
 <td>Ingresos, edad, % de votos</td>
-<td>Media, SD, correlación, regresión</td>
+<td>Todas las operaciones matemáticas</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Regla práctica</strong>: Siempre puedes usar estadísticos de niveles <em>inferiores</em>, pero nunca de niveles <em>superiores</em>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Cuidado con las escalas Likert
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Técnicamente son ordinales, pero en práctica se tratan como de intervalo. Si te preocupa, usa medianas y tests no-paramétricos.</p>
+</div>
+</div>
+<p>Usar estadísticos inapropiados produce resultados sin sentido: “ingreso promedio = $650,000” tiene sentido; “religión promedio = 2.3” no (los números son solo etiquetas).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Si codificas religión como Católico=1, Evangélico=2, Ateo=3, y calculas “promedio = 2.3”, el resultado carece de significado.</p></div></div><div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Regla práctica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Siempre puedes usar estadísticos de niveles <em>inferiores</em>, pero nunca de niveles <em>superiores</em>.</p>
 </div>
 </div>
 </section>
@@ -423,8 +446,8 @@ div.csl-indent {
 </section>
 <section id="relación-entre-validez-y-confiabilidad" class="level4 page-columns page-full" data-number="3.3.0.2">
 <h4 data-number="3.3.0.2" class="anchored" data-anchor-id="relación-entre-validez-y-confiabilidad"><span class="header-section-number">3.3.0.2</span> Relación entre validez y confiabilidad</h4>
-<p>Es posible tener alta confiabilidad pero baja validez. Si medimos “democracia” solo con PIB per cápita, la medida será confiable —el PIB se mide consistentemente— pero inválida —el PIB no es democracia—.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn5"><p><sup>5</sup>&nbsp;Imagina una balanza que consistentemente marca 5kg más de lo real. Es confiable porque siempre da el mismo error, pero inválida porque no mide el peso verdadero. Lo mismo ocurre si medimos “calidad democrática” solo con número de partidos en el Congreso: la medida es confiable pero conceptualmente inválida.</p></div></div><p>También es posible tener alta validez conceptual pero baja confiabilidad. Mediciones de conceptos complejos mediante juicio experto pueden ser válidas pero inconsistentes si expertos desacuerdan.</p>
+<p>Es posible tener alta confiabilidad pero baja validez. Si medimos “democracia” solo con PIB per cápita, la medida será confiable —el PIB se mide consistentemente— pero inválida —el PIB no es democracia—.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Imagina una balanza que consistentemente marca 5kg más de lo real. Es confiable porque siempre da el mismo error, pero inválida porque no mide el peso verdadero. Lo mismo ocurre si medimos “calidad democrática” solo con número de partidos en el Congreso: la medida es confiable pero conceptualmente inválida.</p></div></div><p>También es posible tener alta validez conceptual pero baja confiabilidad. Mediciones de conceptos complejos mediante juicio experto pueden ser válidas pero inconsistentes si expertos desacuerdan.</p>
 <p>Idealmente, queremos ambas. Pero si debemos priorizar, <span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> argumentan que validez importa más: una medición inválida es inútil sin importar cuán confiable sea.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">

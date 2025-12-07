@@ -60,7 +60,16 @@ Sin embargo, no todo fenómeno político es susceptible de cuantificación útil
 
 La decisión de cuantificar debe responder a la pregunta de investigación, no a preferencias metodológicas preconcebidas. Como afirma @abbott1988, "los métodos son herramientas, no paradigmas". El investigador competente domina múltiples herramientas y selecciona la apropiada para cada problema.
 
-En ciencia política, cuantificamos **actitudes y opiniones** ---preferencias electorales, apoyo a políticas, confianza institucional---, **comportamiento** ---participación electoral, protesta, corrupción declarada---, **atributos institucionales** ---sistemas electorales, grado de federalismo, independencia judicial---, y **resultados agregados** ---nivel de democracia, desigualdad de ingresos, gasto público---. Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos "democracia"? @munck2009 muestran que distintos índices operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.[^indices-democracia] Esta tensión entre concepto y medición es constitutiva de la investigación cuantitativa.
+En ciencia política, cuantificamos:
+
+| Tipo | Ejemplos |
+|------|----------|
+| **Actitudes y opiniones** | Preferencias electorales, apoyo a políticas, confianza institucional |
+| **Comportamiento** | Participación electoral, protesta, corrupción declarada |
+| **Atributos institucionales** | Sistemas electorales, grado de federalismo, independencia judicial |
+| **Resultados agregados** | Nivel de democracia, desigualdad de ingresos, gasto público |
+
+Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos "democracia"? @munck2009 muestran que distintos índices operacionalizan el concepto de forma diferente, produciendo clasificaciones divergentes de los mismos países.[^indices-democracia]
 
 [^indices-democracia]: En 2022, Freedom House clasificó a Chile como "Libre" con 94/100 puntos, mientras V-Dem lo ubicó ligeramente por debajo de Costa Rica. Estas diferencias reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.
 
@@ -94,19 +103,35 @@ El objetivo último de la investigación cuantitativa explicativa es establecer 
 
 ## Lógica de la investigación cuantitativa
 
-La investigación cuantitativa sigue una secuencia lógica, aunque no siempre cronológica. Todo comienza con una **pregunta de investigación** específica, empíricamente respondible y relevante. Luego hacemos una **revisión de literatura** que identifica teorías existentes, hallazgos previos, debates no resueltos y limitaciones de investigación previa, posicionando nuestra contribución en una conversación académica en curso. Con base en literatura, desarrollamos **teoría e hipótesis** ---afirmaciones sobre relaciones entre variables que esperamos observar si la teoría es correcta---.[^duverger]
+La investigación cuantitativa sigue una secuencia lógica (aunque no siempre cronológica):
+
+1. **Pregunta de investigación**: Específica, empíricamente respondible y relevante
+2. **Revisión de literatura**: Identificar teorías existentes, hallazgos previos, debates no resueltos
+3. **Teoría e hipótesis**: Afirmaciones sobre relaciones esperadas entre variables[^duverger]
+4. **Diseño y medición**: Definir muestra, operacionalizar variables, elegir técnica analítica
+5. **Recolección de datos**: Encuestas, datos administrativos, fuentes secundarias
+6. **Análisis**: Aplicar técnicas estadísticas para evaluar hipótesis
+7. **Interpretación**: Evaluar qué implican los resultados para la teoría
+8. **Comunicación**: Presentar hallazgos de forma que otros puedan evaluar y replicar
 
 [^duverger]: La teoría de Duverger predice que sistemas proporcionales facilitan nuevos partidos. Tras el cambio del binominal al proporcional en Chile, el número efectivo de partidos en la Cámara pasó de 5.6 a 8.2, consistente con la teoría.
 
-El **diseño de investigación y medición** especifica cómo testearemos las hipótesis: qué casos observaremos (muestra/población), cómo mediremos nuestras variables (operacionalización), y qué técnica analítica usaremos (estadística descriptiva, regresión, etc.). Estas decisiones tienen consecuencias: un mismo concepto puede medirse de múltiples formas, y cada medición captura aspectos distintos. La **recolección de datos** obtiene la información (encuestas propias, datos administrativos, fuentes secundarias); la calidad del dato es crítica porque análisis sofisticado de datos malos produce conclusiones incorrectas con alta precisión. El **análisis** aplica técnicas estadísticas para evaluar hipótesis, resumiendo información en datos para detectar patrones sistemáticos.
-
-La **interpretación** evalúa qué implican los resultados para nuestra teoría: resultados **consistentes** fortalecen confianza (sin probarla definitivamente), resultados **inconsistentes** debilitan la teoría (sin refutarla definitivamente), resultados **ambiguos** pueden deberse a problemas de datos, medición o especificación del modelo. La investigación científica nunca "prueba" teorías; solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles. Finalmente, la **comunicación** presenta los hallazgos de forma que otros puedan evaluarlos y replicarlos.
+::: {.callout-important}
+## La investigación nunca "prueba" teorías
+Solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles.
+:::
 
 #### Fortalezas y limitaciones
 
-El enfoque cuantitativo tiene fortalezas importantes: permite **generalización** (inferir de 1,500 encuestados a 15 millones de votantes si muestreamos correctamente), **precisión** (no solo "X y Y se relacionan", sino "un aumento de una desviación estándar en X se asocia con un incremento de 0.23 desviaciones estándar en Y"), **testeo sistemático** (evaluar si un patrón podría deberse al azar o refleja una relación real), **comparabilidad** (estandarización de mediciones permite comparaciones rigurosas entre casos, países o períodos), y **transparencia** (procedimientos explícitos y replicables que otros pueden verificar o cuestionar).
+| Fortalezas | Limitaciones |
+|------------|--------------|
+| **Generalización**: Inferir de 1,500 encuestados a millones de votantes | **Reducción de complejidad**: Cuantificar exige simplificar |
+| **Precisión**: Cuantificar exactamente la magnitud de relaciones | **Correlación ≠ causalidad**: Covariación no implica que X cause Y[^confusora] |
+| **Testeo sistemático**: Evaluar si un patrón es azar o real | **Dependencia de supuestos**: Las técnicas asumen propiedades de los datos |
+| **Comparabilidad**: Comparaciones rigurosas entre casos/países | **Decontextualización**: Se pierden especificidades contextuales |
+| **Transparencia**: Procedimientos replicables | **"Dictadura de datos disponibles"**: Investigación limitada por datos existentes |
 
-También tiene limitaciones: **reducción de complejidad** ---cuantificar exige simplificar y aspectos importantes pueden perderse---, el hecho de que **correlación no es causalidad**[^confusora] ---observar que X e Y covarían no implica que X cause Y---, **dependencia de supuestos** ---las técnicas estadísticas asumen propiedades de los datos---, **decontextualización** ---al agregar muchos casos podemos perder especificidades contextuales importantes [@ragin1987]---, y **"dictadura de las variables disponibles"** ---la investigación puede ser determinada por qué datos existen, no por qué preguntas son importantes---. Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. Los resultados estadísticos son insumos para argumentación teórica, no veredictos finales. @mahoney2008 argumentan que métodos cuantitativos y cualitativos tienen fortalezas complementarias; los mejores estudios frecuentemente combinan ambos.
+Estas limitaciones no invalidan el enfoque cuantitativo, pero exigen humildad interpretativa. @mahoney2008 argumentan que métodos cuantitativos y cualitativos tienen fortalezas complementarias.
 
 [^confusora]: En comunas chilenas, el número de templos evangélicos correlaciona positivamente con tasas de crimen. ¿Los templos causan crimen? No. Ambos son causados por el tamaño poblacional: comunas grandes tienen más templos y más crimen. Esta es una variable confusora.
 

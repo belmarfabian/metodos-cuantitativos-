@@ -16,7 +16,13 @@ Toda investigación comienza con una pregunta, pero no cualquier pregunta es una
 
 [^pregunta-invest]: La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como "¿Debería Chile tener sistema parlamentario?". Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.
 
-Las preguntas se clasifican según su propósito: **preguntas descriptivas** caracterizan fenómenos ("¿Cuál es la tasa de participación electoral en Chile 2021?"), **preguntas relacionales** identifican asociaciones entre variables ("¿Se relaciona el nivel educativo con la participación electoral?"), y **preguntas causales** buscan establecer relaciones de causa-efecto ("¿La inscripción automática aumenta la participación electoral?"). La distinción importa porque cada tipo exige estrategias metodológicas distintas: responder preguntas descriptivas requiere medición cuidadosa y muestreo representativo; responder preguntas causales requiere, además, estrategias para descartar explicaciones alternativas.
+Las preguntas se clasifican según su propósito:
+
+| Tipo | Propósito | Ejemplo | Requiere |
+|------|-----------|---------|----------|
+| **Descriptiva** | Caracterizar fenómenos | "¿Cuál es la tasa de participación electoral en Chile 2021?" | Medición cuidadosa, muestreo representativo |
+| **Relacional** | Identificar asociaciones | "¿Se relaciona el nivel educativo con la participación?" | Lo anterior + análisis de correlación |
+| **Causal** | Establecer causa-efecto | "¿La inscripción automática aumenta la participación?" | Lo anterior + estrategias para descartar explicaciones alternativas |
 
 #### Hipótesis y teoría
 
@@ -101,15 +107,34 @@ Los datos de panel permiten usar **efectos fijos**, una técnica que controla au
 
 #### Validez interna y externa
 
-Todo diseño de investigación enfrenta tensiones entre dos tipos de validez [@campbell1957]. **Validez interna** es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen **variables confusoras** (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), **causalidad inversa** (Y puede causar X en vez de X causar Y; ej: @przeworski2000 argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y **sesgo de selección** (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs. quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.
+Todo diseño de investigación enfrenta tensiones entre dos tipos de validez [@campbell1957]:
 
-**Validez externa** es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen **muestras no representativas** (estudiar estudiantes universitarios no permite generalizar a la población general), **especificidad contextual** (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), **efectos de Hawthorne** (sujetos modifican comportamiento porque saben que están siendo estudiados), y **dependencia temporal** (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).
+| | **Validez interna** | **Validez externa** |
+|--|---------------------|---------------------|
+| **Pregunta** | ¿X realmente causa Y? | ¿Los hallazgos generalizan? |
+| **Amenazas** | Variables confusoras, causalidad inversa, sesgo de selección | Muestras no representativas, especificidad contextual, efectos de Hawthorne |
+| **Ejemplo de amenaza** | Carreteras correlacionan con riqueza, pero ¿causan riqueza o la riqueza permite construirlas? | Un experimento en EE.UU. puede no replicarse en Chile |
+| **Cómo mejorarla** | Aleatorización, diseños cuasi-experimentales, controles estadísticos | Muestras representativas, replicación en otros contextos |
 
-Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. @shadish2002 argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.
+::: {.callout-warning}
+## Tensión fundamental
+Los diseños con mejor validez interna (experimentos de laboratorio) suelen tener peor validez externa. Los diseños con muestras representativas (encuestas nacionales) tienen peor validez interna. No hay diseño perfecto; cada uno implica compromisos.
+:::
 
 #### Casos y unidades de análisis
 
-Una decisión crucial en diseño de investigación es qué constituye un "caso" —la **unidad de análisis**: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.
+Una decisión crucial es qué constituye un "caso" —la **unidad de análisis**:
+
+| Nivel | Ejemplos |
+|-------|----------|
+| **Individuos** | Votantes, legisladores, activistas |
+| **Agregados subnacionales** | Municipios, provincias, circunscripciones |
+| **Países** | Estados nacionales |
+| **Eventos** | Elecciones, protestas, golpes de estado |
+| **Legislación** | Leyes, políticas públicas |
+| **Organizaciones** | Partidos políticos, grupos de interés |
+
+La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.
 
 ::: {.nivel data-nivel="avanzado"}
 **Falacias de nivel de análisis:**

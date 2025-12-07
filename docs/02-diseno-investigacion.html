@@ -328,7 +328,43 @@ div.csl-indent {
 <section id="preguntas-hipótesis-y-causalidad" class="level2 page-columns page-full" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="preguntas-hipótesis-y-causalidad"><span class="header-section-number">2.1</span> Preguntas, hipótesis y causalidad</h2>
 <p>Toda investigación comienza con una pregunta, pero no cualquier pregunta es una <strong>pregunta de investigación</strong> útil.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como “¿Debería Chile tener sistema parlamentario?”. Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.</p></div></div><p>Las preguntas se clasifican según su propósito: <strong>preguntas descriptivas</strong> caracterizan fenómenos (“¿Cuál es la tasa de participación electoral en Chile 2021?”), <strong>preguntas relacionales</strong> identifican asociaciones entre variables (“¿Se relaciona el nivel educativo con la participación electoral?”), y <strong>preguntas causales</strong> buscan establecer relaciones de causa-efecto (“¿La inscripción automática aumenta la participación electoral?”). La distinción importa porque cada tipo exige estrategias metodológicas distintas: responder preguntas descriptivas requiere medición cuidadosa y muestreo representativo; responder preguntas causales requiere, además, estrategias para descartar explicaciones alternativas.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como “¿Debería Chile tener sistema parlamentario?”. Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.</p></div></div><p>Las preguntas se clasifican según su propósito:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 30%">
+<col style="width: 25%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Propósito</th>
+<th>Ejemplo</th>
+<th>Requiere</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Descriptiva</strong></td>
+<td>Caracterizar fenómenos</td>
+<td>“¿Cuál es la tasa de participación electoral en Chile 2021?”</td>
+<td>Medición cuidadosa, muestreo representativo</td>
+</tr>
+<tr class="even">
+<td><strong>Relacional</strong></td>
+<td>Identificar asociaciones</td>
+<td>“¿Se relaciona el nivel educativo con la participación?”</td>
+<td>Lo anterior + análisis de correlación</td>
+</tr>
+<tr class="odd">
+<td><strong>Causal</strong></td>
+<td>Establecer causa-efecto</td>
+<td>“¿La inscripción automática aumenta la participación?”</td>
+<td>Lo anterior + estrategias para descartar explicaciones alternativas</td>
+</tr>
+</tbody>
+</table>
 <section id="hipótesis-y-teoría" class="level4 page-columns page-full" data-number="2.1.0.1">
 <h4 data-number="2.1.0.1" class="anchored" data-anchor-id="hipótesis-y-teoría"><span class="header-section-number">2.1.0.1</span> Hipótesis y teoría</h4>
 <p>Una vez formulada la pregunta, necesitamos una respuesta tentativa —una <strong>hipótesis</strong>: afirmación específica, derivada de teoría, sobre relaciones esperadas entre variables que debe ser <strong>falsable</strong> <span class="citation" data-cites="popper1959">(<a href="01-introduccion.html#ref-popper1959" role="doc-biblioref">Popper, 1959</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
@@ -380,13 +416,99 @@ div.csl-indent {
 </section>
 <section id="validez-interna-y-externa" class="level4" data-number="2.2.0.3">
 <h4 data-number="2.2.0.3" class="anchored" data-anchor-id="validez-interna-y-externa"><span class="header-section-number">2.2.0.3</span> Validez interna y externa</h4>
-<p>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="citation" data-cites="campbell1957">(<a href="01-introduccion.html#ref-campbell1957" role="doc-biblioref">Campbell &amp; Stanley, 1963</a>)</span>. <strong>Validez interna</strong> es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen <strong>variables confusoras</strong> (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), <strong>causalidad inversa</strong> (Y puede causar X en vez de X causar Y; ej: <span class="citation" data-cites="przeworski2000">Przeworski et&nbsp;al. (<a href="01-introduccion.html#ref-przeworski2000" role="doc-biblioref">2000</a>)</span> argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y <strong>sesgo de selección</strong> (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs.&nbsp;quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.</p>
-<p><strong>Validez externa</strong> es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen <strong>muestras no representativas</strong> (estudiar estudiantes universitarios no permite generalizar a la población general), <strong>especificidad contextual</strong> (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), <strong>efectos de Hawthorne</strong> (sujetos modifican comportamiento porque saben que están siendo estudiados), y <strong>dependencia temporal</strong> (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).</p>
-<p>Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. <span class="citation" data-cites="shadish2002">Shadish et&nbsp;al. (<a href="01-introduccion.html#ref-shadish2002" role="doc-biblioref">2002</a>)</span> argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.</p>
+<p>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="citation" data-cites="campbell1957">(<a href="01-introduccion.html#ref-campbell1957" role="doc-biblioref">Campbell &amp; Stanley, 1963</a>)</span>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 47%">
+<col style="width: 47%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>Validez interna</strong></th>
+<th><strong>Validez externa</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Pregunta</strong></td>
+<td>¿X realmente causa Y?</td>
+<td>¿Los hallazgos generalizan?</td>
+</tr>
+<tr class="even">
+<td><strong>Amenazas</strong></td>
+<td>Variables confusoras, causalidad inversa, sesgo de selección</td>
+<td>Muestras no representativas, especificidad contextual, efectos de Hawthorne</td>
+</tr>
+<tr class="odd">
+<td><strong>Ejemplo de amenaza</strong></td>
+<td>Carreteras correlacionan con riqueza, pero ¿causan riqueza o la riqueza permite construirlas?</td>
+<td>Un experimento en EE.UU. puede no replicarse en Chile</td>
+</tr>
+<tr class="even">
+<td><strong>Cómo mejorarla</strong></td>
+<td>Aleatorización, diseños cuasi-experimentales, controles estadísticos</td>
+<td>Muestras representativas, replicación en otros contextos</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Tensión fundamental
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Los diseños con mejor validez interna (experimentos de laboratorio) suelen tener peor validez externa. Los diseños con muestras representativas (encuestas nacionales) tienen peor validez interna. No hay diseño perfecto; cada uno implica compromisos.</p>
+</div>
+</div>
 </section>
 <section id="casos-y-unidades-de-análisis" class="level4" data-number="2.2.0.4">
 <h4 data-number="2.2.0.4" class="anchored" data-anchor-id="casos-y-unidades-de-análisis"><span class="header-section-number">2.2.0.4</span> Casos y unidades de análisis</h4>
-<p>Una decisión crucial en diseño de investigación es qué constituye un “caso” —la <strong>unidad de análisis</strong>: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</p>
+<p>Una decisión crucial es qué constituye un “caso” —la <strong>unidad de análisis</strong>:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 41%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel</th>
+<th>Ejemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Individuos</strong></td>
+<td>Votantes, legisladores, activistas</td>
+</tr>
+<tr class="even">
+<td><strong>Agregados subnacionales</strong></td>
+<td>Municipios, provincias, circunscripciones</td>
+</tr>
+<tr class="odd">
+<td><strong>Países</strong></td>
+<td>Estados nacionales</td>
+</tr>
+<tr class="even">
+<td><strong>Eventos</strong></td>
+<td>Elecciones, protestas, golpes de estado</td>
+</tr>
+<tr class="odd">
+<td><strong>Legislación</strong></td>
+<td>Leyes, políticas públicas</td>
+</tr>
+<tr class="even">
+<td><strong>Organizaciones</strong></td>
+<td>Partidos políticos, grupos de interés</td>
+</tr>
+</tbody>
+</table>
+<p>La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</p>
 <div class="nivel" data-nivel="avanzado">
 <p><strong>Falacias de nivel de análisis:</strong></p>
 <p>Debemos evitar dos falacias al cambiar de nivel de análisis. La <strong>falacia ecológica</strong> <span class="citation" data-cites="robinson1950">(<a href="01-introduccion.html#ref-robinson1950" role="doc-biblioref">Robinson, 1950</a>)</span> ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La <strong>falacia atómica</strong> es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.</p>
@@ -444,14 +566,8 @@ Lijphart, A. (1994). <em>Electoral Systems and Party Systems: A Study of Twenty-
 <div id="ref-popper1959" class="csl-entry" role="listitem">
 Popper, K. R. (1959). <em>The Logic of Scientific Discovery</em>. Routledge.
 </div>
-<div id="ref-przeworski2000" class="csl-entry" role="listitem">
-Przeworski, A., Alvarez, M. E., Cheibub, J. A., &amp; Limongi, F. (2000). <em>Democracy and Development: Political Institutions and Well-Being in the World, 1950-1990</em>. Cambridge University Press.
-</div>
 <div id="ref-robinson1950" class="csl-entry" role="listitem">
 Robinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. <em>American Sociological Review</em>, <em>15</em>(3), 351-357.
-</div>
-<div id="ref-shadish2002" class="csl-entry" role="listitem">
-Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Houghton Mifflin.
 </div>
 </div>
 
