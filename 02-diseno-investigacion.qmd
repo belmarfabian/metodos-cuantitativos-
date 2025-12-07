@@ -1,175 +1,167 @@
 # Diseño de investigación {#diseno}
 
-*Última actualización: 7 de diciembre de 2024, 15:45 hrs.*
-
 ## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
 - Formular preguntas de investigación empíricamente respondibles
-- Distinguir entre preguntas descriptivas, relacionales y causales
-- Entender la diferencia entre diseños experimentales y observacionales
-- Comprender qué es validez interna y externa
+- Distinguir entre hipótesis descriptivas, relacionales y causales
+- Comprender el marco contrafactual de causalidad
+- Identificar fortalezas y debilidades de diseños experimentales y observacionales
+- Evaluar validez interna y externa de diseños de investigación
 
-## Preguntas de investigación
+## Preguntas, hipótesis y causalidad
 
-Toda investigación comienza con una pregunta. Pero no cualquier pregunta sirve.
+Toda investigación comienza con una pregunta, pero no cualquier pregunta es una **pregunta de investigación** útil.[^pregunta-invest]
 
-::: {.callout-tip}
-## Características de una buena pregunta de investigación
+[^pregunta-invest]: La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como "¿Debería Chile tener sistema parlamentario?". Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.
 
-1. **Específica**: No vaga ni demasiado amplia
-2. **Empíricamente respondible**: Se puede contestar con datos (no es normativa)
-3. **Relevante**: Aporta al conocimiento existente
-:::
+Las preguntas se clasifican según su propósito: **preguntas descriptivas** caracterizan fenómenos ("¿Cuál es la tasa de participación electoral en Chile 2021?"), **preguntas relacionales** identifican asociaciones entre variables ("¿Se relaciona el nivel educativo con la participación electoral?"), y **preguntas causales** buscan establecer relaciones de causa-efecto ("¿La inscripción automática aumenta la participación electoral?"). La distinción importa porque cada tipo exige estrategias metodológicas distintas: responder preguntas descriptivas requiere medición cuidadosa y muestreo representativo; responder preguntas causales requiere, además, estrategias para descartar explicaciones alternativas.
 
-**Ejemplo de pregunta normativa (NO científica):**
-> "¿Debería Chile tener sistema parlamentario?"
+#### Hipótesis y teoría
 
-**Ejemplo de pregunta empírica (SÍ científica):**
-> "¿Los sistemas parlamentarios tienen gobiernos más estables que los presidenciales?"
+Una vez formulada la pregunta, necesitamos una respuesta tentativa —una **hipótesis**: afirmación específica, derivada de teoría, sobre relaciones esperadas entre variables que debe ser **falsable** [@popper1959].[^hipotesis-falsable]
 
-## Tipos de preguntas
+[^hipotesis-falsable]: "Los partidos de izquierda son mejores" no es falsable porque "mejores" es ambiguo. "Los partidos de izquierda gastan más en políticas sociales" sí es falsable mediante datos de gasto público. Por ejemplo: "A mayor magnitud de distrito electoral, mayor fragmentación partidaria en el parlamento" es específica, falsable, y se deriva de la teoría de Duverger sobre efectos de sistemas electorales.
 
-| Tipo | Propósito | Ejemplo |
-|------|-----------|---------|
-| **Descriptiva** | Caracterizar un fenómeno | ¿Cuál es la tasa de participación electoral en Chile 2021? |
-| **Relacional** | Identificar asociaciones | ¿Se relaciona el nivel educativo con la participación electoral? |
-| **Causal** | Establecer causa-efecto | ¿La inscripción automática *aumenta* la participación? |
+Las hipótesis provienen de teorías sobre cómo funciona el mundo social mediante un proceso deductivo: **Teoría** → **Mecanismo causal** → **Implicación observable** → **Hipótesis**. Por ejemplo: la teoría de que los sistemas electorales proporcionales reducen barreras de entrada para partidos pequeños [@lijphart1994] implica que en distritos grandes, partidos pequeños pueden obtener escaños con porcentajes bajos de votos, incentivando su formación, por lo que deberíamos observar más partidos en parlamentos elegidos con distritos grandes, generando la hipótesis testeable "a mayor magnitud promedio de distrito, mayor número efectivo de partidos parlamentarios". Este encadenamiento lógico es crucial: cuando testeamos hipótesis, estamos evaluando indirectamente la teoría subyacente.
 
-::: {.callout-important}
-## La distinción importa
+En estadística inferencial (Capítulo \@ref(hipotesis)), formalizamos dos tipos de hipótesis: la **hipótesis nula (H₀)** que afirma ausencia de relación o efecto, y la **hipótesis alternativa (H₁)** que afirma existencia de relación o efecto.[^h0-h1] El procedimiento estadístico evalúa si los datos son suficientemente inconsistentes con H₀ como para rechazarla en favor de H₁.
 
-- **Preguntas descriptivas**: Requieren buena medición y muestreo representativo
-- **Preguntas causales**: Además, requieren estrategias para descartar explicaciones alternativas
-:::
+[^h0-h1]: H₀ no es "la hipótesis que queremos refutar". Es simplemente el escenario de referencia. No "probamos" H₁; solo rechazamos o fallamos en rechazar H₀. Esta lógica asimétrica es fundamental para entender tests de hipótesis.
 
-## Hipótesis
+#### Causalidad
 
-Una **hipótesis** es una respuesta tentativa a la pregunta de investigación. Es una predicción específica, derivada de teoría, sobre lo que esperamos encontrar.
+El objetivo de mucha investigación cuantitativa es establecer **relaciones causales**. Queremos saber no solo si X e Y covarían, sino si cambios en X *producen* cambios en Y.
 
-**Requisitos de una buena hipótesis:**
-
-1. **Falsable**: Debe poder ser refutada por evidencia
-2. **Específica**: Indica dirección de la relación
-3. **Derivada de teoría**: No es una ocurrencia al azar
-
-::: {.callout-tip}
-## Ejemplo: De teoría a hipótesis
-
-**Teoría**: Los sistemas proporcionales facilitan la entrada de partidos pequeños.
-
-**Hipótesis**: "A mayor magnitud de distrito, mayor número de partidos."
-
-**Test**: En Chile, tras cambiar del binominal al proporcional, el número de partidos pasó de 5.6 a 8.2 → Consistente con la hipótesis.
-:::
-
-## Causalidad: El problema fundamental
-
-El objetivo de mucha investigación es establecer **relaciones causales**: ¿X *causa* Y?
-
-Pero hay un problema: **nunca podemos observar qué hubiera pasado** si las cosas fueran diferentes. Esto se llama el **problema del contrafactual**.
-
-**Ejemplo**:
-- Chile cambió a voto voluntario en 2012
-- La participación bajó
-- ¿El voto voluntario *causó* la baja?
-- **No podemos saberlo con certeza** porque no observamos qué hubiera pasado con voto obligatorio
-
-::: {.callout-warning}
-## Correlación no es causalidad
-
-Que dos cosas ocurran juntas no significa que una cause la otra:
-
-- Países con más carreteras son más ricos
-- Pero ¿las carreteras causan riqueza, o la riqueza permite construir carreteras?
-- O quizás una tercera variable (como instituciones) causa ambas
-:::
 
 ## Diseños de investigación
 
-### Diseños experimentales
+Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.
 
-En un **experimento**, el investigador asigna aleatoriamente quién recibe el "tratamiento".
+#### Diseños experimentales
 
-**Ejemplo**: Para estudiar si las llamadas telefónicas aumentan la participación electoral:
+En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.
 
-1. Tomar 1,000 personas al azar
-2. A 500 se les llama (grupo tratamiento)
-3. A 500 no se les llama (grupo control)
-4. Comparar participación entre grupos
+**Ejemplo**: @gerber2008 realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.
 
-**Ventajas:**
-- La aleatorización garantiza que los grupos son comparables
-- Cualquier diferencia se debe al tratamiento
-- Alta **validez interna**
+**Ventajas**:
+- Identificación causal clara
+- No requiere supuestos sobre confusores
+- Alta validez interna
 
-**Limitaciones:**
-- Muchas preguntas no permiten experimentación (no podemos asignar "democracia" a países)
+**Limitaciones**:
+- Muchas preguntas políticas no permiten experimentación ---no podemos asignar aleatoriamente tipo de régimen político---.[^limites-experimentos]
+
+[^limites-experimentos]: No podemos asignar experimentalmente "democracia" vs "dictadura" a países. Estos límites éticos obligan a usar datos observacionales con estrategias cuasi-experimentales o control estadístico.
 - Posibles problemas éticos
-- Los resultados pueden no generalizar a otros contextos
+- Efectos pueden ser específicos al contexto experimental (baja validez externa)
+- En ciencia política, solo ciertas preguntas son experimentables
 
-### Diseños observacionales
 
-La mayoría de investigación en ciencia política usa **datos observacionales**: el investigador NO controla quién recibe el tratamiento.
+#### Diseños observacionales
 
-| Tipo | Descripción | Problema |
-|------|-------------|----------|
-| **Corte transversal** | Muchos casos en un momento | Variables confusoras |
-| **Series de tiempo** | Un caso en varios momentos | Otros factores cambian simultáneamente |
-| **Panel** | Muchos casos en varios momentos | Más complejo pero más robusto |
+La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.
 
-**Ejemplo de problema con datos observacionales:**
+**Estudios de corte transversal**
 
-> Queremos saber si ir a la universidad aumenta los ingresos. Comparamos salarios de universitarios vs. no universitarios.
+Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.
 
-> **Problema**: Los que van a la universidad ya eran diferentes (más habilidad, más recursos, más motivación). La diferencia de ingresos puede deberse a eso, no a la universidad.
+**Ejemplo**: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.
 
-## Validez interna y externa
+**Series de tiempo**
 
-| Concepto | Pregunta que responde | Amenazas |
-|----------|----------------------|----------|
-| **Validez interna** | ¿El efecto es realmente causal? | Variables confusoras, causalidad inversa, sesgo de selección |
-| **Validez externa** | ¿Los resultados generalizan? | Muestras no representativas, contextos específicos |
+Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.
 
-::: {.callout-note}
-## La tensión fundamental
+**Ejemplo**: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.
 
-- Experimentos de laboratorio: Alta validez interna, baja validez externa
-- Encuestas nacionales: Alta validez externa, baja validez interna
+**Panel (longitudinal)**
 
-No hay diseño perfecto. Cada uno implica compromisos.
-:::
+Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.
 
 ::: {.nivel data-nivel="avanzado"}
-## Técnicas avanzadas para inferencia causal
+Los datos de panel permiten usar **efectos fijos**, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.
+:::
 
-Cuando no podemos experimentar, hay técnicas que ayudan a aproximar inferencia causal:
+**Estrategias para fortalecer inferencia causal en diseños observacionales**:
 
-1. **Matching**: Emparejar casos tratados con controles similares
-2. **Diferencias-en-diferencias**: Comparar cambios antes/después entre tratados y controles
-3. **Regresión discontinua**: Explotar umbrales arbitrarios de asignación
-4. **Variables instrumentales**: Usar una variable que afecta X pero no Y directamente
+1. **Controles estadísticos**: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores *observados*.
 
-Estas técnicas se estudian en cursos avanzados de econometría.
+2. **Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).
+
+::: {.nivel data-nivel="avanzado"}
+**Técnicas avanzadas de inferencia causal:**
+
+3. **Matching**: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.
+
+4. **Diseños cuasi-experimentales**: Incluyen diferencias-en-diferencias, regresión discontinua, y variables instrumentales. Explotan variación "natural" que aproxima aleatorización.
+
+5. **Análisis de sensibilidad**: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.
+:::
+
+#### Validez interna y externa
+
+Todo diseño de investigación enfrenta tensiones entre dos tipos de validez [@campbell1957]. **Validez interna** es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen **variables confusoras** (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), **causalidad inversa** (Y puede causar X en vez de X causar Y; ej: @przeworski2000 argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y **sesgo de selección** (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs. quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.
+
+**Validez externa** es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen **muestras no representativas** (estudiar estudiantes universitarios no permite generalizar a la población general), **especificidad contextual** (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), **efectos de Hawthorne** (sujetos modifican comportamiento porque saben que están siendo estudiados), y **dependencia temporal** (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).
+
+Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. @shadish2002 argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.
+
+#### Casos y unidades de análisis
+
+Una decisión crucial en diseño de investigación es qué constituye un "caso" —la **unidad de análisis**: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.
+
+::: {.nivel data-nivel="avanzado"}
+**Falacias de nivel de análisis:**
+
+Debemos evitar dos falacias al cambiar de nivel de análisis. La **falacia ecológica** [@robinson1950] ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La **falacia atómica** es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.
+
+**El problema de "muchas variables, pocas observaciones":**
+
+@king1994 enfatizan que si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes **grados de libertad** para distinguir señal de ruido. Soluciones: aumentar observaciones (datos de panel), reducir parámetros (selección teórica), o combinar enfoques cuantitativos y cualitativos.
 :::
 
 ## Resumen {.unnumbered}
 
-- Las **preguntas de investigación** deben ser específicas, empíricas y relevantes
-- Las **hipótesis** son predicciones falsables derivadas de teoría
-- El problema fundamental de causalidad: no observamos contrafactuales
-- **Experimentos**: Aleatorización garantiza comparabilidad (alta validez interna)
-- **Datos observacionales**: Requieren supuestos más fuertes para inferir causalidad
-- Existe tensión entre **validez interna** (¿es causal?) y **validez externa** (¿generaliza?)
+El diseño de investigación es el plan para responder preguntas de investigación. Buenas preguntas son específicas, empíricamente respondibles, y relevantes teórica o prácticamente. Pueden ser descriptivas, relacionales o causales.
+
+Las hipótesis son afirmaciones falsables derivadas de teoría sobre relaciones esperadas entre variables. Conectan teoría abstracta con implicaciones observables.
+
+La inferencia causal enfrenta el problema fundamental: nunca observamos resultados contrafactuales. El marco de resultados potenciales formaliza este problema. Para inferir causalidad, necesitamos que grupos tratados y control sean comparables.
+
+Los diseños experimentales garantizan comparabilidad mediante aleatorización, logrando alta validez interna. Los diseños cuasi-experimentales explotan situaciones "naturalmente" aleatorias. Los diseños observacionales dependen de supuestos más fuertes y técnicas estadísticas para aproximar inferencia causal.
+
+Toda investigación enfrenta tensión entre validez interna (¿el efecto es causal?) y validez externa (¿generaliza?). No hay diseño perfecto; cada diseño implica compromisos.
+
+La unidad de análisis determina qué variación explotamos y qué afirmaciones justificamos. Inferir relaciones en un nivel desde datos de otro nivel (falacias ecológicas/atómicas) es problemático.
 
 ## Lecturas recomendadas {.unnumbered}
 
-Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). *Experimental and Quasi-Experimental Designs*. Houghton Mifflin.
-→ Tratamiento clásico de validez y diseños de investigación.
+**Fundamentos de diseño de investigación:**
 
-Gerber, A. S., & Green, D. P. (2012). *Field Experiments*. W.W. Norton.
-→ Guía práctica para experimentos de campo.
+Shadish, W. R., Cook, T. D., & Campbell, D. T. (2002). *Experimental and Quasi-Experimental Designs for Generalized Causal Inference*. Houghton Mifflin.  
+→ Tratamiento comprehensivo de validez y diseños experimentales/cuasi-experimentales.
+
+**Marco contrafactual de causalidad:**
+
+Morgan, S. L., & Winship, C. (2015). *Counterfactuals and Causal Inference: Methods and Principles for Social Research* (2nd ed.). Cambridge University Press.  
+→ Introducción accesible al marco de resultados potenciales y métodos de inferencia causal.
+
+**Diseños observacionales en ciencia política:**
+
+Angrist, J. D., & Pischke, J.-S. (2009). *Mostly Harmless Econometrics: An Empiricist's Companion*. Princeton University Press.  
+→ Enfoque práctico sobre identificación causal en datos observacionales.
+
+**Sobre validez de medición:**
+
+Adcock, R., & Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. *American Political Science Review*, 95(3), 529-546.  
+→ Discusión conceptual sobre operacionalización y validez.
+
+**Experimentos de campo en ciencia política:**
+
+Gerber, A. S., & Green, D. P. (2012). *Field Experiments: Design, Analysis, and Interpretation*. W.W. Norton.  
+→ Guía práctica para diseñar y analizar experimentos de campo.
+
 
 ## Ejercicios {.unnumbered}
 

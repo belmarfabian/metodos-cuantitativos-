@@ -351,7 +351,6 @@ div.csl-indent {
 </header>
 
 
-<p><em>Última actualización: 7 de diciembre de 2024, 15:30 hrs.</em></p>
 <section id="objetivos-del-capítulo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
@@ -854,14 +853,26 @@ Apruebo Rechazo
 <section id="r-markdown-y-quarto" class="level4 nivel" data-nivel="avanzado" data-number="4.4.0.7">
 <h4 data-number="4.4.0.7" class="anchored" data-anchor-id="r-markdown-y-quarto"><span class="header-section-number">4.4.0.7</span> R Markdown y Quarto</h4>
 <p>R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.</p>
-<p>Un documento R Markdown típico tiene tres partes:</p>
-<ol type="1">
-<li><strong>Encabezado YAML</strong> (entre <code>---</code>): Define título, autor y formato de salida</li>
-<li><strong>Texto</strong>: Escrito en Markdown</li>
-<li><strong>Bloques de código R</strong>: Entre triple backticks con <code>{r}</code></li>
-</ol>
-<p>Al compilar (“Knit” o “Render”), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.</p>
+<pre><code>---
+title: "Análisis de participación electoral"
+author: "Tu Nombre"
+output: html_document
+---
+
+## Introducción
+
+Este análisis examina factores asociados a participación electoral.
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+datos &lt;- read_csv("datos/encuesta.csv")
+summary(datos)</code></pre>
 </section>
+<p>```</p>
+<p>Al compilar (“Knit” o “Render”), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente. :::</p>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>

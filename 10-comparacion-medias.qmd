@@ -1,183 +1,95 @@
 # Comparación de medias {#comparacion}
 
-*Última actualización: 7 de diciembre de 2024, 15:30 hrs.*
-
 ## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
 
 - Realizar pruebas t para comparar medias entre dos grupos
 - Distinguir entre pruebas t para muestras independientes y pareadas
+- Comprender los supuestos de las pruebas paramétricas
 - Usar ANOVA para comparar medias de más de dos grupos
-- Interpretar correctamente los resultados en R
+- Identificar cuándo usar alternativas no paramétricas
 
-```{r setup-10, include=FALSE}
-library(tidyverse)
-library(knitr)
+## Prueba t para una muestra
 
-theme_set(theme_minimal(base_size = 11))
-```
+La prueba t para una muestra compara la media de una muestra con un valor teórico o poblacional.
 
-## ¿Cuándo comparamos medias?
+**Hipótesis:**
+- $H_0: \mu = \mu_0$
+- $H_1: \mu \neq \mu_0$
 
-En ciencias sociales frecuentemente queremos saber si hay diferencias entre grupos:
+**Estadístico t:**
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
 
-- ¿Hombres y mujeres tienen ingresos diferentes?
-- ¿Cambió la opinión pública antes y después de un evento?
-- ¿Hay diferencias en confianza institucional según nivel educativo?
+## Prueba t para dos muestras
 
-Para responder estas preguntas usamos **pruebas de comparación de medias**.
+#### Muestras independientes
 
-## Prueba t: La idea básica
+Comparamos las medias de dos grupos independientes.
 
-La **prueba t** nos ayuda a determinar si la diferencia que observamos entre dos grupos es **real** (estadísticamente significativa) o si podría deberse simplemente al **azar** del muestreo.
+**Hipótesis:**
+- $H_0: \mu_1 = \mu_2$
+- $H_1: \mu_1 \neq \mu_2$
 
-::: {.callout-tip}
-## La pregunta que responde la prueba t
+**Estadístico t:**
+$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 
-"¿Es la diferencia entre estos grupos lo suficientemente grande como para concluir que existe una diferencia real en la población, o podría ser solo casualidad?"
-:::
+Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.
 
-## Prueba t para dos grupos independientes
-
-Esta es la prueba más común. Comparamos las medias de **dos grupos diferentes** (por ejemplo, hombres vs. mujeres).
-
-**Ejemplo:** ¿Existe brecha salarial entre hombres y mujeres?
-
-```{r t-test-ejemplo, echo=TRUE}
-# Datos simulados: ingresos por género (en miles de pesos)
+```{r t-test-dos-muestras, echo=TRUE}
+# Datos simulados: Diferencia salarial por género
 set.seed(2024)
 ingresos_hombres <- rlnorm(150, meanlog = log(750), sdlog = 0.6)
 ingresos_mujeres <- rlnorm(150, meanlog = log(650), sdlog = 0.6)
 
-# Prueba t para dos grupos
-t.test(ingresos_hombres, ingresos_mujeres)
+# Prueba t para dos muestras independientes
+resultado <- t.test(ingresos_hombres, ingresos_mujeres)
+print(resultado)
 ```
 
-**¿Cómo interpretar el resultado?**
+#### Muestras pareadas
 
-1. **p-value**: Si es menor a 0.05, hay diferencia significativa
-2. **Intervalo de confianza**: Si NO incluye el cero, la diferencia es significativa
-3. **Medias de cada grupo**: Nos dice cuál grupo tiene mayor promedio
+Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:
 
-En este caso, p < 0.05 y el intervalo no incluye cero, así que **sí hay diferencia significativa** en ingresos.
-
-```{r viz-t-simple, echo=FALSE, fig.cap="Comparación de ingresos por género", fig.height=3.5}
-datos_ingresos <- data.frame(
-  ingreso = c(ingresos_hombres, ingresos_mujeres),
-  genero = rep(c("Hombres", "Mujeres"), each = 150)
-)
-
-ggplot(datos_ingresos, aes(x = genero, y = ingreso, fill = genero)) +
-  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
-  labs(x = NULL, y = "Ingreso (miles de pesos)",
-       title = "Distribución de ingresos por género") +
-  theme_minimal()
-```
-
-## Prueba t pareada
-
-Usamos esta prueba cuando medimos a **las mismas personas** en dos momentos diferentes.
-
-**Ejemplo:** ¿Una intervención mejoró la percepción de seguridad?
-
-```{r t-pareada, echo=TRUE}
-# Medimos a las mismas 50 personas antes y después
+```{r t-test-pareado, echo=TRUE}
+# Datos: Percepción de seguridad antes y después de intervención policial
 set.seed(123)
 antes <- rnorm(50, mean = 4.2, sd = 1.5)
-despues <- antes + rnorm(50, mean = 0.8, sd = 1.0)
+despues <- antes + rnorm(50, mean = 0.8, sd = 1.0)  # Mejora promedio
 
-# Prueba t pareada (¡importante el paired = TRUE!)
-t.test(despues, antes, paired = TRUE)
+# Prueba t pareada
+resultado <- t.test(despues, antes, paired = TRUE)
+print(resultado)
 ```
 
-El p-value < 0.05 indica que **sí hubo un cambio significativo** después de la intervención.
 
-::: {.callout-important}
-## ¿Cuándo usar cada prueba t?
+## Resumen {.unnumbered}
 
-| Situación | Prueba | Código en R |
-|-----------|--------|-------------|
-| Dos grupos diferentes | t independiente | `t.test(grupo1, grupo2)` |
-| Mismas personas, dos mediciones | t pareada | `t.test(despues, antes, paired = TRUE)` |
-:::
+**Conceptos clave:**
 
-## ANOVA: Comparar tres o más grupos
-
-Cuando tenemos **más de dos grupos**, no podemos hacer múltiples pruebas t (aumenta el riesgo de error). Usamos **ANOVA** (Análisis de Varianza).
-
-**Ejemplo:** ¿La confianza en el Congreso varía según nivel educativo?
-
-```{r anova-simple, echo=TRUE}
-# Datos: confianza en el Congreso según educación
-set.seed(456)
-datos <- data.frame(
-  educacion = rep(c("Básica", "Media", "Superior"), each = 80),
-  confianza = c(
-    rnorm(80, mean = 3.2, sd = 1.8),
-    rnorm(80, mean = 2.8, sd = 1.6),
-    rnorm(80, mean = 2.3, sd = 1.5)
-  )
-)
-
-# ANOVA
-modelo <- aov(confianza ~ educacion, data = datos)
-summary(modelo)
-```
-
-**¿Cómo interpretar?**
-
-- Miramos el **Pr(>F)** (p-value)
-- Si p < 0.05, **al menos un grupo es diferente** a los demás
-
-```{r viz-anova-simple, echo=FALSE, fig.cap="Confianza en el Congreso según educación", fig.height=3.5}
-datos$educacion <- factor(datos$educacion, levels = c("Básica", "Media", "Superior"))
-
-ggplot(datos, aes(x = educacion, y = confianza, fill = educacion)) +
-  geom_boxplot(alpha = 0.7, show.legend = FALSE) +
-  labs(x = "Nivel educativo", y = "Confianza (escala 1-10)",
-       title = "Confianza en el Congreso según educación") +
-  theme_minimal()
-```
-
-#### ¿Cuáles grupos son diferentes? Test de Tukey
-
-ANOVA solo dice que hay diferencias, pero no cuáles. Para eso usamos **Tukey**:
-
-```{r tukey-simple, echo=TRUE}
-TukeyHSD(modelo)
-```
-
-Miramos la columna **p adj**: si es < 0.05, esos dos grupos son significativamente diferentes.
-
-## Resumen: ¿Qué prueba usar?
-
-```{r tabla-resumen, echo=FALSE}
-tabla <- data.frame(
-  Situacion = c("Comparar 2 grupos diferentes",
-                "Comparar antes/después (mismas personas)",
-                "Comparar 3 o más grupos"),
-  Prueba = c("t independiente", "t pareada", "ANOVA"),
-  Codigo = c("t.test(A, B)", "t.test(despues, antes, paired=TRUE)", "aov(y ~ grupo, data)")
-)
-kable(tabla, col.names = c("Situación", "Prueba", "Código en R"))
-```
-
-::: {.callout-note}
-## Lo más importante
-
-1. **p < 0.05** → Diferencia significativa (rechazamos H₀)
-2. **p ≥ 0.05** → No hay evidencia suficiente de diferencia
-3. Siempre **visualiza tus datos** antes de hacer la prueba
-:::
+1. **Prueba t**: Compara medias entre grupos
+2. **Muestras independientes vs pareadas**: Requieren diferentes pruebas
+3. **ANOVA**: Compara más de dos grupos simultáneamente
+4. **Supuestos**: Normalidad, homogeneidad, independencia
+5. **Alternativas no paramétricas**: Para cuando no se cumplen supuestos
 
 ## Lecturas recomendadas {.unnumbered}
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
-→ Capítulo 7 cubre pruebas t con ejemplos claros.
+**Fundamentos de comparación de grupos:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science*. Princeton University Press.
-→ Explicación accesible de comparación de grupos.
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.
+
+**Inferencia causal mediante comparación de grupos:**
+
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.
+
+**ANOVA y diseños más complejos:**
+
+Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.  
+→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
+
 
 ## Ejercicios {.unnumbered}
 
