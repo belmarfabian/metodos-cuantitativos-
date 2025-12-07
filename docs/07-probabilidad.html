@@ -629,14 +629,32 @@ window.Quarto = {
 <h4 data-number="7.2.0.5" class="anchored" data-anchor-id="distribución-normal-gaussiana"><span class="header-section-number">7.2.0.5</span> Distribución Normal (Gaussiana)</h4>
 <p>La distribución más importante en estadística inferencial. Una variable <span class="math inline">\(X\)</span> sigue una distribución Normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>:</p>
 <p><span class="math display">\[X \sim N(\mu, \sigma^2)\]</span></p>
-<p><strong>Propiedades:</strong></p>
-<ul>
-<li>Simétrica alrededor de <span class="math inline">\(\mu\)</span></li>
-<li>Forma de campana</li>
-<li>68% de observaciones dentro de <span class="math inline">\(\mu \pm 1\sigma\)</span></li>
-<li>95% dentro de <span class="math inline">\(\mu \pm 1.96\sigma\)</span></li>
-<li>99.7% dentro de <span class="math inline">\(\mu \pm 3\sigma\)</span></li>
-</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Propiedad</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Forma</td>
+<td>Simétrica, campana</td>
+</tr>
+<tr class="even">
+<td>68%</td>
+<td>Dentro de <span class="math inline">\(\mu \pm 1\sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td>95%</td>
+<td>Dentro de <span class="math inline">\(\mu \pm 1.96\sigma\)</span></td>
+</tr>
+<tr class="even">
+<td>99.7%</td>
+<td>Dentro de <span class="math inline">\(\mu \pm 3\sigma\)</span></td>
+</tr>
+</tbody>
+</table>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -835,20 +853,41 @@ window.Quarto = {
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
-<p><strong>Conceptos clave:</strong></p>
-<ol type="1">
-<li><strong>Probabilidad</strong> cuantifica incertidumbre; permite hacer inferencias rigurosas desde muestras</li>
-<li><strong>Variables aleatorias</strong> (discretas y continuas) conectan probabilidad con datos observables</li>
-<li><strong>Distribuciones importantes</strong>: Normal (continua, base de la inferencia), Binomial (conteos de éxitos), Poisson (eventos raros)</li>
-<li><strong>Teorema del Límite Central</strong>: Las medias muestrales se distribuyen normalmente, independientemente de la distribución original</li>
-<li>TLC justifica el uso de métodos basados en la Normal para inferencia (intervalos de confianza, pruebas de hipótesis)</li>
-</ol>
-<p><strong>Conexión con próximos capítulos:</strong></p>
-<ul>
-<li><strong>Cap. 8</strong> usará el TLC para construir intervalos de confianza</li>
-<li><strong>Cap. 9</strong> aplicará distribuciones de probabilidad para pruebas de hipótesis</li>
-<li><strong>Caps. 10-11</strong> usarán la distribución Normal para comparar medias y hacer regresión</li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Probabilidad</strong></td>
+<td>Cuantifica incertidumbre (0 a 1)</td>
+</tr>
+<tr class="even">
+<td><strong>Variables aleatorias</strong></td>
+<td>Discretas (conteos) o continuas (intervalos)</td>
+</tr>
+<tr class="odd">
+<td><strong>Normal</strong></td>
+<td>Base de inferencia; regla 68-95-99.7</td>
+</tr>
+<tr class="even">
+<td><strong>Binomial</strong></td>
+<td>Conteo de éxitos en n ensayos</td>
+</tr>
+<tr class="odd">
+<td><strong>TLC</strong></td>
+<td>Medias muestrales → Normal (si n ≥ 30)</td>
+</tr>
+</tbody>
+</table>
+<p>El Teorema del Límite Central justifica el uso de la distribución Normal para inferencia (intervalos de confianza, pruebas de hipótesis).</p>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>

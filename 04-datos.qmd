@@ -17,79 +17,34 @@ Los datos que usamos en ciencias políticas varían en estructura, granularidad 
 
 #### Según estructura
 
-**Datos de corte transversal (cross-sectional)**
-
-Observaciones de múltiples unidades en un solo momento. Ejemplo: encuesta a 1,500 votantes en octubre 2024. Cada fila es un individuo; columnas son variables (edad, educación, intención de voto).
-
-Ventaja: Simplicidad analítica. 
-Limitación: No observamos cambio temporal. No podemos distinguir efectos de período de efectos de cohorte.
-
-**Datos de series temporales (time series)**
-
-Observaciones de una unidad a través del tiempo. Ejemplo: tasa de desempleo mensual en Chile 2000-2024. Cada fila es un mes; columnas son variables económicas.
-
-Ventaja: Captura dinámica temporal.
-Limitación: Una sola unidad limita generalización. Difícil controlar confusores que varían en el tiempo.
-
-**Datos de panel (longitudinal)**
-
-Observaciones de múltiples unidades a través del tiempo. Ejemplo: datos electorales de 346 comunas chilenas en 8 elecciones presidenciales. Cada fila es comuna-año; columnas son variables.
-
-Ventaja: Controla diferencias persistentes entre unidades (efectos fijos). Observa cambios.
-Limitación: Complejidad analítica. Requiere supuestos sobre errores correlacionados.
-
-**Datos jerárquicos (nested/multilevel)**
-
-Observaciones anidadas en estructuras de múltiples niveles. Ejemplo: estudiantes (nivel 1) dentro de escuelas (nivel 2) dentro de comunas (nivel 3).
-
-Ventaja: Modela variación en múltiples niveles simultáneamente.
-Limitación: Requiere técnicas multinivel (más allá del alcance de este libro introductorio).
+| Tipo | Descripción | Ejemplo | Ventaja | Limitación |
+|------|-------------|---------|---------|------------|
+| **Corte transversal** | Múltiples unidades, un momento | Encuesta a 1,500 votantes en oct 2024 | Simplicidad analítica | No observa cambio temporal |
+| **Series temporales** | Una unidad, múltiples momentos | Desempleo mensual Chile 2000-2024 | Captura dinámica temporal | Una unidad limita generalización |
+| **Panel** | Múltiples unidades, múltiples momentos | 346 comunas en 8 elecciones | Controla efectos fijos | Complejidad analítica |
+| **Jerárquico** | Unidades anidadas en niveles | Estudiantes en escuelas en comunas | Modela variación multinivel | Requiere técnicas avanzadas |
 
 #### Según granularidad
 
-**Datos micro (individuales)**
+| Nivel | Unidad de observación | Ejemplos | Característica |
+|-------|----------------------|----------|----------------|
+| **Micro** | Individuo | Votante, legislador, manifestante | Permite analizar heterogeneidad individual |
+| **Meso** | Agregado intermedio | Municipio, distrito, partido | Balance entre detalle y volumen |
+| **Macro** | País/región | Estados nacionales | Comparación internacional, pero N pequeño |
 
-La unidad de observación es el individuo: persona, votante, legislador, manifestante. Estos datos permiten analizar comportamiento individual y heterogeneidad.
-
-**Datos meso (organizacionales/locales)**
-
-La unidad es un agregado intermedio: municipios, distritos electorales, partidos políticos, organizaciones. Balance entre detalle y manejo de volumen.
-
-**Datos macro (nacionales/internacionales)**
-
-La unidad es el país o la región. Permiten comparación internacional pero pierden variación subnacional. Además, típicamente N es pequeño (196 países en el mundo).
-
-La elección de granularidad no es neutral. @king1997 advierten sobre la **falacia ecológica**: inferir comportamiento individual desde patrones agregados puede ser erróneo si composición de agregados varía.
+::: {.callout-warning}
+## Cuidado con la falacia ecológica
+@king1997 advierten: inferir comportamiento individual desde patrones agregados puede ser erróneo si la composición de agregados varía.
+:::
 
 #### Según fuente
 
-**Datos primarios**
-
-Recolectados por el investigador para el proyecto específico. Encuestas propias, experimentos, observación directa, entrevistas codificadas. 
-
-Ventaja: Control total sobre qué se mide y cómo.
-Limitación: Costoso en tiempo y recursos.
-
-**Datos secundarios**
-
-Recolectados por otros, usados por el investigador. Censos, estadísticas oficiales, encuestas de opinión pública, datos administrativos.
-
-Ventaja: Eficiencia. Acceso a muestras grandes y representativas.
-Limitación: No se diseñaron para nuestras preguntas específicas. Debemos aceptar decisiones de medición ajenas.
-
-**Datos administrativos**
-
-Generados por procesos burocráticos: registros de votantes, datos tributarios, registros judiciales, historiales legislativos.
-
-Ventaja: Cobertura completa (no muestral), alta confiabilidad.
-Limitación: Reflejan categorías burocráticas, no conceptos teóricos. Problemas de acceso y privacidad.
-
-**Datos digitales**
-
-Generados por actividad en línea: tweets, posts de Facebook, búsquedas en Google, patrones de navegación. Creciente uso en ciencias sociales computacionales.
-
-Ventaja: Volumen masivo, observación de comportamiento real (no reportado).
-Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.
+| Fuente | Descripción | Ejemplos | Ventaja | Limitación |
+|--------|-------------|----------|---------|------------|
+| **Primarios** | Recolectados por el investigador | Encuestas propias, experimentos | Control total sobre medición | Costoso en tiempo y recursos |
+| **Secundarios** | Recolectados por otros | Censos, encuestas públicas | Eficiencia, muestras grandes | No diseñados para tu pregunta |
+| **Administrativos** | Generados por procesos burocráticos | Registros de votantes, datos tributarios | Cobertura completa, alta confiabilidad | Reflejan categorías burocráticas |
+| **Digitales** | Generados por actividad en línea | Tweets, búsquedas Google | Volumen masivo, comportamiento real | Representatividad problemática |
 
 #### Principales fuentes de datos
 
@@ -125,40 +80,24 @@ No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad de
 
 #### Dimensiones de calidad
 
-1. **Validez**: ¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo \@ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.
-2. **Confiabilidad**: ¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.
-3. **Cobertura**: ¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.
-4. **Precisión**: ¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.
-5. **Actualidad (timeliness)**: ¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.
-6. **Accesibilidad**: ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.
+| Dimensión | Pregunta clave | Ejemplo de problema |
+|-----------|----------------|---------------------|
+| **Validez** | ¿Miden lo que pretenden? | Categorías no capturan el concepto teórico |
+| **Confiabilidad** | ¿Son consistentes? | Preguntas cambian entre olas de encuesta |
+| **Cobertura** | ¿Qué población representan? | Solo teléfonos fijos → subrepresenta jóvenes |
+| **Precisión** | ¿Cuán exactas son las mediciones? | Muestras pequeñas → márgenes de error grandes |
+| **Actualidad** | ¿Cuán recientes son? | Datos de 5 años para fenómenos que cambian rápido |
+| **Accesibilidad** | ¿Están disponibles? | Restricciones legales o políticas |
 
 #### Problemas comunes
 
-**Datos faltantes (missing data)**
-
-Los valores faltantes son ubicuos. Pueden ser:
-
-- **Completamente aleatorios (MCAR)**: La probabilidad de faltar no depende de nada. Raro en práctica.
-- **Aleatorios condicional (MAR)**: La probabilidad depende de variables observadas. Manejable estadísticamente.
-- **No aleatorios (MNAR)**: La probabilidad depende del valor no observado. Problemático.
-
-Estrategias: eliminación listwise (perder casos), imputación, modelar explícitamente los datos faltantes.
-
-**Errores de medición**
-
-Discrepancias entre valor real y valor registrado. Pueden ser aleatorios (ruido) o sistemáticos (sesgo). Errores sistemáticos son más graves porque sesgan estimaciones.
-
-**Codificación inconsistente**
-
-Variables categóricas pueden codificarse de forma diferente en distintas partes del dataset. Ejemplo: género como "Masculino/Femenino", "M/F", "1/2", "Hombre/Mujer" en diferentes variables. Esto complica análisis.
-
-**Valores atípicos (outliers)**
-
-Observaciones extremas. Pueden ser errores de digitación o casos genuinos inusuales. Antes de eliminarlos, investigar.
-
-**Duplicados**
-
-Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusionan sin cuidado.
+| Problema | Descripción | Estrategia |
+|----------|-------------|------------|
+| **Datos faltantes** | Valores ausentes (MCAR, MAR, MNAR) | Eliminación listwise, imputación |
+| **Errores de medición** | Discrepancias valor real vs registrado | Verificar, corregir sesgos sistemáticos |
+| **Codificación inconsistente** | Misma variable con códigos diferentes (ej: "M/F" vs "1/2") | Estandarizar antes de análisis |
+| **Valores atípicos** | Observaciones extremas | Investigar antes de eliminar |
+| **Duplicados** | Observaciones repetidas | Identificar y eliminar con cuidado |
 
 ## Trabajando con R
 

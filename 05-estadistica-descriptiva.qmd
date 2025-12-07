@@ -106,7 +106,11 @@ La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins, donde $n$ es el númer
 
 #### Medidas de tendencia central
 
-Las medidas de tendencia central resumen la ubicación "típica" de los datos. La **media** ($\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i$) es el promedio que usa toda la información pero es sensible a valores extremos, siendo apropiada para distribuciones simétricas.[^media-mediana] La **mediana** es el valor que divide la distribución en dos mitades iguales, es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La **moda** es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.
+| Medida | Fórmula | Ventaja | Limitación | Usar cuando... |
+|--------|---------|---------|------------|----------------|
+| **Media** | $\bar{x} = \frac{1}{n}\sum x_i$ | Usa toda la información | Sensible a extremos | Distribución simétrica |
+| **Mediana** | Valor central | Robusta a outliers | Ignora extremos | Distribución asimétrica |
+| **Moda** | Valor más frecuente | Útil para categorías | Poco informativa en continuas | Variables nominales |
 
 [^media-mediana]: En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.
 
@@ -137,7 +141,15 @@ ggplot(data.frame(x = bimodal), aes(x = x)) +
   theme_minimal()
 ```
 
-**Regla general** para elegir: **distribuciones simétricas** usa media porque usa toda la información; **distribuciones asimétricas** usa mediana porque es robusta a extremos;[^asimetria] **variables ordinales** usa mediana porque la media no tiene sentido para categorías ordenadas; **variables nominales** usa moda porque es la única medida con sentido.
+::: {.callout-tip}
+## ¿Qué medida usar?
+| Tipo de distribución/variable | Medida recomendada |
+|------------------------------|-------------------|
+| Distribución simétrica | Media |
+| Distribución asimétrica | Mediana[^asimetria] |
+| Variable ordinal | Mediana |
+| Variable nominal | Moda |
+:::
 
 [^asimetria]: Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene "cola" larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.
 
@@ -322,12 +334,12 @@ ggplot(comunas, aes(y = participacion)) +
   theme(axis.text.x = element_blank())
 ```
 
-**Componentes:**
-
-- Caja: IQR (Q1 a Q3)
-- Línea dentro de caja: Mediana
-- Bigotes (whiskers): Extienden hasta 1.5×IQR desde Q1/Q3
-- Puntos: Outliers (valores más allá de bigotes)
+| Componente | Qué representa |
+|------------|----------------|
+| Caja | IQR (Q1 a Q3) |
+| Línea en la caja | Mediana |
+| Bigotes (whiskers) | Hasta 1.5×IQR desde Q1/Q3 |
+| Puntos | Outliers (más allá de bigotes) |
 
 Comparar distribuciones entre grupos:
 

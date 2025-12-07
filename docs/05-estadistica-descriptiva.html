@@ -490,8 +490,48 @@ window.Quarto = {
 </section>
 <section id="medidas-de-tendencia-central" class="level4 page-columns page-full" data-number="5.1.0.3">
 <h4 data-number="5.1.0.3" class="anchored" data-anchor-id="medidas-de-tendencia-central"><span class="header-section-number">5.1.0.3</span> Medidas de tendencia central</h4>
-<p>Las medidas de tendencia central resumen la ubicación “típica” de los datos. La <strong>media</strong> (<span class="math inline">\(\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i\)</span>) es el promedio que usa toda la información pero es sensible a valores extremos, siendo apropiada para distribuciones simétricas.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> La <strong>mediana</strong> es el valor que divide la distribución en dos mitades iguales, es robusta a outliers, apropiada para distribuciones asimétricas, y tiene interpretación intuitiva. La <strong>moda</strong> es el valor más frecuente; para variables continuas tiene sentido solo con categorías o bins, siendo poco informativa sin agrupar pero útil para identificar multimodalidad.</p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.</p></div></div><div class="cell">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 22%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Medida</th>
+<th>Fórmula</th>
+<th>Ventaja</th>
+<th>Limitación</th>
+<th>Usar cuando…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Media</strong></td>
+<td><span class="math inline">\(\bar{x} = \frac{1}{n}\sum x_i\)</span></td>
+<td>Usa toda la información</td>
+<td>Sensible a extremos</td>
+<td>Distribución simétrica</td>
+</tr>
+<tr class="even">
+<td><strong>Mediana</strong></td>
+<td>Valor central</td>
+<td>Robusta a outliers</td>
+<td>Ignora extremos</td>
+<td>Distribución asimétrica</td>
+</tr>
+<tr class="odd">
+<td><strong>Moda</strong></td>
+<td>Valor más frecuente</td>
+<td>Útil para categorías</td>
+<td>Poco informativa en continuas</td>
+<td>Variables nominales</td>
+</tr>
+</tbody>
+</table>
+<div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(comunas<span class="sc">$</span>participacion)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 46.75662</code></pre>
@@ -534,8 +574,45 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><strong>Regla general</strong> para elegir: <strong>distribuciones simétricas</strong> usa media porque usa toda la información; <strong>distribuciones asimétricas</strong> usa mediana porque es robusta a extremos;<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> <strong>variables ordinales</strong> usa mediana porque la media no tiene sentido para categorías ordenadas; <strong>variables nominales</strong> usa moda porque es la única medida con sentido.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene “cola” larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.</p></div></div><div class="cell">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>¿Qué medida usar?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tipo de distribución/variable</th>
+<th>Medida recomendada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Distribución simétrica</td>
+<td>Media</td>
+</tr>
+<tr class="even">
+<td>Distribución asimétrica</td>
+<td>Mediana<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></td>
+</tr>
+<tr class="odd">
+<td>Variable ordinal</td>
+<td>Mediana</td>
+</tr>
+<tr class="even">
+<td>Variable nominal</td>
+<td>Moda</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Para saber si tu distribución es asimétrica: haz un histograma y observa si tiene “cola” larga a un lado, o compara media y mediana. Si media es mucho mayor que mediana, hay asimetría a la derecha. Variables que no pueden ser negativas frecuentemente son asimétricas a la derecha.</p></div></div><div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Distribución asimétrica a la derecha</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>asimetrica <span class="ot">&lt;-</span> <span class="fu">rgamma</span>(<span class="dv">1000</span>, <span class="at">shape =</span> <span class="dv">2</span>, <span class="at">rate =</span> <span class="fl">0.5</span>)</span>
@@ -791,13 +868,32 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<p><strong>Componentes:</strong></p>
-<ul>
-<li>Caja: IQR (Q1 a Q3)</li>
-<li>Línea dentro de caja: Mediana</li>
-<li>Bigotes (whiskers): Extienden hasta 1.5×IQR desde Q1/Q3</li>
-<li>Puntos: Outliers (valores más allá de bigotes)</li>
-</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th>Qué representa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Caja</td>
+<td>IQR (Q1 a Q3)</td>
+</tr>
+<tr class="even">
+<td>Línea en la caja</td>
+<td>Mediana</td>
+</tr>
+<tr class="odd">
+<td>Bigotes (whiskers)</td>
+<td>Hasta 1.5×IQR desde Q1/Q3</td>
+</tr>
+<tr class="even">
+<td>Puntos</td>
+<td>Outliers (más allá de bigotes)</td>
+</tr>
+</tbody>
+</table>
 <p>Comparar distribuciones entre grupos:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear categorías de pobreza</span></span>

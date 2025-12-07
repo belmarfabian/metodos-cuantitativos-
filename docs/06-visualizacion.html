@@ -415,7 +415,47 @@ div.csl-indent {
 <section id="usar-el-canal-visual-apropiado" class="level4" data-number="6.1.0.2">
 <h4 data-number="6.1.0.2" class="anchored" data-anchor-id="usar-el-canal-visual-apropiado"><span class="header-section-number">6.1.0.2</span> 2. Usar el canal visual apropiado</h4>
 <p>La percepción humana procesa algunos atributos visuales mejor que otros:</p>
-<p><strong>Jerarquía de canales visuales</strong> (de más a menos preciso): 1. Posición en eje común 2. Longitud 3. Ángulo/pendiente 4. Área 5. Volumen 6. Color (saturación) 7. Color (tono)</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Precisión</th>
+<th>Canal visual</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1 (mejor)</td>
+<td>Posición en eje común</td>
+<td>Barras, scatter</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Longitud</td>
+<td>Barras</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Ángulo/pendiente</td>
+<td>Líneas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>Área</td>
+<td>Burbujas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>Volumen</td>
+<td>3D (evitar)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6-7 (peor)</td>
+<td>Color</td>
+<td>Mapas de calor</td>
+</tr>
+</tbody>
+</table>
 <p>Esto explica por qué gráficos de barras son más precisos que gráficos de torta.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos_partidos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -507,14 +547,52 @@ div.csl-indent {
 </section>
 <section id="componentes-de-ggplot2" class="level4" data-number="6.1.0.7">
 <h4 data-number="6.1.0.7" class="anchored" data-anchor-id="componentes-de-ggplot2"><span class="header-section-number">6.1.0.7</span> Componentes de ggplot2</h4>
-<ol type="1">
-<li><strong>Datos</strong>: El dataset</li>
-<li><strong>Aesthetics (aes)</strong>: Mapeo de variables a propiedades visuales (x, y, color, tamaño)</li>
-<li><strong>Geometrías (geom)</strong>: Representación visual (puntos, líneas, barras)</li>
-<li><strong>Escalas (scales)</strong>: Cómo se traducen valores de datos a valores visuales</li>
-<li><strong>Facetas (facets)</strong>: Paneles múltiples</li>
-<li><strong>Temas (themes)</strong>: Elementos no relacionados con datos (títulos, fondos)</li>
-</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Componente</th>
+<th>Función</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Datos</strong></td>
+<td>Dataset a graficar</td>
+<td><code>ggplot(datos, ...)</code></td>
+</tr>
+<tr class="even">
+<td><strong>Aesthetics</strong></td>
+<td>Mapeo variables → visual</td>
+<td><code>aes(x, y, color, size)</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Geometrías</strong></td>
+<td>Forma de representación</td>
+<td><code>geom_point()</code>, <code>geom_line()</code></td>
+</tr>
+<tr class="even">
+<td><strong>Escalas</strong></td>
+<td>Traducción de valores</td>
+<td><code>scale_color_manual()</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Facetas</strong></td>
+<td>Paneles múltiples</td>
+<td><code>facet_wrap()</code></td>
+</tr>
+<tr class="even">
+<td><strong>Temas</strong></td>
+<td>Estética general</td>
+<td><code>theme_minimal()</code></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="estructura-básica" class="level4" data-number="6.1.0.8">
 <h4 data-number="6.1.0.8" class="anchored" data-anchor-id="estructura-básica"><span class="header-section-number">6.1.0.8</span> Estructura básica</h4>
@@ -1112,13 +1190,32 @@ div.csl-indent {
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Especificar unidades</span></span>
 <span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"grafico_cm.png"</span>, p, <span class="at">width =</span> <span class="dv">20</span>, <span class="at">height =</span> <span class="dv">15</span>, <span class="at">units =</span> <span class="st">"cm"</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p><strong>Recomendaciones:</strong></p>
-<ul>
-<li><strong>PNG</strong>: Para web y presentaciones (300 dpi para calidad)</li>
-<li><strong>PDF</strong>: Para publicaciones académicas (vectorial, escalable)</li>
-<li><strong>SVG</strong>: Para edición posterior en Illustrator/Inkscape</li>
-<li><strong>Dimensiones</strong>: Verificar requisitos de revista (ej: ancho máximo 180mm)</li>
-</ul>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Formato</th>
+<th>Uso recomendado</th>
+<th>Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>PNG</strong></td>
+<td>Web, presentaciones</td>
+<td>300 dpi para calidad</td>
+</tr>
+<tr class="even">
+<td><strong>PDF</strong></td>
+<td>Publicaciones académicas</td>
+<td>Vectorial, escalable</td>
+</tr>
+<tr class="odd">
+<td><strong>SVG</strong></td>
+<td>Edición posterior</td>
+<td>Illustrator/Inkscape</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="errores-comunes-en-visualización" class="level2" data-number="6.3">

@@ -368,43 +368,157 @@ div.csl-indent {
 <p>Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.</p>
 <section id="según-estructura" class="level4" data-number="4.1.0.1">
 <h4 data-number="4.1.0.1" class="anchored" data-anchor-id="según-estructura"><span class="header-section-number">4.1.0.1</span> Según estructura</h4>
-<p><strong>Datos de corte transversal (cross-sectional)</strong></p>
-<p>Observaciones de múltiples unidades en un solo momento. Ejemplo: encuesta a 1,500 votantes en octubre 2024. Cada fila es un individuo; columnas son variables (edad, educación, intención de voto).</p>
-<p>Ventaja: Simplicidad analítica. Limitación: No observamos cambio temporal. No podemos distinguir efectos de período de efectos de cohorte.</p>
-<p><strong>Datos de series temporales (time series)</strong></p>
-<p>Observaciones de una unidad a través del tiempo. Ejemplo: tasa de desempleo mensual en Chile 2000-2024. Cada fila es un mes; columnas son variables económicas.</p>
-<p>Ventaja: Captura dinámica temporal. Limitación: Una sola unidad limita generalización. Difícil controlar confusores que varían en el tiempo.</p>
-<p><strong>Datos de panel (longitudinal)</strong></p>
-<p>Observaciones de múltiples unidades a través del tiempo. Ejemplo: datos electorales de 346 comunas chilenas en 8 elecciones presidenciales. Cada fila es comuna-año; columnas son variables.</p>
-<p>Ventaja: Controla diferencias persistentes entre unidades (efectos fijos). Observa cambios. Limitación: Complejidad analítica. Requiere supuestos sobre errores correlacionados.</p>
-<p><strong>Datos jerárquicos (nested/multilevel)</strong></p>
-<p>Observaciones anidadas en estructuras de múltiples niveles. Ejemplo: estudiantes (nivel 1) dentro de escuelas (nivel 2) dentro de comunas (nivel 3).</p>
-<p>Ventaja: Modela variación en múltiples niveles simultáneamente. Limitación: Requiere técnicas multinivel (más allá del alcance de este libro introductorio).</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 26%">
+<col style="width: 18%">
+<col style="width: 18%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+<th>Ventaja</th>
+<th>Limitación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Corte transversal</strong></td>
+<td>Múltiples unidades, un momento</td>
+<td>Encuesta a 1,500 votantes en oct 2024</td>
+<td>Simplicidad analítica</td>
+<td>No observa cambio temporal</td>
+</tr>
+<tr class="even">
+<td><strong>Series temporales</strong></td>
+<td>Una unidad, múltiples momentos</td>
+<td>Desempleo mensual Chile 2000-2024</td>
+<td>Captura dinámica temporal</td>
+<td>Una unidad limita generalización</td>
+</tr>
+<tr class="odd">
+<td><strong>Panel</strong></td>
+<td>Múltiples unidades, múltiples momentos</td>
+<td>346 comunas en 8 elecciones</td>
+<td>Controla efectos fijos</td>
+<td>Complejidad analítica</td>
+</tr>
+<tr class="even">
+<td><strong>Jerárquico</strong></td>
+<td>Unidades anidadas en niveles</td>
+<td>Estudiantes en escuelas en comunas</td>
+<td>Modela variación multinivel</td>
+<td>Requiere técnicas avanzadas</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="según-granularidad" class="level4" data-number="4.1.0.2">
 <h4 data-number="4.1.0.2" class="anchored" data-anchor-id="según-granularidad"><span class="header-section-number">4.1.0.2</span> Según granularidad</h4>
-<p><strong>Datos micro (individuales)</strong></p>
-<p>La unidad de observación es el individuo: persona, votante, legislador, manifestante. Estos datos permiten analizar comportamiento individual y heterogeneidad.</p>
-<p><strong>Datos meso (organizacionales/locales)</strong></p>
-<p>La unidad es un agregado intermedio: municipios, distritos electorales, partidos políticos, organizaciones. Balance entre detalle y manejo de volumen.</p>
-<p><strong>Datos macro (nacionales/internacionales)</strong></p>
-<p>La unidad es el país o la región. Permiten comparación internacional pero pierden variación subnacional. Además, típicamente N es pequeño (196 países en el mundo).</p>
-<p>La elección de granularidad no es neutral. <span class="citation" data-cites="king1997">King (<a href="01-introduccion.html#ref-king1997" role="doc-biblioref">1997</a>)</span> advierten sobre la <strong>falacia ecológica</strong>: inferir comportamiento individual desde patrones agregados puede ser erróneo si composición de agregados varía.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 40%">
+<col style="width: 18%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nivel</th>
+<th>Unidad de observación</th>
+<th>Ejemplos</th>
+<th>Característica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Micro</strong></td>
+<td>Individuo</td>
+<td>Votante, legislador, manifestante</td>
+<td>Permite analizar heterogeneidad individual</td>
+</tr>
+<tr class="even">
+<td><strong>Meso</strong></td>
+<td>Agregado intermedio</td>
+<td>Municipio, distrito, partido</td>
+<td>Balance entre detalle y volumen</td>
+</tr>
+<tr class="odd">
+<td><strong>Macro</strong></td>
+<td>País/región</td>
+<td>Estados nacionales</td>
+<td>Comparación internacional, pero N pequeño</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Cuidado con la falacia ecológica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="citation" data-cites="king1997">King (<a href="01-introduccion.html#ref-king1997" role="doc-biblioref">1997</a>)</span> advierten: inferir comportamiento individual desde patrones agregados puede ser erróneo si la composición de agregados varía.</p>
+</div>
+</div>
 </section>
 <section id="según-fuente" class="level4" data-number="4.1.0.3">
 <h4 data-number="4.1.0.3" class="anchored" data-anchor-id="según-fuente"><span class="header-section-number">4.1.0.3</span> Según fuente</h4>
-<p><strong>Datos primarios</strong></p>
-<p>Recolectados por el investigador para el proyecto específico. Encuestas propias, experimentos, observación directa, entrevistas codificadas.</p>
-<p>Ventaja: Control total sobre qué se mide y cómo. Limitación: Costoso en tiempo y recursos.</p>
-<p><strong>Datos secundarios</strong></p>
-<p>Recolectados por otros, usados por el investigador. Censos, estadísticas oficiales, encuestas de opinión pública, datos administrativos.</p>
-<p>Ventaja: Eficiencia. Acceso a muestras grandes y representativas. Limitación: No se diseñaron para nuestras preguntas específicas. Debemos aceptar decisiones de medición ajenas.</p>
-<p><strong>Datos administrativos</strong></p>
-<p>Generados por procesos burocráticos: registros de votantes, datos tributarios, registros judiciales, historiales legislativos.</p>
-<p>Ventaja: Cobertura completa (no muestral), alta confiabilidad. Limitación: Reflejan categorías burocráticas, no conceptos teóricos. Problemas de acceso y privacidad.</p>
-<p><strong>Datos digitales</strong></p>
-<p>Generados por actividad en línea: tweets, posts de Facebook, búsquedas en Google, patrones de navegación. Creciente uso en ciencias sociales computacionales.</p>
-<p>Ventaja: Volumen masivo, observación de comportamiento real (no reportado). Limitación: Representatividad problemática (no todos están en línea). Inferir actitudes desde comportamiento digital es complicado.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 25%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente</th>
+<th>Descripción</th>
+<th>Ejemplos</th>
+<th>Ventaja</th>
+<th>Limitación</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Primarios</strong></td>
+<td>Recolectados por el investigador</td>
+<td>Encuestas propias, experimentos</td>
+<td>Control total sobre medición</td>
+<td>Costoso en tiempo y recursos</td>
+</tr>
+<tr class="even">
+<td><strong>Secundarios</strong></td>
+<td>Recolectados por otros</td>
+<td>Censos, encuestas públicas</td>
+<td>Eficiencia, muestras grandes</td>
+<td>No diseñados para tu pregunta</td>
+</tr>
+<tr class="odd">
+<td><strong>Administrativos</strong></td>
+<td>Generados por procesos burocráticos</td>
+<td>Registros de votantes, datos tributarios</td>
+<td>Cobertura completa, alta confiabilidad</td>
+<td>Reflejan categorías burocráticas</td>
+</tr>
+<tr class="even">
+<td><strong>Digitales</strong></td>
+<td>Generados por actividad en línea</td>
+<td>Tweets, búsquedas Google</td>
+<td>Volumen masivo, comportamiento real</td>
+<td>Representatividad problemática</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="principales-fuentes-de-datos" class="level4" data-number="4.1.0.4">
 <h4 data-number="4.1.0.4" class="anchored" data-anchor-id="principales-fuentes-de-datos"><span class="header-section-number">4.1.0.4</span> Principales fuentes de datos</h4>
@@ -428,33 +542,96 @@ div.csl-indent {
 </section>
 <section id="dimensiones-de-calidad" class="level4" data-number="4.1.0.6">
 <h4 data-number="4.1.0.6" class="anchored" data-anchor-id="dimensiones-de-calidad"><span class="header-section-number">4.1.0.6</span> Dimensiones de calidad</h4>
-<ol type="1">
-<li><strong>Validez</strong>: ¿Los datos miden lo que pretenden medir? Vimos validez de medición en Capítulo @ref(medicion). Aquí, evaluar si las categorías y procedimientos de recolección capturan conceptos teóricos relevantes.</li>
-<li><strong>Confiabilidad</strong>: ¿Los datos son consistentes? ¿Diferentes aplicaciones del mismo procedimiento producen resultados similares? En encuestas, verificar si preguntas se formulan igual en diferentes olas.</li>
-<li><strong>Cobertura</strong>: ¿Qué población representan los datos? Si una encuesta solo contacta teléfonos fijos, subrepresenta jóvenes. Si datos administrativos solo cubren sector formal, omiten informalidad.</li>
-<li><strong>Precisión</strong>: ¿Cuán exactas son las mediciones? Encuestas con muestras pequeñas tienen márgenes de error grandes. Datos administrativos pueden tener errores de digitación o categorización.</li>
-<li><strong>Actualidad (timeliness)</strong>: ¿Cuán recientes son los datos? Para fenómenos que cambian rápido, datos de hace 5 años pueden ser obsoletos.</li>
-<li><strong>Accesibilidad</strong>: ¿Los datos están disponibles? ¿En qué formato? ¿Con qué restricciones? Algunos datos excelentes son inaccesibles por razones legales o políticas.</li>
-</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 33%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimensión</th>
+<th>Pregunta clave</th>
+<th>Ejemplo de problema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Validez</strong></td>
+<td>¿Miden lo que pretenden?</td>
+<td>Categorías no capturan el concepto teórico</td>
+</tr>
+<tr class="even">
+<td><strong>Confiabilidad</strong></td>
+<td>¿Son consistentes?</td>
+<td>Preguntas cambian entre olas de encuesta</td>
+</tr>
+<tr class="odd">
+<td><strong>Cobertura</strong></td>
+<td>¿Qué población representan?</td>
+<td>Solo teléfonos fijos → subrepresenta jóvenes</td>
+</tr>
+<tr class="even">
+<td><strong>Precisión</strong></td>
+<td>¿Cuán exactas son las mediciones?</td>
+<td>Muestras pequeñas → márgenes de error grandes</td>
+</tr>
+<tr class="odd">
+<td><strong>Actualidad</strong></td>
+<td>¿Cuán recientes son?</td>
+<td>Datos de 5 años para fenómenos que cambian rápido</td>
+</tr>
+<tr class="even">
+<td><strong>Accesibilidad</strong></td>
+<td>¿Están disponibles?</td>
+<td>Restricciones legales o políticas</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="problemas-comunes" class="level4" data-number="4.1.0.7">
 <h4 data-number="4.1.0.7" class="anchored" data-anchor-id="problemas-comunes"><span class="header-section-number">4.1.0.7</span> Problemas comunes</h4>
-<p><strong>Datos faltantes (missing data)</strong></p>
-<p>Los valores faltantes son ubicuos. Pueden ser:</p>
-<ul>
-<li><strong>Completamente aleatorios (MCAR)</strong>: La probabilidad de faltar no depende de nada. Raro en práctica.</li>
-<li><strong>Aleatorios condicional (MAR)</strong>: La probabilidad depende de variables observadas. Manejable estadísticamente.</li>
-<li><strong>No aleatorios (MNAR)</strong>: La probabilidad depende del valor no observado. Problemático.</li>
-</ul>
-<p>Estrategias: eliminación listwise (perder casos), imputación, modelar explícitamente los datos faltantes.</p>
-<p><strong>Errores de medición</strong></p>
-<p>Discrepancias entre valor real y valor registrado. Pueden ser aleatorios (ruido) o sistemáticos (sesgo). Errores sistemáticos son más graves porque sesgan estimaciones.</p>
-<p><strong>Codificación inconsistente</strong></p>
-<p>Variables categóricas pueden codificarse de forma diferente en distintas partes del dataset. Ejemplo: género como “Masculino/Femenino”, “M/F”, “1/2”, “Hombre/Mujer” en diferentes variables. Esto complica análisis.</p>
-<p><strong>Valores atípicos (outliers)</strong></p>
-<p>Observaciones extremas. Pueden ser errores de digitación o casos genuinos inusuales. Antes de eliminarlos, investigar.</p>
-<p><strong>Duplicados</strong></p>
-<p>Observaciones repetidas erróneamente. Común cuando múltiples fuentes se fusionan sin cuidado.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 37%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Problema</th>
+<th>Descripción</th>
+<th>Estrategia</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Datos faltantes</strong></td>
+<td>Valores ausentes (MCAR, MAR, MNAR)</td>
+<td>Eliminación listwise, imputación</td>
+</tr>
+<tr class="even">
+<td><strong>Errores de medición</strong></td>
+<td>Discrepancias valor real vs registrado</td>
+<td>Verificar, corregir sesgos sistemáticos</td>
+</tr>
+<tr class="odd">
+<td><strong>Codificación inconsistente</strong></td>
+<td>Misma variable con códigos diferentes (ej: “M/F” vs “1/2”)</td>
+<td>Estandarizar antes de análisis</td>
+</tr>
+<tr class="even">
+<td><strong>Valores atípicos</strong></td>
+<td>Observaciones extremas</td>
+<td>Investigar antes de eliminar</td>
+</tr>
+<tr class="odd">
+<td><strong>Duplicados</strong></td>
+<td>Observaciones repetidas</td>
+<td>Identificar y eliminar con cuidado</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="trabajando-con-r" class="level2" data-number="4.2">

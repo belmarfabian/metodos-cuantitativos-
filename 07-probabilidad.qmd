@@ -264,13 +264,12 @@ La distribución más importante en estadística inferencial. Una variable $X$ s
 
 $$X \sim N(\mu, \sigma^2)$$
 
-**Propiedades:**
-
-- Simétrica alrededor de $\mu$
-- Forma de campana
-- 68% de observaciones dentro de $\mu \pm 1\sigma$
-- 95% dentro de $\mu \pm 1.96\sigma$
-- 99.7% dentro de $\mu \pm 3\sigma$
+| Propiedad | Descripción |
+|-----------|-------------|
+| Forma | Simétrica, campana |
+| 68% | Dentro de $\mu \pm 1\sigma$ |
+| 95% | Dentro de $\mu \pm 1.96\sigma$ |
+| 99.7% | Dentro de $\mu \pm 3\sigma$ |
 
 ```{r normal-distribution, echo=FALSE, fig.cap="Distribución Normal estándar con regla 68-95-99.7"}
 library(ggplot2)
@@ -465,19 +464,15 @@ Aunque la población original es extremadamente asimétrica (la mayoría tiene v
 
 ## Resumen {.unnumbered}
 
-**Conceptos clave:**
+| Concepto | Descripción |
+|----------|-------------|
+| **Probabilidad** | Cuantifica incertidumbre (0 a 1) |
+| **Variables aleatorias** | Discretas (conteos) o continuas (intervalos) |
+| **Normal** | Base de inferencia; regla 68-95-99.7 |
+| **Binomial** | Conteo de éxitos en n ensayos |
+| **TLC** | Medias muestrales → Normal (si n ≥ 30) |
 
-1. **Probabilidad** cuantifica incertidumbre; permite hacer inferencias rigurosas desde muestras
-2. **Variables aleatorias** (discretas y continuas) conectan probabilidad con datos observables
-3. **Distribuciones importantes**: Normal (continua, base de la inferencia), Binomial (conteos de éxitos), Poisson (eventos raros)
-4. **Teorema del Límite Central**: Las medias muestrales se distribuyen normalmente, independientemente de la distribución original
-5. TLC justifica el uso de métodos basados en la Normal para inferencia (intervalos de confianza, pruebas de hipótesis)
-
-**Conexión con próximos capítulos:**
-
-- **Cap. 8** usará el TLC para construir intervalos de confianza
-- **Cap. 9** aplicará distribuciones de probabilidad para pruebas de hipótesis
-- **Caps. 10-11** usarán la distribución Normal para comparar medias y hacer regresión
+El Teorema del Límite Central justifica el uso de la distribución Normal para inferencia (intervalos de confianza, pruebas de hipótesis).
 
 ## Lecturas recomendadas {.unnumbered}
 

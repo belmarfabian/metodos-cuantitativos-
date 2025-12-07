@@ -395,7 +395,7 @@ window.Quarto = {
 <li>Entender las limitaciones y mal usos comunes de las pruebas de hipótesis</li>
 </ul>
 </section>
-<section id="lógica-de-pruebas-de-hipótesis" class="level2 page-columns page-full" data-number="9.1">
+<section id="lógica-de-pruebas-de-hipótesis" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="lógica-de-pruebas-de-hipótesis"><span class="header-section-number">9.1</span> Lógica de pruebas de hipótesis</h2>
 <p>Las pruebas de hipótesis responden a una pregunta fundamental en investigación: <strong>¿Este patrón que observo en mis datos es real, o podría ser producto del azar?</strong> Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?</p>
 <section id="la-lógica-de-prueba-por-contradicción" class="level4" data-number="9.1.0.1">
@@ -412,12 +412,48 @@ window.Quarto = {
 <section id="hipótesis-nula-y-alternativa" class="level4" data-number="9.1.0.2">
 <h4 data-number="9.1.0.2" class="anchored" data-anchor-id="hipótesis-nula-y-alternativa"><span class="header-section-number">9.1.0.2</span> Hipótesis nula y alternativa</h4>
 </section>
-<section id="formulación-de-hipótesis" class="level4 page-columns page-full" data-number="9.1.0.3">
+<section id="formulación-de-hipótesis" class="level4" data-number="9.1.0.3">
 <h4 data-number="9.1.0.3" class="anchored" data-anchor-id="formulación-de-hipótesis"><span class="header-section-number">9.1.0.3</span> Formulación de hipótesis</h4>
 <p><strong>Hipótesis nula (<span class="math inline">\(H_0\)</span>)</strong>: Afirmación de “no efecto” o “no diferencia”. Es lo que asumimos como cierto inicialmente.</p>
 <p><strong>Hipótesis alternativa (<span class="math inline">\(H_1\)</span>)</strong>: Lo que esperamos encontrar si rechazamos <span class="math inline">\(H_0\)</span>. Puede ser: - <strong>Bilateral</strong> (dos colas): <span class="math inline">\(H_1: \mu \neq \mu_0\)</span> (hay diferencia, en cualquier dirección) - <strong>Unilateral</strong> (una cola): <span class="math inline">\(H_1: \mu &gt; \mu_0\)</span> o <span class="math inline">\(H_1: \mu &lt; \mu_0\)</span> (dirección específica)</p>
-<p>Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear <span class="math inline">\(H_0: \mu = 8\%\)</span> (el desempleo se mantiene en 8%) versus <span class="math inline">\(H_1: \mu &lt; 8\%\)</span> (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos <span class="math inline">\(H_0: p_{\text{hombres}} = p_{\text{mujeres}}\)</span> (no hay diferencia) contra <span class="math inline">\(H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}\)</span> (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos <span class="math inline">\(H_0: \mu_{\text{región}} = 550\)</span> mil pesos (igual al promedio nacional) versus <span class="math inline">\(H_1: \mu_{\text{región}} \neq 550\)</span> mil (diferente al nacional).<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Otros ejemplos en ciencias políticas: evaluar si una reforma electoral aumentó la participación, o comparar aprobación presidencial entre regiones urbanas y rurales.</p></div></div></section>
+<p><strong>Ejemplos en ciencias sociales:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pregunta</th>
+<th><span class="math inline">\(H_0\)</span></th>
+<th><span class="math inline">\(H_1\)</span></th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Política redujo desempleo?</td>
+<td><span class="math inline">\(\mu = 8\%\)</span></td>
+<td><span class="math inline">\(\mu &lt; 8\%\)</span></td>
+<td>Unilateral</td>
+</tr>
+<tr class="even">
+<td>¿Participación difiere por género?</td>
+<td><span class="math inline">\(p_H = p_M\)</span></td>
+<td><span class="math inline">\(p_H \neq p_M\)</span></td>
+<td>Bilateral</td>
+</tr>
+<tr class="odd">
+<td>¿Ingreso regional ≠ nacional?</td>
+<td><span class="math inline">\(\mu = 550\)</span></td>
+<td><span class="math inline">\(\mu \neq 550\)</span></td>
+<td>Bilateral</td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="valores-p-y-errores" class="level2 page-columns page-full" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="valores-p-y-errores"><span class="header-section-number">9.2</span> Valores p y errores</h2>
@@ -425,13 +461,13 @@ window.Quarto = {
 <h4 data-number="9.2.0.1" class="anchored" data-anchor-id="qué-es-un-valor-p"><span class="header-section-number">9.2.0.1</span> ¿Qué es un valor p?</h4>
 <p>El <strong>valor p</strong> (<em>p-value</em>) es la probabilidad de observar datos tan extremos como los nuestros (o más), <strong>asumiendo que <span class="math inline">\(H_0\)</span> es cierta</strong>.</p>
 <p><span class="math display">\[\text{valor } p = P(\text{datos tan extremos} \mid H_0 \text{ es cierta})\]</span></p>
-<p>La interpretación correcta del valor p es fundamental para evitar errores comunes.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> Cuando observamos <span class="math inline">\(p = 0.03\)</span>, debemos interpretar: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.”</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Error común: “p = 0.03 significa 3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”. Falso. El valor p es <span class="math inline">\(P(\text{datos} | H_0)\)</span>, no <span class="math inline">\(P(H_0 | \text{datos})\)</span>. La hipótesis nula no es una variable aleatoria.</p></div></div><p>Un valor <span class="math inline">\(p = 0.001\)</span> indica: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).” Por el contrario, <span class="math inline">\(p = 0.45\)</span> significa: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.” El valor p <strong>NO</strong> representa la probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta.</p>
+<p>La interpretación correcta del valor p es fundamental para evitar errores comunes.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Cuando observamos <span class="math inline">\(p = 0.03\)</span>, debemos interpretar: “Si no hubiera efecto real, veríamos resultados tan extremos solo 3% de las veces.”</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;Error común: “p = 0.03 significa 3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”. Falso. El valor p es <span class="math inline">\(P(\text{datos} | H_0)\)</span>, no <span class="math inline">\(P(H_0 | \text{datos})\)</span>. La hipótesis nula no es una variable aleatoria.</p></div></div><p>Un valor <span class="math inline">\(p = 0.001\)</span> indica: “Si <span class="math inline">\(H_0\)</span> fuera cierta, estos datos serían extremadamente raros (1 en 1000).” Por el contrario, <span class="math inline">\(p = 0.45\)</span> significa: “Estos datos son muy compatibles con <span class="math inline">\(H_0\)</span>; no hay evidencia contra ella.” El valor p <strong>NO</strong> representa la probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta.</p>
 </section>
 <section id="nivel-de-significancia-alpha" class="level4 page-columns page-full" data-number="9.2.0.2">
 <h4 data-number="9.2.0.2" class="anchored" data-anchor-id="nivel-de-significancia-alpha"><span class="header-section-number">9.2.0.2</span> Nivel de significancia (<span class="math inline">\(\alpha\)</span>)</h4>
-<p>El <strong>nivel de significancia</strong> <span class="math inline">\(\alpha\)</span> es el umbral que elegimos <em>antes</em> de analizar los datos para decidir cuándo rechazar <span class="math inline">\(H_0\)</span>. Convencionalmente se usa <span class="math inline">\(\alpha = 0.05\)</span>, pero esta elección es arbitraria.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;¿Por qué 0.05? R.A. Fisher lo propuso como “conveniente” en los años 1920. No hay nada mágico en este número. En física de partículas usan <span class="math inline">\(\alpha = 0.0000003\)</span> (5 sigmas). En estudios exploratorios, algunos usan <span class="math inline">\(\alpha = 0.10\)</span>. La elección debería depender del costo relativo de los errores tipo I y II.</p></div></div><p>La regla de decisión es:</p>
+<p>El <strong>nivel de significancia</strong> <span class="math inline">\(\alpha\)</span> es el umbral que elegimos <em>antes</em> de analizar los datos para decidir cuándo rechazar <span class="math inline">\(H_0\)</span>. Convencionalmente se usa <span class="math inline">\(\alpha = 0.05\)</span>, pero esta elección es arbitraria.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;¿Por qué 0.05? R.A. Fisher lo propuso como “conveniente” en los años 1920. No hay nada mágico en este número. En física de partículas usan <span class="math inline">\(\alpha = 0.0000003\)</span> (5 sigmas). En estudios exploratorios, algunos usan <span class="math inline">\(\alpha = 0.10\)</span>. La elección debería depender del costo relativo de los errores tipo I y II.</p></div></div><p>La regla de decisión es:</p>
 <ul>
 <li>Si <span class="math inline">\(p &lt; \alpha\)</span>: Rechazamos <span class="math inline">\(H_0\)</span> (resultado “estadísticamente significativo”)</li>
 <li>Si <span class="math inline">\(p \geq \alpha\)</span>: No rechazamos <span class="math inline">\(H_0\)</span> (no hay evidencia suficiente)</li>
@@ -892,13 +928,40 @@ mean of x mean of y
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ol type="1">
-<li><p><strong>Confundir valor p con probabilidad de <span class="math inline">\(H_0\)</span></strong>: <span class="math inline">\(p = 0.03\)</span> NO significa “3% de probabilidad de que <span class="math inline">\(H_0\)</span> sea cierta”</p></li>
-<li><p><strong>Dicotomizar en “significativo/no significativo”</strong>: <span class="math inline">\(p = 0.049\)</span> y <span class="math inline">\(p = 0.051\)</span> son prácticamente idénticos, pero uno es “significativo” y otro no</p></li>
-<li><p><strong>P-hacking</strong>: Probar múltiples análisis y reportar solo los significativos</p></li>
-<li><p><strong>Interpretar “no significativo” como “no hay efecto”</strong>: Ausencia de evidencia no es evidencia de ausencia</p></li>
-<li><p><strong>Ignorar el tamaño del efecto</strong>: Un efecto significativo puede ser irrelevante prácticamente</p></li>
-</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 75%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Error</th>
+<th>Por qué es problema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>p = 0.03 significa “3% que <span class="math inline">\(H_0\)</span> sea cierta”</td>
+<td>El valor p es <span class="math inline">\(P(\text{datos}|H_0)\)</span>, NO <span class="math inline">\(P(H_0|\text{datos})\)</span></td>
+</tr>
+<tr class="even">
+<td>Dicotomizar en significativo/no</td>
+<td>p = 0.049 y p = 0.051 son prácticamente idénticos</td>
+</tr>
+<tr class="odd">
+<td>P-hacking</td>
+<td>Probar muchos análisis y reportar solo los significativos</td>
+</tr>
+<tr class="even">
+<td>“No significativo” = “no hay efecto”</td>
+<td>Ausencia de evidencia ≠ evidencia de ausencia</td>
+</tr>
+<tr class="odd">
+<td>Ignorar tamaño del efecto</td>
+<td>Un efecto significativo puede ser irrelevante</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <section id="el-problema-de-las-comparaciones-múltiples" class="level4 nivel" data-nivel="avanzado" data-number="9.7.0.1">

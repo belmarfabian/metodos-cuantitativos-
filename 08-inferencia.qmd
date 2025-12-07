@@ -604,14 +604,12 @@ ggplot(resultados_plot, aes(y = muestra)) +
 
 ## Resumen {.unnumbered}
 
-**Conceptos clave:**
-
-1. **Inferencia estadística**: Usar muestras para hacer afirmaciones sobre poblaciones
-2. **Parámetros vs estadísticos**: $\mu, p$ (poblacionales, fijos, desconocidos) vs $\bar{x}, \hat{p}$ (muestrales, variables, observables)
-3. **Distribución muestral**: Distribución de un estadístico a través de todas las muestras posibles
-4. **Error estándar**: SD de la distribución muestral; mide precisión de la estimación; $\text{SE} = s/\sqrt{n}$
-5. **Intervalos de confianza**: Rango plausible para el parámetro; nivel de confianza se refiere al procedimiento, no a un intervalo específico
-6. **Tamaño muestral**: Determinar $n$ necesario para lograr margen de error deseado
+| Concepto | Descripción |
+|----------|-------------|
+| **Parámetros** ($\mu$, $p$) | Valores poblacionales fijos (desconocidos) |
+| **Estadísticos** ($\bar{x}$, $\hat{p}$) | Valores muestrales variables (observados) |
+| **Error estándar** | SD de la distribución muestral: $\text{SE} = s/\sqrt{n}$ |
+| **IC 95%** | $\bar{x} \pm 1.96 \cdot \text{SE}$ |
 
 **Fórmulas esenciales:**
 

@@ -93,14 +93,14 @@ comunas %>%
 
 La percepción humana procesa algunos atributos visuales mejor que otros:
 
-**Jerarquía de canales visuales** (de más a menos preciso):
-1. Posición en eje común
-2. Longitud
-3. Ángulo/pendiente
-4. Área
-5. Volumen
-6. Color (saturación)
-7. Color (tono)
+| Precisión | Canal visual | Ejemplo |
+|:---------:|--------------|---------|
+| 1 (mejor) | Posición en eje común | Barras, scatter |
+| 2 | Longitud | Barras |
+| 3 | Ángulo/pendiente | Líneas |
+| 4 | Área | Burbujas |
+| 5 | Volumen | 3D (evitar) |
+| 6-7 (peor) | Color | Mapas de calor |
 
 Esto explica por qué gráficos de barras son más precisos que gráficos de torta.
 
@@ -176,12 +176,14 @@ Combinar palabras, números y gráficos para una narrativa coherente.
 
 #### Componentes de ggplot2
 
-1. **Datos**: El dataset
-2. **Aesthetics (aes)**: Mapeo de variables a propiedades visuales (x, y, color, tamaño)
-3. **Geometrías (geom)**: Representación visual (puntos, líneas, barras)
-4. **Escalas (scales)**: Cómo se traducen valores de datos a valores visuales
-5. **Facetas (facets)**: Paneles múltiples
-6. **Temas (themes)**: Elementos no relacionados con datos (títulos, fondos)
+| Componente | Función | Ejemplo |
+|------------|---------|---------|
+| **Datos** | Dataset a graficar | `ggplot(datos, ...)` |
+| **Aesthetics** | Mapeo variables → visual | `aes(x, y, color, size)` |
+| **Geometrías** | Forma de representación | `geom_point()`, `geom_line()` |
+| **Escalas** | Traducción de valores | `scale_color_manual()` |
+| **Facetas** | Paneles múltiples | `facet_wrap()` |
+| **Temas** | Estética general | `theme_minimal()` |
 
 #### Estructura básica
 
@@ -632,12 +634,11 @@ ggsave("grafico.svg", p, width = 8, height = 6)
 ggsave("grafico_cm.png", p, width = 20, height = 15, units = "cm", dpi = 300)
 ```
 
-**Recomendaciones:**
-
-- **PNG**: Para web y presentaciones (300 dpi para calidad)
-- **PDF**: Para publicaciones académicas (vectorial, escalable)
-- **SVG**: Para edición posterior en Illustrator/Inkscape
-- **Dimensiones**: Verificar requisitos de revista (ej: ancho máximo 180mm)
+| Formato | Uso recomendado | Nota |
+|---------|-----------------|------|
+| **PNG** | Web, presentaciones | 300 dpi para calidad |
+| **PDF** | Publicaciones académicas | Vectorial, escalable |
+| **SVG** | Edición posterior | Illustrator/Inkscape |
 
 ## Errores comunes en visualización
 

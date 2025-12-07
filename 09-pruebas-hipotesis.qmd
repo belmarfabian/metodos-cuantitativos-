@@ -37,7 +37,13 @@ Es crucial entender la asimetría fundamental de este razonamiento: nunca "acept
 - **Bilateral** (dos colas): $H_1: \mu \neq \mu_0$ (hay diferencia, en cualquier dirección)
 - **Unilateral** (una cola): $H_1: \mu > \mu_0$ o $H_1: \mu < \mu_0$ (dirección específica)
 
-Consideremos algunos casos concretos en ciencias sociales. Si evaluamos el efecto de una política pública sobre desempleo, podríamos plantear $H_0: \mu = 8\%$ (el desempleo se mantiene en 8%) versus $H_1: \mu < 8\%$ (la política redujo el desempleo), usando una prueba unilateral. Para comparar participación electoral entre géneros, formularíamos $H_0: p_{\text{hombres}} = p_{\text{mujeres}}$ (no hay diferencia) contra $H_1: p_{\text{hombres}} \neq p_{\text{mujeres}}$ (hay diferencia), usando una prueba bilateral. Finalmente, al comparar el ingreso promedio de una región con el nacional, plantearíamos $H_0: \mu_{\text{región}} = 550$ mil pesos (igual al promedio nacional) versus $H_1: \mu_{\text{región}} \neq 550$ mil (diferente al nacional).[^ejemplos-hipotesis]
+**Ejemplos en ciencias sociales:**
+
+| Pregunta | $H_0$ | $H_1$ | Tipo |
+|----------|-------|-------|------|
+| ¿Política redujo desempleo? | $\mu = 8\%$ | $\mu < 8\%$ | Unilateral |
+| ¿Participación difiere por género? | $p_H = p_M$ | $p_H \neq p_M$ | Bilateral |
+| ¿Ingreso regional ≠ nacional? | $\mu = 550$ | $\mu \neq 550$ | Bilateral |[^ejemplos-hipotesis]
 
 [^ejemplos-hipotesis]: Otros ejemplos en ciencias políticas: evaluar si una reforma electoral aumentó la participación, o comparar aprobación presidencial entre regiones urbanas y rurales.
 
@@ -383,15 +389,13 @@ cat("Interpretación: efecto",
 ::: {.callout-caution}
 ## Errores que debes evitar
 
-1. **Confundir valor p con probabilidad de $H_0$**: $p = 0.03$ NO significa "3% de probabilidad de que $H_0$ sea cierta"
-
-2. **Dicotomizar en "significativo/no significativo"**: $p = 0.049$ y $p = 0.051$ son prácticamente idénticos, pero uno es "significativo" y otro no
-
-3. **P-hacking**: Probar múltiples análisis y reportar solo los significativos
-
-4. **Interpretar "no significativo" como "no hay efecto"**: Ausencia de evidencia no es evidencia de ausencia
-
-5. **Ignorar el tamaño del efecto**: Un efecto significativo puede ser irrelevante prácticamente
+| Error | Por qué es problema |
+|-------|---------------------|
+| p = 0.03 significa "3% que $H_0$ sea cierta" | El valor p es $P(\text{datos}|H_0)$, NO $P(H_0|\text{datos})$ |
+| Dicotomizar en significativo/no | p = 0.049 y p = 0.051 son prácticamente idénticos |
+| P-hacking | Probar muchos análisis y reportar solo los significativos |
+| "No significativo" = "no hay efecto" | Ausencia de evidencia ≠ evidencia de ausencia |
+| Ignorar tamaño del efecto | Un efecto significativo puede ser irrelevante |
 :::
 
 ::: {.nivel data-nivel="avanzado"}
