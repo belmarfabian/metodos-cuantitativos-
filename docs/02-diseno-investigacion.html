@@ -24,7 +24,6 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -95,7 +94,7 @@ div.csl-indent {
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating slimcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -284,8 +283,13 @@ div.csl-indent {
    
   <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
-  <li><a href="#preguntas-hipótesis-y-causalidad" id="toc-preguntas-hipótesis-y-causalidad" class="nav-link" data-scroll-target="#preguntas-hipótesis-y-causalidad"><span class="header-section-number">2.1</span> Preguntas, hipótesis y causalidad</a></li>
-  <li><a href="#diseños-de-investigación" id="toc-diseños-de-investigación" class="nav-link" data-scroll-target="#diseños-de-investigación"><span class="header-section-number">2.2</span> Diseños de investigación</a></li>
+  <li><a href="#preguntas-de-investigación" id="toc-preguntas-de-investigación" class="nav-link" data-scroll-target="#preguntas-de-investigación"><span class="header-section-number">2.1</span> Preguntas de investigación</a></li>
+  <li><a href="#tipos-de-preguntas" id="toc-tipos-de-preguntas" class="nav-link" data-scroll-target="#tipos-de-preguntas"><span class="header-section-number">2.2</span> Tipos de preguntas</a></li>
+  <li><a href="#hipótesis" id="toc-hipótesis" class="nav-link" data-scroll-target="#hipótesis"><span class="header-section-number">2.3</span> Hipótesis</a></li>
+  <li><a href="#causalidad-el-problema-fundamental" id="toc-causalidad-el-problema-fundamental" class="nav-link" data-scroll-target="#causalidad-el-problema-fundamental"><span class="header-section-number">2.4</span> Causalidad: El problema fundamental</a></li>
+  <li><a href="#diseños-de-investigación" id="toc-diseños-de-investigación" class="nav-link" data-scroll-target="#diseños-de-investigación"><span class="header-section-number">2.5</span> Diseños de investigación</a></li>
+  <li><a href="#validez-interna-y-externa" id="toc-validez-interna-y-externa" class="nav-link" data-scroll-target="#validez-interna-y-externa"><span class="header-section-number">2.6</span> Validez interna y externa</a></li>
+  <li><a href="#técnicas-avanzadas-para-inferencia-causal" id="toc-técnicas-avanzadas-para-inferencia-causal" class="nav-link" data-scroll-target="#técnicas-avanzadas-para-inferencia-causal"><span class="header-section-number">2.7</span> Técnicas avanzadas para inferencia causal</a></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
@@ -293,7 +297,7 @@ div.csl-indent {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduccion.html">I. Prerequisitos</a></li><li class="breadcrumb-item"><a href="./02-diseno-investigacion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -314,150 +318,279 @@ div.csl-indent {
 </header>
 
 
+<p><em>Última actualización: 7 de diciembre de 2024, 15:45 hrs.</em></p>
 <section id="objetivos-del-capítulo" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
 <li>Formular preguntas de investigación empíricamente respondibles</li>
-<li>Distinguir entre hipótesis descriptivas, relacionales y causales</li>
-<li>Comprender el marco contrafactual de causalidad</li>
-<li>Identificar fortalezas y debilidades de diseños experimentales y observacionales</li>
-<li>Evaluar validez interna y externa de diseños de investigación</li>
+<li>Distinguir entre preguntas descriptivas, relacionales y causales</li>
+<li>Entender la diferencia entre diseños experimentales y observacionales</li>
+<li>Comprender qué es validez interna y externa</li>
 </ul>
 </section>
-<section id="preguntas-hipótesis-y-causalidad" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="preguntas-hipótesis-y-causalidad"><span class="header-section-number">2.1</span> Preguntas, hipótesis y causalidad</h2>
-<p>Toda investigación comienza con una pregunta, pero no cualquier pregunta es una <strong>pregunta de investigación</strong> útil.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como “¿Debería Chile tener sistema parlamentario?”. Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.</p></div></div><p>Las preguntas se clasifican según su propósito: <strong>preguntas descriptivas</strong> caracterizan fenómenos (“¿Cuál es la tasa de participación electoral en Chile 2021?”), <strong>preguntas relacionales</strong> identifican asociaciones entre variables (“¿Se relaciona el nivel educativo con la participación electoral?”), y <strong>preguntas causales</strong> buscan establecer relaciones de causa-efecto (“¿La inscripción automática aumenta la participación electoral?”). La distinción importa porque cada tipo exige estrategias metodológicas distintas: responder preguntas descriptivas requiere medición cuidadosa y muestreo representativo; responder preguntas causales requiere, además, estrategias para descartar explicaciones alternativas.</p>
-<section id="hipótesis-y-teoría" class="level4 page-columns page-full" data-number="2.1.0.1">
-<h4 data-number="2.1.0.1" class="anchored" data-anchor-id="hipótesis-y-teoría"><span class="header-section-number">2.1.0.1</span> Hipótesis y teoría</h4>
-<p>Una vez formulada la pregunta, necesitamos una respuesta tentativa —una <strong>hipótesis</strong>: afirmación específica, derivada de teoría, sobre relaciones esperadas entre variables que debe ser <strong>falsable</strong> <span class="citation" data-cites="popper1959">(<a href="01-introduccion.html#ref-popper1959" role="doc-biblioref">Popper, 1959</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;“Los partidos de izquierda son mejores” no es falsable porque “mejores” es ambiguo. “Los partidos de izquierda gastan más en políticas sociales” sí es falsable mediante datos de gasto público. Por ejemplo: “A mayor magnitud de distrito electoral, mayor fragmentación partidaria en el parlamento” es específica, falsable, y se deriva de la teoría de Duverger sobre efectos de sistemas electorales.</p></div></div><p>Las hipótesis provienen de teorías sobre cómo funciona el mundo social mediante un proceso deductivo: <strong>Teoría</strong> → <strong>Mecanismo causal</strong> → <strong>Implicación observable</strong> → <strong>Hipótesis</strong>. Por ejemplo: la teoría de que los sistemas electorales proporcionales reducen barreras de entrada para partidos pequeños <span class="citation" data-cites="lijphart1994">(<a href="01-introduccion.html#ref-lijphart1994" role="doc-biblioref">Lijphart, 1994</a>)</span> implica que en distritos grandes, partidos pequeños pueden obtener escaños con porcentajes bajos de votos, incentivando su formación, por lo que deberíamos observar más partidos en parlamentos elegidos con distritos grandes, generando la hipótesis testeable “a mayor magnitud promedio de distrito, mayor número efectivo de partidos parlamentarios”. Este encadenamiento lógico es crucial: cuando testeamos hipótesis, estamos evaluando indirectamente la teoría subyacente.</p>
-<p>En estadística inferencial (Capítulo @ref(hipotesis)), formalizamos dos tipos de hipótesis: la <strong>hipótesis nula (H₀)</strong> que afirma ausencia de relación o efecto, y la <strong>hipótesis alternativa (H₁)</strong> que afirma existencia de relación o efecto.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> El procedimiento estadístico evalúa si los datos son suficientemente inconsistentes con H₀ como para rechazarla en favor de H₁.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;H₀ no es “la hipótesis que queremos refutar”. Es simplemente el escenario de referencia. No “probamos” H₁; solo rechazamos o fallamos en rechazar H₀. Esta lógica asimétrica es fundamental para entender tests de hipótesis.</p></div></div></section>
-<section id="causalidad" class="level4" data-number="2.1.0.2">
-<h4 data-number="2.1.0.2" class="anchored" data-anchor-id="causalidad"><span class="header-section-number">2.1.0.2</span> Causalidad</h4>
-<p>El objetivo de mucha investigación cuantitativa es establecer <strong>relaciones causales</strong>. Queremos saber no solo si X e Y covarían, sino si cambios en X <em>producen</em> cambios en Y.</p>
-</section>
-</section>
-<section id="diseños-de-investigación" class="level2 page-columns page-full" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="diseños-de-investigación"><span class="header-section-number">2.2</span> Diseños de investigación</h2>
-<p>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</p>
-<section id="diseños-experimentales" class="level4 page-columns page-full" data-number="2.2.0.1">
-<h4 data-number="2.2.0.1" class="anchored" data-anchor-id="diseños-experimentales"><span class="header-section-number">2.2.0.1</span> Diseños experimentales</h4>
-<p>En un <strong>experimento</strong>, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="gerber2008">Gerber &amp; Green (<a href="01-introduccion.html#ref-gerber2008" role="doc-biblioref">2008</a>)</span> realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.</p>
-<p><strong>Ventajas</strong>: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna</p>
-<p><strong>Limitaciones</strong>: - Muchas preguntas políticas no permiten experimentación —no podemos asignar aleatoriamente tipo de régimen político—.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;No podemos asignar experimentalmente “democracia” vs “dictadura” a países. Estos límites éticos obligan a usar datos observacionales con estrategias cuasi-experimentales o control estadístico. - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables</p></div></div></section>
-<section id="diseños-observacionales" class="level4" data-number="2.2.0.2">
-<h4 data-number="2.2.0.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.2.0.2</span> Diseños observacionales</h4>
-<p>La mayoría de investigación en ciencias políticas usa <strong>datos observacionales</strong> —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</p>
-<p><strong>Estudios de corte transversal</strong></p>
-<p>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</p>
-<p><strong>Ejemplo</strong>: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.</p>
-<p><strong>Series de tiempo</strong></p>
-<p>Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.</p>
-<p><strong>Ejemplo</strong>: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.</p>
-<p><strong>Panel (longitudinal)</strong></p>
-<p>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.</p>
-<div class="nivel" data-nivel="avanzado">
-<p>Los datos de panel permiten usar <strong>efectos fijos</strong>, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, <span class="citation" data-cites="flores2019">Flores &amp; Nooruddin (<a href="01-introduccion.html#ref-flores2019" role="doc-biblioref">2016</a>)</span> usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.</p>
+<section id="preguntas-de-investigación" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="preguntas-de-investigación"><span class="header-section-number">2.1</span> Preguntas de investigación</h2>
+<p>Toda investigación comienza con una pregunta. Pero no cualquier pregunta sirve.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p><strong>Estrategias para fortalecer inferencia causal en diseños observacionales</strong>:</p>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Características de una buena pregunta de investigación
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <ol type="1">
-<li><p><strong>Controles estadísticos</strong>: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores <em>observados</em>.</p></li>
-<li><p><strong>Triangulación</strong>: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).</p></li>
-</ol>
-<div class="nivel" data-nivel="avanzado">
-<p><strong>Técnicas avanzadas de inferencia causal:</strong></p>
-<ol start="3" type="1">
-<li><p><strong>Matching</strong>: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.</p></li>
-<li><p><strong>Diseños cuasi-experimentales</strong>: Incluyen diferencias-en-diferencias, regresión discontinua, y variables instrumentales. Explotan variación “natural” que aproxima aleatorización.</p></li>
-<li><p><strong>Análisis de sensibilidad</strong>: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.</p></li>
+<li><strong>Específica</strong>: No vaga ni demasiado amplia</li>
+<li><strong>Empíricamente respondible</strong>: Se puede contestar con datos (no es normativa)</li>
+<li><strong>Relevante</strong>: Aporta al conocimiento existente</li>
 </ol>
 </div>
+</div>
+<p><strong>Ejemplo de pregunta normativa (NO científica):</strong> &gt; “¿Debería Chile tener sistema parlamentario?”</p>
+<p><strong>Ejemplo de pregunta empírica (SÍ científica):</strong> &gt; “¿Los sistemas parlamentarios tienen gobiernos más estables que los presidenciales?”</p>
 </section>
-<section id="validez-interna-y-externa" class="level4" data-number="2.2.0.3">
-<h4 data-number="2.2.0.3" class="anchored" data-anchor-id="validez-interna-y-externa"><span class="header-section-number">2.2.0.3</span> Validez interna y externa</h4>
-<p>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="citation" data-cites="campbell1957">(<a href="01-introduccion.html#ref-campbell1957" role="doc-biblioref">Campbell &amp; Stanley, 1963</a>)</span>. <strong>Validez interna</strong> es el grado en que podemos confiar que el efecto estimado es genuinamente causal, no espurio (¿X realmente causa Y, o la asociación se debe a confusores?). Las amenazas incluyen <strong>variables confusoras</strong> (que afectan tanto el tratamiento como el resultado; ej: países con más carreteras son más ricos, pero ¿las carreteras causan riqueza o la riqueza permite construir carreteras?), <strong>causalidad inversa</strong> (Y puede causar X en vez de X causar Y; ej: <span class="citation" data-cites="przeworski2000">Przeworski et&nbsp;al. (<a href="01-introduccion.html#ref-przeworski2000" role="doc-biblioref">2000</a>)</span> argumentan que el desarrollo no causa transiciones democráticas, pero sí hace que las democracias sobrevivan), y <strong>sesgo de selección</strong> (la asignación al tratamiento no es aleatoria y se relaciona sistemáticamente con el resultado potencial; ej: comparar salarios de quienes asistieron a universidad vs.&nbsp;quienes no ignora que difieren en habilidad, motivación y recursos familiares). Estrategias para mejorar validez interna: aleatorización, diseños cuasi-experimentales rigurosos, controlar estadísticamente confusores observados, análisis de sensibilidad a confusores no observados.</p>
-<p><strong>Validez externa</strong> es el grado en que resultados generalizan más allá del contexto específico estudiado (¿los hallazgos aplican a otras poblaciones, contextos o tiempos?). Las amenazas incluyen <strong>muestras no representativas</strong> (estudiar estudiantes universitarios no permite generalizar a la población general), <strong>especificidad contextual</strong> (efectos varían sistemáticamente según contexto; un experimento de movilización electoral en Estados Unidos puede no tener el mismo efecto en Chile), <strong>efectos de Hawthorne</strong> (sujetos modifican comportamiento porque saben que están siendo estudiados), y <strong>dependencia temporal</strong> (relaciones causales cambian con el tiempo; teorías sobre comportamiento electoral en los 1960s pueden no aplicar en 2020).</p>
-<p>Existe tensión fundamental: los diseños con mejor validez interna (experimentos de laboratorio) a menudo tienen peor validez externa; los diseños con muestras más representativas (encuestas nacionales) tienen peor validez interna. <span class="citation" data-cites="shadish2002">Shadish et&nbsp;al. (<a href="01-introduccion.html#ref-shadish2002" role="doc-biblioref">2002</a>)</span> argumentan que el objetivo no es maximizar una validez a costa de la otra, sino encontrar equilibrios apropiados según la pregunta de investigación: preguntas sobre mecanismos causales priorizan validez interna; preguntas sobre magnitud de efectos en poblaciones priorizan validez externa.</p>
-</section>
-<section id="casos-y-unidades-de-análisis" class="level4" data-number="2.2.0.4">
-<h4 data-number="2.2.0.4" class="anchored" data-anchor-id="casos-y-unidades-de-análisis"><span class="header-section-number">2.2.0.4</span> Casos y unidades de análisis</h4>
-<p>Una decisión crucial en diseño de investigación es qué constituye un “caso” —la <strong>unidad de análisis</strong>: individuos (votantes, legisladores, activistas), agregados subnacionales (municipios, provincias, circunscripciones electorales), países (estados nacionales), eventos (elecciones, protestas, golpes de estado), legislación (leyes, políticas públicas), u organizaciones (partidos políticos, grupos de interés). La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</p>
-<div class="nivel" data-nivel="avanzado">
-<p><strong>Falacias de nivel de análisis:</strong></p>
-<p>Debemos evitar dos falacias al cambiar de nivel de análisis. La <strong>falacia ecológica</strong> <span class="citation" data-cites="robinson1950">(<a href="01-introduccion.html#ref-robinson1950" role="doc-biblioref">Robinson, 1950</a>)</span> ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La <strong>falacia atómica</strong> es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.</p>
-<p><strong>El problema de “muchas variables, pocas observaciones”:</strong></p>
-<p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> enfatizan que si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes <strong>grados de libertad</strong> para distinguir señal de ruido. Soluciones: aumentar observaciones (datos de panel), reducir parámetros (selección teórica), o combinar enfoques cuantitativos y cualitativos.</p>
+<section id="tipos-de-preguntas" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="tipos-de-preguntas"><span class="header-section-number">2.2</span> Tipos de preguntas</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 42%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Propósito</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Descriptiva</strong></td>
+<td>Caracterizar un fenómeno</td>
+<td>¿Cuál es la tasa de participación electoral en Chile 2021?</td>
+</tr>
+<tr class="even">
+<td><strong>Relacional</strong></td>
+<td>Identificar asociaciones</td>
+<td>¿Se relaciona el nivel educativo con la participación electoral?</td>
+</tr>
+<tr class="odd">
+<td><strong>Causal</strong></td>
+<td>Establecer causa-efecto</td>
+<td>¿La inscripción automática <em>aumenta</em> la participación?</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>La distinción importa
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Preguntas descriptivas</strong>: Requieren buena medición y muestreo representativo</li>
+<li><strong>Preguntas causales</strong>: Además, requieren estrategias para descartar explicaciones alternativas</li>
+</ul>
+</div>
 </div>
 </section>
+<section id="hipótesis" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="hipótesis"><span class="header-section-number">2.3</span> Hipótesis</h2>
+<p>Una <strong>hipótesis</strong> es una respuesta tentativa a la pregunta de investigación. Es una predicción específica, derivada de teoría, sobre lo que esperamos encontrar.</p>
+<p><strong>Requisitos de una buena hipótesis:</strong></p>
+<ol type="1">
+<li><strong>Falsable</strong>: Debe poder ser refutada por evidencia</li>
+<li><strong>Específica</strong>: Indica dirección de la relación</li>
+<li><strong>Derivada de teoría</strong>: No es una ocurrencia al azar</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Ejemplo: De teoría a hipótesis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Teoría</strong>: Los sistemas proporcionales facilitan la entrada de partidos pequeños.</p>
+<p><strong>Hipótesis</strong>: “A mayor magnitud de distrito, mayor número de partidos.”</p>
+<p><strong>Test</strong>: En Chile, tras cambiar del binominal al proporcional, el número de partidos pasó de 5.6 a 8.2 → Consistente con la hipótesis.</p>
+</div>
+</div>
+</section>
+<section id="causalidad-el-problema-fundamental" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="causalidad-el-problema-fundamental"><span class="header-section-number">2.4</span> Causalidad: El problema fundamental</h2>
+<p>El objetivo de mucha investigación es establecer <strong>relaciones causales</strong>: ¿X <em>causa</em> Y?</p>
+<p>Pero hay un problema: <strong>nunca podemos observar qué hubiera pasado</strong> si las cosas fueran diferentes. Esto se llama el <strong>problema del contrafactual</strong>.</p>
+<p><strong>Ejemplo</strong>: - Chile cambió a voto voluntario en 2012 - La participación bajó - ¿El voto voluntario <em>causó</em> la baja? - <strong>No podemos saberlo con certeza</strong> porque no observamos qué hubiera pasado con voto obligatorio</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Correlación no es causalidad
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Que dos cosas ocurran juntas no significa que una cause la otra:</p>
+<ul>
+<li>Países con más carreteras son más ricos</li>
+<li>Pero ¿las carreteras causan riqueza, o la riqueza permite construir carreteras?</li>
+<li>O quizás una tercera variable (como instituciones) causa ambas</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="diseños-de-investigación" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="diseños-de-investigación"><span class="header-section-number">2.5</span> Diseños de investigación</h2>
+<section id="diseños-experimentales" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="diseños-experimentales"><span class="header-section-number">2.5.1</span> Diseños experimentales</h3>
+<p>En un <strong>experimento</strong>, el investigador asigna aleatoriamente quién recibe el “tratamiento”.</p>
+<p><strong>Ejemplo</strong>: Para estudiar si las llamadas telefónicas aumentan la participación electoral:</p>
+<ol type="1">
+<li>Tomar 1,000 personas al azar</li>
+<li>A 500 se les llama (grupo tratamiento)</li>
+<li>A 500 no se les llama (grupo control)</li>
+<li>Comparar participación entre grupos</li>
+</ol>
+<p><strong>Ventajas:</strong> - La aleatorización garantiza que los grupos son comparables - Cualquier diferencia se debe al tratamiento - Alta <strong>validez interna</strong></p>
+<p><strong>Limitaciones:</strong> - Muchas preguntas no permiten experimentación (no podemos asignar “democracia” a países) - Posibles problemas éticos - Los resultados pueden no generalizar a otros contextos</p>
+</section>
+<section id="diseños-observacionales" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.5.2</span> Diseños observacionales</h3>
+<p>La mayoría de investigación en ciencia política usa <strong>datos observacionales</strong>: el investigador NO controla quién recibe el tratamiento.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 44%">
+<col style="width: 34%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Tipo</th>
+<th>Descripción</th>
+<th>Problema</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Corte transversal</strong></td>
+<td>Muchos casos en un momento</td>
+<td>Variables confusoras</td>
+</tr>
+<tr class="even">
+<td><strong>Series de tiempo</strong></td>
+<td>Un caso en varios momentos</td>
+<td>Otros factores cambian simultáneamente</td>
+</tr>
+<tr class="odd">
+<td><strong>Panel</strong></td>
+<td>Muchos casos en varios momentos</td>
+<td>Más complejo pero más robusto</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo de problema con datos observacionales:</strong></p>
+<blockquote class="blockquote">
+<p>Queremos saber si ir a la universidad aumenta los ingresos. Comparamos salarios de universitarios vs.&nbsp;no universitarios.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><strong>Problema</strong>: Los que van a la universidad ya eran diferentes (más habilidad, más recursos, más motivación). La diferencia de ingresos puede deberse a eso, no a la universidad.</p>
+</blockquote>
+</section>
+</section>
+<section id="validez-interna-y-externa" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="validez-interna-y-externa"><span class="header-section-number">2.6</span> Validez interna y externa</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 52%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Pregunta que responde</th>
+<th>Amenazas</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Validez interna</strong></td>
+<td>¿El efecto es realmente causal?</td>
+<td>Variables confusoras, causalidad inversa, sesgo de selección</td>
+</tr>
+<tr class="even">
+<td><strong>Validez externa</strong></td>
+<td>¿Los resultados generalizan?</td>
+<td>Muestras no representativas, contextos específicos</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>La tensión fundamental
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Experimentos de laboratorio: Alta validez interna, baja validez externa</li>
+<li>Encuestas nacionales: Alta validez externa, baja validez interna</li>
+</ul>
+<p>No hay diseño perfecto. Cada uno implica compromisos.</p>
+</div>
+</div>
+</section>
+<section id="técnicas-avanzadas-para-inferencia-causal" class="level2 nivel" data-nivel="avanzado" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="técnicas-avanzadas-para-inferencia-causal"><span class="header-section-number">2.7</span> Técnicas avanzadas para inferencia causal</h2>
+<p>Cuando no podemos experimentar, hay técnicas que ayudan a aproximar inferencia causal:</p>
+<ol type="1">
+<li><strong>Matching</strong>: Emparejar casos tratados con controles similares</li>
+<li><strong>Diferencias-en-diferencias</strong>: Comparar cambios antes/después entre tratados y controles</li>
+<li><strong>Regresión discontinua</strong>: Explotar umbrales arbitrarios de asignación</li>
+<li><strong>Variables instrumentales</strong>: Usar una variable que afecta X pero no Y directamente</li>
+</ol>
+<p>Estas técnicas se estudian en cursos avanzados de econometría.</p>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
-<p>El diseño de investigación es el plan para responder preguntas de investigación. Buenas preguntas son específicas, empíricamente respondibles, y relevantes teórica o prácticamente. Pueden ser descriptivas, relacionales o causales.</p>
-<p>Las hipótesis son afirmaciones falsables derivadas de teoría sobre relaciones esperadas entre variables. Conectan teoría abstracta con implicaciones observables.</p>
-<p>La inferencia causal enfrenta el problema fundamental: nunca observamos resultados contrafactuales. El marco de resultados potenciales formaliza este problema. Para inferir causalidad, necesitamos que grupos tratados y control sean comparables.</p>
-<p>Los diseños experimentales garantizan comparabilidad mediante aleatorización, logrando alta validez interna. Los diseños cuasi-experimentales explotan situaciones “naturalmente” aleatorias. Los diseños observacionales dependen de supuestos más fuertes y técnicas estadísticas para aproximar inferencia causal.</p>
-<p>Toda investigación enfrenta tensión entre validez interna (¿el efecto es causal?) y validez externa (¿generaliza?). No hay diseño perfecto; cada diseño implica compromisos.</p>
-<p>La unidad de análisis determina qué variación explotamos y qué afirmaciones justificamos. Inferir relaciones en un nivel desde datos de otro nivel (falacias ecológicas/atómicas) es problemático.</p>
+<ul>
+<li>Las <strong>preguntas de investigación</strong> deben ser específicas, empíricas y relevantes</li>
+<li>Las <strong>hipótesis</strong> son predicciones falsables derivadas de teoría</li>
+<li>El problema fundamental de causalidad: no observamos contrafactuales</li>
+<li><strong>Experimentos</strong>: Aleatorización garantiza comparabilidad (alta validez interna)</li>
+<li><strong>Datos observacionales</strong>: Requieren supuestos más fuertes para inferir causalidad</li>
+<li>Existe tensión entre <strong>validez interna</strong> (¿es causal?) y <strong>validez externa</strong> (¿generaliza?)</li>
+</ul>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
-<p><strong>Fundamentos de diseño de investigación:</strong></p>
-<p>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Houghton Mifflin.<br>
-→ Tratamiento comprehensivo de validez y diseños experimentales/cuasi-experimentales.</p>
-<p><strong>Marco contrafactual de causalidad:</strong></p>
-<p>Morgan, S. L., &amp; Winship, C. (2015). <em>Counterfactuals and Causal Inference: Methods and Principles for Social Research</em> (2nd ed.). Cambridge University Press.<br>
-→ Introducción accesible al marco de resultados potenciales y métodos de inferencia causal.</p>
-<p><strong>Diseños observacionales en ciencia política:</strong></p>
-<p>Angrist, J. D., &amp; Pischke, J.-S. (2009). <em>Mostly Harmless Econometrics: An Empiricist’s Companion</em>. Princeton University Press.<br>
-→ Enfoque práctico sobre identificación causal en datos observacionales.</p>
-<p><strong>Sobre validez de medición:</strong></p>
-<p>Adcock, R., &amp; Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. <em>American Political Science Review</em>, 95(3), 529-546.<br>
-→ Discusión conceptual sobre operacionalización y validez.</p>
-<p><strong>Experimentos de campo en ciencia política:</strong></p>
-<p>Gerber, A. S., &amp; Green, D. P. (2012). <em>Field Experiments: Design, Analysis, and Interpretation</em>. W.W. Norton.<br>
-→ Guía práctica para diseñar y analizar experimentos de campo.</p>
+<p>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs</em>. Houghton Mifflin. → Tratamiento clásico de validez y diseños de investigación.</p>
+<p>Gerber, A. S., &amp; Green, D. P. (2012). <em>Field Experiments</em>. W.W. Norton. → Guía práctica para experimentos de campo.</p>
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
 <p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap2">Anexo de Ejercicios</a>.</p>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-campbell1957" class="csl-entry" role="listitem">
-Campbell, D. T., &amp; Stanley, J. C. (1963). <em>Experimental and Quasi-Experimental Designs for Research</em>. Rand McNally &amp; Company.
-</div>
-<div id="ref-flores2019" class="csl-entry" role="listitem">
-Flores, T. E., &amp; Nooruddin, I. (2016). <em>Experimentation in the Social Sciences</em>. Cambridge University Press.
-</div>
-<div id="ref-gerber2008" class="csl-entry" role="listitem">
-Gerber, A. S., &amp; Green, D. P. (2008). <em>Get Out the Vote: How to Increase Voter Turnout</em> (2nd ed.). Brookings Institution Press.
-</div>
-<div id="ref-king1994" class="csl-entry" role="listitem">
-King, G., Keohane, R. O., &amp; Verba, S. (1994). <em>Designing Social Inquiry: Scientific Inference in Qualitative Research</em>. Princeton University Press.
-</div>
-<div id="ref-lijphart1994" class="csl-entry" role="listitem">
-Lijphart, A. (1994). <em>Electoral Systems and Party Systems: A Study of Twenty-Seven Democracies, 1945-1990</em>. Oxford University Press.
-</div>
-<div id="ref-popper1959" class="csl-entry" role="listitem">
-Popper, K. R. (1959). <em>The Logic of Scientific Discovery</em>. Routledge.
-</div>
-<div id="ref-przeworski2000" class="csl-entry" role="listitem">
-Przeworski, A., Alvarez, M. E., Cheibub, J. A., &amp; Limongi, F. (2000). <em>Democracy and Development: Political Institutions and Well-Being in the World, 1950-1990</em>. Cambridge University Press.
-</div>
-<div id="ref-robinson1950" class="csl-entry" role="listitem">
-Robinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. <em>American Sociological Review</em>, <em>15</em>(3), 351-357.
-</div>
-<div id="ref-shadish2002" class="csl-entry" role="listitem">
-Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Houghton Mifflin.
-</div>
+<div id="refs" role="list" style="display: none">
+
 </div>
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

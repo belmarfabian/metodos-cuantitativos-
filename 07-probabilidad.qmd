@@ -1,5 +1,7 @@
 # Introducción a probabilidad {#probabilidad}
 
+*Última actualización: 7 de diciembre de 2024, 15:30 hrs.*
+
 ## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:

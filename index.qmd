@@ -1,5 +1,7 @@
 # Prefacio {.unnumbered}
 
+*Última actualización: 7 de diciembre de 2024, 15:30 hrs.*
+
 > **VERSIÓN BETA**: Este manual se encuentra en desarrollo activo. Algunos capítulos están pendientes de completar y el contenido seguirá evolucionando con el tiempo. Agradecemos reportar errores o sugerencias.
 
 ## Objetivo de este manual {.unnumbered}
