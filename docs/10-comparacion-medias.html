@@ -643,14 +643,43 @@ Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
-<p><strong>Conceptos clave:</strong></p>
-<ol type="1">
-<li><strong>Prueba t</strong>: Compara medias entre grupos</li>
-<li><strong>Muestras independientes vs pareadas</strong>: Requieren diferentes pruebas</li>
-<li><strong>ANOVA</strong>: Compara más de dos grupos simultáneamente</li>
-<li><strong>Supuestos</strong>: Normalidad, homogeneidad, independencia</li>
-<li><strong>Alternativas no paramétricas</strong>: Para cuando no se cumplen supuestos</li>
-</ol>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 35%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Descripción</th>
+<th>Función en R</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>t una muestra</strong></td>
+<td>Compara media vs valor teórico</td>
+<td><code>t.test(x, mu = valor)</code></td>
+</tr>
+<tr class="even">
+<td><strong>t dos muestras</strong></td>
+<td>Compara medias de 2 grupos</td>
+<td><code>t.test(x, y)</code></td>
+</tr>
+<tr class="odd">
+<td><strong>t pareada</strong></td>
+<td>Mismos sujetos, dos mediciones</td>
+<td><code>t.test(x, y, paired = TRUE)</code></td>
+</tr>
+<tr class="even">
+<td><strong>ANOVA</strong></td>
+<td>Compara 3+ grupos</td>
+<td><code>aov(y ~ grupo)</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Supuestos clave:</strong> independencia (crítico), normalidad (flexible con n&gt;30), homogeneidad de varianzas.</p>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>

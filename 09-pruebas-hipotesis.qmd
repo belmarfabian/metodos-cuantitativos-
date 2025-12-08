@@ -43,9 +43,9 @@ Es crucial entender la asimetría fundamental de este razonamiento: nunca "acept
 |----------|-------|-------|------|
 | ¿Política redujo desempleo? | $\mu = 8\%$ | $\mu < 8\%$ | Unilateral |
 | ¿Participación difiere por género? | $p_H = p_M$ | $p_H \neq p_M$ | Bilateral |
-| ¿Ingreso regional ≠ nacional? | $\mu = 550$ | $\mu \neq 550$ | Bilateral |[^ejemplos-hipotesis]
+| ¿Ingreso regional ≠ nacional? | $\mu = 550$ | $\mu \neq 550$ | Bilateral |
 
-[^ejemplos-hipotesis]: Otros ejemplos en ciencias políticas: evaluar si una reforma electoral aumentó la participación, o comparar aprobación presidencial entre regiones urbanas y rurales.
+Otros ejemplos: evaluar si una reforma electoral aumentó la participación, o comparar aprobación presidencial entre regiones.
 
 ## Valores p y errores
 

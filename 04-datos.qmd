@@ -568,25 +568,7 @@ proyecto/
 
 R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.
 
-```
----
-title: "Análisis de participación electoral"
-author: "Tu Nombre"
-output: html_document
----
-
-## Introducción
-
-Este análisis examina factores asociados a participación electoral.
-
-```{r eval=FALSE}
-library(tidyverse)
-datos <- read_csv("datos/encuesta.csv")
-summary(datos)
-```
-```
-
-Al compilar ("Knit" o "Render"), R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.
+Un documento típico tiene un encabezado YAML (título, autor, formato de salida), secciones en Markdown, y bloques de código R que se ejecutan al compilar. Al hacer "Knit" o "Render", R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.
 :::
 
 ## Resumen {.unnumbered}

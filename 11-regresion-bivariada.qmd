@@ -1,5 +1,10 @@
 # Regresión bivariada {#regresion-bivariada}
 
+```{r setup-11, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(ggplot2)
+```
+
 ## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
@@ -130,20 +135,18 @@ Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede hab
 
 ## Resumen {.unnumbered}
 
-**Conceptos clave:**
+| Concepto | Descripción | Función en R |
+|----------|-------------|--------------|
+| **Correlación** | Fuerza y dirección de relación lineal (-1 a 1) | `cor(x, y)` |
+| **Regresión** | Modela $Y = \beta_0 + \beta_1 X + \epsilon$ | `lm(y ~ x)` |
+| **Intercepto** ($\beta_0$) | Valor de $Y$ cuando $X = 0$ | `coef(modelo)[1]` |
+| **Pendiente** ($\beta_1$) | Cambio en $Y$ por unidad de $X$ | `coef(modelo)[2]` |
+| **$R^2$** | Proporción de variabilidad explicada | `summary(modelo)$r.squared` |
 
-1. **Correlación**: Mide fuerza y dirección de relación lineal (no implica causalidad)
-2. **Regresión lineal**: Modela $Y$ como función lineal de $X$
-3. **OLS**: Método para estimar coeficientes minimizando errores al cuadrado
-4. **Interpretación**: $\beta_0$ = intercepto, $\beta_1$ = pendiente
-5. **$R^2$**: Proporción de variabilidad explicada por el modelo
-
-**Fórmulas clave:**
-
-- Correlación: $r = \frac{\text{Cov}(X,Y)}{s_X s_Y}$
-- Pendiente: $\hat{\beta}_1 = r \cdot \frac{s_Y}{s_X}$
-- Intercepto: $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$
-- Bondad de ajuste: $R^2 = 1 - \frac{\text{SSR}}{\text{SST}}$
+::: {.callout-important}
+## Correlación ≠ Causalidad
+Un $R^2$ alto NO implica relación causal. Siempre pueden existir confusores omitidos.
+:::
 
 ## Lecturas recomendadas {.unnumbered}
 

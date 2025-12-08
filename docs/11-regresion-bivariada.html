@@ -513,21 +513,60 @@ F-statistic: 25.62 on 1 and 38 DF,  p-value: 1.097e-05</code></pre>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
-<p><strong>Conceptos clave:</strong></p>
-<ol type="1">
-<li><strong>Correlación</strong>: Mide fuerza y dirección de relación lineal (no implica causalidad)</li>
-<li><strong>Regresión lineal</strong>: Modela <span class="math inline">\(Y\)</span> como función lineal de <span class="math inline">\(X\)</span></li>
-<li><strong>OLS</strong>: Método para estimar coeficientes minimizando errores al cuadrado</li>
-<li><strong>Interpretación</strong>: <span class="math inline">\(\beta_0\)</span> = intercepto, <span class="math inline">\(\beta_1\)</span> = pendiente</li>
-<li><strong><span class="math inline">\(R^2\)</span></strong>: Proporción de variabilidad explicada por el modelo</li>
-</ol>
-<p><strong>Fórmulas clave:</strong></p>
-<ul>
-<li>Correlación: <span class="math inline">\(r = \frac{\text{Cov}(X,Y)}{s_X s_Y}\)</span></li>
-<li>Pendiente: <span class="math inline">\(\hat{\beta}_1 = r \cdot \frac{s_Y}{s_X}\)</span></li>
-<li>Intercepto: <span class="math inline">\(\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}\)</span></li>
-<li>Bondad de ajuste: <span class="math inline">\(R^2 = 1 - \frac{\text{SSR}}{\text{SST}}\)</span></li>
-</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 27%">
+<col style="width: 35%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Concepto</th>
+<th>Descripción</th>
+<th>Función en R</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Correlación</strong></td>
+<td>Fuerza y dirección de relación lineal (-1 a 1)</td>
+<td><code>cor(x, y)</code></td>
+</tr>
+<tr class="even">
+<td><strong>Regresión</strong></td>
+<td>Modela <span class="math inline">\(Y = \beta_0 + \beta_1 X + \epsilon\)</span></td>
+<td><code>lm(y ~ x)</code></td>
+</tr>
+<tr class="odd">
+<td><strong>Intercepto</strong> (<span class="math inline">\(\beta_0\)</span>)</td>
+<td>Valor de <span class="math inline">\(Y\)</span> cuando <span class="math inline">\(X = 0\)</span></td>
+<td><code>coef(modelo)[1]</code></td>
+</tr>
+<tr class="even">
+<td><strong>Pendiente</strong> (<span class="math inline">\(\beta_1\)</span>)</td>
+<td>Cambio en <span class="math inline">\(Y\)</span> por unidad de <span class="math inline">\(X\)</span></td>
+<td><code>coef(modelo)[2]</code></td>
+</tr>
+<tr class="odd">
+<td><strong><span class="math inline">\(R^2\)</span></strong></td>
+<td>Proporción de variabilidad explicada</td>
+<td><code>summary(modelo)$r.squared</code></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Correlación ≠ Causalidad
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un <span class="math inline">\(R^2\)</span> alto NO implica relación causal. Siempre pueden existir confusores omitidos.</p>
+</div>
+</div>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>

@@ -112,7 +112,7 @@ La regla de Sturges sugiere $k = 1 + 3.322 \log(n)$ bins, donde $n$ es el númer
 | **Mediana** | Valor central | Robusta a outliers | Ignora extremos | Distribución asimétrica |
 | **Moda** | Valor más frecuente | Útil para categorías | Poco informativa en continuas | Variables nominales |
 
-[^media-mediana]: En 2022, el ingreso promedio en Chile era aproximadamente $650,000, pero la mediana era aproximadamente $420,000. La diferencia ocurre porque pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad siempre usan mediana, no media.
+**Ejemplo:** En 2022, el ingreso promedio en Chile era ~$650,000, pero la mediana era ~$420,000. Pocos súper-ricos jalan la media hacia arriba. Por eso reportes de desigualdad usan mediana.
 
 ```{r}
 mean(comunas$participacion)

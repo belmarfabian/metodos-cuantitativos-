@@ -1,5 +1,10 @@
 # Comparación de medias {#comparacion}
 
+```{r setup-10, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(ggplot2)
+```
+
 ## Objetivos del capítulo {.unnumbered}
 
 Al finalizar este capítulo, serás capaz de:
@@ -170,13 +175,14 @@ kruskal.test(satisfaccion ~ orientacion, data = datos_anova)
 
 ## Resumen {.unnumbered}
 
-**Conceptos clave:**
+| Concepto | Descripción | Función en R |
+|----------|-------------|--------------|
+| **t una muestra** | Compara media vs valor teórico | `t.test(x, mu = valor)` |
+| **t dos muestras** | Compara medias de 2 grupos | `t.test(x, y)` |
+| **t pareada** | Mismos sujetos, dos mediciones | `t.test(x, y, paired = TRUE)` |
+| **ANOVA** | Compara 3+ grupos | `aov(y ~ grupo)` |
 
-1. **Prueba t**: Compara medias entre grupos
-2. **Muestras independientes vs pareadas**: Requieren diferentes pruebas
-3. **ANOVA**: Compara más de dos grupos simultáneamente
-4. **Supuestos**: Normalidad, homogeneidad, independencia
-5. **Alternativas no paramétricas**: Para cuando no se cumplen supuestos
+**Supuestos clave:** independencia (crítico), normalidad (flexible con n>30), homogeneidad de varianzas.
 
 ## Lecturas recomendadas {.unnumbered}
 
