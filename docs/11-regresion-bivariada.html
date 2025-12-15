@@ -581,7 +581,82 @@ Correlación ≠ Causalidad
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap11">Anexo de Ejercicios</a>.</p>
+<div class="ejercicios">
+<p><strong>1. Correlación</strong></p>
+<p>Con estos datos de desarrollo y democracia:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>pib_pc <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">40</span>, <span class="dv">5000</span>, <span class="dv">40000</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>democracia <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.0001</span> <span class="sc">*</span> pib_pc <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">0</span>, <span class="fl">1.5</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Calcula la correlación de Pearson</li>
+<li>Realiza la prueba de significancia</li>
+<li>Crea un scatter plot con línea de tendencia</li>
+<li>Interpreta: ¿la relación es fuerte, moderada o débil?</li>
+<li>¿Qué limitaciones tiene la correlación para establecer causalidad?</li>
+</ol>
+<p><strong>2. Regresión simple</strong></p>
+<p>Relación entre gasto en campaña y votos obtenidos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>gasto <span class="ot">&lt;-</span> <span class="fu">runif</span>(<span class="dv">30</span>, <span class="dv">100</span>, <span class="dv">1000</span>)  <span class="co"># miles de dólares</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>votos <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fl">0.05</span> <span class="sc">*</span> gasto <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">0</span>, <span class="dv">5</span>)  <span class="co"># porcentaje</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Estima el modelo de regresión</li>
+<li>Interpreta el intercepto y la pendiente</li>
+<li>¿El coeficiente de gasto es estadísticamente significativo?</li>
+<li>¿Qué porcentaje de votos predice el modelo para un candidato que gasta $500,000?</li>
+<li>Calcula e interpreta <span class="math inline">\(R^2\)</span></li>
+</ol>
+<p><strong>3. Interpretación de coeficientes</strong></p>
+<p>Un modelo estima: <span class="math inline">\(\text{Participación} = 35 + 0.4 \times \text{Educación}\)</span>, donde Participación es el porcentaje de votantes y Educación es años promedio de educación.</p>
+<ol type="a">
+<li>Interpreta el intercepto</li>
+<li>Interpreta la pendiente</li>
+<li>¿Tiene sentido el intercepto en este contexto? ¿Por qué?</li>
+<li>Predice participación para una comuna con 12 años de educación promedio</li>
+<li>¿Qué sucede si la comuna tiene 8 años de educación promedio?</li>
+</ol>
+<p><strong>4. Diagnóstico de modelo</strong></p>
+<p>Con el modelo del ejercicio 2:</p>
+<ol type="a">
+<li>Calcula y grafica los residuos</li>
+<li>¿Los residuos parecen distribuirse normalmente? (histograma o Q-Q plot)</li>
+<li>Grafica residuos vs.&nbsp;valores ajustados. ¿Hay patrones preocupantes?</li>
+<li>Identifica observaciones influyentes (si las hay)</li>
+</ol>
+<p><strong>5. Comparación de modelos</strong></p>
+<p>Estima dos modelos para explicar confianza en instituciones:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">333</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">80</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>educacion <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, n, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>confianza <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> <span class="fl">0.02</span> <span class="sc">*</span> edad <span class="sc">+</span> <span class="fl">0.15</span> <span class="sc">*</span> educacion <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="dv">0</span>, <span class="fl">1.5</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>modelo1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(confianza <span class="sc">~</span> edad)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>modelo2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(confianza <span class="sc">~</span> educacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Compara los <span class="math inline">\(R^2\)</span> de ambos modelos</li>
+<li>¿Cuál variable explica más variabilidad?</li>
+<li>¿Los coeficientes son significativos en ambos modelos?</li>
+<li>Si tuvieras que elegir solo una variable predictora, ¿cuál elegirías?</li>
+</ol>
+<p><strong>6. Proyecto de regresión</strong></p>
+<p>Con datos de tu interés:</p>
+<ol type="a">
+<li>Formula una hipótesis sobre la relación entre dos variables</li>
+<li>Estima un modelo de regresión simple</li>
+<li>Interpreta todos los componentes del output de <code>summary()</code></li>
+<li>Verifica supuestos básicos</li>
+<li>Crea un gráfico de dispersión con la línea de regresión</li>
+<li>Escribe un párrafo reportando los resultados</li>
+<li>Discute las limitaciones de tu análisis para establecer causalidad</li>
+</ol>
+</div>
 <div id="refs" role="list" style="display: none">
 
 </div>

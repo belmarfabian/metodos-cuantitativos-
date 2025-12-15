@@ -615,7 +615,71 @@ Wickham, H., & Grolemund, G. (2017). *R for Data Science*. O'Reilly. [https://r4
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap5).
+::: {.ejercicios}
+
+**1. Cálculo manual**
+
+Con estos datos de participación electoral en 10 comunas: 45, 52, 48, 51, 39, 55, 47, 50, 44, 49
+
+a) Calcula media, mediana y moda manualmente
+b) Calcula rango, varianza y desviación estándar manualmente
+c) ¿La distribución es simétrica o asimétrica? ¿Cómo lo sabes?
+d) Verifica tus cálculos en R
+
+**2. Análisis exploratorio con datos reales**
+
+Descarga datos de CEP o CASEN. Selecciona una variable continua de interés:
+
+a) Calcula media, mediana, desviación estándar e IQR
+b) Crea un histograma y un boxplot
+c) Identifica outliers (si los hay) usando el método IQR
+d) ¿La distribución es simétrica o asimétrica? Calcula el coeficiente de asimetría
+e) Escribe un párrafo interpretando los resultados
+
+**3. Comparación de grupos**
+
+Con el dataset `comunas` del capítulo:
+
+a) Compara participación electoral entre comunas con alta vs. baja educación superior (define umbral apropiado)
+b) Calcula media, mediana y desviación estándar para cada grupo
+c) Crea boxplots comparando ambos grupos
+d) ¿Qué grupo tiene mayor variabilidad? ¿Por qué?
+
+**4. Relaciones bivariadas**
+
+a) Calcula la correlación entre participación y pobreza
+b) Calcula la correlación entre participación y educación superior
+c) Crea scatterplots para ambas relaciones
+d) Interpreta: ¿Las correlaciones son consistentes con tus expectativas teóricas? ¿Por qué?
+
+**5. Detectar problemas de datos**
+
+```{r eval=FALSE}
+# Dataset con problemas
+set.seed(999)
+problemas <- data.frame(
+  id = 1:100,
+  edad = c(sample(18:80, 95, replace = TRUE), 150, 12, -5, 200, NA),
+  ingreso = c(rnorm(95, 500000, 150000), 50000000, NA, NA, -100000, 0)
+)
+```
+
+a) Identifica valores imposibles o improbables en cada variable
+b) Identifica valores faltantes
+c) Calcula media y mediana de `ingreso` con y sin outliers. ¿Cómo afecta la media?
+d) Propón una estrategia para limpiar estos datos justificando cada decisión
+
+**6. Estadística descriptiva comprehensiva**
+
+Elige un dataset de tu proyecto de tesis o interés:
+
+a) Identifica 3-5 variables clave
+b) Para cada variable, genera: tabla de estadísticos descriptivos, gráfico apropiado, e interpretación de 2-3 oraciones
+c) Calcula correlaciones entre variables numéricas
+d) Escribe un reporte de una página resumiendo patrones principales en tus datos
+e) Identifica al menos un hallazgo inesperado que requiera investigación adicional
+
+:::
 
 ::: {#refs}
 :::

@@ -494,7 +494,71 @@ Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th 
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap7).
+::: {.ejercicios}
+
+**1. Reglas de probabilidad**
+
+En una encuesta, 45% de los encuestados apoya política A, 30% apoya política B, y 15% apoya ambas.
+
+a) ¿Cuál es $P(A \text{ o } B)$?
+b) ¿Cuál es $P(A | B)$?
+c) ¿Son A y B independientes? Demuestra matemáticamente
+d) ¿Son A y B mutuamente excluyentes? ¿Por qué?
+
+**2. Distribución binomial**
+
+Una encuesta estima que 35% de los chilenos votaría por candidato X. Si encuestas a 500 personas:
+
+a) ¿Cuál es el valor esperado del número de votantes por X?
+b) ¿Cuál es la desviación estándar?
+c) Calcula $P(X \leq 150)$ en R
+d) Calcula $P(165 \leq X \leq 185)$
+e) ¿Cuál es el mínimo de votos que esperarías con 95% de confianza?
+
+**3. Distribución Normal**
+
+Scores de confianza institucional se distribuyen Normal con media 50 y SD 12.
+
+a) ¿Qué proporción de personas tiene score > 60?
+b) ¿Qué proporción tiene score entre 40 y 65?
+c) ¿Cuál es el score correspondiente al percentil 90?
+d) Si seleccionas aleatoriamente 100 personas, ¿cuántas esperas tengan score < 35?
+
+**4. Teorema del Límite Central**
+
+Tienes una población con distribución muy asimétrica (ej: ingresos).
+
+a) Simula una población de 100,000 ingresos usando `rlnorm(100000, 12, 1)`
+b) Calcula y reporta media, mediana y SD poblacionales
+c) Toma 1,000 muestras de n=10 y grafica distribución de medias muestrales
+d) Repite con n=30 y n=100
+e) ¿A partir de qué $n$ la distribución de medias "parece" Normal?
+
+**5. Simulación de encuestas**
+
+Una población tiene 52% de intención de voto por candidato A.
+
+```{r eval=FALSE}
+set.seed(123)
+# Simula 1000 encuestas de n=1000
+encuestas <- replicate(1000, mean(rbinom(1000, 1, 0.52)))
+```
+
+a) Ejecuta la simulación y grafica distribución de resultados
+b) ¿Cuántas encuestas hubieran predicho victoria del oponente (es decir, $\hat{p} < 0.50$)?
+c) ¿Cómo cambia si $n = 500$? ¿Y si $n = 2000$?
+d) Si la diferencia real fuera solo de 1 punto (51-49), ¿qué proporción de encuestas de n=1000 predecirían mal?
+
+**6. Probabilidad condicional aplicada**
+
+Una prueba de COVID tiene sensibilidad de 95% (detecta correctamente a infectados) y especificidad de 98% (identifica correctamente a no infectados). Si la prevalencia en la población es 2%:
+
+a) Calcula la probabilidad de estar infectado dado un test positivo
+b) ¿Por qué esta probabilidad es sorprendentemente baja?
+c) ¿Cómo cambia si la prevalencia sube a 10%?
+d) ¿Qué implicaciones tiene esto para políticas de testeo masivo?
+
+:::
 
 ::: {#refs}
 :::

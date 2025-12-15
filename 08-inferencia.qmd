@@ -645,7 +645,87 @@ Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th 
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap8).
+::: {.ejercicios}
+
+**1. Error estándar**
+
+Una encuesta con n=900 encuentra que 43% apoya una reforma.
+
+a) Calcula el error estándar de la proporción
+b) ¿Cómo cambiaría el SE si la muestra fuera de n=400?
+c) ¿Cuántas personas necesitarías encuestar para reducir el SE a la mitad del original?
+
+**2. Intervalos de confianza para proporciones**
+
+En una encuesta de 1,200 votantes, 528 declaran que votarán en las próximas elecciones.
+
+a) Calcula la proporción muestral
+b) Construye IC 95% manualmente
+c) Verifica con `prop.test()` en R
+d) Interpreta el intervalo en lenguaje no técnico
+
+**3. Intervalos de confianza para medias**
+
+Datos de ingreso mensual (en miles de pesos) de 50 hogares:
+
+```{r eval=FALSE}
+set.seed(456)
+ingresos <- rlnorm(50, meanlog = log(550), sdlog = 0.6)
+```
+
+a) Calcula media y desviación estándar muestral
+b) Construye IC 95% manualmente
+c) Verifica con `t.test()` en R
+d) Construye IC 90% y 99%. ¿Qué observas sobre el ancho de los intervalos?
+
+**4. Tamaño muestral**
+
+Quieres estimar la proporción de votantes que apoya una ley, con margen de error de ±2 puntos porcentuales y 95% de confianza.
+
+a) ¿Qué tamaño muestral necesitas? (usa fórmula conservadora con p=0.5)
+b) Si solo tienes presupuesto para 600 encuestas, ¿cuál será tu margen de error?
+c) ¿Cómo cambia el tamaño muestral necesario si quieres 99% de confianza?
+
+**5. Simulación de intervalos de confianza**
+
+```{r eval=FALSE}
+# Simula 200 muestras de una población conocida
+set.seed(2024)
+mu_real <- 100
+sigma_real <- 15
+n <- 50
+
+resultados <- data.frame(
+  muestra = 1:200,
+  media = numeric(200),
+  ic_inf = numeric(200),
+  ic_sup = numeric(200)
+)
+
+for (i in 1:200) {
+  muestra <- rnorm(n, mu_real, sigma_real)
+  test <- t.test(muestra, conf.level = 0.95)
+  resultados$media[i] <- mean(muestra)
+  resultados$ic_inf[i] <- test$conf.int[1]
+  resultados$ic_sup[i] <- test$conf.int[2]
+}
+```
+
+a) Ejecuta la simulación y calcula: ¿cuántos ICs contienen μ = 100?
+b) ¿El resultado es cercano al 95% esperado?
+c) Grafica los primeros 50 ICs (como en el capítulo)
+d) Repite con nivel de confianza 90%. ¿Cuántos contienen μ ahora?
+
+**6. Interpretación crítica**
+
+Un informe de encuesta reporta: "El 47% de los chilenos aprueba la gestión del gobierno, con un margen de error de ±3 puntos porcentuales."
+
+a) ¿Qué tamaño muestral aproximado tuvo la encuesta?
+b) ¿Cuál es el IC 95%?
+c) ¿Podemos concluir que "la mayoría desaprueba"? Justifica
+d) Si otra encuesta con n=2000 reporta 49% de aprobación, ¿son los resultados "contradictorios"?
+
+:::
 
 ::: {#refs}
 :::

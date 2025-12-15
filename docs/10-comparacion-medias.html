@@ -694,7 +694,89 @@ Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap10">Anexo de Ejercicios</a>.</p>
+<div class="ejercicios">
+<p><strong>1. Prueba t de una muestra</strong></p>
+<p>Una escala de confianza interpersonal tiene media nacional de 5.5 (escala 1-10). Tienes datos de una región específica:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>confianza_region <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">2.0</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Formula las hipótesis</li>
+<li>Realiza la prueba t</li>
+<li>Calcula el IC 95%</li>
+<li>¿La región difiere significativamente del promedio nacional?</li>
+</ol>
+<p><strong>2. Prueba t de dos muestras</strong></p>
+<p>Comparamos participación cívica entre hombres y mujeres:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>civic_hombres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">3.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>civic_mujeres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="fl">3.8</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Formula las hipótesis</li>
+<li>Realiza la prueba t para muestras independientes</li>
+<li>Calcula e interpreta el IC para la diferencia de medias</li>
+<li>¿Cuál es el tamaño del efecto (d de Cohen)?</li>
+<li>Crea un gráfico comparando ambos grupos</li>
+</ol>
+<p><strong>3. Prueba t pareada</strong></p>
+<p>Mediciones de actitud hacia inmigración antes y después de ver un documental:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">333</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># El documental tiene efecto positivo pequeño</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>¿Por qué es apropiada una prueba pareada aquí?</li>
+<li>Realiza la prueba</li>
+<li>Calcula el cambio promedio y su IC</li>
+<li>Crea un gráfico antes-después (ej: líneas conectando puntos)</li>
+</ol>
+<p><strong>4. ANOVA</strong></p>
+<p>Satisfacción con servicios públicos según región:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">444</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">5.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),  <span class="co"># Norte</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">1.3</span>),  <span class="co"># Centro</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">55</span>, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># Sur</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">45</span>, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)   <span class="co"># Metropolitana</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Norte"</span>, <span class="st">"Centro"</span>, <span class="st">"Sur"</span>, <span class="st">"Metropolitana"</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">45</span>))</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="a">
+<li>Realiza ANOVA de una vía</li>
+<li>¿Hay diferencias significativas entre regiones?</li>
+<li>Realiza análisis post-hoc de Tukey</li>
+<li>¿Entre qué pares de regiones hay diferencias significativas?</li>
+<li>Crea visualización comparativa (boxplots)</li>
+</ol>
+<p><strong>5. Verificación de supuestos</strong></p>
+<p>Con los datos de ANOVA del ejercicio anterior:</p>
+<ol type="a">
+<li>Evalúa normalidad en cada grupo (histogramas o test de Shapiro-Wilk)</li>
+<li>Evalúa homogeneidad de varianzas (test de Levene o comparación visual)</li>
+<li>¿Se cumplen los supuestos? Si no, ¿qué alternativa usarías?</li>
+<li>Realiza la alternativa no paramétrica (Kruskal-Wallis) y compara conclusiones</li>
+</ol>
+<p><strong>6. Proyecto integrador</strong></p>
+<p>Con datos de tu interés (ej: encuesta de opinión):</p>
+<ol type="a">
+<li>Formula una pregunta de comparación de grupos</li>
+<li>Identifica la prueba apropiada</li>
+<li>Verifica supuestos</li>
+<li>Realiza la prueba e interpreta</li>
+<li>Calcula tamaño del efecto</li>
+<li>Crea visualización publicable</li>
+<li>Escribe un párrafo de resultados como aparecería en un paper</li>
+</ol>
+</div>
 <div id="refs" role="list" style="display: none">
 
 </div>

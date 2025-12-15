@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Diseño de investigación – Métodos Cuantitativos para Ciencias Sociales</title>
+<title>10&nbsp; Comparación de medias – Métodos Cuantitativos para Ciencias Sociales</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,11 +20,45 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -50,8 +84,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-medicion.html" rel="next">
-<link href="./01-introduccion.html" rel="prev">
+<link href="./11-regresion-bivariada.html" rel="next">
+<link href="./09-pruebas-hipotesis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -90,11 +124,40 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="nav-sidebar floating slimcontent quarto-light">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +166,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduccion.html">I. Prerequisitos</a></li><li class="breadcrumb-item"><a href="./02-diseno-investigacion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-comparacion-medias.html">V. Unidad 4: Análisis Bivariado</a></li><li class="breadcrumb-item"><a href="./10-comparacion-medias.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparación de medias</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -151,7 +214,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02-diseno-investigacion.html" class="sidebar-item-text sidebar-link active">
+  <a href="./02-diseno-investigacion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></span></a>
   </div>
 </li>
@@ -243,7 +306,7 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10-comparacion-medias.html" class="sidebar-item-text sidebar-link">
+  <a href="./10-comparacion-medias.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparación de medias</span></span></a>
   </div>
 </li>
@@ -283,8 +346,11 @@ div.csl-indent {
    
   <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
-  <li><a href="#preguntas-hipótesis-y-causalidad" id="toc-preguntas-hipótesis-y-causalidad" class="nav-link" data-scroll-target="#preguntas-hipótesis-y-causalidad"><span class="header-section-number">2.1</span> Preguntas, hipótesis y causalidad</a></li>
-  <li><a href="#diseños-de-investigación" id="toc-diseños-de-investigación" class="nav-link" data-scroll-target="#diseños-de-investigación"><span class="header-section-number">2.2</span> Diseños de investigación</a></li>
+  <li><a href="#prueba-t-para-una-muestra" id="toc-prueba-t-para-una-muestra" class="nav-link" data-scroll-target="#prueba-t-para-una-muestra"><span class="header-section-number">10.1</span> Prueba t para una muestra</a></li>
+  <li><a href="#prueba-t-para-dos-muestras" id="toc-prueba-t-para-dos-muestras" class="nav-link" data-scroll-target="#prueba-t-para-dos-muestras"><span class="header-section-number">10.2</span> Prueba t para dos muestras</a></li>
+  <li><a href="#anova-comparar-más-de-dos-grupos" id="toc-anova-comparar-más-de-dos-grupos" class="nav-link" data-scroll-target="#anova-comparar-más-de-dos-grupos"><span class="header-section-number">10.3</span> ANOVA: Comparar más de dos grupos</a></li>
+  <li><a href="#supuestos-de-las-pruebas-paramétricas" id="toc-supuestos-de-las-pruebas-paramétricas" class="nav-link" data-scroll-target="#supuestos-de-las-pruebas-paramétricas"><span class="header-section-number">10.4</span> Supuestos de las pruebas paramétricas</a></li>
+  <li><a href="#qué-prueba-usar" id="toc-qué-prueba-usar" class="nav-link" data-scroll-target="#qué-prueba-usar"><span class="header-section-number">10.5</span> ¿Qué prueba usar?</a></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
@@ -292,11 +358,11 @@ div.csl-indent {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-introduccion.html">I. Prerequisitos</a></li><li class="breadcrumb-item"><a href="./02-diseno-investigacion.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10-comparacion-medias.html">V. Unidad 4: Análisis Bivariado</a></li><li class="breadcrumb-item"><a href="./10-comparacion-medias.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparación de medias</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="diseno" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diseño de investigación</span></span></h1>
+<h1 class="title"><span id="comparacion" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Comparación de medias</span></span></h1>
 </div>
 
 
@@ -317,377 +383,324 @@ div.csl-indent {
 <h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
-<li>Formular preguntas de investigación empíricamente respondibles</li>
-<li>Distinguir entre hipótesis descriptivas, relacionales y causales</li>
-<li>Comprender el marco contrafactual de causalidad</li>
-<li>Identificar fortalezas y debilidades de diseños experimentales y observacionales</li>
-<li>Evaluar validez interna y externa de diseños de investigación</li>
+<li>Realizar pruebas t para comparar medias entre dos grupos</li>
+<li>Distinguir entre pruebas t para muestras independientes y pareadas</li>
+<li>Comprender los supuestos de las pruebas paramétricas</li>
+<li>Usar ANOVA para comparar medias de más de dos grupos</li>
+<li>Identificar cuándo usar alternativas no paramétricas</li>
 </ul>
 </section>
-<section id="preguntas-hipótesis-y-causalidad" class="level2 page-columns page-full" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="preguntas-hipótesis-y-causalidad"><span class="header-section-number">2.1</span> Preguntas, hipótesis y causalidad</h2>
-<p>Toda investigación comienza con una pregunta, pero no cualquier pregunta es una <strong>pregunta de investigación</strong> útil.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La pregunta de investigación debe ser empíricamente respondible, a diferencia de preguntas normativas como “¿Debería Chile tener sistema parlamentario?”. Las buenas preguntas tienen tres características: especificidad, posibilidad de respuesta empírica, y relevancia teórica o sustantiva.</p></div></div><p>Las preguntas se clasifican según su propósito:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 16%">
-<col style="width: 30%">
-<col style="width: 25%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Tipo</th>
-<th>Propósito</th>
-<th>Ejemplo</th>
-<th>Requiere</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Descriptiva</strong></td>
-<td>Caracterizar fenómenos</td>
-<td>“¿Cuál es la tasa de participación electoral en Chile 2021?”</td>
-<td>Medición cuidadosa, muestreo representativo</td>
-</tr>
-<tr class="even">
-<td><strong>Relacional</strong></td>
-<td>Identificar asociaciones</td>
-<td>“¿Se relaciona el nivel educativo con la participación?”</td>
-<td>Lo anterior + análisis de correlación</td>
-</tr>
-<tr class="odd">
-<td><strong>Causal</strong></td>
-<td>Establecer causa-efecto</td>
-<td>“¿La inscripción automática aumenta la participación?”</td>
-<td>Lo anterior + estrategias para descartar explicaciones alternativas</td>
-</tr>
-</tbody>
-</table>
-<section id="hipótesis-y-teoría" class="level3 page-columns page-full" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="hipótesis-y-teoría"><span class="header-section-number">2.1.1</span> Hipótesis y teoría</h3>
-<p>Una vez formulada la pregunta, necesitamos una respuesta tentativa —una <strong>hipótesis</strong>: afirmación específica, derivada de teoría, sobre relaciones esperadas entre variables que debe ser <strong>falsable</strong> <span class="citation" data-cites="popper1959">(<a href="01-introduccion.html#ref-popper1959" role="doc-biblioref">Popper, 1959</a>)</span>.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;“Los partidos de izquierda son mejores” no es falsable porque “mejores” es ambiguo. “Los partidos de izquierda gastan más en políticas sociales” sí es falsable mediante datos de gasto público. Por ejemplo: “A mayor magnitud de distrito electoral, mayor fragmentación partidaria en el parlamento” es específica, falsable, y se deriva de la teoría de Duverger sobre efectos de sistemas electorales.</p></div></div><p>Las hipótesis provienen de teorías sobre cómo funciona el mundo social mediante un proceso deductivo: <strong>Teoría</strong> → <strong>Mecanismo causal</strong> → <strong>Implicación observable</strong> → <strong>Hipótesis</strong>. Por ejemplo: la teoría de que los sistemas electorales proporcionales reducen barreras de entrada para partidos pequeños <span class="citation" data-cites="lijphart1994">(<a href="01-introduccion.html#ref-lijphart1994" role="doc-biblioref">Lijphart, 1994</a>)</span> implica que en distritos grandes, partidos pequeños pueden obtener escaños con porcentajes bajos de votos, incentivando su formación, por lo que deberíamos observar más partidos en parlamentos elegidos con distritos grandes, generando la hipótesis testeable “a mayor magnitud promedio de distrito, mayor número efectivo de partidos parlamentarios”. Este encadenamiento lógico es crucial: cuando testeamos hipótesis, estamos evaluando indirectamente la teoría subyacente.</p>
-<p>En estadística inferencial (<a href="09-pruebas-hipotesis.html">Capítulo 9</a>), formalizamos dos tipos de hipótesis: la <strong>hipótesis nula (H₀)</strong> que afirma ausencia de relación o efecto, y la <strong>hipótesis alternativa (H₁)</strong> que afirma existencia de relación o efecto.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> El procedimiento estadístico evalúa si los datos son suficientemente inconsistentes con H₀ como para rechazarla en favor de H₁.</p>
-<div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;H₀ no es “la hipótesis que queremos refutar”. Es simplemente el escenario de referencia. No “probamos” H₁; solo rechazamos o fallamos en rechazar H₀. Esta lógica asimétrica es fundamental para entender tests de hipótesis.</p></div></div></section>
-<section id="causalidad" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="causalidad"><span class="header-section-number">2.1.2</span> Causalidad</h3>
-<p>El objetivo de mucha investigación cuantitativa es establecer <strong>relaciones causales</strong>. Queremos saber no solo si X e Y covarían, sino si cambios en X <em>producen</em> cambios en Y.</p>
+<section id="prueba-t-para-una-muestra" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="prueba-t-para-una-muestra"><span class="header-section-number">10.1</span> Prueba t para una muestra</h2>
+<p>La prueba t para una muestra compara la media de una muestra con un valor teórico o poblacional.</p>
+<p><strong>Hipótesis:</strong> - <span class="math inline">\(H_0: \mu = \mu_0\)</span> - <span class="math inline">\(H_1: \mu \neq \mu_0\)</span></p>
+<p><strong>Estadístico t:</strong> <span class="math display">\[t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}\]</span></p>
 </section>
-</section>
-<section id="diseños-de-investigación" class="level2 page-columns page-full" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="diseños-de-investigación"><span class="header-section-number">2.2</span> Diseños de investigación</h2>
-<p>Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.</p>
-<section id="diseños-experimentales" class="level3 page-columns page-full" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="diseños-experimentales"><span class="header-section-number">2.2.1</span> Diseños experimentales</h3>
-<p>En un <strong>experimento</strong>, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.</p>
-<p><strong>Ejemplo</strong>: <span class="citation" data-cites="gerber2008">Gerber &amp; Green (<a href="01-introduccion.html#ref-gerber2008" role="doc-biblioref">2008</a>)</span> realizaron experimentos de campo sobre movilización electoral en Estados Unidos. Asignaron aleatoriamente hogares a recibir llamadas telefónicas, visitas puerta a puerta, o ningún contacto (control). Compararon tasas de participación electoral entre grupos.</p>
-<p><strong>Ventajas</strong>: - Identificación causal clara - No requiere supuestos sobre confusores - Alta validez interna</p>
-<p><strong>Limitaciones</strong>: - Muchas preguntas políticas no permiten experimentación —no podemos asignar aleatoriamente tipo de régimen político—.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;No podemos asignar experimentalmente “democracia” vs “dictadura” a países. Estos límites éticos obligan a usar datos observacionales con estrategias cuasi-experimentales o control estadístico. - Posibles problemas éticos - Efectos pueden ser específicos al contexto experimental (baja validez externa) - En ciencia política, solo ciertas preguntas son experimentables</p></div></div></section>
-<section id="diseños-observacionales" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="diseños-observacionales"><span class="header-section-number">2.2.2</span> Diseños observacionales</h3>
-<p>La mayoría de investigación en ciencias políticas usa <strong>datos observacionales</strong> —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.</p>
-<p><strong>Estudios de corte transversal</strong></p>
-<p>Observan muchos casos en un punto temporal. Útiles para descripción y exploración de asociaciones, pero problemáticos para causalidad por confusores no observados.</p>
-<p><strong>Ejemplo</strong>: Analizar si democracias tienen menor desigualdad que autocracias usando datos de 150 países en 2020. El problema: democracia no es aleatoria —correlaciona con desarrollo económico, historia colonial, estructura social, etc.</p>
-<p><strong>Series de tiempo</strong></p>
-<p>Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar variación temporal, pero requieren supuestos sobre qué cambió y qué permaneció constante.</p>
-<p><strong>Ejemplo</strong>: Estudiar efecto de una reforma electoral en Chile analizando fragmentación partidaria antes y después. El problema: otros factores también cambiaron simultáneamente.</p>
-<p><strong>Panel (longitudinal)</strong></p>
-<p>Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.</p>
-<div class="nivel" data-nivel="avanzado">
-<p>Los datos de panel permiten usar <strong>efectos fijos</strong>, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, <span class="citation" data-cites="flores2019">Flores &amp; Nooruddin (<a href="01-introduccion.html#ref-flores2019" role="doc-biblioref">2016</a>)</span> usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.</p>
+<section id="prueba-t-para-dos-muestras" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="prueba-t-para-dos-muestras"><span class="header-section-number">10.2</span> Prueba t para dos muestras</h2>
+<section id="muestras-independientes" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="muestras-independientes"><span class="header-section-number">10.2.1</span> Muestras independientes</h3>
+<p>Comparamos las medias de dos grupos independientes.</p>
+<p><strong>Hipótesis:</strong> - <span class="math inline">\(H_0: \mu_1 = \mu_2\)</span> - <span class="math inline">\(H_1: \mu_1 \neq \mu_2\)</span></p>
+<p><strong>Estadístico t:</strong> <span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
+<p>Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: Diferencia salarial por género</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  ingresos_hombres and ingresos_mujeres
+t = 0.7294, df = 297.17, p-value = 0.4663
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -71.76787 156.29638
+sample estimates:
+mean of x mean of y 
+ 865.2076  822.9434 </code></pre>
 </div>
-<p><strong>Estrategias para fortalecer inferencia causal en diseños observacionales</strong>:</p>
+</div>
+</section>
+<section id="muestras-pareadas" class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="muestras-pareadas"><span class="header-section-number">10.2.2</span> Muestras pareadas</h3>
+<p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)  <span class="co"># Mejora promedio</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Paired t-test
+
+data:  despues and antes
+t = 7.391, df = 49, p-value = 1.649e-09
+alternative hypothesis: true mean difference is not equal to 0
+95 percent confidence interval:
+ 0.689083 1.203734
+sample estimates:
+mean difference 
+      0.9464083 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="anova-comparar-más-de-dos-grupos" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="anova-comparar-más-de-dos-grupos"><span class="header-section-number">10.3</span> ANOVA: Comparar más de dos grupos</h2>
+<p>Cuando queremos comparar las medias de <strong>tres o más grupos</strong>, la prueba t no es apropiada porque haríamos múltiples comparaciones, aumentando la probabilidad de error tipo I. El <strong>ANOVA</strong> (Analysis of Variance) resuelve esto comparando todos los grupos simultáneamente.</p>
+<p><strong>Hipótesis:</strong></p>
+<ul>
+<li><span class="math inline">\(H_0\)</span>: Todas las medias son iguales (<span class="math inline">\(\mu_1 = \mu_2 = \mu_3 = ...\)</span>)</li>
+<li><span class="math inline">\(H_1\)</span>: Al menos una media es diferente</li>
+</ul>
+<p><strong>Ejemplo:</strong> Comparamos la satisfacción con la democracia según orientación política (izquierda, centro, derecha).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: satisfacción con democracia por orientación política</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n_grupo <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),  <span class="co"># Izquierda</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># Centro</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.0</span>, <span class="at">sd =</span> <span class="fl">1.3</span>)   <span class="co"># Derecha</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">orientacion =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Izquierda"</span>, <span class="st">"Centro"</span>, <span class="st">"Derecha"</span>), <span class="at">each =</span> n_grupo)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA de una vía</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>modelo_anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(satisfaccion <span class="sc">~</span> orientacion, <span class="at">data =</span> datos_anova)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>             Df Sum Sq Mean Sq F value  Pr(&gt;F)    
+orientacion   2   84.1   42.06   30.65 7.9e-13 ***
+Residuals   297  407.6    1.37                    
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
+</div>
+</div>
+<p><strong>Interpretación:</strong> Si el valor p es menor a 0.05, rechazamos <span class="math inline">\(H_0\)</span> y concluimos que al menos un grupo tiene una media significativamente diferente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_anova, <span class="fu">aes</span>(<span class="at">x =</span> orientacion, <span class="at">y =</span> satisfaccion, <span class="at">fill =</span> orientacion)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Orientación política"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Satisfacción con la democracia (1-7)"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Satisfacción según orientación política"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Punto rojo = media del grupo"</span>) <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="10-comparacion-medias_files/figure-html/anova-plot-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Satisfacción con democracia por orientación política</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="comparaciones-post-hoc" class="level3 nivel" data-nivel="avanzado" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="comparaciones-post-hoc"><span class="header-section-number">10.3.1</span> Comparaciones post-hoc</h3>
+<p>Si ANOVA indica diferencias significativas, ¿entre qué grupos están las diferencias? Las pruebas <strong>post-hoc</strong> (como Tukey HSD) comparan todos los pares de grupos controlando el error tipo I.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaciones post-hoc de Tukey</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = satisfaccion ~ orientacion, data = datos_anova)
+
+$orientacion
+                        diff         lwr        upr     p adj
+Derecha-Centro    -1.2410478 -1.63127340 -0.8508221 0.0000000
+Izquierda-Centro  -0.9471902 -1.33741581 -0.5569645 0.0000001
+Izquierda-Derecha  0.2938576 -0.09636805  0.6840832 0.1801856</code></pre>
+</div>
+</div>
+<p><strong>Interpretación:</strong> El intervalo de confianza que no incluye 0 indica diferencia significativa entre esos dos grupos.</p>
+</section>
+</section>
+<section id="supuestos-de-las-pruebas-paramétricas" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="supuestos-de-las-pruebas-paramétricas"><span class="header-section-number">10.4</span> Supuestos de las pruebas paramétricas</h2>
+<p>Las pruebas t y ANOVA asumen:</p>
 <ol type="1">
-<li><p><strong>Controles estadísticos</strong>: Incluir covariables que eliminan confusión. Problema: solo funciona para confusores <em>observados</em>.</p></li>
-<li><p><strong>Triangulación</strong>: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).</p></li>
+<li><strong>Independencia</strong>: Las observaciones son independientes entre sí</li>
+<li><strong>Normalidad</strong>: Los datos en cada grupo se distribuyen normalmente</li>
+<li><strong>Homogeneidad de varianzas</strong>: Las varianzas de los grupos son similares</li>
 </ol>
-<div class="nivel" data-nivel="avanzado">
-<p><strong>Técnicas avanzadas de inferencia causal:</strong></p>
-<ol start="3" type="1">
-<li><p><strong>Matching</strong>: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.</p></li>
-<li><p><strong>Diseños cuasi-experimentales</strong>: Incluyen diferencias-en-diferencias, regresión discontinua, y variables instrumentales. Explotan variación “natural” que aproxima aleatorización.</p></li>
-<li><p><strong>Análisis de sensibilidad</strong>: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.</p></li>
-</ol>
-</div>
-</section>
-<section id="validez-interna-y-externa" class="level3" data-number="2.2.3">
-<h3 data-number="2.2.3" class="anchored" data-anchor-id="validez-interna-y-externa"><span class="header-section-number">2.2.3</span> Validez interna y externa</h3>
-<p>Todo diseño de investigación enfrenta tensiones entre dos tipos de validez <span class="citation" data-cites="campbell1957">(<a href="01-introduccion.html#ref-campbell1957" role="doc-biblioref">Campbell &amp; Stanley, 1963</a>)</span>:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 47%">
-<col style="width: 47%">
-</colgroup>
-<thead>
-<tr class="header">
-<th></th>
-<th><strong>Validez interna</strong></th>
-<th><strong>Validez externa</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Pregunta</strong></td>
-<td>¿X realmente causa Y?</td>
-<td>¿Los hallazgos generalizan?</td>
-</tr>
-<tr class="even">
-<td><strong>Amenazas</strong></td>
-<td>Variables confusoras, causalidad inversa, sesgo de selección</td>
-<td>Muestras no representativas, especificidad contextual, efectos de Hawthorne</td>
-</tr>
-<tr class="odd">
-<td><strong>Ejemplo de amenaza</strong></td>
-<td>Carreteras correlacionan con riqueza, pero ¿causan riqueza o la riqueza permite construirlas?</td>
-<td>Un experimento en EE.UU. puede no replicarse en Chile</td>
-</tr>
-<tr class="even">
-<td><strong>Cómo mejorarla</strong></td>
-<td>Aleatorización, diseños cuasi-experimentales, controles estadísticos</td>
-<td>Muestras representativas, replicación en otros contextos</td>
-</tr>
-</tbody>
-</table>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tensión fundamental
+¿Qué tan importantes son los supuestos?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Los diseños con mejor validez interna (experimentos de laboratorio) suelen tener peor validez externa. Los diseños con muestras representativas (encuestas nacionales) tienen peor validez interna. No hay diseño perfecto; cada uno implica compromisos.</p>
+<p>En la práctica:</p>
+<ul>
+<li><strong>Independencia</strong> es el supuesto más importante. Si no se cumple, los resultados pueden ser muy sesgados.</li>
+<li><strong>Normalidad</strong> es menos crítica con muestras grandes (n &gt; 30 por grupo) gracias al teorema del límite central.</li>
+<li><strong>Homogeneidad</strong> puede relajarse usando versiones corregidas de las pruebas (como el ajuste de Welch en t.test).</li>
+</ul>
 </div>
 </div>
-</section>
-<section id="casos-y-unidades-de-análisis" class="level3" data-number="2.2.4">
-<h3 data-number="2.2.4" class="anchored" data-anchor-id="casos-y-unidades-de-análisis"><span class="header-section-number">2.2.4</span> Casos y unidades de análisis</h3>
-<p>Una decisión crucial es qué constituye un “caso” —la <strong>unidad de análisis</strong>:</p>
+<section id="alternativas-no-paramétricas" class="level3 nivel" data-nivel="avanzado" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="alternativas-no-paramétricas"><span class="header-section-number">10.4.1</span> Alternativas no paramétricas</h3>
+<p>Cuando los supuestos no se cumplen, especialmente con muestras pequeñas, usamos pruebas no paramétricas:</p>
 <table class="caption-top table">
-<colgroup>
-<col style="width: 41%">
-<col style="width: 58%">
-</colgroup>
 <thead>
 <tr class="header">
-<th>Nivel</th>
-<th>Ejemplos</th>
+<th>Prueba paramétrica</th>
+<th>Alternativa no paramétrica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Individuos</strong></td>
-<td>Votantes, legisladores, activistas</td>
+<td>t de una muestra</td>
+<td>Wilcoxon signed-rank</td>
 </tr>
 <tr class="even">
-<td><strong>Agregados subnacionales</strong></td>
-<td>Municipios, provincias, circunscripciones</td>
+<td>t de dos muestras independientes</td>
+<td>Mann-Whitney U</td>
 </tr>
 <tr class="odd">
-<td><strong>Países</strong></td>
-<td>Estados nacionales</td>
+<td>t pareada</td>
+<td>Wilcoxon signed-rank pareada</td>
 </tr>
 <tr class="even">
-<td><strong>Eventos</strong></td>
-<td>Elecciones, protestas, golpes de estado</td>
-</tr>
-<tr class="odd">
-<td><strong>Legislación</strong></td>
-<td>Leyes, políticas públicas</td>
-</tr>
-<tr class="even">
-<td><strong>Organizaciones</strong></td>
-<td>Partidos políticos, grupos de interés</td>
+<td>ANOVA</td>
+<td>Kruskal-Wallis</td>
 </tr>
 </tbody>
 </table>
-<p>La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.</p>
-<div class="nivel" data-nivel="avanzado">
-<p><strong>Falacias de nivel de análisis:</strong></p>
-<p>Debemos evitar dos falacias al cambiar de nivel de análisis. La <strong>falacia ecológica</strong> <span class="citation" data-cites="robinson1950">(<a href="01-introduccion.html#ref-robinson1950" role="doc-biblioref">Robinson, 1950</a>)</span> ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La <strong>falacia atómica</strong> es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.</p>
-<p><strong>El problema de “muchas variables, pocas observaciones”:</strong></p>
-<p><span class="citation" data-cites="king1994">King et&nbsp;al. (<a href="01-introduccion.html#ref-king1994" role="doc-biblioref">1994</a>)</span> enfatizan que si estudio 20 países con 15 variables explicativas, casi cualquier patrón puede ser ajustado sin suficientes <strong>grados de libertad</strong> para distinguir señal de ruido. Soluciones: aumentar observaciones (datos de panel), reducir parámetros (selección teórica), o combinar enfoques cuantitativos y cualitativos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: Mann-Whitney U (alternativa a t de dos muestras)</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ingresos_hombres, ingresos_mujeres)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Wilcoxon rank sum test with continuity correction
+
+data:  ingresos_hombres and ingresos_mujeres
+W = 11687, p-value = 0.5612
+alternative hypothesis: true location shift is not equal to 0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: Kruskal-Wallis (alternativa a ANOVA)</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(satisfaccion <span class="sc">~</span> orientacion, <span class="at">data =</span> datos_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Kruskal-Wallis rank sum test
+
+data:  satisfaccion by orientacion
+Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
+</div>
 </div>
 </section>
+</section>
+<section id="qué-prueba-usar" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="qué-prueba-usar"><span class="header-section-number">10.5</span> ¿Qué prueba usar?</h2>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Situación</th>
+<th>Prueba recomendada</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Comparar una media con un valor teórico</td>
+<td>t de una muestra</td>
+</tr>
+<tr class="even">
+<td>Comparar medias de 2 grupos independientes</td>
+<td>t de dos muestras</td>
+</tr>
+<tr class="odd">
+<td>Comparar medias antes/después (mismos sujetos)</td>
+<td>t pareada</td>
+</tr>
+<tr class="even">
+<td>Comparar medias de 3+ grupos</td>
+<td>ANOVA</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 43%">
-<col style="width: 56%">
+<col style="width: 27%">
+<col style="width: 35%">
+<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Concepto</th>
 <th>Descripción</th>
+<th>Función en R</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Pregunta descriptiva</strong></td>
-<td>Caracterizar fenómenos (“¿Cuál es la tasa de…?”)</td>
+<td><strong>t una muestra</strong></td>
+<td>Compara media vs valor teórico</td>
+<td><code>t.test(x, mu = valor)</code></td>
 </tr>
 <tr class="even">
-<td><strong>Pregunta relacional</strong></td>
-<td>Identificar asociaciones (“¿Se relaciona X con Y?”)</td>
+<td><strong>t dos muestras</strong></td>
+<td>Compara medias de 2 grupos</td>
+<td><code>t.test(x, y)</code></td>
 </tr>
 <tr class="odd">
-<td><strong>Pregunta causal</strong></td>
-<td>Establecer causa-efecto (“¿X aumenta Y?”)</td>
+<td><strong>t pareada</strong></td>
+<td>Mismos sujetos, dos mediciones</td>
+<td><code>t.test(x, y, paired = TRUE)</code></td>
 </tr>
 <tr class="even">
-<td><strong>Hipótesis</strong></td>
-<td>Afirmación falsable derivada de teoría sobre relaciones esperadas</td>
-</tr>
-<tr class="odd">
-<td><strong>Validez interna</strong></td>
-<td>¿X realmente causa Y? (amenazas: confusores, causalidad inversa)</td>
-</tr>
-<tr class="even">
-<td><strong>Validez externa</strong></td>
-<td>¿Los hallazgos generalizan a otros contextos?</td>
+<td><strong>ANOVA</strong></td>
+<td>Compara 3+ grupos</td>
+<td><code>aov(y ~ grupo)</code></td>
 </tr>
 </tbody>
 </table>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 27%">
-<col style="width: 31%">
-<col style="width: 41%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Diseño</th>
-<th>Ventaja</th>
-<th>Limitación</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Experimental</strong></td>
-<td>Alta validez interna (aleatorización)</td>
-<td>Muchas preguntas no son experimentables</td>
-</tr>
-<tr class="even">
-<td><strong>Cuasi-experimental</strong></td>
-<td>Explota variación “natural”</td>
-<td>Requiere supuestos sobre identificación</td>
-</tr>
-<tr class="odd">
-<td><strong>Observacional</strong></td>
-<td>Aplicable a cualquier pregunta</td>
-<td>Confusores no observados amenazan causalidad</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Supuestos clave:</strong> independencia (crítico), normalidad (flexible con n&gt;30), homogeneidad de varianzas.</p>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
-<p><strong>Fundamentos de diseño de investigación:</strong></p>
-<p>Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and Quasi-Experimental Designs for Generalized Causal Inference</em>. Houghton Mifflin.<br>
-→ Tratamiento comprehensivo de validez y diseños experimentales/cuasi-experimentales.</p>
-<p><strong>Marco contrafactual de causalidad:</strong></p>
-<p>Morgan, S. L., &amp; Winship, C. (2015). <em>Counterfactuals and Causal Inference: Methods and Principles for Social Research</em> (2nd ed.). Cambridge University Press.<br>
-→ Introducción accesible al marco de resultados potenciales y métodos de inferencia causal.</p>
-<p><strong>Diseños observacionales en ciencia política:</strong></p>
-<p>Angrist, J. D., &amp; Pischke, J.-S. (2009). <em>Mostly Harmless Econometrics: An Empiricist’s Companion</em>. Princeton University Press.<br>
-→ Enfoque práctico sobre identificación causal en datos observacionales.</p>
-<p><strong>Sobre validez de medición:</strong></p>
-<p>Adcock, R., &amp; Collier, D. (2001). Measurement validity: A shared standard for qualitative and quantitative research. <em>American Political Science Review</em>, 95(3), 529-546.<br>
-→ Discusión conceptual sobre operacionalización y validez.</p>
-<p><strong>Experimentos de campo en ciencia política:</strong></p>
-<p>Gerber, A. S., &amp; Green, D. P. (2012). <em>Field Experiments: Design, Analysis, and Interpretation</em>. W.W. Norton.<br>
-→ Guía práctica para diseñar y analizar experimentos de campo.</p>
+<p><strong>Fundamentos de comparación de grupos:</strong></p>
+<p>Agresti, A., &amp; Finlay, B. (2009). <em>Statistical Methods for the Social Sciences</em> (4th ed.). Pearson.<br>
+→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.</p>
+<p><strong>Inferencia causal mediante comparación de grupos:</strong></p>
+<p>Llaudet, E., &amp; Imai, K. (2022). <em>Data Analysis for Social Science: A Friendly and Practical Introduction</em>. Princeton University Press.<br>
+→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.</p>
+<p><strong>ANOVA y diseños más complejos:</strong></p>
+<p>Maxwell, S. E., Delaney, H. D., &amp; Kelley, K. (2018). <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em> (3rd ed.). Routledge.<br>
+→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.</p>
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<div class="ejercicios">
-<p><strong>1. Evaluar preguntas de investigación</strong></p>
-<p>Para cada pregunta, identifica: (a) ¿Es específica? (b) ¿Es empíricamente respondible? (c) ¿Es descriptiva, relacional o causal? (d) ¿Cómo la mejorarías?</p>
-<ul>
-<li>“¿Por qué hay desigualdad?”</li>
-<li>“¿Los jóvenes participan menos en política?”</li>
-<li>“¿Debería Chile tener voto obligatorio?”</li>
-<li>“¿El voto obligatorio aumenta la participación electoral?”</li>
-</ul>
-<p><strong>2. De teoría a hipótesis</strong></p>
-<p>Teoría: Los sistemas presidenciales son más propensos a crisis democráticas que los parlamentarios porque generan competencia de suma cero entre ejecutivo y legislativo <span class="citation" data-cites="linz1990">(<a href="01-introduccion.html#ref-linz1990" role="doc-biblioref">Linz &amp; Stepan, 1996</a>)</span>.</p>
-<ol type="a">
-<li>Identifica el mecanismo causal propuesto</li>
-<li>Deriva dos hipótesis testeables</li>
-<li>¿Qué evidencia falsificaría cada hipótesis?</li>
-</ol>
-<p><strong>3. Identificar amenazas a validez interna</strong></p>
-<p>Un estudio encuentra que municipios que implementaron presupuesto participativo tienen menor corrupción. El estudio compara municipios con presupuesto participativo vs.&nbsp;sin él, controlando por población, PIB per cápita y nivel educativo.</p>
-<ol type="a">
-<li>¿Qué confusores no observados podrían explicar la asociación?</li>
-<li>¿Podría haber causalidad inversa? ¿Cómo?</li>
-<li>Propón un diseño alternativo con mejor validez interna</li>
-</ol>
-<p><strong>4. Evaluar validez externa</strong></p>
-<p>Un experimento en Suecia muestra que recibir información sobre uso de impuestos aumenta disposición a pagar impuestos. Los investigadores quieren saber si el resultado aplica a América Latina.</p>
-<ol type="a">
-<li>¿Qué diferencias contextuales podrían hacer que el efecto varíe?</li>
-<li>¿Cómo evaluarías si el resultado generaliza?</li>
-<li>¿Qué diseño permitiría estudiar variación contextual del efecto?</li>
-</ol>
-<p><strong>5. Problema de investigación propio</strong></p>
-<p>Selecciona un fenómeno político que te interese:</p>
-<ol type="a">
-<li>Formula una pregunta causal específica</li>
-<li>Propón una teoría que la responda y deriva hipótesis</li>
-<li>Describe un diseño observacional para testearla</li>
-<li>Identifica las principales amenazas a validez interna</li>
-<li>¿Qué diseño cuasi-experimental podría mejorar la identificación causal?</li>
-</ol>
-<p><strong>6. Análisis de artículo</strong></p>
-<p>Lee un artículo cuantitativo de una revista de ciencia política. Identifica:</p>
-<ol type="a">
-<li>La pregunta de investigación y su tipo</li>
-<li>El diseño de investigación usado</li>
-<li>La unidad de análisis</li>
-<li>Dos fortalezas del diseño para validez interna</li>
-<li>Dos limitaciones para validez externa</li>
-<li>Una estrategia alternativa que los autores podrían haber usado</li>
-</ol>
-</div>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-campbell1957" class="csl-entry" role="listitem">
-Campbell, D. T., &amp; Stanley, J. C. (1963). <em>Experimental and Quasi-Experimental Designs for Research</em>. Rand McNally &amp; Company.
-</div>
-<div id="ref-flores2019" class="csl-entry" role="listitem">
-Flores, T. E., &amp; Nooruddin, I. (2016). <em>Experimentation in the Social Sciences</em>. Cambridge University Press.
-</div>
-<div id="ref-gerber2008" class="csl-entry" role="listitem">
-Gerber, A. S., &amp; Green, D. P. (2008). <em>Get Out the Vote: How to Increase Voter Turnout</em> (2nd ed.). Brookings Institution Press.
-</div>
-<div id="ref-king1994" class="csl-entry" role="listitem">
-King, G., Keohane, R. O., &amp; Verba, S. (1994). <em>Designing Social Inquiry: Scientific Inference in Qualitative Research</em>. Princeton University Press.
-</div>
-<div id="ref-lijphart1994" class="csl-entry" role="listitem">
-Lijphart, A. (1994). <em>Electoral Systems and Party Systems: A Study of Twenty-Seven Democracies, 1945-1990</em>. Oxford University Press.
-</div>
-<div id="ref-linz1990" class="csl-entry" role="listitem">
-Linz, J. J., &amp; Stepan, A. (1996). <em>Problems of Democratic Transition and Consolidation: Southern Europe, South America, and Post-Communist Europe</em>. Johns Hopkins University Press.
-</div>
-<div id="ref-popper1959" class="csl-entry" role="listitem">
-Popper, K. R. (1959). <em>The Logic of Scientific Discovery</em>. Routledge.
-</div>
-<div id="ref-robinson1950" class="csl-entry" role="listitem">
-Robinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals. <em>American Sociological Review</em>, <em>15</em>(3), 351-357.
-</div>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap10">Anexo de Ejercicios</a>.</p>
+<div id="refs" role="list" style="display: none">
+
 </div>
 
 
 </section>
-
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1091,13 +1104,13 @@ Robinson, W. S. (1950). Ecological Correlations and the Behavior of Individuals.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01-introduccion.html" class="pagination-link" aria-label="Introducción: El método científico en ciencias sociales">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción: El método científico en ciencias sociales</span></span>
+      <a href="./09-pruebas-hipotesis.html" class="pagination-link" aria-label="Pruebas de hipótesis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Pruebas de hipótesis</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-medicion.html" class="pagination-link" aria-label="Medición: de conceptos a variables">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Medición: de conceptos a variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./11-regresion-bivariada.html" class="pagination-link" aria-label="Regresión bivariada">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Regresión bivariada</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

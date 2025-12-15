@@ -204,7 +204,100 @@ Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and 
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap10).
+::: {.ejercicios}
+
+**1. Prueba t de una muestra**
+
+Una escala de confianza interpersonal tiene media nacional de 5.5 (escala 1-10). Tienes datos de una región específica:
+
+```{r eval=FALSE}
+set.seed(111)
+confianza_region <- rnorm(80, mean = 4.8, sd = 2.0)
+```
+
+a) Formula las hipótesis
+b) Realiza la prueba t
+c) Calcula el IC 95%
+d) ¿La región difiere significativamente del promedio nacional?
+
+**2. Prueba t de dos muestras**
+
+Comparamos participación cívica entre hombres y mujeres:
+
+```{r eval=FALSE}
+set.seed(222)
+civic_hombres <- rnorm(100, mean = 3.2, sd = 1.5)
+civic_mujeres <- rnorm(110, mean = 3.8, sd = 1.4)
+```
+
+a) Formula las hipótesis
+b) Realiza la prueba t para muestras independientes
+c) Calcula e interpreta el IC para la diferencia de medias
+d) ¿Cuál es el tamaño del efecto (d de Cohen)?
+e) Crea un gráfico comparando ambos grupos
+
+**3. Prueba t pareada**
+
+Mediciones de actitud hacia inmigración antes y después de ver un documental:
+
+```{r eval=FALSE}
+set.seed(333)
+n <- 60
+antes <- rnorm(n, mean = 50, sd = 15)
+# El documental tiene efecto positivo pequeño
+despues <- antes + rnorm(n, mean = 5, sd = 8)
+```
+
+a) ¿Por qué es apropiada una prueba pareada aquí?
+b) Realiza la prueba
+c) Calcula el cambio promedio y su IC
+d) Crea un gráfico antes-después (ej: líneas conectando puntos)
+
+**4. ANOVA**
+
+Satisfacción con servicios públicos según región:
+
+```{r eval=FALSE}
+set.seed(444)
+datos_anova <- data.frame(
+  satisfaccion = c(
+    rnorm(50, mean = 5.5, sd = 1.2),  # Norte
+    rnorm(60, mean = 4.8, sd = 1.3),  # Centro
+    rnorm(55, mean = 5.2, sd = 1.1),  # Sur
+    rnorm(45, mean = 4.5, sd = 1.4)   # Metropolitana
+  ),
+  region = rep(c("Norte", "Centro", "Sur", "Metropolitana"), c(50, 60, 55, 45))
+)
+```
+
+a) Realiza ANOVA de una vía
+b) ¿Hay diferencias significativas entre regiones?
+c) Realiza análisis post-hoc de Tukey
+d) ¿Entre qué pares de regiones hay diferencias significativas?
+e) Crea visualización comparativa (boxplots)
+
+**5. Verificación de supuestos**
+
+Con los datos de ANOVA del ejercicio anterior:
+
+a) Evalúa normalidad en cada grupo (histogramas o test de Shapiro-Wilk)
+b) Evalúa homogeneidad de varianzas (test de Levene o comparación visual)
+c) ¿Se cumplen los supuestos? Si no, ¿qué alternativa usarías?
+d) Realiza la alternativa no paramétrica (Kruskal-Wallis) y compara conclusiones
+
+**6. Proyecto integrador**
+
+Con datos de tu interés (ej: encuesta de opinión):
+
+a) Formula una pregunta de comparación de grupos
+b) Identifica la prueba apropiada
+c) Verifica supuestos
+d) Realiza la prueba e interpreta
+e) Calcula tamaño del efecto
+f) Crea visualización publicable
+g) Escribe un párrafo de resultados como aparecería en un paper
+
+:::
 
 ::: {#refs}
 :::

@@ -623,7 +623,95 @@ Little, R. J., & Rubin, D. B. (2019). *Statistical Analysis with Missing Data* (
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap4).
+::: {.ejercicios}
+
+**1. Evaluación de calidad**
+
+Descarga datos del CEP (https://www.cepchile.cl/opinion-publica/encuesta-cep/) o Latinobarómetro (https://www.latinobarometro.org/).
+
+a) ¿Qué población representa la muestra?
+b) ¿Cuál es el tamaño muestral y margen de error?
+c) Identifica tres variables. Para cada una, evalúa: ¿Es válida para medir el concepto que pretende? ¿Qué problemas de medición podrían existir?
+d) ¿Qué información sobre calidad de datos provee la documentación?
+
+**2. Importar y explorar**
+
+Importa un dataset de tu elección en R:
+
+```{r eval=FALSE}
+# Tu código aquí
+```
+
+a) ¿Cuántos casos y variables tiene?
+b) ¿Qué tipos de variables contiene (numéricas, categóricas)?
+c) ¿Cuántos valores faltantes hay en cada variable?
+d) Identifica y describe un valor atípico
+
+**3. Limpieza de datos**
+
+Con el dataset del ejercicio 2:
+
+a) Selecciona 5-10 variables relevantes para una pregunta de investigación que formules
+b) Filtra casos para incluir solo observaciones completas (sin valores faltantes en variables clave)
+c) Crea al menos dos variables nuevas mediante transformación o recodificación
+d) Genera un resumen estadístico de tus variables
+
+**4. Datos faltantes**
+
+```{r eval=FALSE}
+# Crea un dataset con valores faltantes
+set.seed(123)
+datos <- data.frame(
+  id = 1:100,
+  edad = sample(18:80, 100, replace = TRUE),
+  ingreso = rnorm(100, 500000, 150000)
+)
+# Introduce valores faltantes no aleatorios:
+# Personas mayores de 60 tienen 50% probabilidad de no reportar ingreso
+datos$ingreso[datos$edad > 60 & runif(100) < 0.5] <- NA
+```
+
+a) ¿Cuántos valores faltantes hay en `ingreso`?
+b) Calcula ingreso promedio: (1) eliminando casos con valores faltantes, (2) solo entre quienes reportaron. ¿Difieren las estimaciones? ¿Por qué?
+c) ¿Qué tipo de datos faltantes son estos (MCAR, MAR, MNAR)?
+d) ¿Cómo afecta esto las inferencias sobre ingreso promedio en la población?
+
+**5. Combinar datasets**
+
+Tienes dos datasets:
+
+```{r eval=FALSE}
+# Resultados electorales por comuna
+resultados <- data.frame(
+  comuna_id = 1:5,
+  comuna = c("Santiago", "Valparaíso", "Concepción", "La Serena", "Temuco"),
+  votos_derecha = c(45, 38, 42, 50, 35),
+  votos_izquierda = c(40, 48, 43, 35, 50)
+)
+
+# Características socioeconómicas
+socioeconomico <- data.frame(
+  comuna_id = c(1, 2, 3, 6),
+  ingreso_promedio = c(800000, 650000, 700000, 600000),
+  desigualdad_gini = c(0.48, 0.45, 0.47, 0.50)
+)
+```
+
+a) Combina los datasets manteniendo todas las comunas de `resultados`
+b) ¿Qué problema de datos observas después de combinar?
+c) ¿Cómo manejarías ese problema para análisis posterior?
+
+**6. Proyecto propio**
+
+Identifica un dataset relevante para tu tesis o interés de investigación:
+
+a) Descríbelo: fuente, estructura (corte transversal/panel/etc), unidad de análisis, N
+b) Importa a R y documenta el proceso
+c) Realiza una limpieza básica: seleccionar variables relevantes, verificar valores faltantes y outliers, crear variables derivadas si es necesario
+d) Genera un reporte en R Markdown que documente: tu pregunta de investigación, descripción de los datos, proceso de limpieza, y estadísticas descriptivas básicas
+e) Exporta la versión limpia de los datos
+
+:::
 
 ::: {#refs}
 :::

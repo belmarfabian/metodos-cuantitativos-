@@ -168,7 +168,92 @@ Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap11).
+::: {.ejercicios}
+
+**1. Correlación**
+
+Con estos datos de desarrollo y democracia:
+
+```{r eval=FALSE}
+set.seed(111)
+pib_pc <- runif(40, 5000, 40000)
+democracia <- 2 + 0.0001 * pib_pc + rnorm(40, 0, 1.5)
+```
+
+a) Calcula la correlación de Pearson
+b) Realiza la prueba de significancia
+c) Crea un scatter plot con línea de tendencia
+d) Interpreta: ¿la relación es fuerte, moderada o débil?
+e) ¿Qué limitaciones tiene la correlación para establecer causalidad?
+
+**2. Regresión simple**
+
+Relación entre gasto en campaña y votos obtenidos:
+
+```{r eval=FALSE}
+set.seed(222)
+gasto <- runif(30, 100, 1000)  # miles de dólares
+votos <- 10 + 0.05 * gasto + rnorm(30, 0, 5)  # porcentaje
+```
+
+a) Estima el modelo de regresión
+b) Interpreta el intercepto y la pendiente
+c) ¿El coeficiente de gasto es estadísticamente significativo?
+d) ¿Qué porcentaje de votos predice el modelo para un candidato que gasta $500,000?
+e) Calcula e interpreta $R^2$
+
+**3. Interpretación de coeficientes**
+
+Un modelo estima: $\text{Participación} = 35 + 0.4 \times \text{Educación}$, donde Participación es el porcentaje de votantes y Educación es años promedio de educación.
+
+a) Interpreta el intercepto
+b) Interpreta la pendiente
+c) ¿Tiene sentido el intercepto en este contexto? ¿Por qué?
+d) Predice participación para una comuna con 12 años de educación promedio
+e) ¿Qué sucede si la comuna tiene 8 años de educación promedio?
+
+**4. Diagnóstico de modelo**
+
+Con el modelo del ejercicio 2:
+
+a) Calcula y grafica los residuos
+b) ¿Los residuos parecen distribuirse normalmente? (histograma o Q-Q plot)
+c) Grafica residuos vs. valores ajustados. ¿Hay patrones preocupantes?
+d) Identifica observaciones influyentes (si las hay)
+
+**5. Comparación de modelos**
+
+Estima dos modelos para explicar confianza en instituciones:
+
+```{r eval=FALSE}
+set.seed(333)
+n <- 100
+edad <- sample(18:80, n, replace = TRUE)
+educacion <- sample(1:20, n, replace = TRUE)
+confianza <- 3 + 0.02 * edad + 0.15 * educacion + rnorm(n, 0, 1.5)
+
+modelo1 <- lm(confianza ~ edad)
+modelo2 <- lm(confianza ~ educacion)
+```
+
+a) Compara los $R^2$ de ambos modelos
+b) ¿Cuál variable explica más variabilidad?
+c) ¿Los coeficientes son significativos en ambos modelos?
+d) Si tuvieras que elegir solo una variable predictora, ¿cuál elegirías?
+
+**6. Proyecto de regresión**
+
+Con datos de tu interés:
+
+a) Formula una hipótesis sobre la relación entre dos variables
+b) Estima un modelo de regresión simple
+c) Interpreta todos los componentes del output de `summary()`
+d) Verifica supuestos básicos
+e) Crea un gráfico de dispersión con la línea de regresión
+f) Escribe un párrafo reportando los resultados
+g) Discute las limitaciones de tu análisis para establecer causalidad
+
+:::
 
 ::: {#refs}
 :::

@@ -184,7 +184,75 @@ Goertz, G. (2006). *Social Science Concepts: A User's Guide*. Princeton Universi
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap3).
+::: {.ejercicios}
+
+**1. Conceptualización y operacionalización**
+
+Selecciona un concepto abstracto (ej: "legitimidad política", "clientelismo", "movilización social"):
+
+a) Propón una definición conceptual clara
+b) Identifica al menos tres indicadores empíricos
+c) Para cada indicador, especifica el procedimiento de medición
+d) Evalúa la validez de contenido de tu operacionalización
+
+**2. Niveles de medición**
+
+Clasifica las siguientes variables según nivel de medición y justifica:
+
+- Región de residencia (Norte/Centro/Sur)
+- Satisfacción con la democracia (escala 1-10)
+- Ingreso mensual en pesos
+- Religión (Católica/Protestante/Sin religión/Otra)
+- Nivel educativo (Primaria/Secundaria/Universitaria)
+- Temperatura de termómetro de sentimiento hacia partidos políticos (0-100)
+
+**3. Evaluar validez**
+
+Un investigador mide "capital social" preguntando: "¿Cuántas organizaciones sociales existen en su comuna?"
+
+a) ¿Qué dimensión de capital social captura esta medida?
+b) ¿Qué dimensiones omite?
+c) Propón indicadores adicionales para mejorar validez de contenido
+d) ¿Cómo evaluarías la validez convergente de estas medidas?
+
+**4. Construir un índice**
+
+Tienes datos de encuesta con estas preguntas sobre confianza institucional (escala 1-5):
+
+- ¿Cuánto confía en el Congreso?
+- ¿Cuánto confía en el Presidente?
+- ¿Cuánto confía en la Corte Suprema?
+- ¿Cuánto confía en la policía?
+
+a) Construye un índice aditivo simple de "confianza institucional"
+b) ¿Tiene sentido incluir los cuatro ítems en un solo índice? ¿Por qué?
+c) ¿Cómo evaluarías la consistencia interna del índice?
+d) ¿Qué ponderación alternativa podrías justificar teóricamente?
+
+**5. Problemas de medición**
+
+Imagina que encuestas sobre actitudes hacia la inmigración en Santiago, Chile:
+
+a) ¿Qué sesgo de deseabilidad social podrías esperar? ¿En qué dirección?
+b) Propón una estrategia para mitigar ese sesgo
+c) Si administras la encuesta por teléfono, ¿qué diferencias esperarías vs. encuesta autoaplicada por internet?
+d) ¿Qué grupos podrían tener tasas más altas de no-respuesta? ¿Cómo afectaría tus estimaciones?
+
+**6. Análisis crítico de índice existente**
+
+Revisa la metodología de uno de estos índices (disponibles en línea):
+
+- Polity IV (democracia)
+- Transparency International CPI (corrupción percibida)
+- V-Dem (variedades de democracia)
+
+a) ¿Cómo conceptualiza el fenómeno?
+b) ¿Qué indicadores usa?
+c) ¿Cómo agrega los indicadores?
+d) Identifica una fortaleza y una debilidad de la medición
+e) ¿Para qué preguntas de investigación sería apropiado usar este índice? ¿Para cuáles no?
+
+:::
 
 ::: {#refs}
 :::

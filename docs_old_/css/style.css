@@ -1,0 +1,139 @@
+/* Estilo minimalista - Solo bloques de contenido personalizados */
+
+/* BLOQUES PERSONALIZADOS para el contenido del libro */
+
+.objetivos {
+  background-color: #e8f4f8;
+  border-left: 4px solid #3498db;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.ejemplo {
+  background-color: #f0f7ee;
+  border-left: 4px solid #27ae60;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.importante {
+  background-color: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+/* NIVELES DE CONTENIDO */
+
+.nivel {
+  padding: 15px 20px;
+  margin: 25px 0;
+  border-radius: 5px;
+}
+
+.nivel::before {
+  font-weight: bold;
+  font-size: 0.85em;
+  display: block;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.nivel[data-nivel="introductorio"]::before {
+  content: "📘 Métodos Cuantitativos Introductorios";
+  color: #2563eb;
+}
+
+.nivel[data-nivel="introductorio"] {
+  background-color: #eff6ff;
+  border-left: 5px solid #2563eb;
+}
+
+.nivel[data-nivel="avanzado"]::before {
+  content: "🎓 Métodos Cuantitativos Avanzados";
+  color: #7c3aed;
+}
+
+.nivel[data-nivel="avanzado"] {
+  background-color: #f5f3ff;
+  border-left: 5px solid #7c3aed;
+}
+
+.nivel[data-nivel="prerequisito"]::before {
+  content: "📋 Prerequisito (Repaso)";
+  color: #059669;
+}
+
+.nivel[data-nivel="prerequisito"] {
+  background-color: #ecfdf5;
+  border-left: 5px solid #059669;
+}
+
+/* REFERENCIAS - Asegurar mismo ancho que el resto del contenido */
+
+#references {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.references {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bibliografía final generada por Pandoc/CSL */
+/* Forzar que las referencias aparezcan al final del capítulo */
+/* (Quarto las oculta cuando reference-location: margin está activo) */
+#refs {
+  display: block !important;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #e0e0e0;
+}
+
+.csl-bib-body {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Estilo para las entradas bibliográficas */
+.references p {
+  text-align: left;
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+.csl-entry {
+  margin-bottom: 1em;
+  line-height: 1.6;
+}
+
+/* EJERCICIOS - Letra más pequeña para ahorrar espacio */
+
+.ejercicios {
+  font-size: 0.9em;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 15px 20px;
+  margin: 25px 0;
+}
+
+.ejercicios h2, .ejercicios h3 {
+  font-size: 1.1em;
+  margin-top: 0;
+}
+
+.ejercicios p, .ejercicios li {
+  margin-bottom: 0.5em;
+}
+
+.ejercicios pre {
+  font-size: 0.85em;
+}

@@ -193,7 +193,63 @@ Gerber, A. S., & Green, D. P. (2012). *Field Experiments: Design, Analysis, and 
 
 ## Ejercicios {.unnumbered}
 
-Los ejercicios para este capítulo se encuentran en el [Anexo de Ejercicios](#ejercicios-cap2).
+::: {.ejercicios}
+
+**1. Evaluar preguntas de investigación**
+
+Para cada pregunta, identifica: (a) ¿Es específica? (b) ¿Es empíricamente respondible? (c) ¿Es descriptiva, relacional o causal? (d) ¿Cómo la mejorarías?
+
+- "¿Por qué hay desigualdad?"
+- "¿Los jóvenes participan menos en política?"
+- "¿Debería Chile tener voto obligatorio?"
+- "¿El voto obligatorio aumenta la participación electoral?"
+
+**2. De teoría a hipótesis**
+
+Teoría: Los sistemas presidenciales son más propensos a crisis democráticas que los parlamentarios porque generan competencia de suma cero entre ejecutivo y legislativo [@linz1990].
+
+a) Identifica el mecanismo causal propuesto
+b) Deriva dos hipótesis testeables
+c) ¿Qué evidencia falsificaría cada hipótesis?
+
+**3. Identificar amenazas a validez interna**
+
+Un estudio encuentra que municipios que implementaron presupuesto participativo tienen menor corrupción. El estudio compara municipios con presupuesto participativo vs. sin él, controlando por población, PIB per cápita y nivel educativo.
+
+a) ¿Qué confusores no observados podrían explicar la asociación?
+b) ¿Podría haber causalidad inversa? ¿Cómo?
+c) Propón un diseño alternativo con mejor validez interna
+
+**4. Evaluar validez externa**
+
+Un experimento en Suecia muestra que recibir información sobre uso de impuestos aumenta disposición a pagar impuestos. Los investigadores quieren saber si el resultado aplica a América Latina.
+
+a) ¿Qué diferencias contextuales podrían hacer que el efecto varíe?
+b) ¿Cómo evaluarías si el resultado generaliza?
+c) ¿Qué diseño permitiría estudiar variación contextual del efecto?
+
+**5. Problema de investigación propio**
+
+Selecciona un fenómeno político que te interese:
+
+a) Formula una pregunta causal específica
+b) Propón una teoría que la responda y deriva hipótesis
+c) Describe un diseño observacional para testearla
+d) Identifica las principales amenazas a validez interna
+e) ¿Qué diseño cuasi-experimental podría mejorar la identificación causal?
+
+**6. Análisis de artículo**
+
+Lee un artículo cuantitativo de una revista de ciencia política. Identifica:
+
+a) La pregunta de investigación y su tipo
+b) El diseño de investigación usado
+c) La unidad de análisis
+d) Dos fortalezas del diseño para validez interna
+e) Dos limitaciones para validez externa
+f) Una estrategia alternativa que los autores podrían haber usado
+
+:::
 
 ::: {#refs}
 :::

@@ -1392,65 +1392,7 @@ window.Quarto = {
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
-<div class="ejercicios">
-<p><strong>1. Cálculo manual</strong></p>
-<p>Con estos datos de participación electoral en 10 comunas: 45, 52, 48, 51, 39, 55, 47, 50, 44, 49</p>
-<ol type="a">
-<li>Calcula media, mediana y moda manualmente</li>
-<li>Calcula rango, varianza y desviación estándar manualmente</li>
-<li>¿La distribución es simétrica o asimétrica? ¿Cómo lo sabes?</li>
-<li>Verifica tus cálculos en R</li>
-</ol>
-<p><strong>2. Análisis exploratorio con datos reales</strong></p>
-<p>Descarga datos de CEP o CASEN. Selecciona una variable continua de interés:</p>
-<ol type="a">
-<li>Calcula media, mediana, desviación estándar e IQR</li>
-<li>Crea un histograma y un boxplot</li>
-<li>Identifica outliers (si los hay) usando el método IQR</li>
-<li>¿La distribución es simétrica o asimétrica? Calcula el coeficiente de asimetría</li>
-<li>Escribe un párrafo interpretando los resultados</li>
-</ol>
-<p><strong>3. Comparación de grupos</strong></p>
-<p>Con el dataset <code>comunas</code> del capítulo:</p>
-<ol type="a">
-<li>Compara participación electoral entre comunas con alta vs.&nbsp;baja educación superior (define umbral apropiado)</li>
-<li>Calcula media, mediana y desviación estándar para cada grupo</li>
-<li>Crea boxplots comparando ambos grupos</li>
-<li>¿Qué grupo tiene mayor variabilidad? ¿Por qué?</li>
-</ol>
-<p><strong>4. Relaciones bivariadas</strong></p>
-<ol type="a">
-<li>Calcula la correlación entre participación y pobreza</li>
-<li>Calcula la correlación entre participación y educación superior</li>
-<li>Crea scatterplots para ambas relaciones</li>
-<li>Interpreta: ¿Las correlaciones son consistentes con tus expectativas teóricas? ¿Por qué?</li>
-</ol>
-<p><strong>5. Detectar problemas de datos</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dataset con problemas</span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">999</span>)</span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>problemas <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">id =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>,</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">edad =</span> <span class="fu">c</span>(<span class="fu">sample</span>(<span class="dv">18</span><span class="sc">:</span><span class="dv">80</span>, <span class="dv">95</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>), <span class="dv">150</span>, <span class="dv">12</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">200</span>, <span class="cn">NA</span>),</span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ingreso =</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">95</span>, <span class="dv">500000</span>, <span class="dv">150000</span>), <span class="dv">50000000</span>, <span class="cn">NA</span>, <span class="cn">NA</span>, <span class="sc">-</span><span class="dv">100000</span>, <span class="dv">0</span>)</span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol type="a">
-<li>Identifica valores imposibles o improbables en cada variable</li>
-<li>Identifica valores faltantes</li>
-<li>Calcula media y mediana de <code>ingreso</code> con y sin outliers. ¿Cómo afecta la media?</li>
-<li>Propón una estrategia para limpiar estos datos justificando cada decisión</li>
-</ol>
-<p><strong>6. Estadística descriptiva comprehensiva</strong></p>
-<p>Elige un dataset de tu proyecto de tesis o interés:</p>
-<ol type="a">
-<li>Identifica 3-5 variables clave</li>
-<li>Para cada variable, genera: tabla de estadísticos descriptivos, gráfico apropiado, e interpretación de 2-3 oraciones</li>
-<li>Calcula correlaciones entre variables numéricas</li>
-<li>Escribe un reporte de una página resumiendo patrones principales en tus datos</li>
-<li>Identifica al menos un hallazgo inesperado que requiera investigación adicional</li>
-</ol>
-</div>
+<p>Los ejercicios para este capítulo se encuentran en el <a href="anexo-ejercicios.html#ejercicios-cap5">Anexo de Ejercicios</a>.</p>
 <div id="refs" role="list" style="display: none">
 
 </div>
