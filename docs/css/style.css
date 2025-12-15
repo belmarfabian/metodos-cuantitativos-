@@ -113,3 +113,27 @@
   margin-bottom: 1em;
   line-height: 1.6;
 }
+
+/* EJERCICIOS - Letra más pequeña para ahorrar espacio */
+
+.ejercicios {
+  font-size: 0.9em;
+  line-height: 1.5;
+  background-color: #f8f9fa;
+  border-left: 4px solid #6c757d;
+  padding: 15px 20px;
+  margin: 25px 0;
+}
+
+.ejercicios h2, .ejercicios h3 {
+  font-size: 1.1em;
+  margin-top: 0;
+}
+
+.ejercicios p, .ejercicios li {
+  margin-bottom: 0.5em;
+}
+
+.ejercicios pre {
+  font-size: 0.85em;
+}
