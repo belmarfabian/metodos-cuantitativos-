@@ -54,7 +54,7 @@ aprobacion$indeciso <- 100 - aprobacion$aprobacion - aprobacion$desaprobacion
 
 @tufte1983 estableció principios fundamentales de diseño gráfico que permanecen vigentes:
 
-#### 1. Maximizar el ratio datos-tinta
+### 1. Maximizar el ratio datos-tinta
 
 Eliminar elementos innecesarios. Cada elemento gráfico debe comunicar información.
 
@@ -89,7 +89,7 @@ comunas %>%
   theme_minimal()
 ```
 
-#### 2. Usar el canal visual apropiado
+### 2. Usar el canal visual apropiado
 
 La percepción humana procesa algunos atributos visuales mejor que otros:
 
@@ -128,7 +128,7 @@ p1 | p2
 
 El gráfico de barras permite comparaciones precisas. El gráfico de torta dificulta distinguir diferencias pequeñas.
 
-#### 3. Mostrar comparaciones
+### 3. Mostrar comparaciones
 
 Los datos adquieren significado mediante comparación. Comparar contra:
 - Otros grupos
@@ -151,7 +151,7 @@ ggplot(comunas_muestra, aes(x = izquierda_2017, xend = izquierda_2021,
   theme_minimal()
 ```
 
-#### 4. Mostrar causalidad y explicación
+### 4. Mostrar causalidad y explicación
 
 Los gráficos deben sugerir explicaciones, no solo describir.
 
@@ -166,15 +166,15 @@ ggplot(comunas, aes(x = urbano, y = cambio_izquierda, fill = urbano)) +
   theme_minimal()
 ```
 
-#### 5. Integrar evidencia
+### 5. Integrar evidencia
 
 Combinar palabras, números y gráficos para una narrativa coherente.
 
-#### Grammar of Graphics y ggplot2
+### Grammar of Graphics y ggplot2
 
 @wilkinson2005 propuso que los gráficos estadísticos tienen una gramática—componentes sistemáticos que se combinan para producir visualizaciones.
 
-#### Componentes de ggplot2
+### Componentes de ggplot2
 
 | Componente | Función | Ejemplo |
 |------------|---------|---------|
@@ -185,7 +185,7 @@ Combinar palabras, números y gráficos para una narrativa coherente.
 | **Facetas** | Paneles múltiples | `facet_wrap()` |
 | **Temas** | Estética general | `theme_minimal()` |
 
-#### Estructura básica
+### Estructura básica
 
 ```{r eval=FALSE}
 ggplot(data = <DATOS>, aes(x = <VAR_X>, y = <VAR_Y>)) +
@@ -196,7 +196,7 @@ ggplot(data = <DATOS>, aes(x = <VAR_X>, y = <VAR_Y>)) +
   theme_<...>()
 ```
 
-#### Ejemplo paso a paso
+### Ejemplo paso a paso
 
 ```{r fig.cap="Construcción progresiva de un gráfico", fig.height=8}
 # Paso 1: Solo datos y aesthetics (nada se dibuja)
@@ -222,7 +222,7 @@ p4 <- p3 + labs(x = "Voto izquierda 2017 (%)",
 
 ## Tipos de gráficos
 
-#### Variables continuas
+### Variables continuas
 
 **Histograma con densidad superpuesta:**
 
@@ -252,7 +252,7 @@ ggplot(comunas, aes(x = cambio_izquierda, y = region, fill = region)) +
   theme_minimal()
 ```
 
-#### Variables categóricas
+### Variables categóricas
 
 **Gráfico de barras ordenado:**
 
@@ -281,9 +281,9 @@ comunas %>%
   theme_minimal()
 ```
 
-#### Gráficos bivariados
+### Gráficos bivariados
 
-#### Dos variables continuas: scatter plots
+### Dos variables continuas: scatter plots
 
 **Básico con línea de tendencia:**
 
@@ -333,7 +333,7 @@ ggplot(comunas, aes(x = izquierda_2017, y = cambio_izquierda)) +
   theme_minimal()
 ```
 
-#### Variable continua vs. categórica
+### Variable continua vs. categórica
 
 **Boxplots comparativos:**
 
@@ -362,7 +362,7 @@ ggplot(comunas, aes(x = region, y = cambio_izquierda, fill = region)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-#### Dos variables categóricas
+### Dos variables categóricas
 
 **Heatmap de tabla de contingencia:**
 
@@ -392,7 +392,7 @@ ggplot(tabla_df, aes(x = Cambio, y = Urbano, fill = Freq)) +
   theme_minimal()
 ```
 
-#### Series temporales
+### Series temporales
 
 **Gráfico de líneas simple:**
 
@@ -451,11 +451,11 @@ ggplot(aprobacion_long, aes(x = mes, y = porcentaje, fill = categoria)) +
         axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-#### Facetas
+### Facetas
 
 Dividir gráficos en paneles según una variable categórica.
 
-#### facet_wrap
+### facet_wrap
 
 ```{r fig.cap="Facet wrap por región", fig.height=5}
 ggplot(comunas, aes(x = izquierda_2017, y = izquierda_2021)) +
@@ -469,7 +469,7 @@ ggplot(comunas, aes(x = izquierda_2017, y = izquierda_2021)) +
   theme_minimal()
 ```
 
-#### facet_grid
+### facet_grid
 
 ```{r fig.cap="Facet grid con dos variables", fig.height=4}
 comunas_cat <- comunas %>%
@@ -491,9 +491,9 @@ ggplot(comunas_cat, aes(x = izquierda_2017, y = izquierda_2021)) +
   theme_minimal()
 ```
 
-#### Personalización
+### Personalización
 
-#### Temas predefinidos
+### Temas predefinidos
 
 ```{r fig.cap="Comparación de temas", fig.height=6}
 p_base <- ggplot(comunas %>% slice_sample(n = 100), 
@@ -507,7 +507,7 @@ p_base <- ggplot(comunas %>% slice_sample(n = 100),
 (p_base + theme_light() + ggtitle("theme_light"))
 ```
 
-#### Personalización de elementos
+### Personalización de elementos
 
 ```{r fig.cap="Gráfico altamente personalizado", fig.height=4}
 ggplot(comunas %>% group_by(region) %>% 
@@ -536,7 +536,7 @@ ggplot(comunas %>% group_by(region) %>%
   )
 ```
 
-#### Paletas de colores
+### Paletas de colores
 
 ```{r fig.cap="Diferentes paletas de colores", fig.height=6}
 p_color <- ggplot(comunas, aes(x = region, fill = region)) +
@@ -555,7 +555,7 @@ p3 <- p_color + scale_fill_manual(values = c("#E41A1C", "#377EB8", "#4DAF4A", "#
 p1 / p2 / p3
 ```
 
-#### Combinando gráficos
+### Combinando gráficos
 
 El paquete `patchwork` permite combinar gráficos fácilmente.
 
@@ -588,7 +588,7 @@ p4 <- ggplot(comunas, aes(x = urbano, y = cambio_izquierda, fill = urbano)) +
 (p1 | p2) / (p3 | p4)
 ```
 
-#### Anotaciones
+### Anotaciones
 
 Agregar texto, flechas y formas para destacar patrones.
 
@@ -615,7 +615,7 @@ ggplot(aprobacion, aes(x = mes, y = aprobacion)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-#### Exportar gráficos
+### Exportar gráficos
 
 Guardar gráficos para publicación.
 
@@ -642,7 +642,7 @@ ggsave("grafico_cm.png", p, width = 20, height = 15, units = "cm", dpi = 300)
 
 ## Errores comunes en visualización
 
-#### Problema 1: Eje Y truncado
+### Problema 1: Eje Y truncado
 
 ```{r fig.cap="Eje truncado vs. completo", fig.height=4}
 datos_ejemplo <- data.frame(
@@ -665,7 +665,7 @@ p_bueno <- ggplot(datos_ejemplo, aes(x = año, y = valor)) +
 p_malo | p_bueno
 ```
 
-#### Problema 2: Demasiadas categorías
+### Problema 2: Demasiadas categorías
 
 ```{r fig.cap="Reducción de categorías", fig.height=4}
 # Simular datos con muchas categorías
@@ -699,7 +699,7 @@ p_bueno <- ggplot(muchas_cat_agrup, aes(x = reorder(partido_agrup, votos), y = v
 p_malo | p_bueno
 ```
 
-#### Problema 3: Dobles ejes Y
+### Problema 3: Dobles ejes Y
 
 Los dobles ejes Y pueden ser engañosos—la escala de cada eje puede manipularse para sugerir relaciones inexistentes.
 

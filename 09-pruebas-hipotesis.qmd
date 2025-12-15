@@ -16,7 +16,7 @@ Al finalizar este capítulo, serás capaz de:
 
 Las pruebas de hipótesis responden a una pregunta fundamental en investigación: **¿Este patrón que observo en mis datos es real, o podría ser producto del azar?** Consideremos un caso concreto: en una encuesta antes de una campaña publicitaria, 42% de 800 encuestados apoyaba al Candidato A. Después de la campaña, en otra muestra de 800 personas, 47% lo apoya. La pregunta relevante es: ¿la campaña fue efectiva, o esta diferencia de 5 puntos porcentuales podría deberse simplemente a error muestral?
 
-#### La lógica de prueba por contradicción
+### La lógica de prueba por contradicción
 
 Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:
 
@@ -27,9 +27,9 @@ Las pruebas de hipótesis usan un argumento de **reducción al absurdo**:
 
 Es crucial entender la asimetría fundamental de este razonamiento: nunca "aceptamos" o "probamos" $H_0$. Solo podemos **rechazar** $H_0$ (cuando hay evidencia contra ella) o **no rechazar** $H_0$ (cuando no hay evidencia suficiente contra ella). Esto es análogo a un juicio judicial: no "probamos inocencia", solo establecemos que "no hay evidencia suficiente de culpabilidad".
 
-#### Hipótesis nula y alternativa
+### Hipótesis nula y alternativa
 
-#### Formulación de hipótesis
+### Formulación de hipótesis
 
 **Hipótesis nula ($H_0$)**: Afirmación de "no efecto" o "no diferencia". Es lo que asumimos como cierto inicialmente.
 
@@ -49,7 +49,7 @@ Otros ejemplos: evaluar si una reforma electoral aumentó la participación, o c
 
 ## Valores p y errores
 
-#### ¿Qué es un valor p?
+### ¿Qué es un valor p?
 
 El **valor p** (*p-value*) es la probabilidad de observar datos tan extremos como los nuestros (o más), **asumiendo que $H_0$ es cierta**.
 
@@ -61,7 +61,7 @@ La interpretación correcta del valor p es fundamental para evitar errores comun
 
 Un valor $p = 0.001$ indica: "Si $H_0$ fuera cierta, estos datos serían extremadamente raros (1 en 1000)." Por el contrario, $p = 0.45$ significa: "Estos datos son muy compatibles con $H_0$; no hay evidencia contra ella." El valor p **NO** representa la probabilidad de que $H_0$ sea cierta.
 
-#### Nivel de significancia ($\alpha$)
+### Nivel de significancia ($\alpha$)
 
 El **nivel de significancia** $\alpha$ es el umbral que elegimos *antes* de analizar los datos para decidir cuándo rechazar $H_0$. Convencionalmente se usa $\alpha = 0.05$, pero esta elección es arbitraria.[^alpha-arbitrario]
 
@@ -78,7 +78,7 @@ La regla de decisión es:
 "Estadísticamente significativo" NO significa "importante" o "relevante". Solo significa que el resultado es improbable bajo $H_0$. Un efecto puede ser estadísticamente significativo pero prácticamente irrelevante (especialmente con muestras grandes), o puede ser sustantivamente importante pero no alcanzar significancia estadística (con muestras pequeñas).
 :::
 
-#### Errores tipo I y tipo II
+### Errores tipo I y tipo II
 
 En pruebas de hipótesis, existen dos tipos de error posibles:
 
@@ -153,7 +153,7 @@ El sistema judicial prefiere errores Tipo II sobre Tipo I ("mejor 10 culpables l
 
 La prueba t evalúa si la media de una población difiere de un valor específico. Se usa cuando la desviación estándar poblacional es desconocida (el caso habitual).
 
-#### Ejemplo: Satisfacción con la democracia
+### Ejemplo: Satisfacción con la democracia
 
 Supongamos que queremos evaluar si los chilenos tienen una satisfacción con la democracia diferente al promedio latinoamericano, que según datos regionales es 5.0 en una escala de 1 a 10. Recopilamos una muestra de 150 personas.
 
@@ -271,7 +271,7 @@ ggplot(datos_genero, aes(x = genero, y = confianza, fill = genero)) +
 
 Cuando ambas variables son categóricas, usamos la prueba chi-cuadrado ($\chi^2$) para evaluar si están asociadas.
 
-#### Ejemplo: Voto y nivel educativo
+### Ejemplo: Voto y nivel educativo
 
 ¿Existe asociación entre nivel educativo y preferencia de voto?
 
@@ -360,7 +360,7 @@ El resultado es "significativo" ($p < 0.05$), pero la diferencia de medias es so
 3. La **significancia práctica** (¿este efecto importa en el mundo real?)
 
 ::: {.nivel data-nivel="avanzado"}
-#### Tamaño del efecto: d de Cohen
+### Tamaño del efecto: d de Cohen
 
 Una medida estandarizada del tamaño del efecto es la **d de Cohen**:
 
@@ -399,7 +399,7 @@ cat("Interpretación: efecto",
 :::
 
 ::: {.nivel data-nivel="avanzado"}
-#### El problema de las comparaciones múltiples
+### El problema de las comparaciones múltiples
 
 Si pruebas 20 hipótesis independientes con $\alpha = 0.05$, esperarías encontrar 1 resultado "significativo" por azar puro, incluso si todas las $H_0$ son ciertas.
 

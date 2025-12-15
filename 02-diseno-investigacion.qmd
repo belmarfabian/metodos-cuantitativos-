@@ -24,7 +24,7 @@ Las preguntas se clasifican según su propósito:
 | **Relacional** | Identificar asociaciones | "¿Se relaciona el nivel educativo con la participación?" | Lo anterior + análisis de correlación |
 | **Causal** | Establecer causa-efecto | "¿La inscripción automática aumenta la participación?" | Lo anterior + estrategias para descartar explicaciones alternativas |
 
-#### Hipótesis y teoría
+### Hipótesis y teoría
 
 Una vez formulada la pregunta, necesitamos una respuesta tentativa —una **hipótesis**: afirmación específica, derivada de teoría, sobre relaciones esperadas entre variables que debe ser **falsable** [@popper1959].[^hipotesis-falsable]
 
@@ -36,7 +36,7 @@ En estadística inferencial ([Capítulo 9](#hipotesis)), formalizamos dos tipos 
 
 [^h0-h1]: H₀ no es "la hipótesis que queremos refutar". Es simplemente el escenario de referencia. No "probamos" H₁; solo rechazamos o fallamos en rechazar H₀. Esta lógica asimétrica es fundamental para entender tests de hipótesis.
 
-#### Causalidad
+### Causalidad
 
 El objetivo de mucha investigación cuantitativa es establecer **relaciones causales**. Queremos saber no solo si X e Y covarían, sino si cambios en X *producen* cambios en Y.
 
@@ -45,7 +45,7 @@ El objetivo de mucha investigación cuantitativa es establecer **relaciones caus
 
 Los diseños de investigación varían según cuánto control tenemos sobre la asignación del tratamiento y la recolección de datos.
 
-#### Diseños experimentales
+### Diseños experimentales
 
 En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Esto garantiza que, en expectativa, grupos tratados y control son idénticos excepto por el tratamiento. Cualquier diferencia sistemática en resultados es atribuible al efecto causal del tratamiento.
 
@@ -65,7 +65,7 @@ En un **experimento**, el investigador asigna aleatoriamente el tratamiento. Est
 - En ciencia política, solo ciertas preguntas son experimentables
 
 
-#### Diseños observacionales
+### Diseños observacionales
 
 La mayoría de investigación en ciencias políticas usa **datos observacionales** —datos donde el investigador no controla la asignación del tratamiento. Aquí, inferencia causal es más problemática.
 
@@ -105,7 +105,7 @@ Los datos de panel permiten usar **efectos fijos**, una técnica que controla au
 5. **Análisis de sensibilidad**: Evalúa qué tan fuerte tendría que ser un confusor no observado para invalidar las conclusiones.
 :::
 
-#### Validez interna y externa
+### Validez interna y externa
 
 Todo diseño de investigación enfrenta tensiones entre dos tipos de validez [@campbell1957]:
 
@@ -121,7 +121,7 @@ Todo diseño de investigación enfrenta tensiones entre dos tipos de validez [@c
 Los diseños con mejor validez interna (experimentos de laboratorio) suelen tener peor validez externa. Los diseños con muestras representativas (encuestas nacionales) tienen peor validez interna. No hay diseño perfecto; cada uno implica compromisos.
 :::
 
-#### Casos y unidades de análisis
+### Casos y unidades de análisis
 
 Una decisión crucial es qué constituye un "caso" —la **unidad de análisis**:
 

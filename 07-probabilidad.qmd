@@ -19,9 +19,9 @@ La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso 
 
 [^prob-concepto]: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.
 
-#### Conceptos básicos
+### Conceptos básicos
 
-#### Definición y notación
+### Definición y notación
 
 Una **probabilidad** es un número entre 0 y 1 que cuantifica qué tan probable es que ocurra un evento:
 
@@ -31,7 +31,7 @@ Una **probabilidad** es un número entre 0 y 1 que cuantifica qué tan probable 
 
 Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: $P(\text{Voto FA}) = \frac{360}{1200} = 0.30$. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).
 
-#### Interpretaciones de probabilidad
+### Interpretaciones de probabilidad
 
 Existen dos interpretaciones fundamentales de qué significa "probabilidad":
 
@@ -74,7 +74,7 @@ ggplot(lanzamientos, aes(x = n, y = prop_acumulada)) +
   theme(plot.title = element_text(face = "bold"))
 ```
 
-#### Reglas fundamentales de probabilidad
+### Reglas fundamentales de probabilidad
 
 **Regla de la suma** (eventos mutuamente excluyentes)
 
@@ -162,7 +162,7 @@ Este error es muy común y puede llevar a conclusiones incorrectas. Siempre preg
 
 Una **variable aleatoria** es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.
 
-#### Variables aleatorias discretas
+### Variables aleatorias discretas
 
 Toman valores específicos y contables (generalmente enteros).[^var-discretas]
 
@@ -198,7 +198,7 @@ data.frame(protestas = protestas) %>%
   theme_minimal()
 ```
 
-#### Variables aleatorias continuas
+### Variables aleatorias continuas
 
 Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).[^var-continuas]
 
@@ -236,7 +236,7 @@ data.frame(votos = votos) %>%
   theme_minimal()
 ```
 
-#### Valor esperado y varianza
+### Valor esperado y varianza
 
 **Valor esperado** (media poblacional): $E(X) = \mu$
 
@@ -256,9 +256,9 @@ Es importante distinguir que estos son parámetros **poblacionales** (generalmen
 - Varianza: $\text{Var}(X) = E[(X - \mu)^2] = E(X^2) - [E(X)]^2$
 :::
 
-#### Distribuciones comunes
+### Distribuciones comunes
 
-#### Distribución Normal (Gaussiana)
+### Distribución Normal (Gaussiana)
 
 La distribución más importante en estadística inferencial. Una variable $X$ sigue una distribución Normal con media $\mu$ y varianza $\sigma^2$:
 
@@ -330,7 +330,7 @@ qnorm(0.90, mean = 170, sd = 7)
 ```
 :::
 
-#### Distribución Binomial
+### Distribución Binomial
 
 Modela el número de "éxitos" en $n$ ensayos independientes, cada uno con probabilidad $p$ de éxito:
 
@@ -377,7 +377,7 @@ data.frame(x = x, probabilidad = probs) %>%
 
 El **Teorema del Límite Central (TLC)** es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras. El teorema establece que si tomamos muestras aleatorias de tamaño $n$ de **cualquier** población con media $\mu$ y varianza finita $\sigma^2$, entonces conforme $n$ aumenta, la distribución de la media muestral $\bar{X}$ se aproxima a una distribución Normal: $\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$. Esto ocurre **independientemente de la forma de la distribución original**, siempre que $n$ sea suficientemente grande (típicamente $n \geq 30$).
 
-#### Implicaciones para ciencias sociales
+### Implicaciones para ciencias sociales
 
 1. **Podemos usar la distribución Normal** para hacer inferencias sobre medias muestrales, incluso si la variable original no es Normal
 
@@ -385,7 +385,7 @@ El **Teorema del Límite Central (TLC)** es posiblemente el resultado más impor
 
 3. **Justifica el uso de pruebas t y intervalos de confianza** (próximos capítulos)
 
-#### Simulación del TLC
+### Simulación del TLC
 
 Demostremos el TLC con un ejemplo de ciencias políticas:
 

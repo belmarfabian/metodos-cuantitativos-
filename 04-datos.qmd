@@ -15,7 +15,7 @@ Al finalizar este capítulo, serás capaz de:
 
 Los datos que usamos en ciencias políticas varían en estructura, granularidad y fuente. Entender estas diferencias es crucial para seleccionar estrategias analíticas apropiadas.
 
-#### Según estructura
+### Según estructura
 
 | Tipo | Descripción | Ejemplo | Ventaja | Limitación |
 |------|-------------|---------|---------|------------|
@@ -24,7 +24,7 @@ Los datos que usamos en ciencias políticas varían en estructura, granularidad 
 | **Panel** | Múltiples unidades, múltiples momentos | 346 comunas en 8 elecciones | Controla efectos fijos | Complejidad analítica |
 | **Jerárquico** | Unidades anidadas en niveles | Estudiantes en escuelas en comunas | Modela variación multinivel | Requiere técnicas avanzadas |
 
-#### Según granularidad
+### Según granularidad
 
 | Nivel | Unidad de observación | Ejemplos | Característica |
 |-------|----------------------|----------|----------------|
@@ -37,7 +37,7 @@ Los datos que usamos en ciencias políticas varían en estructura, granularidad 
 @king1997 advierten: inferir comportamiento individual desde patrones agregados puede ser erróneo si la composición de agregados varía.
 :::
 
-#### Según fuente
+### Según fuente
 
 | Fuente | Descripción | Ejemplos | Ventaja | Limitación |
 |--------|-------------|----------|---------|------------|
@@ -46,7 +46,7 @@ Los datos que usamos en ciencias políticas varían en estructura, granularidad 
 | **Administrativos** | Generados por procesos burocráticos | Registros de votantes, datos tributarios | Cobertura completa, alta confiabilidad | Reflejan categorías burocráticas |
 | **Digitales** | Generados por actividad en línea | Tweets, búsquedas Google | Volumen masivo, comportamiento real | Representatividad problemática |
 
-#### Principales fuentes de datos
+### Principales fuentes de datos
 
 Para ciencias sociales en Chile y América Latina, las fuentes más utilizadas incluyen:
 
@@ -74,11 +74,11 @@ Para ciencias sociales en Chile y América Latina, las fuentes más utilizadas i
 - Manifesto Project: Contenido de manifiestos partidarios
 :::
 
-#### Calidad de datos
+### Calidad de datos
 
 No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad del investigador.
 
-#### Dimensiones de calidad
+### Dimensiones de calidad
 
 | Dimensión | Pregunta clave | Ejemplo de problema |
 |-----------|----------------|---------------------|
@@ -89,7 +89,7 @@ No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad de
 | **Actualidad** | ¿Cuán recientes son? | Datos de 5 años para fenómenos que cambian rápido |
 | **Accesibilidad** | ¿Están disponibles? | Restricciones legales o políticas |
 
-#### Problemas comunes
+### Problemas comunes
 
 | Problema | Descripción | Estrategia |
 |----------|-------------|------------|
@@ -103,7 +103,7 @@ No todos los datos son igualmente útiles. Evaluar calidad es responsabilidad de
 
 R es un lenguaje de programación estadística y entorno para análisis de datos. RStudio es un entorno de desarrollo integrado (IDE) que hace más amigable trabajar con R.
 
-#### ¿Por qué R?
+### ¿Por qué R?
 
 **Ventajas:**
 - **Gratuito y de código abierto**: Sin costos de licencia
@@ -116,13 +116,13 @@ R es un lenguaje de programación estadística y entorno para análisis de datos
 - **Curva de aprendizaje**: Programar requiere práctica
 - **Múltiples formas de hacer lo mismo**: Puede ser confuso para principiantes
 
-#### Instalación
+### Instalación
 
 1. Descargar R: https://cran.r-project.org/
 2. Descargar RStudio: https://posit.co/download/rstudio-desktop/
 3. Instalar ambos (primero R, luego RStudio)
 
-#### Anatomía de RStudio
+### Anatomía de RStudio
 
 RStudio tiene cuatro paneles principales:
 
@@ -131,7 +131,7 @@ RStudio tiene cuatro paneles principales:
 3. **Environment** (arriba derecha): Muestra objetos en memoria (datasets, variables)
 4. **Files/Plots/Packages/Help** (abajo derecha): Navegación de archivos, gráficos, ayuda
 
-#### Paquetes
+### Paquetes
 
 R base es poderoso, pero paquetes extienden funcionalidad. Instalación (una vez):
 
@@ -149,7 +149,7 @@ library(tidyverse)
 library(haven)
 ```
 
-#### Objetos básicos en R
+### Objetos básicos en R
 
 **Vectores**: Secuencias de elementos del mismo tipo
 
@@ -177,7 +177,7 @@ sd(edades)          # Desviación estándar
 table(datos$voto)   # Tabla de frecuencias
 ```
 
-#### Directorios de trabajo
+### Directorios de trabajo
 
 R busca y guarda archivos en el "directorio de trabajo". Verificar:
 
@@ -193,11 +193,11 @@ setwd("~/Documentos/Investigacion/datos")
 
 Mejor práctica: usar **proyectos de RStudio** (`.Rproj`). Esto establece automáticamente el directorio de trabajo en la carpeta del proyecto.
 
-#### Importar datos
+### Importar datos
 
 Los datos pueden venir en múltiples formatos. R puede leer la mayoría.
 
-#### Archivos de texto: CSV
+### Archivos de texto: CSV
 
 Los archivos CSV (comma-separated values) son universales. Formato simple:
 
@@ -235,7 +235,7 @@ datos <- read_csv("encuesta.csv",
                                    partido = col_character()))
 ```
 
-#### Archivos de Excel
+### Archivos de Excel
 
 Excel es ubicuo en administración pública. Paquete `readxl`:
 
@@ -253,7 +253,7 @@ datos <- read_excel("archivo.xlsx",
                     range = "A1:F100")
 ```
 
-#### Archivos de software estadístico
+### Archivos de software estadístico
 
 **Stata (.dta):**
 
@@ -283,7 +283,7 @@ attributes(datos$educ)$labels
 ```
 
 ::: {.nivel data-nivel="avanzado"}
-#### Datos en línea y bases de datos
+### Datos en línea y bases de datos
 
 Muchos datos están en URLs. Importar directamente:
 
@@ -308,7 +308,7 @@ dbDisconnect(con)
 
 Una vez importados, los datos rara vez están listos para análisis. Necesitan limpieza y transformación.
 
-#### Inspeccionar datos
+### Inspeccionar datos
 
 Primeros y últimos casos:
 
@@ -340,7 +340,7 @@ nrow(datos)       # Número de filas
 ncol(datos)       # Número de columnas
 ```
 
-#### Seleccionar variables
+### Seleccionar variables
 
 R base:
 
@@ -365,7 +365,7 @@ datos_reducido <- select(datos, starts_with("voto_"))
 datos_reducido <- select(datos, where(is.numeric))
 ```
 
-#### Filtrar casos
+### Filtrar casos
 
 R base:
 
@@ -380,7 +380,7 @@ jovenes <- filter(datos, edad < 30)
 jovenes_izquierda <- filter(datos, edad < 30 & partido %in% c("PS", "PC", "FA"))
 ```
 
-#### Crear y transformar variables
+### Crear y transformar variables
 
 R base:
 
@@ -402,7 +402,7 @@ datos <- mutate(datos,
                 ))
 ```
 
-#### Recodificar variables
+### Recodificar variables
 
 Cambiar categorías:
 
@@ -415,7 +415,7 @@ datos <- mutate(datos,
                 ))
 ```
 
-#### Renombrar variables
+### Renombrar variables
 
 R base:
 
@@ -431,7 +431,7 @@ datos <- rename(datos,
                 confianza_gobierno = p2)
 ```
 
-#### Ordenar datos
+### Ordenar datos
 
 Por edad (ascendente):
 
@@ -452,7 +452,7 @@ datos_ordenado <- arrange(datos, partido, edad)
 ```
 
 ::: {.nivel data-nivel="avanzado"}
-#### Agregar datos por grupos
+### Agregar datos por grupos
 
 Resumir por grupos usando el operador pipe (`%>%`):
 
@@ -469,7 +469,7 @@ resumen_partido <- datos %>%
 
 El operador `%>%` pasa el resultado de una función a la siguiente.
 
-#### Unir datasets
+### Unir datasets
 
 **Left join**: Mantener todos los casos del dataset izquierdo
 
@@ -490,13 +490,13 @@ datos_completo <- inner_join(encuesta, resultados_electorales,
 
 Después de limpiar y transformar datos, es útil guardarlos.
 
-#### CSV
+### CSV
 
 ```{r eval=FALSE}
 write_csv(datos_limpios, "datos_procesados.csv")
 ```
 
-#### Formato de R
+### Formato de R
 
 Guardar como `.RDS` (R Data Serialization) preserva estructura completa:
 
@@ -510,25 +510,25 @@ Leer después:
 datos <- readRDS("datos_procesados.rds")
 ```
 
-#### Stata
+### Stata
 
 ```{r eval=FALSE}
 library(haven)
 write_dta(datos_limpios, "datos_procesados.dta")
 ```
 
-#### Excel
+### Excel
 
 ```{r eval=FALSE}
 library(writexl)
 write_xlsx(datos_limpios, "datos_procesados.xlsx")
 ```
 
-#### Flujo reproducible
+### Flujo reproducible
 
 La reproducibilidad es esencial en ciencia. Otros (y tu yo futuro) deben poder replicar exactamente lo que hiciste.
 
-#### Principios
+### Principios
 
 1. **Usa scripts, no clics**: Todo debe estar en código. No hacer transformaciones manualmente en Excel que no queden documentadas.
 2. **Nunca modifiques datos originales**: Lee los datos crudos, transfórmalos en R, guarda la versión procesada. Mantén los originales intactos.
@@ -564,7 +564,7 @@ proyecto/
 5. **Usa control de versiones**: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.
 
 ::: {.nivel data-nivel="avanzado"}
-#### R Markdown y Quarto
+### R Markdown y Quarto
 
 R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.
 

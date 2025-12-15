@@ -364,8 +364,8 @@ div.csl-indent {
 <section id="principios-y-gramática-de-gráficos" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="principios-y-gramática-de-gráficos"><span class="header-section-number">6.1</span> Principios y gramática de gráficos</h2>
 <p><span class="citation" data-cites="tufte1983">Tufte (<a href="01-introduccion.html#ref-tufte1983" role="doc-biblioref">1983</a>)</span> estableció principios fundamentales de diseño gráfico que permanecen vigentes:</p>
-<section id="maximizar-el-ratio-datos-tinta" class="level4" data-number="6.1.0.1">
-<h4 data-number="6.1.0.1" class="anchored" data-anchor-id="maximizar-el-ratio-datos-tinta"><span class="header-section-number">6.1.0.1</span> 1. Maximizar el ratio datos-tinta</h4>
+<section id="maximizar-el-ratio-datos-tinta" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="maximizar-el-ratio-datos-tinta"><span class="header-section-number">6.1.1</span> 1. Maximizar el ratio datos-tinta</h3>
 <p>Eliminar elementos innecesarios. Cada elemento gráfico debe comunicar información.</p>
 <p><strong>Mal ejemplo</strong> (chartjunk):</p>
 <div class="cell">
@@ -411,8 +411,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="usar-el-canal-visual-apropiado" class="level4" data-number="6.1.0.2">
-<h4 data-number="6.1.0.2" class="anchored" data-anchor-id="usar-el-canal-visual-apropiado"><span class="header-section-number">6.1.0.2</span> 2. Usar el canal visual apropiado</h4>
+<section id="usar-el-canal-visual-apropiado" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="usar-el-canal-visual-apropiado"><span class="header-section-number">6.1.2</span> 2. Usar el canal visual apropiado</h3>
 <p>La percepción humana procesa algunos atributos visuales mejor que otros:</p>
 <table class="caption-top table">
 <thead>
@@ -487,8 +487,8 @@ div.csl-indent {
 </div>
 <p>El gráfico de barras permite comparaciones precisas. El gráfico de torta dificulta distinguir diferencias pequeñas.</p>
 </section>
-<section id="mostrar-comparaciones" class="level4" data-number="6.1.0.3">
-<h4 data-number="6.1.0.3" class="anchored" data-anchor-id="mostrar-comparaciones"><span class="header-section-number">6.1.0.3</span> 3. Mostrar comparaciones</h4>
+<section id="mostrar-comparaciones" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="mostrar-comparaciones"><span class="header-section-number">6.1.3</span> 3. Mostrar comparaciones</h3>
 <p>Los datos adquieren significado mediante comparación. Comparar contra: - Otros grupos - Otros momentos - Un estándar o objetivo</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>comunas_muestra <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
@@ -514,8 +514,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="mostrar-causalidad-y-explicación" class="level4" data-number="6.1.0.4">
-<h4 data-number="6.1.0.4" class="anchored" data-anchor-id="mostrar-causalidad-y-explicación"><span class="header-section-number">6.1.0.4</span> 4. Mostrar causalidad y explicación</h4>
+<section id="mostrar-causalidad-y-explicación" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="mostrar-causalidad-y-explicación"><span class="header-section-number">6.1.4</span> 4. Mostrar causalidad y explicación</h3>
 <p>Los gráficos deben sugerir explicaciones, no solo describir.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> urbano, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> urbano)) <span class="sc">+</span></span>
@@ -536,16 +536,16 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="integrar-evidencia" class="level4" data-number="6.1.0.5">
-<h4 data-number="6.1.0.5" class="anchored" data-anchor-id="integrar-evidencia"><span class="header-section-number">6.1.0.5</span> 5. Integrar evidencia</h4>
+<section id="integrar-evidencia" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="integrar-evidencia"><span class="header-section-number">6.1.5</span> 5. Integrar evidencia</h3>
 <p>Combinar palabras, números y gráficos para una narrativa coherente.</p>
 </section>
-<section id="grammar-of-graphics-y-ggplot2" class="level4" data-number="6.1.0.6">
-<h4 data-number="6.1.0.6" class="anchored" data-anchor-id="grammar-of-graphics-y-ggplot2"><span class="header-section-number">6.1.0.6</span> Grammar of Graphics y ggplot2</h4>
+<section id="grammar-of-graphics-y-ggplot2" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="grammar-of-graphics-y-ggplot2"><span class="header-section-number">6.1.6</span> Grammar of Graphics y ggplot2</h3>
 <p><span class="citation" data-cites="wilkinson2005">Wilkinson (<a href="01-introduccion.html#ref-wilkinson2005" role="doc-biblioref">2005</a>)</span> propuso que los gráficos estadísticos tienen una gramática—componentes sistemáticos que se combinan para producir visualizaciones.</p>
 </section>
-<section id="componentes-de-ggplot2" class="level4" data-number="6.1.0.7">
-<h4 data-number="6.1.0.7" class="anchored" data-anchor-id="componentes-de-ggplot2"><span class="header-section-number">6.1.0.7</span> Componentes de ggplot2</h4>
+<section id="componentes-de-ggplot2" class="level3" data-number="6.1.7">
+<h3 data-number="6.1.7" class="anchored" data-anchor-id="componentes-de-ggplot2"><span class="header-section-number">6.1.7</span> Componentes de ggplot2</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 40%">
@@ -593,8 +593,8 @@ div.csl-indent {
 </tbody>
 </table>
 </section>
-<section id="estructura-básica" class="level4" data-number="6.1.0.8">
-<h4 data-number="6.1.0.8" class="anchored" data-anchor-id="estructura-básica"><span class="header-section-number">6.1.0.8</span> Estructura básica</h4>
+<section id="estructura-básica" class="level3" data-number="6.1.8">
+<h3 data-number="6.1.8" class="anchored" data-anchor-id="estructura-básica"><span class="header-section-number">6.1.8</span> Estructura básica</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> <span class="sc">&lt;</span>DATOS<span class="sc">&gt;</span>, <span class="fu">aes</span>(<span class="at">x =</span> <span class="sc">&lt;</span>VAR_X<span class="sc">&gt;</span>, <span class="at">y =</span> <span class="sc">&lt;</span>VAR_Y<span class="sc">&gt;</span>)) <span class="sc">+</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  geom_<span class="sc">&lt;</span>TIPO<span class="sc">&gt;</span>() <span class="sc">+</span></span>
@@ -604,8 +604,8 @@ div.csl-indent {
 <span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  theme_<span class="sc">&lt;</span>...<span class="sc">&gt;</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="ejemplo-paso-a-paso" class="level4" data-number="6.1.0.9">
-<h4 data-number="6.1.0.9" class="anchored" data-anchor-id="ejemplo-paso-a-paso"><span class="header-section-number">6.1.0.9</span> Ejemplo paso a paso</h4>
+<section id="ejemplo-paso-a-paso" class="level3" data-number="6.1.9">
+<h3 data-number="6.1.9" class="anchored" data-anchor-id="ejemplo-paso-a-paso"><span class="header-section-number">6.1.9</span> Ejemplo paso a paso</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Paso 1: Solo datos y aesthetics (nada se dibuja)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021))</span>
@@ -639,8 +639,8 @@ div.csl-indent {
 </section>
 <section id="tipos-de-gráficos" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="tipos-de-gráficos"><span class="header-section-number">6.2</span> Tipos de gráficos</h2>
-<section id="variables-continuas" class="level4" data-number="6.2.0.1">
-<h4 data-number="6.2.0.1" class="anchored" data-anchor-id="variables-continuas"><span class="header-section-number">6.2.0.1</span> Variables continuas</h4>
+<section id="variables-continuas" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="variables-continuas"><span class="header-section-number">6.2.1</span> Variables continuas</h3>
 <p><strong>Histograma con densidad superpuesta:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> cambio_izquierda)) <span class="sc">+</span></span>
@@ -682,8 +682,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="variables-categóricas" class="level4" data-number="6.2.0.2">
-<h4 data-number="6.2.0.2" class="anchored" data-anchor-id="variables-categóricas"><span class="header-section-number">6.2.0.2</span> Variables categóricas</h4>
+<section id="variables-categóricas" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="variables-categóricas"><span class="header-section-number">6.2.2</span> Variables categóricas</h3>
 <p><strong>Gráfico de barras ordenado:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>comunas <span class="sc">%&gt;%</span></span>
@@ -724,11 +724,11 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="gráficos-bivariados" class="level4" data-number="6.2.0.3">
-<h4 data-number="6.2.0.3" class="anchored" data-anchor-id="gráficos-bivariados"><span class="header-section-number">6.2.0.3</span> Gráficos bivariados</h4>
+<section id="gráficos-bivariados" class="level3" data-number="6.2.3">
+<h3 data-number="6.2.3" class="anchored" data-anchor-id="gráficos-bivariados"><span class="header-section-number">6.2.3</span> Gráficos bivariados</h3>
 </section>
-<section id="dos-variables-continuas-scatter-plots" class="level4" data-number="6.2.0.4">
-<h4 data-number="6.2.0.4" class="anchored" data-anchor-id="dos-variables-continuas-scatter-plots"><span class="header-section-number">6.2.0.4</span> Dos variables continuas: scatter plots</h4>
+<section id="dos-variables-continuas-scatter-plots" class="level3" data-number="6.2.4">
+<h3 data-number="6.2.4" class="anchored" data-anchor-id="dos-variables-continuas-scatter-plots"><span class="header-section-number">6.2.4</span> Dos variables continuas: scatter plots</h3>
 <p><strong>Básico con línea de tendencia:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
@@ -796,8 +796,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="variable-continua-vs.-categórica" class="level4" data-number="6.2.0.5">
-<h4 data-number="6.2.0.5" class="anchored" data-anchor-id="variable-continua-vs.-categórica"><span class="header-section-number">6.2.0.5</span> Variable continua vs.&nbsp;categórica</h4>
+<section id="variable-continua-vs.-categórica" class="level3" data-number="6.2.5">
+<h3 data-number="6.2.5" class="anchored" data-anchor-id="variable-continua-vs.-categórica"><span class="header-section-number">6.2.5</span> Variable continua vs.&nbsp;categórica</h3>
 <p><strong>Boxplots comparativos:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> cambio_izquierda, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
@@ -838,8 +838,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="dos-variables-categóricas" class="level4" data-number="6.2.0.6">
-<h4 data-number="6.2.0.6" class="anchored" data-anchor-id="dos-variables-categóricas"><span class="header-section-number">6.2.0.6</span> Dos variables categóricas</h4>
+<section id="dos-variables-categóricas" class="level3" data-number="6.2.6">
+<h3 data-number="6.2.6" class="anchored" data-anchor-id="dos-variables-categóricas"><span class="header-section-number">6.2.6</span> Dos variables categóricas</h3>
 <p><strong>Heatmap de tabla de contingencia:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear categorías</span></span>
@@ -875,8 +875,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="series-temporales" class="level4" data-number="6.2.0.7">
-<h4 data-number="6.2.0.7" class="anchored" data-anchor-id="series-temporales"><span class="header-section-number">6.2.0.7</span> Series temporales</h4>
+<section id="series-temporales" class="level3" data-number="6.2.7">
+<h3 data-number="6.2.7" class="anchored" data-anchor-id="series-temporales"><span class="header-section-number">6.2.7</span> Series temporales</h3>
 <p><strong>Gráfico de líneas simple:</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> aprobacion)) <span class="sc">+</span></span>
@@ -953,12 +953,12 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="facetas" class="level4" data-number="6.2.0.8">
-<h4 data-number="6.2.0.8" class="anchored" data-anchor-id="facetas"><span class="header-section-number">6.2.0.8</span> Facetas</h4>
+<section id="facetas" class="level3" data-number="6.2.8">
+<h3 data-number="6.2.8" class="anchored" data-anchor-id="facetas"><span class="header-section-number">6.2.8</span> Facetas</h3>
 <p>Dividir gráficos en paneles según una variable categórica.</p>
 </section>
-<section id="facet_wrap" class="level4" data-number="6.2.0.9">
-<h4 data-number="6.2.0.9" class="anchored" data-anchor-id="facet_wrap"><span class="header-section-number">6.2.0.9</span> facet_wrap</h4>
+<section id="facet_wrap" class="level3" data-number="6.2.9">
+<h3 data-number="6.2.9" class="anchored" data-anchor-id="facet_wrap"><span class="header-section-number">6.2.9</span> facet_wrap</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
@@ -979,8 +979,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="facet_grid" class="level4" data-number="6.2.0.10">
-<h4 data-number="6.2.0.10" class="anchored" data-anchor-id="facet_grid"><span class="header-section-number">6.2.0.10</span> facet_grid</h4>
+<section id="facet_grid" class="level3" data-number="6.2.10">
+<h3 data-number="6.2.10" class="anchored" data-anchor-id="facet_grid"><span class="header-section-number">6.2.10</span> facet_grid</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>comunas_cat <span class="ot">&lt;-</span> comunas <span class="sc">%&gt;%</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
@@ -1009,11 +1009,11 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="personalización" class="level4" data-number="6.2.0.11">
-<h4 data-number="6.2.0.11" class="anchored" data-anchor-id="personalización"><span class="header-section-number">6.2.0.11</span> Personalización</h4>
+<section id="personalización" class="level3" data-number="6.2.11">
+<h3 data-number="6.2.11" class="anchored" data-anchor-id="personalización"><span class="header-section-number">6.2.11</span> Personalización</h3>
 </section>
-<section id="temas-predefinidos" class="level4" data-number="6.2.0.12">
-<h4 data-number="6.2.0.12" class="anchored" data-anchor-id="temas-predefinidos"><span class="header-section-number">6.2.0.12</span> Temas predefinidos</h4>
+<section id="temas-predefinidos" class="level3" data-number="6.2.12">
+<h3 data-number="6.2.12" class="anchored" data-anchor-id="temas-predefinidos"><span class="header-section-number">6.2.12</span> Temas predefinidos</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>p_base <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">100</span>), </span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">aes</span>(<span class="at">x =</span> izquierda_2017, <span class="at">y =</span> izquierda_2021)) <span class="sc">+</span></span>
@@ -1034,8 +1034,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="personalización-de-elementos" class="level4" data-number="6.2.0.13">
-<h4 data-number="6.2.0.13" class="anchored" data-anchor-id="personalización-de-elementos"><span class="header-section-number">6.2.0.13</span> Personalización de elementos</h4>
+<section id="personalización-de-elementos" class="level3" data-number="6.2.13">
+<h3 data-number="6.2.13" class="anchored" data-anchor-id="personalización-de-elementos"><span class="header-section-number">6.2.13</span> Personalización de elementos</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(comunas <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>         <span class="fu">summarise</span>(<span class="at">cambio_promedio =</span> <span class="fu">mean</span>(cambio_izquierda)),</span>
@@ -1071,8 +1071,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="paletas-de-colores" class="level4" data-number="6.2.0.14">
-<h4 data-number="6.2.0.14" class="anchored" data-anchor-id="paletas-de-colores"><span class="header-section-number">6.2.0.14</span> Paletas de colores</h4>
+<section id="paletas-de-colores" class="level3" data-number="6.2.14">
+<h3 data-number="6.2.14" class="anchored" data-anchor-id="paletas-de-colores"><span class="header-section-number">6.2.14</span> Paletas de colores</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>p_color <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(comunas, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
@@ -1098,8 +1098,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="combinando-gráficos" class="level4" data-number="6.2.0.15">
-<h4 data-number="6.2.0.15" class="anchored" data-anchor-id="combinando-gráficos"><span class="header-section-number">6.2.0.15</span> Combinando gráficos</h4>
+<section id="combinando-gráficos" class="level3" data-number="6.2.15">
+<h3 data-number="6.2.15" class="anchored" data-anchor-id="combinando-gráficos"><span class="header-section-number">6.2.15</span> Combinando gráficos</h3>
 <p>El paquete <code>patchwork</code> permite combinar gráficos fácilmente.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráficos individuales</span></span>
@@ -1138,8 +1138,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="anotaciones" class="level4" data-number="6.2.0.16">
-<h4 data-number="6.2.0.16" class="anchored" data-anchor-id="anotaciones"><span class="header-section-number">6.2.0.16</span> Anotaciones</h4>
+<section id="anotaciones" class="level3" data-number="6.2.16">
+<h3 data-number="6.2.16" class="anchored" data-anchor-id="anotaciones"><span class="header-section-number">6.2.16</span> Anotaciones</h3>
 <p>Agregar texto, flechas y formas para destacar patrones.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aprobacion, <span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> aprobacion)) <span class="sc">+</span></span>
@@ -1172,8 +1172,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="exportar-gráficos" class="level4" data-number="6.2.0.17">
-<h4 data-number="6.2.0.17" class="anchored" data-anchor-id="exportar-gráficos"><span class="header-section-number">6.2.0.17</span> Exportar gráficos</h4>
+<section id="exportar-gráficos" class="level3" data-number="6.2.17">
+<h3 data-number="6.2.17" class="anchored" data-anchor-id="exportar-gráficos"><span class="header-section-number">6.2.17</span> Exportar gráficos</h3>
 <p>Guardar gráficos para publicación.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear gráfico</span></span>
@@ -1219,8 +1219,8 @@ div.csl-indent {
 </section>
 <section id="errores-comunes-en-visualización" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="errores-comunes-en-visualización"><span class="header-section-number">6.3</span> Errores comunes en visualización</h2>
-<section id="problema-1-eje-y-truncado" class="level4" data-number="6.3.0.1">
-<h4 data-number="6.3.0.1" class="anchored" data-anchor-id="problema-1-eje-y-truncado"><span class="header-section-number">6.3.0.1</span> Problema 1: Eje Y truncado</h4>
+<section id="problema-1-eje-y-truncado" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="problema-1-eje-y-truncado"><span class="header-section-number">6.3.1</span> Problema 1: Eje Y truncado</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>datos_ejemplo <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  año <span class="ot">=</span> <span class="dv">2019</span><span class="sc">:</span><span class="dv">2023</span>,</span>
@@ -1250,8 +1250,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="problema-2-demasiadas-categorías" class="level4" data-number="6.3.0.2">
-<h4 data-number="6.3.0.2" class="anchored" data-anchor-id="problema-2-demasiadas-categorías"><span class="header-section-number">6.3.0.2</span> Problema 2: Demasiadas categorías</h4>
+<section id="problema-2-demasiadas-categorías" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="problema-2-demasiadas-categorías"><span class="header-section-number">6.3.2</span> Problema 2: Demasiadas categorías</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular datos con muchas categorías</span></span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
@@ -1292,8 +1292,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="problema-3-dobles-ejes-y" class="level4" data-number="6.3.0.3">
-<h4 data-number="6.3.0.3" class="anchored" data-anchor-id="problema-3-dobles-ejes-y"><span class="header-section-number">6.3.0.3</span> Problema 3: Dobles ejes Y</h4>
+<section id="problema-3-dobles-ejes-y" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="problema-3-dobles-ejes-y"><span class="header-section-number">6.3.3</span> Problema 3: Dobles ejes Y</h3>
 <p>Los dobles ejes Y pueden ser engañosos—la escala de cada eje puede manipularse para sugerir relaciones inexistentes.</p>
 <p><strong>Mejor práctica:</strong> Usar facetas o gráficos separados.</p>
 </section>

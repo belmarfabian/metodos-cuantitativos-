@@ -393,11 +393,11 @@ window.Quarto = {
 <h2 data-number="7.1" class="anchored" data-anchor-id="fundamentos-de-probabilidad"><span class="header-section-number">7.1</span> Fundamentos de probabilidad</h2>
 <p>La investigación social cuantitativa enfrenta invariablemente la <strong>incertidumbre</strong>. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.</p>
 <p>La <strong>teoría de probabilidad</strong> nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.</p></div></div><section id="conceptos-básicos" class="level4" data-number="7.1.0.1">
-<h4 data-number="7.1.0.1" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">7.1.0.1</span> Conceptos básicos</h4>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.</p></div></div><section id="conceptos-básicos" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="conceptos-básicos"><span class="header-section-number">7.1.1</span> Conceptos básicos</h3>
 </section>
-<section id="definición-y-notación" class="level4" data-number="7.1.0.2">
-<h4 data-number="7.1.0.2" class="anchored" data-anchor-id="definición-y-notación"><span class="header-section-number">7.1.0.2</span> Definición y notación</h4>
+<section id="definición-y-notación" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="definición-y-notación"><span class="header-section-number">7.1.2</span> Definición y notación</h3>
 <p>Una <strong>probabilidad</strong> es un número entre 0 y 1 que cuantifica qué tan probable es que ocurra un evento:</p>
 <ul>
 <li><span class="math inline">\(P(A) = 0\)</span> significa que el evento <span class="math inline">\(A\)</span> es imposible</li>
@@ -406,8 +406,8 @@ window.Quarto = {
 </ul>
 <p>Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: <span class="math inline">\(P(\text{Voto FA}) = \frac{360}{1200} = 0.30\)</span>. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).</p>
 </section>
-<section id="interpretaciones-de-probabilidad" class="level4 page-columns page-full" data-number="7.1.0.3">
-<h4 data-number="7.1.0.3" class="anchored" data-anchor-id="interpretaciones-de-probabilidad"><span class="header-section-number">7.1.0.3</span> Interpretaciones de probabilidad</h4>
+<section id="interpretaciones-de-probabilidad" class="level3 page-columns page-full" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="interpretaciones-de-probabilidad"><span class="header-section-number">7.1.3</span> Interpretaciones de probabilidad</h3>
 <p>Existen dos interpretaciones fundamentales de qué significa “probabilidad”:</p>
 <p><strong>Interpretación frecuentista</strong>:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras. Esta es la interpretación estándar en ciencias sociales cuantitativas.</p>
 <div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><div class="nivel" data-nivel="avanzado">
@@ -424,8 +424,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="reglas-fundamentales-de-probabilidad" class="level4" data-number="7.1.0.4">
-<h4 data-number="7.1.0.4" class="anchored" data-anchor-id="reglas-fundamentales-de-probabilidad"><span class="header-section-number">7.1.0.4</span> Reglas fundamentales de probabilidad</h4>
+<section id="reglas-fundamentales-de-probabilidad" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="reglas-fundamentales-de-probabilidad"><span class="header-section-number">7.1.4</span> Reglas fundamentales de probabilidad</h3>
 <p><strong>Regla de la suma</strong> (eventos mutuamente excluyentes)</p>
 <p>Si <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> no pueden ocurrir simultáneamente: <span class="math display">\[P(A \text{ o } B) = P(A) + P(B)\]</span></p>
 <p>Por ejemplo, en las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato: <span class="math inline">\(P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})\)</span>.</p>
@@ -545,8 +545,8 @@ Error común: Confundir P(A|B) con P(B|A)
 <section id="variables-aleatorias-y-distribuciones" class="level2 page-columns page-full" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="variables-aleatorias-y-distribuciones"><span class="header-section-number">7.2</span> Variables aleatorias y distribuciones</h2>
 <p>Una <strong>variable aleatoria</strong> es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.</p>
-<section id="variables-aleatorias-discretas" class="level4 page-columns page-full" data-number="7.2.0.1">
-<h4 data-number="7.2.0.1" class="anchored" data-anchor-id="variables-aleatorias-discretas"><span class="header-section-number">7.2.0.1</span> Variables aleatorias discretas</h4>
+<section id="variables-aleatorias-discretas" class="level3 page-columns page-full" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="variables-aleatorias-discretas"><span class="header-section-number">7.2.1</span> Variables aleatorias discretas</h3>
 <p>Toman valores específicos y contables (generalmente enteros).<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn3"><p><sup>3</sup>&nbsp;Ejemplos en ciencias sociales: número de partidos en el Congreso, número de protestas en un mes, respuesta en escala Likert, número de votantes en una mesa.</p></div></div><p><strong>Función de masa de probabilidad (PMF)</strong></p>
 <p>Para una variable aleatoria discreta <span class="math inline">\(X\)</span>, la PMF especifica la probabilidad de cada valor: <span class="math display">\[P(X = x)\]</span></p>
@@ -575,8 +575,8 @@ Error común: Confundir P(A|B) con P(B|A)
 </div>
 </div>
 </section>
-<section id="variables-aleatorias-continuas" class="level4 page-columns page-full" data-number="7.2.0.2">
-<h4 data-number="7.2.0.2" class="anchored" data-anchor-id="variables-aleatorias-continuas"><span class="header-section-number">7.2.0.2</span> Variables aleatorias continuas</h4>
+<section id="variables-aleatorias-continuas" class="level3 page-columns page-full" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="variables-aleatorias-continuas"><span class="header-section-number">7.2.2</span> Variables aleatorias continuas</h3>
 <p>Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 <div class="no-row-height column-margin column-container"><div id="fn4"><p><sup>4</sup>&nbsp;Ejemplos en ciencias sociales: porcentaje de votos obtenido, ingreso mensual, índice de democracia, tiempo hasta próxima protesta.</p></div></div><p><strong>Función de densidad de probabilidad (PDF)</strong></p>
 <p>Para variables continuas, <span class="math inline">\(P(X = x) = 0\)</span> (la probabilidad de un valor exacto es cero). En su lugar, trabajamos con <strong>intervalos</strong>:</p>
@@ -605,8 +605,8 @@ Error común: Confundir P(A|B) con P(B|A)
 </div>
 </div>
 </section>
-<section id="valor-esperado-y-varianza" class="level4" data-number="7.2.0.3">
-<h4 data-number="7.2.0.3" class="anchored" data-anchor-id="valor-esperado-y-varianza"><span class="header-section-number">7.2.0.3</span> Valor esperado y varianza</h4>
+<section id="valor-esperado-y-varianza" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="valor-esperado-y-varianza"><span class="header-section-number">7.2.3</span> Valor esperado y varianza</h3>
 <p><strong>Valor esperado</strong> (media poblacional): <span class="math inline">\(E(X) = \mu\)</span></p>
 <p>El valor esperado es el promedio “teórico” de una variable aleatoria si pudiéramos observarla infinitas veces. Para variables discretas, se calcula sumando cada valor multiplicado por su probabilidad.</p>
 <p><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \sigma^2\)</span> mide la dispersión alrededor del valor esperado.</p>
@@ -621,11 +621,11 @@ Error común: Confundir P(A|B) con P(B|A)
 </ul>
 </div>
 </section>
-<section id="distribuciones-comunes" class="level4" data-number="7.2.0.4">
-<h4 data-number="7.2.0.4" class="anchored" data-anchor-id="distribuciones-comunes"><span class="header-section-number">7.2.0.4</span> Distribuciones comunes</h4>
+<section id="distribuciones-comunes" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="distribuciones-comunes"><span class="header-section-number">7.2.4</span> Distribuciones comunes</h3>
 </section>
-<section id="distribución-normal-gaussiana" class="level4" data-number="7.2.0.5">
-<h4 data-number="7.2.0.5" class="anchored" data-anchor-id="distribución-normal-gaussiana"><span class="header-section-number">7.2.0.5</span> Distribución Normal (Gaussiana)</h4>
+<section id="distribución-normal-gaussiana" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="distribución-normal-gaussiana"><span class="header-section-number">7.2.5</span> Distribución Normal (Gaussiana)</h3>
 <p>La distribución más importante en estadística inferencial. Una variable <span class="math inline">\(X\)</span> sigue una distribución Normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>:</p>
 <p><span class="math display">\[X \sim N(\mu, \sigma^2)\]</span></p>
 <table class="caption-top table">
@@ -735,8 +735,8 @@ Funciones de R para distribución Normal
 </div>
 </div>
 </section>
-<section id="distribución-binomial" class="level4" data-number="7.2.0.6">
-<h4 data-number="7.2.0.6" class="anchored" data-anchor-id="distribución-binomial"><span class="header-section-number">7.2.0.6</span> Distribución Binomial</h4>
+<section id="distribución-binomial" class="level3" data-number="7.2.6">
+<h3 data-number="7.2.6" class="anchored" data-anchor-id="distribución-binomial"><span class="header-section-number">7.2.6</span> Distribución Binomial</h3>
 <p>Modela el número de “éxitos” en <span class="math inline">\(n\)</span> ensayos independientes, cada uno con probabilidad <span class="math inline">\(p\)</span> de éxito:</p>
 <p><span class="math display">\[X \sim \text{Binomial}(n, p)\]</span></p>
 <ul>
@@ -778,16 +778,16 @@ Funciones de R para distribución Normal
 <section id="teorema-del-límite-central" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="teorema-del-límite-central"><span class="header-section-number">7.3</span> Teorema del Límite Central</h2>
 <p>El <strong>Teorema del Límite Central (TLC)</strong> es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras. El teorema establece que si tomamos muestras aleatorias de tamaño <span class="math inline">\(n\)</span> de <strong>cualquier</strong> población con media <span class="math inline">\(\mu\)</span> y varianza finita <span class="math inline">\(\sigma^2\)</span>, entonces conforme <span class="math inline">\(n\)</span> aumenta, la distribución de la media muestral <span class="math inline">\(\bar{X}\)</span> se aproxima a una distribución Normal: <span class="math inline">\(\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)\)</span>. Esto ocurre <strong>independientemente de la forma de la distribución original</strong>, siempre que <span class="math inline">\(n\)</span> sea suficientemente grande (típicamente <span class="math inline">\(n \geq 30\)</span>).</p>
-<section id="implicaciones-para-ciencias-sociales" class="level4" data-number="7.3.0.1">
-<h4 data-number="7.3.0.1" class="anchored" data-anchor-id="implicaciones-para-ciencias-sociales"><span class="header-section-number">7.3.0.1</span> Implicaciones para ciencias sociales</h4>
+<section id="implicaciones-para-ciencias-sociales" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="implicaciones-para-ciencias-sociales"><span class="header-section-number">7.3.1</span> Implicaciones para ciencias sociales</h3>
 <ol type="1">
 <li><p><strong>Podemos usar la distribución Normal</strong> para hacer inferencias sobre medias muestrales, incluso si la variable original no es Normal</p></li>
 <li><p><strong>La varianza de <span class="math inline">\(\bar{X}\)</span> disminuye con <span class="math inline">\(n\)</span></strong>: Muestras más grandes producen estimaciones más precisas</p></li>
 <li><p><strong>Justifica el uso de pruebas t y intervalos de confianza</strong> (próximos capítulos)</p></li>
 </ol>
 </section>
-<section id="simulación-del-tlc" class="level4" data-number="7.3.0.2">
-<h4 data-number="7.3.0.2" class="anchored" data-anchor-id="simulación-del-tlc"><span class="header-section-number">7.3.0.2</span> Simulación del TLC</h4>
+<section id="simulación-del-tlc" class="level3" data-number="7.3.2">
+<h3 data-number="7.3.2" class="anchored" data-anchor-id="simulación-del-tlc"><span class="header-section-number">7.3.2</span> Simulación del TLC</h3>
 <p>Demostremos el TLC con un ejemplo de ciencias políticas:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Población NO normal: Participación en protestas (variable muy asimétrica)</span></span>

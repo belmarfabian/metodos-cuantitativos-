@@ -45,7 +45,7 @@ Las ciencias sociales enfrentan desafíos específicos como la **reflexividad** 
 *Ejemplo de reflexividad:* Durante el estallido social de octubre 2019, académicos publicaron estudios sobre tácticas de movilización efectivas. Los movimientos sociales leyeron estos estudios y adaptaron sus estrategias, haciendo que las teorías iniciales quedaran desactualizadas.
 :::
 
-#### Ciencia social y cuantificación
+### Ciencia social y cuantificación
 
 La **cuantificación** —convertir conceptos en números— es una estrategia metodológica, no un fin en sí mismo. Su utilidad depende del tipo de pregunta que formulamos.
 
@@ -73,7 +73,7 @@ Cada medición implica decisiones conceptuales. Por ejemplo, ¿cómo medimos "de
 
 [^indices-democracia]: En 2022, Freedom House clasificó a Chile como "Libre" con 94/100 puntos, mientras V-Dem lo ubicó ligeramente por debajo de Costa Rica. Estas diferencias reflejan distintas conceptualizaciones de qué aspectos de la democracia importan más. No hay medición perfecta, solo mediciones más o menos adecuadas a nuestro propósito teórico.
 
-#### El papel de la teoría
+### El papel de la teoría
 
 Un error común en estudiantes principiantes es creer que la investigación cuantitativa consiste en "dejar que los datos hablen". Los datos nunca hablan solos. Requieren un marco teórico que los haga inteligibles.
 
@@ -121,7 +121,7 @@ La investigación cuantitativa sigue una secuencia lógica (aunque no siempre cr
 Solo puede refutarlas o fallar en refutarlas. Las teorías sobreviven hasta que evidencia acumulada las hace insostenibles.
 :::
 
-#### Fortalezas y limitaciones
+### Fortalezas y limitaciones
 
 | Fortalezas | Limitaciones |
 |------------|--------------|

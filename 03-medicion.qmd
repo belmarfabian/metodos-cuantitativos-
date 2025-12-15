@@ -25,7 +25,7 @@ Cada transición entre niveles implica decisiones. No hay una única forma "corr
 
 [^puntaje-democracia]: Cuando lees "Chile tiene un puntaje de democracia de 8.5", pregúntate qué definición de democracia usa ese índice. ¿Incluye solo elecciones o también estado de derecho y libertades civiles? Índices diferentes producen puntajes diferentes. No hay una medición "verdadera" de democracia, solo mediciones más o menos útiles para propósitos específicos.
 
-#### Definiciones operacionales
+### Definiciones operacionales
 
 La **conceptualización** especifica qué entendemos por un término; sin ella, la medición carece de fundamento. @sartori1970 advirtió sobre el "estiramiento conceptual": usar un concepto en contextos donde no aplica, diluyendo su utilidad analítica. Por ejemplo, ¿qué es "participación política"? Una conceptualización **minimalista** ---acciones dirigidas a influir en la selección de gobernantes como votar y hacer campaña--- exige solo datos electorales, mientras una **expansiva** ---cualquier acción dirigida a influir en decisiones colectivas, incluyendo protesta y activismo comunitario--- requiere información sobre múltiples formas de acción.[^participacion]
 
@@ -79,7 +79,7 @@ Una buena medición debe ser **válida** (¿la medida captura el concepto que pr
 - **Validez discriminante**: La medida no debería correlacionar fuertemente con conceptos distintos. Una medida de "participación política" que correlaciona 0.95 con "ingreso" probablemente está midiendo ingreso, no participación.
 :::
 
-#### Confiabilidad
+### Confiabilidad
 
 La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiable produce resultados similares cuando se aplica repetidamente al mismo fenómeno.
 
@@ -91,7 +91,7 @@ La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiab
 3. **Consistencia interna**: Para escalas multi-ítem, ¿los ítems correlacionan entre sí? El alfa de Cronbach mide consistencia interna.
 :::
 
-#### Relación entre validez y confiabilidad
+### Relación entre validez y confiabilidad
 
 Es posible tener alta confiabilidad pero baja validez. Si medimos "democracia" solo con PIB per cápita, la medida será confiable ---el PIB se mide consistentemente--- pero inválida ---el PIB no es democracia---.[^balanza]
 
@@ -115,22 +115,22 @@ En investigación, preferimos alta confiabilidad (consistencia) Y alta validez (
 :::
 
 
-#### Problemas comunes
+### Problemas comunes
 
 La medición en ciencias sociales enfrenta problemas sistemáticos que amenazan validez e inferencia.
 
-#### Sesgo de deseabilidad social
+### Sesgo de deseabilidad social
 
 Los encuestados pueden responder lo que perciben como socialmente aceptable en lugar de sus verdaderas actitudes. Esto es particularmente problemático para temas sensibles: racismo, corrupción personal, comportamiento antisocial.
 
 
-#### Sesgo de aquiescencia
+### Sesgo de aquiescencia
 
 Tendencia a estar de acuerdo con afirmaciones independientemente de su contenido. Particularmente problemático en culturas donde contradecir es descortés.
 
 **Mitigación**: Incluir ítems con dirección invertida.
 
-#### No-respuesta diferencial
+### No-respuesta diferencial
 
 Cuando quienes no responden difieren sistemáticamente de quienes responden, las estimaciones se sesgan. Si en una encuesta sobre confianza institucional, los más desconfiados no responden, sobrestimamos confianza.
 
