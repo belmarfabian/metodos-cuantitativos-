@@ -502,35 +502,371 @@ f) Presenta a colegas y solicita feedback sobre claridad
 ## Capítulo 9: Pruebas de hipótesis {#ejercicios-cap9}
 
 
-1. Explica la diferencia entre "no rechazar $H_0$" y "aceptar $H_0$".
+**Conceptuales:**
 
-2. Un investigador reporta: "El valor p fue 0.08, por lo tanto no hay efecto." ¿Qué está mal?
+**1. Interpretación de hipótesis**
 
-3. ¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según el contexto.
+Explica la diferencia entre "no rechazar $H_0$" y "aceptar $H_0$". ¿Por qué la distinción es importante para la interpretación de resultados?
+
+**2. Errores comunes en reportes**
+
+Un investigador reporta: "El valor p fue 0.08, por lo tanto no hay efecto."
+
+a) ¿Qué está mal con esta interpretación?
+b) ¿Cómo debería reportarse correctamente este resultado?
+c) ¿Qué factores podrían explicar un p = 0.08 además de "no hay efecto"?
+
+**3. Trade-off entre errores**
+
+¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según estos contextos:
+
+a) Aprobar un medicamento inefectivo vs. rechazar uno efectivo
+b) Condenar a un inocente vs. absolver a un culpable
+c) Implementar una política pública sin efecto vs. no implementar una efectiva
+
+**Aplicados:**
+
+**4. Formulación de hipótesis**
+
+Para cada pregunta de investigación, formula $H_0$ y $H_1$, indica si es prueba unilateral o bilateral, y justifica:
+
+a) ¿La participación electoral en Chile es menor al 50%?
+b) ¿Existe diferencia en confianza institucional entre hombres y mujeres?
+c) ¿Los países con mayor PIB per cápita tienen mayor democracia?
+
+**5. Cálculo e interpretación de valor p**
+
+Una encuesta con n=400 encuentra que 58% apoya una reforma. La proporción histórica de apoyo es 50%.
+
+```{r eval=FALSE}
+# Realiza la prueba de hipótesis
+prop.test(x = 232, n = 400, p = 0.5, alternative = "two.sided")
+```
+
+a) Formula $H_0$ y $H_1$
+b) Calcula el estadístico z manualmente
+c) Interpreta el valor p obtenido
+d) ¿Qué concluyes con α = 0.05? ¿Y con α = 0.01?
+
+**6. Significancia estadística vs. práctica**
+
+Un estudio con n=10,000 encuentra que un programa aumentó la participación electoral de 45.0% a 45.8% (p < 0.001).
+
+a) ¿Es estadísticamente significativo? ¿Por qué?
+b) ¿Es prácticamente significativo? Justifica
+c) ¿Cómo influye el tamaño muestral en estos resultados?
+d) ¿Qué recomendarías al investigador para reportar este hallazgo?
+
+**7. Simulación de errores**
+
+```{r eval=FALSE}
+# Simula 1000 pruebas cuando H0 es verdadera (no hay efecto real)
+set.seed(2024)
+p_valores <- replicate(1000, {
+  muestra <- rnorm(50, mean = 0, sd = 1)  # H0 verdadera: mu = 0
+  t.test(muestra, mu = 0)$p.value
+})
+
+# ¿Cuántos rechazan H0 con alpha = 0.05?
+sum(p_valores < 0.05)
+```
+
+a) Ejecuta la simulación. ¿Aproximadamente cuántas pruebas rechazan $H_0$?
+b) ¿Qué tipo de error representa cada rechazo?
+c) ¿Por qué el número es cercano a 50?
+d) Repite con α = 0.01. ¿Cuántos rechazos esperarías?
 
 ---
 
 ## Capítulo 10: Comparación de medias {#ejercicios-cap10}
 
 
-1. Compara los ingresos promedio entre dos regiones de Chile usando una prueba t.
+**Conceptuales:**
 
-2. Realiza un ANOVA para comparar niveles de participación electoral entre 4 países latinoamericanos.
+**1. Selección de prueba**
 
-3. Verifica los supuestos de normalidad y homogeneidad de varianzas para tus datos.
+Para cada situación, indica qué prueba usarías (t una muestra, t dos muestras independientes, t pareada, o ANOVA) y justifica:
+
+a) Comparar satisfacción con la democracia entre votantes de izquierda y derecha
+b) Evaluar si el promedio de confianza institucional en Chile difiere del promedio regional (5.0)
+c) Medir cambio en actitudes hacia inmigración antes y después de ver un documental
+d) Comparar participación electoral entre cinco regiones de Chile
+
+**2. Supuestos**
+
+¿Qué supuestos debe cumplir una prueba t para dos muestras independientes? Para cada supuesto:
+
+a) Explica qué significa
+b) Describe cómo verificarlo
+c) Indica qué alternativa usar si no se cumple
+
+**Aplicados:**
+
+**3. Prueba t para una muestra**
+
+El promedio nacional de años de escolaridad es 12.5 años. Una muestra de 80 personas en una comuna rural tiene $\bar{x} = 10.8$ años con $s = 3.2$.
+
+```{r eval=FALSE}
+# Datos simulados
+set.seed(123)
+escolaridad <- rnorm(80, mean = 10.8, sd = 3.2)
+
+# Prueba t de una muestra
+t.test(escolaridad, mu = 12.5)
+```
+
+a) Formula $H_0$ y $H_1$
+b) Calcula el estadístico t manualmente
+c) Interpreta el resultado
+d) Construye un IC 95% para la media de la comuna
+
+**4. Prueba t para dos muestras independientes**
+
+Compara los ingresos promedio entre dos regiones de Chile:
+
+```{r eval=FALSE}
+# Datos simulados
+set.seed(2024)
+region_metropolitana <- rlnorm(100, meanlog = log(800), sdlog = 0.5)
+region_biobio <- rlnorm(100, meanlog = log(600), sdlog = 0.5)
+
+# Prueba t de dos muestras
+t.test(region_metropolitana, region_biobio)
+
+# Boxplot comparativo
+boxplot(region_metropolitana, region_biobio,
+        names = c("Metropolitana", "Biobío"),
+        ylab = "Ingreso (miles de pesos)")
+```
+
+a) ¿Qué hipótesis estás probando?
+b) Interpreta el valor p y el intervalo de confianza
+c) ¿La diferencia es estadísticamente significativa? ¿Es prácticamente importante?
+d) Verifica el supuesto de normalidad con histogramas
+
+**5. Prueba t pareada**
+
+Investigadores miden actitudes hacia la democracia (escala 1-10) antes y después de un curso de educación cívica:
+
+```{r eval=FALSE}
+set.seed(456)
+n <- 35
+antes <- rnorm(n, mean = 5.5, sd = 1.8)
+despues <- antes + rnorm(n, mean = 0.7, sd = 1.0)
+
+# Prueba t pareada
+t.test(despues, antes, paired = TRUE)
+
+# Visualizar diferencias
+diferencias <- despues - antes
+hist(diferencias, main = "Distribución de cambios individuales",
+     xlab = "Cambio en actitud (después - antes)")
+abline(v = 0, col = "red", lty = 2)
+```
+
+a) ¿Por qué usamos prueba pareada y no independiente?
+b) Interpreta el resultado
+c) ¿Qué porcentaje de participantes mejoró su actitud?
+d) ¿Qué limitaciones tiene este diseño para inferir causalidad?
+
+**6. ANOVA**
+
+Compara satisfacción con servicios públicos (escala 1-7) según nivel socioeconómico:
+
+```{r eval=FALSE}
+set.seed(789)
+datos <- data.frame(
+  satisfaccion = c(
+    rnorm(50, mean = 3.2, sd = 1.1),  # NSE bajo
+    rnorm(50, mean = 4.1, sd = 1.0),  # NSE medio
+    rnorm(50, mean = 5.0, sd = 0.9)   # NSE alto
+  ),
+  nse = rep(c("Bajo", "Medio", "Alto"), each = 50)
+)
+
+# ANOVA
+modelo <- aov(satisfaccion ~ nse, data = datos)
+summary(modelo)
+
+# Post-hoc
+TukeyHSD(modelo)
+```
+
+a) Formula $H_0$ y $H_1$ para el ANOVA
+b) Interpreta el resultado del ANOVA
+c) ¿Entre qué grupos específicos hay diferencias significativas?
+d) Crea un boxplot comparativo de los tres grupos
+
+**7. Verificación de supuestos**
+
+Con los datos del ejercicio 6:
+
+```{r eval=FALSE}
+# Normalidad por grupo
+by(datos$satisfaccion, datos$nse, shapiro.test)
+
+# Homogeneidad de varianzas
+bartlett.test(satisfaccion ~ nse, data = datos)
+```
+
+a) ¿Se cumple el supuesto de normalidad en cada grupo?
+b) ¿Se cumple el supuesto de homogeneidad de varianzas?
+c) Si no se cumplieran, ¿qué alternativa no paramétrica usarías?
+d) Realiza la prueba de Kruskal-Wallis y compara con el ANOVA
 
 ---
 
 ## Capítulo 11: Regresión bivariada {#ejercicios-cap11}
 
 
-1. Calcula la correlación entre años de educación e ingreso. Interpreta el resultado.
+**Conceptuales:**
 
-2. Estima un modelo de regresión para predecir participación electoral a partir de nivel educacional promedio por comuna.
+**1. Correlación vs. causalidad**
 
-3. Interpreta los coeficientes y el $R^2$ del modelo estimado en el ejercicio 2.
+Discute por qué una correlación alta entre venta de helados y ahogamientos NO implica causalidad:
 
-4. Discute por qué una correlación alta entre helado y ahogamientos NO implica causalidad.
+a) ¿Qué variable confusora explica la correlación?
+b) Propón otro ejemplo de correlación espuria en ciencias sociales
+c) ¿Qué condiciones se necesitarían para establecer causalidad?
+
+**2. Interpretación de coeficientes**
+
+Un modelo de regresión estima: $\widehat{Ingreso} = 200 + 50 \times Educación$
+
+a) Interpreta el intercepto (200). ¿Tiene sentido sustantivo?
+b) Interpreta la pendiente (50)
+c) ¿Cuál sería el ingreso predicho para alguien con 12 años de educación?
+d) ¿Y para alguien con 16 años?
+
+**3. Limitaciones de $R^2$**
+
+Un investigador encuentra $R^2 = 0.85$ en la relación entre PIB per cápita y expectativa de vida en 20 países.
+
+a) Interpreta este $R^2$
+b) ¿Significa que el PIB causa mayor expectativa de vida? ¿Por qué?
+c) ¿Qué variables omitidas podrían explicar parte de esta relación?
+
+**Aplicados:**
+
+**4. Correlación de Pearson**
+
+Calcula e interpreta la correlación entre años de educación e ingreso:
+
+```{r eval=FALSE}
+set.seed(2024)
+n <- 100
+educacion <- round(rnorm(n, mean = 12, sd = 3))
+ingreso <- 200 + 45 * educacion + rnorm(n, mean = 0, sd = 80)
+
+# Correlación
+cor(educacion, ingreso)
+
+# Test de significancia
+cor.test(educacion, ingreso)
+
+# Scatter plot
+plot(educacion, ingreso,
+     xlab = "Años de educación",
+     ylab = "Ingreso (miles)",
+     main = "Relación educación-ingreso")
+```
+
+a) Calcula e interpreta el coeficiente de correlación
+b) ¿Es estadísticamente significativo? Interpreta el valor p
+c) ¿Qué porcentaje de la varianza en ingreso está asociado con educación? (Pista: $r^2$)
+
+**5. Regresión lineal simple**
+
+Estima un modelo de regresión para predecir participación electoral a partir de educación promedio por comuna:
+
+```{r eval=FALSE}
+set.seed(123)
+n_comunas <- 50
+educacion_prom <- rnorm(n_comunas, mean = 11, sd = 2)
+participacion <- 30 + 3.5 * educacion_prom + rnorm(n_comunas, mean = 0, sd = 5)
+
+# Modelo de regresión
+modelo <- lm(participacion ~ educacion_prom)
+summary(modelo)
+
+# Gráfico con línea de regresión
+plot(educacion_prom, participacion,
+     xlab = "Educación promedio (años)",
+     ylab = "Participación electoral (%)")
+abline(modelo, col = "red", lwd = 2)
+```
+
+a) Escribe la ecuación del modelo estimado
+b) Interpreta el intercepto y la pendiente
+c) Interpreta el $R^2$
+d) ¿El coeficiente de educación es significativo? ¿A qué nivel de significancia?
+
+**6. Predicción y residuos**
+
+Con el modelo del ejercicio 5:
+
+```{r eval=FALSE}
+# Predicciones
+nuevos_datos <- data.frame(educacion_prom = c(8, 12, 15))
+predict(modelo, newdata = nuevos_datos, interval = "confidence")
+
+# Residuos
+residuos <- residuals(modelo)
+hist(residuos, main = "Distribución de residuos")
+
+# Residuos vs valores ajustados
+plot(fitted(modelo), residuos,
+     xlab = "Valores predichos",
+     ylab = "Residuos")
+abline(h = 0, col = "red", lty = 2)
+```
+
+a) Predice la participación para comunas con 8, 12 y 15 años de educación promedio
+b) ¿Qué significa el intervalo de confianza de la predicción?
+c) ¿Los residuos parecen distribuirse normalmente?
+d) ¿Se observa algún patrón en los residuos vs valores ajustados?
+
+**7. Caso aplicado: desarrollo y democracia**
+
+Analiza la relación entre PIB per cápita y nivel de democracia:
+
+```{r eval=FALSE}
+set.seed(2024)
+n_paises <- 60
+pib_pc <- exp(rnorm(n_paises, mean = 9, sd = 1))  # PIB per cápita (USD)
+democracia <- 2 + 0.5 * log(pib_pc) + rnorm(n_paises, mean = 0, sd = 1)
+democracia <- pmin(pmax(democracia, 0), 10)  # Escala 0-10
+
+datos <- data.frame(pib_pc, democracia)
+
+# Correlación
+cor(pib_pc, democracia)
+cor(log(pib_pc), democracia)  # Con log de PIB
+
+# Modelo lineal
+modelo1 <- lm(democracia ~ pib_pc, data = datos)
+modelo2 <- lm(democracia ~ log(pib_pc), data = datos)
+
+summary(modelo1)
+summary(modelo2)
+```
+
+a) Compara la correlación con PIB y con log(PIB). ¿Cuál es más fuerte?
+b) Compara los $R^2$ de ambos modelos. ¿Cuál ajusta mejor?
+c) Interpreta los coeficientes del modelo 2 (con logaritmo)
+d) ¿Estos resultados demuestran que el desarrollo económico causa democracia? Discute
+
+**8. Análisis completo**
+
+Elige un tema de tu interés y realiza un análisis de regresión bivariada completo:
+
+a) Formula una pregunta de investigación con variable dependiente e independiente
+b) Justifica teóricamente por qué esperarías una relación
+c) Obtén o simula datos apropiados
+d) Calcula correlación y estima modelo de regresión
+e) Crea visualizaciones (scatter plot con línea de regresión, residuos)
+f) Interpreta todos los resultados
+g) Discute limitaciones para inferir causalidad
 
 ---
 

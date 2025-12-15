@@ -571,19 +571,24 @@ ggplot(resumen, aes(x = pobreza_cat, y = Valor, fill = Estadistico)) +
 
 ## Resumen {.unnumbered}
 
-La estadística descriptiva resume datos mediante medidas numéricas y gráficos. Las medidas de tendencia central (media, mediana, moda) capturan la ubicación típica. Para distribuciones simétricas, usar la media; para asimétricas, la mediana es más robusta.
+| Concepto | Descripción | Función en R |
+|----------|-------------|--------------|
+| **Media** | Promedio aritmético; sensible a outliers | `mean(x)` |
+| **Mediana** | Valor central; robusta a outliers | `median(x)` |
+| **Moda** | Valor más frecuente | `table(x)` |
+| **Rango** | Diferencia máximo - mínimo | `range(x)` |
+| **Varianza** | Promedio de desviaciones al cuadrado | `var(x)` |
+| **Desviación estándar** | Raíz de varianza; en unidades originales | `sd(x)` |
+| **IQR** | Rango intercuartílico (Q3 - Q1) | `IQR(x)` |
+| **Correlación** | Asociación lineal (-1 a 1) | `cor(x, y)` |
 
-Las medidas de dispersión (rango, IQR, varianza, desviación estándar) cuantifican variabilidad. La desviación estándar es la más usada por estar en unidades originales. El coeficiente de variación permite comparar dispersión entre variables con diferentes escalas.
+| Tipo de distribución | Medida recomendada | Gráfico |
+|----------------------|-------------------|---------|
+| Simétrica | Media, SD | Histograma |
+| Asimétrica | Mediana, IQR | Boxplot |
+| Con outliers | Mediana, IQR | Boxplot, violin plot |
 
-Los percentiles y cuartiles dividen la distribución en partes iguales. El resumen de cinco números (mínimo, Q1, mediana, Q3, máximo) captura ubicación y dispersión, visualizado en boxplots.
-
-La forma de la distribución se caracteriza por asimetría (skewness) y curtosis. Distribuciones asimétricas tienen colas desbalanceadas; la curtosis mide peso de las colas.
-
-Los gráficos exploratorios (histogramas, boxplots, densidades, violin plots) revelan patrones que los estadísticos numéricos pueden ocultar. Los outliers requieren investigación—nunca eliminarlos automáticamente.
-
-Para relaciones bivariadas, la covarianza mide asociación conjunta pero depende de escalas. La correlación de Pearson estandariza la covarianza y varía entre -1 y 1, midiendo asociación lineal.
-
-La estadística descriptiva es exploratoria. Revela patrones, sugiere hipótesis, detecta problemas de datos. Pero no prueba nada—eso requiere inferencia estadística (Capítulos siguientes).
+**Nota:** La estadística descriptiva es exploratoria. No prueba hipótesis—eso requiere inferencia estadística.
 
 ## Lecturas recomendadas {.unnumbered}
 

@@ -573,15 +573,24 @@ Un documento típico tiene un encabezado YAML (título, autor, formato de salida
 
 ## Resumen {.unnumbered}
 
-Los datos de ciencias políticas varían en estructura (corte transversal, series temporales, panel, jerárquicos), granularidad (micro, meso, macro) y fuente (primarios, secundarios, administrativos, digitales). Cada tipo tiene ventajas y limitaciones.
+| Concepto | Descripción |
+|----------|-------------|
+| **Estructuras de datos** | Corte transversal (un momento), series temporales (un caso, varios tiempos), panel (varios casos y tiempos), jerárquicos (anidados) |
+| **Granularidad** | Micro (individuos), meso (organizaciones), macro (países/regiones) |
+| **Fuentes** | Primarios (propios), secundarios (existentes), administrativos (gobierno), digitales (web/redes) |
+| **Calidad de datos** | Validez, confiabilidad, cobertura, precisión, actualidad, accesibilidad |
+| **Problemas comunes** | Datos faltantes, errores de medición, codificación inconsistente, outliers, duplicados |
 
-Evaluar calidad de datos es crucial: validez, confiabilidad, cobertura, precisión, actualidad, accesibilidad. Problemas comunes incluyen datos faltantes, errores de medición, codificación inconsistente, outliers y duplicados.
+| Operación | Función en R | Paquete |
+|-----------|--------------|---------|
+| Importar CSV | `read_csv()` | readr |
+| Importar Stata/SPSS | `read_dta()`, `read_sav()` | haven |
+| Seleccionar variables | `select()` | dplyr |
+| Filtrar casos | `filter()` | dplyr |
+| Crear variables | `mutate()` | dplyr |
+| Agrupar y resumir | `group_by() %>% summarise()` | dplyr |
 
-R y RStudio proveen un entorno poderoso y reproducible para análisis cuantitativo. Los datos pueden importarse desde múltiples formatos (CSV, Excel, Stata, SPSS, bases de datos, URLs). Los paquetes `readr`, `haven`, `readxl` y `foreign` facilitan importación.
-
-La manipulación de datos involucra inspeccionar, seleccionar variables, filtrar casos, crear nuevas variables, recodificar, ordenar, agregar y unir datasets. El paquete `dplyr` (parte de tidyverse) provee funciones intuitivas para estas operaciones.
-
-Exportar datos procesados en formatos apropiados preserva trabajo y facilita colaboración. El flujo de trabajo reproducible —usando scripts, documentando código, manteniendo organización clara, nunca modificando datos originales— es esencial para investigación rigurosa.
+**Flujo reproducible:** Usar scripts, documentar código, organización clara, nunca modificar datos originales.
 
 ## Lecturas recomendadas {.unnumbered}
 

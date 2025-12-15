@@ -424,15 +424,23 @@ cat("\n\nNúmero de 'significativos' (p < 0.05):", sum(valores_p < 0.05))
 
 ## Resumen {.unnumbered}
 
-Las pruebas de hipótesis evalúan si un patrón observado en los datos podría deberse al azar. La lógica es de reducción al absurdo: asumimos que no hay efecto ($H_0$) y preguntamos qué tan probable sería observar nuestros datos bajo ese supuesto.
+| Concepto | Descripción |
+|----------|-------------|
+| **$H_0$ (hipótesis nula)** | No hay efecto/diferencia (lo que buscamos rechazar) |
+| **$H_1$ (hipótesis alternativa)** | Existe efecto/diferencia |
+| **Valor p** | Probabilidad de observar datos tan extremos si $H_0$ fuera cierta |
+| **$\alpha$ (nivel de significancia)** | Umbral para rechazar $H_0$ (típicamente 0.05) |
+| **Error Tipo I** | Rechazar $H_0$ cuando es cierta (falso positivo) |
+| **Error Tipo II** | No rechazar $H_0$ cuando es falsa (falso negativo) |
+| **Poder** | Capacidad de detectar efectos reales ($1-\beta$) |
 
-El **valor p** es la probabilidad de observar datos tan extremos como los nuestros si $H_0$ fuera cierta. NO es la probabilidad de que $H_0$ sea cierta. Si $p < \alpha$ (usualmente 0.05), rechazamos $H_0$; si no, no la rechazamos (pero tampoco la "aceptamos").
+| Prueba | Uso | Función en R |
+|--------|-----|--------------|
+| **Prueba t** | Comparar medias | `t.test()` |
+| **Chi-cuadrado** | Asociación entre categóricas | `chisq.test()` |
+| **Prueba z** | Proporciones (n grande) | `prop.test()` |
 
-Existen dos tipos de error: **Tipo I** (rechazar $H_0$ cuando es cierta, controlado por $\alpha$) y **Tipo II** (no rechazar $H_0$ cuando es falsa, probabilidad $\beta$). El **poder** ($1-\beta$) es nuestra capacidad de detectar efectos reales.
-
-Las pruebas más comunes incluyen la **prueba t** (para comparar medias) y **chi-cuadrado** (para asociación entre variables categóricas). En R, usamos `t.test()` y `chisq.test()`.
-
-La distinción crucial es entre **significancia estadística** (el efecto probablemente no es cero) y **significancia sustantiva** (el efecto es lo suficientemente grande para importar). Siempre reporta el tamaño del efecto y los intervalos de confianza, no solo el valor p
+**Importante:** Significancia estadística $\neq$ significancia práctica. Siempre reportar tamaño del efecto e intervalos de confianza.
 
 ## Lecturas recomendadas {.unnumbered}
 

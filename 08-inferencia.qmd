@@ -598,8 +598,9 @@ ggplot(resultados_plot, aes(y = muestra)) +
   )
 ```
 
-::: {.importante}
-**Mensaje clave**: El "95%" NO se refiere a una muestra individual, sino al **procedimiento**. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían $\mu$. Para cualquier muestra específica, o contiene $\mu$ o no (pero no sabemos cuál).
+::: {.callout-important}
+## Mensaje clave
+El "95%" NO se refiere a una muestra individual, sino al **procedimiento**. Si lo repitiéramos infinitas veces, 95% de los intervalos contendrían $\mu$. Para cualquier muestra específica, o contiene $\mu$ o no (pero no sabemos cuál).
 :::
 
 ## Resumen {.unnumbered}

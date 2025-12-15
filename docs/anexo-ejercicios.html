@@ -939,29 +939,330 @@ window.Quarto = {
 </section>
 <section id="ejercicios-cap9" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-cap9">Capítulo 9: Pruebas de hipótesis</h2>
-<ol type="1">
-<li><p>Explica la diferencia entre “no rechazar <span class="math inline">\(H_0\)</span>” y “aceptar <span class="math inline">\(H_0\)</span>”.</p></li>
-<li><p>Un investigador reporta: “El valor p fue 0.08, por lo tanto no hay efecto.” ¿Qué está mal?</p></li>
-<li><p>¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según el contexto.</p></li>
+<p><strong>Conceptuales:</strong></p>
+<p><strong>1. Interpretación de hipótesis</strong></p>
+<p>Explica la diferencia entre “no rechazar <span class="math inline">\(H_0\)</span>” y “aceptar <span class="math inline">\(H_0\)</span>”. ¿Por qué la distinción es importante para la interpretación de resultados?</p>
+<p><strong>2. Errores comunes en reportes</strong></p>
+<p>Un investigador reporta: “El valor p fue 0.08, por lo tanto no hay efecto.”</p>
+<ol type="a">
+<li>¿Qué está mal con esta interpretación?</li>
+<li>¿Cómo debería reportarse correctamente este resultado?</li>
+<li>¿Qué factores podrían explicar un p = 0.08 además de “no hay efecto”?</li>
+</ol>
+<p><strong>3. Trade-off entre errores</strong></p>
+<p>¿Qué es más grave: Error Tipo I o Error Tipo II? Discute según estos contextos:</p>
+<ol type="a">
+<li>Aprobar un medicamento inefectivo vs.&nbsp;rechazar uno efectivo</li>
+<li>Condenar a un inocente vs.&nbsp;absolver a un culpable</li>
+<li>Implementar una política pública sin efecto vs.&nbsp;no implementar una efectiva</li>
+</ol>
+<p><strong>Aplicados:</strong></p>
+<p><strong>4. Formulación de hipótesis</strong></p>
+<p>Para cada pregunta de investigación, formula <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span>, indica si es prueba unilateral o bilateral, y justifica:</p>
+<ol type="a">
+<li>¿La participación electoral en Chile es menor al 50%?</li>
+<li>¿Existe diferencia en confianza institucional entre hombres y mujeres?</li>
+<li>¿Los países con mayor PIB per cápita tienen mayor democracia?</li>
+</ol>
+<p><strong>5. Cálculo e interpretación de valor p</strong></p>
+<p>Una encuesta con n=400 encuentra que 58% apoya una reforma. La proporción histórica de apoyo es 50%.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Realiza la prueba de hipótesis</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="at">x =</span> <span class="dv">232</span>, <span class="at">n =</span> <span class="dv">400</span>, <span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Formula <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></li>
+<li>Calcula el estadístico z manualmente</li>
+<li>Interpreta el valor p obtenido</li>
+<li>¿Qué concluyes con α = 0.05? ¿Y con α = 0.01?</li>
+</ol>
+<p><strong>6. Significancia estadística vs.&nbsp;práctica</strong></p>
+<p>Un estudio con n=10,000 encuentra que un programa aumentó la participación electoral de 45.0% a 45.8% (p &lt; 0.001).</p>
+<ol type="a">
+<li>¿Es estadísticamente significativo? ¿Por qué?</li>
+<li>¿Es prácticamente significativo? Justifica</li>
+<li>¿Cómo influye el tamaño muestral en estos resultados?</li>
+<li>¿Qué recomendarías al investigador para reportar este hallazgo?</li>
+</ol>
+<p><strong>7. Simulación de errores</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simula 1000 pruebas cuando H0 es verdadera (no hay efecto real)</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>p_valores <span class="ot">&lt;-</span> <span class="fu">replicate</span>(<span class="dv">1000</span>, {</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  muestra <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)  <span class="co"># H0 verdadera: mu = 0</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t.test</span>(muestra, <span class="at">mu =</span> <span class="dv">0</span>)<span class="sc">$</span>p.value</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ¿Cuántos rechazan H0 con alpha = 0.05?</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(p_valores <span class="sc">&lt;</span> <span class="fl">0.05</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Ejecuta la simulación. ¿Aproximadamente cuántas pruebas rechazan <span class="math inline">\(H_0\)</span>?</li>
+<li>¿Qué tipo de error representa cada rechazo?</li>
+<li>¿Por qué el número es cercano a 50?</li>
+<li>Repite con α = 0.01. ¿Cuántos rechazos esperarías?</li>
 </ol>
 <hr>
 </section>
 <section id="ejercicios-cap10" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-cap10">Capítulo 10: Comparación de medias</h2>
-<ol type="1">
-<li><p>Compara los ingresos promedio entre dos regiones de Chile usando una prueba t.</p></li>
-<li><p>Realiza un ANOVA para comparar niveles de participación electoral entre 4 países latinoamericanos.</p></li>
-<li><p>Verifica los supuestos de normalidad y homogeneidad de varianzas para tus datos.</p></li>
+<p><strong>Conceptuales:</strong></p>
+<p><strong>1. Selección de prueba</strong></p>
+<p>Para cada situación, indica qué prueba usarías (t una muestra, t dos muestras independientes, t pareada, o ANOVA) y justifica:</p>
+<ol type="a">
+<li>Comparar satisfacción con la democracia entre votantes de izquierda y derecha</li>
+<li>Evaluar si el promedio de confianza institucional en Chile difiere del promedio regional (5.0)</li>
+<li>Medir cambio en actitudes hacia inmigración antes y después de ver un documental</li>
+<li>Comparar participación electoral entre cinco regiones de Chile</li>
+</ol>
+<p><strong>2. Supuestos</strong></p>
+<p>¿Qué supuestos debe cumplir una prueba t para dos muestras independientes? Para cada supuesto:</p>
+<ol type="a">
+<li>Explica qué significa</li>
+<li>Describe cómo verificarlo</li>
+<li>Indica qué alternativa usar si no se cumple</li>
+</ol>
+<p><strong>Aplicados:</strong></p>
+<p><strong>3. Prueba t para una muestra</strong></p>
+<p>El promedio nacional de años de escolaridad es 12.5 años. Una muestra de 80 personas en una comuna rural tiene <span class="math inline">\(\bar{x} = 10.8\)</span> años con <span class="math inline">\(s = 3.2\)</span>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>escolaridad <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="fl">10.8</span>, <span class="at">sd =</span> <span class="fl">3.2</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t de una muestra</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(escolaridad, <span class="at">mu =</span> <span class="fl">12.5</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Formula <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span></li>
+<li>Calcula el estadístico t manualmente</li>
+<li>Interpreta el resultado</li>
+<li>Construye un IC 95% para la media de la comuna</li>
+</ol>
+<p><strong>4. Prueba t para dos muestras independientes</strong></p>
+<p>Compara los ingresos promedio entre dos regiones de Chile:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>region_metropolitana <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">800</span>), <span class="at">sdlog =</span> <span class="fl">0.5</span>)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>region_biobio <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">100</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">600</span>), <span class="at">sdlog =</span> <span class="fl">0.5</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t de dos muestras</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(region_metropolitana, region_biobio)</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(region_metropolitana, region_biobio,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"Metropolitana"</span>, <span class="st">"Biobío"</span>),</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Ingreso (miles de pesos)"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>¿Qué hipótesis estás probando?</li>
+<li>Interpreta el valor p y el intervalo de confianza</li>
+<li>¿La diferencia es estadísticamente significativa? ¿Es prácticamente importante?</li>
+<li>Verifica el supuesto de normalidad con histogramas</li>
+</ol>
+<p><strong>5. Prueba t pareada</strong></p>
+<p>Investigadores miden actitudes hacia la democracia (escala 1-10) antes y después de un curso de educación cívica:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">456</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">35</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="fl">5.5</span>, <span class="at">sd =</span> <span class="fl">1.8</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="fl">0.7</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizar diferencias</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>diferencias <span class="ot">&lt;-</span> despues <span class="sc">-</span> antes</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diferencias, <span class="at">main =</span> <span class="st">"Distribución de cambios individuales"</span>,</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Cambio en actitud (después - antes)"</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>¿Por qué usamos prueba pareada y no independiente?</li>
+<li>Interpreta el resultado</li>
+<li>¿Qué porcentaje de participantes mejoró su actitud?</li>
+<li>¿Qué limitaciones tiene este diseño para inferir causalidad?</li>
+</ol>
+<p><strong>6. ANOVA</strong></p>
+<p>Compara satisfacción con servicios públicos (escala 1-7) según nivel socioeconómico:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">789</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">3.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># NSE bajo</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.1</span>, <span class="at">sd =</span> <span class="fl">1.0</span>),  <span class="co"># NSE medio</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">5.0</span>, <span class="at">sd =</span> <span class="fl">0.9</span>)   <span class="co"># NSE alto</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">nse =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Bajo"</span>, <span class="st">"Medio"</span>, <span class="st">"Alto"</span>), <span class="at">each =</span> <span class="dv">50</span>)</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA</span></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">aov</span>(satisfaccion <span class="sc">~</span> nse, <span class="at">data =</span> datos)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Post-hoc</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Formula <span class="math inline">\(H_0\)</span> y <span class="math inline">\(H_1\)</span> para el ANOVA</li>
+<li>Interpreta el resultado del ANOVA</li>
+<li>¿Entre qué grupos específicos hay diferencias significativas?</li>
+<li>Crea un boxplot comparativo de los tres grupos</li>
+</ol>
+<p><strong>7. Verificación de supuestos</strong></p>
+<p>Con los datos del ejercicio 6:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Normalidad por grupo</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">by</span>(datos<span class="sc">$</span>satisfaccion, datos<span class="sc">$</span>nse, shapiro.test)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Homogeneidad de varianzas</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="fu">bartlett.test</span>(satisfaccion <span class="sc">~</span> nse, <span class="at">data =</span> datos)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>¿Se cumple el supuesto de normalidad en cada grupo?</li>
+<li>¿Se cumple el supuesto de homogeneidad de varianzas?</li>
+<li>Si no se cumplieran, ¿qué alternativa no paramétrica usarías?</li>
+<li>Realiza la prueba de Kruskal-Wallis y compara con el ANOVA</li>
 </ol>
 <hr>
 </section>
 <section id="ejercicios-cap11" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios-cap11">Capítulo 11: Regresión bivariada</h2>
-<ol type="1">
-<li><p>Calcula la correlación entre años de educación e ingreso. Interpreta el resultado.</p></li>
-<li><p>Estima un modelo de regresión para predecir participación electoral a partir de nivel educacional promedio por comuna.</p></li>
-<li><p>Interpreta los coeficientes y el <span class="math inline">\(R^2\)</span> del modelo estimado en el ejercicio 2.</p></li>
-<li><p>Discute por qué una correlación alta entre helado y ahogamientos NO implica causalidad.</p></li>
+<p><strong>Conceptuales:</strong></p>
+<p><strong>1. Correlación vs.&nbsp;causalidad</strong></p>
+<p>Discute por qué una correlación alta entre venta de helados y ahogamientos NO implica causalidad:</p>
+<ol type="a">
+<li>¿Qué variable confusora explica la correlación?</li>
+<li>Propón otro ejemplo de correlación espuria en ciencias sociales</li>
+<li>¿Qué condiciones se necesitarían para establecer causalidad?</li>
+</ol>
+<p><strong>2. Interpretación de coeficientes</strong></p>
+<p>Un modelo de regresión estima: <span class="math inline">\(\widehat{Ingreso} = 200 + 50 \times Educación\)</span></p>
+<ol type="a">
+<li>Interpreta el intercepto (200). ¿Tiene sentido sustantivo?</li>
+<li>Interpreta la pendiente (50)</li>
+<li>¿Cuál sería el ingreso predicho para alguien con 12 años de educación?</li>
+<li>¿Y para alguien con 16 años?</li>
+</ol>
+<p><strong>3. Limitaciones de <span class="math inline">\(R^2\)</span></strong></p>
+<p>Un investigador encuentra <span class="math inline">\(R^2 = 0.85\)</span> en la relación entre PIB per cápita y expectativa de vida en 20 países.</p>
+<ol type="a">
+<li>Interpreta este <span class="math inline">\(R^2\)</span></li>
+<li>¿Significa que el PIB causa mayor expectativa de vida? ¿Por qué?</li>
+<li>¿Qué variables omitidas podrían explicar parte de esta relación?</li>
+</ol>
+<p><strong>Aplicados:</strong></p>
+<p><strong>4. Correlación de Pearson</strong></p>
+<p>Calcula e interpreta la correlación entre años de educación e ingreso:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>educacion <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">12</span>, <span class="at">sd =</span> <span class="dv">3</span>))</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>ingreso <span class="ot">&lt;-</span> <span class="dv">200</span> <span class="sc">+</span> <span class="dv">45</span> <span class="sc">*</span> educacion <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">80</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlación</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(educacion, ingreso)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Test de significancia</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(educacion, ingreso)</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(educacion, ingreso,</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Años de educación"</span>,</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Ingreso (miles)"</span>,</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Relación educación-ingreso"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Calcula e interpreta el coeficiente de correlación</li>
+<li>¿Es estadísticamente significativo? Interpreta el valor p</li>
+<li>¿Qué porcentaje de la varianza en ingreso está asociado con educación? (Pista: <span class="math inline">\(r^2\)</span>)</li>
+</ol>
+<p><strong>5. Regresión lineal simple</strong></p>
+<p>Estima un modelo de regresión para predecir participación electoral a partir de educación promedio por comuna:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>n_comunas <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>educacion_prom <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n_comunas, <span class="at">mean =</span> <span class="dv">11</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>participacion <span class="ot">&lt;-</span> <span class="dv">30</span> <span class="sc">+</span> <span class="fl">3.5</span> <span class="sc">*</span> educacion_prom <span class="sc">+</span> <span class="fu">rnorm</span>(n_comunas, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">5</span>)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo de regresión</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(participacion <span class="sc">~</span> educacion_prom)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico con línea de regresión</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(educacion_prom, participacion,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Educación promedio (años)"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Participación electoral (%)"</span>)</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(modelo, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Escribe la ecuación del modelo estimado</li>
+<li>Interpreta el intercepto y la pendiente</li>
+<li>Interpreta el <span class="math inline">\(R^2\)</span></li>
+<li>¿El coeficiente de educación es significativo? ¿A qué nivel de significancia?</li>
+</ol>
+<p><strong>6. Predicción y residuos</strong></p>
+<p>Con el modelo del ejercicio 5:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Predicciones</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>nuevos_datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">educacion_prom =</span> <span class="fu">c</span>(<span class="dv">8</span>, <span class="dv">12</span>, <span class="dv">15</span>))</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="fu">predict</span>(modelo, <span class="at">newdata =</span> nuevos_datos, <span class="at">interval =</span> <span class="st">"confidence"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Residuos</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>residuos <span class="ot">&lt;-</span> <span class="fu">residuals</span>(modelo)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(residuos, <span class="at">main =</span> <span class="st">"Distribución de residuos"</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Residuos vs valores ajustados</span></span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">fitted</span>(modelo), residuos,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Valores predichos"</span>,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Residuos"</span>)</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">0</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Predice la participación para comunas con 8, 12 y 15 años de educación promedio</li>
+<li>¿Qué significa el intervalo de confianza de la predicción?</li>
+<li>¿Los residuos parecen distribuirse normalmente?</li>
+<li>¿Se observa algún patrón en los residuos vs valores ajustados?</li>
+</ol>
+<p><strong>7. Caso aplicado: desarrollo y democracia</strong></p>
+<p>Analiza la relación entre PIB per cápita y nivel de democracia:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>n_paises <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>pib_pc <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="fu">rnorm</span>(n_paises, <span class="at">mean =</span> <span class="dv">9</span>, <span class="at">sd =</span> <span class="dv">1</span>))  <span class="co"># PIB per cápita (USD)</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>democracia <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">+</span> <span class="fl">0.5</span> <span class="sc">*</span> <span class="fu">log</span>(pib_pc) <span class="sc">+</span> <span class="fu">rnorm</span>(n_paises, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>democracia <span class="ot">&lt;-</span> <span class="fu">pmin</span>(<span class="fu">pmax</span>(democracia, <span class="dv">0</span>), <span class="dv">10</span>)  <span class="co"># Escala 0-10</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pib_pc, democracia)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Correlación</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(pib_pc, democracia)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(<span class="fu">log</span>(pib_pc), democracia)  <span class="co"># Con log de PIB</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Modelo lineal</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>modelo1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(democracia <span class="sc">~</span> pib_pc, <span class="at">data =</span> datos)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>modelo2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(democracia <span class="sc">~</span> <span class="fu">log</span>(pib_pc), <span class="at">data =</span> datos)</span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo1)</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo2)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ol type="a">
+<li>Compara la correlación con PIB y con log(PIB). ¿Cuál es más fuerte?</li>
+<li>Compara los <span class="math inline">\(R^2\)</span> de ambos modelos. ¿Cuál ajusta mejor?</li>
+<li>Interpreta los coeficientes del modelo 2 (con logaritmo)</li>
+<li>¿Estos resultados demuestran que el desarrollo económico causa democracia? Discute</li>
+</ol>
+<p><strong>8. Análisis completo</strong></p>
+<p>Elige un tema de tu interés y realiza un análisis de regresión bivariada completo:</p>
+<ol type="a">
+<li>Formula una pregunta de investigación con variable dependiente e independiente</li>
+<li>Justifica teóricamente por qué esperarías una relación</li>
+<li>Obtén o simula datos apropiados</li>
+<li>Calcula correlación y estima modelo de regresión</li>
+<li>Crea visualizaciones (scatter plot con línea de regresión, residuos)</li>
+<li>Interpreta todos los resultados</li>
+<li>Discute limitaciones para inferir causalidad</li>
 </ol>
 <hr>
 

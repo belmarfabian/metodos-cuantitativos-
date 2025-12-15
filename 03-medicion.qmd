@@ -138,15 +138,21 @@ Cuando quienes no responden difieren sistemáticamente de quienes responden, las
 
 ## Resumen {.unnumbered}
 
-La medición traduce conceptos abstractos en indicadores empíricos. Este proceso involucra conceptualización (definir el concepto) y operacionalización (especificar procedimientos de medición). Cada paso implica decisiones que afectan qué capturamos.
+| Concepto | Descripción |
+|----------|-------------|
+| **Conceptualización** | Definir qué entendemos por un término abstracto |
+| **Operacionalización** | Traducir el concepto en procedimientos de medición |
+| **Validez** | ¿La medida captura el concepto que pretende medir? |
+| **Confiabilidad** | ¿La medición es consistente al repetirse? |
 
-Las variables tienen niveles de medición (nominal, ordinal, intervalo, razón) que determinan qué operaciones estadísticas son apropiadas. Confundir niveles produce resultados sin sentido.
+| Nivel de medición | Características | Operaciones válidas |
+|-------------------|-----------------|---------------------|
+| **Nominal** | Categorías sin orden | Frecuencias, igualdad |
+| **Ordinal** | Categorías ordenadas | + ordenar, medianas |
+| **Intervalo** | Distancias constantes | + promedios, diferencias |
+| **Razón** | Cero absoluto | Todas las operaciones |
 
-Buenas mediciones son válidas (capturan el concepto teórico) y confiables (consistentes). Es posible tener una sin la otra, pero idealmente queremos ambas.
-
-Los conceptos latentes y multidimensionales requieren índices o escalas. Estos pueden construirse mediante agregación simple, ponderación, o análisis factorial. Los índices existentes en ciencias políticas ofrecen comparabilidad pero imponen conceptualizaciones.
-
-La medición enfrenta problemas sistemáticos: sesgos de deseabilidad social y aquiescencia, no-respuesta diferencial, efectos de modo de encuesta, y errores de medición aleatorios o sistemáticos. Reconocer y, cuando es posible, mitigar estos problemas es responsabilidad del investigador.
+**Problemas comunes:** Sesgo de deseabilidad social, sesgo de aquiescencia, no-respuesta diferencial.
 
 ## Lecturas recomendadas {.unnumbered}
 

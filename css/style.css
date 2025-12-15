@@ -33,10 +33,10 @@
 
 .nivel::before {
   font-weight: bold;
-  text-transform: uppercase;
   font-size: 0.85em;
   display: block;
   margin-bottom: 10px;
+  letter-spacing: 0.5px;
 }
 
 .nivel[data-nivel="introductorio"]::before {

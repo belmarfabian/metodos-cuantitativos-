@@ -32,7 +32,7 @@ Una vez formulada la pregunta, necesitamos una respuesta tentativa —una **hip�
 
 Las hipótesis provienen de teorías sobre cómo funciona el mundo social mediante un proceso deductivo: **Teoría** → **Mecanismo causal** → **Implicación observable** → **Hipótesis**. Por ejemplo: la teoría de que los sistemas electorales proporcionales reducen barreras de entrada para partidos pequeños [@lijphart1994] implica que en distritos grandes, partidos pequeños pueden obtener escaños con porcentajes bajos de votos, incentivando su formación, por lo que deberíamos observar más partidos en parlamentos elegidos con distritos grandes, generando la hipótesis testeable "a mayor magnitud promedio de distrito, mayor número efectivo de partidos parlamentarios". Este encadenamiento lógico es crucial: cuando testeamos hipótesis, estamos evaluando indirectamente la teoría subyacente.
 
-En estadística inferencial (Capítulo \@ref(hipotesis)), formalizamos dos tipos de hipótesis: la **hipótesis nula (H₀)** que afirma ausencia de relación o efecto, y la **hipótesis alternativa (H₁)** que afirma existencia de relación o efecto.[^h0-h1] El procedimiento estadístico evalúa si los datos son suficientemente inconsistentes con H₀ como para rechazarla en favor de H₁.
+En estadística inferencial ([Capítulo 9](#hipotesis)), formalizamos dos tipos de hipótesis: la **hipótesis nula (H₀)** que afirma ausencia de relación o efecto, y la **hipótesis alternativa (H₁)** que afirma existencia de relación o efecto.[^h0-h1] El procedimiento estadístico evalúa si los datos son suficientemente inconsistentes con H₀ como para rechazarla en favor de H₁.
 
 [^h0-h1]: H₀ no es "la hipótesis que queremos refutar". Es simplemente el escenario de referencia. No "probamos" H₁; solo rechazamos o fallamos en rechazar H₀. Esta lógica asimétrica es fundamental para entender tests de hipótesis.
 
@@ -148,17 +148,20 @@ Debemos evitar dos falacias al cambiar de nivel de análisis. La **falacia ecol�
 
 ## Resumen {.unnumbered}
 
-El diseño de investigación es el plan para responder preguntas de investigación. Buenas preguntas son específicas, empíricamente respondibles, y relevantes teórica o prácticamente. Pueden ser descriptivas, relacionales o causales.
+| Concepto | Descripción |
+|----------|-------------|
+| **Pregunta descriptiva** | Caracterizar fenómenos ("¿Cuál es la tasa de...?") |
+| **Pregunta relacional** | Identificar asociaciones ("¿Se relaciona X con Y?") |
+| **Pregunta causal** | Establecer causa-efecto ("¿X aumenta Y?") |
+| **Hipótesis** | Afirmación falsable derivada de teoría sobre relaciones esperadas |
+| **Validez interna** | ¿X realmente causa Y? (amenazas: confusores, causalidad inversa) |
+| **Validez externa** | ¿Los hallazgos generalizan a otros contextos? |
 
-Las hipótesis son afirmaciones falsables derivadas de teoría sobre relaciones esperadas entre variables. Conectan teoría abstracta con implicaciones observables.
-
-La inferencia causal enfrenta el problema fundamental: nunca observamos resultados contrafactuales. El marco de resultados potenciales formaliza este problema. Para inferir causalidad, necesitamos que grupos tratados y control sean comparables.
-
-Los diseños experimentales garantizan comparabilidad mediante aleatorización, logrando alta validez interna. Los diseños cuasi-experimentales explotan situaciones "naturalmente" aleatorias. Los diseños observacionales dependen de supuestos más fuertes y técnicas estadísticas para aproximar inferencia causal.
-
-Toda investigación enfrenta tensión entre validez interna (¿el efecto es causal?) y validez externa (¿generaliza?). No hay diseño perfecto; cada diseño implica compromisos.
-
-La unidad de análisis determina qué variación explotamos y qué afirmaciones justificamos. Inferir relaciones en un nivel desde datos de otro nivel (falacias ecológicas/atómicas) es problemático.
+| Diseño | Ventaja | Limitación |
+|--------|---------|------------|
+| **Experimental** | Alta validez interna (aleatorización) | Muchas preguntas no son experimentables |
+| **Cuasi-experimental** | Explota variación "natural" | Requiere supuestos sobre identificación |
+| **Observacional** | Aplicable a cualquier pregunta | Confusores no observados amenazan causalidad |
 
 ## Lecturas recomendadas {.unnumbered}
 
