@@ -528,11 +528,24 @@ Cuidado con la falacia ecológica
 <li><strong>Datos económicos</strong>: Banco Mundial, INE, CEPAL</li>
 <li><strong>Datos de instituciones</strong>: V-Dem, Polity V</li>
 </ul>
-<div class="nivel" data-nivel="avanzado">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Catálogo completo de fuentes de datos:</strong></p>
 <p><strong>Encuestas de opinión pública internacionales:</strong> - World Values Survey: Actitudes y valores en ~100 países - Latinobarómetro: 18 países latinoamericanos - AmericasBarometer (LAPOP): Actitudes políticas en las Américas</p>
 <p><strong>Datos sobre instituciones políticas:</strong> - Polity V: Características de regímenes políticos - V-Dem: Variedades de democracia, múltiples dimensiones - Database of Political Institutions (DPI): Sistemas electorales - Comparative Constitutions Project: Contenido de constituciones</p>
 <p><strong>Datos legislativos:</strong> - VoteView: Votaciones nominales del Congreso de EE.UU. - Manifesto Project: Contenido de manifiestos partidarios</p>
+</div>
+</div>
 </div>
 </section>
 <section id="calidad-de-datos" class="level3" data-number="4.1.5">
@@ -785,8 +798,18 @@ Apruebo Rechazo
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Variable "educ" tiene valores 1,2,3 con etiquetas "Primaria","Secundaria","Universitaria"</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(datos<span class="sc">$</span>educ)<span class="sc">$</span>labels</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="datos-en-línea-y-bases-de-datos" class="level3 nivel" data-nivel="avanzado" data-number="4.2.11">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<section id="datos-en-línea-y-bases-de-datos" class="level3 callout-body-container callout-body" data-number="4.2.11">
 <h3 data-number="4.2.11" class="anchored" data-anchor-id="datos-en-línea-y-bases-de-datos"><span class="header-section-number">4.2.11</span> Datos en línea y bases de datos</h3>
 <p>Muchos datos están en URLs. Importar directamente:</p>
 <div class="cell">
@@ -800,6 +823,9 @@ Apruebo Rechazo
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>con <span class="ot">&lt;-</span> <span class="fu">dbConnect</span>(RSQLite<span class="sc">::</span><span class="fu">SQLite</span>(), <span class="st">"mi_base.db"</span>)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">dbGetQuery</span>(con, <span class="st">"SELECT * FROM votaciones WHERE year = 2021"</span>)</span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dbDisconnect</span>(con)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</div>
 </div>
 </section>
 </section>
@@ -921,8 +947,18 @@ Apruebo Rechazo
 <div class="cell">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>datos_ordenado <span class="ot">&lt;-</span> <span class="fu">arrange</span>(datos, partido, edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<div class="nivel" data-nivel="avanzado">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <section id="agregar-datos-por-grupos" class="level3" data-number="4.3.8">
 <h3 data-number="4.3.8" class="anchored" data-anchor-id="agregar-datos-por-grupos"><span class="header-section-number">4.3.8</span> Agregar datos por grupos</h3>
 <p>Resumir por grupos usando el operador pipe (<code>%&gt;%</code>):</p>
@@ -952,6 +988,9 @@ Apruebo Rechazo
 </div>
 </section>
 </div>
+</div>
+</div>
+</section>
 </section>
 <section id="exportar-datos" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="exportar-datos"><span class="header-section-number">4.4</span> Exportar datos</h2>
@@ -1025,11 +1064,24 @@ Apruebo Rechazo
 <ol start="5" type="1">
 <li><strong>Usa control de versiones</strong>: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.</li>
 </ol>
-</section>
-<section id="r-markdown-y-quarto" class="level3 nivel" data-nivel="avanzado" data-number="4.4.7">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<section id="r-markdown-y-quarto" class="level3 callout-body-container callout-body" data-number="4.4.7">
 <h3 data-number="4.4.7" class="anchored" data-anchor-id="r-markdown-y-quarto"><span class="header-section-number">4.4.7</span> R Markdown y Quarto</h3>
 <p>R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.</p>
 <p>Un documento típico tiene un encabezado YAML (título, autor, formato de salida), secciones en Markdown, y bloques de código R que se ejecutan al compilar. Al hacer “Knit” o “Render”, R ejecuta el código e inserta resultados en el documento final. Si los datos cambian, el documento se actualiza automáticamente.</p>
+</section>
+</div>
+</div>
 </section>
 </section>
 <section id="resumen" class="level2 unnumbered">

@@ -85,7 +85,9 @@ Observan un caso (o pocos casos) en múltiples momentos. Permiten explotar varia
 
 Combinan ventajas de corte transversal (muchos casos) y series de tiempo (variación temporal). Permiten controlar características fijas no observadas de unidades.
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 Los datos de panel permiten usar **efectos fijos**, una técnica que controla automáticamente todas las características permanentes de cada unidad (observadas o no). Por ejemplo, @flores2019 usan datos de panel de municipios mexicanos para estudiar efecto de presencia militar sobre violencia del crimen organizado, controlando características permanentes de municipios como geografía, historia y cultura local.
 :::
 
@@ -95,7 +97,9 @@ Los datos de panel permiten usar **efectos fijos**, una técnica que controla au
 
 2. **Triangulación**: Combinar múltiples fuentes de evidencia (cuantitativa + cualitativa).
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Técnicas avanzadas de inferencia causal:**
 
 3. **Matching**: Emparejar casos tratados con controles similares en variables observables. Aproxima balance experimental, pero depende de calidad del emparejamiento.
@@ -136,7 +140,9 @@ Una decisión crucial es qué constituye un "caso" —la **unidad de análisis**
 
 La unidad de análisis determina qué variación podemos explotar y qué afirmaciones podemos hacer.
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Falacias de nivel de análisis:**
 
 Debemos evitar dos falacias al cambiar de nivel de análisis. La **falacia ecológica** [@robinson1950] ocurre al inferir relaciones individuales desde datos agregados: si comunas con más inmigrantes votan más por la derecha, ¿significa que los inmigrantes votan derecha? No necesariamente; puede ser que nativos en comunas con inmigración voten derecha reactivamente. La **falacia atómica** es el error inverso: inferir patrones agregados desde datos individuales; si individuos religiosos son más conservadores, ¿países más religiosos son más conservadores? No necesariamente, puede haber efectos contextuales.

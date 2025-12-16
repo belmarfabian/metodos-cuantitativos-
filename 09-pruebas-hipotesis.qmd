@@ -359,7 +359,9 @@ El resultado es "significativo" ($p < 0.05$), pero la diferencia de medias es so
 2. El **intervalo de confianza** (rango plausible del efecto)
 3. La **significancia práctica** (¿este efecto importa en el mundo real?)
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### Tamaño del efecto: d de Cohen
 
 Una medida estandarizada del tamaño del efecto es la **d de Cohen**:
@@ -398,7 +400,9 @@ cat("Interpretación: efecto",
 | Ignorar tamaño del efecto | Un efecto significativo puede ser irrelevante |
 :::
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### El problema de las comparaciones múltiples
 
 Si pruebas 20 hipótesis independientes con $\alpha = 0.05$, esperarías encontrar 1 resultado "significativo" por azar puro, incluso si todas las $H_0$ son ciertas.

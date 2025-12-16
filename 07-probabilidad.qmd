@@ -39,7 +39,9 @@ Existen dos interpretaciones fundamentales de qué significa "probabilidad":
 
 [^frecuentista]: Cuando un artículo reporta "p < 0.05", está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Interpretación bayesiana**: La probabilidad cuantifica **grado de creencia** o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como "¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?"). La estadística bayesiana actualiza creencias previas (prior) con nueva evidencia usando el teorema de Bayes. Es cada vez más usada en ciencias sociales, pero requiere fundamentos matemáticos adicionales.
 :::
 
@@ -248,7 +250,9 @@ El valor esperado es el promedio "teórico" de una variable aleatoria si pudiér
 
 Es importante distinguir que estos son parámetros **poblacionales** (generalmente desconocidos). Los estimamos a partir de muestras usando $\bar{x}$ y $s^2$.
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Fórmulas matemáticas del valor esperado:**
 
 - Para variable discreta: $E(X) = \sum x \cdot P(X=x)$

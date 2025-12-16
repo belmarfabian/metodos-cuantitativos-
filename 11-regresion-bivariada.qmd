@@ -66,7 +66,9 @@ El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) 
 
 $$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Fórmulas OLS:**
 
 $$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$
@@ -119,7 +121,9 @@ En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríam
 
 El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 $$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$
 :::
 

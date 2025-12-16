@@ -480,7 +480,9 @@ ggplot(df_ic, aes(y = nivel)) +
 ```
 
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### Determinación del tamaño muestral
 
 Para determinar el tamaño muestral necesario para un margen de error deseado:

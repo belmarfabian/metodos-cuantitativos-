@@ -55,7 +55,9 @@ Para ciencias sociales en Chile y América Latina, las fuentes más utilizadas i
 - **Datos económicos**: Banco Mundial, INE, CEPAL
 - **Datos de instituciones**: V-Dem, Polity V
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 **Catálogo completo de fuentes de datos:**
 
 **Encuestas de opinión pública internacionales:**
@@ -282,7 +284,9 @@ datos <- read_dta("encuesta.dta")
 attributes(datos$educ)$labels
 ```
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### Datos en línea y bases de datos
 
 Muchos datos están en URLs. Importar directamente:
@@ -451,7 +455,9 @@ Por múltiples variables:
 datos_ordenado <- arrange(datos, partido, edad)
 ```
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### Agregar datos por grupos
 
 Resumir por grupos usando el operador pipe (`%>%`):
@@ -563,7 +569,9 @@ proyecto/
 
 5. **Usa control de versiones**: Git y GitHub permiten rastrear cambios y colaborar. No es obligatorio para principiantes, pero altamente recomendable a medida que proyectos crecen.
 
-::: {.nivel data-nivel="avanzado"}
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
 ### R Markdown y Quarto
 
 R Markdown y Quarto integran código, resultados y texto en un solo documento. Permiten generar reportes reproducibles en HTML, PDF o Word.

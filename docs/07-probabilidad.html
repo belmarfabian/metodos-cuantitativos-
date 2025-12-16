@@ -410,8 +410,21 @@ window.Quarto = {
 <h3 data-number="7.1.3" class="anchored" data-anchor-id="interpretaciones-de-probabilidad"><span class="header-section-number">7.1.3</span> Interpretaciones de probabilidad</h3>
 <p>Existen dos interpretaciones fundamentales de qué significa “probabilidad”:</p>
 <p><strong>Interpretación frecuentista</strong>:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> La probabilidad es el <strong>límite de la frecuencia relativa</strong> cuando un experimento se repite infinitas veces. Por ejemplo, <span class="math inline">\(P(\text{Cara}) = 0.5\)</span> al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras. Esta es la interpretación estándar en ciencias sociales cuantitativas.</p>
-<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><div class="nivel" data-nivel="avanzado">
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Cuando un artículo reporta “p &lt; 0.05”, está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.</p></div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Interpretación bayesiana</strong>: La probabilidad cuantifica <strong>grado de creencia</strong> o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como “¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?”). La estadística bayesiana actualiza creencias previas (prior) con nueva evidencia usando el teorema de Bayes. Es cada vez más usada en ciencias sociales, pero requiere fundamentos matemáticos adicionales.</p>
+</div>
+</div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
@@ -612,13 +625,26 @@ Error común: Confundir P(A|B) con P(B|A)
 <p><strong>Varianza</strong>: <span class="math inline">\(\text{Var}(X) = \sigma^2\)</span> mide la dispersión alrededor del valor esperado.</p>
 <p><strong>Desviación estándar</strong>: <span class="math inline">\(\sigma = \sqrt{\text{Var}(X)}\)</span></p>
 <p>Es importante distinguir que estos son parámetros <strong>poblacionales</strong> (generalmente desconocidos). Los estimamos a partir de muestras usando <span class="math inline">\(\bar{x}\)</span> y <span class="math inline">\(s^2\)</span>.</p>
-<div class="nivel" data-nivel="avanzado">
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p><strong>Fórmulas matemáticas del valor esperado:</strong></p>
 <ul>
 <li>Para variable discreta: <span class="math inline">\(E(X) = \sum x \cdot P(X=x)\)</span></li>
 <li>Para variable continua: <span class="math inline">\(E(X) = \int x \cdot f(x)dx\)</span></li>
 <li>Varianza: <span class="math inline">\(\text{Var}(X) = E[(X - \mu)^2] = E(X^2) - [E(X)]^2\)</span></li>
 </ul>
+</div>
+</div>
 </div>
 </section>
 <section id="distribuciones-comunes" class="level3" data-number="7.2.4">

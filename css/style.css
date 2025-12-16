@@ -59,6 +59,30 @@
   border-left: 5px solid #7c3aed;
 }
 
+/* CALLOUT COLAPSABLE PARA CONTENIDO AVANZADO */
+.callout-avanzado {
+  background-color: #f5f3ff !important;
+  border-left-color: #7c3aed !important;
+}
+
+.callout-avanzado .callout-header {
+  background-color: #ede9fe !important;
+}
+
+.callout-avanzado .callout-title {
+  color: #7c3aed !important;
+  font-weight: bold;
+}
+
+.callout-avanzado .callout-icon::before {
+  background-color: #7c3aed !important;
+}
+
+/* Asegurar que el icono de colapso sea visible */
+.callout-avanzado .callout-toggle::before {
+  color: #7c3aed !important;
+}
+
 .nivel[data-nivel="prerequisito"]::before {
   content: "📋 Prerequisito (Repaso)";
   color: #059669;
