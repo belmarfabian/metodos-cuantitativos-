@@ -93,49 +93,60 @@
   border-left: 5px solid #059669;
 }
 
-/* REFERENCIAS - Asegurar mismo ancho que el resto del contenido */
+/* BIBLIOGRAFÍA - Compacta con título visible */
 
-#references {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.references {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Bibliografía final generada por Pandoc/CSL */
-/* Forzar que las referencias aparezcan al final del capítulo */
-/* (Quarto las oculta cuando reference-location: margin está activo) */
+#references,
+.references,
 #refs {
   display: block !important;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid #e0e0e0;
+  padding: 20px 25px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.8em;
+  line-height: 1.4;
+}
+
+/* Título "Referencias" o "Bibliografía" */
+#refs::before {
+  content: "Bibliografía";
+  display: block;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #495057;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #dee2e6;
 }
 
 .csl-bib-body {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 100%;
 }
 
 /* Estilo para las entradas bibliográficas */
-.references p {
+.references p,
+.csl-entry {
   text-align: left;
-  margin-bottom: 1em;
-  line-height: 1.6;
+  margin-bottom: 0.8em;
+  line-height: 1.5;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
 }
 
-.csl-entry {
-  margin-bottom: 1em;
-  line-height: 1.6;
+/* Dos columnas en pantallas grandes */
+@media (min-width: 900px) {
+  .csl-bib-body {
+    column-count: 2;
+    column-gap: 30px;
+  }
+
+  .csl-entry {
+    break-inside: avoid;
+  }
 }
 
 /* EJERCICIOS - Compactos, dos columnas, diferenciados del texto principal */
