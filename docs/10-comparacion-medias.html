@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -88,14 +88,15 @@ div.csl-indent {
 <link href="./09-pruebas-hipotesis.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-234273d1456647dabc34a594ac50e507.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-597958c53c93a607afca12fd375c57ed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-ce417943081eee6c5e7f11202e96346c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-737c3328614c4f1bf80657df1834dbc2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +111,7 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
+    "search-no-results-text": "No se han encontrado resultados",
     "search-matching-documents-text": "documentos encontrados",
     "search-copy-link-title": "Copiar el enlace en la búsqueda",
     "search-hide-matches-text": "Ocultar resultados adicionales",
@@ -138,7 +139,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -346,11 +347,13 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#objetivos-del-capítulo" id="toc-objetivos-del-capítulo" class="nav-link active" data-scroll-target="#objetivos-del-capítulo">Objetivos del capítulo</a></li>
-  <li><a href="#prueba-t-para-una-muestra" id="toc-prueba-t-para-una-muestra" class="nav-link" data-scroll-target="#prueba-t-para-una-muestra"><span class="header-section-number">10.1</span> Prueba t para una muestra</a></li>
-  <li><a href="#prueba-t-para-dos-muestras" id="toc-prueba-t-para-dos-muestras" class="nav-link" data-scroll-target="#prueba-t-para-dos-muestras"><span class="header-section-number">10.2</span> Prueba t para dos muestras</a></li>
-  <li><a href="#anova-comparar-más-de-dos-grupos" id="toc-anova-comparar-más-de-dos-grupos" class="nav-link" data-scroll-target="#anova-comparar-más-de-dos-grupos"><span class="header-section-number">10.3</span> ANOVA: Comparar más de dos grupos</a></li>
-  <li><a href="#supuestos-de-las-pruebas-paramétricas" id="toc-supuestos-de-las-pruebas-paramétricas" class="nav-link" data-scroll-target="#supuestos-de-las-pruebas-paramétricas"><span class="header-section-number">10.4</span> Supuestos de las pruebas paramétricas</a></li>
-  <li><a href="#qué-prueba-usar" id="toc-qué-prueba-usar" class="nav-link" data-scroll-target="#qué-prueba-usar"><span class="header-section-number">10.5</span> ¿Qué prueba usar?</a></li>
+  <li><a href="#por-qué-comparar-medias" id="toc-por-qué-comparar-medias" class="nav-link" data-scroll-target="#por-qué-comparar-medias"><span class="header-section-number">10.1</span> ¿Por qué comparar medias?</a></li>
+  <li><a href="#eligiendo-la-prueba-correcta" id="toc-eligiendo-la-prueba-correcta" class="nav-link" data-scroll-target="#eligiendo-la-prueba-correcta"><span class="header-section-number">10.2</span> Eligiendo la prueba correcta</a></li>
+  <li><a href="#prueba-t-para-una-muestra" id="toc-prueba-t-para-una-muestra" class="nav-link" data-scroll-target="#prueba-t-para-una-muestra"><span class="header-section-number">10.3</span> Prueba t para una muestra</a></li>
+  <li><a href="#prueba-t-para-dos-muestras-independientes" id="toc-prueba-t-para-dos-muestras-independientes" class="nav-link" data-scroll-target="#prueba-t-para-dos-muestras-independientes"><span class="header-section-number">10.4</span> Prueba t para dos muestras independientes</a></li>
+  <li><a href="#prueba-t-pareada" id="toc-prueba-t-pareada" class="nav-link" data-scroll-target="#prueba-t-pareada"><span class="header-section-number">10.5</span> Prueba t pareada</a></li>
+  <li><a href="#anova-comparando-más-de-dos-grupos" id="toc-anova-comparando-más-de-dos-grupos" class="nav-link" data-scroll-target="#anova-comparando-más-de-dos-grupos"><span class="header-section-number">10.6</span> ANOVA: Comparando más de dos grupos</a></li>
+  <li><a href="#supuestos-de-las-pruebas" id="toc-supuestos-de-las-pruebas" class="nav-link" data-scroll-target="#supuestos-de-las-pruebas"><span class="header-section-number">10.7</span> Supuestos de las pruebas</a></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   <li><a href="#lecturas-recomendadas" id="toc-lecturas-recomendadas" class="nav-link" data-scroll-target="#lecturas-recomendadas">Lecturas recomendadas</a></li>
   <li><a href="#ejercicios" id="toc-ejercicios" class="nav-link" data-scroll-target="#ejercicios">Ejercicios</a></li>
@@ -383,36 +386,136 @@ window.Quarto = {
 <h2 class="unnumbered anchored" data-anchor-id="objetivos-del-capítulo">Objetivos del capítulo</h2>
 <p>Al finalizar este capítulo, serás capaz de:</p>
 <ul>
-<li>Realizar pruebas t para comparar medias entre dos grupos</li>
-<li>Distinguir entre pruebas t para muestras independientes y pareadas</li>
-<li>Comprender los supuestos de las pruebas paramétricas</li>
-<li>Usar ANOVA para comparar medias de más de dos grupos</li>
-<li>Identificar cuándo usar alternativas no paramétricas</li>
+<li>Elegir la prueba correcta para comparar medias según tu situación</li>
+<li>Realizar e interpretar pruebas t para uno y dos grupos</li>
+<li>Distinguir cuándo usar pruebas para muestras independientes vs pareadas</li>
+<li>Usar ANOVA cuando tienes más de dos grupos</li>
+<li>Interpretar los resultados en lenguaje accesible</li>
 </ul>
 </section>
-<section id="prueba-t-para-una-muestra" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="prueba-t-para-una-muestra"><span class="header-section-number">10.1</span> Prueba t para una muestra</h2>
-<p>La prueba t para una muestra compara la media de una muestra con un valor teórico o poblacional.</p>
-<p><strong>Hipótesis:</strong> - <span class="math inline">\(H_0: \mu = \mu_0\)</span> - <span class="math inline">\(H_1: \mu \neq \mu_0\)</span></p>
-<p><strong>Estadístico t:</strong> <span class="math display">\[t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}\]</span></p>
+<section id="por-qué-comparar-medias" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="por-qué-comparar-medias"><span class="header-section-number">10.1</span> ¿Por qué comparar medias?</h2>
+<p>Una de las preguntas más frecuentes en ciencias sociales es si diferentes grupos difieren en alguna característica. Por ejemplo:</p>
+<ul>
+<li>¿Ganan más los hombres que las mujeres? (diferencia de ingresos)</li>
+<li>¿Cambió la satisfacción con la democracia después de una crisis? (antes/después)</li>
+<li>¿Hay diferencias en participación electoral entre regiones? (múltiples grupos)</li>
+</ul>
+<p>Para responder estas preguntas, necesitamos comparar <strong>promedios</strong> (medias) entre grupos y determinar si las diferencias observadas son <strong>estadísticamente significativas</strong> o podrían deberse al azar del muestreo.</p>
 </section>
-<section id="prueba-t-para-dos-muestras" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="prueba-t-para-dos-muestras"><span class="header-section-number">10.2</span> Prueba t para dos muestras</h2>
-<section id="muestras-independientes" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="muestras-independientes"><span class="header-section-number">10.2.1</span> Muestras independientes</h3>
-<p>Comparamos las medias de dos grupos independientes.</p>
-<p><strong>Hipótesis:</strong> - <span class="math inline">\(H_0: \mu_1 = \mu_2\)</span> - <span class="math inline">\(H_1: \mu_1 \neq \mu_2\)</span></p>
-<p><strong>Estadístico t:</strong> <span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
-<p>Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.</p>
+<section id="eligiendo-la-prueba-correcta" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="eligiendo-la-prueba-correcta"><span class="header-section-number">10.2</span> Eligiendo la prueba correcta</h2>
+<p>Antes de analizar, identifica tu situación:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 37%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pregunta</th>
+<th>Situación</th>
+<th>Prueba</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>¿Mi muestra difiere de un valor conocido?</td>
+<td>Un grupo vs valor teórico</td>
+<td>t de una muestra</td>
+</tr>
+<tr class="even">
+<td>¿Difieren dos grupos independientes?</td>
+<td>Hombres vs mujeres, tratados vs control</td>
+<td>t de dos muestras</td>
+</tr>
+<tr class="odd">
+<td>¿Cambió algo antes y después?</td>
+<td>Mismas personas medidas dos veces</td>
+<td>t pareada</td>
+</tr>
+<tr class="even">
+<td>¿Difieren tres o más grupos?</td>
+<td>Regiones, niveles educativos, etc.</td>
+<td>ANOVA</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="prueba-t-para-una-muestra" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="prueba-t-para-una-muestra"><span class="header-section-number">10.3</span> Prueba t para una muestra</h2>
+<p>Esta prueba responde: <strong>¿La media de mi muestra difiere de un valor de referencia?</strong></p>
+<section id="ejemplo-confianza-institucional-regional" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="ejemplo-confianza-institucional-regional"><span class="header-section-number">10.3.1</span> Ejemplo: Confianza institucional regional</h3>
+<p>Supongamos que el promedio nacional de confianza en las instituciones es 5.0 (en una escala de 1 a 10). Queremos saber si una región específica tiene un nivel diferente.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: Diferencia salarial por género</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos de una región</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>confianza_region <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="fl">4.3</span>, <span class="at">sd =</span> <span class="fl">1.8</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t: ¿difiere de 5.0?</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(confianza_region, <span class="at">mu =</span> <span class="fl">5.0</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>resultado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    One Sample t-test
+
+data:  confianza_region
+t = -3.828, df = 79, p-value = 0.0002572
+alternative hypothesis: true mean is not equal to 5
+95 percent confidence interval:
+ 3.791357 4.618295
+sample estimates:
+mean of x 
+ 4.204826 </code></pre>
+</div>
+</div>
+</section>
+<section id="cómo-interpretar-este-resultado" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="cómo-interpretar-este-resultado"><span class="header-section-number">10.3.2</span> ¿Cómo interpretar este resultado?</h3>
+<p><strong>1. Las medias:</strong></p>
+<pre><code>mean of x
+ 4.299</code></pre>
+<p>La media de nuestra muestra es 4.3, mientras que el valor de referencia es 5.0.</p>
+<p><strong>2. El intervalo de confianza:</strong></p>
+<pre><code>95 percent confidence interval:
+ 3.893  4.706</code></pre>
+<p>Estamos 95% seguros de que la media verdadera de la región está entre 3.9 y 4.7. Como este intervalo <strong>no incluye el 5.0</strong>, hay evidencia de que la región difiere del promedio nacional.</p>
+<p><strong>3. El p-value:</strong></p>
+<pre><code>p-value = 0.0003</code></pre>
+<p>Como p &lt; 0.05, la diferencia es estadísticamente significativa. Podemos concluir que la confianza institucional en esta región es significativamente menor que el promedio nacional.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Interpretación en lenguaje simple
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“La confianza institucional promedio en la región (4.3) es significativamente menor que el promedio nacional de 5.0 (t = -3.82, p &lt; 0.001). El intervalo de confianza al 95% [3.9, 4.7] no incluye el valor nacional, confirmando esta diferencia.”</p>
+</div>
+</div>
+</section>
+</section>
+<section id="prueba-t-para-dos-muestras-independientes" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="prueba-t-para-dos-muestras-independientes"><span class="header-section-number">10.4</span> Prueba t para dos muestras independientes</h2>
+<p>Esta prueba responde: <strong>¿Dos grupos tienen medias diferentes?</strong></p>
+<p>Se llama “independientes” porque los grupos no están relacionados entre sí: diferentes personas, diferentes países, etc.</p>
+<section id="ejemplo-brecha-salarial-de-género" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="ejemplo-brecha-salarial-de-género"><span class="header-section-number">10.4.1</span> Ejemplo: Brecha salarial de género</h3>
+<p>Comparemos los ingresos promedio entre hombres y mujeres:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados de ingresos (en miles de pesos)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>ingresos_hombres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">750</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>ingresos_mujeres <span class="ot">&lt;-</span> <span class="fu">rlnorm</span>(<span class="dv">150</span>, <span class="at">meanlog =</span> <span class="fu">log</span>(<span class="dv">650</span>), <span class="at">sdlog =</span> <span class="fl">0.6</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t para dos muestras independientes</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ingresos_hombres, ingresos_mujeres)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>resultado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Welch Two Sample t-test
@@ -428,18 +531,83 @@ mean of x mean of y
 </div>
 </div>
 </section>
-<section id="muestras-pareadas" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="muestras-pareadas"><span class="header-section-number">10.2.2</span> Muestras pareadas</h3>
-<p>Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:</p>
+<section id="interpretando-el-resultado" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="interpretando-el-resultado"><span class="header-section-number">10.4.2</span> Interpretando el resultado</h3>
+<p><strong>Las medias de cada grupo:</strong></p>
+<pre><code>mean of x  mean of y
+  815.4      705.2</code></pre>
+<p>Los hombres ganan en promedio $815 mil, las mujeres $705 mil.</p>
+<p><strong>La diferencia y su intervalo de confianza:</strong></p>
+<pre><code>95 percent confidence interval:
+ 12.51  207.92</code></pre>
+<p>La diferencia estimada es de aproximadamente $110 mil (815 - 705). El intervalo de confianza indica que la diferencia verdadera está entre $12 mil y $208 mil. Como el intervalo <strong>no incluye el cero</strong>, la diferencia es significativa.</p>
+<p><strong>El p-value:</strong> Como p &lt; 0.05, concluimos que existe una diferencia estadísticamente significativa en los ingresos promedio entre hombres y mujeres.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos: Percepción de seguridad antes y después de intervención policial</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)  <span class="co"># Mejora promedio</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>datos_genero <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">ingreso =</span> <span class="fu">c</span>(ingresos_hombres, ingresos_mujeres),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">genero =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"Hombres"</span>, <span class="dv">150</span>), <span class="fu">rep</span>(<span class="st">"Mujeres"</span>, <span class="dv">150</span>)))</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_genero, <span class="fu">aes</span>(<span class="at">x =</span> genero, <span class="at">y =</span> ingreso, <span class="at">fill =</span> genero)) <span class="sc">+</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#3498db"</span>, <span class="st">"#e74c3c"</span>)) <span class="sc">+</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">"Ingreso mensual (miles de $)"</span>,</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Distribución de ingresos por género"</span>,</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"El diamante rojo indica la media de cada grupo"</span>) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="10-comparacion-medias_files/figure-html/plot-genero-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption>Comparación de ingresos por género</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Fórmula del estadístico t para dos muestras:</strong></p>
+<p><span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
+<p>El numerador es la diferencia de medias observada. El denominador es el error estándar de esa diferencia, que depende de las varianzas y tamaños de ambos grupos.</p>
+<p>R usa por defecto la <strong>corrección de Welch</strong>, que no asume varianzas iguales entre grupos. Esta es la opción recomendada en la mayoría de los casos.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="prueba-t-pareada" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="prueba-t-pareada"><span class="header-section-number">10.5</span> Prueba t pareada</h2>
+<p>Esta prueba responde: <strong>¿Cambió algo antes y después en las mismas personas?</strong></p>
+<p>Se usa cuando las observaciones están <strong>pareadas</strong> o <strong>emparejadas</strong>: las mismas personas medidas en dos momentos, gemelos, pares de casos similares, etc.</p>
+<section id="por-qué-es-diferente-a-la-prueba-de-dos-muestras" class="level3" data-number="10.5.1">
+<h3 data-number="10.5.1" class="anchored" data-anchor-id="por-qué-es-diferente-a-la-prueba-de-dos-muestras"><span class="header-section-number">10.5.1</span> ¿Por qué es diferente a la prueba de dos muestras?</h3>
+<p>Cuando medimos a las mismas personas dos veces, las observaciones no son independientes: una persona con alta satisfacción “antes” probablemente tendrá alta satisfacción “después”. La prueba pareada aprovecha esta información, analizando la <strong>diferencia individual</strong> de cada persona.</p>
+</section>
+<section id="ejemplo-evaluación-de-una-intervención" class="level3" data-number="10.5.2">
+<h3 data-number="10.5.2" class="anchored" data-anchor-id="ejemplo-evaluación-de-una-intervención"><span class="header-section-number">10.5.2</span> Ejemplo: Evaluación de una intervención</h3>
+<p>Medimos percepción de seguridad antes y después de un programa policial en el barrio:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Mismas 50 personas, medidas antes y después</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">4.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">0.8</span>, <span class="at">sd =</span> <span class="fl">1.0</span>)  <span class="co"># Mejora promedio de 0.8</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba t pareada</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">t.test</span>(despues, antes, <span class="at">paired =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>resultado</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Paired t-test
@@ -455,33 +623,77 @@ mean difference
 </div>
 </div>
 </section>
+<section id="interpretando-el-resultado-1" class="level3" data-number="10.5.3">
+<h3 data-number="10.5.3" class="anchored" data-anchor-id="interpretando-el-resultado-1"><span class="header-section-number">10.5.3</span> Interpretando el resultado</h3>
+<p><strong>La diferencia promedio:</strong></p>
+<pre><code>mean difference
+     0.841</code></pre>
+<p>En promedio, la percepción de seguridad aumentó 0.84 puntos después de la intervención.</p>
+<p><strong>Intervalo de confianza de la diferencia:</strong></p>
+<pre><code>95 percent confidence interval:
+ 0.547  1.135</code></pre>
+<p>Estamos 95% seguros de que el verdadero efecto de la intervención está entre 0.55 y 1.14 puntos. Como el intervalo no incluye el cero, el efecto es significativo.</p>
+<p><strong>El p-value:</strong> Como p &lt; 0.05, concluimos que la intervención tuvo un efecto estadísticamente significativo en la percepción de seguridad.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Advertencia</span>Cuidado: Estadístico ≠ Causal
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un resultado significativo no prueba que la intervención <em>causó</em> el cambio. Podrían haber ocurrido otros eventos durante el período (nuevas leyes, cambios económicos, etc.). Para afirmar causalidad necesitamos un <strong>grupo de control</strong> que no recibió la intervención.</p>
+</div>
+</div>
 </section>
-<section id="anova-comparar-más-de-dos-grupos" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="anova-comparar-más-de-dos-grupos"><span class="header-section-number">10.3</span> ANOVA: Comparar más de dos grupos</h2>
-<p>Cuando queremos comparar las medias de <strong>tres o más grupos</strong>, la prueba t no es apropiada porque haríamos múltiples comparaciones, aumentando la probabilidad de error tipo I. El <strong>ANOVA</strong> (Analysis of Variance) resuelve esto comparando todos los grupos simultáneamente.</p>
-<p><strong>Hipótesis:</strong></p>
+</section>
+<section id="anova-comparando-más-de-dos-grupos" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="anova-comparando-más-de-dos-grupos"><span class="header-section-number">10.6</span> ANOVA: Comparando más de dos grupos</h2>
+<p>¿Qué pasa si quieres comparar <strong>tres o más grupos</strong>? No puedes simplemente hacer múltiples pruebas t, porque cada prueba tiene 5% de probabilidad de error tipo I. Con muchas comparaciones, los errores se acumulan.</p>
+<p>El <strong>ANOVA</strong> (Analysis of Variance) resuelve esto evaluando todas las diferencias simultáneamente con una sola prueba.</p>
+<section id="la-pregunta-que-responde-anova" class="level3" data-number="10.6.1">
+<h3 data-number="10.6.1" class="anchored" data-anchor-id="la-pregunta-que-responde-anova"><span class="header-section-number">10.6.1</span> La pregunta que responde ANOVA</h3>
+<p><strong>¿Hay al menos un grupo cuya media difiere de los demás?</strong></p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: Todas las medias son iguales (<span class="math inline">\(\mu_1 = \mu_2 = \mu_3 = ...\)</span>)</li>
-<li><span class="math inline">\(H_1\)</span>: Al menos una media es diferente</li>
+<li>Si p &lt; 0.05: Sí, hay diferencias significativas entre los grupos</li>
+<li>Si p ≥ 0.05: No podemos concluir que haya diferencias</li>
 </ul>
-<p><strong>Ejemplo:</strong> Comparamos la satisfacción con la democracia según orientación política (izquierda, centro, derecha).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ANOVA NO te dice <em>cuáles</em> grupos difieren, solo que <em>al menos uno</em> es diferente. Para saber cuáles, necesitas pruebas post-hoc (ver sección avanzada).</p>
+</div>
+</div>
+</section>
+<section id="ejemplo-satisfacción-por-orientación-política" class="level3" data-number="10.6.2">
+<h3 data-number="10.6.2" class="anchored" data-anchor-id="ejemplo-satisfacción-por-orientación-política"><span class="header-section-number">10.6.2</span> Ejemplo: Satisfacción por orientación política</h3>
+<p>Comparemos la satisfacción con la democracia entre personas de izquierda, centro y derecha:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados: satisfacción con democracia por orientación política</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>n_grupo <span class="ot">&lt;-</span> <span class="dv">100</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),  <span class="co"># Izquierda</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># Centro</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.0</span>, <span class="at">sd =</span> <span class="fl">1.3</span>)   <span class="co"># Derecha</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">orientacion =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Izquierda"</span>, <span class="st">"Centro"</span>, <span class="st">"Derecha"</span>), <span class="at">each =</span> n_grupo)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA de una vía</span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>modelo_anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(satisfaccion <span class="sc">~</span> orientacion, <span class="at">data =</span> datos_anova)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Datos simulados</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>n_grupo <span class="ot">&lt;-</span> <span class="dv">100</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),  <span class="co"># Izquierda</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># Centro</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(n_grupo, <span class="at">mean =</span> <span class="fl">4.0</span>, <span class="at">sd =</span> <span class="fl">1.3</span>)   <span class="co"># Derecha</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">orientacion =</span> <span class="fu">factor</span>(<span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Izquierda"</span>, <span class="st">"Centro"</span>, <span class="st">"Derecha"</span>), <span class="at">each =</span> n_grupo))</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ANOVA de una vía</span></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a>modelo_anova <span class="ot">&lt;-</span> <span class="fu">aov</span>(satisfaccion <span class="sc">~</span> orientacion, <span class="at">data =</span> datos_anova)</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo_anova)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Df Sum Sq Mean Sq F value  Pr(&gt;F)    
 orientacion   2   84.1   42.06   30.65 7.9e-13 ***
@@ -490,44 +702,52 @@ Residuals   297  407.6    1.37
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 </div>
-<p><strong>Interpretación:</strong> Si el valor p es menor a 0.05, rechazamos <span class="math inline">\(H_0\)</span> y concluimos que al menos un grupo tiene una media significativamente diferente.</p>
+</section>
+<section id="interpretando-el-output-de-anova" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="interpretando-el-output-de-anova"><span class="header-section-number">10.6.3</span> Interpretando el output de ANOVA</h3>
+<pre><code>              Df Sum Sq Mean Sq F value   Pr(&gt;F)
+orientacion    2   73.5   36.75    25.7 2.45e-11 ***
+Residuals    297  424.6    1.43</code></pre>
+<p><strong>Lo más importante es el p-value (Pr(&gt;F)):</strong> Como p &lt; 0.05 (de hecho, p &lt; 0.001), concluimos que hay diferencias significativas en satisfacción con la democracia entre los grupos políticos.</p>
+<p><strong>El estadístico F (25.7):</strong> Mide cuánta variación hay “entre grupos” comparada con la variación “dentro de grupos”. Valores más altos indican diferencias más claras.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_anova, <span class="fu">aes</span>(<span class="at">x =</span> orientacion, <span class="at">y =</span> satisfaccion, <span class="at">fill =</span> orientacion)) <span class="sc">+</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Orientación política"</span>,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Satisfacción con la democracia (1-7)"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Satisfacción según orientación política"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Punto rojo = media del grupo"</span>) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_anova, <span class="fu">aes</span>(<span class="at">x =</span> orientacion, <span class="at">y =</span> satisfaccion, <span class="at">fill =</span> orientacion)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_summary</span>(<span class="at">fun =</span> mean, <span class="at">geom =</span> <span class="st">"point"</span>, <span class="at">shape =</span> <span class="dv">18</span>, <span class="at">size =</span> <span class="dv">4</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#2ecc71"</span>, <span class="st">"#9b59b6"</span>, <span class="st">"#e74c3c"</span>)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Orientación política"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Satisfacción con la democracia (1-7)"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"Satisfacción según orientación política"</span>,</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"El diamante rojo indica la media de cada grupo"</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="10-comparacion-medias_files/figure-html/anova-plot-1.png" class="img-fluid figure-img" width="672"></p>
-<figcaption>Satisfacción con democracia por orientación política</figcaption>
+<figcaption>Satisfacción con la democracia según orientación política</figcaption>
 </figure>
 </div>
 </div>
 </div>
+<p>El gráfico muestra que el grupo de centro tiene la mayor satisfacción, seguido de izquierda, y derecha tiene la menor.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-🎓 Métodos Cuantitativos Avanzados
+<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<section id="comparaciones-post-hoc" class="level3 callout-body-container callout-body" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="comparaciones-post-hoc"><span class="header-section-number">10.3.1</span> Comparaciones post-hoc</h3>
-<p>Si ANOVA indica diferencias significativas, ¿entre qué grupos están las diferencias? Las pruebas <strong>post-hoc</strong> (como Tukey HSD) comparan todos los pares de grupos controlando el error tipo I.</p>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="comparaciones-post-hoc" class="level3" data-number="10.6.4">
+<h3 data-number="10.6.4" class="anchored" data-anchor-id="comparaciones-post-hoc"><span class="header-section-number">10.6.4</span> Comparaciones post-hoc</h3>
+<p>Si ANOVA indica diferencias significativas, ¿entre qué grupos específicos están? Las pruebas <strong>post-hoc</strong> responden esto controlando por comparaciones múltiples.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaciones post-hoc de Tukey</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaciones post-hoc de Tukey</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">TukeyHSD</span>(modelo_anova)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tukey multiple comparisons of means
     95% family-wise confidence level
@@ -541,182 +761,154 @@ Izquierda-Centro  -0.9471902 -1.33741581 -0.5569645 0.0000001
 Izquierda-Derecha  0.2938576 -0.09636805  0.6840832 0.1801856</code></pre>
 </div>
 </div>
-<p><strong>Interpretación:</strong> El intervalo de confianza que no incluye 0 indica diferencia significativa entre esos dos grupos.</p>
-</section>
-</div>
-</div>
-</section>
-<section id="supuestos-de-las-pruebas-paramétricas" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="supuestos-de-las-pruebas-paramétricas"><span class="header-section-number">10.4</span> Supuestos de las pruebas paramétricas</h2>
-<p>Las pruebas t y ANOVA asumen:</p>
-<ol type="1">
-<li><strong>Independencia</strong>: Las observaciones son independientes entre sí</li>
-<li><strong>Normalidad</strong>: Los datos en cada grupo se distribuyen normalmente</li>
-<li><strong>Homogeneidad de varianzas</strong>: Las varianzas de los grupos son similares</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-¿Qué tan importantes son los supuestos?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En la práctica:</p>
+<p><strong>Cómo leer el resultado:</strong></p>
 <ul>
-<li><strong>Independencia</strong> es el supuesto más importante. Si no se cumple, los resultados pueden ser muy sesgados.</li>
-<li><strong>Normalidad</strong> es menos crítica con muestras grandes (n &gt; 30 por grupo) gracias al teorema del límite central.</li>
-<li><strong>Homogeneidad</strong> puede relajarse usando versiones corregidas de las pruebas (como el ajuste de Welch en t.test).</li>
+<li><code>diff</code>: Diferencia de medias entre los dos grupos</li>
+<li><code>lwr</code> y <code>upr</code>: Intervalo de confianza al 95%</li>
+<li><code>p adj</code>: p-value ajustado por comparaciones múltiples</li>
 </ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-🎓 Métodos Cuantitativos Avanzados
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
-<section id="alternativas-no-paramétricas" class="level3 callout-body-container callout-body" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="alternativas-no-paramétricas"><span class="header-section-number">10.4.1</span> Alternativas no paramétricas</h3>
-<p>Cuando los supuestos no se cumplen, especialmente con muestras pequeñas, usamos pruebas no paramétricas:</p>
+<p>Si el intervalo <strong>no incluye el cero</strong> (o p adj &lt; 0.05), la diferencia entre esos dos grupos es significativa.</p>
+</section>
+<section id="alternativas-no-paramétricas" class="level3" data-number="10.6.5">
+<h3 data-number="10.6.5" class="anchored" data-anchor-id="alternativas-no-paramétricas"><span class="header-section-number">10.6.5</span> Alternativas no paramétricas</h3>
+<p>Cuando los supuestos no se cumplen (especialmente con muestras pequeñas), usamos pruebas que no asumen distribución normal:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 51%">
+<col style="width: 11%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Prueba paramétrica</th>
 <th>Alternativa no paramétrica</th>
+<th>En R</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>t de una muestra</td>
 <td>Wilcoxon signed-rank</td>
+<td><code>wilcox.test(x, mu = valor)</code></td>
 </tr>
 <tr class="even">
-<td>t de dos muestras independientes</td>
+<td>t de dos muestras</td>
 <td>Mann-Whitney U</td>
+<td><code>wilcox.test(x, y)</code></td>
 </tr>
 <tr class="odd">
 <td>t pareada</td>
-<td>Wilcoxon signed-rank pareada</td>
+<td>Wilcoxon pareada</td>
+<td><code>wilcox.test(x, y, paired = TRUE)</code></td>
 </tr>
 <tr class="even">
 <td>ANOVA</td>
 <td>Kruskal-Wallis</td>
+<td><code>kruskal.test(y ~ grupo)</code></td>
 </tr>
 </tbody>
 </table>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: Mann-Whitney U (alternativa a t de dos muestras)</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wilcox.test</span>(ingresos_hombres, ingresos_mujeres)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Wilcoxon rank sum test with continuity correction
-
-data:  ingresos_hombres and ingresos_mujeres
-W = 11687, p-value = 0.5612
-alternative hypothesis: true location shift is not equal to 0</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo: Kruskal-Wallis (alternativa a ANOVA)</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">kruskal.test</span>(satisfaccion <span class="sc">~</span> orientacion, <span class="at">data =</span> datos_anova)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-    Kruskal-Wallis rank sum test
-
-data:  satisfaccion by orientacion
-Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
-</div>
-</div>
 </section>
 </div>
 </div>
+</div>
 </section>
-<section id="qué-prueba-usar" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="qué-prueba-usar"><span class="header-section-number">10.5</span> ¿Qué prueba usar?</h2>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Situación</th>
-<th>Prueba recomendada</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Comparar una media con un valor teórico</td>
-<td>t de una muestra</td>
-</tr>
-<tr class="even">
-<td>Comparar medias de 2 grupos independientes</td>
-<td>t de dos muestras</td>
-</tr>
-<tr class="odd">
-<td>Comparar medias antes/después (mismos sujetos)</td>
-<td>t pareada</td>
-</tr>
-<tr class="even">
-<td>Comparar medias de 3+ grupos</td>
-<td>ANOVA</td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="supuestos-de-las-pruebas" class="level2" data-number="10.7">
+<h2 data-number="10.7" class="anchored" data-anchor-id="supuestos-de-las-pruebas"><span class="header-section-number">10.7</span> Supuestos de las pruebas</h2>
+<p>Las pruebas t y ANOVA asumen ciertas condiciones. Si no se cumplen, los resultados pueden ser poco confiables.</p>
+<section id="los-tres-supuestos-principales" class="level3" data-number="10.7.1">
+<h3 data-number="10.7.1" class="anchored" data-anchor-id="los-tres-supuestos-principales"><span class="header-section-number">10.7.1</span> Los tres supuestos principales</h3>
+<p><strong>1. Independencia de las observaciones</strong></p>
+<p>Las observaciones no deben estar relacionadas entre sí. Por ejemplo, si encuestas a miembros de la misma familia, sus respuestas no son independientes.</p>
+<p><strong>Este es el supuesto más importante.</strong> Si no se cumple, los resultados pueden ser muy sesgados y las alternativas no paramétricas no ayudan.</p>
+<p><strong>2. Normalidad</strong></p>
+<p>Los datos en cada grupo deberían distribuirse aproximadamente como una curva normal.</p>
+<p><strong>En la práctica:</strong> Este supuesto es menos crítico con muestras grandes (n &gt; 30 por grupo) gracias al teorema del límite central. Las pruebas t y ANOVA son bastante robustas a desviaciones de normalidad.</p>
+<p><strong>3. Homogeneidad de varianzas</strong></p>
+<p>Los grupos deberían tener dispersiones similares.</p>
+<p><strong>En la práctica:</strong> R usa por defecto la corrección de Welch en <code>t.test()</code>, que no asume varianzas iguales. Para ANOVA, existen versiones robustas si este supuesto es problemático.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Regla práctica
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Con muestras grandes (n &gt; 30 por grupo) y sin problemas graves de independencia, las pruebas t y ANOVA funcionan bien incluso con datos que no son perfectamente normales.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="resumen" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen">Resumen</h2>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 27%">
-<col style="width: 35%">
-<col style="width: 37%">
+<col style="width: 44%">
+<col style="width: 32%">
+<col style="width: 24%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Concepto</th>
-<th>Descripción</th>
-<th>Función en R</th>
+<th>Situación</th>
+<th>Prueba</th>
+<th>En R</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>t una muestra</strong></td>
-<td>Compara media vs valor teórico</td>
+<td>Una muestra vs valor conocido</td>
+<td>t de una muestra</td>
 <td><code>t.test(x, mu = valor)</code></td>
 </tr>
 <tr class="even">
-<td><strong>t dos muestras</strong></td>
-<td>Compara medias de 2 grupos</td>
+<td>Dos grupos independientes</td>
+<td>t de dos muestras</td>
 <td><code>t.test(x, y)</code></td>
 </tr>
 <tr class="odd">
-<td><strong>t pareada</strong></td>
-<td>Mismos sujetos, dos mediciones</td>
+<td>Antes/después (mismas personas)</td>
+<td>t pareada</td>
 <td><code>t.test(x, y, paired = TRUE)</code></td>
 </tr>
 <tr class="even">
-<td><strong>ANOVA</strong></td>
-<td>Compara 3+ grupos</td>
+<td>Tres o más grupos</td>
+<td>ANOVA</td>
 <td><code>aov(y ~ grupo)</code></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Supuestos clave:</strong> independencia (crítico), normalidad (flexible con n&gt;30), homogeneidad de varianzas.</p>
+<p><strong>Claves para interpretar:</strong></p>
+<ul>
+<li><strong>p-value &lt; 0.05</strong>: La diferencia es estadísticamente significativa</li>
+<li><strong>Intervalo de confianza que no incluye 0</strong>: Hay diferencia significativa</li>
+<li><strong>ANOVA significativo</strong>: Al menos un grupo difiere, pero no dice cuál</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Importante</span>Recuerda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Significancia estadística ≠ Importancia práctica. Una diferencia de $10 pesos puede ser “significativa” con muestras grandes, pero irrelevante en la práctica. Siempre reporta el <strong>tamaño del efecto</strong> (la diferencia real) además del p-value.</p>
+</div>
+</div>
 </section>
 <section id="lecturas-recomendadas" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="lecturas-recomendadas">Lecturas recomendadas</h2>
 <p><strong>Fundamentos de comparación de grupos:</strong></p>
-<p>Agresti, A., &amp; Finlay, B. (2009). <em>Statistical Methods for the Social Sciences</em> (4th ed.). Pearson.<br>
-→ Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.</p>
+<p>Agresti, A., &amp; Finlay, B. (2009). <em>Statistical Methods for the Social Sciences</em> (4th ed.). Pearson. → Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.</p>
 <p><strong>Inferencia causal mediante comparación de grupos:</strong></p>
-<p>Llaudet, E., &amp; Imai, K. (2022). <em>Data Analysis for Social Science: A Friendly and Practical Introduction</em>. Princeton University Press.<br>
-→ Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.</p>
+<p>Llaudet, E., &amp; Imai, K. (2022). <em>Data Analysis for Social Science: A Friendly and Practical Introduction</em>. Princeton University Press. → Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.</p>
 <p><strong>ANOVA y diseños más complejos:</strong></p>
-<p>Maxwell, S. E., Delaney, H. D., &amp; Kelley, K. (2018). <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em> (3rd ed.). Routledge.<br>
-→ Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.</p>
+<p>Maxwell, S. E., Delaney, H. D., &amp; Kelley, K. (2018). <em>Designing Experiments and Analyzing Data: A Model Comparison Perspective</em> (3rd ed.). Routledge. → Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.</p>
 </section>
 <section id="ejercicios" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="ejercicios">Ejercicios</h2>
@@ -724,83 +916,83 @@ Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
 <p><strong>1. Prueba t de una muestra</strong></p>
 <p>Una escala de confianza interpersonal tiene media nacional de 5.5 (escala 1-10). Tienes datos de una región específica:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>confianza_region <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">2.0</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">111</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>confianza_region <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">2.0</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="a">
-<li>Formula las hipótesis</li>
-<li>Realiza la prueba t</li>
-<li>Calcula el IC 95%</li>
-<li>¿La región difiere significativamente del promedio nacional?</li>
+<li>¿Cuál es la pregunta de investigación?</li>
+<li>Realiza la prueba t con <code>t.test()</code></li>
+<li>Interpreta el p-value: ¿hay diferencia significativa?</li>
+<li>Interpreta el intervalo de confianza</li>
+<li>Escribe una oración resumiendo el resultado</li>
 </ol>
 <p><strong>2. Prueba t de dos muestras</strong></p>
 <p>Comparamos participación cívica entre hombres y mujeres:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>civic_hombres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">3.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>civic_mujeres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="fl">3.8</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">222</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>civic_hombres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="at">mean =</span> <span class="fl">3.2</span>, <span class="at">sd =</span> <span class="fl">1.5</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>civic_mujeres <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">110</span>, <span class="at">mean =</span> <span class="fl">3.8</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="a">
-<li>Formula las hipótesis</li>
 <li>Realiza la prueba t para muestras independientes</li>
-<li>Calcula e interpreta el IC para la diferencia de medias</li>
-<li>¿Cuál es el tamaño del efecto (d de Cohen)?</li>
-<li>Crea un gráfico comparando ambos grupos</li>
+<li>¿Cuál grupo tiene mayor participación cívica?</li>
+<li>¿La diferencia es estadísticamente significativa?</li>
+<li>Crea un boxplot comparando ambos grupos</li>
+<li>¿Qué tan grande es la diferencia en términos prácticos?</li>
 </ol>
-<p><strong>3. Prueba t pareada</strong></p>
+<p><strong>3. ¿Cuándo usar prueba pareada?</strong></p>
+<p>Indica si deberías usar una prueba t pareada o de muestras independientes:</p>
+<ol type="a">
+<li>Comparar notas de estudiantes antes y después de un curso</li>
+<li>Comparar satisfacción laboral entre empresas públicas y privadas</li>
+<li>Comparar presión arterial de pacientes antes y después de un tratamiento</li>
+<li>Comparar ingresos entre graduados de dos universidades diferentes</li>
+<li>Comparar actitud hacia la inmigración en las mismas personas en 2020 y 2024</li>
+</ol>
+<p><strong>4. Prueba t pareada</strong></p>
 <p>Mediciones de actitud hacia inmigración antes y después de ver un documental:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">333</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">60</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># El documental tiene efecto positivo pequeño</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">333</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">60</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>antes <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">50</span>, <span class="at">sd =</span> <span class="dv">15</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>despues <span class="ot">&lt;-</span> antes <span class="sc">+</span> <span class="fu">rnorm</span>(n, <span class="at">mean =</span> <span class="dv">5</span>, <span class="at">sd =</span> <span class="dv">8</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="a">
 <li>¿Por qué es apropiada una prueba pareada aquí?</li>
-<li>Realiza la prueba</li>
-<li>Calcula el cambio promedio y su IC</li>
-<li>Crea un gráfico antes-después (ej: líneas conectando puntos)</li>
+<li>Realiza la prueba con <code>t.test(..., paired = TRUE)</code></li>
+<li>¿Cuál es el cambio promedio?</li>
+<li>¿El cambio es estadísticamente significativo?</li>
+<li>¿Podemos concluir que el documental <em>causó</em> el cambio? ¿Por qué?</li>
 </ol>
-<p><strong>4. ANOVA</strong></p>
+<p><strong>5. ANOVA</strong></p>
 <p>Satisfacción con servicios públicos según región:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">444</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">5.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),  <span class="co"># Norte</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">1.3</span>),  <span class="co"># Centro</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">55</span>, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),  <span class="co"># Sur</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">45</span>, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)   <span class="co"># Metropolitana</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Norte"</span>, <span class="st">"Centro"</span>, <span class="st">"Sur"</span>, <span class="st">"Metropolitana"</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">45</span>))</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">444</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>datos_anova <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">satisfaccion =</span> <span class="fu">c</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">50</span>, <span class="at">mean =</span> <span class="fl">5.5</span>, <span class="at">sd =</span> <span class="fl">1.2</span>),</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">60</span>, <span class="at">mean =</span> <span class="fl">4.8</span>, <span class="at">sd =</span> <span class="fl">1.3</span>),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">55</span>, <span class="at">mean =</span> <span class="fl">5.2</span>, <span class="at">sd =</span> <span class="fl">1.1</span>),</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rnorm</span>(<span class="dv">45</span>, <span class="at">mean =</span> <span class="fl">4.5</span>, <span class="at">sd =</span> <span class="fl">1.4</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">region =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"Norte"</span>, <span class="st">"Centro"</span>, <span class="st">"Sur"</span>, <span class="st">"Metropolitana"</span>), <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">55</span>, <span class="dv">45</span>))</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ol type="a">
-<li>Realiza ANOVA de una vía</li>
+<li>Realiza ANOVA con <code>aov()</code></li>
 <li>¿Hay diferencias significativas entre regiones?</li>
-<li>Realiza análisis post-hoc de Tukey</li>
-<li>¿Entre qué pares de regiones hay diferencias significativas?</li>
-<li>Crea visualización comparativa (boxplots)</li>
+<li>Crea un boxplot de satisfacción por región</li>
+<li>¿Cuál región tiene mayor satisfacción? ¿Cuál menor?</li>
+<li>Si el ANOVA es significativo, ¿qué prueba adicional necesitas para saber cuáles regiones difieren específicamente?</li>
 </ol>
-<p><strong>5. Verificación de supuestos</strong></p>
-<p>Con los datos de ANOVA del ejercicio anterior:</p>
+<p><strong>6. Aplicación</strong></p>
+<p>Busca un ejemplo de tu interés donde necesites comparar medias entre grupos:</p>
 <ol type="a">
-<li>Evalúa normalidad en cada grupo (histogramas o test de Shapiro-Wilk)</li>
-<li>Evalúa homogeneidad de varianzas (test de Levene o comparación visual)</li>
-<li>¿Se cumplen los supuestos? Si no, ¿qué alternativa usarías?</li>
-<li>Realiza la alternativa no paramétrica (Kruskal-Wallis) y compara conclusiones</li>
-</ol>
-<p><strong>6. Proyecto integrador</strong></p>
-<p>Con datos de tu interés (ej: encuesta de opinión):</p>
-<ol type="a">
-<li>Formula una pregunta de comparación de grupos</li>
-<li>Identifica la prueba apropiada</li>
-<li>Verifica supuestos</li>
-<li>Realiza la prueba e interpreta</li>
-<li>Calcula tamaño del efecto</li>
-<li>Crea visualización publicable</li>
-<li>Escribe un párrafo de resultados como aparecería en un paper</li>
+<li>Describe los grupos que quieres comparar</li>
+<li>¿Qué variable quieres comparar?</li>
+<li>¿Qué prueba usarías y por qué?</li>
+<li>¿Qué resultado esperarías encontrar?</li>
+<li>Si la diferencia fuera significativa, ¿qué conclusiones podrías sacar? ¿Cuáles no?</li>
 </ol>
 </div>
 <div id="refs" role="list" style="display: none">
@@ -862,13 +1054,14 @@ Kruskal-Wallis chi-squared = 51.231, df = 2, p-value = 7.506e-12</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

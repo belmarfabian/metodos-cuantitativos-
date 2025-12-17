@@ -1,3 +1,7 @@
+---
+date-modified: last-modified
+---
+
 # Prefacio {.unnumbered}
 
 > **VERSIÓN BETA**: Este manual se encuentra en desarrollo activo. Algunos capítulos están pendientes de completar y el contenido seguirá evolucionando con el tiempo. Agradecemos reportar errores o sugerencias.
