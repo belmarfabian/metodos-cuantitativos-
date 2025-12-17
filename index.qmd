@@ -47,7 +47,7 @@ Este proyecto es resultado años de trabajo con metodología cuantitativa. Agrad
 
 ## Créditos {.unnumbered}
 
-Ilustración de portada por [Chloé](https://unsplash.com/@coquiette) en [Unsplash](https://unsplash.com).
+Fotografía de portada: Río Verde, Región de Magallanes, Zona Sur de Chile.
 
 ```{r}
 #| include: false
