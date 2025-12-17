@@ -36,9 +36,7 @@ La **correlación** nos permite responder estas preguntas midiendo qué tan fuer
 | $r = -1$ | Correlación negativa perfecta |
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Fórmula del coeficiente de correlación de Pearson:**
+## 🎓 Avanzado: Fórmula de correlación de Pearson
 
 $$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}$$
 
@@ -248,9 +246,7 @@ predict(modelo, newdata = nuevos_datos)
 Interpretación: Según el modelo, un país con 30% de gasto público tendría un crecimiento económico predicho de aproximadamente `r round(predict(modelo, newdata = data.frame(gasto_publico = 30)), 1)`%.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Mínimos cuadrados ordinarios (OLS)**
+## 🎓 Avanzado: Mínimos cuadrados ordinarios (OLS)
 
 El método OLS encuentra la línea que minimiza la suma de los errores al cuadrado:
 

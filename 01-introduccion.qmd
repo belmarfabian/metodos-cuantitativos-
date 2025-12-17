@@ -38,9 +38,7 @@ Estas preguntas aplican tanto para evaluar investigación ajena como para diseñ
 @king1994 argumentan que la lógica de inferencia en ciencias sociales es fundamentalmente la misma que en ciencias naturales: observar el mundo y extraer conclusiones válidas sobre patrones que trascienden las observaciones particulares.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Desafíos específicos de las ciencias sociales**
+## 🎓 Avanzado: Desafíos de las ciencias sociales
 
 Las ciencias sociales enfrentan desafíos específicos como la **reflexividad** ---los sujetos modifican su comportamiento al conocer teorías sobre ellos [@giddens1984]---, la **complejidad causal** ---fenómenos con múltiples causas interdependientes---, la **imposibilidad de experimentación** ---frecuentemente no podemos manipular variables por razones éticas o prácticas---, y la **dependencia del contexto** ---las regularidades sociales son históricamente contingentes [@Abbott2001]---. Estos desafíos no invalidan la empresa científica en ciencias sociales, pero exigen rigurosidad metodológica y conciencia de los límites de nuestras inferencias.
 :::
@@ -86,9 +84,7 @@ La **teoría** cumple tres funciones en investigación cuantitativa:
 @king1994 insisten en que "diseñar investigación social es diseñar un test de teoría". No existe investigación "ateórica". Incluso el análisis exploratorio más inductivo parte de intuiciones teóricas sobre qué buscar.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Niveles de teoría**
+## 🎓 Avanzado: Niveles de teoría
 
 Las teorías varían en su nivel de abstracción: **gran teoría** (marcos conceptuales amplios como marxismo o funcionalismo estructural), **teorías de rango medio** que explican clases específicas de fenómenos sin pretensión de aplicabilidad universal [@merton1949] (ej: teoría de la modernización para democratización), y **modelos formales** que representan matemáticamente mecanismos causales específicos (ej: modelos de teoría de juegos sobre negociación legislativa). En investigación cuantitativa en ciencias políticas predominan teorías de rango medio: suficientemente específicas para generar hipótesis testeables, pero suficientemente generales para trascender casos únicos.
 :::
@@ -96,9 +92,7 @@ Las teorías varían en su nivel de abstracción: **gran teoría** (marcos conce
 El objetivo último de la investigación cuantitativa explicativa es establecer **relaciones causales**: identificar si cambios en X producen cambios en Y. No basta mostrar que X e Y covarían; necesitamos argumentar que X causa Y.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Tradiciones de inferencia causal**
+## 🎓 Avanzado: Tradiciones de inferencia causal
 
 @brady2008 distinguen dos tradiciones: el **enfoque neopositivista** ---dominante en economía y partes de la ciencia política--- que privilegia identificación de efectos causales promedio mediante diseños experimentales o cuasi-experimentales, y el **enfoque interpretativo-mecanísmico** que privilegia comprensión de los procesos mediante los cuales X produce Y. Ambos enfoques son legítimos pero implican estrategias metodológicas distintas.
 

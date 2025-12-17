@@ -141,9 +141,7 @@ ggplot(datos_genero, aes(x = genero, y = ingreso, fill = genero)) +
 ```
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Fórmula del estadístico t para dos muestras:**
+## 🎓 Avanzado: Fórmula t para dos muestras
 
 $$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
 
@@ -270,9 +268,7 @@ ggplot(datos_anova, aes(x = orientacion, y = satisfaccion, fill = orientacion)) 
 El gráfico muestra que el grupo de centro tiene la mayor satisfacción, seguido de izquierda, y derecha tiene la menor.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Comparaciones post-hoc
+## 🎓 Avanzado: Comparaciones post-hoc
 
 Si ANOVA indica diferencias significativas, ¿entre qué grupos específicos están? Las pruebas **post-hoc** responden esto controlando por comparaciones múltiples.
 

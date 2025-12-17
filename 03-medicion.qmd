@@ -34,9 +34,7 @@ La **conceptualización** especifica qué entendemos por un término; sin ella, 
 La **operacionalización** traduce el concepto en procedimientos específicos de medición, siendo el puente entre teoría y datos.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Criterios para buena operacionalización**
+## 🎓 Avanzado: Criterios de operacionalización
 
 @adcock2001 identifican tres criterios para buena operacionalización: **validez de fondo** (los indicadores capturan el significado teórico del concepto; si conceptualizamos democracia como "gobierno del pueblo", un indicador basado solo en elecciones es insuficiente), **convergencia** (múltiples indicadores del mismo concepto deberían correlacionar positivamente; si medimos "confianza institucional" con preguntas sobre Congreso, Poder Judicial y policía, estas medidas deberían correlacionar aunque imperfectamente), y **discriminación** (el indicador debe distinguir entre casos que difieren conceptualmente; una medida de democracia que asigna puntajes similares a Noruega y Venezuela tiene poca validez discriminante).
 :::
@@ -72,9 +70,7 @@ Siempre puedes usar estadísticos de niveles *inferiores*, pero nunca de niveles
 Una buena medición debe ser **válida** (¿la medida captura el concepto que pretende medir?) y **confiable** (¿la medición es consistente?). La **validez de contenido** evalúa si los indicadores cubren el dominio del concepto: si conceptualizamos "calidad democrática" incluyendo libertades civiles, procedimientos electorales y rendición de cuentas, una medida basada solo en elecciones tiene baja validez de contenido.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Tipos de validez**
+## 🎓 Avanzado: Tipos de validez
 
 @adcock2001 distinguen varios tipos adicionales de validez:
 
@@ -88,9 +84,7 @@ Una buena medición debe ser **válida** (¿la medida captura el concepto que pr
 La **confiabilidad** pregunta: ¿la medición es consistente? Una medida confiable produce resultados similares cuando se aplica repetidamente al mismo fenómeno.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Tipos de confiabilidad**
+## 🎓 Avanzado: Tipos de confiabilidad
 
 1. **Test-retest**: Aplicar la misma medición en dos momentos cercanos. Si puntajes cambian dramáticamente sin razón sustantiva, la medición es poco confiable.
 2. **Confiabilidad inter-codificadores**: Cuando codificadores humanos clasifican datos (ej: codificar manifiestos partidarios), ¿acuerdan? El coeficiente kappa de Cohen mide esto.

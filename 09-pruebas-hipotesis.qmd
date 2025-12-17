@@ -270,9 +270,7 @@ if(resultado$p.value < 0.05) {
 ```
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### La fórmula del estadístico t
+## 🎓 Avanzado: Fórmula del estadístico t
 
 El estadístico t mide cuántos "errores estándar" está nuestra media muestral del valor hipotético:
 
@@ -501,9 +499,7 @@ cat("- Aunque es 'significativo', probablemente no justifica el costo del progra
 ```
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Tamaño del efecto: d de Cohen
+## 🎓 Avanzado: d de Cohen (tamaño del efecto)
 
 Una medida estandarizada del tamaño del efecto es la **d de Cohen**:
 

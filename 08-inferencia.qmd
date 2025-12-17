@@ -239,9 +239,7 @@ El SE siempre es menor que s (porque promediar reduce la variabilidad).
 :::
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Fórmulas del error estándar
+## 🎓 Avanzado: Fórmulas del error estándar
 
 **Para la media:**
 $$\text{SE}(\bar{x}) = \frac{s}{\sqrt{n}}$$
@@ -450,9 +448,7 @@ Porque la precisión aumenta lentamente después de cierto punto:
 El costo aumenta linealmente, pero la precisión mejora con la raíz cuadrada. Por eso 1,000-1,500 es el "punto dulce" para encuestas típicas.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Fórmulas para el intervalo de confianza
+## 🎓 Avanzado: Fórmulas del intervalo de confianza
 
 **Para la media (n grande o datos normales):**
 $$\text{IC}_{95\%} = \bar{x} \pm 1.96 \times \frac{s}{\sqrt{n}}$$

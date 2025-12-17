@@ -177,9 +177,7 @@ Este error es muy común. Siempre pregúntate: "¿Cuál es mi grupo de referenci
 :::
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Fórmulas de probabilidad
+## 🎓 Avanzado: Fórmulas de probabilidad
 
 **Regla del complemento:**
 $$P(\text{no } A) = 1 - P(A)$$
@@ -448,9 +446,7 @@ cat("\nMuestras más grandes → Estimaciones más precisas")
 ```
 
 ::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-### Distribución Binomial
+## 🎓 Avanzado: Distribución Binomial
 
 La distribución binomial modela el número de "éxitos" en n ensayos independientes, cada uno con probabilidad p de éxito.
 
