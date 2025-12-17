@@ -138,28 +138,69 @@
   line-height: 1.6;
 }
 
-/* EJERCICIOS - Letra más pequeña para ahorrar espacio */
+/* EJERCICIOS - Compactos, dos columnas, diferenciados del texto principal */
 
 .ejercicios {
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 0.8em;
+  line-height: 1.4;
   background-color: #f8f9fa;
-  border-left: 4px solid #6c757d;
-  padding: 15px 20px;
-  margin: 25px 0;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin: 30px 0;
 }
 
 .ejercicios h2, .ejercicios h3 {
-  font-size: 1.1em;
+  font-size: 1em;
   margin-top: 0;
+  margin-bottom: 1em;
+  color: #495057;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5em;
 }
 
-.ejercicios p, .ejercicios li {
-  margin-bottom: 0.5em;
+/* Layout en dos columnas para ejercicios */
+.ejercicios ol {
+  column-count: 2;
+  column-gap: 30px;
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+.ejercicios ol > li {
+  break-inside: avoid;
+  margin-bottom: 1em;
+  padding-right: 10px;
+}
+
+.ejercicios p {
+  margin-bottom: 0.4em;
+}
+
+.ejercicios li p {
+  margin-bottom: 0.3em;
+}
+
+/* Sub-listas dentro de ejercicios (a, b, c...) */
+.ejercicios ol ol,
+.ejercicios ol ul {
+  column-count: 1;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  padding-left: 1.2em;
+  font-size: 0.95em;
 }
 
 .ejercicios pre {
   font-size: 0.85em;
+  margin: 0.5em 0;
+}
+
+/* En pantallas pequeñas, volver a una columna */
+@media (max-width: 768px) {
+  .ejercicios ol {
+    column-count: 1;
+  }
 }
 
 /* TABLAS - Fuente más pequeña para contenido resumido (estilo académico) */
