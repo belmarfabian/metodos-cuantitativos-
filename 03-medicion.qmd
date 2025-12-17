@@ -144,6 +144,10 @@ Cuando quienes no responden difieren sistemáticamente de quienes responden, las
 
 ## Resumen {.unnumbered}
 
+La medición es el puente entre conceptos abstractos y observaciones empíricas. Todo proceso de medición implica dos pasos: conceptualizar (definir qué entendemos por el concepto) y operacionalizar (traducirlo en procedimientos concretos de observación).
+
+Una buena medición debe ser válida (capturar lo que pretende medir) y confiable (producir resultados consistentes). Estos criterios son independientes: una medida puede ser muy confiable pero completamente inválida, o válida pero poco confiable.
+
 | Concepto | Descripción |
 |----------|-------------|
 | **Conceptualización** | Definir qué entendemos por un término abstracto |

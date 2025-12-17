@@ -577,6 +577,10 @@ ggplot(resumen, aes(x = pobreza_cat, y = Valor, fill = Estadistico)) +
 
 ## Resumen {.unnumbered}
 
+La estadística descriptiva resume y caracteriza datos antes del análisis inferencial. Las medidas de tendencia central (media, mediana, moda) indican valores típicos; las de dispersión (varianza, desviación estándar, IQR) cuantifican cuánto varían los datos alrededor de esos valores.
+
+La elección de estadísticos depende de la distribución: para datos simétricos, media y desviación estándar; para datos asimétricos o con outliers, mediana e IQR. Siempre visualiza tus datos antes de resumirlos numéricamente.
+
 | Concepto | Descripción | Función en R |
 |----------|-------------|--------------|
 | **Media** | Promedio aritmético; sensible a outliers | `mean(x)` |

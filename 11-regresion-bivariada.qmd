@@ -290,6 +290,10 @@ Observaciones extremas pueden distorsionar fuertemente la línea de regresión. 
 
 ## Resumen {.unnumbered}
 
+La correlación y la regresión describen relaciones lineales entre variables. La correlación mide la fuerza y dirección de la asociación (de -1 a 1); la regresión estima una ecuación que permite predecir una variable a partir de otra.
+
+El coeficiente de regresión (pendiente) indica cuánto cambia Y por cada unidad que aumenta X. El R² indica qué proporción de la variación en Y es explicada por X. Ambas herramientas describen asociaciones, pero no demuestran causalidad sin un diseño de investigación apropiado.
+
 | Concepto | Qué significa | En R |
 |----------|---------------|------|
 | **Correlación** | Fuerza de relación lineal (-1 a 1) | `cor(x, y)` |

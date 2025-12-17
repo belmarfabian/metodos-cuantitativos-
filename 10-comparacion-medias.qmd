@@ -333,6 +333,10 @@ Con muestras grandes (n > 30 por grupo) y sin problemas graves de independencia,
 
 ## Resumen {.unnumbered}
 
+La comparación de medias permite evaluar si las diferencias observadas entre grupos son estadísticamente significativas o podrían deberse al azar muestral. La prueba t compara dos grupos; ANOVA extiende la lógica a tres o más grupos.
+
+La elección de la prueba depende del diseño: t de una muestra para comparar contra un valor conocido, t de dos muestras para grupos independientes, t pareada para mediciones repetidas en los mismos sujetos. Cuando ANOVA es significativo, las pruebas post-hoc identifican qué pares de grupos difieren.
+
 | Situación | Prueba | En R |
 |-----------|--------|------|
 | Una muestra vs valor conocido | t de una muestra | `t.test(x, mu = valor)` |

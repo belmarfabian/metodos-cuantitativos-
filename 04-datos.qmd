@@ -581,6 +581,10 @@ Un documento típico tiene un encabezado YAML (título, autor, formato de salida
 
 ## Resumen {.unnumbered}
 
+El trabajo con datos requiere entender su estructura, evaluar su calidad, y dominar herramientas para manipularlos. Los datos pueden tener diferentes estructuras (corte transversal, series temporales, panel) y niveles de agregación (micro, meso, macro), cada uno con implicaciones analíticas distintas.
+
+La calidad de los datos determina la calidad de las conclusiones. Antes de analizar, siempre verifica cobertura, valores faltantes, outliers y consistencia en la codificación. Un flujo de trabajo reproducible —scripts documentados, organización clara, datos originales intactos— es esencial para investigación rigurosa.
+
 | Concepto | Descripción |
 |----------|-------------|
 | **Estructuras de datos** | Corte transversal (un momento), series temporales (un caso, varios tiempos), panel (varios casos y tiempos), jerárquicos (anidados) |

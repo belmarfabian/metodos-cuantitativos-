@@ -707,6 +707,10 @@ Los dobles ejes Y pueden ser engañosos—la escala de cada eje puede manipulars
 
 ## Resumen {.unnumbered}
 
+La visualización es una herramienta esencial para explorar datos, identificar patrones y comunicar hallazgos. Un buen gráfico revela información que las tablas ocultan; un mal gráfico puede distorsionar o confundir.
+
+El paquete ggplot2 implementa una "gramática de gráficos" donde cada visualización combina datos, mapeo estético (qué variables representar), geometrías (cómo representarlas), y elementos de formato. Esta modularidad permite construir gráficos complejos paso a paso.
+
 | Componente ggplot2 | Descripción | Ejemplo |
 |--------------------|-------------|---------|
 | **data** | Dataset a visualizar | `ggplot(datos, ...)` |

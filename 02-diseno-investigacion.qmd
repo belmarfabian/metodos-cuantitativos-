@@ -154,6 +154,10 @@ Debemos evitar dos falacias al cambiar de nivel de análisis. La **falacia ecol�
 
 ## Resumen {.unnumbered}
 
+Un buen diseño de investigación comienza con una pregunta clara y teóricamente fundamentada. Las preguntas pueden ser descriptivas (caracterizar fenómenos), relacionales (identificar asociaciones) o causales (establecer mecanismos). La formulación de hipótesis falsables traduce expectativas teóricas en predicciones empíricas contrastables.
+
+La validez interna y externa representan un trade-off fundamental: los experimentos maximizan control interno pero enfrentan limitaciones de generalización, mientras los estudios observacionales ofrecen mayor alcance pero dificultades para descartar explicaciones alternativas.
+
 | Concepto | Descripción |
 |----------|-------------|
 | **Pregunta descriptiva** | Caracterizar fenómenos ("¿Cuál es la tasa de...?") |
