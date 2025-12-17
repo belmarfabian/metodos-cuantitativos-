@@ -573,13 +573,12 @@ mean of x mean of y
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
+<span class="screen-reader-only">Nota</span>🎓 Avanzado: Fórmula t para dos muestras
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>Fórmula del estadístico t para dos muestras:</strong></p>
 <p><span class="math display">\[t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}\]</span></p>
 <p>El numerador es la diferencia de medias observada. El denominador es el error estándar de esa diferencia, que depende de las varianzas y tamaños de ambos grupos.</p>
 <p>R usa por defecto la <strong>corrección de Welch</strong>, que no asume varianzas iguales entre grupos. Esta es la opción recomendada en la mayoría de los casos.</p>
@@ -736,14 +735,12 @@ Residuals    297  424.6    1.43</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
+<span class="screen-reader-only">Nota</span>🎓 Avanzado: Comparaciones post-hoc
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="comparaciones-post-hoc" class="level3" data-number="10.6.4">
-<h3 data-number="10.6.4" class="anchored" data-anchor-id="comparaciones-post-hoc"><span class="header-section-number">10.6.4</span> Comparaciones post-hoc</h3>
 <p>Si ANOVA indica diferencias significativas, ¿entre qué grupos específicos están? Las pruebas <strong>post-hoc</strong> responden esto controlando por comparaciones múltiples.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparaciones post-hoc de Tukey</span></span>
@@ -768,9 +765,8 @@ Izquierda-Derecha  0.2938576 -0.09636805  0.6840832 0.1801856</code></pre>
 <li><code>p adj</code>: p-value ajustado por comparaciones múltiples</li>
 </ul>
 <p>Si el intervalo <strong>no incluye el cero</strong> (o p adj &lt; 0.05), la diferencia entre esos dos grupos es significativa.</p>
-</section>
-<section id="alternativas-no-paramétricas" class="level3" data-number="10.6.5">
-<h3 data-number="10.6.5" class="anchored" data-anchor-id="alternativas-no-paramétricas"><span class="header-section-number">10.6.5</span> Alternativas no paramétricas</h3>
+<section id="alternativas-no-paramétricas" class="level3" data-number="10.6.4">
+<h3 data-number="10.6.4" class="anchored" data-anchor-id="alternativas-no-paramétricas"><span class="header-section-number">10.6.4</span> Alternativas no paramétricas</h3>
 <p>Cuando los supuestos no se cumplen (especialmente con muestras pequeñas), usamos pruebas que no asumen distribución normal:</p>
 <table class="caption-top table">
 <colgroup>

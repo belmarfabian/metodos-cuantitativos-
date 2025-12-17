@@ -161,3 +161,35 @@
 .ejercicios pre {
   font-size: 0.85em;
 }
+
+/* TABLAS - Fuente más pequeña para contenido resumido (estilo académico) */
+
+table {
+  font-size: 0.85em;
+  line-height: 1.4;
+}
+
+table th {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+table td {
+  font-size: 0.85em;
+}
+
+/* Tablas dentro de texto corrido */
+.content table,
+#quarto-content table {
+  font-size: 0.85em;
+}
+
+/* Asegurar que las tablas markdown también tengan fuente pequeña */
+table.table {
+  font-size: 0.85em;
+}
+
+table.table th,
+table.table td {
+  padding: 0.4em 0.6em;
+}

@@ -689,20 +689,17 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
+<span class="screen-reader-only">Nota</span>🎓 Avanzado: Fórmulas del error estándar
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="fórmulas-del-error-estándar" class="level3" data-number="8.3.5">
-<h3 data-number="8.3.5" class="anchored" data-anchor-id="fórmulas-del-error-estándar"><span class="header-section-number">8.3.5</span> Fórmulas del error estándar</h3>
 <p><strong>Para la media:</strong> <span class="math display">\[\text{SE}(\bar{x}) = \frac{s}{\sqrt{n}}\]</span></p>
 <p>Donde <span class="math inline">\(s\)</span> es la desviación estándar muestral y <span class="math inline">\(n\)</span> el tamaño de muestra.</p>
 <p><strong>Para una proporción:</strong> <span class="math display">\[\text{SE}(\hat{p}) = \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
-</section>
-<section id="el-teorema-del-límite-central" class="level3" data-number="8.3.6">
-<h3 data-number="8.3.6" class="anchored" data-anchor-id="el-teorema-del-límite-central"><span class="header-section-number">8.3.6</span> El Teorema del Límite Central</h3>
+<section id="el-teorema-del-límite-central" class="level3" data-number="8.3.5">
+<h3 data-number="8.3.5" class="anchored" data-anchor-id="el-teorema-del-límite-central"><span class="header-section-number">8.3.5</span> El Teorema del Límite Central</h3>
 <p>Si tomamos muchas muestras de tamaño <span class="math inline">\(n\)</span> de cualquier población, la distribución de las medias muestrales:</p>
 <ol type="1">
 <li>Tendrá forma aproximadamente Normal (para <span class="math inline">\(n \geq 30\)</span>)</li>
@@ -1021,20 +1018,17 @@ sample estimates:
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>🎓 Métodos Cuantitativos Avanzados
+<span class="screen-reader-only">Nota</span>🎓 Avanzado: Fórmulas del intervalo de confianza
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<section id="fórmulas-para-el-intervalo-de-confianza" class="level3" data-number="8.5.3">
-<h3 data-number="8.5.3" class="anchored" data-anchor-id="fórmulas-para-el-intervalo-de-confianza"><span class="header-section-number">8.5.3</span> Fórmulas para el intervalo de confianza</h3>
 <p><strong>Para la media (n grande o datos normales):</strong> <span class="math display">\[\text{IC}_{95\%} = \bar{x} \pm 1.96 \times \frac{s}{\sqrt{n}}\]</span></p>
 <p><strong>Para la proporción:</strong> <span class="math display">\[\text{IC}_{95\%} = \hat{p} \pm 1.96 \times \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]</span></p>
 <p>Donde 1.96 es el valor crítico de la distribución Normal para 95% de confianza.</p>
-</section>
-<section id="determinación-del-tamaño-muestral" class="level3" data-number="8.5.4">
-<h3 data-number="8.5.4" class="anchored" data-anchor-id="determinación-del-tamaño-muestral"><span class="header-section-number">8.5.4</span> Determinación del tamaño muestral</h3>
+<section id="determinación-del-tamaño-muestral" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="determinación-del-tamaño-muestral"><span class="header-section-number">8.5.3</span> Determinación del tamaño muestral</h3>
 <p>Para proporciones, si quieres un margen de error <span class="math inline">\(E\)</span> con confianza 95%:</p>
 <p><span class="math display">\[n = \left(\frac{1.96}{E}\right)^2 \times 0.25\]</span></p>
 <p>Usando <span class="math inline">\(p = 0.5\)</span> (el caso más conservador).</p>
@@ -1074,8 +1068,8 @@ sample estimates:
 </section>
 <section id="resumen-conceptos-clave" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="resumen-conceptos-clave">Resumen: Conceptos clave</h2>
-<section id="vocabulario-esencial" class="level3" data-number="8.5.5">
-<h3 data-number="8.5.5" class="anchored" data-anchor-id="vocabulario-esencial"><span class="header-section-number">8.5.5</span> Vocabulario esencial</h3>
+<section id="vocabulario-esencial" class="level3" data-number="8.5.4">
+<h3 data-number="8.5.4" class="anchored" data-anchor-id="vocabulario-esencial"><span class="header-section-number">8.5.4</span> Vocabulario esencial</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 31%">
@@ -1113,8 +1107,8 @@ sample estimates:
 </tbody>
 </table>
 </section>
-<section id="funciones-en-r" class="level3" data-number="8.5.6">
-<h3 data-number="8.5.6" class="anchored" data-anchor-id="funciones-en-r"><span class="header-section-number">8.5.6</span> Funciones en R</h3>
+<section id="funciones-en-r" class="level3" data-number="8.5.5">
+<h3 data-number="8.5.5" class="anchored" data-anchor-id="funciones-en-r"><span class="header-section-number">8.5.5</span> Funciones en R</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 37%">
@@ -1147,8 +1141,8 @@ sample estimates:
 </tbody>
 </table>
 </section>
-<section id="ideas-principales" class="level3" data-number="8.5.7">
-<h3 data-number="8.5.7" class="anchored" data-anchor-id="ideas-principales"><span class="header-section-number">8.5.7</span> Ideas principales</h3>
+<section id="ideas-principales" class="level3" data-number="8.5.6">
+<h3 data-number="8.5.6" class="anchored" data-anchor-id="ideas-principales"><span class="header-section-number">8.5.6</span> Ideas principales</h3>
 <ol type="1">
 <li><strong>El muestreo tiene incertidumbre:</strong> Diferentes muestras dan diferentes resultados</li>
 <li><strong>El error estándar cuantifica esa incertidumbre:</strong> Mide cuánto varían los estadísticos</li>
