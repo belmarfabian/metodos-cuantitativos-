@@ -137,16 +137,9 @@
   text-indent: -1.5em;
 }
 
-/* Dos columnas en pantallas grandes */
-@media (min-width: 900px) {
-  .csl-bib-body {
-    column-count: 2;
-    column-gap: 30px;
-  }
-
-  .csl-entry {
-    break-inside: avoid;
-  }
+/* Bibliografía en una sola columna */
+.csl-bib-body {
+  column-count: 1;
 }
 
 /* EJERCICIOS - Compactos, dos columnas, diferenciados del texto principal */
