@@ -4,7 +4,7 @@
 
 ## Objetivo de este manual {.unnumbered}
 
-Este es un **manual de preparación para el examen** del curso Métodos Cuantitativos Introductorios. Su propósito es presentar de forma clara y concisa los conceptos fundamentales que necesitas dominar para aprobar el curso.
+Este es un **manual introductorio** para cursos de Métodos Cuantitativos. Su propósito es presentar de forma clara y concisa los conceptos fundamentales que necesitas dominar para aprobar el curso.
 
 El manual está diseñado para ser una guía de estudio práctica: cada capítulo cubre los temas esenciales, con ejemplos concretos y ejercicios para practicar. Úsalo como referencia rápida para repasar antes del examen.
 
@@ -15,7 +15,7 @@ Las secciones marcadas como **"Avanzado"** contienen material complementario que
 
 ## ¿Por qué este libro? {.unnumbered}
 
-Este libro fue desarrollado como material del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.
+Este libro es de acceso libre. Originalmente fue desarrollado como material de estudio para el examen final del curso **Métodos Cuantitativos Introductorios** para estudiantes de Ciencia Política de la Universidad Diego Portales, 2025.
 
 A diferencia de textos que enfatizan la mecánica estadística, aquí privilegiamos la lógica de la investigación: cómo formular preguntas, operacionalizar conceptos, diseñar estrategias empíricas y evaluar evidencia. Los ejemplos provienen de la realidad política y social latinoamericana, utilizando datos de Chile y la región.
 
@@ -39,7 +39,11 @@ Todo el análisis se realiza con **R**, lenguaje de código abierto estándar en
 
 ## Agradecimientos {.unnumbered}
 
-Este proyecto es resultado de años de docencia en metodología cuantitativa. Agradezco a estudiantes que con sus preguntas obligaron a clarificar argumentos, y a colegas cuyas conversaciones enriquecieron este material.
+Este proyecto es resultado años de trabajo con metodología cuantitativa. Agradezco a estudiantes que con sus preguntas obligaron a clarificar argumentos, y a colegas cuyas conversaciones enriquecieron este material.
+
+## Créditos {.unnumbered}
+
+Ilustración de portada por [Chloé](https://unsplash.com/@coquiette) en [Unsplash](https://unsplash.com).
 
 ```{r}
 #| include: false

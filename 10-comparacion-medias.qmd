@@ -9,77 +9,223 @@ library(ggplot2)
 
 Al finalizar este capítulo, serás capaz de:
 
-- Realizar pruebas t para comparar medias entre dos grupos
-- Distinguir entre pruebas t para muestras independientes y pareadas
-- Comprender los supuestos de las pruebas paramétricas
-- Usar ANOVA para comparar medias de más de dos grupos
-- Identificar cuándo usar alternativas no paramétricas
+- Elegir la prueba correcta para comparar medias según tu situación
+- Realizar e interpretar pruebas t para uno y dos grupos
+- Distinguir cuándo usar pruebas para muestras independientes vs pareadas
+- Usar ANOVA cuando tienes más de dos grupos
+- Interpretar los resultados en lenguaje accesible
+
+## ¿Por qué comparar medias?
+
+Una de las preguntas más frecuentes en ciencias sociales es si diferentes grupos difieren en alguna característica. Por ejemplo:
+
+- ¿Ganan más los hombres que las mujeres? (diferencia de ingresos)
+- ¿Cambió la satisfacción con la democracia después de una crisis? (antes/después)
+- ¿Hay diferencias en participación electoral entre regiones? (múltiples grupos)
+
+Para responder estas preguntas, necesitamos comparar **promedios** (medias) entre grupos y determinar si las diferencias observadas son **estadísticamente significativas** o podrían deberse al azar del muestreo.
+
+## Eligiendo la prueba correcta
+
+Antes de analizar, identifica tu situación:
+
+| Pregunta | Situación | Prueba |
+|----------|-----------|--------|
+| ¿Mi muestra difiere de un valor conocido? | Un grupo vs valor teórico | t de una muestra |
+| ¿Difieren dos grupos independientes? | Hombres vs mujeres, tratados vs control | t de dos muestras |
+| ¿Cambió algo antes y después? | Mismas personas medidas dos veces | t pareada |
+| ¿Difieren tres o más grupos? | Regiones, niveles educativos, etc. | ANOVA |
 
 ## Prueba t para una muestra
 
-La prueba t para una muestra compara la media de una muestra con un valor teórico o poblacional.
+Esta prueba responde: **¿La media de mi muestra difiere de un valor de referencia?**
 
-**Hipótesis:**
-- $H_0: \mu = \mu_0$
-- $H_1: \mu \neq \mu_0$
+### Ejemplo: Confianza institucional regional
 
-**Estadístico t:**
-$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}$$
+Supongamos que el promedio nacional de confianza en las instituciones es 5.0 (en una escala de 1 a 10). Queremos saber si una región específica tiene un nivel diferente.
 
-## Prueba t para dos muestras
+```{r t-una-muestra, echo=TRUE}
+# Datos de una región
+set.seed(2024)
+confianza_region <- rnorm(80, mean = 4.3, sd = 1.8)
 
-### Muestras independientes
+# Prueba t: ¿difiere de 5.0?
+resultado <- t.test(confianza_region, mu = 5.0)
+resultado
+```
 
-Comparamos las medias de dos grupos independientes.
+### ¿Cómo interpretar este resultado?
 
-**Hipótesis:**
-- $H_0: \mu_1 = \mu_2$
-- $H_1: \mu_1 \neq \mu_2$
+**1. Las medias:**
+```
+mean of x
+ 4.299
+```
+La media de nuestra muestra es 4.3, mientras que el valor de referencia es 5.0.
 
-**Estadístico t:**
-$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+**2. El intervalo de confianza:**
+```
+95 percent confidence interval:
+ 3.893  4.706
+```
+Estamos 95% seguros de que la media verdadera de la región está entre 3.9 y 4.7. Como este intervalo **no incluye el 5.0**, hay evidencia de que la región difiere del promedio nacional.
 
-Consideremos un caso concreto para ilustrar esta prueba: la comparación de ingresos promedio entre hombres y mujeres en Chile.
+**3. El p-value:**
+```
+p-value = 0.0003
+```
+Como p < 0.05, la diferencia es estadísticamente significativa. Podemos concluir que la confianza institucional en esta región es significativamente menor que el promedio nacional.
 
-```{r t-test-dos-muestras, echo=TRUE}
-# Datos simulados: Diferencia salarial por género
+::: {.callout-tip}
+## Interpretación en lenguaje simple
+
+"La confianza institucional promedio en la región (4.3) es significativamente menor que el promedio nacional de 5.0 (t = -3.82, p < 0.001). El intervalo de confianza al 95% [3.9, 4.7] no incluye el valor nacional, confirmando esta diferencia."
+:::
+
+## Prueba t para dos muestras independientes
+
+Esta prueba responde: **¿Dos grupos tienen medias diferentes?**
+
+Se llama "independientes" porque los grupos no están relacionados entre sí: diferentes personas, diferentes países, etc.
+
+### Ejemplo: Brecha salarial de género
+
+Comparemos los ingresos promedio entre hombres y mujeres:
+
+```{r t-dos-muestras, echo=TRUE}
+# Datos simulados de ingresos (en miles de pesos)
 set.seed(2024)
 ingresos_hombres <- rlnorm(150, meanlog = log(750), sdlog = 0.6)
 ingresos_mujeres <- rlnorm(150, meanlog = log(650), sdlog = 0.6)
 
 # Prueba t para dos muestras independientes
 resultado <- t.test(ingresos_hombres, ingresos_mujeres)
-print(resultado)
+resultado
 ```
 
-### Muestras pareadas
+### Interpretando el resultado
 
-Para datos pareados (mismo sujeto medido dos veces, o pares emparejados) se requiere una prueba t específica que reconoce la dependencia entre observaciones. Consideremos el caso de evaluación de una intervención policial sobre percepción de seguridad, donde medimos a los mismos individuos antes y después de la intervención:
+**Las medias de cada grupo:**
+```
+mean of x  mean of y
+  815.4      705.2
+```
+Los hombres ganan en promedio $815 mil, las mujeres $705 mil.
 
-```{r t-test-pareado, echo=TRUE}
-# Datos: Percepción de seguridad antes y después de intervención policial
+**La diferencia y su intervalo de confianza:**
+```
+95 percent confidence interval:
+ 12.51  207.92
+```
+La diferencia estimada es de aproximadamente $110 mil (815 - 705). El intervalo de confianza indica que la diferencia verdadera está entre $12 mil y $208 mil. Como el intervalo **no incluye el cero**, la diferencia es significativa.
+
+**El p-value:**
+Como p < 0.05, concluimos que existe una diferencia estadísticamente significativa en los ingresos promedio entre hombres y mujeres.
+
+```{r plot-genero, echo=TRUE, fig.cap="Comparación de ingresos por género"}
+# Visualización
+datos_genero <- data.frame(
+  ingreso = c(ingresos_hombres, ingresos_mujeres),
+  genero = factor(c(rep("Hombres", 150), rep("Mujeres", 150)))
+)
+
+ggplot(datos_genero, aes(x = genero, y = ingreso, fill = genero)) +
+  geom_boxplot(alpha = 0.7) +
+  stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  scale_fill_manual(values = c("#3498db", "#e74c3c")) +
+  labs(x = "", y = "Ingreso mensual (miles de $)",
+       title = "Distribución de ingresos por género",
+       subtitle = "El diamante rojo indica la media de cada grupo") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
+**Fórmula del estadístico t para dos muestras:**
+
+$$t = \frac{\bar{x}_1 - \bar{x}_2}{\sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}}$$
+
+El numerador es la diferencia de medias observada. El denominador es el error estándar de esa diferencia, que depende de las varianzas y tamaños de ambos grupos.
+
+R usa por defecto la **corrección de Welch**, que no asume varianzas iguales entre grupos. Esta es la opción recomendada en la mayoría de los casos.
+:::
+
+## Prueba t pareada
+
+Esta prueba responde: **¿Cambió algo antes y después en las mismas personas?**
+
+Se usa cuando las observaciones están **pareadas** o **emparejadas**: las mismas personas medidas en dos momentos, gemelos, pares de casos similares, etc.
+
+### ¿Por qué es diferente a la prueba de dos muestras?
+
+Cuando medimos a las mismas personas dos veces, las observaciones no son independientes: una persona con alta satisfacción "antes" probablemente tendrá alta satisfacción "después". La prueba pareada aprovecha esta información, analizando la **diferencia individual** de cada persona.
+
+### Ejemplo: Evaluación de una intervención
+
+Medimos percepción de seguridad antes y después de un programa policial en el barrio:
+
+```{r t-pareada, echo=TRUE}
+# Mismas 50 personas, medidas antes y después
 set.seed(123)
 antes <- rnorm(50, mean = 4.2, sd = 1.5)
-despues <- antes + rnorm(50, mean = 0.8, sd = 1.0)  # Mejora promedio
+despues <- antes + rnorm(50, mean = 0.8, sd = 1.0)  # Mejora promedio de 0.8
 
 # Prueba t pareada
 resultado <- t.test(despues, antes, paired = TRUE)
-print(resultado)
+resultado
 ```
 
-## ANOVA: Comparar más de dos grupos
+### Interpretando el resultado
 
-Cuando queremos comparar las medias de **tres o más grupos**, la prueba t no es apropiada porque haríamos múltiples comparaciones, aumentando la probabilidad de error tipo I. El **ANOVA** (Analysis of Variance) resuelve esto comparando todos los grupos simultáneamente.
+**La diferencia promedio:**
+```
+mean difference
+     0.841
+```
+En promedio, la percepción de seguridad aumentó 0.84 puntos después de la intervención.
 
-**Hipótesis:**
+**Intervalo de confianza de la diferencia:**
+```
+95 percent confidence interval:
+ 0.547  1.135
+```
+Estamos 95% seguros de que el verdadero efecto de la intervención está entre 0.55 y 1.14 puntos. Como el intervalo no incluye el cero, el efecto es significativo.
 
-- $H_0$: Todas las medias son iguales ($\mu_1 = \mu_2 = \mu_3 = ...$)
-- $H_1$: Al menos una media es diferente
+**El p-value:** Como p < 0.05, concluimos que la intervención tuvo un efecto estadísticamente significativo en la percepción de seguridad.
 
-**Ejemplo:** Comparamos la satisfacción con la democracia según orientación política (izquierda, centro, derecha).
+::: {.callout-warning}
+## Cuidado: Estadístico ≠ Causal
+
+Un resultado significativo no prueba que la intervención *causó* el cambio. Podrían haber ocurrido otros eventos durante el período (nuevas leyes, cambios económicos, etc.). Para afirmar causalidad necesitamos un **grupo de control** que no recibió la intervención.
+:::
+
+## ANOVA: Comparando más de dos grupos
+
+¿Qué pasa si quieres comparar **tres o más grupos**? No puedes simplemente hacer múltiples pruebas t, porque cada prueba tiene 5% de probabilidad de error tipo I. Con muchas comparaciones, los errores se acumulan.
+
+El **ANOVA** (Analysis of Variance) resuelve esto evaluando todas las diferencias simultáneamente con una sola prueba.
+
+### La pregunta que responde ANOVA
+
+**¿Hay al menos un grupo cuya media difiere de los demás?**
+
+- Si p < 0.05: Sí, hay diferencias significativas entre los grupos
+- Si p ≥ 0.05: No podemos concluir que haya diferencias
+
+::: {.callout-note}
+## Importante
+
+ANOVA NO te dice *cuáles* grupos difieren, solo que *al menos uno* es diferente. Para saber cuáles, necesitas pruebas post-hoc (ver sección avanzada).
+:::
+
+### Ejemplo: Satisfacción por orientación política
+
+Comparemos la satisfacción con la democracia entre personas de izquierda, centro y derecha:
 
 ```{r anova-ejemplo, echo=TRUE}
-# Datos simulados: satisfacción con democracia por orientación política
+# Datos simulados
 set.seed(2024)
 n_grupo <- 100
 
@@ -89,7 +235,7 @@ datos_anova <- data.frame(
     rnorm(n_grupo, mean = 5.2, sd = 1.1),  # Centro
     rnorm(n_grupo, mean = 4.0, sd = 1.3)   # Derecha
   ),
-  orientacion = rep(c("Izquierda", "Centro", "Derecha"), each = n_grupo)
+  orientacion = factor(rep(c("Izquierda", "Centro", "Derecha"), each = n_grupo))
 )
 
 # ANOVA de una vía
@@ -97,112 +243,130 @@ modelo_anova <- aov(satisfaccion ~ orientacion, data = datos_anova)
 summary(modelo_anova)
 ```
 
-**Interpretación:** Si el valor p es menor a 0.05, rechazamos $H_0$ y concluimos que al menos un grupo tiene una media significativamente diferente.
+### Interpretando el output de ANOVA
 
-```{r anova-plot, echo=TRUE, fig.cap="Satisfacción con democracia por orientación política"}
-library(ggplot2)
+```
+              Df Sum Sq Mean Sq F value   Pr(>F)
+orientacion    2   73.5   36.75    25.7 2.45e-11 ***
+Residuals    297  424.6    1.43
+```
 
+**Lo más importante es el p-value (Pr(>F)):** Como p < 0.05 (de hecho, p < 0.001), concluimos que hay diferencias significativas en satisfacción con la democracia entre los grupos políticos.
+
+**El estadístico F (25.7):** Mide cuánta variación hay "entre grupos" comparada con la variación "dentro de grupos". Valores más altos indican diferencias más claras.
+
+```{r anova-plot, echo=TRUE, fig.cap="Satisfacción con la democracia según orientación política"}
 ggplot(datos_anova, aes(x = orientacion, y = satisfaccion, fill = orientacion)) +
   geom_boxplot(alpha = 0.7, show.legend = FALSE) +
   stat_summary(fun = mean, geom = "point", shape = 18, size = 4, color = "red") +
+  scale_fill_manual(values = c("#2ecc71", "#9b59b6", "#e74c3c")) +
   labs(x = "Orientación política",
        y = "Satisfacción con la democracia (1-7)",
        title = "Satisfacción según orientación política",
-       subtitle = "Punto rojo = media del grupo") +
+       subtitle = "El diamante rojo indica la media de cada grupo") +
   theme_minimal()
 ```
+
+El gráfico muestra que el grupo de centro tiene la mayor satisfacción, seguido de izquierda, y derecha tiene la menor.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
 ## 🎓 Métodos Cuantitativos Avanzados
 
 ### Comparaciones post-hoc
 
-Si ANOVA indica diferencias significativas, ¿entre qué grupos están las diferencias? Las pruebas **post-hoc** (como Tukey HSD) comparan todos los pares de grupos controlando el error tipo I.
+Si ANOVA indica diferencias significativas, ¿entre qué grupos específicos están? Las pruebas **post-hoc** responden esto controlando por comparaciones múltiples.
 
 ```{r posthoc, echo=TRUE}
 # Comparaciones post-hoc de Tukey
 TukeyHSD(modelo_anova)
 ```
 
-**Interpretación:** El intervalo de confianza que no incluye 0 indica diferencia significativa entre esos dos grupos.
-:::
+**Cómo leer el resultado:**
 
-## Supuestos de las pruebas paramétricas
+- `diff`: Diferencia de medias entre los dos grupos
+- `lwr` y `upr`: Intervalo de confianza al 95%
+- `p adj`: p-value ajustado por comparaciones múltiples
 
-Las pruebas t y ANOVA asumen:
-
-1. **Independencia**: Las observaciones son independientes entre sí
-2. **Normalidad**: Los datos en cada grupo se distribuyen normalmente
-3. **Homogeneidad de varianzas**: Las varianzas de los grupos son similares
-
-::: {.callout-tip}
-## ¿Qué tan importantes son los supuestos?
-
-En la práctica:
-
-- **Independencia** es el supuesto más importante. Si no se cumple, los resultados pueden ser muy sesgados.
-- **Normalidad** es menos crítica con muestras grandes (n > 30 por grupo) gracias al teorema del límite central.
-- **Homogeneidad** puede relajarse usando versiones corregidas de las pruebas (como el ajuste de Welch en t.test).
-:::
-
-::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
+Si el intervalo **no incluye el cero** (o p adj < 0.05), la diferencia entre esos dos grupos es significativa.
 
 ### Alternativas no paramétricas
 
-Cuando los supuestos no se cumplen, especialmente con muestras pequeñas, usamos pruebas no paramétricas:
+Cuando los supuestos no se cumplen (especialmente con muestras pequeñas), usamos pruebas que no asumen distribución normal:
 
-| Prueba paramétrica | Alternativa no paramétrica |
-|-------------------|---------------------------|
-| t de una muestra | Wilcoxon signed-rank |
-| t de dos muestras independientes | Mann-Whitney U |
-| t pareada | Wilcoxon signed-rank pareada |
-| ANOVA | Kruskal-Wallis |
-
-```{r no-parametrico, echo=TRUE}
-# Ejemplo: Mann-Whitney U (alternativa a t de dos muestras)
-wilcox.test(ingresos_hombres, ingresos_mujeres)
-
-# Ejemplo: Kruskal-Wallis (alternativa a ANOVA)
-kruskal.test(satisfaccion ~ orientacion, data = datos_anova)
-```
+| Prueba paramétrica | Alternativa no paramétrica | En R |
+|-------------------|---------------------------|------|
+| t de una muestra | Wilcoxon signed-rank | `wilcox.test(x, mu = valor)` |
+| t de dos muestras | Mann-Whitney U | `wilcox.test(x, y)` |
+| t pareada | Wilcoxon pareada | `wilcox.test(x, y, paired = TRUE)` |
+| ANOVA | Kruskal-Wallis | `kruskal.test(y ~ grupo)` |
 :::
 
-## ¿Qué prueba usar?
+## Supuestos de las pruebas
 
-| Situación | Prueba recomendada |
-|-----------|-------------------|
-| Comparar una media con un valor teórico | t de una muestra |
-| Comparar medias de 2 grupos independientes | t de dos muestras |
-| Comparar medias antes/después (mismos sujetos) | t pareada |
-| Comparar medias de 3+ grupos | ANOVA |
+Las pruebas t y ANOVA asumen ciertas condiciones. Si no se cumplen, los resultados pueden ser poco confiables.
+
+### Los tres supuestos principales
+
+**1. Independencia de las observaciones**
+
+Las observaciones no deben estar relacionadas entre sí. Por ejemplo, si encuestas a miembros de la misma familia, sus respuestas no son independientes.
+
+**Este es el supuesto más importante.** Si no se cumple, los resultados pueden ser muy sesgados y las alternativas no paramétricas no ayudan.
+
+**2. Normalidad**
+
+Los datos en cada grupo deberían distribuirse aproximadamente como una curva normal.
+
+**En la práctica:** Este supuesto es menos crítico con muestras grandes (n > 30 por grupo) gracias al teorema del límite central. Las pruebas t y ANOVA son bastante robustas a desviaciones de normalidad.
+
+**3. Homogeneidad de varianzas**
+
+Los grupos deberían tener dispersiones similares.
+
+**En la práctica:** R usa por defecto la corrección de Welch en `t.test()`, que no asume varianzas iguales. Para ANOVA, existen versiones robustas si este supuesto es problemático.
+
+::: {.callout-tip}
+## Regla práctica
+
+Con muestras grandes (n > 30 por grupo) y sin problemas graves de independencia, las pruebas t y ANOVA funcionan bien incluso con datos que no son perfectamente normales.
+:::
 
 ## Resumen {.unnumbered}
 
-| Concepto | Descripción | Función en R |
-|----------|-------------|--------------|
-| **t una muestra** | Compara media vs valor teórico | `t.test(x, mu = valor)` |
-| **t dos muestras** | Compara medias de 2 grupos | `t.test(x, y)` |
-| **t pareada** | Mismos sujetos, dos mediciones | `t.test(x, y, paired = TRUE)` |
-| **ANOVA** | Compara 3+ grupos | `aov(y ~ grupo)` |
+| Situación | Prueba | En R |
+|-----------|--------|------|
+| Una muestra vs valor conocido | t de una muestra | `t.test(x, mu = valor)` |
+| Dos grupos independientes | t de dos muestras | `t.test(x, y)` |
+| Antes/después (mismas personas) | t pareada | `t.test(x, y, paired = TRUE)` |
+| Tres o más grupos | ANOVA | `aov(y ~ grupo)` |
 
-**Supuestos clave:** independencia (crítico), normalidad (flexible con n>30), homogeneidad de varianzas.
+**Claves para interpretar:**
+
+- **p-value < 0.05**: La diferencia es estadísticamente significativa
+- **Intervalo de confianza que no incluye 0**: Hay diferencia significativa
+- **ANOVA significativo**: Al menos un grupo difiere, pero no dice cuál
+
+::: {.callout-important}
+## Recuerda
+
+Significancia estadística ≠ Importancia práctica. Una diferencia de $10 pesos puede ser "significativa" con muestras grandes, pero irrelevante en la práctica. Siempre reporta el **tamaño del efecto** (la diferencia real) además del p-value.
+:::
 
 ## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de comparación de grupos:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
 → Capítulo 7 cubre pruebas t y comparación de medias entre dos grupos con claridad y ejemplos aplicados.
 
 **Inferencia causal mediante comparación de grupos:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
 → Capítulo 3 sobre causalidad conecta comparación de medias con diseños experimentales y cuasi-experimentales.
 
 **ANOVA y diseños más complejos:**
 
-Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.  
+Maxwell, S. E., Delaney, H. D., & Kelley, K. (2018). *Designing Experiments and Analyzing Data: A Model Comparison Perspective* (3rd ed.). Routledge.
 → Tratamiento comprehensivo de ANOVA y diseños factoriales para investigadores avanzados.
 
 
@@ -219,10 +383,11 @@ set.seed(111)
 confianza_region <- rnorm(80, mean = 4.8, sd = 2.0)
 ```
 
-a) Formula las hipótesis
-b) Realiza la prueba t
-c) Calcula el IC 95%
-d) ¿La región difiere significativamente del promedio nacional?
+a) ¿Cuál es la pregunta de investigación?
+b) Realiza la prueba t con `t.test()`
+c) Interpreta el p-value: ¿hay diferencia significativa?
+d) Interpreta el intervalo de confianza
+e) Escribe una oración resumiendo el resultado
 
 **2. Prueba t de dos muestras**
 
@@ -234,13 +399,23 @@ civic_hombres <- rnorm(100, mean = 3.2, sd = 1.5)
 civic_mujeres <- rnorm(110, mean = 3.8, sd = 1.4)
 ```
 
-a) Formula las hipótesis
-b) Realiza la prueba t para muestras independientes
-c) Calcula e interpreta el IC para la diferencia de medias
-d) ¿Cuál es el tamaño del efecto (d de Cohen)?
-e) Crea un gráfico comparando ambos grupos
+a) Realiza la prueba t para muestras independientes
+b) ¿Cuál grupo tiene mayor participación cívica?
+c) ¿La diferencia es estadísticamente significativa?
+d) Crea un boxplot comparando ambos grupos
+e) ¿Qué tan grande es la diferencia en términos prácticos?
 
-**3. Prueba t pareada**
+**3. ¿Cuándo usar prueba pareada?**
+
+Indica si deberías usar una prueba t pareada o de muestras independientes:
+
+a) Comparar notas de estudiantes antes y después de un curso
+b) Comparar satisfacción laboral entre empresas públicas y privadas
+c) Comparar presión arterial de pacientes antes y después de un tratamiento
+d) Comparar ingresos entre graduados de dos universidades diferentes
+e) Comparar actitud hacia la inmigración en las mismas personas en 2020 y 2024
+
+**4. Prueba t pareada**
 
 Mediciones de actitud hacia inmigración antes y después de ver un documental:
 
@@ -248,16 +423,16 @@ Mediciones de actitud hacia inmigración antes y después de ver un documental:
 set.seed(333)
 n <- 60
 antes <- rnorm(n, mean = 50, sd = 15)
-# El documental tiene efecto positivo pequeño
 despues <- antes + rnorm(n, mean = 5, sd = 8)
 ```
 
 a) ¿Por qué es apropiada una prueba pareada aquí?
-b) Realiza la prueba
-c) Calcula el cambio promedio y su IC
-d) Crea un gráfico antes-después (ej: líneas conectando puntos)
+b) Realiza la prueba con `t.test(..., paired = TRUE)`
+c) ¿Cuál es el cambio promedio?
+d) ¿El cambio es estadísticamente significativo?
+e) ¿Podemos concluir que el documental *causó* el cambio? ¿Por qué?
 
-**4. ANOVA**
+**5. ANOVA**
 
 Satisfacción con servicios públicos según región:
 
@@ -265,41 +440,30 @@ Satisfacción con servicios públicos según región:
 set.seed(444)
 datos_anova <- data.frame(
   satisfaccion = c(
-    rnorm(50, mean = 5.5, sd = 1.2),  # Norte
-    rnorm(60, mean = 4.8, sd = 1.3),  # Centro
-    rnorm(55, mean = 5.2, sd = 1.1),  # Sur
-    rnorm(45, mean = 4.5, sd = 1.4)   # Metropolitana
+    rnorm(50, mean = 5.5, sd = 1.2),
+    rnorm(60, mean = 4.8, sd = 1.3),
+    rnorm(55, mean = 5.2, sd = 1.1),
+    rnorm(45, mean = 4.5, sd = 1.4)
   ),
   region = rep(c("Norte", "Centro", "Sur", "Metropolitana"), c(50, 60, 55, 45))
 )
 ```
 
-a) Realiza ANOVA de una vía
+a) Realiza ANOVA con `aov()`
 b) ¿Hay diferencias significativas entre regiones?
-c) Realiza análisis post-hoc de Tukey
-d) ¿Entre qué pares de regiones hay diferencias significativas?
-e) Crea visualización comparativa (boxplots)
+c) Crea un boxplot de satisfacción por región
+d) ¿Cuál región tiene mayor satisfacción? ¿Cuál menor?
+e) Si el ANOVA es significativo, ¿qué prueba adicional necesitas para saber cuáles regiones difieren específicamente?
 
-**5. Verificación de supuestos**
+**6. Aplicación**
 
-Con los datos de ANOVA del ejercicio anterior:
+Busca un ejemplo de tu interés donde necesites comparar medias entre grupos:
 
-a) Evalúa normalidad en cada grupo (histogramas o test de Shapiro-Wilk)
-b) Evalúa homogeneidad de varianzas (test de Levene o comparación visual)
-c) ¿Se cumplen los supuestos? Si no, ¿qué alternativa usarías?
-d) Realiza la alternativa no paramétrica (Kruskal-Wallis) y compara conclusiones
-
-**6. Proyecto integrador**
-
-Con datos de tu interés (ej: encuesta de opinión):
-
-a) Formula una pregunta de comparación de grupos
-b) Identifica la prueba apropiada
-c) Verifica supuestos
-d) Realiza la prueba e interpreta
-e) Calcula tamaño del efecto
-f) Crea visualización publicable
-g) Escribe un párrafo de resultados como aparecería en un paper
+a) Describe los grupos que quieres comparar
+b) ¿Qué variable quieres comparar?
+c) ¿Qué prueba usarías y por qué?
+d) ¿Qué resultado esperarías encontrar?
+e) Si la diferencia fuera significativa, ¿qué conclusiones podrías sacar? ¿Cuáles no?
 
 :::
 

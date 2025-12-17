@@ -9,26 +9,45 @@ library(ggplot2)
 
 Al finalizar este capítulo, serás capaz de:
 
-- Calcular e interpretar coeficientes de correlación
-- Comprender la diferencia entre correlación y causalidad
-- Estimar modelos de regresión lineal simple usando mínimos cuadrados ordinarios
-- Interpretar coeficientes de regresión e intercepto
-- Evaluar la bondad de ajuste usando $R^2$
-- Realizar pruebas de hipótesis sobre coeficientes de regresión
+- Comprender qué es la correlación y cómo interpretarla
+- Distinguir claramente entre correlación y causalidad
+- Estimar e interpretar un modelo de regresión lineal simple en R
+- Leer e interpretar el output de `summary()` de un modelo de regresión
+- Evaluar qué tan bien el modelo explica los datos usando $R^2$
 
-## Correlación y regresión
+## ¿Qué es la correlación?
 
-La **correlación** mide la fuerza y dirección de la relación lineal entre dos variables.
+Cuando investigamos fenómenos sociales, frecuentemente queremos saber si dos variables están relacionadas. Por ejemplo:
 
-**Coeficiente de correlación de Pearson:**
+- ¿Los países más ricos tienden a ser más democráticos?
+- ¿Las comunas con mayor educación tienen mayor participación electoral?
+- ¿Existe relación entre desigualdad económica y criminalidad?
+
+La **correlación** nos permite responder estas preguntas midiendo qué tan fuerte es la relación lineal entre dos variables. El **coeficiente de correlación de Pearson** ($r$) es un número que va de -1 a 1:
+
+| Valor de $r$ | Interpretación |
+|:------------:|----------------|
+| $r = 1$ | Correlación positiva perfecta: cuando una sube, la otra siempre sube |
+| $r = 0.7$ a $0.9$ | Correlación positiva fuerte |
+| $r = 0.4$ a $0.6$ | Correlación positiva moderada |
+| $r = 0.1$ a $0.3$ | Correlación positiva débil |
+| $r = 0$ | Sin correlación lineal |
+| $r = -0.7$ a $-0.9$ | Correlación negativa fuerte |
+| $r = -1$ | Correlación negativa perfecta |
+
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
+
+**Fórmula del coeficiente de correlación de Pearson:**
+
 $$r = \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum (x_i - \bar{x})^2} \sqrt{\sum (y_i - \bar{y})^2}}$$
 
-- $-1 \leq r \leq 1$
-- $r = 1$: Correlación positiva perfecta
-- $r = 0$: Sin correlación lineal
-- $r = -1$: Correlación negativa perfecta
+Esta fórmula mide la covarianza entre $X$ e $Y$ estandarizada por sus desviaciones estándar, lo que produce un valor siempre entre -1 y 1.
+:::
 
-Para ilustrar el uso de la correlación, consideremos la relación entre desarrollo económico y democracia, un tema clásico en ciencia política. Analizamos datos de PIB per cápita y nivel de democracia en una muestra de países:
+### Ejemplo: Desarrollo económico y democracia
+
+Una de las preguntas clásicas en ciencia política es si los países más ricos tienden a ser más democráticos. Analicemos datos de PIB per cápita y nivel de democracia en una muestra de países:
 
 ```{r correlacion-ejemplo, echo=TRUE}
 # Datos simulados: PIB per cápita y nivel de democracia
@@ -37,63 +56,92 @@ n <- 50
 pib <- rnorm(n, mean = 15000, sd = 8000)
 democracia <- 3 + 0.0003 * pib + rnorm(n, mean = 0, sd = 1.5)
 
-# Correlación de Pearson
-cor_pearson <- cor(pib, democracia)
-cat("Correlación de Pearson:", round(cor_pearson, 3), "\n")
+# Calcular correlación
+cor(pib, democracia)
+```
 
-# Test de significancia
+La correlación de `r round(cor(pib, democracia), 2)` indica una relación positiva moderada: los países con mayor PIB per cápita tienden a tener niveles más altos de democracia, pero la relación no es perfecta.
+
+### ¿Es la correlación estadísticamente significativa?
+
+Para saber si la correlación observada es "real" o podría deberse al azar, usamos una prueba de hipótesis con `cor.test()`:
+
+```{r cor-test, echo=TRUE}
 cor.test(pib, democracia)
 ```
 
-Es fundamental recordar que una correlación fuerte **NO implica que una variable cause la otra**. Pueden existir variables confusoras, causalidad inversa, o relaciones espurias.[^corr-causal]
+**¿Cómo interpretar este resultado?**
 
-[^corr-causal]: Correlación no implica causalidad. Por ejemplo, ventas de helado y ahogamientos correlacionan, pero ambas son causadas por una tercera variable (temperatura). Establecer causalidad requiere teoría, diseños apropiados y control de confusores.
+1. **cor**: El coeficiente de correlación (en este caso, positivo y moderado)
+2. **t y df**: El estadístico de prueba y grados de libertad (detalles técnicos)
+3. **p-value**: Si es menor a 0.05, la correlación es estadísticamente significativa
+4. **95 percent confidence interval**: Rango plausible de la correlación verdadera
 
-### El modelo de regresión
+En este ejemplo, como $p < 0.05$, concluimos que existe una correlación estadísticamente significativa entre PIB per cápita y democracia.
 
-La regresión lineal modela la relación entre una variable dependiente $Y$ y una variable independiente $X$:
+### Correlación NO es causalidad
 
-$$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$$
+::: {.callout-important}
+## El error más común en investigación
 
-donde:
-- $\beta_0$ = intercepto (valor de $Y$ cuando $X = 0$)
-- $\beta_1$ = pendiente (cambio en $Y$ por unidad de cambio en $X$)
-- $\epsilon_i$ = error (variación no explicada por el modelo)
+Una correlación fuerte **NO significa que una variable cause la otra**. Pueden ocurrir tres cosas:
 
-### Mínimos cuadrados ordinarios
+1. **Variable confusora**: Una tercera variable causa ambas. Ejemplo: ventas de helado y ahogamientos correlacionan, pero ambas son causadas por temperatura alta.
 
-El método de **mínimos cuadrados ordinarios** (OLS, *Ordinary Least Squares*) estima $\beta_0$ y $\beta_1$ minimizando la suma de errores al cuadrado:
+2. **Causalidad inversa**: Quizás no es que la riqueza cause democracia, sino que la democracia facilita el desarrollo económico.
 
-$$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$
-
-::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Fórmulas OLS:**
-
-$$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$
-
-$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
+3. **Relación espuria**: La correlación es pura coincidencia estadística.
 :::
 
-Ilustremos la estimación OLS con un ejemplo de economía política: la relación entre gasto público y crecimiento económico.
+Para establecer causalidad necesitamos teoría sólida, diseños de investigación apropiados (experimentos o cuasi-experimentos), y control de variables confusoras.
+
+## ¿Qué es la regresión lineal?
+
+Mientras la correlación nos dice *si* existe relación entre dos variables, la **regresión lineal** nos permite:
+
+1. **Predecir** valores de una variable a partir de otra
+2. **Cuantificar** cuánto cambia $Y$ cuando $X$ aumenta en una unidad
+3. **Controlar** por otras variables (en regresión múltiple)
+
+### La idea intuitiva
+
+Imagina un gráfico de dispersión (scatter plot) con puntos que representan países: PIB en el eje X, democracia en el eje Y. La regresión lineal busca la **mejor línea recta** que pase "lo más cerca posible" de todos los puntos.
+
+Esta línea tiene la forma:
+
+$$Y = \beta_0 + \beta_1 X$$
+
+Donde:
+
+- **$\beta_0$ (intercepto)**: El valor de $Y$ cuando $X = 0$. Es donde la línea cruza el eje vertical.
+- **$\beta_1$ (pendiente)**: Cuánto aumenta (o disminuye) $Y$ por cada unidad que aumenta $X$. Es la "inclinación" de la línea.
+
+::: {.callout-tip}
+## Analogía útil
+
+Piensa en la pendiente como una "tasa de cambio". Si $\beta_1 = 2$, significa que por cada unidad adicional de $X$, $Y$ aumenta en promedio 2 unidades. Si $\beta_1 = -0.5$, por cada unidad adicional de $X$, $Y$ disminuye en promedio 0.5 unidades.
+:::
+
+### Ejemplo: Gasto público y crecimiento económico
+
+Analicemos la relación entre gasto público (como % del PIB) y crecimiento económico en una muestra de países:
 
 ```{r regresion-ejemplo, echo=TRUE}
-# Datos simulados: Gasto público y crecimiento económico
+# Datos simulados
 set.seed(456)
 gasto_publico <- runif(40, min = 15, max = 40)  # % del PIB
 crecimiento <- 5 - 0.15 * gasto_publico + rnorm(40, mean = 0, sd = 1.2)
 
-# Modelo de regresión lineal simple
-modelo <- lm(crecimiento ~ gasto_publico)
-summary(modelo)
-```
-
-```{r plot-regresion, echo=FALSE, fig.cap="Regresión lineal: Gasto público y crecimiento"}
-library(ggplot2)
-
+# Crear data frame
 datos <- data.frame(gasto_publico, crecimiento)
 
+# Estimar modelo de regresión
+modelo <- lm(crecimiento ~ gasto_publico, data = datos)
+```
+
+El comando `lm()` (linear model) estima la regresión. La sintaxis `crecimiento ~ gasto_publico` significa "crecimiento explicado por gasto_publico".
+
+```{r plot-regresion, echo=TRUE, fig.cap="Regresión lineal: Gasto público y crecimiento económico"}
 ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
   geom_point(size = 3, alpha = 0.6, color = "#3498db") +
   geom_smooth(method = "lm", se = TRUE, color = "#e74c3c", fill = "#e74c3c", alpha = 0.2) +
@@ -105,68 +153,173 @@ ggplot(datos, aes(x = gasto_publico, y = crecimiento)) +
   theme_minimal()
 ```
 
-## Interpretación y ajuste
+La línea roja es la **línea de regresión** estimada. El área sombreada muestra el intervalo de confianza al 95%.
 
-**Intercepto ($\hat{\beta}_0$)**: Valor predicho de $Y$ cuando $X = 0$
+## Cómo leer el output de regresión en R
 
-**Pendiente ($\hat{\beta}_1$)**: Cambio promedio en $Y$ asociado con un incremento de una unidad en $X$
+Veamos el resultado completo del modelo:
 
-En el modelo anterior, si obtuviéramos $\hat{\beta}_1 = -0.15$, interpretaríamos: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales."[^interp-coef]
+```{r summary-modelo, echo=TRUE}
+summary(modelo)
+```
 
-[^interp-coef]: El coeficiente indica asociación, no necesariamente causalidad. La unidad de medida importa: siempre especifica las unidades y evita lenguaje causal a menos que el diseño lo justifique.
+Este output puede parecer intimidante, pero contiene toda la información importante. Vamos parte por parte:
 
-### Bondad de ajuste
+### 1. Coeficientes (lo más importante)
 
-### R cuadrado ($R^2$)
+```
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)    5.02       0.71     7.07    2e-08 ***
+gasto_publico -0.15       0.03    -5.88    8e-07 ***
+```
 
-El **coeficiente de determinación** mide qué proporción de la variabilidad en $Y$ es explicada por $X$:
+**Intercepto (5.02)**: El valor predicho de crecimiento cuando gasto público = 0%. En este contexto no tiene interpretación práctica (ningún país tiene 0% de gasto público), pero es necesario para la ecuación.
+
+**Pendiente (-0.15)**: Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales.
+
+**Std. Error**: Mide la precisión de la estimación. Valores más pequeños indican mayor precisión.
+
+**t value y Pr(>|t|)**: La prueba de hipótesis. Si Pr(>|t|) < 0.05, el coeficiente es estadísticamente significativo (los asteriscos *** indican alta significancia).
+
+### 2. R-cuadrado
+
+```
+Multiple R-squared:  0.4769
+```
+
+El **$R^2$ (R-cuadrado)** indica qué proporción de la variación en $Y$ es explicada por $X$. En este caso, el gasto público explica aproximadamente el 48% de la variación en crecimiento económico.
+
+**¿Es esto bueno o malo?** Depende del contexto:
+
+| Contexto | $R^2$ típico |
+|----------|--------------|
+| Ciencias naturales (experimentos controlados) | 0.80 - 0.99 |
+| Ciencias sociales (datos observacionales) | 0.10 - 0.40 |
+| Predicción de comportamiento individual | 0.05 - 0.20 |
+
+En ciencias sociales, un $R^2$ de 0.20 puede ser perfectamente aceptable porque el comportamiento humano es complejo y multicausal.
+
+### 3. Significancia global del modelo
+
+```
+F-statistic: 34.55 on 1 and 38 DF,  p-value: 8.416e-07
+```
+
+Esta línea indica si el modelo en su conjunto es estadísticamente significativo. Un p-value < 0.05 significa que el modelo explica más variación de la que esperaríamos por azar.
+
+## Interpretación de coeficientes
+
+La interpretación correcta de los coeficientes es crucial. Siempre debemos incluir:
+
+1. **La dirección** del efecto (positivo o negativo)
+2. **La magnitud** del efecto (el valor del coeficiente)
+3. **Las unidades** de las variables
+4. **La incertidumbre** (significancia estadística)
+
+::: {.callout-tip}
+## Plantilla para interpretar coeficientes
+
+"Por cada [unidad] adicional de [variable X], [variable Y] [aumenta/disminuye] en promedio [coeficiente] [unidades de Y], y este efecto es [significativo/no significativo] estadísticamente (p = [valor])."
+
+**Ejemplo**: "Por cada punto porcentual adicional de gasto público, el crecimiento económico disminuye en promedio 0.15 puntos porcentuales, y este efecto es estadísticamente significativo (p < 0.001)."
+:::
+
+### El intercepto: ¿cuándo tiene sentido?
+
+El intercepto ($\beta_0$) representa el valor de $Y$ cuando $X = 0$. A veces esto tiene sentido (ej: "satisfacción cuando ingreso = 0"), pero frecuentemente $X = 0$ está fuera del rango de los datos o no tiene sentido (ej: "democracia cuando PIB per cápita = 0").
+
+::: {.callout-warning}
+## Cuidado con la extrapolación
+
+La regresión es confiable solo dentro del rango de datos observados. Predecir fuera de ese rango (extrapolación) puede dar resultados absurdos.
+:::
+
+## Predicción con regresión
+
+Una vez estimado el modelo, podemos predecir valores de $Y$ para nuevos valores de $X$:
+
+```{r prediccion, echo=TRUE}
+# Predecir crecimiento para países con 20%, 30% y 40% de gasto público
+nuevos_datos <- data.frame(gasto_publico = c(20, 30, 40))
+predict(modelo, newdata = nuevos_datos)
+```
+
+Interpretación: Según el modelo, un país con 30% de gasto público tendría un crecimiento económico predicho de aproximadamente `r round(predict(modelo, newdata = data.frame(gasto_publico = 30)), 1)`%.
 
 ::: {.callout-note .callout-avanzado collapse="true"}
 ## 🎓 Métodos Cuantitativos Avanzados
 
-$$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2}$$
+**Mínimos cuadrados ordinarios (OLS)**
+
+El método OLS encuentra la línea que minimiza la suma de los errores al cuadrado:
+
+$$\min_{\beta_0, \beta_1} \sum_{i=1}^n (Y_i - \hat{Y}_i)^2$$
+
+Las fórmulas cerradas para los estimadores son:
+
+$$\hat{\beta}_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2} = r \cdot \frac{s_Y}{s_X}$$
+
+$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X}$$
+
+Nota que $\hat{\beta}_1$ está directamente relacionado con la correlación $r$.
+
+**Fórmula del $R^2$:**
+
+$$R^2 = 1 - \frac{\sum (Y_i - \hat{Y}_i)^2}{\sum (Y_i - \bar{Y})^2} = \frac{\text{Variación explicada}}{\text{Variación total}}$$
 :::
 
-- $0 \leq R^2 \leq 1$
-- $R^2 = 0$: El modelo no explica nada
-- $R^2 = 1$: El modelo explica perfectamente
+## Limitaciones importantes
 
-Por ejemplo, si $R^2 = 0.42$, interpretamos: "El 42% de la variabilidad en el crecimiento económico es explicada por el gasto público. El 58% restante se debe a otros factores."
+### Correlación sigue sin ser causalidad
 
-Es crucial entender que un $R^2$ alto **NO implica relación causal**. Puede haber variables omitidas importantes, relaciones espurias, o causalidad inversa.[^r2-advertencia]
+Aunque la regresión nos da coeficientes precisos, sigue siendo un análisis de **asociación**. El coeficiente $\beta_1 = -0.15$ NO significa que "aumentar el gasto público cause menor crecimiento". Puede haber:
 
-[^r2-advertencia]: Un modelo puede tener $R^2$ alto y ser inválido para inferencia causal si omite confusores. En ciencias sociales, valores bajos de $R^2$ (0.10-0.30) son frecuentes y no indican un modelo "malo".
+- **Variables omitidas**: Quizás países con problemas económicos aumentan el gasto (causalidad inversa)
+- **Confusores**: Quizás otra variable (ej: calidad institucional) afecta ambas
+
+Para hacer afirmaciones causales, necesitamos diseños de investigación apropiados (experimentos, diferencias en diferencias, variables instrumentales, etc.).
+
+### Linealidad
+
+La regresión lineal asume que la relación entre $X$ e $Y$ es una línea recta. Si la relación verdadera es curva, el modelo será inadecuado.
+
+### Outliers
+
+Observaciones extremas pueden distorsionar fuertemente la línea de regresión. Siempre visualiza tus datos antes de interpretar resultados.
 
 ## Resumen {.unnumbered}
 
-| Concepto | Descripción | Función en R |
-|----------|-------------|--------------|
-| **Correlación** | Fuerza y dirección de relación lineal (-1 a 1) | `cor(x, y)` |
-| **Regresión** | Modela $Y = \beta_0 + \beta_1 X + \epsilon$ | `lm(y ~ x)` |
-| **Intercepto** ($\beta_0$) | Valor de $Y$ cuando $X = 0$ | `coef(modelo)[1]` |
-| **Pendiente** ($\beta_1$) | Cambio en $Y$ por unidad de $X$ | `coef(modelo)[2]` |
-| **$R^2$** | Proporción de variabilidad explicada | `summary(modelo)$r.squared` |
+| Concepto | Qué significa | En R |
+|----------|---------------|------|
+| **Correlación** | Fuerza de relación lineal (-1 a 1) | `cor(x, y)` |
+| **Regresión** | Ecuación que predice $Y$ a partir de $X$ | `lm(y ~ x)` |
+| **Intercepto** | Valor de $Y$ cuando $X = 0$ | `coef(modelo)[1]` |
+| **Pendiente** | Cambio en $Y$ por cada unidad de $X$ | `coef(modelo)[2]` |
+| **$R^2$** | % de variación explicada | `summary(modelo)$r.squared` |
+| **p-value** | Significancia del coeficiente | Ver `summary(modelo)` |
 
 ::: {.callout-important}
-## Correlación ≠ Causalidad
-Un $R^2$ alto NO implica relación causal. Siempre pueden existir confusores omitidos.
+## Mensaje clave del capítulo
+
+La regresión es una herramienta poderosa para describir relaciones y hacer predicciones, pero **correlación y regresión no demuestran causalidad**. Para hacer afirmaciones causales necesitas teoría sólida, diseño de investigación apropiado, y control de confusores.
 :::
 
 ## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de regresión lineal:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
 → Capítulo 9 ofrece introducción clara y accesible a regresión lineal y correlación con ejemplos de ciencias sociales.
 
 **Predicción y modelos lineales:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
 → Capítulo 4 sobre predicción conecta regresión con aplicaciones prácticas en análisis de datos sociales.
 
 **Tratamiento más técnico:**
 
-Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.  
+Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed.). Cengage Learning.
 → Capítulos 2-3 cubren regresión simple con mayor rigor técnico y énfasis en interpretación causal.
 
 
@@ -174,7 +327,7 @@ Wooldridge, J. M. (2020). *Introductory Econometrics: A Modern Approach* (7th ed
 
 ::: {.ejercicios}
 
-**1. Correlación**
+**1. Correlación e interpretación**
 
 Con estos datos de desarrollo y democracia:
 
@@ -185,12 +338,12 @@ democracia <- 2 + 0.0001 * pib_pc + rnorm(40, 0, 1.5)
 ```
 
 a) Calcula la correlación de Pearson
-b) Realiza la prueba de significancia
+b) Realiza la prueba de significancia con `cor.test()`
 c) Crea un scatter plot con línea de tendencia
 d) Interpreta: ¿la relación es fuerte, moderada o débil?
-e) ¿Qué limitaciones tiene la correlación para establecer causalidad?
+e) ¿Por qué no podemos concluir que "el PIB causa democracia" solo con esta correlación?
 
-**2. Regresión simple**
+**2. Regresión e interpretación de output**
 
 Relación entre gasto en campaña y votos obtenidos:
 
@@ -200,30 +353,29 @@ gasto <- runif(30, 100, 1000)  # miles de dólares
 votos <- 10 + 0.05 * gasto + rnorm(30, 0, 5)  # porcentaje
 ```
 
-a) Estima el modelo de regresión
-b) Interpreta el intercepto y la pendiente
-c) ¿El coeficiente de gasto es estadísticamente significativo?
+a) Estima el modelo de regresión con `lm()`
+b) Usa `summary()` e identifica: el intercepto, la pendiente, el $R^2$, y el p-value de la pendiente
+c) Escribe una oración interpretando la pendiente (incluye unidades)
 d) ¿Qué porcentaje de votos predice el modelo para un candidato que gasta $500,000?
-e) Calcula e interpreta $R^2$
+e) ¿Tiene sentido el intercepto en este contexto? ¿Por qué?
 
 **3. Interpretación de coeficientes**
 
-Un modelo estima: $\text{Participación} = 35 + 0.4 \times \text{Educación}$, donde Participación es el porcentaje de votantes y Educación es años promedio de educación.
+Un investigador estima el modelo: Participación = 35 + 0.4 × Educación, donde Participación es el porcentaje de votantes y Educación es años promedio de educación.
 
-a) Interpreta el intercepto
-b) Interpreta la pendiente
-c) ¿Tiene sentido el intercepto en este contexto? ¿Por qué?
-d) Predice participación para una comuna con 12 años de educación promedio
-e) ¿Qué sucede si la comuna tiene 8 años de educación promedio?
+a) Interpreta el intercepto: ¿qué significa el valor 35?
+b) Interpreta la pendiente: ¿qué significa el valor 0.4?
+c) Predice la participación para una comuna con 12 años de educación promedio
+d) ¿Sería apropiado usar este modelo para predecir participación en una comuna con 3 años de educación promedio? ¿Por qué?
 
-**4. Diagnóstico de modelo**
+**4. Visualización y diagnóstico**
 
-Con el modelo del ejercicio 2:
+Con los datos del ejercicio 2:
 
-a) Calcula y grafica los residuos
-b) ¿Los residuos parecen distribuirse normalmente? (histograma o Q-Q plot)
-c) Grafica residuos vs. valores ajustados. ¿Hay patrones preocupantes?
-d) Identifica observaciones influyentes (si las hay)
+a) Crea un scatter plot con la línea de regresión usando `geom_smooth(method = "lm")`
+b) ¿Los puntos parecen seguir una relación lineal?
+c) ¿Hay algún punto que parezca muy alejado de los demás (outlier)?
+d) Si hubiera outliers, ¿cómo afectarían la línea de regresión?
 
 **5. Comparación de modelos**
 
@@ -241,21 +393,21 @@ modelo2 <- lm(confianza ~ educacion)
 ```
 
 a) Compara los $R^2$ de ambos modelos
-b) ¿Cuál variable explica más variabilidad?
+b) ¿Cuál variable explica más variabilidad en la confianza?
 c) ¿Los coeficientes son significativos en ambos modelos?
-d) Si tuvieras que elegir solo una variable predictora, ¿cuál elegirías?
+d) Si tuvieras que elegir solo una variable predictora, ¿cuál elegirías y por qué?
 
-**6. Proyecto de regresión**
+**6. Aplicación a datos reales**
 
-Con datos de tu interés:
+Busca datos de tu interés (pueden ser de CASEN, CEP, o cualquier fuente) con dos variables numéricas:
 
-a) Formula una hipótesis sobre la relación entre dos variables
-b) Estima un modelo de regresión simple
-c) Interpreta todos los componentes del output de `summary()`
-d) Verifica supuestos básicos
-e) Crea un gráfico de dispersión con la línea de regresión
-f) Escribe un párrafo reportando los resultados
-g) Discute las limitaciones de tu análisis para establecer causalidad
+a) Formula una hipótesis sobre la relación entre las dos variables
+b) Calcula la correlación e interprétala
+c) Estima un modelo de regresión simple
+d) Interpreta el coeficiente de la pendiente con unidades
+e) ¿Qué porcentaje de la variación explica el modelo?
+f) Escribe un párrafo reportando los resultados como aparecería en un informe
+g) Discute: ¿puedes hacer afirmaciones causales? ¿Por qué sí o por qué no?
 
 :::
 

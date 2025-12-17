@@ -4,52 +4,58 @@
 
 Al finalizar este capítulo, serás capaz de:
 
-- Comprender el concepto de probabilidad y su relación con la incertidumbre
-- Distinguir entre interpretaciones frecuentista y bayesiana de probabilidad
+- Comprender qué es la probabilidad y para qué sirve en investigación social
 - Calcular probabilidades básicas y aplicar reglas fundamentales
-- Identificar y trabajar con variables aleatorias discretas y continuas
-- Reconocer distribuciones de probabilidad comunes en ciencias sociales
-- Comprender el Teorema del Límite Central y su importancia para la inferencia
+- Distinguir entre variables aleatorias discretas y continuas
+- Usar la distribución Normal para responder preguntas sobre poblaciones
+- Entender el Teorema del Límite Central y por qué es tan importante
 
-## Fundamentos de probabilidad
+## ¿Para qué necesitamos probabilidad?
 
-La investigación social cuantitativa enfrenta invariablemente la **incertidumbre**. Cuando encuestamos 1,500 votantes chilenos para estimar apoyo a un candidato presidencial, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos tasas de homicidio entre países con y sin pena de muerte, no podemos asegurar que la diferencia observada no sea producto del azar.
+La investigación social enfrenta constantemente la **incertidumbre**. Cuando encuestamos a 1,500 votantes para estimar el apoyo a un candidato, no conocemos las preferencias de los millones que no fueron encuestados. Cuando comparamos dos políticas públicas, no podemos estar 100% seguros de que la diferencia observada sea real.
 
-La **teoría de probabilidad** nos proporciona un lenguaje matemático riguroso para cuantificar esta incertidumbre. No elimina la incertidumbre (esto es imposible cuando trabajamos con muestras), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.[^prob-concepto]
+La **probabilidad** nos da un lenguaje para cuantificar esta incertidumbre. No la elimina (eso es imposible), pero nos permite hacer afirmaciones precisas sobre qué tan confiables son nuestras conclusiones.
 
-[^prob-concepto]: La probabilidad no predice el futuro ni elimina la incertidumbre. Nos permite cuantificarla y tomar decisiones informadas bajo condiciones de información imperfecta.
+## Conceptos básicos de probabilidad
 
-### Conceptos básicos
+### ¿Qué es una probabilidad?
 
-### Definición y notación
+Una **probabilidad** es un número entre 0 y 1 que cuantifica qué tan probable es que ocurra algo:
 
-Una **probabilidad** es un número entre 0 y 1 que cuantifica qué tan probable es que ocurra un evento:
+| Probabilidad | Significado |
+|--------------|-------------|
+| 0 | Imposible |
+| 0.25 | Poco probable |
+| 0.50 | Igual de probable que improbable |
+| 0.75 | Bastante probable |
+| 1 | Seguro |
 
-- $P(A) = 0$ significa que el evento $A$ es imposible
-- $P(A) = 1$ significa que el evento $A$ es seguro
-- $P(A) = 0.5$ significa que $A$ tiene la misma probabilidad de ocurrir que de no ocurrir
+### Ejemplo: Interpretando probabilidades
 
-Por ejemplo, si en una encuesta con 1,200 entrevistados, 360 declaran que votarán por candidatos del Frente Amplio en elecciones legislativas chilenas, podemos estimar: $P(\text{Voto FA}) = \frac{360}{1200} = 0.30$. Esto NO significa que exactamente 30% de los votantes votará por el FA el día de la elección. Significa que, basándonos en nuestra muestra, estimamos esa probabilidad con cierto nivel de incertidumbre (que cuantificaremos en el próximo capítulo con intervalos de confianza).
+Si en una encuesta de 1,200 personas, 360 declaran que votarán por un partido:
 
-### Interpretaciones de probabilidad
+```{r probabilidad-basica}
+# Calculamos la probabilidad (proporción) de votar por ese partido
+apoyos <- 360
+total <- 1200
+probabilidad <- apoyos / total
 
-Existen dos interpretaciones fundamentales de qué significa "probabilidad":
+cat("Probabilidad estimada de votar por el partido:", probabilidad, "\n")
+cat("Esto equivale al", probabilidad * 100, "%")
+```
 
-**Interpretación frecuentista**:[^frecuentista] La probabilidad es el **límite de la frecuencia relativa** cuando un experimento se repite infinitas veces. Por ejemplo, $P(\text{Cara}) = 0.5$ al lanzar una moneda significa que, si lanzamos la moneda millones de veces, aproximadamente 50% serán caras. Esta es la interpretación estándar en ciencias sociales cuantitativas.
+Importante: Esto **NO** significa que exactamente 30% de la población votará por el partido. Es nuestra mejor estimación basada en la muestra, con cierto nivel de incertidumbre.
 
-[^frecuentista]: Cuando un artículo reporta "p < 0.05", está usando lógica frecuentista: si no hubiera efecto real, veríamos un resultado tan extremo menos de 5% de las veces.
+### ¿Cómo se interpretan las probabilidades?
 
-::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
+**Interpretación frecuentista** (la más común): La probabilidad es la proporción de veces que algo ocurriría si repitiéramos el experimento muchas veces.
 
-**Interpretación bayesiana**: La probabilidad cuantifica **grado de creencia** o certeza subjetiva sobre un evento. Permite asignar probabilidades a eventos únicos (como "¿cuál es la probabilidad de que Chile tenga una nueva Constitución en 2026?"). La estadística bayesiana actualiza creencias previas (prior) con nueva evidencia usando el teorema de Bayes. Es cada vez más usada en ciencias sociales, pero requiere fundamentos matemáticos adicionales.
-:::
+Por ejemplo, decir que la probabilidad de "cara" al lanzar una moneda es 0.5 significa que, si lanzáramos la moneda millones de veces, aproximadamente la mitad serían caras.
 
-```{r probabilidad-interpretaciones, echo=FALSE, fig.cap="Comparación de interpretaciones de probabilidad"}
+```{r probabilidad-frecuentista, echo=FALSE, fig.cap="La proporción converge a 0.5 conforme aumentan los lanzamientos"}
 library(ggplot2)
 library(dplyr)
 
-# Simulación lanzamiento de moneda (frecuentista)
 set.seed(123)
 n_lanzamientos <- 1000
 lanzamientos <- data.frame(
@@ -64,51 +70,71 @@ lanzamientos <- lanzamientos %>%
   )
 
 ggplot(lanzamientos, aes(x = n, y = prop_acumulada)) +
-  geom_line(color = "#3498db", size = 1) +
-  geom_hline(yintercept = 0.5, linetype = "dashed", color = "#e74c3c", size = 1) +
+  geom_line(color = "#3498db", linewidth = 1) +
+  geom_hline(yintercept = 0.5, linetype = "dashed", color = "#e74c3c", linewidth = 1) +
   labs(
-    title = "Interpretación Frecuentista: Convergencia a la probabilidad real",
-    subtitle = "Proporción de 'Cara' converge a 0.5 conforme aumentan los lanzamientos",
+    title = "Convergencia a la probabilidad real",
+    subtitle = "La proporción de 'Cara' se acerca a 0.5 conforme lanzamos más veces",
     x = "Número de lanzamientos",
     y = "Proporción acumulada de Cara"
   ) +
-  theme_minimal() +
-  theme(plot.title = element_text(face = "bold"))
+  theme_minimal()
 ```
 
-### Reglas fundamentales de probabilidad
+## Reglas básicas de probabilidad
 
-**Regla de la suma** (eventos mutuamente excluyentes)
+### Regla del complemento: Lo que NO ocurre
 
-Si $A$ y $B$ no pueden ocurrir simultáneamente:
-$$P(A \text{ o } B) = P(A) + P(B)$$
+Si la probabilidad de que algo ocurra es p, entonces la probabilidad de que NO ocurra es 1 - p.
 
-Por ejemplo, en las elecciones municipales 2024 en Santiago, si un votante puede elegir solo un candidato: $P(\text{Izquierda o Derecha}) = P(\text{Izquierda}) + P(\text{Derecha})$.
+```{r regla-complemento}
+# Si la probabilidad de votar es 52%
+p_vota <- 0.52
 
-**Regla del complemento**
+# Entonces la probabilidad de abstenerse es:
+p_abstiene <- 1 - p_vota
 
-$$P(\text{no } A) = 1 - P(A)$$
+cat("P(abstención) =", p_abstiene, "o", p_abstiene * 100, "%")
+```
 
-Por ejemplo, si $P(\text{Voto})=0.52$ en elecciones legislativas chilenas: $P(\text{Abstención}) = 1 - 0.52 = 0.48$.
+### Regla de la suma: Una cosa U otra
 
-**Regla del producto** (eventos independientes)
+Si dos eventos no pueden ocurrir al mismo tiempo (son "mutuamente excluyentes"), la probabilidad de que ocurra uno u otro es la suma de sus probabilidades.
 
-Si $A$ y $B$ son independientes (la ocurrencia de uno no afecta la probabilidad del otro):
-$$P(A \text{ y } B) = P(A) \times P(B)$$
+```{r regla-suma}
+# Un votante puede elegir izquierda, centro, o derecha (solo una opción)
+p_izquierda <- 0.30
+p_centro <- 0.25
+p_derecha <- 0.45
 
-Por ejemplo, si encuestamos a dos votantes al azar y queremos saber la probabilidad de que ambos voten por la izquierda, asumiendo independencia y $P(\text{Izquierda})=0.30$: $P(\text{ambos izquierda}) = 0.30 \times 0.30 = 0.09$.
+# Probabilidad de votar izquierda O centro
+p_izq_o_centro <- p_izquierda + p_centro
 
-**Probabilidad condicional**
+cat("P(izquierda O centro) =", p_izq_o_centro)
+```
 
-La probabilidad de $A$ dado que ya sabemos que $B$ ocurrió:
-$$P(A|B) = \frac{P(A \text{ y } B)}{P(B)}$$
+### Regla del producto: Una cosa Y otra
 
-Por ejemplo, consideremos voto por género en una encuesta chilena. Supongamos que en una encuesta: 30% vota Apruebo, 60% son mujeres, y 20% del total son mujeres que votan Apruebo. Entonces $P(\text{Apruebo}|\text{Mujer}) = \frac{P(\text{Apruebo y Mujer})}{P(\text{Mujer})} = \frac{0.20}{0.60} = 0.33$. Es decir, entre las mujeres, 33% vota Apruebo (mientras que en la población general es 30%).
+Si dos eventos son independientes (uno no afecta al otro), la probabilidad de que ocurran ambos es el producto de sus probabilidades.
+
+```{r regla-producto}
+# Si encuestamos a dos personas al azar
+# P(ambos votan izquierda) = P(primero izq) × P(segundo izq)
+p_izquierda <- 0.30
+
+p_ambos_izq <- p_izquierda * p_izquierda
+
+cat("P(ambos votan izquierda) =", p_ambos_izq)
+```
+
+### Probabilidad condicional: Dado que ya sé algo
+
+A veces queremos saber la probabilidad de algo **dado** que ya sabemos otra cosa.
 
 ::: {.callout-tip}
-## Ejemplo paso a paso: Calculando probabilidades
+## Ejemplo: Voto por género
 
-Una encuesta de 500 personas recopiló información sobre género y preferencia de voto:
+En una encuesta de 500 personas:
 
 |             | Aprueba | Rechaza | Total |
 |-------------|:-------:|:-------:|:-----:|
@@ -116,76 +142,89 @@ Una encuesta de 500 personas recopiló información sobre género y preferencia 
 | Mujeres     |  150    |   150   |  300  |
 | **Total**   |  230    |   270   |  500  |
 
-Calculemos algunas probabilidades:
+**Pregunta:** Entre las mujeres, ¿qué proporción aprueba?
+
+```{r probabilidad-condicional}
+# P(Aprueba | Mujer) = Mujeres que aprueban / Total de mujeres
+p_aprueba_dado_mujer <- 150 / 300
+
+cat("P(Aprueba | Mujer) =", p_aprueba_dado_mujer, "\n")
+cat("Es decir, el", p_aprueba_dado_mujer * 100, "% de las mujeres aprueba")
+```
+
+Compara con la población general:
 
 ```{r}
-# Definir los datos
-total <- 500
-hombres <- 200
-mujeres <- 300
-aprueba <- 230
-rechaza <- 270
-hombres_aprueba <- 80
-mujeres_aprueba <- 150
+# P(Aprueba) = Total que aprueba / Total
+p_aprueba <- 230 / 500
 
-# P(Aprueba) - probabilidad marginal
-P_aprueba <- aprueba / total
-cat("P(Aprueba) =", P_aprueba, "\n")
-
-# P(Mujer) - probabilidad marginal
-P_mujer <- mujeres / total
-cat("P(Mujer) =", P_mujer, "\n")
-
-# P(Mujer Y Aprueba) - probabilidad conjunta
-P_mujer_y_aprueba <- mujeres_aprueba / total
-cat("P(Mujer Y Aprueba) =", P_mujer_y_aprueba, "\n")
-
-# P(Aprueba | Mujer) - probabilidad condicional
-P_aprueba_dado_mujer <- P_mujer_y_aprueba / P_mujer
-cat("P(Aprueba | Mujer) =", P_aprueba_dado_mujer, "\n")
-
-# Verificación directa
-cat("Verificación: 150/300 =", 150/300, "\n")
+cat("P(Aprueba) en general =", p_aprueba, "\n")
+cat("Es decir, el", p_aprueba * 100, "% de la población aprueba")
 ```
+
+Las mujeres aprueban más que la población general (50% vs 46%).
 :::
 
 ::: {.callout-warning}
-## Error común: Confundir P(A|B) con P(B|A)
+## Error común: No confundas P(A|B) con P(B|A)
 
-$P(\text{Aprueba}|\text{Mujer}) \neq P(\text{Mujer}|\text{Aprueba})$
+Estas dos probabilidades son diferentes:
 
-- $P(\text{Aprueba}|\text{Mujer}) = 150/300 = 0.50$ → "De las mujeres, ¿qué proporción aprueba?"
-- $P(\text{Mujer}|\text{Aprueba}) = 150/230 = 0.65$ → "De quienes aprueban, ¿qué proporción son mujeres?"
+- **P(Aprueba | Mujer) = 0.50** → "De las mujeres, ¿qué proporción aprueba?"
+- **P(Mujer | Aprueba) = 150/230 = 0.65** → "De quienes aprueban, ¿qué proporción son mujeres?"
 
-Este error es muy común y puede llevar a conclusiones incorrectas. Siempre pregúntate: "¿Cuál es mi población de referencia?"
+Este error es muy común. Siempre pregúntate: "¿Cuál es mi grupo de referencia?"
 :::
 
-## Variables aleatorias y distribuciones
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
 
-Una **variable aleatoria** es una función que asigna un valor numérico a cada resultado posible de un fenómeno aleatorio. Son la conexión entre probabilidad y estadística.
+### Fórmulas de probabilidad
 
-### Variables aleatorias discretas
+**Regla del complemento:**
+$$P(\text{no } A) = 1 - P(A)$$
 
-Toman valores específicos y contables (generalmente enteros).[^var-discretas]
+**Regla de la suma (eventos mutuamente excluyentes):**
+$$P(A \text{ o } B) = P(A) + P(B)$$
 
-[^var-discretas]: Ejemplos en ciencias sociales: número de partidos en el Congreso, número de protestas en un mes, respuesta en escala Likert, número de votantes en una mesa.
+**Regla de la suma (eventos no excluyentes):**
+$$P(A \text{ o } B) = P(A) + P(B) - P(A \text{ y } B)$$
 
-**Función de masa de probabilidad (PMF)**
+**Regla del producto (eventos independientes):**
+$$P(A \text{ y } B) = P(A) \times P(B)$$
 
-Para una variable aleatoria discreta $X$, la PMF especifica la probabilidad de cada valor:
-$$P(X = x)$$
+**Probabilidad condicional:**
+$$P(A|B) = \frac{P(A \text{ y } B)}{P(B)}$$
+:::
 
-```{r ejemplo-discreta, echo=TRUE}
-# Simulación: Número de protestas por mes en una ciudad
-# (Distribución Poisson con promedio = 2.5)
+## Variables aleatorias
+
+Una **variable aleatoria** es algo que toma diferentes valores con diferentes probabilidades. Son la conexión entre probabilidad y datos reales.
+
+### Variables discretas vs continuas
+
+| Tipo | Qué son | Ejemplos |
+|------|---------|----------|
+| **Discretas** | Toman valores específicos y contables | Número de protestas en un mes, respuesta en escala Likert (1-5), votos obtenidos |
+| **Continuas** | Pueden tomar cualquier valor en un rango | Porcentaje de apoyo, ingreso mensual, tiempo hasta un evento |
+
+### Ejemplo de variable discreta
+
+```{r variable-discreta, fig.cap="Distribución del número de protestas por mes"}
+# Simulamos: número de protestas por mes en una ciudad
 set.seed(456)
-protestas <- rpois(1000, lambda = 2.5)
+protestas <- rpois(1000, lambda = 2.5)  # Promedio de 2.5 protestas/mes
 
 # Tabla de frecuencias
-table(protestas) / 1000
+tabla <- table(protestas)
+cat("Frecuencias observadas:\n")
+print(tabla)
+
+cat("\nProbabilidades:\n")
+print(round(tabla / sum(tabla), 3))
 ```
 
-```{r plot-discreta, echo=FALSE, fig.cap="Distribución de variable aleatoria discreta: Número de protestas"}
+```{r plot-discreta, echo=FALSE}
 library(ggplot2)
 data.frame(protestas = protestas) %>%
   ggplot(aes(x = protestas)) +
@@ -200,36 +239,25 @@ data.frame(protestas = protestas) %>%
   theme_minimal()
 ```
 
-### Variables aleatorias continuas
+### Ejemplo de variable continua
 
-Pueden tomar cualquier valor en un intervalo (infinitos valores posibles).[^var-continuas]
-
-[^var-continuas]: Ejemplos en ciencias sociales: porcentaje de votos obtenido, ingreso mensual, índice de democracia, tiempo hasta próxima protesta.
-
-**Función de densidad de probabilidad (PDF)**
-
-Para variables continuas, $P(X = x) = 0$ (la probabilidad de un valor exacto es cero). En su lugar, trabajamos con **intervalos**:
-
-$$P(a < X < b) = \int_a^b f(x)dx$$
-
-donde $f(x)$ es la función de densidad.
-
-```{r ejemplo-continua, echo=TRUE}
-# Simulación: Porcentaje de votos para alcalde
-# (Distribución aproximadamente Normal)
+```{r variable-continua, fig.cap="Distribución de porcentaje de votos para alcalde"}
+# Simulamos: porcentaje de votos para un candidato a alcalde
 set.seed(789)
 votos <- rnorm(1000, mean = 35, sd = 5)
 
-# Probabilidad de obtener entre 30% y 40%
-mean(votos >= 30 & votos <= 40)
+# ¿Qué proporción obtiene entre 30% y 40% de los votos?
+prop_30_40 <- mean(votos >= 30 & votos <= 40)
+
+cat("Proporción de candidatos con 30-40% de votos:", round(prop_30_40, 2))
 ```
 
-```{r plot-continua, echo=FALSE, fig.cap="Distribución de variable aleatoria continua: Porcentaje de votos"}
+```{r plot-continua, echo=FALSE}
 data.frame(votos = votos) %>%
   ggplot(aes(x = votos)) +
   geom_histogram(aes(y = after_stat(density)), bins = 30,
                  fill = "#3498db", color = "white", alpha = 0.7) +
-  geom_density(color = "#e74c3c", size = 1.2) +
+  geom_density(color = "#e74c3c", linewidth = 1.2) +
   labs(
     title = "Distribución del porcentaje de votos",
     x = "Porcentaje de votos (%)",
@@ -238,309 +266,311 @@ data.frame(votos = votos) %>%
   theme_minimal()
 ```
 
-### Valor esperado y varianza
+## La distribución Normal
 
-**Valor esperado** (media poblacional): $E(X) = \mu$
+La **distribución Normal** (o "campana de Gauss") es la más importante en estadística. Muchos fenómenos naturales y sociales siguen aproximadamente esta distribución.
 
-El valor esperado es el promedio "teórico" de una variable aleatoria si pudiéramos observarla infinitas veces. Para variables discretas, se calcula sumando cada valor multiplicado por su probabilidad.
+### Características de la Normal
 
-**Varianza**: $\text{Var}(X) = \sigma^2$ mide la dispersión alrededor del valor esperado.
+La distribución Normal tiene forma de campana simétrica:
 
-**Desviación estándar**: $\sigma = \sqrt{\text{Var}(X)}$
+- La mayoría de los valores están cerca del centro (la media)
+- Los valores extremos son menos frecuentes
+- Es simétrica: igual de probable estar por arriba que por debajo de la media
 
-Es importante distinguir que estos son parámetros **poblacionales** (generalmente desconocidos). Los estimamos a partir de muestras usando $\bar{x}$ y $s^2$.
-
-::: {.callout-note .callout-avanzado collapse="true"}
-## 🎓 Métodos Cuantitativos Avanzados
-
-**Fórmulas matemáticas del valor esperado:**
-
-- Para variable discreta: $E(X) = \sum x \cdot P(X=x)$
-- Para variable continua: $E(X) = \int x \cdot f(x)dx$
-- Varianza: $\text{Var}(X) = E[(X - \mu)^2] = E(X^2) - [E(X)]^2$
-:::
-
-### Distribuciones comunes
-
-### Distribución Normal (Gaussiana)
-
-La distribución más importante en estadística inferencial. Una variable $X$ sigue una distribución Normal con media $\mu$ y varianza $\sigma^2$:
-
-$$X \sim N(\mu, \sigma^2)$$
-
-| Propiedad | Descripción |
-|-----------|-------------|
-| Forma | Simétrica, campana |
-| 68% | Dentro de $\mu \pm 1\sigma$ |
-| 95% | Dentro de $\mu \pm 1.96\sigma$ |
-| 99.7% | Dentro de $\mu \pm 3\sigma$ |
-
-```{r normal-distribution, echo=FALSE, fig.cap="Distribución Normal estándar con regla 68-95-99.7"}
+```{r normal-regla, echo=FALSE, fig.cap="Distribución Normal: La regla 68-95-99.7"}
 library(ggplot2)
 
 x <- seq(-4, 4, length.out = 1000)
 y <- dnorm(x)
-
 df <- data.frame(x = x, y = y)
 
 ggplot(df, aes(x = x, y = y)) +
-  geom_line(size = 1.2, color = "#2c3e50") +
-  # Área 68%
+  geom_line(linewidth = 1.2, color = "#2c3e50") +
   geom_area(data = subset(df, x >= -1 & x <= 1),
             fill = "#3498db", alpha = 0.3) +
-  # Área 95%
   geom_area(data = subset(df, x >= -1.96 & x <= 1.96),
             fill = "#3498db", alpha = 0.2) +
-  # Líneas verticales
   geom_vline(xintercept = c(-1, 1), linetype = "dashed", color = "#e74c3c") +
   geom_vline(xintercept = c(-1.96, 1.96), linetype = "dashed", color = "#e67e22") +
   annotate("text", x = 0, y = 0.2, label = "68%", size = 5, fontface = "bold") +
   annotate("text", x = 0, y = 0.1, label = "95%", size = 5, fontface = "bold") +
   labs(
-    title = "Distribución Normal: Regla 68-95-99.7",
+    title = "Distribución Normal: La regla 68-95-99.7",
+    subtitle = "68% de los datos está dentro de ±1 SD, 95% dentro de ±2 SD",
     x = "Desviaciones estándar desde la media",
     y = "Densidad"
   ) +
-  theme_minimal() +
-  theme(plot.title = element_text(face = "bold", size = 14))
+  theme_minimal()
 ```
 
-Las alturas de hombres adultos chilenos se distribuyen aproximadamente $N(170, 7^2)$ cm. Podemos usar esta distribución para responder preguntas como: ¿Qué proporción de hombres mide más de 180 cm? o ¿Qué proporción mide entre 165 y 175 cm?
+### La regla 68-95-99.7
 
-```{r ejemplo-normal, echo=TRUE}
+En una distribución Normal:
+
+| Rango | Porcentaje de datos |
+|-------|---------------------|
+| Media ± 1 desviación estándar | 68% |
+| Media ± 2 desviaciones estándar | 95% |
+| Media ± 3 desviaciones estándar | 99.7% |
+
+### Ejemplo: Alturas de personas
+
+Las alturas de hombres adultos chilenos se distribuyen aproximadamente Normal con media 170 cm y desviación estándar 7 cm.
+
+```{r ejemplo-alturas}
 # ¿Qué proporción de hombres mide más de 180 cm?
-1 - pnorm(180, mean = 170, sd = 7)
+prop_mayor_180 <- 1 - pnorm(180, mean = 170, sd = 7)
 
-# ¿Qué proporción mide entre 165 y 175 cm?
-pnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)
+cat("Proporción que mide más de 180 cm:", round(prop_mayor_180, 3), "\n")
+cat("Es decir, aproximadamente el", round(prop_mayor_180 * 100, 1), "%")
 ```
 
-::: {.callout-note}
-## Funciones de R para distribución Normal
+```{r ejemplo-alturas-2}
+# ¿Qué proporción mide entre 165 y 175 cm?
+prop_165_175 <- pnorm(175, mean = 170, sd = 7) - pnorm(165, mean = 170, sd = 7)
 
-R tiene cuatro funciones para trabajar con la distribución Normal:
+cat("Proporción que mide entre 165 y 175 cm:", round(prop_165_175, 3), "\n")
+cat("Es decir, aproximadamente el", round(prop_165_175 * 100, 1), "%")
+```
+
+### Funciones de R para la distribución Normal
+
+R tiene cuatro funciones para trabajar con la Normal:
 
 | Función | Qué hace | Ejemplo |
 |---------|----------|---------|
-| `dnorm(x)` | Densidad en el punto x | `dnorm(0)` = 0.399 (altura de la curva en x=0) |
-| `pnorm(x)` | Probabilidad acumulada P(X ≤ x) | `pnorm(0)` = 0.5 (50% está por debajo de la media) |
-| `qnorm(p)` | Cuantil: ¿qué valor tiene probabilidad p por debajo? | `qnorm(0.975)` = 1.96 |
-| `rnorm(n)` | Genera n valores aleatorios | `rnorm(100)` genera 100 valores |
+| `pnorm(x)` | Probabilidad de estar por debajo de x | `pnorm(180, mean=170, sd=7)` = 0.92 |
+| `qnorm(p)` | ¿Qué valor tiene p% de datos por debajo? | `qnorm(0.90, mean=170, sd=7)` = 179 |
+| `dnorm(x)` | Altura de la curva en x | Para graficar |
+| `rnorm(n)` | Genera n valores aleatorios | `rnorm(100, mean=170, sd=7)` |
 
-```{r}
-# Ejemplo práctico: ¿Cuál es el percentil 90 de alturas?
+```{r funciones-normal}
+# ¿Cuál es el percentil 90 de alturas?
 # Es decir, ¿qué altura es mayor que el 90% de los hombres?
-qnorm(0.90, mean = 170, sd = 7)
+percentil_90 <- qnorm(0.90, mean = 170, sd = 7)
+
+cat("El percentil 90 de alturas es", round(percentil_90, 1), "cm\n")
+cat("Es decir, el 90% de los hombres mide menos de", round(percentil_90, 1), "cm")
 ```
-:::
+
+## El Teorema del Límite Central
+
+Este es probablemente el resultado más importante de toda la estadística. Fundamenta toda la inferencia que veremos en los próximos capítulos.
+
+### ¿Qué dice el teorema?
+
+Si tomamos muchas muestras de cualquier población y calculamos la media de cada una:
+
+1. **Las medias se distribuyen de forma Normal** (aunque la población original no lo sea)
+2. **Están centradas en la media verdadera de la población**
+3. **Su dispersión disminuye con muestras más grandes**
+
+Esto funciona siempre que la muestra sea suficientemente grande (típicamente n ≥ 30).
+
+### ¿Por qué es tan importante?
+
+Porque nos permite usar la distribución Normal para hacer inferencia, sin importar cómo se vean los datos originales.
+
+### Demostración con simulación
+
+Veamos el teorema en acción con un ejemplo extremo: participación en protestas.
+
+```{r tlc-demo, fig.height=6}
+# Población muy asimétrica: mayoría no participa (0), pocos participan
+set.seed(2024)
+poblacion <- c(rep(0, 7000), rep(1, 2000), rep(2, 700),
+               rep(3, 200), rep(4, 80), rep(5, 20))
+
+mu_poblacion <- mean(poblacion)
+cat("Media poblacional:", round(mu_poblacion, 2), "\n")
+cat("La distribución es MUY asimétrica (mayoría son ceros)\n")
+
+# Visualizamos la población
+hist(poblacion, main = "Distribución poblacional (muy asimétrica)",
+     xlab = "Número de protestas", col = "#3498db", border = "white")
+```
+
+Ahora tomamos muchas muestras y calculamos sus medias:
+
+```{r tlc-muestras}
+# Tomamos 5000 muestras de n=100 y calculamos la media de cada una
+set.seed(2024)
+medias_muestrales <- replicate(5000, mean(sample(poblacion, 100, replace = TRUE)))
+
+# Las medias SÍ se distribuyen Normal
+hist(medias_muestrales, breaks = 40,
+     main = "Distribución de medias muestrales (n=100)",
+     xlab = "Media muestral", col = "#2ecc71", border = "white")
+abline(v = mu_poblacion, col = "red", lwd = 2, lty = 2)
+
+cat("Media de las medias muestrales:", round(mean(medias_muestrales), 3), "\n")
+cat("(Muy cerca de la media poblacional:", round(mu_poblacion, 3), ")")
+```
+
+Aunque la población original es extremadamente asimétrica, las **medias muestrales se distribuyen de forma Normal**.
+
+### Efecto del tamaño de muestra
+
+Muestras más grandes producen distribuciones de medias más "apretadas":
+
+```{r tlc-tamaños, fig.height=8, echo=FALSE}
+simular_medias <- function(n, n_muestras = 5000) {
+  replicate(n_muestras, mean(sample(poblacion, n, replace = TRUE)))
+}
+
+set.seed(2024)
+medias_n10 <- simular_medias(10)
+medias_n30 <- simular_medias(30)
+medias_n100 <- simular_medias(100)
+
+par(mfrow = c(3, 1))
+hist(medias_n10, breaks = 40, main = "n = 10",
+     xlab = "Media muestral", col = "#3498db", border = "white", xlim = c(0, 1))
+abline(v = mu_poblacion, col = "red", lwd = 2)
+
+hist(medias_n30, breaks = 40, main = "n = 30",
+     xlab = "Media muestral", col = "#3498db", border = "white", xlim = c(0, 1))
+abline(v = mu_poblacion, col = "red", lwd = 2)
+
+hist(medias_n100, breaks = 40, main = "n = 100",
+     xlab = "Media muestral", col = "#3498db", border = "white", xlim = c(0, 1))
+abline(v = mu_poblacion, col = "red", lwd = 2)
+par(mfrow = c(1, 1))
+```
+
+```{r comparacion-sd}
+cat("Desviación estándar de las medias muestrales:\n")
+cat("n = 10: ", round(sd(medias_n10), 4), "\n")
+cat("n = 30: ", round(sd(medias_n30), 4), "\n")
+cat("n = 100:", round(sd(medias_n100), 4), "\n")
+cat("\nMuestras más grandes → Estimaciones más precisas")
+```
+
+::: {.callout-note .callout-avanzado collapse="true"}
+## 🎓 Métodos Cuantitativos Avanzados
 
 ### Distribución Binomial
 
-Modela el número de "éxitos" en $n$ ensayos independientes, cada uno con probabilidad $p$ de éxito:
+La distribución binomial modela el número de "éxitos" en n ensayos independientes, cada uno con probabilidad p de éxito.
 
-$$X \sim \text{Binomial}(n, p)$$
+Por ejemplo, si encuestamos a 1000 personas y la probabilidad real de apoyo es 0.40:
 
-- $E(X) = np$
-- $\text{Var}(X) = np(1-p)$
+```{r binomial}
+n <- 1000
+p <- 0.40
 
-Por ejemplo, si encuestamos $n=1000$ votantes y la verdadera proporción que apoya un candidato es $p=0.40$, el número de encuestados que declaran apoyo sigue $X \sim \text{Binomial}(1000, 0.40)$:
+# Valor esperado
+media <- n * p
 
-```{r binomial-ejemplo, echo=TRUE}
+# Desviación estándar
+sd <- sqrt(n * p * (1 - p))
+
+cat("Valor esperado:", media, "personas apoyarán\n")
+cat("Desviación estándar:", round(sd, 1), "\n")
+
 # Probabilidad de observar exactamente 400 apoyos
 dbinom(400, size = 1000, prob = 0.40)
 
 # Probabilidad de observar entre 380 y 420 apoyos
 sum(dbinom(380:420, size = 1000, prob = 0.40))
-
-# Valor esperado y desviación estándar
-n <- 1000; p <- 0.40
-c(media = n*p, sd = sqrt(n*p*(1-p)))
 ```
 
-```{r binomial-plot, echo=FALSE, fig.cap="Distribución Binomial: Número de votantes que apoyan candidato (n=1000, p=0.40)"}
-x <- 350:450
-probs <- dbinom(x, size = 1000, prob = 0.40)
+### Formalización del Teorema del Límite Central
 
-data.frame(x = x, probabilidad = probs) %>%
-  ggplot(aes(x = x, y = probabilidad)) +
-  geom_col(fill = "#3498db", color = "white") +
-  geom_vline(xintercept = 400, linetype = "dashed", color = "#e74c3c", size = 1) +
-  annotate("text", x = 410, y = max(probs)*0.9,
-           label = "Media = 400", color = "#e74c3c", size = 4) +
-  labs(
-    title = "Distribución del número de encuestados que apoyan candidato",
-    subtitle = "n = 1000 encuestados, p = 0.40 probabilidad real de apoyo",
-    x = "Número de encuestados que declaran apoyo",
-    y = "Probabilidad"
-  ) +
-  theme_minimal()
-```
+Si X₁, X₂, ..., Xₙ son variables aleatorias independientes de una población con media μ y varianza σ², entonces la media muestral:
 
+$$\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$$
 
-## Teorema del Límite Central
+para n suficientemente grande.
 
-El **Teorema del Límite Central (TLC)** es posiblemente el resultado más importante de la estadística. Fundamenta toda la inferencia estadística basada en muestras. El teorema establece que si tomamos muestras aleatorias de tamaño $n$ de **cualquier** población con media $\mu$ y varianza finita $\sigma^2$, entonces conforme $n$ aumenta, la distribución de la media muestral $\bar{X}$ se aproxima a una distribución Normal: $\bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)$. Esto ocurre **independientemente de la forma de la distribución original**, siempre que $n$ sea suficientemente grande (típicamente $n \geq 30$).
+El "error estándar" de la media es:
 
-### Implicaciones para ciencias sociales
+$$SE(\bar{X}) = \frac{\sigma}{\sqrt{n}}$$
 
-1. **Podemos usar la distribución Normal** para hacer inferencias sobre medias muestrales, incluso si la variable original no es Normal
+Esto explica por qué la dispersión disminuye con √n.
+:::
 
-2. **La varianza de $\bar{X}$ disminuye con $n$**: Muestras más grandes producen estimaciones más precisas
+## Resumen: Conceptos clave {.unnumbered}
 
-3. **Justifica el uso de pruebas t y intervalos de confianza** (próximos capítulos)
+### Vocabulario esencial
 
-### Simulación del TLC
-
-Demostremos el TLC con un ejemplo de ciencias políticas:
-
-```{r tlc-simulacion, echo=TRUE, fig.cap="Teorema del Límite Central: Simulación"}
-# Población NO normal: Participación en protestas (variable muy asimétrica)
-# Mayoría no participa (0), algunos participan ocasionalmente
-set.seed(2024)
-poblacion <- c(rep(0, 7000), rep(1, 2000), rep(2, 700),
-               rep(3, 200), rep(4, 80), rep(5, 20))
-
-# Media y SD poblacionales
-mu_poblacion <- mean(poblacion)
-sigma_poblacion <- sd(poblacion)
-
-cat("Distribución poblacional:\n")
-cat("Media:", mu_poblacion, "\n")
-cat("SD:", sigma_poblacion, "\n\n")
-
-# Tomamos 5000 muestras de diferentes tamaños y calculamos sus medias
-simular_medias <- function(n, n_muestras = 5000) {
-  replicate(n_muestras, mean(sample(poblacion, n, replace = TRUE)))
-}
-
-medias_n10 <- simular_medias(10)
-medias_n30 <- simular_medias(30)
-medias_n100 <- simular_medias(100)
-
-# Comparación
-resultados <- data.frame(
-  tamaño = c("n=10", "n=30", "n=100"),
-  media = c(mean(medias_n10), mean(medias_n30), mean(medias_n100)),
-  sd_observada = c(sd(medias_n10), sd(medias_n30), sd(medias_n100)),
-  sd_teorica = sigma_poblacion / sqrt(c(10, 30, 100))
-)
-
-print(resultados)
-```
-
-```{r tlc-plot, echo=FALSE, fig.height=8, fig.cap="Convergencia a la Normal según el Teorema del Límite Central"}
-library(tidyr)
-library(ggplot2)
-
-df_medias <- data.frame(
-  n10 = medias_n10,
-  n30 = medias_n30,
-  n100 = medias_n100
-) %>%
-  pivot_longer(everything(), names_to = "tamaño", values_to = "media")
-
-df_medias$tamaño <- factor(df_medias$tamaño,
-                            levels = c("n10", "n30", "n100"),
-                            labels = c("n = 10", "n = 30", "n = 100"))
-
-ggplot(df_medias, aes(x = media)) +
-  geom_histogram(aes(y = after_stat(density)), bins = 40,
-                 fill = "#3498db", color = "white", alpha = 0.7) +
-  geom_density(color = "#e74c3c", size = 1.2) +
-  facet_wrap(~ tamaño, ncol = 1, scales = "free_y") +
-  geom_vline(xintercept = mu_poblacion, linetype = "dashed",
-             color = "#2ecc71", size = 1) +
-  labs(
-    title = "Teorema del Límite Central en acción",
-    subtitle = "Distribución de medias muestrales para diferentes tamaños de muestra",
-    x = "Media muestral de participación en protestas",
-    y = "Densidad",
-    caption = "Población original altamente asimétrica (mayoría ceros). \nLínea verde = media poblacional verdadera"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(face = "bold", size = 14),
-    strip.text = element_text(face = "bold", size = 12)
-  )
-```
-
-Aunque la población original es extremadamente asimétrica (la mayoría tiene valor 0), las medias muestrales **se distribuyen cada vez más normalmente** conforme aumenta $n$. Con $n=100$, la distribución de $\bar{X}$ es prácticamente Normal.
-
-## Resumen {.unnumbered}
-
-| Concepto | Descripción |
+| Concepto | Significado |
 |----------|-------------|
-| **Probabilidad** | Cuantifica incertidumbre (0 a 1) |
-| **Variables aleatorias** | Discretas (conteos) o continuas (intervalos) |
-| **Normal** | Base de inferencia; regla 68-95-99.7 |
-| **Binomial** | Conteo de éxitos en n ensayos |
-| **TLC** | Medias muestrales → Normal (si n ≥ 30) |
+| Probabilidad | Número entre 0 y 1 que cuantifica qué tan probable es algo |
+| Variable aleatoria | Algo que toma diferentes valores con diferentes probabilidades |
+| Distribución Normal | Distribución en forma de campana, base de la inferencia |
+| Teorema del Límite Central | Las medias muestrales siempre se distribuyen Normal |
 
-El Teorema del Límite Central justifica el uso de la distribución Normal para inferencia (intervalos de confianza, pruebas de hipótesis).
+### Ideas principales
+
+1. **La probabilidad cuantifica incertidumbre:** Nos permite hacer afirmaciones precisas sobre qué tan seguros estamos
+2. **La distribución Normal es fundamental:** La regla 68-95-99.7 aplica a muchos fenómenos
+3. **El TLC es la base de la inferencia:** Justifica usar la Normal para analizar muestras
+
+### Funciones de R
+
+| Función | Uso |
+|---------|-----|
+| `pnorm(x, mean, sd)` | Probabilidad de estar por debajo de x |
+| `qnorm(p, mean, sd)` | Valor correspondiente al percentil p |
+| `rnorm(n, mean, sd)` | Genera n valores aleatorios de una Normal |
 
 ## Lecturas recomendadas {.unnumbered}
 
 **Fundamentos de teoría de probabilidad:**
 
-Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.  
-→ Capítulo 4 ofrece una introducción accesible a distribuciones de probabilidad con ejemplos de ciencias sociales.
+Agresti, A., & Finlay, B. (2009). *Statistical Methods for the Social Sciences* (4th ed.). Pearson.
+→ Capítulo 4 ofrece introducción accesible a distribuciones de probabilidad.
 
 **Aplicaciones en ciencias sociales:**
 
-Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.  
-→ Capítulo 6 conecta teoría de probabilidad con aplicaciones en investigación social y política.
+Llaudet, E., & Imai, K. (2022). *Data Analysis for Social Science: A Friendly and Practical Introduction*. Princeton University Press.
+→ Capítulo 6 conecta teoría de probabilidad con aplicaciones prácticas.
 
 **Recurso complementario de acceso libre:**
 
-Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]  
-→ Capítulo 3 sobre distribuciones de variables aleatorias, con ejercicios interactivos.
-
+Diez, D., Barr, C., & Çetinkaya-Rundel, M. (2019). *OpenIntro Statistics* (4th ed.). [Disponible gratis en https://www.openintro.org/book/os/]
+→ Capítulo 3 sobre distribuciones de variables aleatorias.
 
 ## Ejercicios {.unnumbered}
 
 ::: {.ejercicios}
 
-**1. Reglas de probabilidad**
+**1. Probabilidades básicas**
 
-En una encuesta, 45% de los encuestados apoya política A, 30% apoya política B, y 15% apoya ambas.
+En una encuesta, 45% apoya la política A, 30% apoya la política B, y 15% apoya ambas.
 
-a) ¿Cuál es $P(A \text{ o } B)$?
-b) ¿Cuál es $P(A | B)$?
-c) ¿Son A y B independientes? Demuestra matemáticamente
-d) ¿Son A y B mutuamente excluyentes? ¿Por qué?
+a) ¿Cuál es la probabilidad de apoyar A o B (o ambas)?
+b) Si alguien apoya B, ¿cuál es la probabilidad de que también apoye A?
+c) ¿Son A y B independientes? ¿Por qué?
 
-**2. Distribución binomial**
+**2. Distribución Normal**
 
-Una encuesta estima que 35% de los chilenos votaría por candidato X. Si encuestas a 500 personas:
+Los puntajes de confianza institucional se distribuyen Normal con media 50 y desviación estándar 12.
 
-a) ¿Cuál es el valor esperado del número de votantes por X?
-b) ¿Cuál es la desviación estándar?
-c) Calcula $P(X \leq 150)$ en R
-d) Calcula $P(165 \leq X \leq 185)$
-e) ¿Cuál es el mínimo de votos que esperarías con 95% de confianza?
+a) ¿Qué proporción de personas tiene puntaje mayor a 60?
+b) ¿Qué proporción tiene puntaje entre 40 y 65?
+c) ¿Cuál es el puntaje correspondiente al percentil 90?
+d) Si seleccionas 100 personas al azar, ¿cuántas esperarías con puntaje menor a 35?
 
-**3. Distribución Normal**
+**3. Teorema del Límite Central**
 
-Scores de confianza institucional se distribuyen Normal con media 50 y SD 12.
+Tienes una población con distribución muy asimétrica (ingresos).
 
-a) ¿Qué proporción de personas tiene score > 60?
-b) ¿Qué proporción tiene score entre 40 y 65?
-c) ¿Cuál es el score correspondiente al percentil 90?
-d) Si seleccionas aleatoriamente 100 personas, ¿cuántas esperas tengan score < 35?
+```{r eval=FALSE}
+set.seed(123)
+poblacion <- rlnorm(100000, meanlog = 12, sdlog = 1)
+```
 
-**4. Teorema del Límite Central**
+a) Calcula media y desviación estándar de la población
+b) Toma 1,000 muestras de n=30 y calcula la media de cada una
+c) Grafica la distribución de esas medias
+d) ¿Se ve aproximadamente Normal? ¿Está centrada en la media poblacional?
 
-Tienes una población con distribución muy asimétrica (ej: ingresos).
+**4. Simulación de encuestas**
 
-a) Simula una población de 100,000 ingresos usando `rlnorm(100000, 12, 1)`
-b) Calcula y reporta media, mediana y SD poblacionales
-c) Toma 1,000 muestras de n=10 y grafica distribución de medias muestrales
-d) Repite con n=30 y n=100
-e) ¿A partir de qué $n$ la distribución de medias "parece" Normal?
-
-**5. Simulación de encuestas**
-
-Una población tiene 52% de intención de voto por candidato A.
+Una población tiene 52% de intención de voto por el candidato A.
 
 ```{r eval=FALSE}
 set.seed(123)
@@ -548,21 +578,8 @@ set.seed(123)
 encuestas <- replicate(1000, mean(rbinom(1000, 1, 0.52)))
 ```
 
-a) Ejecuta la simulación y grafica distribución de resultados
-b) ¿Cuántas encuestas hubieran predicho victoria del oponente (es decir, $\hat{p} < 0.50$)?
-c) ¿Cómo cambia si $n = 500$? ¿Y si $n = 2000$?
-d) Si la diferencia real fuera solo de 1 punto (51-49), ¿qué proporción de encuestas de n=1000 predecirían mal?
+a) Grafica la distribución de resultados
+b) ¿Cuántas encuestas hubieran predicho victoria del oponente (resultado < 0.50)?
+c) ¿Cómo cambia si el tamaño de muestra es n=500?
 
-**6. Probabilidad condicional aplicada**
-
-Una prueba de COVID tiene sensibilidad de 95% (detecta correctamente a infectados) y especificidad de 98% (identifica correctamente a no infectados). Si la prevalencia en la población es 2%:
-
-a) Calcula la probabilidad de estar infectado dado un test positivo
-b) ¿Por qué esta probabilidad es sorprendentemente baja?
-c) ¿Cómo cambia si la prevalencia sube a 10%?
-d) ¿Qué implicaciones tiene esto para políticas de testeo masivo?
-
-:::
-
-::: {#refs}
 :::

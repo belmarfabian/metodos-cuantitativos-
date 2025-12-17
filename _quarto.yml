@@ -5,8 +5,8 @@ project:
 book:
   title: "Métodos Cuantitativos para Ciencias Sociales"
   author: "Fabián Belmar"
-  date: today
-  date-format: "YYYY"
+  date: "2025-12-16"
+  cover-image: cover.png
 
   chapters:
     - index.qmd
